@@ -101,7 +101,7 @@ uses the layout below for now:
   instead of in a pane; below 1100px the queue becomes a row of cards above the review.
   Student pages filter cards the same way without tabs: a `[data-list]` holds the filters and
   `[data-list-item]` cards with `data-tags`; a `[data-list-group]` section hides once none of its cards
-  show (Explore courses).
+  show (Explore courses, Schedule & recordings, My questions, Saved & notes).
 - `[data-checklist]` keeps an "n of n done" line (`data-checklist-count`) and a bar (`data-checklist-bar`)
   in step with the `role="checkbox"` buttons inside it (the mentor's to-do).
 - `data-toast="Changes saved"` shows a short confirmation; `data-copy="text"` copies to the clipboard;

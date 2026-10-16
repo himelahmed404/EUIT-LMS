@@ -186,7 +186,9 @@ Placeholders: Download feedback, Message Kamrul, the portfolio link.
 
 ### `student/schedule.html` · Schedule & recordings
 
-Course filter (not wired), Coming up (3 classes), Class recordings list with Watch buttons.
+Course filter (All courses / WordPress / Graphic Design, `data-list`) narrows Coming up (3 classes; the soonest
+has a Next class badge), Class recordings (Watch buttons) and the attendance line. Each class and recording
+has its course in `data-tags`.
 Placeholder: Add to Google Calendar.
 
 ### `student/leaderboard.html` · Leaderboard

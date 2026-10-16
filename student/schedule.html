@@ -316,7 +316,7 @@
             </div>
           </div>
         </header>
-        <main class="p-main">
+        <main class="p-main" data-list>
           <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
             <div style="display: flex; flex-direction: column; gap: 6px">
               <h1 class="p-h1">Schedule &amp; recordings</h1>
@@ -325,12 +325,17 @@
               </p>
             </div>
             <div class="p-seg" role="group" aria-label="Course">
-              <button type="button" aria-pressed="true">All courses</button
-              ><button type="button" aria-pressed="false">WordPress</button
-              ><button type="button" aria-pressed="false">Graphic Design</button>
+              <button type="button" data-filter="all" aria-pressed="true">All courses</button
+              ><button type="button" data-filter="wordpress" aria-pressed="false">WordPress</button
+              ><button type="button" data-filter="design" aria-pressed="false">Graphic Design</button>
             </div>
           </div>
-          <section class="p-card" aria-labelledby="up-title" style="display: flex; flex-direction: column; gap: 16px">
+          <section
+            class="p-card"
+            data-list-group
+            aria-labelledby="up-title"
+            style="display: flex; flex-direction: column; gap: 16px"
+          >
             <div class="p-card-head">
               <h2 id="up-title" class="p-h3">Coming up</h2>
               <a class="p-link" href="#"
@@ -353,9 +358,11 @@
               >
             </div>
             <div
-              style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 16px"
+              style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); gap: 16px"
             >
               <article
+                data-list-item
+                data-tags="wordpress"
                 style="
                   border: 1px solid var(--line);
                   border-radius: var(--radius-md);
@@ -381,18 +388,20 @@
                   ><span style="font-size: 22px; font-weight: 700">19</span>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0px">
-                  <div class="p-row" style="gap: 8px; flex-wrap: wrap">
-                    <strong style="font-size: 15px">WordPress · Class 13</strong
+                  <div class="p-row" style="gap: 6px; flex-wrap: wrap">
+                    <span class="eit-badge eit-badge--cyan">Next class</span
                     ><span class="eit-badge eit-badge--neutral">Offline</span>
                   </div>
+                  <strong style="font-size: 15px">WordPress · Class 13</strong>
                   <span class="p-small">7:00–9:00 PM · Lab 2, Mirpur-10</span
                   ><span class="p-small">Theme customizer</span>
                 </div>
               </article>
               <article
+                data-list-item
+                data-tags="design"
                 style="
-                  border: 1px solid var(--cyan-line);
-                  background: var(--cyan-soft);
+                  border: 1px solid var(--line);
                   border-radius: var(--radius-md);
                   padding: 16px;
                   display: flex;
@@ -408,7 +417,7 @@
                     align-items: center;
                     justify-content: center;
                     border-radius: 12px;
-                    background: var(--surface-card);
+                    background: var(--track);
                     padding: 8px 0px;
                   "
                 >
@@ -416,16 +425,17 @@
                   ><span style="font-size: 22px; font-weight: 700">21</span>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0px">
-                  <div class="p-row" style="gap: 8px; flex-wrap: wrap">
-                    <strong style="font-size: 15px">Graphic Design · Live 8</strong
-                    ><span class="eit-badge eit-badge--neutral">Online</span>
+                  <div class="p-row" style="gap: 6px; flex-wrap: wrap">
+                    <span class="eit-badge eit-badge--neutral">Online</span>
                   </div>
-                  <span class="p-small" style="color: var(--cyan-deep)"
-                    >8:00–9:30 PM · Zoom link opens 10 min before</span
-                  ><span class="p-small" style="color: var(--cyan-deep)">Typography for social posts</span>
+                  <strong style="font-size: 15px">Graphic Design · Live 8</strong>
+                  <span class="p-small">8:00–9:30 PM · Zoom link opens 10 min before</span
+                  ><span class="p-small">Typography for social posts</span>
                 </div>
               </article>
               <article
+                data-list-item
+                data-tags="wordpress"
                 style="
                   border: 1px solid var(--line);
                   border-radius: var(--radius-md);
@@ -451,23 +461,30 @@
                   ><span style="font-size: 22px; font-weight: 700">22</span>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0px">
-                  <div class="p-row" style="gap: 8px; flex-wrap: wrap">
-                    <strong style="font-size: 15px">WordPress · Class 14</strong
-                    ><span class="eit-badge eit-badge--neutral">Offline</span>
+                  <div class="p-row" style="gap: 6px; flex-wrap: wrap">
+                    <span class="eit-badge eit-badge--neutral">Offline</span>
                   </div>
+                  <strong style="font-size: 15px">WordPress · Class 14</strong>
                   <span class="p-small">7:00–9:00 PM · Lab 2, Mirpur-10</span
                   ><span class="p-small">Custom post types</span>
                 </div>
               </article>
             </div>
           </section>
-          <section class="p-card p-card--flush" aria-labelledby="rec-title">
+          <section class="p-card p-card--flush" data-list-group aria-labelledby="rec-title">
             <div class="p-card-head" style="padding: 20px 24px 12px">
               <h2 id="rec-title" class="p-h3">Class recordings</h2>
-              <span class="p-small">Attended 11 of 12 WordPress classes</span>
+              <span class="p-row" style="gap: 12px; flex-wrap: wrap"
+                ><span class="p-small" data-list-item data-tags="wordpress">WordPress: attended 11 of 12</span
+                ><span class="p-small" data-list-item data-tags="design">Graphic Design: attended 7 of 7</span></span
+              >
             </div>
             <ul class="p-list" style="padding: 0px 12px 12px">
-              <li style="padding: 12px; border-radius: 12px; gap: 16px; border-bottom: 1px solid var(--line-soft)">
+              <li
+                data-list-item
+                data-tags="wordpress"
+                style="padding: 12px; border-radius: 12px; gap: 16px; border-bottom: 1px solid var(--line-soft)"
+              >
                 <div
                   style="
                     width: 96px;
@@ -505,7 +522,11 @@
                   ><span class="p-small">Mentor is uploading</span></span
                 >
               </li>
-              <li style="padding: 12px; border-radius: 12px; gap: 16px; border-bottom: 1px solid var(--line-soft)">
+              <li
+                data-list-item
+                data-tags="design"
+                style="padding: 12px; border-radius: 12px; gap: 16px; border-bottom: 1px solid var(--line-soft)"
+              >
                 <div
                   style="
                     width: 96px;
@@ -559,7 +580,11 @@
                   ></span
                 >
               </li>
-              <li style="padding: 12px; border-radius: 12px; gap: 16px; border-bottom: 1px solid var(--line-soft)">
+              <li
+                data-list-item
+                data-tags="wordpress"
+                style="padding: 12px; border-radius: 12px; gap: 16px; border-bottom: 1px solid var(--line-soft)"
+              >
                 <div
                   style="
                     width: 96px;
@@ -613,7 +638,11 @@
                   ></span
                 >
               </li>
-              <li style="padding: 12px; border-radius: 12px; gap: 16px; border-bottom: 1px solid var(--line-soft)">
+              <li
+                data-list-item
+                data-tags="wordpress"
+                style="padding: 12px; border-radius: 12px; gap: 16px; border-bottom: 1px solid var(--line-soft)"
+              >
                 <div
                   style="
                     width: 96px;
@@ -667,7 +696,11 @@
                   ></span
                 >
               </li>
-              <li style="padding: 12px; border-radius: 12px; gap: 16px; border-bottom: 1px solid var(--line-soft)">
+              <li
+                data-list-item
+                data-tags="design"
+                style="padding: 12px; border-radius: 12px; gap: 16px; border-bottom: 1px solid var(--line-soft)"
+              >
                 <div
                   style="
                     width: 96px;
@@ -721,7 +754,11 @@
                   ></span
                 >
               </li>
-              <li style="padding: 12px; border-radius: 12px; gap: 16px; border-bottom: 1px solid var(--line-soft)">
+              <li
+                data-list-item
+                data-tags="wordpress"
+                style="padding: 12px; border-radius: 12px; gap: 16px; border-bottom: 1px solid var(--line-soft)"
+              >
                 <div
                   style="
                     width: 96px;

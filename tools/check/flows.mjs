@@ -1,4 +1,4 @@
-// Click-throughs of the main journeys: log in as each role, reset a password, take a quiz, explore courses, my questions, saved & notes,
+// Click-throughs of the main journeys: log in as each role, reset a password, take a quiz, explore courses, my questions, saved & notes, the schedule's course filter,
 // upload a recording, edit roles, enroll, notifications, the mentor panel (questions, the review queue, the to-do
 // list), dialogs and the admin console
 // (light by default, dark remembered, collapsed sidebar, phone drawer, account menu, Ctrl K, links that open a tab)
@@ -91,6 +91,12 @@ await go("student/course-player.html");
 const save = btn("Save this lesson");
 await click(save);
 ok("course player: the bookmark unsaves the lesson", (await save.getAttribute("aria-pressed")) === "false");
+
+await go("student/schedule.html");
+const sch = async () => p.locator("main article[data-list-item]:visible, main li[data-list-item]:visible").count();
+ok("schedule: all courses shows 3 classes and 6 recordings", (await sch()) === 9);
+await click(btn("Graphic Design"));
+ok("schedule: the course filter keeps Graphic Design only", (await sch()) === 3);
 
 await go("mentor/schedule.html");
 await click(btn("Upload recording").first());
