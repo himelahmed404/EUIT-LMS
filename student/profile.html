@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Profile and settings · European IT LMS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap"
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../assets/css/eit.css" />
     <link rel="stylesheet" href="../assets/css/panel.css" />
     <link rel="stylesheet" href="../assets/css/app.css" />
-    <script src="../assets/js/app.js" defer></script>
+    <script src="../assets/js/app.js" defer=""></script>
   </head>
   <body>
     <div class="p-shell">
@@ -403,7 +403,7 @@
                   </div>
                 </div>
                 <div class="p-row" style="justify-content: flex-end">
-                  <button type="button" class="eit-btn eit-btn--primary eit-btn--md">
+                  <button type="button" class="eit-btn eit-btn--primary eit-btn--md" data-toast="Changes saved">
                     <svg
                       class="eit-icon eit-btn__lead"
                       width="16"
@@ -505,7 +505,7 @@
                       role="switch"
                       aria-checked="true"
                       aria-labelledby="np-s3"
-                      disabled
+                      disabled=""
                       aria-disabled="true"
                     ></button>
                   </div>
@@ -572,7 +572,7 @@
                   </div>
                 </div>
                 <div class="p-row" style="justify-content: flex-end">
-                  <button class="p-ghostbtn" type="button">Update password</button>
+                  <button class="p-ghostbtn" type="button" data-toast="Password updated">Update password</button>
                 </div>
               </section>
               <section
@@ -582,7 +582,7 @@
               >
                 <div class="p-card-head">
                   <h2 id="dev-title" class="p-h3">Logged-in devices</h2>
-                  <a class="p-link" href="#">Log out of other devices</a>
+                  <a class="p-link" href="#" data-toast="Logged out of other devices">Log out of other devices</a>
                 </div>
                 <ul class="p-list">
                   <li>

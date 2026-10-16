@@ -167,17 +167,52 @@
     group.__styles = { on: on ? on.getAttribute("style") : null, off: off ? off.getAttribute("style") : null };
     return group.__styles;
   }
-  function setState(btn, on, styles) {
+  // Some groups colour each option differently when it's on (Present green, Late amber, Absent red).
+  // Learn each option's "on" look from any group on the page where that option is already on.
+  var pressedLooks = null;
+  function lookKey(group, btn) {
+    var labels = members(group, btn).map(function (b) {
+      return b.textContent.trim();
+    });
+    return labels.join("/") + "|" + btn.textContent.trim();
+  }
+  function pressedLook(group, btn, fallback) {
+    if (!pressedLooks) {
+      pressedLooks = {};
+      $all('[aria-pressed="true"], [role="radio"][aria-checked="true"]').forEach(function (b) {
+        var g = groupOf(b);
+        if (members(g, b).length > 1) {
+          var k = lookKey(g, b);
+          if (!(k in pressedLooks)) {
+            pressedLooks[k] = b.getAttribute("style");
+          }
+        }
+      });
+    }
+    var key = lookKey(group, btn);
+    if (key in pressedLooks) {
+      return pressedLooks[key];
+    }
+    // An option never seen "on" in a group of individually coloured options gets the plain look.
+    var sig = key.slice(0, key.lastIndexOf("|") + 1);
+    var looks = {};
+    Object.keys(pressedLooks).forEach(function (k) {
+      if (k.indexOf(sig) === 0) {
+        looks[pressedLooks[k]] = true;
+      }
+    });
+    return Object.keys(looks).length > 1 ? null : fallback;
+  }
+  function setState(btn, on, look) {
     btn.setAttribute(stateAttr(btn), on ? "true" : "false");
     if (btn.classList.contains("eit-chip")) {
       btn.classList.toggle("is-on", on);
     }
-    if (styles && styles.on !== styles.off) {
-      var s = on ? styles.on : styles.off;
-      if (s == null) {
+    if (look !== undefined) {
+      if (look == null) {
         btn.removeAttribute("style");
       } else {
-        btn.setAttribute("style", s);
+        btn.setAttribute("style", look);
       }
     }
   }
@@ -185,33 +220,40 @@
     var group = groupOf(btn);
     var list = members(group, btn);
     var styles = list.length > 1 ? rememberStyles(group, list) : null;
+    var swap = styles && styles.on !== styles.off;
+    function lookFor(b, on) {
+      if (!swap) {
+        return undefined;
+      }
+      return on ? pressedLook(group, b, styles.on) : styles.off;
+    }
     var multi = group.hasAttribute("data-multi") || list.length < 2;
     if (multi) {
-      setState(btn, btn.getAttribute(stateAttr(btn)) !== "true", styles);
+      var turnOn = btn.getAttribute(stateAttr(btn)) !== "true";
+      setState(btn, turnOn, lookFor(btn, turnOn));
     } else {
       list.forEach(function (b) {
-        setState(b, b === btn, styles);
+        setState(b, b === btn, lookFor(b, b === btn));
       });
     }
   }
 
   /* ---------- Captured states ----------
-     Screens whose content changes with a choice ship each state as a <template data-state>.
-     A trigger with data-show-state="name" swaps the matching region in. */
+     Screens whose content changes with a choice ship each state as <template data-state="name">.
+     A state can have several templates, one for each part of the page that changes; each names
+     the element it replaces in data-region. A trigger with data-show-state="name" swaps them in. */
   function showState(name) {
-    var tpl = document.querySelector('template[data-state="' + name + '"]');
-    if (!tpl) {
-      return;
-    }
-    var region = document.querySelector(tpl.getAttribute("data-region"));
-    if (!region) {
-      return;
-    }
-    var frag = tpl.content.cloneNode(true);
-    var fresh = frag.firstElementChild;
-    region.replaceWith(frag);
-    initMotion(fresh);
-    initLanguage(fresh);
+    $all('template[data-state="' + name + '"]').forEach(function (tpl) {
+      var region = document.querySelector(tpl.getAttribute("data-region"));
+      if (!region) {
+        return;
+      }
+      var frag = tpl.content.cloneNode(true);
+      var fresh = frag.firstElementChild;
+      region.replaceWith(frag);
+      initMotion(fresh);
+      initLanguage(fresh);
+    });
   }
 
   // A region driven by several choices: each option carries data-part-of="region",
@@ -385,9 +427,46 @@
     }
   }
 
+  /* ---------- Toast: a short "done" message for actions that would save or send ---------- */
+  var toastTimer = null;
+  function toast(message) {
+    var el = document.querySelector(".p-toast");
+    if (!el) {
+      el = document.createElement("div");
+      el.className = "p-toast";
+      el.setAttribute("role", "status");
+      el.setAttribute("aria-live", "polite");
+      document.body.appendChild(el);
+    }
+    el.innerHTML =
+      '<svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>';
+    el.appendChild(document.createTextNode(message));
+    el.classList.remove("is-on");
+    void el.offsetWidth;
+    el.classList.add("is-on");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () {
+      el.classList.remove("is-on");
+    }, 2800);
+  }
+
   /* ---------- Click handling ---------- */
   document.addEventListener("click", function (e) {
     var t = e.target;
+
+    // Actions that would save or send say so, then carry on with any other behaviour they have.
+    var done = t.closest("[data-toast]");
+    if (done && !done.disabled) {
+      toast(done.getAttribute("data-toast"));
+      if (done.matches('a[href="#"]')) {
+        e.preventDefault();
+      }
+    }
+    // "Mark all present" style shortcuts: press every matching option.
+    var all = t.closest("[data-press-all]");
+    if (all) {
+      $all(all.getAttribute("data-press-all")).forEach(pressInGroup);
+    }
 
     var stateBtn = t.closest("[data-show-state]");
     if (stateBtn) {
@@ -497,6 +576,18 @@
       return;
     }
 
+    // A shortcut elsewhere on the page that opens a tab ("Open the review queue").
+    var tabLink = t.closest("[data-select-tab]");
+    if (tabLink) {
+      e.preventDefault();
+      var target = document.getElementById(tabLink.getAttribute("data-select-tab"));
+      if (target) {
+        selectTab(target, true);
+        target.scrollIntoView({ block: "nearest" });
+      }
+      return;
+    }
+
     // Tabs with panels: role="tab" + aria-controls shows its panel and hides its siblings' panels.
     var tabBtn = t.closest('[role="tab"][aria-controls]');
     if (tabBtn) {
@@ -594,15 +685,15 @@
   document.addEventListener("keydown", function (e) {
     // Arrow keys move between tabs, as screen-reader users expect from a tab list.
     var tab = e.target.closest && e.target.closest('[role="tab"][aria-controls]');
-    if (tab && (e.key === "ArrowRight" || e.key === "ArrowLeft" || e.key === "Home" || e.key === "End")) {
-      var list = tabsOf(tab);
+    var keys = ["ArrowRight", "ArrowLeft", "ArrowDown", "ArrowUp", "Home", "End"];
+    if (tab && keys.indexOf(e.key) !== -1) {
+      var list = tabsOf(tab).filter(function (x) {
+        return !x.hidden;
+      });
       var i = list.indexOf(tab);
+      var fwd = e.key === "ArrowRight" || e.key === "ArrowDown";
       var next =
-        e.key === "Home"
-          ? 0
-          : e.key === "End"
-            ? list.length - 1
-            : (i + (e.key === "ArrowRight" ? 1 : -1) + list.length) % list.length;
+        e.key === "Home" ? 0 : e.key === "End" ? list.length - 1 : (i + (fwd ? 1 : -1) + list.length) % list.length;
       e.preventDefault();
       selectTab(list[next], true);
       return;

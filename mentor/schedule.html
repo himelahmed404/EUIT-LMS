@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Mentor schedule and recordings · European IT LMS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap"
@@ -58,7 +58,7 @@
         background: var(--surface);
       }
     </style>
-    <script src="../assets/js/app.js" defer></script>
+    <script src="../assets/js/app.js" defer=""></script>
   </head>
   <body>
     <div class="p-shell">
@@ -120,7 +120,7 @@
               <path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path>
               <path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg
             ><span class="p-nav-text">Courses</span></a
-          ><a href="#"
+          ><a href="questions.html"
             ><svg
               class="eit-icon"
               width="20"
@@ -333,7 +333,7 @@
             </div>
           </div>
         </header>
-        <main class="p-main" data-region="uploads">
+        <main class="p-main">
           <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
             <div style="display: flex; flex-direction: column; gap: 6px; max-width: 680px">
               <h1 class="p-h1">Schedule &amp; recordings</h1>
@@ -348,7 +348,7 @@
               >Upload recording
             </button>
           </div>
-          <div class="p-split">
+          <div class="p-split" data-region="uploads">
             <section
               class="p-card"
               aria-labelledby="wait-title"
@@ -1068,73 +1068,25 @@
       </div></template
     >
     <template data-state="pending" data-region="[data-region='uploads']"
-      ><main class="p-main" data-region="uploads">
-        <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
-          <div style="display: flex; flex-direction: column; gap: 6px; max-width: 680px">
-            <h1 class="p-h1">Schedule &amp; recordings</h1>
-            <p class="p-body">
-              Upload the recording after every class, onsite or online. Students of that batch see it under Schedule
-              &amp; recordings and get a notification.
-            </p>
+      ><div class="p-split" data-region="uploads">
+        <section
+          class="p-card"
+          aria-labelledby="wait-title"
+          style="flex: 1.3 1 520px; display: flex; flex-direction: column; gap: 16px; border-color: var(--cyan-line)"
+        >
+          <div class="p-card-head">
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <span class="p-eyebrow">Needs a recording</span>
+              <h2 id="wait-title" class="p-h3">Classes waiting for upload</h2>
+            </div>
+            <span class="eit-badge eit-badge--warning">1 waiting</span>
           </div>
-          <button type="button" class="ms-upbtn" data-open-dialog="upload-dialog">
-            <svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 15V3M7 8l5-5 5 5M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path></svg
-            >Upload recording
-          </button>
-        </div>
-        <div class="p-split">
-          <section
-            class="p-card"
-            aria-labelledby="wait-title"
-            style="flex: 1.3 1 520px; display: flex; flex-direction: column; gap: 16px; border-color: var(--cyan-line)"
-          >
-            <div class="p-card-head">
-              <div style="display: flex; flex-direction: column; gap: 4px">
-                <span class="p-eyebrow">Needs a recording</span>
-                <h2 id="wait-title" class="p-h3">Classes waiting for upload</h2>
-              </div>
-              <span class="eit-badge eit-badge--warning">1 waiting</span>
-            </div>
-            <div class="ms-class">
-              <span class="p-tile p-tile--amber" style="width: 48px; height: 48px; border-radius: 14px"
-                ><svg
-                  class="eit-icon"
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  focusable="false"
-                  aria-hidden="true"
-                >
-                  <rect x="4" y="2" width="16" height="20" rx="2"></rect>
-                  <path d="M9 22v-4h6v4"></path>
-                  <path
-                    d="M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"
-                  ></path></svg></span
-              ><span class="p-grow" style="display: flex; flex-direction: column; gap: 4px; min-width: 220px"
-                ><span class="p-row" style="gap: 8px; flex-wrap: wrap"
-                  ><strong style="font-size: 16px">WordPress · B14 · Class 12</strong
-                  ><span class="eit-badge eit-badge--ink">Onsite</span></span
-                ><span class="p-small">Building a custom header · Thu 15 Oct · Lab 2 · ended 9:00 PM</span
-                ><span class="p-small" style="color: var(--warning); font-weight: 600"
-                  >Due by 9:00 AM tomorrow · 20 students waiting</span
-                ></span
-              ><button type="button" class="ms-upbtn" data-open-dialog="upload-dialog">
-                <svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 15V3M7 8l5-5 5 5M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path></svg
-                >Upload recording
-              </button>
-            </div>
-            <div class="p-notice" style="background: var(--surface); color: var(--ink-2); font-size: 13px">
-              <svg
+          <div class="ms-class">
+            <span class="p-tile p-tile--amber" style="width: 48px; height: 48px; border-radius: 14px"
+              ><svg
                 class="eit-icon"
-                width="18"
-                height="18"
+                width="22"
+                height="22"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -1144,343 +1096,134 @@
                 focusable="false"
                 aria-hidden="true"
               >
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M12 16v-5"></path>
-                <path d="M12 8h.01"></path></svg
-              ><span
-                ><strong style="color: var(--ink)">Recording an onsite class?</strong> Record on the lab laptop or
-                camera, copy the file off after class, then upload it here. MP4 or MOV, up to 4 GB.</span
-              >
-            </div>
-          </section>
-          <section
-            class="p-card"
-            aria-labelledby="week-title"
-            style="flex: 1 1 360px; display: flex; flex-direction: column; gap: 14px"
-          >
-            <h2 id="week-title" class="p-h3">This week</h2>
-            <ul class="p-list">
-              <li>
-                <span style="width: 44px; flex: 0 0 auto; text-align: center"
-                  ><span class="p-mono" style="display: block; font-size: 11px">Thu</span
-                  ><strong style="font-size: 18px">15</strong></span
-                ><span class="p-grow" style="display: flex; flex-direction: column"
-                  ><strong style="font-size: 14px">WordPress · B14 · Class 12</strong
-                  ><span class="p-small">7:00 PM · Lab 2 · Onsite</span></span
-                ><button
-                  type="button"
-                  class="p-ghostbtn"
-                  style="min-height: 36px; padding: 0px 12px; font-size: 13px"
-                  data-open-dialog="upload-dialog"
-                >
-                  <svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M12 15V3M7 8l5-5 5 5M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path></svg
-                  >Upload
-                </button>
-              </li>
-              <li>
-                <span style="width: 44px; flex: 0 0 auto; text-align: center"
-                  ><span class="p-mono" style="display: block; font-size: 11px">Thu</span
-                  ><strong style="font-size: 18px">15</strong></span
-                ><span class="p-grow" style="display: flex; flex-direction: column"
-                  ><strong style="font-size: 14px">React JS · B6 · Class 18</strong
-                  ><span class="p-small">9:30 PM · Zoom · Online</span></span
-                ><span class="eit-badge eit-badge--neutral">Tonight</span>
-              </li>
-              <li>
-                <span style="width: 44px; flex: 0 0 auto; text-align: center"
-                  ><span class="p-mono" style="display: block; font-size: 11px">Sat</span
-                  ><strong style="font-size: 18px">17</strong></span
-                ><span class="p-grow" style="display: flex; flex-direction: column"
-                  ><strong style="font-size: 14px">WordPress · B15 · Class 4</strong
-                  ><span class="p-small">8:00 PM · Zoom · Online</span></span
-                >
-              </li>
-              <li>
-                <span style="width: 44px; flex: 0 0 auto; text-align: center"
-                  ><span class="p-mono" style="display: block; font-size: 11px">Mon</span
-                  ><strong style="font-size: 18px">19</strong></span
-                ><span class="p-grow" style="display: flex; flex-direction: column"
-                  ><strong style="font-size: 14px">WordPress · B14 · Class 13</strong
-                  ><span class="p-small">7:00 PM · Lab 2 · Onsite</span></span
-                >
-              </li>
-            </ul>
-          </section>
-        </div>
-        <section class="p-card p-card--flush" aria-labelledby="past-title">
-          <div class="p-card-head" style="padding: 20px 24px 12px">
-            <h2 id="past-title" class="p-h3">Past recordings</h2>
-            <span class="p-small">All batches</span>
+                <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+                <path d="M9 22v-4h6v4"></path>
+                <path
+                  d="M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"
+                ></path></svg></span
+            ><span class="p-grow" style="display: flex; flex-direction: column; gap: 4px; min-width: 220px"
+              ><span class="p-row" style="gap: 8px; flex-wrap: wrap"
+                ><strong style="font-size: 16px">WordPress · B14 · Class 12</strong
+                ><span class="eit-badge eit-badge--ink">Onsite</span></span
+              ><span class="p-small">Building a custom header · Thu 15 Oct · Lab 2 · ended 9:00 PM</span
+              ><span class="p-small" style="color: var(--warning); font-weight: 600"
+                >Due by 9:00 AM tomorrow · 20 students waiting</span
+              ></span
+            ><button type="button" class="ms-upbtn" data-open-dialog="upload-dialog">
+              <svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 15V3M7 8l5-5 5 5M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path></svg
+              >Upload recording
+            </button>
           </div>
-          <div class="p-scroll">
-            <table class="p-table" style="min-width: 820px">
-              <thead>
-                <tr>
-                  <th scope="col">Class</th>
-                  <th scope="col">Type</th>
-                  <th scope="col">Date</th>
-                  <th scope="col">Length</th>
-                  <th scope="col">Watched by</th>
-                  <th scope="col">Status</th>
-                  <th scope="col"><span class="eit-sr">Actions</span></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>React JS · B6 · Class 17</strong></td>
-                  <td>Online</td>
-                  <td>Mon, 12 Oct</td>
-                  <td>1:28:44</td>
-                  <td>21 of 24</td>
-                  <td><span class="eit-badge eit-badge--success">Live</span></td>
-                  <td>
-                    <button
-                      type="button"
-                      class="p-link"
-                      style="
-                        border: 0px;
-                        background: none;
-                        padding: 0px;
-                        font-style: inherit;
-                        font-variant: inherit;
-                        font-stretch: inherit;
-                        line-height: inherit;
-                        font-family: inherit;
-                        font-optical-sizing: inherit;
-                        font-size-adjust: inherit;
-                        font-kerning: inherit;
-                        font-feature-settings: inherit;
-                        font-variation-settings: inherit;
-                        font-weight: 600;
-                        font-size: 14px;
-                        cursor: pointer;
-                      "
-                      data-open-dialog="upload-dialog"
-                    >
-                      Replace
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td><strong>WordPress · B14 · Class 11</strong></td>
-                  <td>Onsite</td>
-                  <td>Mon, 12 Oct</td>
-                  <td>1:52:10</td>
-                  <td>17 of 20</td>
-                  <td><span class="eit-badge eit-badge--success">Live</span></td>
-                  <td>
-                    <button
-                      type="button"
-                      class="p-link"
-                      style="
-                        border: 0px;
-                        background: none;
-                        padding: 0px;
-                        font-style: inherit;
-                        font-variant: inherit;
-                        font-stretch: inherit;
-                        line-height: inherit;
-                        font-family: inherit;
-                        font-optical-sizing: inherit;
-                        font-size-adjust: inherit;
-                        font-kerning: inherit;
-                        font-feature-settings: inherit;
-                        font-variation-settings: inherit;
-                        font-weight: 600;
-                        font-size: 14px;
-                        cursor: pointer;
-                      "
-                      data-open-dialog="upload-dialog"
-                    >
-                      Replace
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td><strong>WordPress · B15 · Class 3</strong></td>
-                  <td>Online</td>
-                  <td>Sat, 10 Oct</td>
-                  <td>1:41:05</td>
-                  <td>22 of 26</td>
-                  <td><span class="eit-badge eit-badge--success">Live</span></td>
-                  <td>
-                    <button
-                      type="button"
-                      class="p-link"
-                      style="
-                        border: 0px;
-                        background: none;
-                        padding: 0px;
-                        font-style: inherit;
-                        font-variant: inherit;
-                        font-stretch: inherit;
-                        line-height: inherit;
-                        font-family: inherit;
-                        font-optical-sizing: inherit;
-                        font-size-adjust: inherit;
-                        font-kerning: inherit;
-                        font-feature-settings: inherit;
-                        font-variation-settings: inherit;
-                        font-weight: 600;
-                        font-size: 14px;
-                        cursor: pointer;
-                      "
-                      data-open-dialog="upload-dialog"
-                    >
-                      Replace
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td><strong>WordPress · B14 · Class 10</strong></td>
-                  <td>Onsite</td>
-                  <td>Thu, 8 Oct</td>
-                  <td>1:48:33</td>
-                  <td>19 of 20</td>
-                  <td><span class="eit-badge eit-badge--success">Live</span></td>
-                  <td>
-                    <button
-                      type="button"
-                      class="p-link"
-                      style="
-                        border: 0px;
-                        background: none;
-                        padding: 0px;
-                        font-style: inherit;
-                        font-variant: inherit;
-                        font-stretch: inherit;
-                        line-height: inherit;
-                        font-family: inherit;
-                        font-optical-sizing: inherit;
-                        font-size-adjust: inherit;
-                        font-kerning: inherit;
-                        font-feature-settings: inherit;
-                        font-variation-settings: inherit;
-                        font-weight: 600;
-                        font-size: 14px;
-                        cursor: pointer;
-                      "
-                      data-open-dialog="upload-dialog"
-                    >
-                      Replace
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="p-notice" style="background: var(--surface); color: var(--ink-2); font-size: 13px">
+            <svg
+              class="eit-icon"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 16v-5"></path>
+              <path d="M12 8h.01"></path></svg
+            ><span
+              ><strong style="color: var(--ink)">Recording an onsite class?</strong> Record on the lab laptop or camera,
+              copy the file off after class, then upload it here. MP4 or MOV, up to 4 GB.</span
+            >
           </div>
         </section>
-      </main></template
+        <section
+          class="p-card"
+          aria-labelledby="week-title"
+          style="flex: 1 1 360px; display: flex; flex-direction: column; gap: 14px"
+        >
+          <h2 id="week-title" class="p-h3">This week</h2>
+          <ul class="p-list">
+            <li>
+              <span style="width: 44px; flex: 0 0 auto; text-align: center"
+                ><span class="p-mono" style="display: block; font-size: 11px">Thu</span
+                ><strong style="font-size: 18px">15</strong></span
+              ><span class="p-grow" style="display: flex; flex-direction: column"
+                ><strong style="font-size: 14px">WordPress · B14 · Class 12</strong
+                ><span class="p-small">7:00 PM · Lab 2 · Onsite</span></span
+              ><button
+                type="button"
+                class="p-ghostbtn"
+                style="min-height: 36px; padding: 0px 12px; font-size: 13px"
+                data-open-dialog="upload-dialog"
+              >
+                <svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 15V3M7 8l5-5 5 5M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path></svg
+                >Upload
+              </button>
+            </li>
+            <li>
+              <span style="width: 44px; flex: 0 0 auto; text-align: center"
+                ><span class="p-mono" style="display: block; font-size: 11px">Thu</span
+                ><strong style="font-size: 18px">15</strong></span
+              ><span class="p-grow" style="display: flex; flex-direction: column"
+                ><strong style="font-size: 14px">React JS · B6 · Class 18</strong
+                ><span class="p-small">9:30 PM · Zoom · Online</span></span
+              ><span class="eit-badge eit-badge--neutral">Tonight</span>
+            </li>
+            <li>
+              <span style="width: 44px; flex: 0 0 auto; text-align: center"
+                ><span class="p-mono" style="display: block; font-size: 11px">Sat</span
+                ><strong style="font-size: 18px">17</strong></span
+              ><span class="p-grow" style="display: flex; flex-direction: column"
+                ><strong style="font-size: 14px">WordPress · B15 · Class 4</strong
+                ><span class="p-small">8:00 PM · Zoom · Online</span></span
+              >
+            </li>
+            <li>
+              <span style="width: 44px; flex: 0 0 auto; text-align: center"
+                ><span class="p-mono" style="display: block; font-size: 11px">Mon</span
+                ><strong style="font-size: 18px">19</strong></span
+              ><span class="p-grow" style="display: flex; flex-direction: column"
+                ><strong style="font-size: 14px">WordPress · B14 · Class 13</strong
+                ><span class="p-small">7:00 PM · Lab 2 · Onsite</span></span
+              >
+            </li>
+          </ul>
+        </section>
+      </div></template
     >
     <template data-state="uploading" data-region="[data-region='uploads']"
-      ><main class="p-main" data-region="uploads">
-        <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
-          <div style="display: flex; flex-direction: column; gap: 6px; max-width: 680px">
-            <h1 class="p-h1">Schedule &amp; recordings</h1>
-            <p class="p-body">
-              Upload the recording after every class, onsite or online. Students of that batch see it under Schedule
-              &amp; recordings and get a notification.
-            </p>
+      ><div class="p-split" data-region="uploads">
+        <section
+          class="p-card"
+          aria-labelledby="wait-title"
+          style="flex: 1.3 1 520px; display: flex; flex-direction: column; gap: 16px; border-color: var(--cyan-line)"
+        >
+          <div class="p-card-head">
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <span class="p-eyebrow">Needs a recording</span>
+              <h2 id="wait-title" class="p-h3">Classes waiting for upload</h2>
+            </div>
+            <span class="eit-badge eit-badge--cyan">Uploading</span>
           </div>
-          <button type="button" class="ms-upbtn" data-open-dialog="upload-dialog">
-            <svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 15V3M7 8l5-5 5 5M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path></svg
-            >Upload recording
-          </button>
-        </div>
-        <div class="p-split">
-          <section
-            class="p-card"
-            aria-labelledby="wait-title"
-            style="flex: 1.3 1 520px; display: flex; flex-direction: column; gap: 16px; border-color: var(--cyan-line)"
+          <div
+            style="
+              border: 1px solid var(--line);
+              border-radius: var(--radius-md);
+              padding: 16px;
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+            "
           >
-            <div class="p-card-head">
-              <div style="display: flex; flex-direction: column; gap: 4px">
-                <span class="p-eyebrow">Needs a recording</span>
-                <h2 id="wait-title" class="p-h3">Classes waiting for upload</h2>
-              </div>
-              <span class="eit-badge eit-badge--cyan">Uploading</span>
-            </div>
-            <div
-              style="
-                border: 1px solid var(--line);
-                border-radius: var(--radius-md);
-                padding: 16px;
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-              "
-            >
-              <div class="p-row" style="justify-content: space-between; flex-wrap: wrap">
-                <span class="p-row" style="gap: 10px"
-                  ><svg
-                    class="eit-icon"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    focusable="false"
-                    aria-hidden="true"
-                  >
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <path d="M10 8l6 4-6 4z"></path></svg
-                  ><span style="display: flex; flex-direction: column"
-                    ><strong style="font-size: 14px">class-12-custom-header.mp4</strong
-                    ><span class="p-small">WordPress B14 · Class 12 · Onsite class</span></span
-                  ></span
-                ><span class="p-small">1.8 GB · about 6 min left</span>
-              </div>
-              <div
-                class="p-bar"
-                role="progressbar"
-                aria-valuenow="62"
-                aria-valuemin="0"
-                aria-valuemax="100"
-                aria-label="Upload progress"
-              >
-                <span style="width: 62%"></span>
-              </div>
-              <div class="p-row" style="justify-content: space-between">
-                <span class="p-small">62% uploaded · you can leave this page</span
-                ><button
-                  type="button"
-                  style="
-                    border: 0px;
-                    background: none;
-                    padding: 0px;
-                    font-style: inherit;
-                    font-variant: inherit;
-                    font-stretch: inherit;
-                    line-height: inherit;
-                    font-family: inherit;
-                    font-optical-sizing: inherit;
-                    font-size-adjust: inherit;
-                    font-kerning: inherit;
-                    font-feature-settings: inherit;
-                    font-variation-settings: inherit;
-                    font-weight: 600;
-                    font-size: 14px;
-                    cursor: pointer;
-                    color: var(--danger);
-                  "
-                  data-show-state="pending"
-                >
-                  Cancel upload
-                </button>
-              </div>
-            </div>
-            <div class="p-row" style="justify-content: space-between; flex-wrap: wrap; gap: 12px">
-              <span class="p-small">20 students in Batch 14 will be told when it’s ready.</span
-              ><button type="button" class="eit-btn eit-btn--primary eit-btn--md" data-show-state="queued">
-                <svg
-                  class="eit-icon eit-btn__lead"
-                  width="16"
-                  height="16"
+            <div class="p-row" style="justify-content: space-between; flex-wrap: wrap">
+              <span class="p-row" style="gap: 10px"
+                ><svg
+                  class="eit-icon"
+                  width="20"
+                  height="20"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -1490,15 +1233,60 @@
                   focusable="false"
                   aria-hidden="true"
                 >
-                  <path d="M20 6L9 17l-5-5"></path></svg
-                ><span class="eit-btn__label">Publish when upload finishes</span>
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M10 8l6 4-6 4z"></path></svg
+                ><span style="display: flex; flex-direction: column"
+                  ><strong style="font-size: 14px">class-12-custom-header.mp4</strong
+                  ><span class="p-small">WordPress B14 · Class 12 · Onsite class</span></span
+                ></span
+              ><span class="p-small">1.8 GB · about 6 min left</span>
+            </div>
+            <div
+              class="p-bar"
+              role="progressbar"
+              aria-valuenow="62"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-label="Upload progress"
+            >
+              <span style="width: 62%"></span>
+            </div>
+            <div class="p-row" style="justify-content: space-between">
+              <span class="p-small">62% uploaded · you can leave this page</span
+              ><button
+                type="button"
+                style="
+                  border: 0px;
+                  background: none;
+                  padding: 0px;
+                  font-style: inherit;
+                  font-variant: inherit;
+                  font-stretch: inherit;
+                  line-height: inherit;
+                  font-family: inherit;
+                  font-optical-sizing: inherit;
+                  font-size-adjust: inherit;
+                  font-kerning: inherit;
+                  font-feature-settings: inherit;
+                  font-variation-settings: inherit;
+                  font-weight: 600;
+                  font-size: 14px;
+                  cursor: pointer;
+                  color: var(--danger);
+                "
+                data-show-state="pending"
+              >
+                Cancel upload
               </button>
             </div>
-            <div class="p-notice" style="background: var(--surface); color: var(--ink-2); font-size: 13px">
+          </div>
+          <div class="p-row" style="justify-content: space-between; flex-wrap: wrap; gap: 12px">
+            <span class="p-small">20 students in Batch 14 will be told when it’s ready.</span
+            ><button type="button" class="eit-btn eit-btn--primary eit-btn--md" data-show-state="queued">
               <svg
-                class="eit-icon"
-                width="18"
-                height="18"
+                class="eit-icon eit-btn__lead"
+                width="16"
+                height="16"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -1508,509 +1296,184 @@
                 focusable="false"
                 aria-hidden="true"
               >
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M12 16v-5"></path>
-                <path d="M12 8h.01"></path></svg
-              ><span
-                ><strong style="color: var(--ink)">Recording an onsite class?</strong> Record on the lab laptop or
-                camera, copy the file off after class, then upload it here. MP4 or MOV, up to 4 GB.</span
-              >
-            </div>
-          </section>
-          <section
-            class="p-card"
-            aria-labelledby="week-title"
-            style="flex: 1 1 360px; display: flex; flex-direction: column; gap: 14px"
-          >
-            <h2 id="week-title" class="p-h3">This week</h2>
-            <ul class="p-list">
-              <li>
-                <span style="width: 44px; flex: 0 0 auto; text-align: center"
-                  ><span class="p-mono" style="display: block; font-size: 11px">Thu</span
-                  ><strong style="font-size: 18px">15</strong></span
-                ><span class="p-grow" style="display: flex; flex-direction: column"
-                  ><strong style="font-size: 14px">WordPress · B14 · Class 12</strong
-                  ><span class="p-small">7:00 PM · Lab 2 · Onsite</span></span
-                ><span class="eit-badge eit-badge--success">Uploading</span>
-              </li>
-              <li>
-                <span style="width: 44px; flex: 0 0 auto; text-align: center"
-                  ><span class="p-mono" style="display: block; font-size: 11px">Thu</span
-                  ><strong style="font-size: 18px">15</strong></span
-                ><span class="p-grow" style="display: flex; flex-direction: column"
-                  ><strong style="font-size: 14px">React JS · B6 · Class 18</strong
-                  ><span class="p-small">9:30 PM · Zoom · Online</span></span
-                ><span class="eit-badge eit-badge--neutral">Tonight</span>
-              </li>
-              <li>
-                <span style="width: 44px; flex: 0 0 auto; text-align: center"
-                  ><span class="p-mono" style="display: block; font-size: 11px">Sat</span
-                  ><strong style="font-size: 18px">17</strong></span
-                ><span class="p-grow" style="display: flex; flex-direction: column"
-                  ><strong style="font-size: 14px">WordPress · B15 · Class 4</strong
-                  ><span class="p-small">8:00 PM · Zoom · Online</span></span
-                >
-              </li>
-              <li>
-                <span style="width: 44px; flex: 0 0 auto; text-align: center"
-                  ><span class="p-mono" style="display: block; font-size: 11px">Mon</span
-                  ><strong style="font-size: 18px">19</strong></span
-                ><span class="p-grow" style="display: flex; flex-direction: column"
-                  ><strong style="font-size: 14px">WordPress · B14 · Class 13</strong
-                  ><span class="p-small">7:00 PM · Lab 2 · Onsite</span></span
-                >
-              </li>
-            </ul>
-          </section>
-        </div>
-        <section class="p-card p-card--flush" aria-labelledby="past-title">
-          <div class="p-card-head" style="padding: 20px 24px 12px">
-            <h2 id="past-title" class="p-h3">Past recordings</h2>
-            <span class="p-small">All batches</span>
+                <path d="M20 6L9 17l-5-5"></path></svg
+              ><span class="eit-btn__label">Publish when upload finishes</span>
+            </button>
           </div>
-          <div class="p-scroll">
-            <table class="p-table" style="min-width: 820px">
-              <thead>
-                <tr>
-                  <th scope="col">Class</th>
-                  <th scope="col">Type</th>
-                  <th scope="col">Date</th>
-                  <th scope="col">Length</th>
-                  <th scope="col">Watched by</th>
-                  <th scope="col">Status</th>
-                  <th scope="col"><span class="eit-sr">Actions</span></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>React JS · B6 · Class 17</strong></td>
-                  <td>Online</td>
-                  <td>Mon, 12 Oct</td>
-                  <td>1:28:44</td>
-                  <td>21 of 24</td>
-                  <td><span class="eit-badge eit-badge--success">Live</span></td>
-                  <td>
-                    <button
-                      type="button"
-                      class="p-link"
-                      style="
-                        border: 0px;
-                        background: none;
-                        padding: 0px;
-                        font-style: inherit;
-                        font-variant: inherit;
-                        font-stretch: inherit;
-                        line-height: inherit;
-                        font-family: inherit;
-                        font-optical-sizing: inherit;
-                        font-size-adjust: inherit;
-                        font-kerning: inherit;
-                        font-feature-settings: inherit;
-                        font-variation-settings: inherit;
-                        font-weight: 600;
-                        font-size: 14px;
-                        cursor: pointer;
-                      "
-                      data-open-dialog="upload-dialog"
-                    >
-                      Replace
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td><strong>WordPress · B14 · Class 11</strong></td>
-                  <td>Onsite</td>
-                  <td>Mon, 12 Oct</td>
-                  <td>1:52:10</td>
-                  <td>17 of 20</td>
-                  <td><span class="eit-badge eit-badge--success">Live</span></td>
-                  <td>
-                    <button
-                      type="button"
-                      class="p-link"
-                      style="
-                        border: 0px;
-                        background: none;
-                        padding: 0px;
-                        font-style: inherit;
-                        font-variant: inherit;
-                        font-stretch: inherit;
-                        line-height: inherit;
-                        font-family: inherit;
-                        font-optical-sizing: inherit;
-                        font-size-adjust: inherit;
-                        font-kerning: inherit;
-                        font-feature-settings: inherit;
-                        font-variation-settings: inherit;
-                        font-weight: 600;
-                        font-size: 14px;
-                        cursor: pointer;
-                      "
-                      data-open-dialog="upload-dialog"
-                    >
-                      Replace
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td><strong>WordPress · B15 · Class 3</strong></td>
-                  <td>Online</td>
-                  <td>Sat, 10 Oct</td>
-                  <td>1:41:05</td>
-                  <td>22 of 26</td>
-                  <td><span class="eit-badge eit-badge--success">Live</span></td>
-                  <td>
-                    <button
-                      type="button"
-                      class="p-link"
-                      style="
-                        border: 0px;
-                        background: none;
-                        padding: 0px;
-                        font-style: inherit;
-                        font-variant: inherit;
-                        font-stretch: inherit;
-                        line-height: inherit;
-                        font-family: inherit;
-                        font-optical-sizing: inherit;
-                        font-size-adjust: inherit;
-                        font-kerning: inherit;
-                        font-feature-settings: inherit;
-                        font-variation-settings: inherit;
-                        font-weight: 600;
-                        font-size: 14px;
-                        cursor: pointer;
-                      "
-                      data-open-dialog="upload-dialog"
-                    >
-                      Replace
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td><strong>WordPress · B14 · Class 10</strong></td>
-                  <td>Onsite</td>
-                  <td>Thu, 8 Oct</td>
-                  <td>1:48:33</td>
-                  <td>19 of 20</td>
-                  <td><span class="eit-badge eit-badge--success">Live</span></td>
-                  <td>
-                    <button
-                      type="button"
-                      class="p-link"
-                      style="
-                        border: 0px;
-                        background: none;
-                        padding: 0px;
-                        font-style: inherit;
-                        font-variant: inherit;
-                        font-stretch: inherit;
-                        line-height: inherit;
-                        font-family: inherit;
-                        font-optical-sizing: inherit;
-                        font-size-adjust: inherit;
-                        font-kerning: inherit;
-                        font-feature-settings: inherit;
-                        font-variation-settings: inherit;
-                        font-weight: 600;
-                        font-size: 14px;
-                        cursor: pointer;
-                      "
-                      data-open-dialog="upload-dialog"
-                    >
-                      Replace
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="p-notice" style="background: var(--surface); color: var(--ink-2); font-size: 13px">
+            <svg
+              class="eit-icon"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 16v-5"></path>
+              <path d="M12 8h.01"></path></svg
+            ><span
+              ><strong style="color: var(--ink)">Recording an onsite class?</strong> Record on the lab laptop or camera,
+              copy the file off after class, then upload it here. MP4 or MOV, up to 4 GB.</span
+            >
           </div>
         </section>
-      </main></template
+        <section
+          class="p-card"
+          aria-labelledby="week-title"
+          style="flex: 1 1 360px; display: flex; flex-direction: column; gap: 14px"
+        >
+          <h2 id="week-title" class="p-h3">This week</h2>
+          <ul class="p-list">
+            <li>
+              <span style="width: 44px; flex: 0 0 auto; text-align: center"
+                ><span class="p-mono" style="display: block; font-size: 11px">Thu</span
+                ><strong style="font-size: 18px">15</strong></span
+              ><span class="p-grow" style="display: flex; flex-direction: column"
+                ><strong style="font-size: 14px">WordPress · B14 · Class 12</strong
+                ><span class="p-small">7:00 PM · Lab 2 · Onsite</span></span
+              ><span class="eit-badge eit-badge--success">Uploading</span>
+            </li>
+            <li>
+              <span style="width: 44px; flex: 0 0 auto; text-align: center"
+                ><span class="p-mono" style="display: block; font-size: 11px">Thu</span
+                ><strong style="font-size: 18px">15</strong></span
+              ><span class="p-grow" style="display: flex; flex-direction: column"
+                ><strong style="font-size: 14px">React JS · B6 · Class 18</strong
+                ><span class="p-small">9:30 PM · Zoom · Online</span></span
+              ><span class="eit-badge eit-badge--neutral">Tonight</span>
+            </li>
+            <li>
+              <span style="width: 44px; flex: 0 0 auto; text-align: center"
+                ><span class="p-mono" style="display: block; font-size: 11px">Sat</span
+                ><strong style="font-size: 18px">17</strong></span
+              ><span class="p-grow" style="display: flex; flex-direction: column"
+                ><strong style="font-size: 14px">WordPress · B15 · Class 4</strong
+                ><span class="p-small">8:00 PM · Zoom · Online</span></span
+              >
+            </li>
+            <li>
+              <span style="width: 44px; flex: 0 0 auto; text-align: center"
+                ><span class="p-mono" style="display: block; font-size: 11px">Mon</span
+                ><strong style="font-size: 18px">19</strong></span
+              ><span class="p-grow" style="display: flex; flex-direction: column"
+                ><strong style="font-size: 14px">WordPress · B14 · Class 13</strong
+                ><span class="p-small">7:00 PM · Lab 2 · Onsite</span></span
+              >
+            </li>
+          </ul>
+        </section>
+      </div></template
     >
     <template data-state="queued" data-region="[data-region='uploads']"
-      ><main class="p-main" data-region="uploads">
-        <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
-          <div style="display: flex; flex-direction: column; gap: 6px; max-width: 680px">
-            <h1 class="p-h1">Schedule &amp; recordings</h1>
-            <p class="p-body">
-              Upload the recording after every class, onsite or online. Students of that batch see it under Schedule
-              &amp; recordings and get a notification.
-            </p>
+      ><div class="p-split" data-region="uploads">
+        <section
+          class="p-card"
+          aria-labelledby="wait-title"
+          style="flex: 1.3 1 520px; display: flex; flex-direction: column; gap: 16px; border-color: var(--cyan-line)"
+        >
+          <div class="p-card-head">
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <span class="p-eyebrow">Needs a recording</span>
+              <h2 id="wait-title" class="p-h3">Classes waiting for upload</h2>
+            </div>
+            <span class="eit-badge eit-badge--success">All done</span>
           </div>
-          <button type="button" class="ms-upbtn" data-open-dialog="upload-dialog">
-            <svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 15V3M7 8l5-5 5 5M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path></svg
-            >Upload recording
-          </button>
-        </div>
-        <div class="p-split">
-          <section
-            class="p-card"
-            aria-labelledby="wait-title"
-            style="flex: 1.3 1 520px; display: flex; flex-direction: column; gap: 16px; border-color: var(--cyan-line)"
-          >
-            <div class="p-card-head">
-              <div style="display: flex; flex-direction: column; gap: 4px">
-                <span class="p-eyebrow">Needs a recording</span>
-                <h2 id="wait-title" class="p-h3">Classes waiting for upload</h2>
-              </div>
-              <span class="eit-badge eit-badge--success">All done</span>
-            </div>
-            <div class="p-notice" style="background: var(--success-soft); color: var(--success)">
-              <svg
-                class="eit-icon"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                focusable="false"
-                aria-hidden="true"
-              >
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg
-              ><span
-                ><strong>Queued.</strong> The Class 12 recording goes live for Batch 14 as soon as the upload and
-                processing finish. Nothing else is waiting.</span
-              >
-            </div>
-            <div class="p-notice" style="background: var(--surface); color: var(--ink-2); font-size: 13px">
-              <svg
-                class="eit-icon"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                focusable="false"
-                aria-hidden="true"
-              >
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M12 16v-5"></path>
-                <path d="M12 8h.01"></path></svg
-              ><span
-                ><strong style="color: var(--ink)">Recording an onsite class?</strong> Record on the lab laptop or
-                camera, copy the file off after class, then upload it here. MP4 or MOV, up to 4 GB.</span
-              >
-            </div>
-          </section>
-          <section
-            class="p-card"
-            aria-labelledby="week-title"
-            style="flex: 1 1 360px; display: flex; flex-direction: column; gap: 14px"
-          >
-            <h2 id="week-title" class="p-h3">This week</h2>
-            <ul class="p-list">
-              <li>
-                <span style="width: 44px; flex: 0 0 auto; text-align: center"
-                  ><span class="p-mono" style="display: block; font-size: 11px">Thu</span
-                  ><strong style="font-size: 18px">15</strong></span
-                ><span class="p-grow" style="display: flex; flex-direction: column"
-                  ><strong style="font-size: 14px">WordPress · B14 · Class 12</strong
-                  ><span class="p-small">7:00 PM · Lab 2 · Onsite</span></span
-                ><span class="eit-badge eit-badge--success">Queued</span>
-              </li>
-              <li>
-                <span style="width: 44px; flex: 0 0 auto; text-align: center"
-                  ><span class="p-mono" style="display: block; font-size: 11px">Thu</span
-                  ><strong style="font-size: 18px">15</strong></span
-                ><span class="p-grow" style="display: flex; flex-direction: column"
-                  ><strong style="font-size: 14px">React JS · B6 · Class 18</strong
-                  ><span class="p-small">9:30 PM · Zoom · Online</span></span
-                ><span class="eit-badge eit-badge--neutral">Tonight</span>
-              </li>
-              <li>
-                <span style="width: 44px; flex: 0 0 auto; text-align: center"
-                  ><span class="p-mono" style="display: block; font-size: 11px">Sat</span
-                  ><strong style="font-size: 18px">17</strong></span
-                ><span class="p-grow" style="display: flex; flex-direction: column"
-                  ><strong style="font-size: 14px">WordPress · B15 · Class 4</strong
-                  ><span class="p-small">8:00 PM · Zoom · Online</span></span
-                >
-              </li>
-              <li>
-                <span style="width: 44px; flex: 0 0 auto; text-align: center"
-                  ><span class="p-mono" style="display: block; font-size: 11px">Mon</span
-                  ><strong style="font-size: 18px">19</strong></span
-                ><span class="p-grow" style="display: flex; flex-direction: column"
-                  ><strong style="font-size: 14px">WordPress · B14 · Class 13</strong
-                  ><span class="p-small">7:00 PM · Lab 2 · Onsite</span></span
-                >
-              </li>
-            </ul>
-          </section>
-        </div>
-        <section class="p-card p-card--flush" aria-labelledby="past-title">
-          <div class="p-card-head" style="padding: 20px 24px 12px">
-            <h2 id="past-title" class="p-h3">Past recordings</h2>
-            <span class="p-small">All batches</span>
+          <div class="p-notice" style="background: var(--success-soft); color: var(--success)">
+            <svg
+              class="eit-icon"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg
+            ><span
+              ><strong>Queued.</strong> The Class 12 recording goes live for Batch 14 as soon as the upload and
+              processing finish. Nothing else is waiting.</span
+            >
           </div>
-          <div class="p-scroll">
-            <table class="p-table" style="min-width: 820px">
-              <thead>
-                <tr>
-                  <th scope="col">Class</th>
-                  <th scope="col">Type</th>
-                  <th scope="col">Date</th>
-                  <th scope="col">Length</th>
-                  <th scope="col">Watched by</th>
-                  <th scope="col">Status</th>
-                  <th scope="col"><span class="eit-sr">Actions</span></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>React JS · B6 · Class 17</strong></td>
-                  <td>Online</td>
-                  <td>Mon, 12 Oct</td>
-                  <td>1:28:44</td>
-                  <td>21 of 24</td>
-                  <td><span class="eit-badge eit-badge--success">Live</span></td>
-                  <td>
-                    <button
-                      type="button"
-                      class="p-link"
-                      style="
-                        border: 0px;
-                        background: none;
-                        padding: 0px;
-                        font-style: inherit;
-                        font-variant: inherit;
-                        font-stretch: inherit;
-                        line-height: inherit;
-                        font-family: inherit;
-                        font-optical-sizing: inherit;
-                        font-size-adjust: inherit;
-                        font-kerning: inherit;
-                        font-feature-settings: inherit;
-                        font-variation-settings: inherit;
-                        font-weight: 600;
-                        font-size: 14px;
-                        cursor: pointer;
-                      "
-                      data-open-dialog="upload-dialog"
-                    >
-                      Replace
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td><strong>WordPress · B14 · Class 11</strong></td>
-                  <td>Onsite</td>
-                  <td>Mon, 12 Oct</td>
-                  <td>1:52:10</td>
-                  <td>17 of 20</td>
-                  <td><span class="eit-badge eit-badge--success">Live</span></td>
-                  <td>
-                    <button
-                      type="button"
-                      class="p-link"
-                      style="
-                        border: 0px;
-                        background: none;
-                        padding: 0px;
-                        font-style: inherit;
-                        font-variant: inherit;
-                        font-stretch: inherit;
-                        line-height: inherit;
-                        font-family: inherit;
-                        font-optical-sizing: inherit;
-                        font-size-adjust: inherit;
-                        font-kerning: inherit;
-                        font-feature-settings: inherit;
-                        font-variation-settings: inherit;
-                        font-weight: 600;
-                        font-size: 14px;
-                        cursor: pointer;
-                      "
-                      data-open-dialog="upload-dialog"
-                    >
-                      Replace
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td><strong>WordPress · B15 · Class 3</strong></td>
-                  <td>Online</td>
-                  <td>Sat, 10 Oct</td>
-                  <td>1:41:05</td>
-                  <td>22 of 26</td>
-                  <td><span class="eit-badge eit-badge--success">Live</span></td>
-                  <td>
-                    <button
-                      type="button"
-                      class="p-link"
-                      style="
-                        border: 0px;
-                        background: none;
-                        padding: 0px;
-                        font-style: inherit;
-                        font-variant: inherit;
-                        font-stretch: inherit;
-                        line-height: inherit;
-                        font-family: inherit;
-                        font-optical-sizing: inherit;
-                        font-size-adjust: inherit;
-                        font-kerning: inherit;
-                        font-feature-settings: inherit;
-                        font-variation-settings: inherit;
-                        font-weight: 600;
-                        font-size: 14px;
-                        cursor: pointer;
-                      "
-                      data-open-dialog="upload-dialog"
-                    >
-                      Replace
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td><strong>WordPress · B14 · Class 10</strong></td>
-                  <td>Onsite</td>
-                  <td>Thu, 8 Oct</td>
-                  <td>1:48:33</td>
-                  <td>19 of 20</td>
-                  <td><span class="eit-badge eit-badge--success">Live</span></td>
-                  <td>
-                    <button
-                      type="button"
-                      class="p-link"
-                      style="
-                        border: 0px;
-                        background: none;
-                        padding: 0px;
-                        font-style: inherit;
-                        font-variant: inherit;
-                        font-stretch: inherit;
-                        line-height: inherit;
-                        font-family: inherit;
-                        font-optical-sizing: inherit;
-                        font-size-adjust: inherit;
-                        font-kerning: inherit;
-                        font-feature-settings: inherit;
-                        font-variation-settings: inherit;
-                        font-weight: 600;
-                        font-size: 14px;
-                        cursor: pointer;
-                      "
-                      data-open-dialog="upload-dialog"
-                    >
-                      Replace
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="p-notice" style="background: var(--surface); color: var(--ink-2); font-size: 13px">
+            <svg
+              class="eit-icon"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 16v-5"></path>
+              <path d="M12 8h.01"></path></svg
+            ><span
+              ><strong style="color: var(--ink)">Recording an onsite class?</strong> Record on the lab laptop or camera,
+              copy the file off after class, then upload it here. MP4 or MOV, up to 4 GB.</span
+            >
           </div>
         </section>
-      </main></template
+        <section
+          class="p-card"
+          aria-labelledby="week-title"
+          style="flex: 1 1 360px; display: flex; flex-direction: column; gap: 14px"
+        >
+          <h2 id="week-title" class="p-h3">This week</h2>
+          <ul class="p-list">
+            <li>
+              <span style="width: 44px; flex: 0 0 auto; text-align: center"
+                ><span class="p-mono" style="display: block; font-size: 11px">Thu</span
+                ><strong style="font-size: 18px">15</strong></span
+              ><span class="p-grow" style="display: flex; flex-direction: column"
+                ><strong style="font-size: 14px">WordPress · B14 · Class 12</strong
+                ><span class="p-small">7:00 PM · Lab 2 · Onsite</span></span
+              ><span class="eit-badge eit-badge--success">Queued</span>
+            </li>
+            <li>
+              <span style="width: 44px; flex: 0 0 auto; text-align: center"
+                ><span class="p-mono" style="display: block; font-size: 11px">Thu</span
+                ><strong style="font-size: 18px">15</strong></span
+              ><span class="p-grow" style="display: flex; flex-direction: column"
+                ><strong style="font-size: 14px">React JS · B6 · Class 18</strong
+                ><span class="p-small">9:30 PM · Zoom · Online</span></span
+              ><span class="eit-badge eit-badge--neutral">Tonight</span>
+            </li>
+            <li>
+              <span style="width: 44px; flex: 0 0 auto; text-align: center"
+                ><span class="p-mono" style="display: block; font-size: 11px">Sat</span
+                ><strong style="font-size: 18px">17</strong></span
+              ><span class="p-grow" style="display: flex; flex-direction: column"
+                ><strong style="font-size: 14px">WordPress · B15 · Class 4</strong
+                ><span class="p-small">8:00 PM · Zoom · Online</span></span
+              >
+            </li>
+            <li>
+              <span style="width: 44px; flex: 0 0 auto; text-align: center"
+                ><span class="p-mono" style="display: block; font-size: 11px">Mon</span
+                ><strong style="font-size: 18px">19</strong></span
+              ><span class="p-grow" style="display: flex; flex-direction: column"
+                ><strong style="font-size: 14px">WordPress · B14 · Class 13</strong
+                ><span class="p-small">7:00 PM · Lab 2 · Onsite</span></span
+              >
+            </li>
+          </ul>
+        </section>
+      </div></template
     >
   </body>
 </html>

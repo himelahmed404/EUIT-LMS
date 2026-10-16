@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Students and payments · European IT LMS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap"
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../assets/css/eit.css" />
     <link rel="stylesheet" href="../assets/css/panel.css" />
     <link rel="stylesheet" href="../assets/css/app.css" />
-    <script src="../assets/js/app.js" defer></script>
+    <script src="../assets/js/app.js" defer=""></script>
   </head>
   <body>
     <div class="p-shell">
@@ -301,7 +301,7 @@
             </div>
           </div>
         </header>
-        <main class="p-main" data-region="filtered">
+        <main class="p-main">
           <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
             <div style="display: flex; flex-direction: column; gap: 6px">
               <h1 class="p-h1">Students &amp; payments</h1>
@@ -448,7 +448,7 @@
                 ><span class="eit-chip__label">Paid in full</span>
               </button>
             </div>
-            <a class="p-link" href="#"
+            <a class="p-link" href="#" data-toast="Exporting students.csv"
               ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                 <path d="m7 10 5 5 5-5"></path>
@@ -456,7 +456,7 @@
               >Export CSV</a
             >
           </div>
-          <section class="p-card p-card--flush" aria-label="Students">
+          <section class="p-card p-card--flush" aria-label="Students" data-region="filtered">
             <div class="p-scroll">
               <table class="p-table" style="min-width: 1000px">
                 <thead>
@@ -518,7 +518,9 @@
                     </td>
                     <td style="white-space: nowrap">৳5,000 · was due 9 Oct</td>
                     <td><span class="eit-badge eit-badge--danger">Overdue 6 days</span></td>
-                    <td style="white-space: nowrap"><a class="p-link" href="#">Send reminder</a></td>
+                    <td style="white-space: nowrap">
+                      <a class="p-link" href="#" data-toast="Reminder sent by SMS">Send reminder</a>
+                    </td>
                   </tr>
                   <tr>
                     <td>
@@ -591,7 +593,9 @@
                     </td>
                     <td style="white-space: nowrap">৳5,000 · was due 1 Oct</td>
                     <td><span class="eit-badge eit-badge--warning">Access paused</span></td>
-                    <td style="white-space: nowrap"><a class="p-link" href="#">Send reminder</a></td>
+                    <td style="white-space: nowrap">
+                      <a class="p-link" href="#" data-toast="Reminder sent by SMS">Send reminder</a>
+                    </td>
                   </tr>
                   <tr>
                     <td>
@@ -688,1108 +692,492 @@
       </div>
     </div>
     <template data-state="filtered:0" data-region="[data-region='filtered']"
-      ><main class="p-main" data-region="filtered">
-        <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
-          <div style="display: flex; flex-direction: column; gap: 6px">
-            <h1 class="p-h1">Students &amp; payments</h1>
-            <p class="p-body">Online payments come in through the gateway. Record campus cash payments here.</p>
-          </div>
-          <div class="p-row" style="flex-wrap: wrap">
-            <button class="p-ghostbtn" type="button">Record cash payment</button
-            ><button type="button" class="eit-btn eit-btn--primary eit-btn--md">
-              <svg
-                class="eit-icon eit-btn__lead"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                focusable="false"
-                aria-hidden="true"
-              >
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg
-              ><span class="eit-btn__label">Enroll a student</span>
-            </button>
-          </div>
+      ><section class="p-card p-card--flush" aria-label="Students" data-region="filtered">
+        <div class="p-scroll">
+          <table class="p-table" style="min-width: 1000px">
+            <thead>
+              <tr>
+                <th scope="col">Student</th>
+                <th scope="col">Course and batch</th>
+                <th scope="col">Format</th>
+                <th scope="col" style="width: 190px">Paid</th>
+                <th scope="col">Next installment</th>
+                <th scope="col">Status</th>
+                <th scope="col"><span class="eit-sr">Actions</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <span class="p-cell-person"
+                    ><span class="p-avatar p-avatar--sm">NJ</span
+                    ><span style="display: flex; flex-direction: column"
+                      ><a class="p-link" href="student-record.html" style="color: var(--ink); font-size: 14px"
+                        >Nusrat Jahan</a
+                      ><span class="p-small" style="font-size: 12px">EIT-24-0148</span></span
+                    ></span
+                  >
+                </td>
+                <td>WordPress · Batch 14</td>
+                <td>Offline</td>
+                <td>
+                  <span style="display: flex; flex-direction: column; gap: 6px"
+                    ><span style="font-variant-numeric: tabular-nums; white-space: nowrap"
+                      ><strong>৳5,000</strong> of ৳15,000</span
+                    ><span class="p-bar p-bar--thin"><span style="width: 33%"></span></span
+                  ></span>
+                </td>
+                <td style="white-space: nowrap">৳5,000 · 15 Nov</td>
+                <td><span class="eit-badge eit-badge--success">On track</span></td>
+                <td style="white-space: nowrap"><a class="p-link" href="student-record.html">View</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="p-cell-person"
+                    ><span class="p-avatar p-avatar--sm">RI</span
+                    ><span style="display: flex; flex-direction: column"
+                      ><a class="p-link" href="student-record.html" style="color: var(--ink); font-size: 14px"
+                        >Rafiq Islam</a
+                      ><span class="p-small" style="font-size: 12px">EIT-24-0161</span></span
+                    ></span
+                  >
+                </td>
+                <td>WordPress · Batch 14</td>
+                <td>Offline</td>
+                <td>
+                  <span style="display: flex; flex-direction: column; gap: 6px"
+                    ><span style="font-variant-numeric: tabular-nums; white-space: nowrap"
+                      ><strong>৳5,000</strong> of ৳15,000</span
+                    ><span class="p-bar p-bar--thin"><span style="width: 33%; background: var(--danger)"></span></span
+                  ></span>
+                </td>
+                <td style="white-space: nowrap">৳5,000 · was due 9 Oct</td>
+                <td><span class="eit-badge eit-badge--danger">Overdue 6 days</span></td>
+                <td style="white-space: nowrap">
+                  <a class="p-link" href="#" data-toast="Reminder sent by SMS">Send reminder</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="p-cell-person"
+                    ><span class="p-avatar p-avatar--sm">FA</span
+                    ><span style="display: flex; flex-direction: column"
+                      ><a class="p-link" href="student-record.html" style="color: var(--ink); font-size: 14px"
+                        >Farzana Akter</a
+                      ><span class="p-small" style="font-size: 12px">EIT-24-0141</span></span
+                    ></span
+                  >
+                </td>
+                <td>React JS · Batch 6</td>
+                <td>Online</td>
+                <td>
+                  <span style="display: flex; flex-direction: column; gap: 6px"
+                    ><span style="font-variant-numeric: tabular-nums; white-space: nowrap"
+                      ><strong>৳4,000</strong> of ৳12,000</span
+                    ><span class="p-bar p-bar--thin"><span style="width: 33%"></span></span
+                  ></span>
+                </td>
+                <td style="white-space: nowrap">৳4,000 · 18 Oct</td>
+                <td><span class="eit-badge eit-badge--warning">Due in 3 days</span></td>
+                <td style="white-space: nowrap"><a class="p-link" href="student-record.html">View</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="p-cell-person"
+                    ><span class="p-avatar p-avatar--sm">SA</span
+                    ><span style="display: flex; flex-direction: column"
+                      ><a class="p-link" href="student-record.html" style="color: var(--ink); font-size: 14px"
+                        >Sadia Afrin</a
+                      ><span class="p-small" style="font-size: 12px">EIT-24-0139</span></span
+                    ></span
+                  >
+                </td>
+                <td>React JS · Batch 6</td>
+                <td>Online</td>
+                <td>
+                  <span style="display: flex; flex-direction: column; gap: 6px"
+                    ><span style="font-variant-numeric: tabular-nums; white-space: nowrap"
+                      ><strong>৳12,000</strong> of ৳12,000</span
+                    ><span class="p-bar p-bar--thin"><span style="width: 100%"></span></span
+                  ></span>
+                </td>
+                <td style="white-space: nowrap">—</td>
+                <td><span class="eit-badge eit-badge--neutral">Paid in full</span></td>
+                <td style="white-space: nowrap"><a class="p-link" href="student-record.html">View</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="p-cell-person"
+                    ><span class="p-avatar p-avatar--sm">MH</span
+                    ><span style="display: flex; flex-direction: column"
+                      ><a class="p-link" href="student-record.html" style="color: var(--ink); font-size: 14px"
+                        >Mehedi Hasan</a
+                      ><span class="p-small" style="font-size: 12px">EIT-24-0155</span></span
+                    ></span
+                  >
+                </td>
+                <td>WordPress · Batch 14</td>
+                <td>Offline</td>
+                <td>
+                  <span style="display: flex; flex-direction: column; gap: 6px"
+                    ><span style="font-variant-numeric: tabular-nums; white-space: nowrap"
+                      ><strong>৳5,000</strong> of ৳15,000</span
+                    ><span class="p-bar p-bar--thin"><span style="width: 33%; background: var(--danger)"></span></span
+                  ></span>
+                </td>
+                <td style="white-space: nowrap">৳5,000 · was due 1 Oct</td>
+                <td><span class="eit-badge eit-badge--warning">Access paused</span></td>
+                <td style="white-space: nowrap">
+                  <a class="p-link" href="#" data-toast="Reminder sent by SMS">Send reminder</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="p-cell-person"
+                    ><span class="p-avatar p-avatar--sm">LC</span
+                    ><span style="display: flex; flex-direction: column"
+                      ><a class="p-link" href="student-record.html" style="color: var(--ink); font-size: 14px"
+                        >Lamia Chowdhury</a
+                      ><span class="p-small" style="font-size: 12px">EIT-24-0201</span></span
+                    ></span
+                  >
+                </td>
+                <td>Graphic Design · Batch 10</td>
+                <td>Offline</td>
+                <td>
+                  <span style="display: flex; flex-direction: column; gap: 6px"
+                    ><span style="font-variant-numeric: tabular-nums; white-space: nowrap"
+                      ><strong>৳6,000</strong> of ৳12,000</span
+                    ><span class="p-bar p-bar--thin"><span style="width: 50%"></span></span
+                  ></span>
+                </td>
+                <td style="white-space: nowrap">৳6,000 · 21 Oct</td>
+                <td><span class="eit-badge eit-badge--warning">Due in 6 days</span></td>
+                <td style="white-space: nowrap"><a class="p-link" href="student-record.html">View</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="p-cell-person"
+                    ><span class="p-avatar p-avatar--sm">TH</span
+                    ><span style="display: flex; flex-direction: column"
+                      ><a class="p-link" href="student-record.html" style="color: var(--ink); font-size: 14px"
+                        >Tanvir Hasan</a
+                      ><span class="p-small" style="font-size: 12px">EIT-24-0152</span></span
+                    ></span
+                  >
+                </td>
+                <td>WordPress · Batch 14</td>
+                <td>Offline</td>
+                <td>
+                  <span style="display: flex; flex-direction: column; gap: 6px"
+                    ><span style="font-variant-numeric: tabular-nums; white-space: nowrap"
+                      ><strong>৳10,000</strong> of ৳15,000</span
+                    ><span class="p-bar p-bar--thin"><span style="width: 67%"></span></span
+                  ></span>
+                </td>
+                <td style="white-space: nowrap">৳5,000 · 15 Nov</td>
+                <td><span class="eit-badge eit-badge--success">On track</span></td>
+                <td style="white-space: nowrap"><a class="p-link" href="student-record.html">View</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="p-cell-person"
+                    ><span class="p-avatar p-avatar--sm">AH</span
+                    ><span style="display: flex; flex-direction: column"
+                      ><a class="p-link" href="student-record.html" style="color: var(--ink); font-size: 14px"
+                        >Arif Hossain</a
+                      ><span class="p-small" style="font-size: 12px">EIT-24-0170</span></span
+                    ></span
+                  >
+                </td>
+                <td>WordPress · Batch 14</td>
+                <td>Offline</td>
+                <td>
+                  <span style="display: flex; flex-direction: column; gap: 6px"
+                    ><span style="font-variant-numeric: tabular-nums; white-space: nowrap"
+                      ><strong>৳15,000</strong> of ৳15,000</span
+                    ><span class="p-bar p-bar--thin"><span style="width: 100%"></span></span
+                  ></span>
+                </td>
+                <td style="white-space: nowrap">—</td>
+                <td><span class="eit-badge eit-badge--neutral">Paid in full</span></td>
+                <td style="white-space: nowrap"><a class="p-link" href="student-record.html">View</a></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 16px">
-          <div class="p-card" style="display: flex; flex-direction: column; gap: 8px; padding: 20px">
-            <span class="p-mono">Collected in October</span><span class="p-num">৳6,85,000</span
-            ><span class="p-small">৳5,92,000 online · ৳93,000 at campus</span>
-          </div>
-          <div class="p-card" style="display: flex; flex-direction: column; gap: 8px; padding: 20px">
-            <span class="p-mono">Due in the next 7 days</span><span class="p-num">৳45,000</span
-            ><span class="p-small">9 installments · reminders go out 3 days before</span>
-          </div>
-          <div
-            class="p-card"
-            style="display: flex; flex-direction: column; gap: 8px; padding: 20px; border-color: rgb(243, 199, 194)"
-          >
-            <span class="p-mono" style="color: var(--danger)">Overdue</span><span class="p-num">৳70,000</span
-            ><span class="p-small">14 installments from 13 students</span>
-          </div>
-        </div>
-        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
-          <div class="eit-chips" role="group" aria-label="Payment status">
-            <button
-              type="button"
-              class="eit-chip is-on"
-              aria-pressed="true"
-              data-part-of="filtered"
-              data-part="0"
-              data-value="0"
-            >
-              <span class="eit-chip__check" aria-hidden="true"
-                ><svg
-                  class="eit-icon"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  focusable="false"
-                  aria-hidden="true"
-                >
-                  <path d="M20 6L9 17l-5-5"></path></svg></span
-              ><span class="eit-chip__label">All students</span></button
-            ><button
-              type="button"
-              class="eit-chip"
-              aria-pressed="false"
-              data-part-of="filtered"
-              data-part="0"
-              data-value="1"
-            >
-              <span class="eit-chip__check" aria-hidden="true"
-                ><svg
-                  class="eit-icon"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  focusable="false"
-                  aria-hidden="true"
-                >
-                  <path d="M20 6L9 17l-5-5"></path></svg></span
-              ><span class="eit-chip__label">Overdue</span></button
-            ><button
-              type="button"
-              class="eit-chip"
-              aria-pressed="false"
-              data-part-of="filtered"
-              data-part="0"
-              data-value="2"
-            >
-              <span class="eit-chip__check" aria-hidden="true"
-                ><svg
-                  class="eit-icon"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  focusable="false"
-                  aria-hidden="true"
-                >
-                  <path d="M20 6L9 17l-5-5"></path></svg></span
-              ><span class="eit-chip__label">Due this week</span></button
-            ><button
-              type="button"
-              class="eit-chip"
-              aria-pressed="false"
-              data-part-of="filtered"
-              data-part="0"
-              data-value="3"
-            >
-              <span class="eit-chip__check" aria-hidden="true"
-                ><svg
-                  class="eit-icon"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  focusable="false"
-                  aria-hidden="true"
-                >
-                  <path d="M20 6L9 17l-5-5"></path></svg></span
-              ><span class="eit-chip__label">Paid in full</span>
-            </button>
-          </div>
-          <a class="p-link" href="#"
-            ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <path d="m7 10 5 5 5-5"></path>
-              <path d="M12 15V3"></path></svg
-            >Export CSV</a
+        <div
+          class="p-row"
+          style="
+            padding: 14px 24px;
+            border-top: 1px solid var(--line-soft);
+            justify-content: space-between;
+            flex-wrap: wrap;
+          "
+        >
+          <span class="p-small">Showing 8 of 286 students</span
+          ><span class="p-row" style="gap: 8px"
+            ><a class="p-ghostbtn" href="#" aria-label="Previous page" style="padding: 0px 14px">Previous</a
+            ><a class="p-ghostbtn" href="#" aria-label="Next page" style="padding: 0px 14px">Next</a></span
           >
         </div>
-        <section class="p-card p-card--flush" aria-label="Students">
-          <div class="p-scroll">
-            <table class="p-table" style="min-width: 1000px">
-              <thead>
-                <tr>
-                  <th scope="col">Student</th>
-                  <th scope="col">Course and batch</th>
-                  <th scope="col">Format</th>
-                  <th scope="col" style="width: 190px">Paid</th>
-                  <th scope="col">Next installment</th>
-                  <th scope="col">Status</th>
-                  <th scope="col"><span class="eit-sr">Actions</span></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <span class="p-cell-person"
-                      ><span class="p-avatar p-avatar--sm">NJ</span
-                      ><span style="display: flex; flex-direction: column"
-                        ><a class="p-link" href="student-record.html" style="color: var(--ink); font-size: 14px"
-                          >Nusrat Jahan</a
-                        ><span class="p-small" style="font-size: 12px">EIT-24-0148</span></span
-                      ></span
-                    >
-                  </td>
-                  <td>WordPress · Batch 14</td>
-                  <td>Offline</td>
-                  <td>
-                    <span style="display: flex; flex-direction: column; gap: 6px"
-                      ><span style="font-variant-numeric: tabular-nums; white-space: nowrap"
-                        ><strong>৳5,000</strong> of ৳15,000</span
-                      ><span class="p-bar p-bar--thin"><span style="width: 33%"></span></span
-                    ></span>
-                  </td>
-                  <td style="white-space: nowrap">৳5,000 · 15 Nov</td>
-                  <td><span class="eit-badge eit-badge--success">On track</span></td>
-                  <td style="white-space: nowrap"><a class="p-link" href="student-record.html">View</a></td>
-                </tr>
-                <tr>
-                  <td>
-                    <span class="p-cell-person"
-                      ><span class="p-avatar p-avatar--sm">RI</span
-                      ><span style="display: flex; flex-direction: column"
-                        ><a class="p-link" href="student-record.html" style="color: var(--ink); font-size: 14px"
-                          >Rafiq Islam</a
-                        ><span class="p-small" style="font-size: 12px">EIT-24-0161</span></span
-                      ></span
-                    >
-                  </td>
-                  <td>WordPress · Batch 14</td>
-                  <td>Offline</td>
-                  <td>
-                    <span style="display: flex; flex-direction: column; gap: 6px"
-                      ><span style="font-variant-numeric: tabular-nums; white-space: nowrap"
-                        ><strong>৳5,000</strong> of ৳15,000</span
-                      ><span class="p-bar p-bar--thin"><span style="width: 33%; background: var(--danger)"></span></span
-                    ></span>
-                  </td>
-                  <td style="white-space: nowrap">৳5,000 · was due 9 Oct</td>
-                  <td><span class="eit-badge eit-badge--danger">Overdue 6 days</span></td>
-                  <td style="white-space: nowrap"><a class="p-link" href="#">Send reminder</a></td>
-                </tr>
-                <tr>
-                  <td>
-                    <span class="p-cell-person"
-                      ><span class="p-avatar p-avatar--sm">FA</span
-                      ><span style="display: flex; flex-direction: column"
-                        ><a class="p-link" href="student-record.html" style="color: var(--ink); font-size: 14px"
-                          >Farzana Akter</a
-                        ><span class="p-small" style="font-size: 12px">EIT-24-0141</span></span
-                      ></span
-                    >
-                  </td>
-                  <td>React JS · Batch 6</td>
-                  <td>Online</td>
-                  <td>
-                    <span style="display: flex; flex-direction: column; gap: 6px"
-                      ><span style="font-variant-numeric: tabular-nums; white-space: nowrap"
-                        ><strong>৳4,000</strong> of ৳12,000</span
-                      ><span class="p-bar p-bar--thin"><span style="width: 33%"></span></span
-                    ></span>
-                  </td>
-                  <td style="white-space: nowrap">৳4,000 · 18 Oct</td>
-                  <td><span class="eit-badge eit-badge--warning">Due in 3 days</span></td>
-                  <td style="white-space: nowrap"><a class="p-link" href="student-record.html">View</a></td>
-                </tr>
-                <tr>
-                  <td>
-                    <span class="p-cell-person"
-                      ><span class="p-avatar p-avatar--sm">SA</span
-                      ><span style="display: flex; flex-direction: column"
-                        ><a class="p-link" href="student-record.html" style="color: var(--ink); font-size: 14px"
-                          >Sadia Afrin</a
-                        ><span class="p-small" style="font-size: 12px">EIT-24-0139</span></span
-                      ></span
-                    >
-                  </td>
-                  <td>React JS · Batch 6</td>
-                  <td>Online</td>
-                  <td>
-                    <span style="display: flex; flex-direction: column; gap: 6px"
-                      ><span style="font-variant-numeric: tabular-nums; white-space: nowrap"
-                        ><strong>৳12,000</strong> of ৳12,000</span
-                      ><span class="p-bar p-bar--thin"><span style="width: 100%"></span></span
-                    ></span>
-                  </td>
-                  <td style="white-space: nowrap">—</td>
-                  <td><span class="eit-badge eit-badge--neutral">Paid in full</span></td>
-                  <td style="white-space: nowrap"><a class="p-link" href="student-record.html">View</a></td>
-                </tr>
-                <tr>
-                  <td>
-                    <span class="p-cell-person"
-                      ><span class="p-avatar p-avatar--sm">MH</span
-                      ><span style="display: flex; flex-direction: column"
-                        ><a class="p-link" href="student-record.html" style="color: var(--ink); font-size: 14px"
-                          >Mehedi Hasan</a
-                        ><span class="p-small" style="font-size: 12px">EIT-24-0155</span></span
-                      ></span
-                    >
-                  </td>
-                  <td>WordPress · Batch 14</td>
-                  <td>Offline</td>
-                  <td>
-                    <span style="display: flex; flex-direction: column; gap: 6px"
-                      ><span style="font-variant-numeric: tabular-nums; white-space: nowrap"
-                        ><strong>৳5,000</strong> of ৳15,000</span
-                      ><span class="p-bar p-bar--thin"><span style="width: 33%; background: var(--danger)"></span></span
-                    ></span>
-                  </td>
-                  <td style="white-space: nowrap">৳5,000 · was due 1 Oct</td>
-                  <td><span class="eit-badge eit-badge--warning">Access paused</span></td>
-                  <td style="white-space: nowrap"><a class="p-link" href="#">Send reminder</a></td>
-                </tr>
-                <tr>
-                  <td>
-                    <span class="p-cell-person"
-                      ><span class="p-avatar p-avatar--sm">LC</span
-                      ><span style="display: flex; flex-direction: column"
-                        ><a class="p-link" href="student-record.html" style="color: var(--ink); font-size: 14px"
-                          >Lamia Chowdhury</a
-                        ><span class="p-small" style="font-size: 12px">EIT-24-0201</span></span
-                      ></span
-                    >
-                  </td>
-                  <td>Graphic Design · Batch 10</td>
-                  <td>Offline</td>
-                  <td>
-                    <span style="display: flex; flex-direction: column; gap: 6px"
-                      ><span style="font-variant-numeric: tabular-nums; white-space: nowrap"
-                        ><strong>৳6,000</strong> of ৳12,000</span
-                      ><span class="p-bar p-bar--thin"><span style="width: 50%"></span></span
-                    ></span>
-                  </td>
-                  <td style="white-space: nowrap">৳6,000 · 21 Oct</td>
-                  <td><span class="eit-badge eit-badge--warning">Due in 6 days</span></td>
-                  <td style="white-space: nowrap"><a class="p-link" href="student-record.html">View</a></td>
-                </tr>
-                <tr>
-                  <td>
-                    <span class="p-cell-person"
-                      ><span class="p-avatar p-avatar--sm">TH</span
-                      ><span style="display: flex; flex-direction: column"
-                        ><a class="p-link" href="student-record.html" style="color: var(--ink); font-size: 14px"
-                          >Tanvir Hasan</a
-                        ><span class="p-small" style="font-size: 12px">EIT-24-0152</span></span
-                      ></span
-                    >
-                  </td>
-                  <td>WordPress · Batch 14</td>
-                  <td>Offline</td>
-                  <td>
-                    <span style="display: flex; flex-direction: column; gap: 6px"
-                      ><span style="font-variant-numeric: tabular-nums; white-space: nowrap"
-                        ><strong>৳10,000</strong> of ৳15,000</span
-                      ><span class="p-bar p-bar--thin"><span style="width: 67%"></span></span
-                    ></span>
-                  </td>
-                  <td style="white-space: nowrap">৳5,000 · 15 Nov</td>
-                  <td><span class="eit-badge eit-badge--success">On track</span></td>
-                  <td style="white-space: nowrap"><a class="p-link" href="student-record.html">View</a></td>
-                </tr>
-                <tr>
-                  <td>
-                    <span class="p-cell-person"
-                      ><span class="p-avatar p-avatar--sm">AH</span
-                      ><span style="display: flex; flex-direction: column"
-                        ><a class="p-link" href="student-record.html" style="color: var(--ink); font-size: 14px"
-                          >Arif Hossain</a
-                        ><span class="p-small" style="font-size: 12px">EIT-24-0170</span></span
-                      ></span
-                    >
-                  </td>
-                  <td>WordPress · Batch 14</td>
-                  <td>Offline</td>
-                  <td>
-                    <span style="display: flex; flex-direction: column; gap: 6px"
-                      ><span style="font-variant-numeric: tabular-nums; white-space: nowrap"
-                        ><strong>৳15,000</strong> of ৳15,000</span
-                      ><span class="p-bar p-bar--thin"><span style="width: 100%"></span></span
-                    ></span>
-                  </td>
-                  <td style="white-space: nowrap">—</td>
-                  <td><span class="eit-badge eit-badge--neutral">Paid in full</span></td>
-                  <td style="white-space: nowrap"><a class="p-link" href="student-record.html">View</a></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div
-            class="p-row"
-            style="
-              padding: 14px 24px;
-              border-top: 1px solid var(--line-soft);
-              justify-content: space-between;
-              flex-wrap: wrap;
-            "
-          >
-            <span class="p-small">Showing 8 of 286 students</span
-            ><span class="p-row" style="gap: 8px"
-              ><a class="p-ghostbtn" href="#" aria-label="Previous page" style="padding: 0px 14px">Previous</a
-              ><a class="p-ghostbtn" href="#" aria-label="Next page" style="padding: 0px 14px">Next</a></span
-            >
-          </div>
-        </section>
-      </main></template
+      </section></template
     >
     <template data-state="filtered:1" data-region="[data-region='filtered']"
-      ><main class="p-main" data-region="filtered">
-        <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
-          <div style="display: flex; flex-direction: column; gap: 6px">
-            <h1 class="p-h1">Students &amp; payments</h1>
-            <p class="p-body">Online payments come in through the gateway. Record campus cash payments here.</p>
-          </div>
-          <div class="p-row" style="flex-wrap: wrap">
-            <button class="p-ghostbtn" type="button">Record cash payment</button
-            ><button type="button" class="eit-btn eit-btn--primary eit-btn--md">
-              <svg
-                class="eit-icon eit-btn__lead"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                focusable="false"
-                aria-hidden="true"
-              >
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg
-              ><span class="eit-btn__label">Enroll a student</span>
-            </button>
-          </div>
+      ><section class="p-card p-card--flush" aria-label="Students" data-region="filtered">
+        <div class="p-scroll">
+          <table class="p-table" style="min-width: 1000px">
+            <thead>
+              <tr>
+                <th scope="col">Student</th>
+                <th scope="col">Course and batch</th>
+                <th scope="col">Format</th>
+                <th scope="col" style="width: 190px">Paid</th>
+                <th scope="col">Next installment</th>
+                <th scope="col">Status</th>
+                <th scope="col"><span class="eit-sr">Actions</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <span class="p-cell-person"
+                    ><span class="p-avatar p-avatar--sm">RI</span
+                    ><span style="display: flex; flex-direction: column"
+                      ><a class="p-link" href="student-record.html" style="color: var(--ink); font-size: 14px"
+                        >Rafiq Islam</a
+                      ><span class="p-small" style="font-size: 12px">EIT-24-0161</span></span
+                    ></span
+                  >
+                </td>
+                <td>WordPress · Batch 14</td>
+                <td>Offline</td>
+                <td>
+                  <span style="display: flex; flex-direction: column; gap: 6px"
+                    ><span style="font-variant-numeric: tabular-nums; white-space: nowrap"
+                      ><strong>৳5,000</strong> of ৳15,000</span
+                    ><span class="p-bar p-bar--thin"><span style="width: 33%; background: var(--danger)"></span></span
+                  ></span>
+                </td>
+                <td style="white-space: nowrap">৳5,000 · was due 9 Oct</td>
+                <td><span class="eit-badge eit-badge--danger">Overdue 6 days</span></td>
+                <td style="white-space: nowrap">
+                  <a class="p-link" href="#" data-toast="Reminder sent by SMS">Send reminder</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="p-cell-person"
+                    ><span class="p-avatar p-avatar--sm">MH</span
+                    ><span style="display: flex; flex-direction: column"
+                      ><a class="p-link" href="student-record.html" style="color: var(--ink); font-size: 14px"
+                        >Mehedi Hasan</a
+                      ><span class="p-small" style="font-size: 12px">EIT-24-0155</span></span
+                    ></span
+                  >
+                </td>
+                <td>WordPress · Batch 14</td>
+                <td>Offline</td>
+                <td>
+                  <span style="display: flex; flex-direction: column; gap: 6px"
+                    ><span style="font-variant-numeric: tabular-nums; white-space: nowrap"
+                      ><strong>৳5,000</strong> of ৳15,000</span
+                    ><span class="p-bar p-bar--thin"><span style="width: 33%; background: var(--danger)"></span></span
+                  ></span>
+                </td>
+                <td style="white-space: nowrap">৳5,000 · was due 1 Oct</td>
+                <td><span class="eit-badge eit-badge--warning">Access paused</span></td>
+                <td style="white-space: nowrap">
+                  <a class="p-link" href="#" data-toast="Reminder sent by SMS">Send reminder</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 16px">
-          <div class="p-card" style="display: flex; flex-direction: column; gap: 8px; padding: 20px">
-            <span class="p-mono">Collected in October</span><span class="p-num">৳6,85,000</span
-            ><span class="p-small">৳5,92,000 online · ৳93,000 at campus</span>
-          </div>
-          <div class="p-card" style="display: flex; flex-direction: column; gap: 8px; padding: 20px">
-            <span class="p-mono">Due in the next 7 days</span><span class="p-num">৳45,000</span
-            ><span class="p-small">9 installments · reminders go out 3 days before</span>
-          </div>
-          <div
-            class="p-card"
-            style="display: flex; flex-direction: column; gap: 8px; padding: 20px; border-color: rgb(243, 199, 194)"
-          >
-            <span class="p-mono" style="color: var(--danger)">Overdue</span><span class="p-num">৳70,000</span
-            ><span class="p-small">14 installments from 13 students</span>
-          </div>
-        </div>
-        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
-          <div class="eit-chips" role="group" aria-label="Payment status">
-            <button
-              type="button"
-              class="eit-chip"
-              aria-pressed="false"
-              data-part-of="filtered"
-              data-part="0"
-              data-value="0"
-            >
-              <span class="eit-chip__check" aria-hidden="true"
-                ><svg
-                  class="eit-icon"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  focusable="false"
-                  aria-hidden="true"
-                >
-                  <path d="M20 6L9 17l-5-5"></path></svg></span
-              ><span class="eit-chip__label">All students</span></button
-            ><button
-              type="button"
-              class="eit-chip is-on"
-              aria-pressed="true"
-              data-part-of="filtered"
-              data-part="0"
-              data-value="1"
-            >
-              <span class="eit-chip__check" aria-hidden="true"
-                ><svg
-                  class="eit-icon"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  focusable="false"
-                  aria-hidden="true"
-                >
-                  <path d="M20 6L9 17l-5-5"></path></svg></span
-              ><span class="eit-chip__label">Overdue</span></button
-            ><button
-              type="button"
-              class="eit-chip"
-              aria-pressed="false"
-              data-part-of="filtered"
-              data-part="0"
-              data-value="2"
-            >
-              <span class="eit-chip__check" aria-hidden="true"
-                ><svg
-                  class="eit-icon"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  focusable="false"
-                  aria-hidden="true"
-                >
-                  <path d="M20 6L9 17l-5-5"></path></svg></span
-              ><span class="eit-chip__label">Due this week</span></button
-            ><button
-              type="button"
-              class="eit-chip"
-              aria-pressed="false"
-              data-part-of="filtered"
-              data-part="0"
-              data-value="3"
-            >
-              <span class="eit-chip__check" aria-hidden="true"
-                ><svg
-                  class="eit-icon"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  focusable="false"
-                  aria-hidden="true"
-                >
-                  <path d="M20 6L9 17l-5-5"></path></svg></span
-              ><span class="eit-chip__label">Paid in full</span>
-            </button>
-          </div>
-          <a class="p-link" href="#"
-            ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <path d="m7 10 5 5 5-5"></path>
-              <path d="M12 15V3"></path></svg
-            >Export CSV</a
+        <div
+          class="p-row"
+          style="
+            padding: 14px 24px;
+            border-top: 1px solid var(--line-soft);
+            justify-content: space-between;
+            flex-wrap: wrap;
+          "
+        >
+          <span class="p-small">Showing 2 students</span
+          ><span class="p-row" style="gap: 8px"
+            ><a class="p-ghostbtn" href="#" aria-label="Previous page" style="padding: 0px 14px">Previous</a
+            ><a class="p-ghostbtn" href="#" aria-label="Next page" style="padding: 0px 14px">Next</a></span
           >
         </div>
-        <section class="p-card p-card--flush" aria-label="Students">
-          <div class="p-scroll">
-            <table class="p-table" style="min-width: 1000px">
-              <thead>
-                <tr>
-                  <th scope="col">Student</th>
-                  <th scope="col">Course and batch</th>
-                  <th scope="col">Format</th>
-                  <th scope="col" style="width: 190px">Paid</th>
-                  <th scope="col">Next installment</th>
-                  <th scope="col">Status</th>
-                  <th scope="col"><span class="eit-sr">Actions</span></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <span class="p-cell-person"
-                      ><span class="p-avatar p-avatar--sm">RI</span
-                      ><span style="display: flex; flex-direction: column"
-                        ><a class="p-link" href="student-record.html" style="color: var(--ink); font-size: 14px"
-                          >Rafiq Islam</a
-                        ><span class="p-small" style="font-size: 12px">EIT-24-0161</span></span
-                      ></span
-                    >
-                  </td>
-                  <td>WordPress · Batch 14</td>
-                  <td>Offline</td>
-                  <td>
-                    <span style="display: flex; flex-direction: column; gap: 6px"
-                      ><span style="font-variant-numeric: tabular-nums; white-space: nowrap"
-                        ><strong>৳5,000</strong> of ৳15,000</span
-                      ><span class="p-bar p-bar--thin"><span style="width: 33%; background: var(--danger)"></span></span
-                    ></span>
-                  </td>
-                  <td style="white-space: nowrap">৳5,000 · was due 9 Oct</td>
-                  <td><span class="eit-badge eit-badge--danger">Overdue 6 days</span></td>
-                  <td style="white-space: nowrap"><a class="p-link" href="#">Send reminder</a></td>
-                </tr>
-                <tr>
-                  <td>
-                    <span class="p-cell-person"
-                      ><span class="p-avatar p-avatar--sm">MH</span
-                      ><span style="display: flex; flex-direction: column"
-                        ><a class="p-link" href="student-record.html" style="color: var(--ink); font-size: 14px"
-                          >Mehedi Hasan</a
-                        ><span class="p-small" style="font-size: 12px">EIT-24-0155</span></span
-                      ></span
-                    >
-                  </td>
-                  <td>WordPress · Batch 14</td>
-                  <td>Offline</td>
-                  <td>
-                    <span style="display: flex; flex-direction: column; gap: 6px"
-                      ><span style="font-variant-numeric: tabular-nums; white-space: nowrap"
-                        ><strong>৳5,000</strong> of ৳15,000</span
-                      ><span class="p-bar p-bar--thin"><span style="width: 33%; background: var(--danger)"></span></span
-                    ></span>
-                  </td>
-                  <td style="white-space: nowrap">৳5,000 · was due 1 Oct</td>
-                  <td><span class="eit-badge eit-badge--warning">Access paused</span></td>
-                  <td style="white-space: nowrap"><a class="p-link" href="#">Send reminder</a></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div
-            class="p-row"
-            style="
-              padding: 14px 24px;
-              border-top: 1px solid var(--line-soft);
-              justify-content: space-between;
-              flex-wrap: wrap;
-            "
-          >
-            <span class="p-small">Showing 2 students</span
-            ><span class="p-row" style="gap: 8px"
-              ><a class="p-ghostbtn" href="#" aria-label="Previous page" style="padding: 0px 14px">Previous</a
-              ><a class="p-ghostbtn" href="#" aria-label="Next page" style="padding: 0px 14px">Next</a></span
-            >
-          </div>
-        </section>
-      </main></template
+      </section></template
     >
     <template data-state="filtered:2" data-region="[data-region='filtered']"
-      ><main class="p-main" data-region="filtered">
-        <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
-          <div style="display: flex; flex-direction: column; gap: 6px">
-            <h1 class="p-h1">Students &amp; payments</h1>
-            <p class="p-body">Online payments come in through the gateway. Record campus cash payments here.</p>
-          </div>
-          <div class="p-row" style="flex-wrap: wrap">
-            <button class="p-ghostbtn" type="button">Record cash payment</button
-            ><button type="button" class="eit-btn eit-btn--primary eit-btn--md">
-              <svg
-                class="eit-icon eit-btn__lead"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                focusable="false"
-                aria-hidden="true"
-              >
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg
-              ><span class="eit-btn__label">Enroll a student</span>
-            </button>
-          </div>
+      ><section class="p-card p-card--flush" aria-label="Students" data-region="filtered">
+        <div class="p-scroll">
+          <table class="p-table" style="min-width: 1000px">
+            <thead>
+              <tr>
+                <th scope="col">Student</th>
+                <th scope="col">Course and batch</th>
+                <th scope="col">Format</th>
+                <th scope="col" style="width: 190px">Paid</th>
+                <th scope="col">Next installment</th>
+                <th scope="col">Status</th>
+                <th scope="col"><span class="eit-sr">Actions</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <span class="p-cell-person"
+                    ><span class="p-avatar p-avatar--sm">FA</span
+                    ><span style="display: flex; flex-direction: column"
+                      ><a class="p-link" href="student-record.html" style="color: var(--ink); font-size: 14px"
+                        >Farzana Akter</a
+                      ><span class="p-small" style="font-size: 12px">EIT-24-0141</span></span
+                    ></span
+                  >
+                </td>
+                <td>React JS · Batch 6</td>
+                <td>Online</td>
+                <td>
+                  <span style="display: flex; flex-direction: column; gap: 6px"
+                    ><span style="font-variant-numeric: tabular-nums; white-space: nowrap"
+                      ><strong>৳4,000</strong> of ৳12,000</span
+                    ><span class="p-bar p-bar--thin"><span style="width: 33%"></span></span
+                  ></span>
+                </td>
+                <td style="white-space: nowrap">৳4,000 · 18 Oct</td>
+                <td><span class="eit-badge eit-badge--warning">Due in 3 days</span></td>
+                <td style="white-space: nowrap"><a class="p-link" href="student-record.html">View</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="p-cell-person"
+                    ><span class="p-avatar p-avatar--sm">LC</span
+                    ><span style="display: flex; flex-direction: column"
+                      ><a class="p-link" href="student-record.html" style="color: var(--ink); font-size: 14px"
+                        >Lamia Chowdhury</a
+                      ><span class="p-small" style="font-size: 12px">EIT-24-0201</span></span
+                    ></span
+                  >
+                </td>
+                <td>Graphic Design · Batch 10</td>
+                <td>Offline</td>
+                <td>
+                  <span style="display: flex; flex-direction: column; gap: 6px"
+                    ><span style="font-variant-numeric: tabular-nums; white-space: nowrap"
+                      ><strong>৳6,000</strong> of ৳12,000</span
+                    ><span class="p-bar p-bar--thin"><span style="width: 50%"></span></span
+                  ></span>
+                </td>
+                <td style="white-space: nowrap">৳6,000 · 21 Oct</td>
+                <td><span class="eit-badge eit-badge--warning">Due in 6 days</span></td>
+                <td style="white-space: nowrap"><a class="p-link" href="student-record.html">View</a></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 16px">
-          <div class="p-card" style="display: flex; flex-direction: column; gap: 8px; padding: 20px">
-            <span class="p-mono">Collected in October</span><span class="p-num">৳6,85,000</span
-            ><span class="p-small">৳5,92,000 online · ৳93,000 at campus</span>
-          </div>
-          <div class="p-card" style="display: flex; flex-direction: column; gap: 8px; padding: 20px">
-            <span class="p-mono">Due in the next 7 days</span><span class="p-num">৳45,000</span
-            ><span class="p-small">9 installments · reminders go out 3 days before</span>
-          </div>
-          <div
-            class="p-card"
-            style="display: flex; flex-direction: column; gap: 8px; padding: 20px; border-color: rgb(243, 199, 194)"
-          >
-            <span class="p-mono" style="color: var(--danger)">Overdue</span><span class="p-num">৳70,000</span
-            ><span class="p-small">14 installments from 13 students</span>
-          </div>
-        </div>
-        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
-          <div class="eit-chips" role="group" aria-label="Payment status">
-            <button
-              type="button"
-              class="eit-chip"
-              aria-pressed="false"
-              data-part-of="filtered"
-              data-part="0"
-              data-value="0"
-            >
-              <span class="eit-chip__check" aria-hidden="true"
-                ><svg
-                  class="eit-icon"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  focusable="false"
-                  aria-hidden="true"
-                >
-                  <path d="M20 6L9 17l-5-5"></path></svg></span
-              ><span class="eit-chip__label">All students</span></button
-            ><button
-              type="button"
-              class="eit-chip"
-              aria-pressed="false"
-              data-part-of="filtered"
-              data-part="0"
-              data-value="1"
-            >
-              <span class="eit-chip__check" aria-hidden="true"
-                ><svg
-                  class="eit-icon"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  focusable="false"
-                  aria-hidden="true"
-                >
-                  <path d="M20 6L9 17l-5-5"></path></svg></span
-              ><span class="eit-chip__label">Overdue</span></button
-            ><button
-              type="button"
-              class="eit-chip is-on"
-              aria-pressed="true"
-              data-part-of="filtered"
-              data-part="0"
-              data-value="2"
-            >
-              <span class="eit-chip__check" aria-hidden="true"
-                ><svg
-                  class="eit-icon"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  focusable="false"
-                  aria-hidden="true"
-                >
-                  <path d="M20 6L9 17l-5-5"></path></svg></span
-              ><span class="eit-chip__label">Due this week</span></button
-            ><button
-              type="button"
-              class="eit-chip"
-              aria-pressed="false"
-              data-part-of="filtered"
-              data-part="0"
-              data-value="3"
-            >
-              <span class="eit-chip__check" aria-hidden="true"
-                ><svg
-                  class="eit-icon"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  focusable="false"
-                  aria-hidden="true"
-                >
-                  <path d="M20 6L9 17l-5-5"></path></svg></span
-              ><span class="eit-chip__label">Paid in full</span>
-            </button>
-          </div>
-          <a class="p-link" href="#"
-            ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <path d="m7 10 5 5 5-5"></path>
-              <path d="M12 15V3"></path></svg
-            >Export CSV</a
+        <div
+          class="p-row"
+          style="
+            padding: 14px 24px;
+            border-top: 1px solid var(--line-soft);
+            justify-content: space-between;
+            flex-wrap: wrap;
+          "
+        >
+          <span class="p-small">Showing 2 students</span
+          ><span class="p-row" style="gap: 8px"
+            ><a class="p-ghostbtn" href="#" aria-label="Previous page" style="padding: 0px 14px">Previous</a
+            ><a class="p-ghostbtn" href="#" aria-label="Next page" style="padding: 0px 14px">Next</a></span
           >
         </div>
-        <section class="p-card p-card--flush" aria-label="Students">
-          <div class="p-scroll">
-            <table class="p-table" style="min-width: 1000px">
-              <thead>
-                <tr>
-                  <th scope="col">Student</th>
-                  <th scope="col">Course and batch</th>
-                  <th scope="col">Format</th>
-                  <th scope="col" style="width: 190px">Paid</th>
-                  <th scope="col">Next installment</th>
-                  <th scope="col">Status</th>
-                  <th scope="col"><span class="eit-sr">Actions</span></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <span class="p-cell-person"
-                      ><span class="p-avatar p-avatar--sm">FA</span
-                      ><span style="display: flex; flex-direction: column"
-                        ><a class="p-link" href="student-record.html" style="color: var(--ink); font-size: 14px"
-                          >Farzana Akter</a
-                        ><span class="p-small" style="font-size: 12px">EIT-24-0141</span></span
-                      ></span
-                    >
-                  </td>
-                  <td>React JS · Batch 6</td>
-                  <td>Online</td>
-                  <td>
-                    <span style="display: flex; flex-direction: column; gap: 6px"
-                      ><span style="font-variant-numeric: tabular-nums; white-space: nowrap"
-                        ><strong>৳4,000</strong> of ৳12,000</span
-                      ><span class="p-bar p-bar--thin"><span style="width: 33%"></span></span
-                    ></span>
-                  </td>
-                  <td style="white-space: nowrap">৳4,000 · 18 Oct</td>
-                  <td><span class="eit-badge eit-badge--warning">Due in 3 days</span></td>
-                  <td style="white-space: nowrap"><a class="p-link" href="student-record.html">View</a></td>
-                </tr>
-                <tr>
-                  <td>
-                    <span class="p-cell-person"
-                      ><span class="p-avatar p-avatar--sm">LC</span
-                      ><span style="display: flex; flex-direction: column"
-                        ><a class="p-link" href="student-record.html" style="color: var(--ink); font-size: 14px"
-                          >Lamia Chowdhury</a
-                        ><span class="p-small" style="font-size: 12px">EIT-24-0201</span></span
-                      ></span
-                    >
-                  </td>
-                  <td>Graphic Design · Batch 10</td>
-                  <td>Offline</td>
-                  <td>
-                    <span style="display: flex; flex-direction: column; gap: 6px"
-                      ><span style="font-variant-numeric: tabular-nums; white-space: nowrap"
-                        ><strong>৳6,000</strong> of ৳12,000</span
-                      ><span class="p-bar p-bar--thin"><span style="width: 50%"></span></span
-                    ></span>
-                  </td>
-                  <td style="white-space: nowrap">৳6,000 · 21 Oct</td>
-                  <td><span class="eit-badge eit-badge--warning">Due in 6 days</span></td>
-                  <td style="white-space: nowrap"><a class="p-link" href="student-record.html">View</a></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div
-            class="p-row"
-            style="
-              padding: 14px 24px;
-              border-top: 1px solid var(--line-soft);
-              justify-content: space-between;
-              flex-wrap: wrap;
-            "
-          >
-            <span class="p-small">Showing 2 students</span
-            ><span class="p-row" style="gap: 8px"
-              ><a class="p-ghostbtn" href="#" aria-label="Previous page" style="padding: 0px 14px">Previous</a
-              ><a class="p-ghostbtn" href="#" aria-label="Next page" style="padding: 0px 14px">Next</a></span
-            >
-          </div>
-        </section>
-      </main></template
+      </section></template
     >
     <template data-state="filtered:3" data-region="[data-region='filtered']"
-      ><main class="p-main" data-region="filtered">
-        <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
-          <div style="display: flex; flex-direction: column; gap: 6px">
-            <h1 class="p-h1">Students &amp; payments</h1>
-            <p class="p-body">Online payments come in through the gateway. Record campus cash payments here.</p>
-          </div>
-          <div class="p-row" style="flex-wrap: wrap">
-            <button class="p-ghostbtn" type="button">Record cash payment</button
-            ><button type="button" class="eit-btn eit-btn--primary eit-btn--md">
-              <svg
-                class="eit-icon eit-btn__lead"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                focusable="false"
-                aria-hidden="true"
-              >
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg
-              ><span class="eit-btn__label">Enroll a student</span>
-            </button>
-          </div>
+      ><section class="p-card p-card--flush" aria-label="Students" data-region="filtered">
+        <div class="p-scroll">
+          <table class="p-table" style="min-width: 1000px">
+            <thead>
+              <tr>
+                <th scope="col">Student</th>
+                <th scope="col">Course and batch</th>
+                <th scope="col">Format</th>
+                <th scope="col" style="width: 190px">Paid</th>
+                <th scope="col">Next installment</th>
+                <th scope="col">Status</th>
+                <th scope="col"><span class="eit-sr">Actions</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <span class="p-cell-person"
+                    ><span class="p-avatar p-avatar--sm">SA</span
+                    ><span style="display: flex; flex-direction: column"
+                      ><a class="p-link" href="student-record.html" style="color: var(--ink); font-size: 14px"
+                        >Sadia Afrin</a
+                      ><span class="p-small" style="font-size: 12px">EIT-24-0139</span></span
+                    ></span
+                  >
+                </td>
+                <td>React JS · Batch 6</td>
+                <td>Online</td>
+                <td>
+                  <span style="display: flex; flex-direction: column; gap: 6px"
+                    ><span style="font-variant-numeric: tabular-nums; white-space: nowrap"
+                      ><strong>৳12,000</strong> of ৳12,000</span
+                    ><span class="p-bar p-bar--thin"><span style="width: 100%"></span></span
+                  ></span>
+                </td>
+                <td style="white-space: nowrap">—</td>
+                <td><span class="eit-badge eit-badge--neutral">Paid in full</span></td>
+                <td style="white-space: nowrap"><a class="p-link" href="student-record.html">View</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="p-cell-person"
+                    ><span class="p-avatar p-avatar--sm">AH</span
+                    ><span style="display: flex; flex-direction: column"
+                      ><a class="p-link" href="student-record.html" style="color: var(--ink); font-size: 14px"
+                        >Arif Hossain</a
+                      ><span class="p-small" style="font-size: 12px">EIT-24-0170</span></span
+                    ></span
+                  >
+                </td>
+                <td>WordPress · Batch 14</td>
+                <td>Offline</td>
+                <td>
+                  <span style="display: flex; flex-direction: column; gap: 6px"
+                    ><span style="font-variant-numeric: tabular-nums; white-space: nowrap"
+                      ><strong>৳15,000</strong> of ৳15,000</span
+                    ><span class="p-bar p-bar--thin"><span style="width: 100%"></span></span
+                  ></span>
+                </td>
+                <td style="white-space: nowrap">—</td>
+                <td><span class="eit-badge eit-badge--neutral">Paid in full</span></td>
+                <td style="white-space: nowrap"><a class="p-link" href="student-record.html">View</a></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 16px">
-          <div class="p-card" style="display: flex; flex-direction: column; gap: 8px; padding: 20px">
-            <span class="p-mono">Collected in October</span><span class="p-num">৳6,85,000</span
-            ><span class="p-small">৳5,92,000 online · ৳93,000 at campus</span>
-          </div>
-          <div class="p-card" style="display: flex; flex-direction: column; gap: 8px; padding: 20px">
-            <span class="p-mono">Due in the next 7 days</span><span class="p-num">৳45,000</span
-            ><span class="p-small">9 installments · reminders go out 3 days before</span>
-          </div>
-          <div
-            class="p-card"
-            style="display: flex; flex-direction: column; gap: 8px; padding: 20px; border-color: rgb(243, 199, 194)"
-          >
-            <span class="p-mono" style="color: var(--danger)">Overdue</span><span class="p-num">৳70,000</span
-            ><span class="p-small">14 installments from 13 students</span>
-          </div>
-        </div>
-        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
-          <div class="eit-chips" role="group" aria-label="Payment status">
-            <button
-              type="button"
-              class="eit-chip"
-              aria-pressed="false"
-              data-part-of="filtered"
-              data-part="0"
-              data-value="0"
-            >
-              <span class="eit-chip__check" aria-hidden="true"
-                ><svg
-                  class="eit-icon"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  focusable="false"
-                  aria-hidden="true"
-                >
-                  <path d="M20 6L9 17l-5-5"></path></svg></span
-              ><span class="eit-chip__label">All students</span></button
-            ><button
-              type="button"
-              class="eit-chip"
-              aria-pressed="false"
-              data-part-of="filtered"
-              data-part="0"
-              data-value="1"
-            >
-              <span class="eit-chip__check" aria-hidden="true"
-                ><svg
-                  class="eit-icon"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  focusable="false"
-                  aria-hidden="true"
-                >
-                  <path d="M20 6L9 17l-5-5"></path></svg></span
-              ><span class="eit-chip__label">Overdue</span></button
-            ><button
-              type="button"
-              class="eit-chip"
-              aria-pressed="false"
-              data-part-of="filtered"
-              data-part="0"
-              data-value="2"
-            >
-              <span class="eit-chip__check" aria-hidden="true"
-                ><svg
-                  class="eit-icon"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  focusable="false"
-                  aria-hidden="true"
-                >
-                  <path d="M20 6L9 17l-5-5"></path></svg></span
-              ><span class="eit-chip__label">Due this week</span></button
-            ><button
-              type="button"
-              class="eit-chip is-on"
-              aria-pressed="true"
-              data-part-of="filtered"
-              data-part="0"
-              data-value="3"
-            >
-              <span class="eit-chip__check" aria-hidden="true"
-                ><svg
-                  class="eit-icon"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  focusable="false"
-                  aria-hidden="true"
-                >
-                  <path d="M20 6L9 17l-5-5"></path></svg></span
-              ><span class="eit-chip__label">Paid in full</span>
-            </button>
-          </div>
-          <a class="p-link" href="#"
-            ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <path d="m7 10 5 5 5-5"></path>
-              <path d="M12 15V3"></path></svg
-            >Export CSV</a
+        <div
+          class="p-row"
+          style="
+            padding: 14px 24px;
+            border-top: 1px solid var(--line-soft);
+            justify-content: space-between;
+            flex-wrap: wrap;
+          "
+        >
+          <span class="p-small">Showing 2 students</span
+          ><span class="p-row" style="gap: 8px"
+            ><a class="p-ghostbtn" href="#" aria-label="Previous page" style="padding: 0px 14px">Previous</a
+            ><a class="p-ghostbtn" href="#" aria-label="Next page" style="padding: 0px 14px">Next</a></span
           >
         </div>
-        <section class="p-card p-card--flush" aria-label="Students">
-          <div class="p-scroll">
-            <table class="p-table" style="min-width: 1000px">
-              <thead>
-                <tr>
-                  <th scope="col">Student</th>
-                  <th scope="col">Course and batch</th>
-                  <th scope="col">Format</th>
-                  <th scope="col" style="width: 190px">Paid</th>
-                  <th scope="col">Next installment</th>
-                  <th scope="col">Status</th>
-                  <th scope="col"><span class="eit-sr">Actions</span></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <span class="p-cell-person"
-                      ><span class="p-avatar p-avatar--sm">SA</span
-                      ><span style="display: flex; flex-direction: column"
-                        ><a class="p-link" href="student-record.html" style="color: var(--ink); font-size: 14px"
-                          >Sadia Afrin</a
-                        ><span class="p-small" style="font-size: 12px">EIT-24-0139</span></span
-                      ></span
-                    >
-                  </td>
-                  <td>React JS · Batch 6</td>
-                  <td>Online</td>
-                  <td>
-                    <span style="display: flex; flex-direction: column; gap: 6px"
-                      ><span style="font-variant-numeric: tabular-nums; white-space: nowrap"
-                        ><strong>৳12,000</strong> of ৳12,000</span
-                      ><span class="p-bar p-bar--thin"><span style="width: 100%"></span></span
-                    ></span>
-                  </td>
-                  <td style="white-space: nowrap">—</td>
-                  <td><span class="eit-badge eit-badge--neutral">Paid in full</span></td>
-                  <td style="white-space: nowrap"><a class="p-link" href="student-record.html">View</a></td>
-                </tr>
-                <tr>
-                  <td>
-                    <span class="p-cell-person"
-                      ><span class="p-avatar p-avatar--sm">AH</span
-                      ><span style="display: flex; flex-direction: column"
-                        ><a class="p-link" href="student-record.html" style="color: var(--ink); font-size: 14px"
-                          >Arif Hossain</a
-                        ><span class="p-small" style="font-size: 12px">EIT-24-0170</span></span
-                      ></span
-                    >
-                  </td>
-                  <td>WordPress · Batch 14</td>
-                  <td>Offline</td>
-                  <td>
-                    <span style="display: flex; flex-direction: column; gap: 6px"
-                      ><span style="font-variant-numeric: tabular-nums; white-space: nowrap"
-                        ><strong>৳15,000</strong> of ৳15,000</span
-                      ><span class="p-bar p-bar--thin"><span style="width: 100%"></span></span
-                    ></span>
-                  </td>
-                  <td style="white-space: nowrap">—</td>
-                  <td><span class="eit-badge eit-badge--neutral">Paid in full</span></td>
-                  <td style="white-space: nowrap"><a class="p-link" href="student-record.html">View</a></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div
-            class="p-row"
-            style="
-              padding: 14px 24px;
-              border-top: 1px solid var(--line-soft);
-              justify-content: space-between;
-              flex-wrap: wrap;
-            "
-          >
-            <span class="p-small">Showing 2 students</span
-            ><span class="p-row" style="gap: 8px"
-              ><a class="p-ghostbtn" href="#" aria-label="Previous page" style="padding: 0px 14px">Previous</a
-              ><a class="p-ghostbtn" href="#" aria-label="Next page" style="padding: 0px 14px">Next</a></span
-            >
-          </div>
-        </section>
-      </main></template
+      </section></template
     >
   </body>
 </html>

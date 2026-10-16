@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Review and publish a course · European IT LMS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap"
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../assets/css/eit.css" />
     <link rel="stylesheet" href="../assets/css/panel.css" />
     <link rel="stylesheet" href="../assets/css/app.css" />
-    <script src="../assets/js/app.js" defer></script>
+    <script src="../assets/js/app.js" defer=""></script>
   </head>
   <body>
     <div class="p-shell">
@@ -301,7 +301,7 @@
             </div>
           </div>
         </header>
-        <main class="p-main" data-region="filtered">
+        <main class="p-main">
           <nav
             aria-label="Breadcrumb"
             class="p-row"
@@ -322,7 +322,7 @@
               <span class="p-muted">Sent by Kamrul Hasan on 13 Oct · 4 modules · 24 lessons · 6 h 40 min of video</span>
             </div>
             <div class="p-row" style="flex-wrap: wrap">
-              <button class="p-ghostbtn" type="button">
+              <button class="p-ghostbtn" type="button" data-toast="Sent back to Kamrul with your note">
                 <svg
                   class="eit-icon"
                   width="16"
@@ -339,7 +339,11 @@
                   <path d="M21 12a9 9 0 1 1-3-6.7L21 8"></path>
                   <path d="M21 3v5h-5"></path></svg
                 >Send back to mentor</button
-              ><button type="button" class="eit-btn eit-btn--primary eit-btn--md">
+              ><button
+                type="button"
+                class="eit-btn eit-btn--primary eit-btn--md"
+                data-toast="Course published on the website"
+              >
                 <svg
                   class="eit-icon eit-btn__lead"
                   width="16"
@@ -608,6 +612,7 @@
                 class="p-card"
                 aria-labelledby="price-title"
                 style="display: flex; flex-direction: column; gap: 18px"
+                data-region="filtered"
               >
                 <div class="p-card-head">
                   <h2 id="price-title" class="p-h3">Price &amp; installments</h2>
@@ -753,1776 +758,408 @@
       </div>
     </div>
     <template data-state="filtered:0" data-region="[data-region='filtered']"
-      ><main class="p-main" data-region="filtered">
-        <nav
-          aria-label="Breadcrumb"
-          class="p-row"
-          style="gap: 8px; font-size: 14px; color: var(--ink-3); flex-wrap: wrap"
-        >
-          <a class="p-link" href="courses.html" style="font-weight: 500">Courses &amp; batches</a
-          ><span aria-hidden="true">/</span
-          ><a class="p-link" href="courses.html" style="font-weight: 500">Review queue</a
-          ><span aria-hidden="true">/</span
-          ><span style="color: var(--ink-2)">Advanced WordPress Theme Development</span>
-        </nav>
-        <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
-          <div style="display: flex; flex-direction: column; gap: 6px">
-            <div class="p-row" style="gap: 12px; flex-wrap: wrap">
-              <h1 class="p-h1">Advanced WordPress Theme Development</h1>
-              <span class="eit-badge eit-badge--cyan">In review</span>
-            </div>
-            <span class="p-muted">Sent by Kamrul Hasan on 13 Oct · 4 modules · 24 lessons · 6 h 40 min of video</span>
+      ><section
+        class="p-card"
+        aria-labelledby="price-title"
+        style="display: flex; flex-direction: column; gap: 18px"
+        data-region="filtered"
+      >
+        <div class="p-card-head">
+          <h2 id="price-title" class="p-h3">Price &amp; installments</h2>
+          <span class="p-small">Only admins see this</span>
+        </div>
+        <div class="eit-field">
+          <label class="eit-field__label" for="eit-field-1">Track</label>
+          <div class="eit-field__wrap">
+            <select id="eit-field-1" name="track" class="eit-field__control eit-field__select">
+              <option value="dev" selected="">Development</option>
+              <option value="design">Design</option>
+              <option value="marketing">Marketing</option>
+              <option value="netsec">Networking &amp; Security</option></select
+            ><svg
+              class="eit-icon eit-field__chev"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
           </div>
-          <div class="p-row" style="flex-wrap: wrap">
-            <button class="p-ghostbtn" type="button">
-              <svg
-                class="eit-icon"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                focusable="false"
-                aria-hidden="true"
-              >
-                <path d="M21 12a9 9 0 1 1-3-6.7L21 8"></path>
-                <path d="M21 3v5h-5"></path></svg
-              >Send back to mentor</button
-            ><button type="button" class="eit-btn eit-btn--primary eit-btn--md">
-              <svg
-                class="eit-icon eit-btn__lead"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                focusable="false"
-                aria-hidden="true"
-              >
-                <path d="M20 6L9 17l-5-5"></path></svg
-              ><span class="eit-btn__label">Publish course</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 16px">
+          <div class="eit-field">
+            <label class="eit-field__label" for="eit-field-2">Online fee</label>
+            <div class="eit-field__wrap">
+              <span class="eit-field__prefix" aria-hidden="true">৳</span
+              ><input
+                id="eit-field-2"
+                name="online"
+                type="text"
+                class="eit-field__control"
+                inputmode="numeric"
+                value="12,000"
+              />
+            </div>
+          </div>
+          <div class="eit-field">
+            <label class="eit-field__label" for="eit-field-3">Offline fee</label>
+            <div class="eit-field__wrap">
+              <span class="eit-field__prefix" aria-hidden="true">৳</span
+              ><input
+                id="eit-field-3"
+                name="offline"
+                type="text"
+                class="eit-field__control"
+                inputmode="numeric"
+                value="18,000"
+              />
+            </div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <span class="p-label" id="plan-label">Installment plan</span>
+          <div class="p-seg" role="group" aria-labelledby="plan-label" style="align-self: flex-start">
+            <button
+              type="button"
+              aria-pressed="true"
+              style="background: var(--surface-card); color: var(--ink); box-shadow: var(--shadow-sm)"
+              data-part-of="filtered"
+              data-part="0"
+              data-value="0"
+            >
+              Full only</button
+            ><button type="button" aria-pressed="false" style="" data-part-of="filtered" data-part="0" data-value="1">
+              2 parts</button
+            ><button type="button" aria-pressed="false" style="" data-part-of="filtered" data-part="0" data-value="2">
+              3 parts</button
+            ><button type="button" aria-pressed="false" style="" data-part-of="filtered" data-part="0" data-value="3">
+              4 parts
             </button>
           </div>
+          <span class="p-small">Students pay the full fee at checkout.</span>
         </div>
-        <div class="p-split">
-          <div style="flex: 1.4 1 560px; min-width: 0px; display: flex; flex-direction: column; gap: 24px">
-            <section
-              class="p-card"
-              aria-labelledby="check-title"
-              style="display: flex; flex-direction: column; gap: 14px"
-            >
-              <h2 id="check-title" class="p-h3">Before publishing</h2>
-              <ul
-                style="
-                  list-style: none;
-                  margin: 0px;
-                  padding: 0px;
-                  display: flex;
-                  flex-direction: column;
-                  gap: 10px;
-                  font-size: 14px;
-                "
-              >
-                <li class="p-row" style="gap: 10px">
-                  <span style="color: var(--success)"
-                    ><svg
-                      class="eit-icon"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span
-                  >All 22 video lessons have a processed video
-                </li>
-                <li class="p-row" style="gap: 10px">
-                  <span style="color: var(--success)"
-                    ><svg
-                      class="eit-icon"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span
-                  >Every module ends with a quiz or a project
-                </li>
-                <li class="p-row" style="gap: 10px">
-                  <span style="color: var(--success)"
-                    ><svg
-                      class="eit-icon"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span
-                  >Lessons unlock in order, at 90% watched
-                </li>
-                <li class="p-row" style="gap: 10px">
-                  <span style="color: var(--warning)"
-                    ><svg
-                      class="eit-icon"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M12 7.5v5"></path>
-                      <path d="M12 16h.01"></path></svg></span
-                  >2 lessons have no starter files<a class="p-link" href="#" style="margin-left: auto">Show</a>
-                </li>
-                <li class="p-row" style="gap: 10px">
-                  <span style="color: var(--warning)"
-                    ><svg
-                      class="eit-icon"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M12 7.5v5"></path>
-                      <path d="M12 16h.01"></path></svg></span
-                  >No price set yet<span class="p-small" style="margin-left: auto">Set it on the right</span>
-                </li>
-              </ul>
-            </section>
-            <section class="p-card p-card--flush" aria-labelledby="curr-title">
-              <div class="p-card-head" style="padding: 20px 24px 12px">
-                <h2 id="curr-title" class="p-h3">Curriculum</h2>
-                <span class="p-small">Watch any lesson as a student would</span>
-              </div>
-              <div style="padding: 0px 12px 12px; display: flex; flex-direction: column">
-                <div style="border-top: 1px solid var(--line-soft); padding: 12px">
-                  <div class="p-row" style="justify-content: space-between; gap: 12px">
-                    <span class="p-row" style="gap: 10px"
-                      ><span class="p-mono" style="color: var(--cyan-ink)">01</span
-                      ><strong style="font-size: 15px">Theme architecture</strong></span
-                    ><span class="p-small">6 lessons · 1 h 42 min</span>
-                  </div>
-                  <ul
-                    style="
-                      list-style: none;
-                      margin: 10px 0px 0px;
-                      padding: 0px 0px 0px 34px;
-                      display: flex;
-                      flex-direction: column;
-                      gap: 2px;
-                    "
-                  >
-                    <li
-                      class="p-row"
-                      style="
-                        justify-content: space-between;
-                        min-height: 40px;
-                        font-size: 14px;
-                        color: var(--ink-2);
-                        gap: 12px;
-                      "
-                    >
-                      <span>Classic vs block themes</span
-                      ><span class="p-row" style="gap: 14px"
-                        ><span class="p-small">14:20</span><a class="p-link" href="#">Watch</a></span
-                      >
-                    </li>
-                    <li
-                      class="p-row"
-                      style="
-                        justify-content: space-between;
-                        min-height: 40px;
-                        font-size: 14px;
-                        color: var(--ink-2);
-                        gap: 12px;
-                      "
-                    >
-                      <span>theme.json in depth</span
-                      ><span class="p-row" style="gap: 14px"
-                        ><span class="p-small">21:05</span><a class="p-link" href="#">Watch</a></span
-                      >
-                    </li>
-                    <li
-                      class="p-row"
-                      style="
-                        justify-content: space-between;
-                        min-height: 40px;
-                        font-size: 14px;
-                        color: var(--ink-2);
-                        gap: 12px;
-                      "
-                    >
-                      <span>Template parts and patterns</span
-                      ><span class="p-row" style="gap: 14px"
-                        ><span class="p-small">18:40</span><a class="p-link" href="#">Watch</a></span
-                      >
-                    </li>
-                    <li
-                      class="p-row"
-                      style="
-                        justify-content: space-between;
-                        min-height: 40px;
-                        font-size: 14px;
-                        color: var(--ink-2);
-                        gap: 12px;
-                      "
-                    >
-                      <span>Child themes done right</span
-                      ><span class="p-row" style="gap: 14px"
-                        ><span class="p-small">16:12</span><a class="p-link" href="#">Watch</a></span
-                      >
-                    </li>
-                    <li
-                      class="p-row"
-                      style="
-                        justify-content: space-between;
-                        min-height: 40px;
-                        font-size: 14px;
-                        color: var(--ink-2);
-                        gap: 12px;
-                      "
-                    >
-                      <span>Module 1 quiz</span
-                      ><span class="p-row" style="gap: 14px"
-                        ><span class="p-small">8 questions</span><a class="p-link" href="#">Watch</a></span
-                      >
-                    </li>
-                  </ul>
-                </div>
-                <div style="border-top: 1px solid var(--line-soft); padding: 12px">
-                  <div class="p-row" style="justify-content: space-between; gap: 12px">
-                    <span class="p-row" style="gap: 10px"
-                      ><span class="p-mono" style="color: var(--cyan-ink)">02</span
-                      ><strong style="font-size: 15px">Custom blocks</strong></span
-                    ><span class="p-small">7 lessons · 2 h 05 min</span>
-                  </div>
-                </div>
-                <div style="border-top: 1px solid var(--line-soft); padding: 12px">
-                  <div class="p-row" style="justify-content: space-between; gap: 12px">
-                    <span class="p-row" style="gap: 10px"
-                      ><span class="p-mono" style="color: var(--cyan-ink)">03</span
-                      ><strong style="font-size: 15px">Performance and security</strong></span
-                    ><span class="p-small">6 lessons · 1 h 38 min</span>
-                  </div>
-                </div>
-                <div style="border-top: 1px solid var(--line-soft); padding: 12px">
-                  <div class="p-row" style="justify-content: space-between; gap: 12px">
-                    <span class="p-row" style="gap: 10px"
-                      ><span class="p-mono" style="color: var(--cyan-ink)">04</span
-                      ><strong style="font-size: 15px">Shipping a client theme</strong></span
-                    ><span class="p-small">5 lessons · 1 h 15 min · final project</span>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-          <div style="flex: 1 1 380px; min-width: 0px; display: flex; flex-direction: column; gap: 24px">
-            <section
-              class="p-card"
-              aria-labelledby="price-title"
-              style="display: flex; flex-direction: column; gap: 18px"
-            >
-              <div class="p-card-head">
-                <h2 id="price-title" class="p-h3">Price &amp; installments</h2>
-                <span class="p-small">Only admins see this</span>
-              </div>
-              <div class="eit-field">
-                <label class="eit-field__label" for="eit-field-1">Track</label>
-                <div class="eit-field__wrap">
-                  <select id="eit-field-1" name="track" class="eit-field__control eit-field__select">
-                    <option value="dev" selected="">Development</option>
-                    <option value="design">Design</option>
-                    <option value="marketing">Marketing</option>
-                    <option value="netsec">Networking &amp; Security</option></select
-                  ><svg
-                    class="eit-icon eit-field__chev"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    focusable="false"
-                    aria-hidden="true"
-                  >
-                    <path d="M6 9l6 6 6-6"></path>
-                  </svg>
-                </div>
-              </div>
-              <div
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 16px"
-              >
-                <div class="eit-field">
-                  <label class="eit-field__label" for="eit-field-2">Online fee</label>
-                  <div class="eit-field__wrap">
-                    <span class="eit-field__prefix" aria-hidden="true">৳</span
-                    ><input
-                      id="eit-field-2"
-                      name="online"
-                      type="text"
-                      class="eit-field__control"
-                      inputmode="numeric"
-                      value="12,000"
-                    />
-                  </div>
-                </div>
-                <div class="eit-field">
-                  <label class="eit-field__label" for="eit-field-3">Offline fee</label>
-                  <div class="eit-field__wrap">
-                    <span class="eit-field__prefix" aria-hidden="true">৳</span
-                    ><input
-                      id="eit-field-3"
-                      name="offline"
-                      type="text"
-                      class="eit-field__control"
-                      inputmode="numeric"
-                      value="18,000"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div style="display: flex; flex-direction: column; gap: 8px">
-                <span class="p-label" id="plan-label">Installment plan</span>
-                <div class="p-seg" role="group" aria-labelledby="plan-label" style="align-self: flex-start">
-                  <button
-                    type="button"
-                    aria-pressed="true"
-                    style="background: var(--surface-card); color: var(--ink); box-shadow: var(--shadow-sm)"
-                    data-part-of="filtered"
-                    data-part="0"
-                    data-value="0"
-                  >
-                    Full only</button
-                  ><button
-                    type="button"
-                    aria-pressed="false"
-                    style=""
-                    data-part-of="filtered"
-                    data-part="0"
-                    data-value="1"
-                  >
-                    2 parts</button
-                  ><button
-                    type="button"
-                    aria-pressed="false"
-                    style=""
-                    data-part-of="filtered"
-                    data-part="0"
-                    data-value="2"
-                  >
-                    3 parts</button
-                  ><button
-                    type="button"
-                    aria-pressed="false"
-                    style=""
-                    data-part-of="filtered"
-                    data-part="0"
-                    data-value="3"
-                  >
-                    4 parts
-                  </button>
-                </div>
-                <span class="p-small">Students pay the full fee at checkout.</span>
-              </div>
-              <div class="p-row" style="justify-content: space-between; gap: 16px">
-                <span style="display: flex; flex-direction: column"
-                  ><span id="web-label" style="font-size: 14px; font-weight: 600">List on the website</span
-                  ><span class="p-small">Course page goes live when published</span></span
-                ><button
-                  type="button"
-                  class="p-switch"
-                  role="switch"
-                  aria-checked="true"
-                  aria-labelledby="web-label"
-                ></button>
-              </div>
-            </section>
-            <section class="p-card" aria-labelledby="fb-title" style="display: flex; flex-direction: column; gap: 10px">
-              <h2 id="fb-title" class="p-h3">Note to Kamrul</h2>
-              <label class="eit-sr" for="fb">Note to the mentor</label
-              ><textarea
-                id="fb"
-                class="p-textarea"
-                placeholder="Required if you send it back. Say what needs to change."
-                style="min-height: 100px"
-              ></textarea
-              ><span class="p-small"
-                >Sent with the course if you send it back, or as a thank-you when you publish.</span
-              >
-            </section>
-          </div>
-        </div>
-      </main></template
-    >
+        <div class="p-row" style="justify-content: space-between; gap: 16px">
+          <span style="display: flex; flex-direction: column"
+            ><span id="web-label" style="font-size: 14px; font-weight: 600">List on the website</span
+            ><span class="p-small">Course page goes live when published</span></span
+          ><button
+            type="button"
+            class="p-switch"
+            role="switch"
+            aria-checked="true"
+            aria-labelledby="web-label"
+          ></button>
+        </div></section
+    ></template>
     <template data-state="filtered:1" data-region="[data-region='filtered']"
-      ><main class="p-main" data-region="filtered">
-        <nav
-          aria-label="Breadcrumb"
-          class="p-row"
-          style="gap: 8px; font-size: 14px; color: var(--ink-3); flex-wrap: wrap"
-        >
-          <a class="p-link" href="courses.html" style="font-weight: 500">Courses &amp; batches</a
-          ><span aria-hidden="true">/</span
-          ><a class="p-link" href="courses.html" style="font-weight: 500">Review queue</a
-          ><span aria-hidden="true">/</span
-          ><span style="color: var(--ink-2)">Advanced WordPress Theme Development</span>
-        </nav>
-        <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
-          <div style="display: flex; flex-direction: column; gap: 6px">
-            <div class="p-row" style="gap: 12px; flex-wrap: wrap">
-              <h1 class="p-h1">Advanced WordPress Theme Development</h1>
-              <span class="eit-badge eit-badge--cyan">In review</span>
-            </div>
-            <span class="p-muted">Sent by Kamrul Hasan on 13 Oct · 4 modules · 24 lessons · 6 h 40 min of video</span>
+      ><section
+        class="p-card"
+        aria-labelledby="price-title"
+        style="display: flex; flex-direction: column; gap: 18px"
+        data-region="filtered"
+      >
+        <div class="p-card-head">
+          <h2 id="price-title" class="p-h3">Price &amp; installments</h2>
+          <span class="p-small">Only admins see this</span>
+        </div>
+        <div class="eit-field">
+          <label class="eit-field__label" for="eit-field-1">Track</label>
+          <div class="eit-field__wrap">
+            <select id="eit-field-1" name="track" class="eit-field__control eit-field__select">
+              <option value="dev" selected="">Development</option>
+              <option value="design">Design</option>
+              <option value="marketing">Marketing</option>
+              <option value="netsec">Networking &amp; Security</option></select
+            ><svg
+              class="eit-icon eit-field__chev"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
           </div>
-          <div class="p-row" style="flex-wrap: wrap">
-            <button class="p-ghostbtn" type="button">
-              <svg
-                class="eit-icon"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                focusable="false"
-                aria-hidden="true"
-              >
-                <path d="M21 12a9 9 0 1 1-3-6.7L21 8"></path>
-                <path d="M21 3v5h-5"></path></svg
-              >Send back to mentor</button
-            ><button type="button" class="eit-btn eit-btn--primary eit-btn--md">
-              <svg
-                class="eit-icon eit-btn__lead"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                focusable="false"
-                aria-hidden="true"
-              >
-                <path d="M20 6L9 17l-5-5"></path></svg
-              ><span class="eit-btn__label">Publish course</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 16px">
+          <div class="eit-field">
+            <label class="eit-field__label" for="eit-field-2">Online fee</label>
+            <div class="eit-field__wrap">
+              <span class="eit-field__prefix" aria-hidden="true">৳</span
+              ><input
+                id="eit-field-2"
+                name="online"
+                type="text"
+                class="eit-field__control"
+                inputmode="numeric"
+                value="12,000"
+              />
+            </div>
+          </div>
+          <div class="eit-field">
+            <label class="eit-field__label" for="eit-field-3">Offline fee</label>
+            <div class="eit-field__wrap">
+              <span class="eit-field__prefix" aria-hidden="true">৳</span
+              ><input
+                id="eit-field-3"
+                name="offline"
+                type="text"
+                class="eit-field__control"
+                inputmode="numeric"
+                value="18,000"
+              />
+            </div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <span class="p-label" id="plan-label">Installment plan</span>
+          <div class="p-seg" role="group" aria-labelledby="plan-label" style="align-self: flex-start">
+            <button type="button" aria-pressed="false" style="" data-part-of="filtered" data-part="0" data-value="0">
+              Full only</button
+            ><button
+              type="button"
+              aria-pressed="true"
+              style="background: var(--surface-card); color: var(--ink); box-shadow: var(--shadow-sm)"
+              data-part-of="filtered"
+              data-part="0"
+              data-value="1"
+            >
+              2 parts</button
+            ><button type="button" aria-pressed="false" style="" data-part-of="filtered" data-part="0" data-value="2">
+              3 parts</button
+            ><button type="button" aria-pressed="false" style="" data-part-of="filtered" data-part="0" data-value="3">
+              4 parts
             </button>
           </div>
+          <span class="p-small">Offline: 2 × ৳9,000 · Online: 2 × ৳6,000 · one every 30 days</span>
         </div>
-        <div class="p-split">
-          <div style="flex: 1.4 1 560px; min-width: 0px; display: flex; flex-direction: column; gap: 24px">
-            <section
-              class="p-card"
-              aria-labelledby="check-title"
-              style="display: flex; flex-direction: column; gap: 14px"
-            >
-              <h2 id="check-title" class="p-h3">Before publishing</h2>
-              <ul
-                style="
-                  list-style: none;
-                  margin: 0px;
-                  padding: 0px;
-                  display: flex;
-                  flex-direction: column;
-                  gap: 10px;
-                  font-size: 14px;
-                "
-              >
-                <li class="p-row" style="gap: 10px">
-                  <span style="color: var(--success)"
-                    ><svg
-                      class="eit-icon"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span
-                  >All 22 video lessons have a processed video
-                </li>
-                <li class="p-row" style="gap: 10px">
-                  <span style="color: var(--success)"
-                    ><svg
-                      class="eit-icon"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span
-                  >Every module ends with a quiz or a project
-                </li>
-                <li class="p-row" style="gap: 10px">
-                  <span style="color: var(--success)"
-                    ><svg
-                      class="eit-icon"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span
-                  >Lessons unlock in order, at 90% watched
-                </li>
-                <li class="p-row" style="gap: 10px">
-                  <span style="color: var(--warning)"
-                    ><svg
-                      class="eit-icon"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M12 7.5v5"></path>
-                      <path d="M12 16h.01"></path></svg></span
-                  >2 lessons have no starter files<a class="p-link" href="#" style="margin-left: auto">Show</a>
-                </li>
-                <li class="p-row" style="gap: 10px">
-                  <span style="color: var(--warning)"
-                    ><svg
-                      class="eit-icon"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M12 7.5v5"></path>
-                      <path d="M12 16h.01"></path></svg></span
-                  >No price set yet<span class="p-small" style="margin-left: auto">Set it on the right</span>
-                </li>
-              </ul>
-            </section>
-            <section class="p-card p-card--flush" aria-labelledby="curr-title">
-              <div class="p-card-head" style="padding: 20px 24px 12px">
-                <h2 id="curr-title" class="p-h3">Curriculum</h2>
-                <span class="p-small">Watch any lesson as a student would</span>
-              </div>
-              <div style="padding: 0px 12px 12px; display: flex; flex-direction: column">
-                <div style="border-top: 1px solid var(--line-soft); padding: 12px">
-                  <div class="p-row" style="justify-content: space-between; gap: 12px">
-                    <span class="p-row" style="gap: 10px"
-                      ><span class="p-mono" style="color: var(--cyan-ink)">01</span
-                      ><strong style="font-size: 15px">Theme architecture</strong></span
-                    ><span class="p-small">6 lessons · 1 h 42 min</span>
-                  </div>
-                  <ul
-                    style="
-                      list-style: none;
-                      margin: 10px 0px 0px;
-                      padding: 0px 0px 0px 34px;
-                      display: flex;
-                      flex-direction: column;
-                      gap: 2px;
-                    "
-                  >
-                    <li
-                      class="p-row"
-                      style="
-                        justify-content: space-between;
-                        min-height: 40px;
-                        font-size: 14px;
-                        color: var(--ink-2);
-                        gap: 12px;
-                      "
-                    >
-                      <span>Classic vs block themes</span
-                      ><span class="p-row" style="gap: 14px"
-                        ><span class="p-small">14:20</span><a class="p-link" href="#">Watch</a></span
-                      >
-                    </li>
-                    <li
-                      class="p-row"
-                      style="
-                        justify-content: space-between;
-                        min-height: 40px;
-                        font-size: 14px;
-                        color: var(--ink-2);
-                        gap: 12px;
-                      "
-                    >
-                      <span>theme.json in depth</span
-                      ><span class="p-row" style="gap: 14px"
-                        ><span class="p-small">21:05</span><a class="p-link" href="#">Watch</a></span
-                      >
-                    </li>
-                    <li
-                      class="p-row"
-                      style="
-                        justify-content: space-between;
-                        min-height: 40px;
-                        font-size: 14px;
-                        color: var(--ink-2);
-                        gap: 12px;
-                      "
-                    >
-                      <span>Template parts and patterns</span
-                      ><span class="p-row" style="gap: 14px"
-                        ><span class="p-small">18:40</span><a class="p-link" href="#">Watch</a></span
-                      >
-                    </li>
-                    <li
-                      class="p-row"
-                      style="
-                        justify-content: space-between;
-                        min-height: 40px;
-                        font-size: 14px;
-                        color: var(--ink-2);
-                        gap: 12px;
-                      "
-                    >
-                      <span>Child themes done right</span
-                      ><span class="p-row" style="gap: 14px"
-                        ><span class="p-small">16:12</span><a class="p-link" href="#">Watch</a></span
-                      >
-                    </li>
-                    <li
-                      class="p-row"
-                      style="
-                        justify-content: space-between;
-                        min-height: 40px;
-                        font-size: 14px;
-                        color: var(--ink-2);
-                        gap: 12px;
-                      "
-                    >
-                      <span>Module 1 quiz</span
-                      ><span class="p-row" style="gap: 14px"
-                        ><span class="p-small">8 questions</span><a class="p-link" href="#">Watch</a></span
-                      >
-                    </li>
-                  </ul>
-                </div>
-                <div style="border-top: 1px solid var(--line-soft); padding: 12px">
-                  <div class="p-row" style="justify-content: space-between; gap: 12px">
-                    <span class="p-row" style="gap: 10px"
-                      ><span class="p-mono" style="color: var(--cyan-ink)">02</span
-                      ><strong style="font-size: 15px">Custom blocks</strong></span
-                    ><span class="p-small">7 lessons · 2 h 05 min</span>
-                  </div>
-                </div>
-                <div style="border-top: 1px solid var(--line-soft); padding: 12px">
-                  <div class="p-row" style="justify-content: space-between; gap: 12px">
-                    <span class="p-row" style="gap: 10px"
-                      ><span class="p-mono" style="color: var(--cyan-ink)">03</span
-                      ><strong style="font-size: 15px">Performance and security</strong></span
-                    ><span class="p-small">6 lessons · 1 h 38 min</span>
-                  </div>
-                </div>
-                <div style="border-top: 1px solid var(--line-soft); padding: 12px">
-                  <div class="p-row" style="justify-content: space-between; gap: 12px">
-                    <span class="p-row" style="gap: 10px"
-                      ><span class="p-mono" style="color: var(--cyan-ink)">04</span
-                      ><strong style="font-size: 15px">Shipping a client theme</strong></span
-                    ><span class="p-small">5 lessons · 1 h 15 min · final project</span>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-          <div style="flex: 1 1 380px; min-width: 0px; display: flex; flex-direction: column; gap: 24px">
-            <section
-              class="p-card"
-              aria-labelledby="price-title"
-              style="display: flex; flex-direction: column; gap: 18px"
-            >
-              <div class="p-card-head">
-                <h2 id="price-title" class="p-h3">Price &amp; installments</h2>
-                <span class="p-small">Only admins see this</span>
-              </div>
-              <div class="eit-field">
-                <label class="eit-field__label" for="eit-field-1">Track</label>
-                <div class="eit-field__wrap">
-                  <select id="eit-field-1" name="track" class="eit-field__control eit-field__select">
-                    <option value="dev" selected="">Development</option>
-                    <option value="design">Design</option>
-                    <option value="marketing">Marketing</option>
-                    <option value="netsec">Networking &amp; Security</option></select
-                  ><svg
-                    class="eit-icon eit-field__chev"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    focusable="false"
-                    aria-hidden="true"
-                  >
-                    <path d="M6 9l6 6 6-6"></path>
-                  </svg>
-                </div>
-              </div>
-              <div
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 16px"
-              >
-                <div class="eit-field">
-                  <label class="eit-field__label" for="eit-field-2">Online fee</label>
-                  <div class="eit-field__wrap">
-                    <span class="eit-field__prefix" aria-hidden="true">৳</span
-                    ><input
-                      id="eit-field-2"
-                      name="online"
-                      type="text"
-                      class="eit-field__control"
-                      inputmode="numeric"
-                      value="12,000"
-                    />
-                  </div>
-                </div>
-                <div class="eit-field">
-                  <label class="eit-field__label" for="eit-field-3">Offline fee</label>
-                  <div class="eit-field__wrap">
-                    <span class="eit-field__prefix" aria-hidden="true">৳</span
-                    ><input
-                      id="eit-field-3"
-                      name="offline"
-                      type="text"
-                      class="eit-field__control"
-                      inputmode="numeric"
-                      value="18,000"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div style="display: flex; flex-direction: column; gap: 8px">
-                <span class="p-label" id="plan-label">Installment plan</span>
-                <div class="p-seg" role="group" aria-labelledby="plan-label" style="align-self: flex-start">
-                  <button
-                    type="button"
-                    aria-pressed="false"
-                    style=""
-                    data-part-of="filtered"
-                    data-part="0"
-                    data-value="0"
-                  >
-                    Full only</button
-                  ><button
-                    type="button"
-                    aria-pressed="true"
-                    style="background: var(--surface-card); color: var(--ink); box-shadow: var(--shadow-sm)"
-                    data-part-of="filtered"
-                    data-part="0"
-                    data-value="1"
-                  >
-                    2 parts</button
-                  ><button
-                    type="button"
-                    aria-pressed="false"
-                    style=""
-                    data-part-of="filtered"
-                    data-part="0"
-                    data-value="2"
-                  >
-                    3 parts</button
-                  ><button
-                    type="button"
-                    aria-pressed="false"
-                    style=""
-                    data-part-of="filtered"
-                    data-part="0"
-                    data-value="3"
-                  >
-                    4 parts
-                  </button>
-                </div>
-                <span class="p-small">Offline: 2 × ৳9,000 · Online: 2 × ৳6,000 · one every 30 days</span>
-              </div>
-              <div class="p-row" style="justify-content: space-between; gap: 16px">
-                <span style="display: flex; flex-direction: column"
-                  ><span id="web-label" style="font-size: 14px; font-weight: 600">List on the website</span
-                  ><span class="p-small">Course page goes live when published</span></span
-                ><button
-                  type="button"
-                  class="p-switch"
-                  role="switch"
-                  aria-checked="true"
-                  aria-labelledby="web-label"
-                ></button>
-              </div>
-            </section>
-            <section class="p-card" aria-labelledby="fb-title" style="display: flex; flex-direction: column; gap: 10px">
-              <h2 id="fb-title" class="p-h3">Note to Kamrul</h2>
-              <label class="eit-sr" for="fb">Note to the mentor</label
-              ><textarea
-                id="fb"
-                class="p-textarea"
-                placeholder="Required if you send it back. Say what needs to change."
-                style="min-height: 100px"
-              ></textarea
-              ><span class="p-small"
-                >Sent with the course if you send it back, or as a thank-you when you publish.</span
-              >
-            </section>
-          </div>
-        </div>
-      </main></template
-    >
+        <div class="p-row" style="justify-content: space-between; gap: 16px">
+          <span style="display: flex; flex-direction: column"
+            ><span id="web-label" style="font-size: 14px; font-weight: 600">List on the website</span
+            ><span class="p-small">Course page goes live when published</span></span
+          ><button
+            type="button"
+            class="p-switch"
+            role="switch"
+            aria-checked="true"
+            aria-labelledby="web-label"
+          ></button>
+        </div></section
+    ></template>
     <template data-state="filtered:2" data-region="[data-region='filtered']"
-      ><main class="p-main" data-region="filtered">
-        <nav
-          aria-label="Breadcrumb"
-          class="p-row"
-          style="gap: 8px; font-size: 14px; color: var(--ink-3); flex-wrap: wrap"
-        >
-          <a class="p-link" href="courses.html" style="font-weight: 500">Courses &amp; batches</a
-          ><span aria-hidden="true">/</span
-          ><a class="p-link" href="courses.html" style="font-weight: 500">Review queue</a
-          ><span aria-hidden="true">/</span
-          ><span style="color: var(--ink-2)">Advanced WordPress Theme Development</span>
-        </nav>
-        <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
-          <div style="display: flex; flex-direction: column; gap: 6px">
-            <div class="p-row" style="gap: 12px; flex-wrap: wrap">
-              <h1 class="p-h1">Advanced WordPress Theme Development</h1>
-              <span class="eit-badge eit-badge--cyan">In review</span>
-            </div>
-            <span class="p-muted">Sent by Kamrul Hasan on 13 Oct · 4 modules · 24 lessons · 6 h 40 min of video</span>
+      ><section
+        class="p-card"
+        aria-labelledby="price-title"
+        style="display: flex; flex-direction: column; gap: 18px"
+        data-region="filtered"
+      >
+        <div class="p-card-head">
+          <h2 id="price-title" class="p-h3">Price &amp; installments</h2>
+          <span class="p-small">Only admins see this</span>
+        </div>
+        <div class="eit-field">
+          <label class="eit-field__label" for="eit-field-1">Track</label>
+          <div class="eit-field__wrap">
+            <select id="eit-field-1" name="track" class="eit-field__control eit-field__select">
+              <option value="dev" selected="">Development</option>
+              <option value="design">Design</option>
+              <option value="marketing">Marketing</option>
+              <option value="netsec">Networking &amp; Security</option></select
+            ><svg
+              class="eit-icon eit-field__chev"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
           </div>
-          <div class="p-row" style="flex-wrap: wrap">
-            <button class="p-ghostbtn" type="button">
-              <svg
-                class="eit-icon"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                focusable="false"
-                aria-hidden="true"
-              >
-                <path d="M21 12a9 9 0 1 1-3-6.7L21 8"></path>
-                <path d="M21 3v5h-5"></path></svg
-              >Send back to mentor</button
-            ><button type="button" class="eit-btn eit-btn--primary eit-btn--md">
-              <svg
-                class="eit-icon eit-btn__lead"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                focusable="false"
-                aria-hidden="true"
-              >
-                <path d="M20 6L9 17l-5-5"></path></svg
-              ><span class="eit-btn__label">Publish course</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 16px">
+          <div class="eit-field">
+            <label class="eit-field__label" for="eit-field-2">Online fee</label>
+            <div class="eit-field__wrap">
+              <span class="eit-field__prefix" aria-hidden="true">৳</span
+              ><input
+                id="eit-field-2"
+                name="online"
+                type="text"
+                class="eit-field__control"
+                inputmode="numeric"
+                value="12,000"
+              />
+            </div>
+          </div>
+          <div class="eit-field">
+            <label class="eit-field__label" for="eit-field-3">Offline fee</label>
+            <div class="eit-field__wrap">
+              <span class="eit-field__prefix" aria-hidden="true">৳</span
+              ><input
+                id="eit-field-3"
+                name="offline"
+                type="text"
+                class="eit-field__control"
+                inputmode="numeric"
+                value="18,000"
+              />
+            </div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <span class="p-label" id="plan-label">Installment plan</span>
+          <div class="p-seg" role="group" aria-labelledby="plan-label" style="align-self: flex-start">
+            <button type="button" aria-pressed="false" style="" data-part-of="filtered" data-part="0" data-value="0">
+              Full only</button
+            ><button type="button" aria-pressed="false" style="" data-part-of="filtered" data-part="0" data-value="1">
+              2 parts</button
+            ><button
+              type="button"
+              aria-pressed="true"
+              style="background: var(--surface-card); color: var(--ink); box-shadow: var(--shadow-sm)"
+              data-part-of="filtered"
+              data-part="0"
+              data-value="2"
+            >
+              3 parts</button
+            ><button type="button" aria-pressed="false" style="" data-part-of="filtered" data-part="0" data-value="3">
+              4 parts
             </button>
           </div>
+          <span class="p-small">Offline: 3 × ৳6,000 · Online: 3 × ৳4,000 · one every 30 days</span>
         </div>
-        <div class="p-split">
-          <div style="flex: 1.4 1 560px; min-width: 0px; display: flex; flex-direction: column; gap: 24px">
-            <section
-              class="p-card"
-              aria-labelledby="check-title"
-              style="display: flex; flex-direction: column; gap: 14px"
-            >
-              <h2 id="check-title" class="p-h3">Before publishing</h2>
-              <ul
-                style="
-                  list-style: none;
-                  margin: 0px;
-                  padding: 0px;
-                  display: flex;
-                  flex-direction: column;
-                  gap: 10px;
-                  font-size: 14px;
-                "
-              >
-                <li class="p-row" style="gap: 10px">
-                  <span style="color: var(--success)"
-                    ><svg
-                      class="eit-icon"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span
-                  >All 22 video lessons have a processed video
-                </li>
-                <li class="p-row" style="gap: 10px">
-                  <span style="color: var(--success)"
-                    ><svg
-                      class="eit-icon"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span
-                  >Every module ends with a quiz or a project
-                </li>
-                <li class="p-row" style="gap: 10px">
-                  <span style="color: var(--success)"
-                    ><svg
-                      class="eit-icon"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span
-                  >Lessons unlock in order, at 90% watched
-                </li>
-                <li class="p-row" style="gap: 10px">
-                  <span style="color: var(--warning)"
-                    ><svg
-                      class="eit-icon"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M12 7.5v5"></path>
-                      <path d="M12 16h.01"></path></svg></span
-                  >2 lessons have no starter files<a class="p-link" href="#" style="margin-left: auto">Show</a>
-                </li>
-                <li class="p-row" style="gap: 10px">
-                  <span style="color: var(--warning)"
-                    ><svg
-                      class="eit-icon"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M12 7.5v5"></path>
-                      <path d="M12 16h.01"></path></svg></span
-                  >No price set yet<span class="p-small" style="margin-left: auto">Set it on the right</span>
-                </li>
-              </ul>
-            </section>
-            <section class="p-card p-card--flush" aria-labelledby="curr-title">
-              <div class="p-card-head" style="padding: 20px 24px 12px">
-                <h2 id="curr-title" class="p-h3">Curriculum</h2>
-                <span class="p-small">Watch any lesson as a student would</span>
-              </div>
-              <div style="padding: 0px 12px 12px; display: flex; flex-direction: column">
-                <div style="border-top: 1px solid var(--line-soft); padding: 12px">
-                  <div class="p-row" style="justify-content: space-between; gap: 12px">
-                    <span class="p-row" style="gap: 10px"
-                      ><span class="p-mono" style="color: var(--cyan-ink)">01</span
-                      ><strong style="font-size: 15px">Theme architecture</strong></span
-                    ><span class="p-small">6 lessons · 1 h 42 min</span>
-                  </div>
-                  <ul
-                    style="
-                      list-style: none;
-                      margin: 10px 0px 0px;
-                      padding: 0px 0px 0px 34px;
-                      display: flex;
-                      flex-direction: column;
-                      gap: 2px;
-                    "
-                  >
-                    <li
-                      class="p-row"
-                      style="
-                        justify-content: space-between;
-                        min-height: 40px;
-                        font-size: 14px;
-                        color: var(--ink-2);
-                        gap: 12px;
-                      "
-                    >
-                      <span>Classic vs block themes</span
-                      ><span class="p-row" style="gap: 14px"
-                        ><span class="p-small">14:20</span><a class="p-link" href="#">Watch</a></span
-                      >
-                    </li>
-                    <li
-                      class="p-row"
-                      style="
-                        justify-content: space-between;
-                        min-height: 40px;
-                        font-size: 14px;
-                        color: var(--ink-2);
-                        gap: 12px;
-                      "
-                    >
-                      <span>theme.json in depth</span
-                      ><span class="p-row" style="gap: 14px"
-                        ><span class="p-small">21:05</span><a class="p-link" href="#">Watch</a></span
-                      >
-                    </li>
-                    <li
-                      class="p-row"
-                      style="
-                        justify-content: space-between;
-                        min-height: 40px;
-                        font-size: 14px;
-                        color: var(--ink-2);
-                        gap: 12px;
-                      "
-                    >
-                      <span>Template parts and patterns</span
-                      ><span class="p-row" style="gap: 14px"
-                        ><span class="p-small">18:40</span><a class="p-link" href="#">Watch</a></span
-                      >
-                    </li>
-                    <li
-                      class="p-row"
-                      style="
-                        justify-content: space-between;
-                        min-height: 40px;
-                        font-size: 14px;
-                        color: var(--ink-2);
-                        gap: 12px;
-                      "
-                    >
-                      <span>Child themes done right</span
-                      ><span class="p-row" style="gap: 14px"
-                        ><span class="p-small">16:12</span><a class="p-link" href="#">Watch</a></span
-                      >
-                    </li>
-                    <li
-                      class="p-row"
-                      style="
-                        justify-content: space-between;
-                        min-height: 40px;
-                        font-size: 14px;
-                        color: var(--ink-2);
-                        gap: 12px;
-                      "
-                    >
-                      <span>Module 1 quiz</span
-                      ><span class="p-row" style="gap: 14px"
-                        ><span class="p-small">8 questions</span><a class="p-link" href="#">Watch</a></span
-                      >
-                    </li>
-                  </ul>
-                </div>
-                <div style="border-top: 1px solid var(--line-soft); padding: 12px">
-                  <div class="p-row" style="justify-content: space-between; gap: 12px">
-                    <span class="p-row" style="gap: 10px"
-                      ><span class="p-mono" style="color: var(--cyan-ink)">02</span
-                      ><strong style="font-size: 15px">Custom blocks</strong></span
-                    ><span class="p-small">7 lessons · 2 h 05 min</span>
-                  </div>
-                </div>
-                <div style="border-top: 1px solid var(--line-soft); padding: 12px">
-                  <div class="p-row" style="justify-content: space-between; gap: 12px">
-                    <span class="p-row" style="gap: 10px"
-                      ><span class="p-mono" style="color: var(--cyan-ink)">03</span
-                      ><strong style="font-size: 15px">Performance and security</strong></span
-                    ><span class="p-small">6 lessons · 1 h 38 min</span>
-                  </div>
-                </div>
-                <div style="border-top: 1px solid var(--line-soft); padding: 12px">
-                  <div class="p-row" style="justify-content: space-between; gap: 12px">
-                    <span class="p-row" style="gap: 10px"
-                      ><span class="p-mono" style="color: var(--cyan-ink)">04</span
-                      ><strong style="font-size: 15px">Shipping a client theme</strong></span
-                    ><span class="p-small">5 lessons · 1 h 15 min · final project</span>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-          <div style="flex: 1 1 380px; min-width: 0px; display: flex; flex-direction: column; gap: 24px">
-            <section
-              class="p-card"
-              aria-labelledby="price-title"
-              style="display: flex; flex-direction: column; gap: 18px"
-            >
-              <div class="p-card-head">
-                <h2 id="price-title" class="p-h3">Price &amp; installments</h2>
-                <span class="p-small">Only admins see this</span>
-              </div>
-              <div class="eit-field">
-                <label class="eit-field__label" for="eit-field-1">Track</label>
-                <div class="eit-field__wrap">
-                  <select id="eit-field-1" name="track" class="eit-field__control eit-field__select">
-                    <option value="dev" selected="">Development</option>
-                    <option value="design">Design</option>
-                    <option value="marketing">Marketing</option>
-                    <option value="netsec">Networking &amp; Security</option></select
-                  ><svg
-                    class="eit-icon eit-field__chev"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    focusable="false"
-                    aria-hidden="true"
-                  >
-                    <path d="M6 9l6 6 6-6"></path>
-                  </svg>
-                </div>
-              </div>
-              <div
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 16px"
-              >
-                <div class="eit-field">
-                  <label class="eit-field__label" for="eit-field-2">Online fee</label>
-                  <div class="eit-field__wrap">
-                    <span class="eit-field__prefix" aria-hidden="true">৳</span
-                    ><input
-                      id="eit-field-2"
-                      name="online"
-                      type="text"
-                      class="eit-field__control"
-                      inputmode="numeric"
-                      value="12,000"
-                    />
-                  </div>
-                </div>
-                <div class="eit-field">
-                  <label class="eit-field__label" for="eit-field-3">Offline fee</label>
-                  <div class="eit-field__wrap">
-                    <span class="eit-field__prefix" aria-hidden="true">৳</span
-                    ><input
-                      id="eit-field-3"
-                      name="offline"
-                      type="text"
-                      class="eit-field__control"
-                      inputmode="numeric"
-                      value="18,000"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div style="display: flex; flex-direction: column; gap: 8px">
-                <span class="p-label" id="plan-label">Installment plan</span>
-                <div class="p-seg" role="group" aria-labelledby="plan-label" style="align-self: flex-start">
-                  <button
-                    type="button"
-                    aria-pressed="false"
-                    style=""
-                    data-part-of="filtered"
-                    data-part="0"
-                    data-value="0"
-                  >
-                    Full only</button
-                  ><button
-                    type="button"
-                    aria-pressed="false"
-                    style=""
-                    data-part-of="filtered"
-                    data-part="0"
-                    data-value="1"
-                  >
-                    2 parts</button
-                  ><button
-                    type="button"
-                    aria-pressed="true"
-                    style="background: var(--surface-card); color: var(--ink); box-shadow: var(--shadow-sm)"
-                    data-part-of="filtered"
-                    data-part="0"
-                    data-value="2"
-                  >
-                    3 parts</button
-                  ><button
-                    type="button"
-                    aria-pressed="false"
-                    style=""
-                    data-part-of="filtered"
-                    data-part="0"
-                    data-value="3"
-                  >
-                    4 parts
-                  </button>
-                </div>
-                <span class="p-small">Offline: 3 × ৳6,000 · Online: 3 × ৳4,000 · one every 30 days</span>
-              </div>
-              <div class="p-row" style="justify-content: space-between; gap: 16px">
-                <span style="display: flex; flex-direction: column"
-                  ><span id="web-label" style="font-size: 14px; font-weight: 600">List on the website</span
-                  ><span class="p-small">Course page goes live when published</span></span
-                ><button
-                  type="button"
-                  class="p-switch"
-                  role="switch"
-                  aria-checked="true"
-                  aria-labelledby="web-label"
-                ></button>
-              </div>
-            </section>
-            <section class="p-card" aria-labelledby="fb-title" style="display: flex; flex-direction: column; gap: 10px">
-              <h2 id="fb-title" class="p-h3">Note to Kamrul</h2>
-              <label class="eit-sr" for="fb">Note to the mentor</label
-              ><textarea
-                id="fb"
-                class="p-textarea"
-                placeholder="Required if you send it back. Say what needs to change."
-                style="min-height: 100px"
-              ></textarea
-              ><span class="p-small"
-                >Sent with the course if you send it back, or as a thank-you when you publish.</span
-              >
-            </section>
-          </div>
-        </div>
-      </main></template
-    >
+        <div class="p-row" style="justify-content: space-between; gap: 16px">
+          <span style="display: flex; flex-direction: column"
+            ><span id="web-label" style="font-size: 14px; font-weight: 600">List on the website</span
+            ><span class="p-small">Course page goes live when published</span></span
+          ><button
+            type="button"
+            class="p-switch"
+            role="switch"
+            aria-checked="true"
+            aria-labelledby="web-label"
+          ></button>
+        </div></section
+    ></template>
     <template data-state="filtered:3" data-region="[data-region='filtered']"
-      ><main class="p-main" data-region="filtered">
-        <nav
-          aria-label="Breadcrumb"
-          class="p-row"
-          style="gap: 8px; font-size: 14px; color: var(--ink-3); flex-wrap: wrap"
-        >
-          <a class="p-link" href="courses.html" style="font-weight: 500">Courses &amp; batches</a
-          ><span aria-hidden="true">/</span
-          ><a class="p-link" href="courses.html" style="font-weight: 500">Review queue</a
-          ><span aria-hidden="true">/</span
-          ><span style="color: var(--ink-2)">Advanced WordPress Theme Development</span>
-        </nav>
-        <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
-          <div style="display: flex; flex-direction: column; gap: 6px">
-            <div class="p-row" style="gap: 12px; flex-wrap: wrap">
-              <h1 class="p-h1">Advanced WordPress Theme Development</h1>
-              <span class="eit-badge eit-badge--cyan">In review</span>
-            </div>
-            <span class="p-muted">Sent by Kamrul Hasan on 13 Oct · 4 modules · 24 lessons · 6 h 40 min of video</span>
+      ><section
+        class="p-card"
+        aria-labelledby="price-title"
+        style="display: flex; flex-direction: column; gap: 18px"
+        data-region="filtered"
+      >
+        <div class="p-card-head">
+          <h2 id="price-title" class="p-h3">Price &amp; installments</h2>
+          <span class="p-small">Only admins see this</span>
+        </div>
+        <div class="eit-field">
+          <label class="eit-field__label" for="eit-field-1">Track</label>
+          <div class="eit-field__wrap">
+            <select id="eit-field-1" name="track" class="eit-field__control eit-field__select">
+              <option value="dev" selected="">Development</option>
+              <option value="design">Design</option>
+              <option value="marketing">Marketing</option>
+              <option value="netsec">Networking &amp; Security</option></select
+            ><svg
+              class="eit-icon eit-field__chev"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
           </div>
-          <div class="p-row" style="flex-wrap: wrap">
-            <button class="p-ghostbtn" type="button">
-              <svg
-                class="eit-icon"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                focusable="false"
-                aria-hidden="true"
-              >
-                <path d="M21 12a9 9 0 1 1-3-6.7L21 8"></path>
-                <path d="M21 3v5h-5"></path></svg
-              >Send back to mentor</button
-            ><button type="button" class="eit-btn eit-btn--primary eit-btn--md">
-              <svg
-                class="eit-icon eit-btn__lead"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                focusable="false"
-                aria-hidden="true"
-              >
-                <path d="M20 6L9 17l-5-5"></path></svg
-              ><span class="eit-btn__label">Publish course</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 16px">
+          <div class="eit-field">
+            <label class="eit-field__label" for="eit-field-2">Online fee</label>
+            <div class="eit-field__wrap">
+              <span class="eit-field__prefix" aria-hidden="true">৳</span
+              ><input
+                id="eit-field-2"
+                name="online"
+                type="text"
+                class="eit-field__control"
+                inputmode="numeric"
+                value="12,000"
+              />
+            </div>
+          </div>
+          <div class="eit-field">
+            <label class="eit-field__label" for="eit-field-3">Offline fee</label>
+            <div class="eit-field__wrap">
+              <span class="eit-field__prefix" aria-hidden="true">৳</span
+              ><input
+                id="eit-field-3"
+                name="offline"
+                type="text"
+                class="eit-field__control"
+                inputmode="numeric"
+                value="18,000"
+              />
+            </div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <span class="p-label" id="plan-label">Installment plan</span>
+          <div class="p-seg" role="group" aria-labelledby="plan-label" style="align-self: flex-start">
+            <button type="button" aria-pressed="false" style="" data-part-of="filtered" data-part="0" data-value="0">
+              Full only</button
+            ><button type="button" aria-pressed="false" style="" data-part-of="filtered" data-part="0" data-value="1">
+              2 parts</button
+            ><button type="button" aria-pressed="false" style="" data-part-of="filtered" data-part="0" data-value="2">
+              3 parts</button
+            ><button
+              type="button"
+              aria-pressed="true"
+              style="background: var(--surface-card); color: var(--ink); box-shadow: var(--shadow-sm)"
+              data-part-of="filtered"
+              data-part="0"
+              data-value="3"
+            >
+              4 parts
             </button>
           </div>
+          <span class="p-small">Offline: 4 × ৳4,500 · Online: 4 × ৳3,000 · one every 30 days</span>
         </div>
-        <div class="p-split">
-          <div style="flex: 1.4 1 560px; min-width: 0px; display: flex; flex-direction: column; gap: 24px">
-            <section
-              class="p-card"
-              aria-labelledby="check-title"
-              style="display: flex; flex-direction: column; gap: 14px"
-            >
-              <h2 id="check-title" class="p-h3">Before publishing</h2>
-              <ul
-                style="
-                  list-style: none;
-                  margin: 0px;
-                  padding: 0px;
-                  display: flex;
-                  flex-direction: column;
-                  gap: 10px;
-                  font-size: 14px;
-                "
-              >
-                <li class="p-row" style="gap: 10px">
-                  <span style="color: var(--success)"
-                    ><svg
-                      class="eit-icon"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span
-                  >All 22 video lessons have a processed video
-                </li>
-                <li class="p-row" style="gap: 10px">
-                  <span style="color: var(--success)"
-                    ><svg
-                      class="eit-icon"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span
-                  >Every module ends with a quiz or a project
-                </li>
-                <li class="p-row" style="gap: 10px">
-                  <span style="color: var(--success)"
-                    ><svg
-                      class="eit-icon"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span
-                  >Lessons unlock in order, at 90% watched
-                </li>
-                <li class="p-row" style="gap: 10px">
-                  <span style="color: var(--warning)"
-                    ><svg
-                      class="eit-icon"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M12 7.5v5"></path>
-                      <path d="M12 16h.01"></path></svg></span
-                  >2 lessons have no starter files<a class="p-link" href="#" style="margin-left: auto">Show</a>
-                </li>
-                <li class="p-row" style="gap: 10px">
-                  <span style="color: var(--warning)"
-                    ><svg
-                      class="eit-icon"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M12 7.5v5"></path>
-                      <path d="M12 16h.01"></path></svg></span
-                  >No price set yet<span class="p-small" style="margin-left: auto">Set it on the right</span>
-                </li>
-              </ul>
-            </section>
-            <section class="p-card p-card--flush" aria-labelledby="curr-title">
-              <div class="p-card-head" style="padding: 20px 24px 12px">
-                <h2 id="curr-title" class="p-h3">Curriculum</h2>
-                <span class="p-small">Watch any lesson as a student would</span>
-              </div>
-              <div style="padding: 0px 12px 12px; display: flex; flex-direction: column">
-                <div style="border-top: 1px solid var(--line-soft); padding: 12px">
-                  <div class="p-row" style="justify-content: space-between; gap: 12px">
-                    <span class="p-row" style="gap: 10px"
-                      ><span class="p-mono" style="color: var(--cyan-ink)">01</span
-                      ><strong style="font-size: 15px">Theme architecture</strong></span
-                    ><span class="p-small">6 lessons · 1 h 42 min</span>
-                  </div>
-                  <ul
-                    style="
-                      list-style: none;
-                      margin: 10px 0px 0px;
-                      padding: 0px 0px 0px 34px;
-                      display: flex;
-                      flex-direction: column;
-                      gap: 2px;
-                    "
-                  >
-                    <li
-                      class="p-row"
-                      style="
-                        justify-content: space-between;
-                        min-height: 40px;
-                        font-size: 14px;
-                        color: var(--ink-2);
-                        gap: 12px;
-                      "
-                    >
-                      <span>Classic vs block themes</span
-                      ><span class="p-row" style="gap: 14px"
-                        ><span class="p-small">14:20</span><a class="p-link" href="#">Watch</a></span
-                      >
-                    </li>
-                    <li
-                      class="p-row"
-                      style="
-                        justify-content: space-between;
-                        min-height: 40px;
-                        font-size: 14px;
-                        color: var(--ink-2);
-                        gap: 12px;
-                      "
-                    >
-                      <span>theme.json in depth</span
-                      ><span class="p-row" style="gap: 14px"
-                        ><span class="p-small">21:05</span><a class="p-link" href="#">Watch</a></span
-                      >
-                    </li>
-                    <li
-                      class="p-row"
-                      style="
-                        justify-content: space-between;
-                        min-height: 40px;
-                        font-size: 14px;
-                        color: var(--ink-2);
-                        gap: 12px;
-                      "
-                    >
-                      <span>Template parts and patterns</span
-                      ><span class="p-row" style="gap: 14px"
-                        ><span class="p-small">18:40</span><a class="p-link" href="#">Watch</a></span
-                      >
-                    </li>
-                    <li
-                      class="p-row"
-                      style="
-                        justify-content: space-between;
-                        min-height: 40px;
-                        font-size: 14px;
-                        color: var(--ink-2);
-                        gap: 12px;
-                      "
-                    >
-                      <span>Child themes done right</span
-                      ><span class="p-row" style="gap: 14px"
-                        ><span class="p-small">16:12</span><a class="p-link" href="#">Watch</a></span
-                      >
-                    </li>
-                    <li
-                      class="p-row"
-                      style="
-                        justify-content: space-between;
-                        min-height: 40px;
-                        font-size: 14px;
-                        color: var(--ink-2);
-                        gap: 12px;
-                      "
-                    >
-                      <span>Module 1 quiz</span
-                      ><span class="p-row" style="gap: 14px"
-                        ><span class="p-small">8 questions</span><a class="p-link" href="#">Watch</a></span
-                      >
-                    </li>
-                  </ul>
-                </div>
-                <div style="border-top: 1px solid var(--line-soft); padding: 12px">
-                  <div class="p-row" style="justify-content: space-between; gap: 12px">
-                    <span class="p-row" style="gap: 10px"
-                      ><span class="p-mono" style="color: var(--cyan-ink)">02</span
-                      ><strong style="font-size: 15px">Custom blocks</strong></span
-                    ><span class="p-small">7 lessons · 2 h 05 min</span>
-                  </div>
-                </div>
-                <div style="border-top: 1px solid var(--line-soft); padding: 12px">
-                  <div class="p-row" style="justify-content: space-between; gap: 12px">
-                    <span class="p-row" style="gap: 10px"
-                      ><span class="p-mono" style="color: var(--cyan-ink)">03</span
-                      ><strong style="font-size: 15px">Performance and security</strong></span
-                    ><span class="p-small">6 lessons · 1 h 38 min</span>
-                  </div>
-                </div>
-                <div style="border-top: 1px solid var(--line-soft); padding: 12px">
-                  <div class="p-row" style="justify-content: space-between; gap: 12px">
-                    <span class="p-row" style="gap: 10px"
-                      ><span class="p-mono" style="color: var(--cyan-ink)">04</span
-                      ><strong style="font-size: 15px">Shipping a client theme</strong></span
-                    ><span class="p-small">5 lessons · 1 h 15 min · final project</span>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-          <div style="flex: 1 1 380px; min-width: 0px; display: flex; flex-direction: column; gap: 24px">
-            <section
-              class="p-card"
-              aria-labelledby="price-title"
-              style="display: flex; flex-direction: column; gap: 18px"
-            >
-              <div class="p-card-head">
-                <h2 id="price-title" class="p-h3">Price &amp; installments</h2>
-                <span class="p-small">Only admins see this</span>
-              </div>
-              <div class="eit-field">
-                <label class="eit-field__label" for="eit-field-1">Track</label>
-                <div class="eit-field__wrap">
-                  <select id="eit-field-1" name="track" class="eit-field__control eit-field__select">
-                    <option value="dev" selected="">Development</option>
-                    <option value="design">Design</option>
-                    <option value="marketing">Marketing</option>
-                    <option value="netsec">Networking &amp; Security</option></select
-                  ><svg
-                    class="eit-icon eit-field__chev"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    focusable="false"
-                    aria-hidden="true"
-                  >
-                    <path d="M6 9l6 6 6-6"></path>
-                  </svg>
-                </div>
-              </div>
-              <div
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 16px"
-              >
-                <div class="eit-field">
-                  <label class="eit-field__label" for="eit-field-2">Online fee</label>
-                  <div class="eit-field__wrap">
-                    <span class="eit-field__prefix" aria-hidden="true">৳</span
-                    ><input
-                      id="eit-field-2"
-                      name="online"
-                      type="text"
-                      class="eit-field__control"
-                      inputmode="numeric"
-                      value="12,000"
-                    />
-                  </div>
-                </div>
-                <div class="eit-field">
-                  <label class="eit-field__label" for="eit-field-3">Offline fee</label>
-                  <div class="eit-field__wrap">
-                    <span class="eit-field__prefix" aria-hidden="true">৳</span
-                    ><input
-                      id="eit-field-3"
-                      name="offline"
-                      type="text"
-                      class="eit-field__control"
-                      inputmode="numeric"
-                      value="18,000"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div style="display: flex; flex-direction: column; gap: 8px">
-                <span class="p-label" id="plan-label">Installment plan</span>
-                <div class="p-seg" role="group" aria-labelledby="plan-label" style="align-self: flex-start">
-                  <button
-                    type="button"
-                    aria-pressed="false"
-                    style=""
-                    data-part-of="filtered"
-                    data-part="0"
-                    data-value="0"
-                  >
-                    Full only</button
-                  ><button
-                    type="button"
-                    aria-pressed="false"
-                    style=""
-                    data-part-of="filtered"
-                    data-part="0"
-                    data-value="1"
-                  >
-                    2 parts</button
-                  ><button
-                    type="button"
-                    aria-pressed="false"
-                    style=""
-                    data-part-of="filtered"
-                    data-part="0"
-                    data-value="2"
-                  >
-                    3 parts</button
-                  ><button
-                    type="button"
-                    aria-pressed="true"
-                    style="background: var(--surface-card); color: var(--ink); box-shadow: var(--shadow-sm)"
-                    data-part-of="filtered"
-                    data-part="0"
-                    data-value="3"
-                  >
-                    4 parts
-                  </button>
-                </div>
-                <span class="p-small">Offline: 4 × ৳4,500 · Online: 4 × ৳3,000 · one every 30 days</span>
-              </div>
-              <div class="p-row" style="justify-content: space-between; gap: 16px">
-                <span style="display: flex; flex-direction: column"
-                  ><span id="web-label" style="font-size: 14px; font-weight: 600">List on the website</span
-                  ><span class="p-small">Course page goes live when published</span></span
-                ><button
-                  type="button"
-                  class="p-switch"
-                  role="switch"
-                  aria-checked="true"
-                  aria-labelledby="web-label"
-                ></button>
-              </div>
-            </section>
-            <section class="p-card" aria-labelledby="fb-title" style="display: flex; flex-direction: column; gap: 10px">
-              <h2 id="fb-title" class="p-h3">Note to Kamrul</h2>
-              <label class="eit-sr" for="fb">Note to the mentor</label
-              ><textarea
-                id="fb"
-                class="p-textarea"
-                placeholder="Required if you send it back. Say what needs to change."
-                style="min-height: 100px"
-              ></textarea
-              ><span class="p-small"
-                >Sent with the course if you send it back, or as a thank-you when you publish.</span
-              >
-            </section>
-          </div>
-        </div>
-      </main></template
-    >
+        <div class="p-row" style="justify-content: space-between; gap: 16px">
+          <span style="display: flex; flex-direction: column"
+            ><span id="web-label" style="font-size: 14px; font-weight: 600">List on the website</span
+            ><span class="p-small">Course page goes live when published</span></span
+          ><button
+            type="button"
+            class="p-switch"
+            role="switch"
+            aria-checked="true"
+            aria-labelledby="web-label"
+          ></button>
+        </div></section
+    ></template>
   </body>
 </html>
