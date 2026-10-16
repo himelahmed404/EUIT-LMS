@@ -341,13 +341,15 @@
   flex-direction: column;
   gap: 4px;
 }
+/* Group labels (Learn, Progress, Support), set like SchoolofGenZ's: small bold capitals. */
 .p-nav-label {
-  font-family: var(--font-mono);
   font-size: 11px;
-  letter-spacing: 0.12em;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink-3);
-  padding: 8px 12px 6px;
+  padding: 2px 12px 4px;
 }
 .p-nav a {
   position: relative;
@@ -424,7 +426,7 @@
 }
 /* Sub-links under a nav item (admin: reach every page from the sidebar) */
 .p-nav .p-nav-label:not(:first-child) {
-  padding-top: 16px;
+  padding-top: 14px;
 }
 .p-subnav {
   display: flex;
@@ -1609,6 +1611,17 @@ textarea:focus-visible {
   .p-side .p-nav-label,
   .p-side .p-subnav {
     display: none;
+  }
+  /* The rail has no room for group labels: a short rule marks where each group starts. */
+  .p-side .p-nav-label:not(:first-child) {
+    display: block;
+    width: 32px;
+    height: 1px;
+    margin: 4px 0;
+    padding: 0;
+    overflow: hidden;
+    font-size: 0;
+    background: var(--line-strong);
   }
   .p-side .p-nav {
     align-items: center;

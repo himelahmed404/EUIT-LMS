@@ -78,8 +78,10 @@ Fonts: Anek Bangla for text, JetBrains Mono for section labels, codes and the Ct
 
 Sidebar links per role:
 
-- **Student:** Dashboard, My courses (`course-player.html`), Quizzes, Projects, Schedule & recordings,
-  Leaderboard, Certificates, Payments, Help. Profile is reached from the avatar.
+- **Student** (grouped like SchoolofGenZ's sidebar): **Learn:** Dashboard, My courses (`course-player.html`),
+  Quizzes, Projects, Schedule & recordings · **Progress:** Leaderboard, Certificates · **Support:** Payments,
+  Help. Labels are `span.p-nav-label` inside the nav; the tablet rail shows a short rule between groups, and
+  the phone More sheet repeats the labels. Profile is reached from the avatar.
 - **Mentor:** Dashboard · **Queues:** Reviews 5 (`review.html`), Student questions 3 (`questions.html`) ·
   **Teaching:** My batches (`batch.html`), Schedule & recordings 1 · **Content:** Courses (`course-builder.html`;
   the Quiz builder highlights it) · **Help:** Mentor handbook (no page yet). Notifications and My profile are in
