@@ -123,6 +123,10 @@
               <path d="M15.5 13.5L17 22l-5-3-5 3 1.5-8.5"></path></svg
             ><span class="p-nav-text">Certificates</span></a
           ><span class="p-nav-label">Support</span
+          ><a href="questions.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg
+            ><span class="p-nav-text">My questions</span></a
           ><a href="payments.html"
             ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
               <rect x="2" y="5" width="20" height="14" rx="2"></rect>
@@ -609,7 +613,35 @@
                   </div>
                 </form>
                 <div style="display: flex; flex-direction: column; gap: 12px">
-                  <span class="p-mono">Your questions on this lesson</span>
+                  <div class="p-row" style="justify-content: space-between; flex-wrap: wrap; gap: 8px">
+                    <span class="p-mono">Your questions on this lesson</span
+                    ><a class="p-link" href="questions.html">All your questions</a>
+                  </div>
+                  <article
+                    class="p-card"
+                    style="
+                      padding: 16px;
+                      box-shadow: none;
+                      display: flex;
+                      flex-direction: column;
+                      gap: 12px;
+                      background: var(--surface);
+                    "
+                  >
+                    <div class="p-row" style="gap: 10px; align-items: flex-start">
+                      <span class="p-avatar p-avatar--sm">NJ</span>
+                      <div style="display: flex; flex-direction: column; gap: 2px">
+                        <strong style="font-size: 14px"
+                          >Is 400ms too slow for the menu slide-in?
+                          <span class="eit-badge eit-badge--warning" style="margin-left: 6px">Waiting</span></strong
+                        ><span class="p-small">You · 2 h ago · at 11:36 in the video</span>
+                        <p class="p-body" style="margin: 4px 0 0; font-size: 14px">
+                          I used 400ms for the mobile menu slide-in. It feels a bit slow on my phone. Is that okay, or
+                          should it be faster?
+                        </p>
+                      </div>
+                    </div>
+                  </article>
                   <article
                     class="p-card"
                     style="

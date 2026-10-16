@@ -13,6 +13,10 @@ html.is-student {
 html.is-student :is(.p-h1, .p-h2, .p-h3, .p-num, .p-brand-name, .eit-hl) {
   letter-spacing: 0;
 }
+/* JetBrains Mono runs larger than the text around it. */
+html.is-student code {
+  font-size: 0.88em;
+}
 
 /* Notifications as its own page: the panel centred on the page surface. */
 body.page-panel {
@@ -587,4 +591,120 @@ body.page-print {
   font-size: 15px;
   font-weight: 600;
   letter-spacing: 0.06em;
+}
+
+/* ---------- Student: My questions (student/questions.html) ---------- */
+.mq-main {
+  flex: 1.6 1 560px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.mq-side {
+  flex: 1 1 320px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.mq-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.mq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.mq-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.mq-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.mq-ask,
+.mq-answer {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.mq-answer {
+  margin-left: 44px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--surface);
+}
+.mq-text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.mq-text strong {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+.mq-text .p-body {
+  margin: 4px 0 0;
+  font-size: 15px;
+}
+.mq-wait {
+  margin: 0 0 0 44px;
+}
+.mq-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-top: 12px;
+  border-top: 1px solid var(--line-soft);
+}
+.mq-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.mq-steps li {
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+}
+.mq-steps li > span:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.mq-step-n {
+  flex: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--cyan-soft);
+  color: var(--cyan-deep);
+  font-size: 13px;
+  font-weight: 700;
+}
+@media (max-width: 720px) {
+  .mq-answer,
+  .mq-wait {
+    margin-left: 0;
+  }
 }

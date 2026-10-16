@@ -12,7 +12,7 @@ Read this before you change a page, so you don't have to open all 49 to find you
 - [Demo people and data](#demo-people-and-data)
 - [Shared parts of every panel page](#shared-parts-of-every-panel-page)
 - [Public pages](#public-pages): log in, reset password, enroll, UI guide
-- [Student panel](#student-panel) (18 pages)
+- [Student panel](#student-panel) (19 pages)
 - [Mentor panel](#mentor-panel) (9 pages)
 - [Admin panel](#admin-panel) (16 pages, console look)
 - [Links that are still placeholders](#links-that-are-still-placeholders)
@@ -79,8 +79,8 @@ Fonts: Anek Bangla for text, JetBrains Mono for section labels, codes and the Ct
 Sidebar links per role:
 
 - **Student** (grouped like SchoolofGenZ's sidebar): **Learn:** Dashboard, My courses (`course-player.html`),
-  Quizzes, Projects, Schedule & recordings, Explore courses · **Progress:** Leaderboard, Certificates · **Support:** Payments,
-  Help. Labels are `span.p-nav-label` inside the nav; the tablet rail shows a short rule between groups, and
+  Quizzes, Projects, Schedule & recordings, Explore courses · **Progress:** Leaderboard, Certificates · **Support:** My questions,
+  Payments, Help. Labels are `span.p-nav-label` inside the nav; the tablet rail shows a short rule between groups, and
   the phone More sheet repeats the labels. Profile is reached from the avatar.
 - **Mentor:** Dashboard · **Queues:** Reviews 5 (`review.html`), Student questions 3 (`questions.html`) ·
   **Teaching:** My batches (`batch.html`), Schedule & recordings 1 · **Content:** Courses (`course-builder.html`;
@@ -214,6 +214,17 @@ Earned certificate preview with **Copy link** (copies the verify URL) and **View
 Toolbar: Back to certificates, **Copy verify link**, **Download PDF** (opens the print dialog; the page
 prints on one A4 landscape sheet without the toolbar). The 1123 × 794 sheet scales down to fit narrow
 screens (`data-fit`). Placeholder: **[DIRECTOR NAME]**; the signatures and QR code are drawn stand-ins.
+
+### `student/questions.html` · My questions
+
+Nusrat's questions to her mentors (the student side of mentor Student questions): one waiting (Kamrul, 2 h
+ago, Class 12 at 11:36: is 400ms too slow for the menu slide-in) and two answered (Kamrul 12 Oct: why the
+menu isn't showing; Nadia Rahman 8 Oct: margins in Graphic Design Live 6). Chips All / Waiting / Answered
+filter the cards (`data-list`) and "n shown" follows. Each card has Open the lesson, and answered ones This
+helped (toast). Side: How asking works (Ask about your current lesson opens the course player's Ask the
+mentor tab, `course-player.html#lp-ask`) and Not about a lesson? (Help). The course player's Ask the mentor
+tab lists both of the lesson's questions and links here; so does the notification "Kamrul answered your
+question".
 
 ### `student/payments.html` · Payments
 

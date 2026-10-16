@@ -1,4 +1,4 @@
-// Click-throughs of the main journeys: log in as each role, reset a password, take a quiz, explore courses,
+// Click-throughs of the main journeys: log in as each role, reset a password, take a quiz, explore courses, my questions,
 // upload a recording, edit roles, enroll, notifications, the mentor panel (questions, the review queue, the to-do
 // list), dialogs and the admin console
 // (light by default, dark remembered, collapsed sidebar, phone drawer, account menu, Ctrl K, links that open a tab)
@@ -67,6 +67,13 @@ ok(
 );
 await click(p.getByRole("button", { name: /^All/ }));
 ok("explore: All brings them back", (await cards()) === 7);
+
+await go("student/questions.html");
+const qs = async () => p.locator("main [data-list-item]:visible").count();
+ok("my questions: shows all 3", (await qs()) === 3);
+await click(p.getByRole("button", { name: /^Waiting/ }));
+ok("my questions: Waiting shows the one Kamrul hasn't answered", (await qs()) === 1);
+ok("my questions: the count follows", (await p.locator("[data-list-shown]").textContent()) === "1");
 
 await go("mentor/schedule.html");
 await click(btn("Upload recording").first());
