@@ -584,7 +584,8 @@
      A .c-list holds .c-row tabs (a vertical tab list; each row's record is its tab panel in .c-pane).
      Each row names its tags in data-tags. Filter buttons (data-filter="tag", or "all") and selects
      (data-filter, the option's value is a tag, "" for any) narrow the rows; data-search matches their text.
-     Below 1100px the pane is closed, and opening a row slides its record over the page. */
+     Below 1100px the pane is closed, and opening a row slides its record over the page.
+     Student pages filter cards the same way: a [data-list] holds the filters and [data-list-item] cards. */
   var narrowPane = window.matchMedia ? window.matchMedia("(max-width: 1099px)") : { matches: false };
   var paneOpener = null;
   function filterList(list) {
@@ -601,7 +602,7 @@
       });
     var box = list.querySelector("[data-search]");
     var q = box ? box.value.trim().toLowerCase() : "";
-    var rows = $all(".c-row", list);
+    var rows = $all(".c-row, [data-list-item]", list);
     var shown = rows.filter(function (r) {
       var tags = (r.getAttribute("data-tags") || "").split(" ");
       var ok =
@@ -618,11 +619,17 @@
     $all("[data-list-shown]", list).forEach(function (el) {
       el.textContent = shown.length;
     });
+    // A section of cards ([data-list-group]) hides once none of its cards are shown.
+    $all("[data-list-group]", list).forEach(function (g) {
+      g.hidden = !$all("[data-list-item]", g).some(function (r) {
+        return !r.hidden;
+      });
+    });
     // Keep a record open: if the open row was filtered out, open the first row still shown.
     var open = rows.filter(function (r) {
       return r.getAttribute("aria-selected") === "true";
     })[0];
-    if (shown.length && (!open || open.hidden)) {
+    if (shown.length && (!open || open.hidden) && shown[0].getAttribute("role") === "tab") {
       selectTab(shown[0]);
     }
   }
@@ -891,7 +898,7 @@
     var t = e.target;
     var filter = t.closest("button[data-filter]");
     if (filter) {
-      filterList(filter.closest(".c-list"));
+      filterList(filter.closest(".c-list, [data-list]"));
       return;
     }
     // A list with its record beside it in a pane (.c-work) slides the pane in on narrow screens; the
@@ -908,12 +915,12 @@
   });
   document.addEventListener("input", function (e) {
     if (e.target.matches && e.target.matches("[data-search]")) {
-      filterList(e.target.closest(".c-list"));
+      filterList(e.target.closest(".c-list, [data-list]"));
     }
   });
   document.addEventListener("change", function (e) {
     if (e.target.matches && e.target.matches("select[data-filter]")) {
-      filterList(e.target.closest(".c-list"));
+      filterList(e.target.closest(".c-list, [data-list]"));
     }
   });
 

@@ -12,7 +12,7 @@ Read this before you change a page, so you don't have to open all 49 to find you
 - [Demo people and data](#demo-people-and-data)
 - [Shared parts of every panel page](#shared-parts-of-every-panel-page)
 - [Public pages](#public-pages): log in, reset password, enroll, UI guide
-- [Student panel](#student-panel) (17 pages)
+- [Student panel](#student-panel) (18 pages)
 - [Mentor panel](#mentor-panel) (9 pages)
 - [Admin panel](#admin-panel) (16 pages, console look)
 - [Links that are still placeholders](#links-that-are-still-placeholders)
@@ -79,7 +79,7 @@ Fonts: Anek Bangla for text, JetBrains Mono for section labels, codes and the Ct
 Sidebar links per role:
 
 - **Student** (grouped like SchoolofGenZ's sidebar): **Learn:** Dashboard, My courses (`course-player.html`),
-  Quizzes, Projects, Schedule & recordings · **Progress:** Leaderboard, Certificates · **Support:** Payments,
+  Quizzes, Projects, Schedule & recordings, Explore courses · **Progress:** Leaderboard, Certificates · **Support:** Payments,
   Help. Labels are `span.p-nav-label` inside the nav; the tablet rail shows a short rule between groups, and
   the phone More sheet repeats the labels. Profile is reached from the avatar.
 - **Mentor:** Dashboard · **Queues:** Reviews 5 (`review.html`), Student questions 3 (`questions.html`) ·
@@ -192,6 +192,17 @@ Placeholder: Add to Google Calendar.
 
 Course switch (button state only), your position hero with podium, batch ranking table ("Show all 20
 students" reveals the rest), How points work, Points history, "Show my name to classmates" switch.
+
+### `student/explore.html` · Explore courses
+
+Courses Nusrat can add, from the admin catalogue. Track chips with counts (All / Development / Design /
+Marketing / Networking & Security) filter the cards (`data-list`, see README); a section with nothing left
+to show hides. **Open to join:** React JS (Batch 7, Sat 31 Oct, Zoom), Cyber Security (Batch 4, Mon 26 Oct,
+Lab 3), CCNA (Batch 8, full: Join the waiting list) and UI/UX Design (no batch yet: Tell me when it opens);
+each shows fee, how to pay and the next batch. **Already yours:** WordPress B14 and Graphic Design B9 (Open
+course) and Digital Marketing Essentials (completed, See certificate). **Bring a friend:** her referral code
+NUSRAT148 with Copy code, and the numbers from admin Coupons & referrals (3 friends, ৳1,500 credit, ৳1,000
+adding Wed 21 Oct). Placeholder: See course (no course pages yet).
 
 ### `student/certificates.html` · Certificates
 
@@ -431,6 +442,7 @@ About 140 links still point at `#` (an action with no page or backend yet). The 
 - **Contact:** Call / WhatsApp on seminar leads and Help, Message Kamrul, ask on WhatsApp.
 - **Lists:** pagination, Show all, Export CSV.
 - **Editors:** choosing another lesson in the course builder or another question in the quiz builder.
+- **Course pages:** See course on Explore courses (only WordPress has an enroll page).
 - **Mentor pages not built yet:** React JS Batch 6 and WordPress Batch 15 (the My batches switcher and the
   dashboard), the course in review (Courses switcher), Mentor handbook (sidebar), Open roster (dashboard),
   and the submission links and files in the review queue.
