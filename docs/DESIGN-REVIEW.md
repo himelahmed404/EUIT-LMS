@@ -107,6 +107,30 @@ Next, marks adding up and Approve waiting for them, the batch picker, the to-do 
 - **The attendance table on phones** scrolls sideways with Present / Late / Absent at the edge; a card per
   student would be easier to mark on a phone.
 
+## Student panel: cleaner, same look
+
+The owner asked to keep the student panel's own design (not the console) and make it cleaner and easier to
+get around, with the sidebar's groups and link order taken from SchoolofGenZ. The sidebar's look is unchanged.
+
+| Finding                                                                                                                               | Severity | Change                                                                                                                                                                          |
+| ------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Nine sidebar links in one flat list, and three of SchoolofGenZ's (Explore courses, Saved & notes, My questions) had no page           | 🔴       | Grouped **Learn / Progress / Support** in SchoolofGenZ's order; added the three pages. The tablet rail marks groups with a short rule; the phone More sheet repeats the labels. |
+| A student could only reach a mentor's answer through a notification                                                                   | 🔴       | **My questions** lists every question and answer; the course player and the notification link to it. The waiting question now also shows under the lesson.                      |
+| Schedule's course filter did nothing                                                                                                  | 🟡       | It now narrows classes, recordings and the attendance line.                                                                                                                     |
+| Schedule: one class card tinted cyan for no reason, its badge wrapped under the title                                                 | 🟡       | One card look, badges above the title, Next class on the soonest.                                                                                                               |
+| Dashboard greeting: two decorative stickers wrapped onto their own line; Help and Quiz result had floating icons that repeat the text | 🟡       | Removed.                                                                                                                                                                        |
+| Phone dashboard: the hero filled the whole first screen                                                                               | 🟡       | The continue-watching card becomes a thumbnail row; the stats show on the first screen.                                                                                         |
+| Tab counts (Resources 2) were the tab bar's own grey                                                                                  | 🟢       | Small chips.                                                                                                                                                                    |
+| Projects: the first summary card had its own layout                                                                                   | 🟢       | Same icon, number and label as the others.                                                                                                                                      |
+| Type: Geist here, Anek Bangla in the admin and mentor panels                                                                          | 🟢       | Student pages use Anek Bangla and JetBrains Mono, with the negative heading tracking removed.                                                                                   |
+
+Still open for the student panel:
+
+- **Course pages** behind Explore courses' See course (only WordPress has an enroll page).
+- **Bangla:** the language switch is remembered but the copy stays English.
+- **Points card in the sidebar** pushes below the fold on screens under about 860px tall (the sidebar scrolls).
+- **Login and enroll pages** still use Geist; switch them to the same fonts when they are next touched.
+
 ## Overall impression
 
 The design system is strong: calm colours that pass contrast, a clear "next step first" order on every

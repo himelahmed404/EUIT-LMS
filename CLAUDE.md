@@ -65,7 +65,9 @@ Run `npm run check` after any change; it must end with "Everything passed".
   bracketed placeholders ([SUPPORT PHONE], [DIRECTOR NAME], [SMS PROVIDER]) wait for the owner's content.
 - New page: copy a sibling page in the same folder, set the sidebar's `aria-current="page"`, title it
   "Name · European IT LMS", add it to `docs/PAGES.md`, run `npm run check`.
-- The student panel is next to move to the console look; the owner will ask for it.
+- **The student panel keeps its own look** (the owner's choice): don't move it to the console. Its sidebar is
+  grouped Learn / Progress / Support (`span.p-nav-label`) in SchoolofGenZ's order; card lists filter with
+  `data-list` / `data-list-item` (README).
 - **Never run `tools/design-export/` over this repo.** The pages were exported once and then fixed by hand;
   the script refuses without `--force`. Export into an empty folder if you need the original design.
 - Format with Prettier (width 120) before committing.
