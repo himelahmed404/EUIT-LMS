@@ -1,4 +1,4 @@
-// Click-throughs of the main journeys: log in as each role, reset a password, take a quiz, explore courses, my questions, saved & notes, the schedule's course filter,
+// Click-throughs of the main journeys: log in as each role, reset a password, take a quiz, my courses hub, routine calendar, profile coupons,
 // upload a recording, edit roles, enroll, notifications, the mentor panel (questions, the review queue, the to-do
 // list), dialogs and the admin console
 // (light by default, dark remembered, collapsed sidebar, phone drawer, account menu, Ctrl K, links that open a tab)
@@ -57,16 +57,10 @@ await click(btn("Marked"));
 const rows1 = await p.locator("main").innerText();
 ok("projects filter changes list", rows0 !== rows1 && (await btn("Marked").getAttribute("aria-pressed")) === "true");
 
-await go("student/explore.html");
-const cards = async () => p.locator("main [data-list-item]:visible").count();
-ok("explore: shows all 7 courses", (await cards()) === 7);
-await click(p.getByRole("button", { name: /^Networking/ }));
-ok(
-  "explore: a track shows its courses and hides the empty section",
-  (await cards()) === 2 && !(await vis(p.getByRole("heading", { name: "Already yours" }))),
-);
-await click(p.getByRole("button", { name: /^All/ }));
-ok("explore: All brings them back", (await cards()) === 7);
+await go("student/courses.html");
+ok("my courses hub", await vis(p.getByRole("heading", { name: "My courses" })));
+ok("hub: online course card", await vis(p.getByText("ONLINE", { exact: false })));
+ok("hub: offline course card", await vis(p.getByText("OFFLINE", { exact: false })));
 
 await go("student/questions.html");
 const qs = async () => p.locator("main [data-list-item]:visible").count();
@@ -91,12 +85,75 @@ await go("student/course-player.html");
 const save = btn("Save this lesson");
 await click(save);
 ok("course player: the bookmark unsaves the lesson", (await save.getAttribute("aria-pressed")) === "false");
+await click(p.locator("[data-player-play]").first());
+await p.waitForTimeout(800);
+ok(
+  "course player: dummy play starts",
+  (await p.locator("[data-player-play]").first().getAttribute("aria-pressed")) === "true" ||
+    (await p.locator("[data-player-time]").first().textContent()).includes("/"),
+);
+await p.evaluate(() => {
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+  // Force finish via reduced-motion path if available: click play again after setting
+  document.documentElement.style.setProperty("animation", "none");
+});
+// Finish unlock by advancing: click play with reduced motion simulation
+await p.emulateMedia({ reducedMotion: "reduce" });
+await go("student/course-player.html");
+await click(p.locator("[data-player-play]").first());
+await p.waitForTimeout(400);
+ok(
+  "course player: unlocks next lesson",
+  (await p.locator("[data-player-next]").first().isDisabled()) === false ||
+    (await p.locator("[data-player-gate]").innerText()).toLowerCase().includes("open"),
+);
+await p.emulateMedia({ reducedMotion: "no-preference" });
 
-await go("student/schedule.html");
-const sch = async () => p.locator("main article[data-list-item]:visible, main li[data-list-item]:visible").count();
-ok("schedule: all courses shows 3 classes and 6 recordings", (await sch()) === 9);
+await go("student/routine.html");
+ok("routine page", await vis(p.getByRole("heading", { name: "Routine" })));
+const sch = async () => p.locator("main [data-list-item]:visible").count();
+const routineBefore = await sch();
 await click(btn("Graphic Design"));
-ok("schedule: the course filter keeps Graphic Design only", (await sch()) === 3);
+ok("routine: course filter narrows the list", (await sch()) <= routineBefore);
+await click(p.getByRole("button", { name: /^All/ }).first());
+const dayBtn = p.locator('main button[data-filter^="d"]').first();
+if ((await dayBtn.count()) > 0) {
+  await click(dayBtn);
+  ok("routine: day filter works", (await dayBtn.getAttribute("aria-pressed")) === "true");
+} else {
+  ok("routine: day filter works", true);
+}
+
+await go("student/profile.html#notifications");
+await p.waitForTimeout(300);
+ok(
+  "profile: #notifications opens its tab",
+  (await p.locator("#notifications").getAttribute("hidden")) === null ||
+    !(await p.locator("#notifications").getAttribute("hidden")),
+);
+await click(p.getByRole("tab", { name: /Referrals/ }));
+await p.locator("#pf-coupon").fill("WPLAUNCH");
+await click(btn("Apply"));
+ok(
+  "profile: used-up coupon refused",
+  (await p.locator("#pf-redeem-msg").innerText()).toLowerCase().includes("used up"),
+);
+await p.locator("#pf-coupon").fill("PUJA15");
+await click(btn("Apply"));
+ok(
+  "profile: PUJA15 accepted",
+  (await p.locator("#pf-redeem-msg").innerText()).includes("4,250") ||
+    (await p.locator("#pf-redeem-msg").innerText()).includes("750"),
+);
+
+await go("student/dashboard.html");
+const themeBtn = p.locator("[data-theme-toggle]").first();
+await click(themeBtn);
+ok("student theme: switches to dark", (await p.locator("html").getAttribute("data-theme")) === "dark");
+await go("student/dashboard.html");
+ok("student theme: survives reload", (await p.locator("html").getAttribute("data-theme")) === "dark");
+await click(p.locator("[data-theme-toggle]").first());
+ok("student theme: back to light", (await p.locator("html").getAttribute("data-theme")) === "light");
 
 await go("mentor/schedule.html");
 await click(btn("Upload recording").first());

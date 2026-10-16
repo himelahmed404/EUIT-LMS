@@ -41,8 +41,8 @@
         place-items: center;
         font-weight: 700;
         font-size: 17px;
-        background: #ffffff;
-        color: #0a1b2c;
+        background: var(--on-ink);
+        color: var(--ink);
         transition: transform var(--duration-base) var(--ease-spring);
       }
       .lb-col:hover .lb-av {
@@ -54,8 +54,8 @@
         width: 34px;
         height: 34px;
         border-radius: 12px;
-        background: #f4b04f;
-        color: #0a1b2c;
+        background: var(--warning);
+        color: var(--ink);
         margin-bottom: 2px;
         animation: p-float 5s ease-in-out infinite;
       }
@@ -107,6 +107,7 @@
         border-bottom: 0;
       }
     </style>
+    <script src="../assets/js/theme.js"></script>
     <script src="../assets/js/app.js" defer></script>
   </head>
   <body>
@@ -127,7 +128,7 @@
               <rect x="14" y="12" width="7" height="9" rx="1"></rect>
               <rect x="3" y="16" width="7" height="5" rx="1"></rect></svg
             ><span class="p-nav-text">Dashboard</span></a
-          ><a href="course-player.html"
+          ><a href="courses.html"
             ><svg
               class="eit-icon"
               width="20"
@@ -166,7 +167,7 @@
             >
               <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg
             ><span class="p-nav-text">Projects</span><span class="p-count">1</span></a
-          ><a href="schedule.html"
+          ><a href="routine.html"
             ><svg
               class="eit-icon"
               width="20"
@@ -182,13 +183,7 @@
             >
               <rect x="3" y="4" width="18" height="18" rx="2"></rect>
               <path d="M16 2v4M8 2v4M3 10h18"></path></svg
-            ><span class="p-nav-text">Schedule &amp; recordings</span
-            ><span class="p-nav-short" aria-hidden="true">Schedule</span></a
-          ><a href="explore.html"
-            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"></circle>
-              <path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z"></path></svg
-            ><span class="p-nav-text">Explore courses</span></a
+            ><span class="p-nav-text">Routine</span></a
           ><span class="p-nav-label">Progress</span
           ><a href="leaderboard.html" aria-current="page"
             ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -241,7 +236,7 @@
         </nav>
         <a class="p-help p-lift" href="quizzes.html" style="margin-top: auto; text-decoration: none; color: inherit"
           ><span class="p-row" style="gap: 10px"
-            ><span class="p-tile" style="width: 38px; height: 38px; background: var(--cyan); color: rgb(10, 27, 44)"
+            ><span class="p-tile" style="width: 38px; height: 38px; background: var(--cyan); color: var(--on-cyan)"
               ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
                 <rect x="8" y="2" width="8" height="4" rx="1"></rect>
                 <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
@@ -250,35 +245,64 @@
               ><strong style="font-size: 18px; line-height: 1.15">+10 waiting</strong
               ><span class="p-small" style="color: var(--cyan-deep)">Class 12 quiz is open</span></span
             ></span
-          ><span class="p-small" style="color: var(--cyan-deep)">Full marks takes you to 100 points</span></a
+          ><span class="p-small" style="color: var(--cyan-deep)">Marked projects add to your points</span></a
         >
       </aside>
       <div class="p-content">
         <header class="p-top">
-          <label class="p-search"
-            ><svg
-              class="eit-icon"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              focusable="false"
-              aria-hidden="true"
-            >
-              <circle cx="11" cy="11" r="8"></circle>
-              <path d="M21 21l-4.35-4.35"></path></svg
-            ><span class="eit-sr">Search</span><input type="search" placeholder="Search lessons and resources"
-          /></label>
+          <a class="p-next" href="routine.html"
+            ><span class="p-live" aria-hidden="true"></span
+            ><span class="p-next-text"
+              ><span class="p-next-l">Next class</span><span class="p-next-t">WordPress · Class 13</span
+              ><span class="p-next-m">Mon 19 Oct, 7:00 PM · Lab 2</span></span
+            ></a
+          >
           <div class="p-top-right">
             <div class="eit-seg has-thumb" role="group" aria-label="Language">
               <span class="eit-seg__thumb" aria-hidden="true" style="width: 52px; transform: translateX(4px)"></span
               ><button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button
               ><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button>
             </div>
+            <button
+              class="p-iconbtn"
+              data-theme-toggle=""
+              type="button"
+              aria-label="Dark mode"
+              aria-pressed="false"
+              title="Switch to dark mode"
+            >
+              <svg
+                class="p-moon"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg
+              ><svg
+                class="p-sun"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zM12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"
+                ></path>
+              </svg>
+            </button>
             <button
               class="p-iconbtn"
               data-notif-scope="student"
@@ -412,8 +436,7 @@
             <div style="display: flex; flex-direction: column; gap: 6px; max-width: 660px">
               <h1 class="p-h1">Leaderboard</h1>
               <p class="p-body">
-                See your points and where you stand in your batch. Every class quiz you finish with full marks adds 10
-                points.
+                See your points and where you stand in your batch. Your points are the sum of your marked project marks.
               </p>
             </div>
             <div class="p-seg" role="group" aria-label="Course">
@@ -438,52 +461,35 @@
                     line-height: 0.9;
                     font-weight: 700;
                     letter-spacing: 0;
-                    color: rgb(255, 255, 255);
+                    color: var(--ink);
                   "
                 >
                   <span class="eit-sr">Rank </span>#3
                 </h2>
                 <span style="display: flex; flex-direction: column; padding-bottom: 4px"
-                  ><strong style="font-size: 18px; color: rgb(255, 255, 255)">of 20 students</strong
+                  ><strong style="font-size: 18px; color: var(--ink)">of 20 students</strong
                   ><span class="p-small" style="color: var(--ink-2)">Top 15% of your batch</span></span
                 >
               </div>
               <div class="p-row" style="flex-wrap: wrap; gap: 8px">
                 <span
                   class="p-pill"
-                  style="
-                    background: rgba(255, 255, 255, 0.1);
-                    color: rgb(255, 255, 255);
-                    height: 32px;
-                    font-weight: 600;
-                  "
-                  ><svg
-                    class="p-icon p-icon--sm"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                    style="color: rgb(0, 174, 238)"
-                  >
+                  style="background: rgba(255, 255, 255, 0.1); color: var(--ink); height: 32px; font-weight: 600"
+                  ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true" style="color: var(--cyan)">
                     <path
                       d="M12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"
                     ></path></svg
                   ><span class="eit-count"
-                    ><span class="eit-sr">90</span><span class="eit-count__ghost" aria-hidden="true">90</span
-                    ><span class="eit-count__n" aria-hidden="true">90</span></span
+                    ><span class="eit-sr">164</span><span class="eit-count__ghost" aria-hidden="true">164</span
+                    ><span class="eit-count__n" aria-hidden="true">164</span></span
                   >&nbsp;points</span
-                ><span
-                  class="p-pill"
-                  style="background: rgba(255, 255, 255, 0.1); color: rgb(255, 255, 255); height: 32px"
-                  ><svg
-                    class="p-icon p-icon--sm"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                    style="color: rgb(79, 211, 154)"
-                  >
+                ><span class="p-pill" style="background: rgba(255, 255, 255, 0.1); color: var(--ink); height: 32px"
+                  ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true" style="color: var(--success)">
                     <path d="M20 6 9 17l-5-5"></path></svg
-                  >9 full-mark quizzes</span
+                  >2 projects marked</span
                 ><span
                   class="p-pill"
-                  style="height: 32px; font-weight: 600; background: rgba(79, 211, 154, 0.16); color: rgb(79, 211, 154)"
+                  style="height: 32px; font-weight: 600; background: rgba(79, 211, 154, 0.16); color: var(--success)"
                   ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="m18 15-6-6-6 6"></path></svg
                   >Up 2 places this week</span
@@ -501,21 +507,21 @@
                 "
               >
                 <div class="p-row" style="justify-content: space-between; gap: 12px; flex-wrap: wrap">
-                  <strong style="font-size: 16px; color: rgb(255, 255, 255)">20 points to reach #2</strong
-                  ><span class="p-small" style="color: var(--ink-2)">Farhana R. has 110</span>
+                  <strong style="font-size: 16px; color: var(--ink)">8 points to reach #2</strong
+                  ><span class="p-small" style="color: var(--ink-2)">Farhana R. has 172</span>
                 </div>
                 <div
                   class="p-bar"
                   role="img"
-                  aria-label="90 of 110 points"
+                  aria-label="164 of 172 points"
                   style="background: rgba(255, 255, 255, 0.14)"
                 >
-                  <span style="width: 82%"></span>
+                  <span style="width: 95%"></span>
                 </div>
                 <div class="p-row" style="justify-content: space-between; gap: 12px; flex-wrap: wrap">
-                  <span class="p-small" style="color: var(--ink-2)">Two full-mark quizzes get you there.</span
-                  ><a href="quiz.html" class="eit-btn eit-btn--primary eit-btn--md"
-                    ><span class="eit-btn__label">Take the Class 12 quiz</span
+                  <span class="p-small" style="color: var(--ink-2)">One strong project mark gets you there.</span
+                  ><a href="projects.html" class="eit-btn eit-btn--primary eit-btn--md"
+                    ><span class="eit-btn__label">Open projects</span
                     ><svg
                       class="eit-icon eit-btn__trail"
                       width="16"
@@ -538,15 +544,15 @@
             <div class="lb-podium" role="list" aria-label="Top 3 in the batch">
               <div role="listitem" class="lb-col" style="animation-delay: 120ms">
                 <span class="lb-av" style="">FR</span
-                ><strong style="font-size: 15px; color: rgb(255, 255, 255); line-height: 1.2">Farhana R.</strong
-                ><span class="p-small" style="color: var(--ink-2)">110 points</span>
+                ><strong style="font-size: 15px; color: var(--ink); line-height: 1.2">Farhana R.</strong
+                ><span class="p-small" style="color: var(--ink-2)">172 points</span>
                 <div
                   class="lb-block"
-                  aria-label="Rank 2, 110 points"
+                  aria-label="Rank 2, 172 points"
                   style="
                     height: 112px;
                     background: rgba(255, 255, 255, 0.16);
-                    color: rgb(255, 255, 255);
+                    color: var(--ink);
                     animation-delay: 320ms;
                   "
                 >
@@ -558,12 +564,12 @@
                   ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24">
                     <path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zM5 20h14"></path></svg></span
                 ><span class="lb-av" style="">TA</span
-                ><strong style="font-size: 15px; color: rgb(255, 255, 255); line-height: 1.2">Tanvir A.</strong
-                ><span class="p-small" style="color: var(--ink-2)">120 points</span>
+                ><strong style="font-size: 15px; color: var(--ink); line-height: 1.2">Tanvir A.</strong
+                ><span class="p-small" style="color: var(--ink-2)">181 points</span>
                 <div
                   class="lb-block"
-                  aria-label="Rank 1, 120 points"
-                  style="height: 150px; background: rgb(0, 174, 238); color: rgb(10, 27, 44); animation-delay: 200ms"
+                  aria-label="Rank 1, 181 points"
+                  style="height: 150px; background: var(--cyan); color: var(--on-cyan); animation-delay: 200ms"
                 >
                   <span aria-hidden="true">1</span>
                 </div>
@@ -573,21 +579,16 @@
                   class="lb-av"
                   style="
                     box-shadow:
-                      rgb(10, 27, 44) 0px 0px 0px 3px,
-                      rgb(0, 174, 238) 0px 0px 0px 5px;
+                      var(--ink) 0px 0px 0px 3px,
+                      var(--cyan) 0px 0px 0px 5px;
                   "
                   >NJ</span
-                ><strong style="font-size: 15px; color: rgb(255, 255, 255); line-height: 1.2">You</strong
-                ><span class="p-small" style="color: var(--ink-2)">90 points</span>
+                ><strong style="font-size: 15px; color: var(--ink); line-height: 1.2">You</strong
+                ><span class="p-small" style="color: var(--ink-2)">164 points</span>
                 <div
                   class="lb-block"
-                  aria-label="Rank 3, 90 points"
-                  style="
-                    height: 84px;
-                    background: rgba(255, 255, 255, 0.09);
-                    color: rgb(255, 255, 255);
-                    animation-delay: 440ms;
-                  "
+                  aria-label="Rank 3, 164 points"
+                  style="height: 84px; background: rgba(255, 255, 255, 0.09); color: var(--ink); animation-delay: 440ms"
                 >
                   <span aria-hidden="true">3</span>
                 </div>
@@ -605,7 +606,7 @@
                   ><h2 id="rank-title" class="p-h3">Batch ranking</h2>
                   <span class="p-small">WordPress B14 · 20 students</span></span
                 ><span class="p-pill" style="height: 28px; font-size: 12px"
-                  ><span class="p-live"></span>Updated after every class quiz</span
+                  ><span class="p-live"></span>Updated when a project is marked</span
                 >
               </div>
               <div class="p-scroll">
@@ -614,7 +615,8 @@
                     <tr>
                       <th scope="col" style="width: 64px">Rank</th>
                       <th scope="col">Student</th>
-                      <th scope="col">Full-mark quizzes</th>
+                      <th scope="col">Projects marked</th>
+                      <th scope="col">Average mark</th>
                       <th scope="col">Points</th>
                       <th scope="col">This week</th>
                     </tr>
@@ -622,15 +624,16 @@
                   <tbody class="p-stagger">
                     <tr class="">
                       <td>
-                        <span class="lb-rank" style="background: rgb(0, 174, 238); color: rgb(10, 27, 44)">1</span>
+                        <span class="lb-rank" style="background: var(--cyan); color: var(--on-cyan)">1</span>
                       </td>
                       <td>
                         <span class="p-cell-person"
                           ><span class="p-avatar p-avatar--sm" style="">TA</span><strong>Tanvir A.</strong></span
                         >
                       </td>
-                      <td style="font-variant-numeric: tabular-nums">12</td>
-                      <td><strong style="font-variant-numeric: tabular-nums">120</strong></td>
+                      <td style="font-variant-numeric: tabular-nums">2</td>
+                      <td style="font-variant-numeric: tabular-nums">90.5</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">181</strong></td>
                       <td>
                         <span class="lb-trend" style="color: var(--ink-3)"
                           ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
@@ -646,8 +649,9 @@
                           ><span class="p-avatar p-avatar--sm" style="">FR</span><strong>Farhana R.</strong></span
                         >
                       </td>
-                      <td style="font-variant-numeric: tabular-nums">11</td>
-                      <td><strong style="font-variant-numeric: tabular-nums">110</strong></td>
+                      <td style="font-variant-numeric: tabular-nums">2</td>
+                      <td style="font-variant-numeric: tabular-nums">86</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">172</strong></td>
                       <td>
                         <span class="lb-trend" style="color: var(--ink-3)"
                           ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
@@ -662,15 +666,14 @@
                       </td>
                       <td>
                         <span class="p-cell-person"
-                          ><span
-                            class="p-avatar p-avatar--sm"
-                            style="background: rgb(0, 174, 238); color: rgb(10, 27, 44)"
+                          ><span class="p-avatar p-avatar--sm" style="background: var(--cyan); color: var(--on-cyan)"
                             >NJ</span
                           ><strong>Nusrat J.</strong><span class="eit-badge eit-badge--cyan">You</span></span
                         >
                       </td>
-                      <td style="font-variant-numeric: tabular-nums">9</td>
-                      <td><strong style="font-variant-numeric: tabular-nums">90</strong></td>
+                      <td style="font-variant-numeric: tabular-nums">2</td>
+                      <td style="font-variant-numeric: tabular-nums">82</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">164</strong></td>
                       <td>
                         <span class="lb-trend" style="color: var(--success)"
                           ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
@@ -686,8 +689,9 @@
                           ><span class="p-avatar p-avatar--sm" style="">RH</span><strong>Rakib H.</strong></span
                         >
                       </td>
-                      <td style="font-variant-numeric: tabular-nums">8</td>
-                      <td><strong style="font-variant-numeric: tabular-nums">80</strong></td>
+                      <td style="font-variant-numeric: tabular-nums">2</td>
+                      <td style="font-variant-numeric: tabular-nums">75</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">150</strong></td>
                       <td>
                         <span class="lb-trend" style="color: var(--danger)"
                           ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
@@ -703,8 +707,9 @@
                           ><span class="p-avatar p-avatar--sm" style="">SI</span><strong>Sadia I.</strong></span
                         >
                       </td>
-                      <td style="font-variant-numeric: tabular-nums">8</td>
-                      <td><strong style="font-variant-numeric: tabular-nums">80</strong></td>
+                      <td style="font-variant-numeric: tabular-nums">2</td>
+                      <td style="font-variant-numeric: tabular-nums">75</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">150</strong></td>
                       <td>
                         <span class="lb-trend" style="color: var(--danger)"
                           ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
@@ -720,8 +725,9 @@
                           ><span class="p-avatar p-avatar--sm" style="">MH</span><strong>Mehedi H.</strong></span
                         >
                       </td>
-                      <td style="font-variant-numeric: tabular-nums">7</td>
-                      <td><strong style="font-variant-numeric: tabular-nums">70</strong></td>
+                      <td style="font-variant-numeric: tabular-nums">1</td>
+                      <td style="font-variant-numeric: tabular-nums">140</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">140</strong></td>
                       <td>
                         <span class="lb-trend" style="color: var(--success)"
                           ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
@@ -737,8 +743,9 @@
                           ><span class="p-avatar p-avatar--sm" style="">AS</span><strong>Ayesha S.</strong></span
                         >
                       </td>
-                      <td style="font-variant-numeric: tabular-nums">7</td>
-                      <td><strong style="font-variant-numeric: tabular-nums">70</strong></td>
+                      <td style="font-variant-numeric: tabular-nums">1</td>
+                      <td style="font-variant-numeric: tabular-nums">140</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">140</strong></td>
                       <td>
                         <span class="lb-trend" style="color: var(--danger)"
                           ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
@@ -754,8 +761,9 @@
                           ><span class="p-avatar p-avatar--sm" style="">JK</span><strong>Jubayer K.</strong></span
                         >
                       </td>
-                      <td style="font-variant-numeric: tabular-nums">6</td>
-                      <td><strong style="font-variant-numeric: tabular-nums">60</strong></td>
+                      <td style="font-variant-numeric: tabular-nums">1</td>
+                      <td style="font-variant-numeric: tabular-nums">130</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">130</strong></td>
                       <td>
                         <span class="lb-trend" style="color: var(--ink-3)"
                           ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
@@ -771,8 +779,9 @@
                           ><span class="p-avatar p-avatar--sm" style="">SM</span><strong>Shuvo M.</strong></span
                         >
                       </td>
-                      <td style="font-variant-numeric: tabular-nums">0</td>
-                      <td><strong style="font-variant-numeric: tabular-nums">0</strong></td>
+                      <td style="font-variant-numeric: tabular-nums">1</td>
+                      <td style="font-variant-numeric: tabular-nums">70</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">70</strong></td>
                       <td>
                         <span class="lb-trend" style="color: var(--ink-3)"
                           ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
@@ -789,7 +798,8 @@
                         >
                       </td>
                       <td style="font-variant-numeric: tabular-nums">1</td>
-                      <td><strong style="font-variant-numeric: tabular-nums">10</strong></td>
+                      <td style="font-variant-numeric: tabular-nums">80</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">80</strong></td>
                       <td>
                         <span class="lb-trend" style="color: var(--ink-3)"
                           ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
@@ -805,8 +815,9 @@
                           ><span class="p-avatar p-avatar--sm" style="">OS</span><strong>Ovi S.</strong></span
                         >
                       </td>
-                      <td style="font-variant-numeric: tabular-nums">2</td>
-                      <td><strong style="font-variant-numeric: tabular-nums">20</strong></td>
+                      <td style="font-variant-numeric: tabular-nums">1</td>
+                      <td style="font-variant-numeric: tabular-nums">90</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">90</strong></td>
                       <td>
                         <span class="lb-trend" style="color: var(--ink-3)"
                           ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
@@ -822,8 +833,9 @@
                           ><span class="p-avatar p-avatar--sm" style="">MT</span><strong>Mim T.</strong></span
                         >
                       </td>
-                      <td style="font-variant-numeric: tabular-nums">2</td>
-                      <td><strong style="font-variant-numeric: tabular-nums">20</strong></td>
+                      <td style="font-variant-numeric: tabular-nums">1</td>
+                      <td style="font-variant-numeric: tabular-nums">90</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">90</strong></td>
                       <td>
                         <span class="lb-trend" style="color: var(--danger)"
                           ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
@@ -839,8 +851,9 @@
                           ><span class="p-avatar p-avatar--sm" style="">HU</span><strong>Habib U.</strong></span
                         >
                       </td>
-                      <td style="font-variant-numeric: tabular-nums">3</td>
-                      <td><strong style="font-variant-numeric: tabular-nums">30</strong></td>
+                      <td style="font-variant-numeric: tabular-nums">1</td>
+                      <td style="font-variant-numeric: tabular-nums">100</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">100</strong></td>
                       <td>
                         <span class="lb-trend" style="color: var(--success)"
                           ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
@@ -856,8 +869,9 @@
                           ><span class="p-avatar p-avatar--sm" style="">LK</span><strong>Lima K.</strong></span
                         >
                       </td>
-                      <td style="font-variant-numeric: tabular-nums">3</td>
-                      <td><strong style="font-variant-numeric: tabular-nums">30</strong></td>
+                      <td style="font-variant-numeric: tabular-nums">1</td>
+                      <td style="font-variant-numeric: tabular-nums">100</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">100</strong></td>
                       <td>
                         <span class="lb-trend" style="color: var(--ink-3)"
                           ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
@@ -873,8 +887,9 @@
                           ><span class="p-avatar p-avatar--sm" style="">FB</span><strong>Fahim B.</strong></span
                         >
                       </td>
-                      <td style="font-variant-numeric: tabular-nums">4</td>
-                      <td><strong style="font-variant-numeric: tabular-nums">40</strong></td>
+                      <td style="font-variant-numeric: tabular-nums">1</td>
+                      <td style="font-variant-numeric: tabular-nums">110</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">110</strong></td>
                       <td>
                         <span class="lb-trend" style="color: var(--ink-3)"
                           ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
@@ -890,8 +905,9 @@
                           ><span class="p-avatar p-avatar--sm" style="">SA</span><strong>Sharmin A.</strong></span
                         >
                       </td>
-                      <td style="font-variant-numeric: tabular-nums">4</td>
-                      <td><strong style="font-variant-numeric: tabular-nums">40</strong></td>
+                      <td style="font-variant-numeric: tabular-nums">1</td>
+                      <td style="font-variant-numeric: tabular-nums">110</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">110</strong></td>
                       <td>
                         <span class="lb-trend" style="color: var(--danger)"
                           ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
@@ -907,8 +923,9 @@
                           ><span class="p-avatar p-avatar--sm" style="">NC</span><strong>Naeem C.</strong></span
                         >
                       </td>
-                      <td style="font-variant-numeric: tabular-nums">5</td>
-                      <td><strong style="font-variant-numeric: tabular-nums">50</strong></td>
+                      <td style="font-variant-numeric: tabular-nums">1</td>
+                      <td style="font-variant-numeric: tabular-nums">120</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">120</strong></td>
                       <td>
                         <span class="lb-trend" style="color: var(--success)"
                           ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
@@ -924,8 +941,9 @@
                           ><span class="p-avatar p-avatar--sm" style="">RP</span><strong>Rumana P.</strong></span
                         >
                       </td>
-                      <td style="font-variant-numeric: tabular-nums">5</td>
-                      <td><strong style="font-variant-numeric: tabular-nums">50</strong></td>
+                      <td style="font-variant-numeric: tabular-nums">1</td>
+                      <td style="font-variant-numeric: tabular-nums">120</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">120</strong></td>
                       <td>
                         <span class="lb-trend" style="color: var(--ink-3)"
                           ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
@@ -941,8 +959,9 @@
                           ><span class="p-avatar p-avatar--sm" style="">SR</span><strong>Sajid R.</strong></span
                         >
                       </td>
-                      <td style="font-variant-numeric: tabular-nums">6</td>
-                      <td><strong style="font-variant-numeric: tabular-nums">60</strong></td>
+                      <td style="font-variant-numeric: tabular-nums">1</td>
+                      <td style="font-variant-numeric: tabular-nums">130</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">130</strong></td>
                       <td>
                         <span class="lb-trend" style="color: var(--danger)"
                           ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
@@ -958,8 +977,9 @@
                           ><span class="p-avatar p-avatar--sm" style="">TM</span><strong>Tania M.</strong></span
                         >
                       </td>
-                      <td style="font-variant-numeric: tabular-nums">6</td>
-                      <td><strong style="font-variant-numeric: tabular-nums">60</strong></td>
+                      <td style="font-variant-numeric: tabular-nums">1</td>
+                      <td style="font-variant-numeric: tabular-nums">130</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">130</strong></td>
                       <td>
                         <span class="lb-trend" style="color: var(--success)"
                           ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
@@ -1025,9 +1045,10 @@
                       ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M12 5v14M5 12h14"></path></svg></span
                     ><span style="display: flex; flex-direction: column; gap: 2px"
-                      ><strong style="font-size: 15px">Earn 10 points</strong
+                      ><strong style="font-size: 15px">Earn your project mark</strong
                       ><span class="p-small"
-                        >Get every answer right on a class quiz. Only your first try counts.</span
+                        >When a mentor marks a project, that mark is added to your points. Quizzes unlock modules but do
+                        not add points.</span
                       ></span
                     >
                   </li>
@@ -1051,7 +1072,7 @@
                     ><span style="display: flex; flex-direction: column; gap: 2px"
                       ><strong style="font-size: 15px">Spend 15 points a day</strong
                       ><span class="p-small"
-                        >Buy a late pass for a milestone project, up to 3 extra days. Your 90 points cover 6 days.</span
+                        >Buy a late pass for a milestone project, up to 3 extra days. 15 points buys one day.</span
                       ><a class="p-link" href="projects.html" style="margin-top: 4px"
                         >Go to projects<span class="p-arrow" style="display: inline-flex"
                           ><svg
@@ -1114,7 +1135,7 @@
               >
                 <div class="p-card-head">
                   <h2 id="hist-title" class="p-h3">Points history</h2>
-                  <a class="p-link" href="quizzes.html">All quizzes</a>
+                  <a class="p-link" href="projects.html">All projects</a>
                 </div>
                 <ul style="list-style: none; margin: 0px; padding: 0px">
                   <li class="lb-hist">
@@ -1122,8 +1143,8 @@
                       ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M12 5v14M5 12h14"></path></svg></span
                     ><span class="p-grow" style="display: flex; flex-direction: column"
-                      ><strong style="font-size: 14px">Class 11 quiz · 10/10</strong
-                      ><span class="p-small" style="font-size: 12px">Enqueueing styles and scripts · 12 Oct</span></span
+                      ><strong style="font-size: 14px">Logo redesign brief · 78/100</strong
+                      ><span class="p-small" style="font-size: 12px">Graphic Design · Milestone 1 · 14 Oct</span></span
                     ><span
                       style="
                         font-weight: 700;
@@ -1131,19 +1152,7 @@
                         font-variant-numeric: tabular-nums;
                         color: var(--success);
                       "
-                      >+10</span
-                    >
-                  </li>
-                  <li class="lb-hist">
-                    <span class="p-tile p-tile--muted" style="width: 36px; height: 36px; border-radius: 10px"
-                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M18 6 6 18M6 6l12 12"></path></svg></span
-                    ><span class="p-grow" style="display: flex; flex-direction: column"
-                      ><strong style="font-size: 14px">Class 10 quiz · 8/10</strong
-                      ><span class="p-small" style="font-size: 12px">The template hierarchy · 8 Oct</span></span
-                    ><span
-                      style="font-weight: 700; font-size: 15px; font-variant-numeric: tabular-nums; color: var(--ink-3)"
-                      >0</span
+                      >+78</span
                     >
                   </li>
                   <li class="lb-hist">
@@ -1151,8 +1160,8 @@
                       ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M12 5v14M5 12h14"></path></svg></span
                     ><span class="p-grow" style="display: flex; flex-direction: column"
-                      ><strong style="font-size: 14px">Class 9 quiz · 10/10</strong
-                      ><span class="p-small" style="font-size: 12px">Theme folder structure · 5 Oct</span></span
+                      ><strong style="font-size: 14px">Personal portfolio homepage · 86/100</strong
+                      ><span class="p-small" style="font-size: 12px">WordPress · Milestone 1 · 2 Oct</span></span
                     ><span
                       style="
                         font-weight: 700;
@@ -1160,36 +1169,7 @@
                         font-variant-numeric: tabular-nums;
                         color: var(--success);
                       "
-                      >+10</span
-                    >
-                  </li>
-                  <li class="lb-hist">
-                    <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
-                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M12 5v14M5 12h14"></path></svg></span
-                    ><span class="p-grow" style="display: flex; flex-direction: column"
-                      ><strong style="font-size: 14px">Class 8 quiz · 10/10</strong
-                      ><span class="p-small" style="font-size: 12px">CSS for WordPress themes · 28 Sep</span></span
-                    ><span
-                      style="
-                        font-weight: 700;
-                        font-size: 15px;
-                        font-variant-numeric: tabular-nums;
-                        color: var(--success);
-                      "
-                      >+10</span
-                    >
-                  </li>
-                  <li class="lb-hist">
-                    <span class="p-tile p-tile--muted" style="width: 36px; height: 36px; border-radius: 10px"
-                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M18 6 6 18M6 6l12 12"></path></svg></span
-                    ><span class="p-grow" style="display: flex; flex-direction: column"
-                      ><strong style="font-size: 14px">Class 7 quiz · 9/10</strong
-                      ><span class="p-small" style="font-size: 12px">Responsive images · 24 Sep</span></span
-                    ><span
-                      style="font-weight: 700; font-size: 15px; font-variant-numeric: tabular-nums; color: var(--ink-3)"
-                      >0</span
+                      >+86</span
                     >
                   </li>
                 </ul>
@@ -1198,7 +1178,7 @@
                   style="justify-content: space-between; padding-top: 12px; border-top: 1px solid var(--line)"
                 >
                   <span class="p-small">Balance · none spent yet</span
-                  ><strong style="font-size: 18px; font-variant-numeric: tabular-nums">90 points</strong>
+                  ><strong style="font-size: 18px; font-variant-numeric: tabular-nums">164 points</strong>
                 </div>
               </section>
               <section

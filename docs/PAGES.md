@@ -22,13 +22,13 @@ Read this before you change a page, so you don't have to open all 49 to find you
 
 The screens share one small, made-up cast. Keep new content consistent with it.
 
-| Who                                     | Where they appear                                  | Facts the pages rely on                                                                                                                                                                                                                   |
-| --------------------------------------- | -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Nusrat Jahan**, student `EIT-24-0148` | Every student page except Paused                   | WordPress Batch 14 (offline, Lab 2, Mirpur-10, Mon and Thu 7–9 PM) and Graphic Design Batch 9 (online). 90 points, #3 of 20. Installment 2 of 3 (৳5,000) due 15 Nov. Class 12 quiz open, Class 13 on Mon 19 Oct. Phone `+880 17XXXXXX48`. |
-| **Mehedi Hasan**, student `EIT-24-0155` | `student/access-paused.html`, admin student record | Access paused 8 Oct: installment 2 was due 1 Oct. 60 points, #9.                                                                                                                                                                          |
-| **Kamrul Hasan**, mentor                | Mentor panel, Nusrat's mentor                      | WordPress B14 and B15, React JS B6. 5 projects to review (Nusrat, Tanvir, Mehedi from B14; Tahmid Islam and Sadia Afrin from B6), 3 student questions, Class 12 recording due 9:00 AM.                                                    |
-| **Sharmin Sultana**, admin (Owner)      | Admin panel                                        | Overview numbers for October 2026: ৳6,85,000 collected, 58 enrollments, 14 overdue.                                                                                                                                                       |
-| Batch 14 roster                         | Mentor batch, admin batch detail                   | Nusrat, Tanvir Hasan, Mehedi Hasan, Rafiq Islam (behind, 67% attendance), Afsana Mim, Arif Hossain, Jannatul Ferdous, Sabbir Ahmed.                                                                                                       |
+| Who                                     | Where they appear                                  | Facts the pages rely on                                                                                                                                                                                                                                           |
+| --------------------------------------- | -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Nusrat Jahan**, student `EIT-24-0148` | Every student page except Paused                   | WordPress Batch 14 (offline, Lab 2, Mirpur-10, Mon and Thu 7–9 PM) and Graphic Design Batch 9 (online). 164 points (sum of project marks), #3 of 20. Installment 2 of 3 (৳5,000) due 15 Nov. Class 12 quiz open, Class 13 on Mon 19 Oct. Phone `+880 17XXXXXX48`. |
+| **Mehedi Hasan**, student `EIT-24-0155` | `student/access-paused.html`, admin student record | Access paused 8 Oct: installment 2 was due 1 Oct. 72 points, #9.                                                                                                                                                                                                  |
+| **Kamrul Hasan**, mentor                | Mentor panel, Nusrat's mentor                      | WordPress B14 and B15, React JS B6. 5 projects to review (Nusrat, Tanvir, Mehedi from B14; Tahmid Islam and Sadia Afrin from B6), 3 student questions, Class 12 recording due 9:00 AM.                                                                            |
+| **Sharmin Sultana**, admin (Owner)      | Admin panel                                        | Overview numbers for October 2026: ৳6,85,000 collected, 58 enrollments, 14 overdue.                                                                                                                                                                               |
+| Batch 14 roster                         | Mentor batch, admin batch detail                   | Nusrat, Tanvir Hasan, Mehedi Hasan, Rafiq Islam (behind, 67% attendance), Afsana Mim, Arif Hossain, Jannatul Ferdous, Sabbir Ahmed.                                                                                                                               |
 
 "Today" in the demo is **Thursday 15 October 2026**. Known mismatch carried over from the design: the
 leaderboard lists a different set of classmates (Tanvir A., Farhana R., Rakib H. and others) from the
@@ -49,7 +49,7 @@ across `student/*.html`, `mentor/*.html` or `admin/*.html`).
 | ------------------------------ | ------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Sidebar                        | `<aside class="p-side">` → `<nav class="p-nav">`                                           | The current page's link has `aria-current="page"`. Labels are wrapped in `<span class="p-nav-text">`; long ones also have `<span class="p-nav-short" aria-hidden="true">` for the phone tab bar.                                                                                                            |
 | Sidebar card                   | `.p-help` at the bottom of the sidebar                                                     | Student: points (Leaderboard shows "+10 waiting"; Paused shows "60 points").                                                                                                                                                                                                                                |
-| Top bar                        | `<header class="p-top">`                                                                   | Search (not wired), language switch, bell, profile chip (`.p-me`, links to the role's profile page).                                                                                                                                                                                                        |
+| Top bar                        | `<header class="p-top">`                                                                   | Next-class strip (`.p-next`), language switch, theme toggle (`button[data-theme-toggle]`), bell, profile chip (`.p-me`, links to profile). Theme is light by default; dark is `html.is-student[data-theme="dark"]`, saved as `eit-theme`.                                                                   |
 | Language switch                | `.eit-seg[aria-label="Language"]`                                                          | EN / বাং. The choice is saved in `localStorage` (`eit-lang`) and kept across pages. The copy stays English.                                                                                                                                                                                                 |
 | Bell                           | `button[data-notif-scope]` with `aria-controls="notif-menu"`, and `#notif-menu.p-dropdown` | `data-notif-scope` is `student`, `mentor` or `admin`. Same items and count on every page of a role: student 2 unread, mentor 3, admin 3 (the paused student has their own menu with 1). "Mark all as read" clears the dots and the count and remembers it for that role (`localStorage` `eit-read-<role>`). |
 | Phone layout (720px and below) | Built by `app.js`                                                                          | The top bar becomes one row (logo, search icon, language, bell, avatar). The sidebar becomes a bottom tab bar with the first four links plus **More**, which opens a sheet with everything else.                                                                                                            |
@@ -78,10 +78,12 @@ Fonts: Anek Bangla for text, JetBrains Mono for section labels, codes and the Ct
 
 Sidebar links per role:
 
-- **Student** (grouped like SchoolofGenZ's sidebar): **Learn:** Dashboard, My courses (`course-player.html`),
-  Quizzes, Projects, Schedule & recordings, Explore courses · **Progress:** Leaderboard, Certificates, Saved & notes · **Support:** My questions,
+- **Student** (grouped like SchoolofGenZ's sidebar): **Learn:** Dashboard, My courses (`courses.html`),
+  Quizzes, Projects, Routine · **Progress:** Leaderboard, Certificates, Saved & notes · **Support:** My questions,
   Payments, Help. Labels are `span.p-nav-label` inside the nav; the tablet rail shows a short rule between groups, and
-  the phone More sheet repeats the labels. Profile is reached from the avatar.
+  the phone More sheet repeats the labels. Profile is reached from the avatar. Top bar: next-class strip and a
+  light/dark theme toggle (`button[data-theme-toggle]`, `localStorage` `eit-theme`); student dark tokens live under
+  `html.is-student[data-theme="dark"]` in `panel.css` / `app.css`.
 - **Mentor:** Dashboard · **Queues:** Reviews 5 (`review.html`), Student questions 3 (`questions.html`) ·
   **Teaching:** My batches (`batch.html`), Schedule & recordings 1 · **Content:** Courses (`course-builder.html`;
   the Quiz builder highlights it) · **Help:** Mentor handbook (no page yet). Notifications and My profile are in
@@ -137,17 +139,23 @@ the product; useful when adding new screens. Not wired: its sample links.
 
 ### `student/dashboard.html` · Dashboard
 
-Hero ("Good evening, Nusrat", continue watching Class 12), 4 stat cards (lessons, attendance, projects,
-points), My courses (2 cards), Up next (quiz, project, module lock), Next class, Installment, Certificate
-progress. Every card links to its page.
+Hero ("Good evening, Nusrat", continue watching Graphic Design Lesson 7), 4 stat cards (continue, projects,
+points, attendance), My courses (WordPress offline → `course-offline.html`, Graphic Design online →
+`course-player.html`), Up next (quiz, project, module lock), Next class, Installment, Certificate progress.
+Every card links to its page. "See all courses" opens the hub.
 
-### `student/course-player.html` · Course player (My courses)
+### `student/course-player.html` · Course player (online · Graphic Design B9)
 
-Video area with locked skip-ahead, lesson title with the Saved bookmark, "Class 13 opens when you finish this
-video" card. **Tabs:** Overview (what the lesson covers), Resources (2 downloads), Ask the mentor (question
-form, the waiting question and the one Kamrul answered, All your questions), Notes (Save note, the lesson's
-note, All your notes). Right column: course content by module. Modules 1–3 open and
-close (`button[aria-expanded]` + `data-panel`); 4 and 5 are locked. Placeholders: Download links, Previous lesson.
+The Graphic Design Batch 9 online course (mentor Nadia Rahman): Module 2 · Lesson 3, "Colour and contrast for
+social posts". Video area with locked skip-ahead, the Saved bookmark, and a "Lesson 8 opens when you finish this
+video" card. **Play is a stand-in** (`assets/js/pages/player.js`, hooks `data-player*`): Play/Pause runs the bar
+from 11:36 to 18:00 in about 25 seconds, then Lesson 8 opens (gate card, Next lesson button, the curriculum row,
+the Lesson 7 quiz); with reduced motion on, Play jumps straight to the end. No toast. **Tabs:** Overview, Resources
+(2 downloads), Ask the mentor (question form, the margins question Nadia answered), Notes (Save note, the Live 7
+contrast note). Right column: 7 of 40 lessons, then Live sessions (Live 8 upcoming, Live 7 recording), Module 1
+Foundations (done), Module 2 Colour & type (open, the lesson selected), Modules 3–5 locked. Modules and Live
+sessions open and close (`button[aria-expanded]` + `data-panel`). The WordPress classes live in
+`course-offline.html`. Placeholders: Download links, Previous lesson, Next lesson (no page yet).
 
 ### `student/quizzes.html` · Quizzes
 
@@ -184,28 +192,32 @@ shows a toast); **Need more time?** late pass picker (+1/+2/+3 days) and **Use 3
 Score ring, marks by criterion, mentor feedback, notes on the page, submission, timeline.
 Placeholders: Download feedback, Message Kamrul, the portfolio link.
 
-### `student/schedule.html` · Schedule & recordings
+### `student/routine.html` · Routine
 
-Course filter (All courses / WordPress / Graphic Design, `data-list`) narrows Coming up (3 classes; the soonest
-has a Next class badge), Class recordings (Watch buttons) and the attendance line. Each class and recording
-has its course in `data-tags`.
-Placeholder: Add to Google Calendar.
+Month calendar (`.rt-cal` day cells) of classes and due dates (October 2026 default; November is a
+captured state). Each class cell shows online/offline plus attendance (Present / Late / Upcoming) with
+colour tags; a month strip summarises the counts. Weekly routine strip (WordPress Mon/Thu Lab 2; Graphic
+Design Wed Zoom). Day and course filters narrow **Next up**. Recordings live on the offline course page,
+not here. Script: `assets/js/pages/routine.js`.
+
+### `student/courses.html` · My courses
+
+Hub for enrolled courses: Graphic Design B9 (online → `course-player.html`), WordPress B14 (offline →
+`course-offline.html`), Digital Marketing completed (certificate).
+
+### `student/course-offline.html` · Offline course (WordPress B14)
+
+Class recordings ledger with notes, resources, Ask the mentor and My notes. Free seeking; no unlock ladder.
 
 ### `student/leaderboard.html` · Leaderboard
 
 Course switch (button state only), your position hero with podium, batch ranking table ("Show all 20
 students" reveals the rest), How points work, Points history, "Show my name to classmates" switch.
 
-### `student/explore.html` · Explore courses
+### `student/profile.html` · Profile & settings
 
-Courses Nusrat can add, from the admin catalogue. Track chips with counts (All / Development / Design /
-Marketing / Networking & Security) filter the cards (`data-list`, see README); a section with nothing left
-to show hides. **Open to join:** React JS (Batch 7, Sat 31 Oct, Zoom), Cyber Security (Batch 4, Mon 26 Oct,
-Lab 3), CCNA (Batch 8, full: Join the waiting list) and UI/UX Design (no batch yet: Tell me when it opens);
-each shows fee, how to pay and the next batch. **Already yours:** WordPress B14 and Graphic Design B9 (Open
-course) and Digital Marketing Essentials (completed, See certificate). **Bring a friend:** her referral code
-NUSRAT148 with Copy code, and the numbers from admin Coupons & referrals (3 friends, ৳1,500 credit, ৳1,000
-adding Wed 21 Oct). Placeholder: See course (no course pages yet).
+ID-card header (batches, 164 points, referral code NUSRAT148). Tabs: Account, Referrals & coupons
+(redeem PUJA15 / refuse WPLAUNCH), Notifications (`#notifications`), Security.
 
 ### `student/certificates.html` · Certificates
 
@@ -234,7 +246,7 @@ menu isn't showing; Nadia Rahman 8 Oct: margins in Graphic Design Live 6). Chips
 filter the cards (`data-list`) and "n shown" follows. Each card has Open the lesson, and answered ones This
 helped (toast). Side: How asking works (Ask about your current lesson opens the course player's Ask the
 mentor tab, `course-player.html#lp-ask`) and Not about a lesson? (Help). The course player's Ask the mentor
-tab lists both of the lesson's questions and links here; so does the notification "Kamrul answered your
+tab lists Nadia's answered margins question and links here; the two WordPress questions open `course-offline.html#op-ask`; so does the notification "Kamrul answered your
 question".
 
 ### `student/payments.html` · Payments
@@ -246,12 +258,6 @@ bKash / Nagad / Rocket / Card and **Pay ৳5,000**. Placeholders: Receipt links,
 
 What happens when an installment is 7+ days late: locked sidebar items (lock icons), the paused card with
 **Pay ৳5,000 now**, what's paused vs still open, and a side column with the amount owed and the paused course.
-
-### `student/profile.html` · Profile & settings
-
-Personal details, **Notifications** (`#notifications`: which updates also come by SMS; payment reminders
-can't be turned off while paying in parts), Password, Logged-in devices. Save buttons show a toast.
-Placeholder: Change photo.
 
 ### `student/help.html` · Help centre
 
@@ -464,7 +470,6 @@ About 140 links still point at `#` (an action with no page or backend yet). The 
 - **Contact:** Call / WhatsApp on seminar leads and Help, Message Kamrul, ask on WhatsApp.
 - **Lists:** pagination, Show all, Export CSV.
 - **Editors:** choosing another lesson in the course builder or another question in the quiz builder.
-- **Course pages:** See course on Explore courses (only WordPress has an enroll page).
 - **Mentor pages not built yet:** React JS Batch 6 and WordPress Batch 15 (the My batches switcher and the
   dashboard), the course in review (Courses switcher), Mentor handbook (sidebar), Open roster (dashboard),
   and the submission links and files in the review queue.

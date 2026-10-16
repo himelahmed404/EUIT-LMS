@@ -22,8 +22,8 @@
         padding: 0 10px 0 20px;
         box-sizing: border-box;
         border-radius: 999px;
-        background: #ffffff;
-        color: #5b6b7b;
+        background: var(--on-ink);
+        color: var(--ink-3);
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
         max-width: 640px;
       }
@@ -35,23 +35,23 @@
         background: transparent;
         font: inherit;
         font-size: 16px;
-        color: #0a1b2c;
+        color: var(--ink);
       }
       .hp-search input::placeholder {
-        color: #5b6b7b;
+        color: var(--ink-3);
       }
       .hp-search:focus-within {
         box-shadow:
           0 10px 30px rgba(0, 0, 0, 0.25),
-          0 0 0 3px #00aeee;
+          0 0 0 3px var(--cyan);
       }
       .hp-clear {
         width: 40px;
         height: 40px;
         border-radius: 50%;
         border: 0;
-        background: #eef3f7;
-        color: #0a1b2c;
+        background: var(--track);
+        color: var(--ink);
         display: grid;
         place-items: center;
         cursor: pointer;
@@ -62,7 +62,7 @@
         border-radius: 999px;
         border: 1px solid rgba(255, 255, 255, 0.22);
         background: rgba(255, 255, 255, 0.08);
-        color: #ffffff;
+        color: var(--ink);
         font: inherit;
         font-size: 13px;
         font-weight: 600;
@@ -140,6 +140,7 @@
         }
       }
     </style>
+    <script src="../assets/js/theme.js"></script>
     <script src="../assets/js/app.js" defer></script>
   </head>
   <body>
@@ -160,7 +161,7 @@
               <rect x="14" y="12" width="7" height="9" rx="1"></rect>
               <rect x="3" y="16" width="7" height="5" rx="1"></rect></svg
             ><span class="p-nav-text">Dashboard</span></a
-          ><a href="course-player.html"
+          ><a href="courses.html"
             ><svg
               class="eit-icon"
               width="20"
@@ -199,7 +200,7 @@
             >
               <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg
             ><span class="p-nav-text">Projects</span><span class="p-count">1</span></a
-          ><a href="schedule.html"
+          ><a href="routine.html"
             ><svg
               class="eit-icon"
               width="20"
@@ -215,13 +216,7 @@
             >
               <rect x="3" y="4" width="18" height="18" rx="2"></rect>
               <path d="M16 2v4M8 2v4M3 10h18"></path></svg
-            ><span class="p-nav-text">Schedule &amp; recordings</span
-            ><span class="p-nav-short" aria-hidden="true">Schedule</span></a
-          ><a href="explore.html"
-            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"></circle>
-              <path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z"></path></svg
-            ><span class="p-nav-text">Explore courses</span></a
+            ><span class="p-nav-text">Routine</span></a
           ><span class="p-nav-label">Progress</span
           ><a href="leaderboard.html"
             ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -274,7 +269,7 @@
         </nav>
         <a class="p-help p-lift" href="leaderboard.html" style="margin-top: auto; text-decoration: none; color: inherit"
           ><span class="p-row" style="gap: 10px"
-            ><span class="p-tile" style="width: 38px; height: 38px; background: var(--cyan); color: rgb(10, 27, 44)"
+            ><span class="p-tile" style="width: 38px; height: 38px; background: var(--cyan); color: var(--on-cyan)"
               ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
                 <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
@@ -283,38 +278,67 @@
                 <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
                 <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg></span
             ><span style="display: flex; flex-direction: column"
-              ><strong style="font-size: 18px; line-height: 1.15">90 points</strong
+              ><strong style="font-size: 18px; line-height: 1.15">164 points</strong
               ><span class="p-small" style="color: var(--cyan-deep)">#3 in WordPress B14</span></span
             ></span
-          ><span class="p-small" style="color: var(--cyan-deep)">Full marks on a class quiz = +10</span></a
+          ><span class="p-small" style="color: var(--cyan-deep)">Every marked project adds its mark</span></a
         >
       </aside>
       <div class="p-content">
         <header class="p-top">
-          <label class="p-search"
-            ><svg
-              class="eit-icon"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              focusable="false"
-              aria-hidden="true"
-            >
-              <circle cx="11" cy="11" r="8"></circle>
-              <path d="M21 21l-4.35-4.35"></path></svg
-            ><span class="eit-sr">Search</span><input type="search" placeholder="Search lessons and resources"
-          /></label>
+          <a class="p-next" href="routine.html"
+            ><span class="p-live" aria-hidden="true"></span
+            ><span class="p-next-text"
+              ><span class="p-next-l">Next class</span><span class="p-next-t">WordPress · Class 13</span
+              ><span class="p-next-m">Mon 19 Oct, 7:00 PM · Lab 2</span></span
+            ></a
+          >
           <div class="p-top-right">
             <div class="eit-seg has-thumb" role="group" aria-label="Language">
               <span class="eit-seg__thumb" aria-hidden="true" style="width: 52px; transform: translateX(4px)"></span
               ><button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button
               ><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button>
             </div>
+            <button
+              class="p-iconbtn"
+              data-theme-toggle=""
+              type="button"
+              aria-label="Dark mode"
+              aria-pressed="false"
+              title="Switch to dark mode"
+            >
+              <svg
+                class="p-moon"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg
+              ><svg
+                class="p-sun"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zM12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"
+                ></path>
+              </svg>
+            </button>
             <button
               class="p-iconbtn"
               data-notif-scope="student"
@@ -451,9 +475,7 @@
             style="display: flex; flex-direction: column; gap: 18px; padding: 40px 36px"
           >
             <span class="p-eyebrow" style="color: var(--cyan)">Help centre</span>
-            <h1 id="help-title" class="p-h1" style="font-size: 36px; color: rgb(255, 255, 255)">
-              Hi Nusrat, how can we help?
-            </h1>
+            <h1 id="help-title" class="p-h1" style="font-size: 36px; color: var(--ink)">Hi Nusrat, how can we help?</h1>
             <label class="hp-search"
               ><svg
                 class="eit-icon"
@@ -593,8 +615,8 @@
                   </button>
                   <div class="hp-a" id="rv0">
                     <p class="p-body" style="max-width: 620px">
-                      Get full marks on a class quiz and you earn 10 points. Only your first try counts, so take your
-                      time before you submit.
+                      Leaderboard points come from your marked projects. Quizzes unlock the next module — take your time
+                      before you submit.
                     </p>
                     <a class="p-link" href="leaderboard.html"
                       >See your points<span class="p-arrow" style="display: inline-flex"
@@ -1025,11 +1047,11 @@
                   </button>
                   <div class="hp-a" id="rv14" hidden="">
                     <p class="p-body" style="max-width: 620px">
-                      Your mentor uploads the recording after every class, online or offline. Find it on Schedule &amp;
-                      recordings under the class date.
+                      Your mentor uploads the recording after every class, online or offline. Find it on Routine under
+                      the class date.
                     </p>
-                    <a class="p-link" href="../student/schedule.html"
-                      >Schedule &amp; recordings<span class="p-arrow" style="display: inline-flex"
+                    <a class="p-link" href="routine.html"
+                      >Routine<span class="p-arrow" style="display: inline-flex"
                         ><svg
                           class="eit-icon"
                           width="16"
@@ -1091,7 +1113,7 @@
                       Watch the recording, then take that class’s quiz so your next module still opens. The class still
                       counts as absent, and you need 75% attendance for your certificate.
                     </p>
-                    <a class="p-link" href="../student/schedule.html"
+                    <a class="p-link" href="routine.html"
                       >Find the recording<span class="p-arrow" style="display: inline-flex"
                         ><svg
                           class="eit-icon"
@@ -1915,7 +1937,7 @@
                 <div style="display: grid; grid-template-columns: repeat(2, minmax(0px, 1fr)); gap: 8px">
                   <a class="p-ghostbtn" href="quizzes.html" style="justify-content: flex-start">Quizzes</a
                   ><a class="p-ghostbtn" href="projects.html" style="justify-content: flex-start">Projects</a
-                  ><a class="p-ghostbtn" href="schedule.html" style="justify-content: flex-start">Recordings</a
+                  ><a class="p-ghostbtn" href="routine.html" style="justify-content: flex-start">Recordings</a
                   ><a class="p-ghostbtn" href="payments.html" style="justify-content: flex-start">Payments</a>
                 </div>
               </section>

@@ -1,6 +1,7 @@
-/* Console pages (admin and mentor): applies light or dark mode, and a collapsed sidebar, before the page paints,
-   so neither flashes. Light is the default; dark is used only after someone picks it with the
-   moon/sun button in the top bar (app.js), which saves the choice. Loaded in <head> without defer, on purpose. */
+/* Applies light or dark mode before the page paints, so neither flashes. Light is the default; dark is
+   used only after someone picks it with the moon/sun button in the top bar (app.js), which saves the
+   choice. On console pages (admin and mentor) it also restores a collapsed sidebar. Loaded in <head>
+   without defer, on purpose. */
 (function () {
   var root = document.documentElement;
   var theme = null;
@@ -12,7 +13,7 @@
     /* storage blocked: use the defaults */
   }
   root.setAttribute("data-theme", theme === "dark" ? "dark" : "light");
-  if (nav === "mini") {
+  if (nav === "mini" && root.classList.contains("is-console")) {
     root.setAttribute("data-nav", "mini");
   }
 })();

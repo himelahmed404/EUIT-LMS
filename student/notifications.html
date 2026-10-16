@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../assets/css/eit.css" />
     <link rel="stylesheet" href="../assets/css/panel.css" />
     <link rel="stylesheet" href="../assets/css/app.css" />
+    <script src="../assets/js/theme.js"></script>
     <script src="../assets/js/app.js" defer></script>
     <script src="../assets/js/pages/notifications.js" defer></script>
   </head>
@@ -34,7 +35,7 @@
               <rect x="14" y="12" width="7" height="9" rx="1"></rect>
               <rect x="3" y="16" width="7" height="5" rx="1"></rect></svg
             ><span class="p-nav-text">Dashboard</span></a
-          ><a href="course-player.html"
+          ><a href="courses.html"
             ><svg
               class="eit-icon"
               width="20"
@@ -73,7 +74,7 @@
             >
               <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg
             ><span class="p-nav-text">Projects</span><span class="p-count">1</span></a
-          ><a href="schedule.html"
+          ><a href="routine.html"
             ><svg
               class="eit-icon"
               width="20"
@@ -89,13 +90,7 @@
             >
               <rect x="3" y="4" width="18" height="18" rx="2"></rect>
               <path d="M16 2v4M8 2v4M3 10h18"></path></svg
-            ><span class="p-nav-text">Schedule &amp; recordings</span
-            ><span class="p-nav-short" aria-hidden="true">Schedule</span></a
-          ><a href="explore.html"
-            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"></circle>
-              <path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z"></path></svg
-            ><span class="p-nav-text">Explore courses</span></a
+            ><span class="p-nav-text">Routine</span></a
           ><span class="p-nav-label">Progress</span
           ><a href="leaderboard.html"
             ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -148,7 +143,7 @@
         </nav>
         <a class="p-help p-lift" href="leaderboard.html" style="margin-top: auto; text-decoration: none; color: inherit"
           ><span class="p-row" style="gap: 10px"
-            ><span class="p-tile" style="width: 38px; height: 38px; background: var(--cyan); color: rgb(10, 27, 44)"
+            ><span class="p-tile" style="width: 38px; height: 38px; background: var(--cyan); color: var(--on-cyan)"
               ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
                 <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
@@ -157,38 +152,67 @@
                 <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
                 <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg></span
             ><span style="display: flex; flex-direction: column"
-              ><strong style="font-size: 18px; line-height: 1.15">90 points</strong
+              ><strong style="font-size: 18px; line-height: 1.15">164 points</strong
               ><span class="p-small" style="color: var(--cyan-deep)">#3 in WordPress B14</span></span
             ></span
-          ><span class="p-small" style="color: var(--cyan-deep)">Full marks on a class quiz = +10</span></a
+          ><span class="p-small" style="color: var(--cyan-deep)">Every marked project adds its mark</span></a
         >
       </aside>
       <div class="p-content">
         <header class="p-top">
-          <label class="p-search"
-            ><svg
-              class="eit-icon"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              focusable="false"
-              aria-hidden="true"
-            >
-              <circle cx="11" cy="11" r="8"></circle>
-              <path d="M21 21l-4.35-4.35"></path></svg
-            ><span class="eit-sr">Search</span><input type="search" placeholder="Search lessons and resources"
-          /></label>
+          <a class="p-next" href="routine.html"
+            ><span class="p-live" aria-hidden="true"></span
+            ><span class="p-next-text"
+              ><span class="p-next-l">Next class</span><span class="p-next-t">WordPress · Class 13</span
+              ><span class="p-next-m">Mon 19 Oct, 7:00 PM · Lab 2</span></span
+            ></a
+          >
           <div class="p-top-right">
             <div class="eit-seg has-thumb" role="group" aria-label="Language">
               <span class="eit-seg__thumb" aria-hidden="true" style="width: 52px; transform: translateX(4px)"></span
               ><button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button
               ><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button>
             </div>
+            <button
+              class="p-iconbtn"
+              data-theme-toggle=""
+              type="button"
+              aria-label="Dark mode"
+              aria-pressed="false"
+              title="Switch to dark mode"
+            >
+              <svg
+                class="p-moon"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg
+              ><svg
+                class="p-sun"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zM12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"
+                ></path>
+              </svg>
+            </button>
             <button
               class="p-iconbtn"
               data-notif-scope="student"
@@ -456,7 +480,7 @@
                     <span class="p-tile"
                       ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M5 3l14 9-14 9V3z"></path></svg></span
-                    ><a class="nt-link" href="schedule.html"
+                    ><a class="nt-link" href="routine.html"
                       ><span class="nt-title">Class 12 recording is ready</span
                       ><span class="p-small">WordPress · Batch 14 · watch it again before the Class 12 quiz</span></a
                     ><span class="nt-meta"
@@ -503,7 +527,7 @@
                         <path
                           d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"
                         ></path></svg></span
-                    ><a class="nt-link" href="schedule.html"
+                    ><a class="nt-link" href="routine.html"
                       ><span class="nt-title">Graphic Design Live 8 moved to 8:00 PM</span
                       ><span class="p-small">Wed, 21 Oct · same Zoom link</span></a
                     ><span class="nt-meta"><span class="p-small">13 Oct</span></span>
@@ -524,7 +548,7 @@
                           d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0 0 12 0V2z"
                         ></path></svg></span
                     ><a class="nt-link" href="leaderboard.html"
-                      ><span class="nt-title">Full marks on the Class 11 quiz · +10 points</span
+                      ><span class="nt-title">Full marks on the Class 11 quiz</span
                       ><span class="p-small">You moved up to #3 in WordPress Batch 14</span></a
                     ><span class="nt-meta"><span class="p-small">12 Oct</span></span>
                   </li>
@@ -621,7 +645,7 @@
                         <path
                           d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"
                         ></path></svg></span
-                    ><a class="nt-side-link" href="schedule.html"
+                    ><a class="nt-side-link" href="routine.html"
                       ><strong>Class recordings</strong
                       ><span class="p-small">Every class is added after it ends</span></a
                     ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Course player · European IT LMS</title>
+    <title>Graphic Design · European IT LMS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
     <link
@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="../assets/css/eit.css" />
     <link rel="stylesheet" href="../assets/css/panel.css" />
     <link rel="stylesheet" href="../assets/css/app.css" />
+    <script src="../assets/js/theme.js"></script>
     <script src="../assets/js/app.js" defer=""></script>
+    <script src="../assets/js/pages/player.js" defer></script>
   </head>
   <body>
     <div class="p-shell">
@@ -33,7 +35,7 @@
               <rect x="14" y="12" width="7" height="9" rx="1"></rect>
               <rect x="3" y="16" width="7" height="5" rx="1"></rect></svg
             ><span class="p-nav-text">Dashboard</span></a
-          ><a href="course-player.html" aria-current="page"
+          ><a href="courses.html" aria-current="page"
             ><svg
               class="eit-icon"
               width="20"
@@ -72,7 +74,7 @@
             >
               <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg
             ><span class="p-nav-text">Projects</span><span class="p-count">1</span></a
-          ><a href="schedule.html"
+          ><a href="routine.html"
             ><svg
               class="eit-icon"
               width="20"
@@ -88,13 +90,7 @@
             >
               <rect x="3" y="4" width="18" height="18" rx="2"></rect>
               <path d="M16 2v4M8 2v4M3 10h18"></path></svg
-            ><span class="p-nav-text">Schedule &amp; recordings</span
-            ><span class="p-nav-short" aria-hidden="true">Schedule</span></a
-          ><a href="explore.html"
-            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"></circle>
-              <path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z"></path></svg
-            ><span class="p-nav-text">Explore courses</span></a
+            ><span class="p-nav-text">Routine</span></a
           ><span class="p-nav-label">Progress</span
           ><a href="leaderboard.html"
             ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -147,7 +143,7 @@
         </nav>
         <a class="p-help p-lift" href="leaderboard.html" style="margin-top: auto; text-decoration: none; color: inherit"
           ><span class="p-row" style="gap: 10px"
-            ><span class="p-tile" style="width: 38px; height: 38px; background: var(--cyan); color: rgb(10, 27, 44)"
+            ><span class="p-tile" style="width: 38px; height: 38px; background: var(--cyan); color: var(--on-cyan)"
               ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
                 <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
@@ -156,38 +152,67 @@
                 <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
                 <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg></span
             ><span style="display: flex; flex-direction: column"
-              ><strong style="font-size: 18px; line-height: 1.15">90 points</strong
+              ><strong style="font-size: 18px; line-height: 1.15">164 points</strong
               ><span class="p-small" style="color: var(--cyan-deep)">#3 in WordPress B14</span></span
             ></span
-          ><span class="p-small" style="color: var(--cyan-deep)">Full marks on a class quiz = +10</span></a
+          ><span class="p-small" style="color: var(--cyan-deep)">Every marked project adds its mark</span></a
         >
       </aside>
       <div class="p-content">
         <header class="p-top">
-          <label class="p-search"
-            ><svg
-              class="eit-icon"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              focusable="false"
-              aria-hidden="true"
-            >
-              <circle cx="11" cy="11" r="8"></circle>
-              <path d="M21 21l-4.35-4.35"></path></svg
-            ><span class="eit-sr">Search</span><input type="search" placeholder="Search lessons and resources"
-          /></label>
+          <a class="p-next" href="routine.html"
+            ><span class="p-live" aria-hidden="true"></span
+            ><span class="p-next-text"
+              ><span class="p-next-l">Next class</span><span class="p-next-t">WordPress · Class 13</span
+              ><span class="p-next-m">Mon 19 Oct, 7:00 PM · Lab 2</span></span
+            ></a
+          >
           <div class="p-top-right">
             <div class="eit-seg has-thumb" role="group" aria-label="Language">
               <span class="eit-seg__thumb" aria-hidden="true" style="width: 52px; transform: translateX(4px)"></span
               ><button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button
               ><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button>
             </div>
+            <button
+              class="p-iconbtn"
+              data-theme-toggle=""
+              type="button"
+              aria-label="Dark mode"
+              aria-pressed="false"
+              title="Switch to dark mode"
+            >
+              <svg
+                class="p-moon"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg
+              ><svg
+                class="p-sun"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zM12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"
+                ></path>
+              </svg>
+            </button>
             <button
               class="p-iconbtn"
               data-notif-scope="student"
@@ -322,24 +347,24 @@
             class="p-row"
             style="gap: 8px; font-size: 14px; color: var(--ink-3); flex-wrap: wrap"
           >
-            <a class="p-link" href="dashboard.html" style="font-weight: 500">My courses</a
-            ><span aria-hidden="true">/</span
-            ><span style="color: var(--ink-2)">Web Design &amp; Development with WordPress</span>
+            <a class="p-link" href="courses.html" style="font-weight: 500">My courses</a
+            ><span aria-hidden="true">/</span><span style="color: var(--ink-2)">Graphic Design</span>
           </nav>
           <div class="p-split">
             <div style="flex: 2 1 600px; min-width: 0px; display: flex; flex-direction: column; gap: 20px">
               <section
+                data-player
                 aria-label="Video player"
                 style="
                   position: relative;
                   aspect-ratio: 16 / 9;
                   border-radius: var(--radius-lg);
-                  background: var(--ink);
+                  background: #0a1b2c;
                   overflow: hidden;
                   display: flex;
                   flex-direction: column;
                   justify-content: space-between;
-                  color: var(--on-ink);
+                  color: #ffffff;
                 "
               >
                 <div class="p-row" style="padding: 16px 20px; justify-content: space-between">
@@ -350,13 +375,14 @@
                       letter-spacing: 0.08em;
                       color: var(--on-ink-2);
                     "
-                    >MODULE 3 · LESSON 4</span
+                    >MODULE 2 · LESSON 3</span
                   ><span style="font-family: var(--font-mono); font-size: 11px; color: var(--on-ink-2); opacity: 0.6"
                     >EIT-24-0148</span
                   >
                 </div>
                 <button
                   type="button"
+                  data-player-play
                   aria-label="Play lesson"
                   style="
                     align-self: center;
@@ -402,6 +428,7 @@
                     style="position: relative; height: 6px; border-radius: 999px; background: rgba(255, 255, 255, 0.18)"
                   >
                     <span
+                      data-player-progress
                       style="
                         position: absolute;
                         left: 0px;
@@ -413,6 +440,7 @@
                       "
                     ></span
                     ><span
+                      data-player-thumb
                       style="
                         position: absolute;
                         left: calc(64% - 7px);
@@ -420,7 +448,7 @@
                         width: 14px;
                         height: 14px;
                         border-radius: 50%;
-                        background: rgb(255, 255, 255);
+                        background: var(--on-ink);
                       "
                     ></span>
                   </div>
@@ -428,19 +456,19 @@
                     class="p-row"
                     style="justify-content: space-between; font-size: 13px; color: var(--on-ink-2); flex-wrap: wrap"
                   >
-                    <span style="font-variant-numeric: tabular-nums">11:36 / 18:00</span
-                    ><span class="p-row" style="gap: 6px"
+                    <span data-player-time style="font-variant-numeric: tabular-nums">11:36 / 18:00</span
+                    ><span class="p-row" style="gap: 6px" data-player-hint
                       ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
                         <rect x="3" y="11" width="18" height="11" rx="2"></rect>
                         <path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg
-                      >Skipping ahead is off until you finish this lesson</span
+                      ><span data-player-hint-text>Skipping ahead is off until you finish this lesson</span></span
                     >
                   </div>
                 </div>
               </section>
               <div style="display: flex; flex-direction: column; gap: 6px">
                 <div class="p-row" style="justify-content: space-between; align-items: flex-start; gap: 12px">
-                  <h1 class="p-h1" style="font-size: 26px">Building a custom header</h1>
+                  <h1 class="p-h1" style="font-size: 26px">Colour and contrast for social posts</h1>
                   <button type="button" class="p-ghostbtn cp-save" aria-pressed="true" aria-label="Save this lesson">
                     <svg
                       class="eit-icon"
@@ -459,33 +487,38 @@
                     ><span class="cp-on">Saved</span><span class="cp-off">Save</span>
                   </button>
                 </div>
-                <span class="p-muted">18 min · Mentor: Kamrul Hasan · Last watched today</span>
+                <span class="p-muted">18 min · Mentor: Nadia Rahman · Last watched today</span>
               </div>
               <section
                 class="p-card"
+                data-player-gate
                 aria-label="Next lesson"
                 style="padding: 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px"
               >
-                <span class="p-tile p-tile--muted"
+                <span class="p-tile p-tile--muted" data-player-gate-icon
                   ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
                     <rect x="3" y="11" width="18" height="11" rx="2"></rect>
                     <path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg
                 ></span>
                 <div style="flex: 1 1 260px; display: flex; flex-direction: column; gap: 8px">
-                  <strong style="font-size: 15px">Class 13 opens when you finish this video</strong>
+                  <strong style="font-size: 15px" data-player-gate-title aria-live="polite"
+                    >Lesson 8 opens when you finish this video</strong
+                  >
                   <div class="p-bar p-bar--thin" role="img" aria-label="64% watched">
-                    <span style="width: 64%"></span>
+                    <span style="width: 64%" data-player-gate-bar></span>
                   </div>
-                  <span class="p-small">6:24 left to watch</span>
+                  <span class="p-small" data-player-left>6:24 left to watch</span>
                 </div>
                 <div class="p-row" style="flex-wrap: wrap">
                   <a class="p-ghostbtn" href="#">Previous lesson</a
-                  ><button class="p-ghostbtn" type="button" disabled="" aria-describedby="lock-why">
+                  ><button class="p-ghostbtn" type="button" disabled="" aria-describedby="lock-why" data-player-next>
                     <svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
                       <rect x="3" y="11" width="18" height="11" rx="2"></rect>
                       <path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg
                     >Next lesson</button
-                  ><span id="lock-why" class="eit-sr">Locked until this video is watched to the end</span>
+                  ><span id="lock-why" class="eit-sr" data-player-why
+                    >Locked until this video is watched to the end</span
+                  >
                 </div>
               </section>
               <div class="p-tabs" role="tablist" aria-label="Lesson">
@@ -526,8 +559,9 @@
                 style="display: flex; flex-direction: column; gap: 16px"
               >
                 <p class="p-body">
-                  Build a header with a logo, a primary menu and a mobile toggle, then register it with the theme so it
-                  can be edited from the WordPress customizer.
+                  Colour and contrast decide whether a social post gets read. See how to pick a palette that fits the
+                  brand, check that the text stays readable on a phone screen, and keep the busiest part of the image
+                  away from the caption.
                 </p>
                 <div style="display: flex; flex-direction: column; gap: 10px">
                   <span class="p-mono">In this lesson</span>
@@ -547,19 +581,19 @@
                       <span style="color: var(--success); margin-top: 2px"
                         ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
                           <path d="M20 6 9 17l-5-5"></path></svg></span
-                      ><span>Add a custom logo and a primary menu location to <code>functions.php</code></span>
+                      ><span>Build a palette of one main colour, one accent and two neutrals for a brand</span>
                     </li>
                     <li class="p-row" style="gap: 10px; align-items: flex-start">
                       <span style="color: var(--success); margin-top: 2px"
                         ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
                           <path d="M20 6 9 17l-5-5"></path></svg></span
-                      ><span>Build <code>header.php</code> with the logo, menu and a mobile menu button</span>
+                      ><span>Check text against its background: 4.5:1 for small text, 3:1 for large</span>
                     </li>
                     <li class="p-row" style="gap: 10px; align-items: flex-start">
                       <span style="color: var(--success); margin-top: 2px"
                         ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
                           <path d="M20 6 9 17l-5-5"></path></svg></span
-                      ><span>Load the header styles with <code>wp_enqueue_style()</code></span>
+                      ><span>Place captions and logos on calm areas of a photo, or add a soft overlay</span>
                     </li>
                   </ul>
                 </div>
@@ -568,7 +602,10 @@
                     <rect x="8" y="2" width="8" height="4" rx="1"></rect>
                     <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
                     <path d="m9 14 2 2 4-4"></path></svg
-                  ><span>The Class 12 quiz opens when this video is done. Get all 10 right for +10 points.</span>
+                  ><span
+                    >The Lesson 7 quiz opens when this video is done. Quizzes unlock the next module: take every quiz in
+                    a module to open the one after it.</span
+                  >
                 </div>
               </div>
               <div
@@ -588,8 +625,8 @@
                         <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
                         <path d="M14 2v4a2 2 0 0 0 2 2h4"></path></svg></span
                     ><span class="p-grow" style="display: flex; flex-direction: column"
-                      ><strong style="font-size: 14px">header-starter.zip</strong
-                      ><span class="p-small">Starter files · 1.2 MB</span></span
+                      ><strong style="font-size: 14px">social-palette-swatches.zip</strong
+                      ><span class="p-small">Swatches and a contrast checklist · 1.4 MB</span></span
                     ><a class="p-link" href="#">Download</a>
                   </li>
                   <li>
@@ -612,19 +649,21 @@
                 style="display: flex; flex-direction: column; gap: 16px"
               >
                 <form style="display: flex; flex-direction: column; gap: 10px" data-next="">
-                  <label class="p-label" for="ask-text">Ask Kamrul about this lesson</label
-                  ><textarea
+                  <label class="p-label" for="ask-text">Ask Nadia about this lesson</label>
+                  <textarea
                     id="ask-text"
                     class="p-textarea"
                     style="min-height: 96px"
                     placeholder="What did you try, and what happened? Add the time in the video if it helps (for example 11:36)."
                   ></textarea>
                   <div class="p-row" style="justify-content: space-between; flex-wrap: wrap; gap: 10px">
-                    <span class="p-small">Mentors usually reply within a day. You get a notification when they do.</span
-                    ><button
+                    <span class="p-small"
+                      >Mentors usually reply within a day. You get a notification when they do.</span
+                    >
+                    <button
                       type="submit"
                       class="eit-btn eit-btn--primary eit-btn--md"
-                      data-toast="Question sent to Kamrul"
+                      data-toast="Question sent to Nadia"
                     >
                       <svg
                         class="eit-icon eit-btn__lead"
@@ -647,7 +686,7 @@
                 </form>
                 <div style="display: flex; flex-direction: column; gap: 12px">
                   <div class="p-row" style="justify-content: space-between; flex-wrap: wrap; gap: 8px">
-                    <span class="p-mono">Your questions on this lesson</span
+                    <span class="p-mono">Your questions on this course</span
                     ><a class="p-link" href="questions.html">All your questions</a>
                   </div>
                   <article
@@ -664,48 +703,24 @@
                     <div class="p-row" style="gap: 10px; align-items: flex-start">
                       <span class="p-avatar p-avatar--sm">NJ</span>
                       <div style="display: flex; flex-direction: column; gap: 2px">
-                        <strong style="font-size: 14px"
-                          >Is 400ms too slow for the menu slide-in?
-                          <span class="eit-badge eit-badge--warning" style="margin-left: 6px">Waiting</span></strong
-                        ><span class="p-small">You · 2 h ago · at 11:36 in the video</span>
+                        <strong style="font-size: 14px">Should the margins be the same on every side?</strong
+                        ><span class="p-small">You · 7 Oct · Live 6 · Grids and layout · at 52:10</span>
                         <p class="p-body" style="margin: 4px 0 0; font-size: 14px">
-                          I used 400ms for the mobile menu slide-in. It feels a bit slow on my phone. Is that okay, or
-                          should it be faster?
-                        </p>
-                      </div>
-                    </div>
-                  </article>
-                  <article
-                    class="p-card"
-                    style="
-                      padding: 16px;
-                      box-shadow: none;
-                      display: flex;
-                      flex-direction: column;
-                      gap: 12px;
-                      background: var(--surface);
-                    "
-                  >
-                    <div class="p-row" style="gap: 10px; align-items: flex-start">
-                      <span class="p-avatar p-avatar--sm">NJ</span>
-                      <div style="display: flex; flex-direction: column; gap: 2px">
-                        <strong style="font-size: 14px">Why is my menu not showing?</strong
-                        ><span class="p-small">You · 12 Oct · at 9:40 in the video</span>
-                        <p class="p-body" style="margin: 4px 0 0; font-size: 14px">
-                          I registered the menu but nothing shows in the header.
+                          In the grid exercise my post looks crowded at the bottom. Should the margins be the same on
+                          every side of the post?
                         </p>
                       </div>
                     </div>
                     <div class="p-row" style="gap: 10px; align-items: flex-start; padding-left: 42px">
-                      <span class="p-avatar p-avatar--sm">KH</span>
+                      <span class="p-avatar p-avatar--sm">NR</span>
                       <div style="display: flex; flex-direction: column; gap: 2px">
                         <strong style="font-size: 14px"
-                          >Kamrul Hasan
+                          >Nadia Rahman
                           <span class="eit-badge eit-badge--success" style="margin-left: 6px">Mentor</span></strong
-                        ><span class="p-small">12 Oct</span>
+                        ><span class="p-small">8 Oct</span>
                         <p class="p-body" style="margin: 4px 0 0; font-size: 14px">
-                          Check that the theme location in <code>wp_nav_menu()</code> matches the one in
-                          <code>register_nav_menus()</code>, then assign a menu to it under Appearance → Menus.
+                          Not always. Keep the outer margins equal, then give the bottom a little more room when a
+                          caption or logo sits there. Slide 12 of the Live 6 deck shows both versions.
                         </p>
                       </div>
                     </div>
@@ -720,8 +735,8 @@
                 style="display: flex; flex-direction: column; gap: 16px"
               >
                 <form style="display: flex; flex-direction: column; gap: 10px" data-next="">
-                  <label class="p-label" for="note-text">Note at 11:36</label
-                  ><textarea
+                  <label class="p-label" for="note-text">Note at 11:36</label>
+                  <textarea
                     id="note-text"
                     class="p-textarea"
                     style="min-height: 80px"
@@ -743,10 +758,10 @@
                     ><a class="p-link" href="saved.html">All your notes</a>
                   </div>
                   <article class="p-card" style="padding: 16px; box-shadow: none; background: var(--surface)">
-                    <span class="p-small">at 6:10 · today</span>
+                    <span class="p-small">Live 7 · at 40:12 · 14 Oct</span>
                     <p class="p-body" style="margin: 4px 0 0; font-size: 14px">
-                      Register the menu in <code>functions.php</code> first, then call <code>wp_nav_menu()</code> in
-                      <code>header.php</code> with the same theme location.
+                      Small text on a post needs 4.5:1 contrast. Check the caption colour on the light coffee background
+                      before exporting.
                     </p>
                   </article>
                 </div>
@@ -768,10 +783,10 @@
               >
                 <h2 id="curr-title" class="p-h3">Course content</h2>
                 <div class="p-row" style="justify-content: space-between">
-                  <span class="p-small">23 of 54 lessons</span><strong style="font-size: 14px">42%</strong>
+                  <span class="p-small">7 of 40 lessons</span><strong style="font-size: 14px">18%</strong>
                 </div>
-                <div class="p-bar p-bar--thin" role="img" aria-label="42% complete">
-                  <span style="width: 42%"></span>
+                <div class="p-bar p-bar--thin" role="img" aria-label="18% complete">
+                  <span style="width: 18%"></span>
                 </div>
               </div>
               <div style="padding: 16px 20px 0px">
@@ -793,12 +808,138 @@
                     <path d="M12 16v-5"></path>
                     <path d="M12 8h.01"></path></svg
                   ><span
-                    >Classes open in order: finish each video to unlock the next. Every class ends with a quiz, and a
-                    module opens only when all quizzes before it are taken. Full marks earn 10 points.</span
+                    >Lessons open in order: finish each video to unlock the next. Every lesson ends with a quiz, and a
+                    module opens only when all quizzes before it are taken.</span
                   >
                 </div>
               </div>
               <div style="padding: 12px 8px 16px; display: flex; flex-direction: column">
+                <button
+                  type="button"
+                  aria-expanded="true"
+                  data-panel="pl-live"
+                  class="pl-mod"
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    min-height: 52px;
+                    padding: 0px 12px;
+                    border: 0px;
+                    background: transparent;
+                    text-align: left;
+                    font: inherit;
+                    cursor: pointer;
+                    border-radius: var(--radius-md);
+                    color: var(--ink);
+                  "
+                >
+                  <span style="color: var(--cyan-deep)"
+                    ><svg
+                      class="eit-icon"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M10 8l6 4-6 4z"></path></svg></span
+                  ><span class="p-grow" style="display: flex; flex-direction: column"
+                    ><strong style="font-size: 14px">Live sessions</strong
+                    ><span class="p-small">Live 8 coming up · Live 7 recording ready</span></span
+                  ><svg
+                    class="eit-icon"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    focusable="false"
+                    aria-hidden="true"
+                  >
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </button>
+                <ol
+                  id="pl-live"
+                  style="
+                    list-style: none;
+                    margin: 0px 0px 8px;
+                    padding: 0px 0px 0px 12px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2px;
+                  "
+                >
+                  <li
+                    style="
+                      display: flex;
+                      align-items: center;
+                      gap: 12px;
+                      min-height: 48px;
+                      padding: 6px 12px;
+                      border-radius: 12px;
+                    "
+                  >
+                    <span
+                      style="
+                        width: 28px;
+                        height: 28px;
+                        border-radius: 50%;
+                        display: grid;
+                        place-items: center;
+                        flex: 0 0 auto;
+                        background: var(--warning-soft);
+                        color: var(--warning);
+                      "
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+                        <path d="M16 2v4M8 2v4M3 10h18"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
+                      ><span style="font-size: 14px; font-weight: 600; color: var(--ink)"
+                        >Live 8 · Typography for social posts</span
+                      ><span class="p-small" style="font-size: 12px">Upcoming · Wed 21 Oct · 8:00 PM · Zoom</span></span
+                    >
+                  </li>
+                  <li
+                    style="
+                      display: flex;
+                      align-items: center;
+                      gap: 12px;
+                      min-height: 48px;
+                      padding: 6px 12px;
+                      border-radius: 12px;
+                    "
+                  >
+                    <span
+                      style="
+                        width: 28px;
+                        height: 28px;
+                        border-radius: 50%;
+                        display: grid;
+                        place-items: center;
+                        flex: 0 0 auto;
+                        background: var(--success-soft);
+                        color: var(--success);
+                      "
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M10 8l6 4-6 4z"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
+                      ><span style="font-size: 14px; color: var(--ink-2)">Live 7 · Colour and contrast</span
+                      ><span class="p-small" style="font-size: 12px">Recording · 1:30:41 · watched</span></span
+                    ><a class="p-link" href="routine.html" style="font-size: 13px; white-space: nowrap">Watch</a>
+                  </li>
+                </ol>
                 <button
                   type="button"
                   aria-expanded="false"
@@ -836,8 +977,8 @@
                       <circle cx="12" cy="12" r="10"></circle>
                       <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span
                   ><span class="p-grow" style="display: flex; flex-direction: column"
-                    ><strong style="font-size: 14px">1 · Getting started</strong
-                    ><span class="p-small">All classes and quizzes done · +40 points</span></span
+                    ><strong style="font-size: 14px">1 · Foundations</strong
+                    ><span class="p-small">All lessons and quizzes done</span></span
                   ><svg
                     class="eit-icon"
                     width="18"
@@ -902,8 +1043,8 @@
                       >
                         <path d="M20 6L9 17l-5-5"></path></svg></span
                     ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
-                      ><span style="font-size: 14px; color: var(--ink-2)">Class 1 · Welcome and setup</span
-                      ><span class="p-small" style="font-size: 12px">Video · 14:05</span></span
+                      ><span style="font-size: 14px; color: var(--ink-2)">Lesson 1 · What good design does</span
+                      ><span class="p-small" style="font-size: 12px">Video · 12:40</span></span
                     >
                   </li>
                   <li
@@ -942,8 +1083,8 @@
                       >
                         <path d="M20 6L9 17l-5-5"></path></svg></span
                     ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
-                      ><span style="font-size: 14px; color: var(--ink-2)">Class 1 quiz</span
-                      ><span class="p-small" style="font-size: 12px">Full marks 10/10 · +10 points</span></span
+                      ><span style="font-size: 14px; color: var(--ink-2)">Lesson 1 quiz</span
+                      ><span class="p-small" style="font-size: 12px">Done · 10/10</span></span
                     >
                   </li>
                   <li
@@ -982,8 +1123,8 @@
                       >
                         <path d="M20 6L9 17l-5-5"></path></svg></span
                     ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
-                      ><span style="font-size: 14px; color: var(--ink-2)">Class 2 · How WordPress works</span
-                      ><span class="p-small" style="font-size: 12px">Video · 16:30</span></span
+                      ><span style="font-size: 14px; color: var(--ink-2)">Lesson 2 · Shapes and balance</span
+                      ><span class="p-small" style="font-size: 12px">Video · 15:20</span></span
                     >
                   </li>
                   <li
@@ -1022,518 +1163,7 @@
                       >
                         <path d="M20 6L9 17l-5-5"></path></svg></span
                     ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
-                      ><span style="font-size: 14px; color: var(--ink-2)">Class 2 quiz</span
-                      ><span class="p-small" style="font-size: 12px">Full marks 10/10 · +10 points</span></span
-                    >
-                  </li>
-                  <li
-                    style="
-                      display: flex;
-                      align-items: center;
-                      gap: 12px;
-                      min-height: 48px;
-                      padding: 6px 12px;
-                      border-radius: 12px;
-                    "
-                  >
-                    <span
-                      style="
-                        width: 28px;
-                        height: 28px;
-                        border-radius: 50%;
-                        display: grid;
-                        place-items: center;
-                        flex: 0 0 auto;
-                        background: var(--success-soft);
-                        color: var(--success);
-                      "
-                      ><svg
-                        class="eit-icon"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        focusable="false"
-                        aria-hidden="true"
-                      >
-                        <path d="M20 6L9 17l-5-5"></path></svg></span
-                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
-                      ><span style="font-size: 14px; color: var(--ink-2)"
-                        >Class 3 · Installing WordPress on your computer</span
-                      ><span class="p-small" style="font-size: 12px">Video · 18:12</span></span
-                    >
-                  </li>
-                  <li
-                    style="
-                      display: flex;
-                      align-items: center;
-                      gap: 12px;
-                      min-height: 48px;
-                      padding: 6px 12px;
-                      border-radius: 12px;
-                    "
-                  >
-                    <span
-                      style="
-                        width: 28px;
-                        height: 28px;
-                        border-radius: 50%;
-                        display: grid;
-                        place-items: center;
-                        flex: 0 0 auto;
-                        background: var(--success-soft);
-                        color: var(--success);
-                      "
-                      ><svg
-                        class="eit-icon"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        focusable="false"
-                        aria-hidden="true"
-                      >
-                        <path d="M20 6L9 17l-5-5"></path></svg></span
-                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
-                      ><span style="font-size: 14px; color: var(--ink-2)">Class 3 quiz</span
-                      ><span class="p-small" style="font-size: 12px">Full marks 10/10 · +10 points</span></span
-                    >
-                  </li>
-                  <li
-                    style="
-                      display: flex;
-                      align-items: center;
-                      gap: 12px;
-                      min-height: 48px;
-                      padding: 6px 12px;
-                      border-radius: 12px;
-                    "
-                  >
-                    <span
-                      style="
-                        width: 28px;
-                        height: 28px;
-                        border-radius: 50%;
-                        display: grid;
-                        place-items: center;
-                        flex: 0 0 auto;
-                        background: var(--success-soft);
-                        color: var(--success);
-                      "
-                      ><svg
-                        class="eit-icon"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        focusable="false"
-                        aria-hidden="true"
-                      >
-                        <path d="M20 6L9 17l-5-5"></path></svg></span
-                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
-                      ><span style="font-size: 14px; color: var(--ink-2)">Class 4 · Pages, posts and menus</span
-                      ><span class="p-small" style="font-size: 12px">Video · 15:48</span></span
-                    >
-                  </li>
-                  <li
-                    style="
-                      display: flex;
-                      align-items: center;
-                      gap: 12px;
-                      min-height: 48px;
-                      padding: 6px 12px;
-                      border-radius: 12px;
-                    "
-                  >
-                    <span
-                      style="
-                        width: 28px;
-                        height: 28px;
-                        border-radius: 50%;
-                        display: grid;
-                        place-items: center;
-                        flex: 0 0 auto;
-                        background: var(--success-soft);
-                        color: var(--success);
-                      "
-                      ><svg
-                        class="eit-icon"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        focusable="false"
-                        aria-hidden="true"
-                      >
-                        <path d="M20 6L9 17l-5-5"></path></svg></span
-                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
-                      ><span style="font-size: 14px; color: var(--ink-2)">Class 4 quiz</span
-                      ><span class="p-small" style="font-size: 12px">Full marks 10/10 · +10 points</span></span
-                    >
-                  </li>
-                  <li
-                    style="
-                      display: flex;
-                      align-items: center;
-                      gap: 12px;
-                      min-height: 48px;
-                      padding: 6px 12px;
-                      border-radius: 12px;
-                    "
-                  >
-                    <span
-                      style="
-                        width: 28px;
-                        height: 28px;
-                        border-radius: 50%;
-                        display: grid;
-                        place-items: center;
-                        flex: 0 0 auto;
-                        background: var(--success-soft);
-                        color: var(--success);
-                      "
-                      ><svg
-                        class="eit-icon"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        focusable="false"
-                        aria-hidden="true"
-                      >
-                        <path d="M20 6L9 17l-5-5"></path></svg></span
-                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
-                      ><span style="font-size: 14px; color: var(--ink-2)"
-                        >Milestone 1 project · Personal portfolio homepage</span
-                      ><span class="p-small" style="font-size: 12px">Approved · 86/100</span></span
-                    >
-                  </li>
-                </ol>
-                <button
-                  type="button"
-                  aria-expanded="false"
-                  data-panel="pl-mod-2"
-                  class="pl-mod"
-                  style="
-                    display: flex;
-                    align-items: center;
-                    gap: 12px;
-                    min-height: 52px;
-                    padding: 0px 12px;
-                    border: 0px;
-                    background: transparent;
-                    text-align: left;
-                    font: inherit;
-                    cursor: pointer;
-                    border-radius: var(--radius-md);
-                    color: var(--ink);
-                  "
-                >
-                  <span style="color: var(--success)"
-                    ><svg
-                      class="eit-icon"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span
-                  ><span class="p-grow" style="display: flex; flex-direction: column"
-                    ><strong style="font-size: 14px">2 · HTML &amp; CSS for WordPress</strong
-                    ><span class="p-small">All done · milestone project submitted</span></span
-                  ><svg
-                    class="eit-icon"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    focusable="false"
-                    aria-hidden="true"
-                  >
-                    <path d="M6 9l6 6 6-6"></path>
-                  </svg>
-                </button>
-                <ol
-                  id="pl-mod-2"
-                  hidden
-                  style="
-                    list-style: none;
-                    margin: 0px 0px 8px;
-                    padding: 0px 0px 0px 12px;
-                    display: flex;
-                    flex-direction: column;
-                    gap: 2px;
-                  "
-                >
-                  <li
-                    style="
-                      display: flex;
-                      align-items: center;
-                      gap: 12px;
-                      min-height: 48px;
-                      padding: 6px 12px;
-                      border-radius: 12px;
-                    "
-                  >
-                    <span
-                      style="
-                        width: 28px;
-                        height: 28px;
-                        border-radius: 50%;
-                        display: grid;
-                        place-items: center;
-                        flex: 0 0 auto;
-                        background: var(--success-soft);
-                        color: var(--success);
-                      "
-                      ><svg
-                        class="eit-icon"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        focusable="false"
-                        aria-hidden="true"
-                      >
-                        <path d="M20 6L9 17l-5-5"></path></svg></span
-                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
-                      ><span style="font-size: 14px; color: var(--ink-2)">Class 5 · HTML structure for themes</span
-                      ><span class="p-small" style="font-size: 12px">Video · 17:20</span></span
-                    >
-                  </li>
-                  <li
-                    style="
-                      display: flex;
-                      align-items: center;
-                      gap: 12px;
-                      min-height: 48px;
-                      padding: 6px 12px;
-                      border-radius: 12px;
-                    "
-                  >
-                    <span
-                      style="
-                        width: 28px;
-                        height: 28px;
-                        border-radius: 50%;
-                        display: grid;
-                        place-items: center;
-                        flex: 0 0 auto;
-                        background: var(--success-soft);
-                        color: var(--success);
-                      "
-                      ><svg
-                        class="eit-icon"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        focusable="false"
-                        aria-hidden="true"
-                      >
-                        <path d="M20 6L9 17l-5-5"></path></svg></span
-                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
-                      ><span style="font-size: 14px; color: var(--ink-2)">Class 5 quiz</span
-                      ><span class="p-small" style="font-size: 12px">Full marks 10/10 · +10 points</span></span
-                    >
-                  </li>
-                  <li
-                    style="
-                      display: flex;
-                      align-items: center;
-                      gap: 12px;
-                      min-height: 48px;
-                      padding: 6px 12px;
-                      border-radius: 12px;
-                    "
-                  >
-                    <span
-                      style="
-                        width: 28px;
-                        height: 28px;
-                        border-radius: 50%;
-                        display: grid;
-                        place-items: center;
-                        flex: 0 0 auto;
-                        background: var(--success-soft);
-                        color: var(--success);
-                      "
-                      ><svg
-                        class="eit-icon"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        focusable="false"
-                        aria-hidden="true"
-                      >
-                        <path d="M20 6L9 17l-5-5"></path></svg></span
-                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
-                      ><span style="font-size: 14px; color: var(--ink-2)"
-                        >Class 6 · CSS layout with flexbox and grid</span
-                      ><span class="p-small" style="font-size: 12px">Video · 19:02</span></span
-                    >
-                  </li>
-                  <li
-                    style="
-                      display: flex;
-                      align-items: center;
-                      gap: 12px;
-                      min-height: 48px;
-                      padding: 6px 12px;
-                      border-radius: 12px;
-                    "
-                  >
-                    <span
-                      style="
-                        width: 28px;
-                        height: 28px;
-                        border-radius: 50%;
-                        display: grid;
-                        place-items: center;
-                        flex: 0 0 auto;
-                        background: var(--success-soft);
-                        color: var(--success);
-                      "
-                      ><svg
-                        class="eit-icon"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        focusable="false"
-                        aria-hidden="true"
-                      >
-                        <path d="M20 6L9 17l-5-5"></path></svg></span
-                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
-                      ><span style="font-size: 14px; color: var(--ink-2)">Class 6 quiz</span
-                      ><span class="p-small" style="font-size: 12px">Full marks 10/10 · +10 points</span></span
-                    >
-                  </li>
-                  <li
-                    style="
-                      display: flex;
-                      align-items: center;
-                      gap: 12px;
-                      min-height: 48px;
-                      padding: 6px 12px;
-                      border-radius: 12px;
-                    "
-                  >
-                    <span
-                      style="
-                        width: 28px;
-                        height: 28px;
-                        border-radius: 50%;
-                        display: grid;
-                        place-items: center;
-                        flex: 0 0 auto;
-                        background: var(--success-soft);
-                        color: var(--success);
-                      "
-                      ><svg
-                        class="eit-icon"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        focusable="false"
-                        aria-hidden="true"
-                      >
-                        <path d="M20 6L9 17l-5-5"></path></svg></span
-                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
-                      ><span style="font-size: 14px; color: var(--ink-2)">Class 7 · Responsive images</span
-                      ><span class="p-small" style="font-size: 12px">Video · 13:44</span></span
-                    >
-                  </li>
-                  <li
-                    style="
-                      display: flex;
-                      align-items: center;
-                      gap: 12px;
-                      min-height: 48px;
-                      padding: 6px 12px;
-                      border-radius: 12px;
-                    "
-                  >
-                    <span
-                      style="
-                        width: 28px;
-                        height: 28px;
-                        border-radius: 50%;
-                        display: grid;
-                        place-items: center;
-                        flex: 0 0 auto;
-                        background: var(--success-soft);
-                        color: var(--success);
-                      "
-                      ><svg
-                        class="eit-icon"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        focusable="false"
-                        aria-hidden="true"
-                      >
-                        <path d="M20 6L9 17l-5-5"></path></svg></span
-                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
-                      ><span style="font-size: 14px; color: var(--ink-2)">Class 7 quiz</span
+                      ><span style="font-size: 14px; color: var(--ink-2)">Lesson 2 quiz</span
                       ><span class="p-small" style="font-size: 12px">Done · 9/10</span></span
                     >
                   </li>
@@ -1573,7 +1203,234 @@
                       >
                         <path d="M20 6L9 17l-5-5"></path></svg></span
                     ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
-                      ><span style="font-size: 14px; color: var(--ink-2)">Class 8 · CSS for WordPress themes</span
+                      ><span style="font-size: 14px; color: var(--ink-2)">Lesson 3 · Grids and layout</span
+                      ><span class="p-small" style="font-size: 12px">Video · 17:05</span></span
+                    >
+                  </li>
+                  <li
+                    style="
+                      display: flex;
+                      align-items: center;
+                      gap: 12px;
+                      min-height: 48px;
+                      padding: 6px 12px;
+                      border-radius: 12px;
+                    "
+                  >
+                    <span
+                      style="
+                        width: 28px;
+                        height: 28px;
+                        border-radius: 50%;
+                        display: grid;
+                        place-items: center;
+                        flex: 0 0 auto;
+                        background: var(--success-soft);
+                        color: var(--success);
+                      "
+                      ><svg
+                        class="eit-icon"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        focusable="false"
+                        aria-hidden="true"
+                      >
+                        <path d="M20 6L9 17l-5-5"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
+                      ><span style="font-size: 14px; color: var(--ink-2)">Lesson 3 quiz</span
+                      ><span class="p-small" style="font-size: 12px">Done · 10/10</span></span
+                    >
+                  </li>
+                  <li
+                    style="
+                      display: flex;
+                      align-items: center;
+                      gap: 12px;
+                      min-height: 48px;
+                      padding: 6px 12px;
+                      border-radius: 12px;
+                    "
+                  >
+                    <span
+                      style="
+                        width: 28px;
+                        height: 28px;
+                        border-radius: 50%;
+                        display: grid;
+                        place-items: center;
+                        flex: 0 0 auto;
+                        background: var(--success-soft);
+                        color: var(--success);
+                      "
+                      ><svg
+                        class="eit-icon"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        focusable="false"
+                        aria-hidden="true"
+                      >
+                        <path d="M20 6L9 17l-5-5"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
+                      ><span style="font-size: 14px; color: var(--ink-2)">Lesson 4 · Your first poster</span
+                      ><span class="p-small" style="font-size: 12px">Video · 14:30</span></span
+                    >
+                  </li>
+                  <li
+                    style="
+                      display: flex;
+                      align-items: center;
+                      gap: 12px;
+                      min-height: 48px;
+                      padding: 6px 12px;
+                      border-radius: 12px;
+                    "
+                  >
+                    <span
+                      style="
+                        width: 28px;
+                        height: 28px;
+                        border-radius: 50%;
+                        display: grid;
+                        place-items: center;
+                        flex: 0 0 auto;
+                        background: var(--success-soft);
+                        color: var(--success);
+                      "
+                      ><svg
+                        class="eit-icon"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        focusable="false"
+                        aria-hidden="true"
+                      >
+                        <path d="M20 6L9 17l-5-5"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
+                      ><span style="font-size: 14px; color: var(--ink-2)">Lesson 4 quiz</span
+                      ><span class="p-small" style="font-size: 12px">Done · 10/10</span></span
+                    >
+                  </li>
+                </ol>
+                <button
+                  type="button"
+                  aria-expanded="true"
+                  data-panel="pl-mod-2"
+                  class="pl-mod"
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    min-height: 52px;
+                    padding: 0px 12px;
+                    border: 0px;
+                    background: transparent;
+                    text-align: left;
+                    font: inherit;
+                    cursor: pointer;
+                    border-radius: var(--radius-md);
+                    color: var(--ink);
+                  "
+                >
+                  <span style="color: var(--cyan-deep)"
+                    ><svg
+                      class="eit-icon"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M10 8l6 4-6 4z"></path></svg></span
+                  ><span class="p-grow" style="display: flex; flex-direction: column"
+                    ><strong style="font-size: 14px">2 · Colour &amp; type</strong
+                    ><span class="p-small">In progress · 2 quizzes left after this lesson</span></span
+                  ><svg
+                    class="eit-icon"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    focusable="false"
+                    aria-hidden="true"
+                  >
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </button>
+                <ol
+                  id="pl-mod-2"
+                  style="
+                    list-style: none;
+                    margin: 0px 0px 8px;
+                    padding: 0px 0px 0px 12px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2px;
+                  "
+                >
+                  <li
+                    style="
+                      display: flex;
+                      align-items: center;
+                      gap: 12px;
+                      min-height: 48px;
+                      padding: 6px 12px;
+                      border-radius: 12px;
+                    "
+                  >
+                    <span
+                      style="
+                        width: 28px;
+                        height: 28px;
+                        border-radius: 50%;
+                        display: grid;
+                        place-items: center;
+                        flex: 0 0 auto;
+                        background: var(--success-soft);
+                        color: var(--success);
+                      "
+                      ><svg
+                        class="eit-icon"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        focusable="false"
+                        aria-hidden="true"
+                      >
+                        <path d="M20 6L9 17l-5-5"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
+                      ><span style="font-size: 14px; color: var(--ink-2)">Lesson 5 · Choosing a typeface</span
                       ><span class="p-small" style="font-size: 12px">Video · 16:10</span></span
                     >
                   </li>
@@ -1613,8 +1470,8 @@
                       >
                         <path d="M20 6L9 17l-5-5"></path></svg></span
                     ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
-                      ><span style="font-size: 14px; color: var(--ink-2)">Class 8 quiz</span
-                      ><span class="p-small" style="font-size: 12px">Full marks 10/10 · +10 points</span></span
+                      ><span style="font-size: 14px; color: var(--ink-2)">Lesson 5 quiz</span
+                      ><span class="p-small" style="font-size: 12px">Done · 10/10</span></span
                     >
                   </li>
                   <li
@@ -1653,116 +1510,8 @@
                       >
                         <path d="M20 6L9 17l-5-5"></path></svg></span
                     ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
-                      ><span style="font-size: 14px; color: var(--ink-2)"
-                        >Milestone 2 project · Responsive landing page</span
-                      ><span class="p-small" style="font-size: 12px">Submitted 14 Oct · in review</span></span
-                    >
-                  </li>
-                </ol>
-                <button
-                  type="button"
-                  aria-expanded="true"
-                  data-panel="pl-mod-3"
-                  class="pl-mod"
-                  style="
-                    display: flex;
-                    align-items: center;
-                    gap: 12px;
-                    min-height: 52px;
-                    padding: 0px 12px;
-                    border: 0px;
-                    background: transparent;
-                    text-align: left;
-                    font: inherit;
-                    cursor: pointer;
-                    border-radius: var(--radius-md);
-                    color: var(--ink);
-                  "
-                >
-                  <span style="color: var(--cyan-ink)"
-                    ><svg
-                      class="eit-icon"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M10 8l6 4-6 4z"></path></svg></span
-                  ><span class="p-grow" style="display: flex; flex-direction: column"
-                    ><strong style="font-size: 14px">3 · Building a theme</strong
-                    ><span class="p-small">6 of 13 done · 3 quizzes left</span></span
-                  ><svg
-                    class="eit-icon"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    focusable="false"
-                    aria-hidden="true"
-                  >
-                    <path d="M6 9l6 6 6-6"></path>
-                  </svg>
-                </button>
-                <ol
-                  id="pl-mod-3"
-                  style="
-                    list-style: none;
-                    margin: 0px 0px 8px;
-                    padding: 0px 0px 0px 12px;
-                    display: flex;
-                    flex-direction: column;
-                    gap: 2px;
-                  "
-                >
-                  <li
-                    style="
-                      display: flex;
-                      align-items: center;
-                      gap: 12px;
-                      min-height: 48px;
-                      padding: 6px 12px;
-                      border-radius: 12px;
-                    "
-                  >
-                    <span
-                      style="
-                        width: 28px;
-                        height: 28px;
-                        border-radius: 50%;
-                        display: grid;
-                        place-items: center;
-                        flex: 0 0 auto;
-                        background: var(--success-soft);
-                        color: var(--success);
-                      "
-                      ><svg
-                        class="eit-icon"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        focusable="false"
-                        aria-hidden="true"
-                      >
-                        <path d="M20 6L9 17l-5-5"></path></svg></span
-                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
-                      ><span style="font-size: 14px; color: var(--ink-2)">Class 9 · Theme folder structure</span
-                      ><span class="p-small" style="font-size: 12px">Video · 12:10</span></span
+                      ><span style="font-size: 14px; color: var(--ink-2)">Lesson 6 · Pairing fonts</span
+                      ><span class="p-small" style="font-size: 12px">Video · 13:55</span></span
                     >
                   </li>
                   <li
@@ -1788,12 +1537,12 @@
                       "
                       ><svg
                         class="eit-icon"
-                        width="16"
-                        height="16"
+                        width="14"
+                        height="14"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
+                        stroke-width="2.5"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                         focusable="false"
@@ -1801,168 +1550,8 @@
                       >
                         <path d="M20 6L9 17l-5-5"></path></svg></span
                     ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
-                      ><span style="font-size: 14px; color: var(--ink-2)">Class 9 quiz</span
-                      ><span class="p-small" style="font-size: 12px">Full marks 10/10 · +10 points</span></span
-                    >
-                  </li>
-                  <li
-                    style="
-                      display: flex;
-                      align-items: center;
-                      gap: 12px;
-                      min-height: 48px;
-                      padding: 6px 12px;
-                      border-radius: 12px;
-                    "
-                  >
-                    <span
-                      style="
-                        width: 28px;
-                        height: 28px;
-                        border-radius: 50%;
-                        display: grid;
-                        place-items: center;
-                        flex: 0 0 auto;
-                        background: var(--success-soft);
-                        color: var(--success);
-                      "
-                      ><svg
-                        class="eit-icon"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        focusable="false"
-                        aria-hidden="true"
-                      >
-                        <path d="M20 6L9 17l-5-5"></path></svg></span
-                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
-                      ><span style="font-size: 14px; color: var(--ink-2)">Class 10 · The template hierarchy</span
-                      ><span class="p-small" style="font-size: 12px">Video · 16:45</span></span
-                    >
-                  </li>
-                  <li
-                    style="
-                      display: flex;
-                      align-items: center;
-                      gap: 12px;
-                      min-height: 48px;
-                      padding: 6px 12px;
-                      border-radius: 12px;
-                    "
-                  >
-                    <span
-                      style="
-                        width: 28px;
-                        height: 28px;
-                        border-radius: 50%;
-                        display: grid;
-                        place-items: center;
-                        flex: 0 0 auto;
-                        background: var(--success-soft);
-                        color: var(--success);
-                      "
-                      ><svg
-                        class="eit-icon"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        focusable="false"
-                        aria-hidden="true"
-                      >
-                        <path d="M20 6L9 17l-5-5"></path></svg></span
-                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
-                      ><span style="font-size: 14px; color: var(--ink-2)">Class 10 quiz</span
+                      ><span style="font-size: 14px; color: var(--ink-2)">Lesson 6 quiz</span
                       ><span class="p-small" style="font-size: 12px">Done · 8/10</span></span
-                    >
-                  </li>
-                  <li
-                    style="
-                      display: flex;
-                      align-items: center;
-                      gap: 12px;
-                      min-height: 48px;
-                      padding: 6px 12px;
-                      border-radius: 12px;
-                    "
-                  >
-                    <span
-                      style="
-                        width: 28px;
-                        height: 28px;
-                        border-radius: 50%;
-                        display: grid;
-                        place-items: center;
-                        flex: 0 0 auto;
-                        background: var(--success-soft);
-                        color: var(--success);
-                      "
-                      ><svg
-                        class="eit-icon"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        focusable="false"
-                        aria-hidden="true"
-                      >
-                        <path d="M20 6L9 17l-5-5"></path></svg></span
-                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
-                      ><span style="font-size: 14px; color: var(--ink-2)">Class 11 · Enqueueing styles and scripts</span
-                      ><span class="p-small" style="font-size: 12px">Video · 14:02</span></span
-                    >
-                  </li>
-                  <li
-                    style="
-                      display: flex;
-                      align-items: center;
-                      gap: 12px;
-                      min-height: 48px;
-                      padding: 6px 12px;
-                      border-radius: 12px;
-                    "
-                  >
-                    <span
-                      style="
-                        width: 28px;
-                        height: 28px;
-                        border-radius: 50%;
-                        display: grid;
-                        place-items: center;
-                        flex: 0 0 auto;
-                        background: var(--success-soft);
-                        color: var(--success);
-                      "
-                      ><svg
-                        class="eit-icon"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        focusable="false"
-                        aria-hidden="true"
-                      >
-                        <path d="M20 6L9 17l-5-5"></path></svg></span
-                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
-                      ><span style="font-size: 14px; color: var(--ink-2)">Class 11 quiz</span
-                      ><span class="p-small" style="font-size: 12px">Full marks 10/10 · +10 points</span></span
                     >
                   </li>
                   <li
@@ -2003,11 +1592,14 @@
                         <path d="M6 4l14 8-14 8z"></path></svg></span
                     ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
                       ><span style="font-size: 14px; font-weight: 600; color: var(--cyan-deep)"
-                        >Class 12 · Building a custom header</span
-                      ><span class="p-small" style="font-size: 12px">Playing · 64% watched</span></span
+                        >Lesson 7 · Colour and contrast for social posts</span
+                      ><span class="p-small" style="font-size: 12px" data-player-status
+                        >Paused · 64% watched</span
+                      ></span
                     >
                   </li>
                   <li
+                    data-player-quiz
                     style="
                       display: flex;
                       align-items: center;
@@ -2025,16 +1617,56 @@
                         display: grid;
                         place-items: center;
                         flex: 0 0 auto;
-                        background: var(--warning-soft);
-                        color: var(--warning);
+                        background: var(--track);
+                        color: var(--ink-3);
                       "
                       ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
                         <rect x="8" y="2" width="8" height="4" rx="1"></rect>
                         <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
                         <path d="m9 14 2 2 4-4"></path></svg></span
                     ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
-                      ><span style="font-size: 14px; font-weight: 600; color: var(--ink)">Class 12 quiz</span
-                      ><span class="p-small" style="font-size: 12px">Open now · all right = +10 points</span></span
+                      ><span style="font-size: 14px; color: var(--ink-3)">Lesson 7 quiz</span
+                      ><span class="p-small" style="font-size: 12px" data-player-quiz-sub
+                        >Opens when you finish the video</span
+                      ></span
+                    >
+                  </li>
+                  <li
+                    style="
+                      display: flex;
+                      align-items: center;
+                      gap: 12px;
+                      min-height: 48px;
+                      padding: 6px 12px;
+                      border-radius: 12px;
+                    "
+                    data-player-unlock
+                    aria-disabled="true"
+                  >
+                    <span
+                      style="
+                        width: 28px;
+                        height: 28px;
+                        border-radius: 50%;
+                        display: grid;
+                        place-items: center;
+                        flex: 0 0 auto;
+                        background: var(--track);
+                        color: var(--ink-3);
+                      "
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="3" y="11" width="18" height="11" rx="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
+                      ><span style="font-size: 14px; color: var(--ink-3)" data-player-unlock-name
+                        >Lesson 8 · Typography for social posts</span
+                      ><span
+                        class="p-small"
+                        style="font-size: 12px"
+                        data-player-unlock-sub
+                        data-open-text="Video · 15:30 · open now"
+                        >Video · 15:30 · opens after Lesson 7</span
+                      ></span
                     >
                   </li>
                   <li
@@ -2062,124 +1694,8 @@
                         <rect x="3" y="11" width="18" height="11" rx="2"></rect>
                         <path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span
                     ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
-                      ><span style="font-size: 14px; color: var(--ink-3)">Class 13 · Navigation menus</span
-                      ><span class="p-small" style="font-size: 12px">Video · 15:30</span></span
-                    >
-                  </li>
-                  <li
-                    style="
-                      display: flex;
-                      align-items: center;
-                      gap: 12px;
-                      min-height: 48px;
-                      padding: 6px 12px;
-                      border-radius: 12px;
-                    "
-                  >
-                    <span
-                      style="
-                        width: 28px;
-                        height: 28px;
-                        border-radius: 50%;
-                        display: grid;
-                        place-items: center;
-                        flex: 0 0 auto;
-                        background: var(--track);
-                        color: var(--ink-3);
-                      "
-                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                        <rect x="3" y="11" width="18" height="11" rx="2"></rect>
-                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span
-                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
-                      ><span style="font-size: 14px; color: var(--ink-3)">Class 13 quiz</span
-                      ><span class="p-small" style="font-size: 12px">Opens after the class on Mon, 19 Oct</span></span
-                    >
-                  </li>
-                  <li
-                    style="
-                      display: flex;
-                      align-items: center;
-                      gap: 12px;
-                      min-height: 48px;
-                      padding: 6px 12px;
-                      border-radius: 12px;
-                    "
-                  >
-                    <span
-                      style="
-                        width: 28px;
-                        height: 28px;
-                        border-radius: 50%;
-                        display: grid;
-                        place-items: center;
-                        flex: 0 0 auto;
-                        background: var(--track);
-                        color: var(--ink-3);
-                      "
-                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                        <rect x="3" y="11" width="18" height="11" rx="2"></rect>
-                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span
-                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
-                      ><span style="font-size: 14px; color: var(--ink-3)">Class 14 · The loop and post templates</span
-                      ><span class="p-small" style="font-size: 12px">Video · 20:12</span></span
-                    >
-                  </li>
-                  <li
-                    style="
-                      display: flex;
-                      align-items: center;
-                      gap: 12px;
-                      min-height: 48px;
-                      padding: 6px 12px;
-                      border-radius: 12px;
-                    "
-                  >
-                    <span
-                      style="
-                        width: 28px;
-                        height: 28px;
-                        border-radius: 50%;
-                        display: grid;
-                        place-items: center;
-                        flex: 0 0 auto;
-                        background: var(--track);
-                        color: var(--ink-3);
-                      "
-                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                        <rect x="3" y="11" width="18" height="11" rx="2"></rect>
-                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span
-                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
-                      ><span style="font-size: 14px; color: var(--ink-3)">Class 14 quiz</span
-                      ><span class="p-small" style="font-size: 12px">Opens after the class on Thu, 22 Oct</span></span
-                    >
-                  </li>
-                  <li
-                    style="
-                      display: flex;
-                      align-items: center;
-                      gap: 12px;
-                      min-height: 48px;
-                      padding: 6px 12px;
-                      border-radius: 12px;
-                    "
-                  >
-                    <span
-                      style="
-                        width: 28px;
-                        height: 28px;
-                        border-radius: 50%;
-                        display: grid;
-                        place-items: center;
-                        flex: 0 0 auto;
-                        background: var(--track);
-                        color: var(--ink-3);
-                      "
-                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                        <rect x="3" y="11" width="18" height="11" rx="2"></rect>
-                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span
-                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 1px"
-                      ><span style="font-size: 14px; color: var(--ink-3)">Milestone 3 project · Blog theme</span
-                      ><span class="p-small" style="font-size: 12px">Project · marked by your mentor</span></span
+                      ><span style="font-size: 14px; color: var(--ink-3)">Lesson 8 quiz</span
+                      ><span class="p-small" style="font-size: 12px">Opens after the lesson</span></span
                     >
                   </li>
                 </ol>
@@ -2206,10 +1722,11 @@
                     <rect x="3" y="11" width="18" height="11" rx="2"></rect>
                     <path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg
                   ><span class="p-grow" style="display: flex; flex-direction: column"
-                    ><strong style="font-size: 14px; color: var(--ink-2)">4 · Plugins &amp; WooCommerce</strong
-                    ><span class="p-small">Opens when all Module 3 quizzes are taken</span></span
-                  ></button
-                ><button
+                    ><strong style="font-size: 14px; color: var(--ink-2)">3 · Social media design</strong
+                    ><span class="p-small">Opens when all Module 2 quizzes are taken</span></span
+                  >
+                </button>
+                <button
                   type="button"
                   aria-disabled="true"
                   title="Locked"
@@ -2232,7 +1749,34 @@
                     <rect x="3" y="11" width="18" height="11" rx="2"></rect>
                     <path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg
                   ><span class="p-grow" style="display: flex; flex-direction: column"
-                    ><strong style="font-size: 14px; color: var(--ink-2)">5 · Launch &amp; client handover</strong
+                    ><strong style="font-size: 14px; color: var(--ink-2)">4 · Brand identity</strong
+                    ><span class="p-small">Opens after Module 3</span></span
+                  >
+                </button>
+                <button
+                  type="button"
+                  aria-disabled="true"
+                  title="Locked"
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    min-height: 52px;
+                    padding: 0px 12px;
+                    border: 0px;
+                    background: transparent;
+                    text-align: left;
+                    font: inherit;
+                    cursor: not-allowed;
+                    border-radius: var(--radius-md);
+                    color: var(--ink-3);
+                  "
+                >
+                  <svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="3" y="11" width="18" height="11" rx="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg
+                  ><span class="p-grow" style="display: flex; flex-direction: column"
+                    ><strong style="font-size: 14px; color: var(--ink-2)">5 · Portfolio &amp; client briefs</strong
                     ><span class="p-small">Opens after Module 4</span></span
                   >
                 </button>

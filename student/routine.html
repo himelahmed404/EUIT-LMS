@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Class schedule and recordings · European IT LMS</title>
+    <title>Routine · European IT LMS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="../assets/css/eit.css" />
     <link rel="stylesheet" href="../assets/css/panel.css" />
     <link rel="stylesheet" href="../assets/css/app.css" />
+    <script src="../assets/js/theme.js"></script>
     <script src="../assets/js/app.js" defer></script>
+    <script src="../assets/js/pages/routine.js" defer></script>
   </head>
   <body>
     <div class="p-shell">
@@ -33,7 +35,7 @@
               <rect x="14" y="12" width="7" height="9" rx="1"></rect>
               <rect x="3" y="16" width="7" height="5" rx="1"></rect></svg
             ><span class="p-nav-text">Dashboard</span></a
-          ><a href="course-player.html"
+          ><a href="courses.html"
             ><svg
               class="eit-icon"
               width="20"
@@ -72,7 +74,7 @@
             >
               <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg
             ><span class="p-nav-text">Projects</span><span class="p-count">1</span></a
-          ><a href="schedule.html" aria-current="page"
+          ><a href="routine.html" aria-current="page"
             ><svg
               class="eit-icon"
               width="20"
@@ -88,13 +90,7 @@
             >
               <rect x="3" y="4" width="18" height="18" rx="2"></rect>
               <path d="M16 2v4M8 2v4M3 10h18"></path></svg
-            ><span class="p-nav-text">Schedule &amp; recordings</span
-            ><span class="p-nav-short" aria-hidden="true">Schedule</span></a
-          ><a href="explore.html"
-            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"></circle>
-              <path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z"></path></svg
-            ><span class="p-nav-text">Explore courses</span></a
+            ><span class="p-nav-text">Routine</span></a
           ><span class="p-nav-label">Progress</span
           ><a href="leaderboard.html"
             ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -147,7 +143,7 @@
         </nav>
         <a class="p-help p-lift" href="leaderboard.html" style="margin-top: auto; text-decoration: none; color: inherit"
           ><span class="p-row" style="gap: 10px"
-            ><span class="p-tile" style="width: 38px; height: 38px; background: var(--cyan); color: rgb(10, 27, 44)"
+            ><span class="p-tile" style="width: 38px; height: 38px; background: var(--cyan); color: var(--on-cyan)"
               ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
                 <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
@@ -156,38 +152,67 @@
                 <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
                 <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg></span
             ><span style="display: flex; flex-direction: column"
-              ><strong style="font-size: 18px; line-height: 1.15">90 points</strong
+              ><strong style="font-size: 18px; line-height: 1.15">164 points</strong
               ><span class="p-small" style="color: var(--cyan-deep)">#3 in WordPress B14</span></span
             ></span
-          ><span class="p-small" style="color: var(--cyan-deep)">Full marks on a class quiz = +10</span></a
+          ><span class="p-small" style="color: var(--cyan-deep)">Every marked project adds its mark</span></a
         >
       </aside>
       <div class="p-content">
         <header class="p-top">
-          <label class="p-search"
-            ><svg
-              class="eit-icon"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              focusable="false"
-              aria-hidden="true"
-            >
-              <circle cx="11" cy="11" r="8"></circle>
-              <path d="M21 21l-4.35-4.35"></path></svg
-            ><span class="eit-sr">Search</span><input type="search" placeholder="Search lessons and resources"
-          /></label>
+          <a class="p-next" href="routine.html"
+            ><span class="p-live" aria-hidden="true"></span
+            ><span class="p-next-text"
+              ><span class="p-next-l">Next class</span><span class="p-next-t">WordPress · Class 13</span
+              ><span class="p-next-m">Mon 19 Oct, 7:00 PM · Lab 2</span></span
+            ></a
+          >
           <div class="p-top-right">
             <div class="eit-seg has-thumb" role="group" aria-label="Language">
               <span class="eit-seg__thumb" aria-hidden="true" style="width: 52px; transform: translateX(4px)"></span
               ><button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button
               ><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button>
             </div>
+            <button
+              class="p-iconbtn"
+              data-theme-toggle=""
+              type="button"
+              aria-label="Dark mode"
+              aria-pressed="false"
+              title="Switch to dark mode"
+            >
+              <svg
+                class="p-moon"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg
+              ><svg
+                class="p-sun"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zM12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"
+                ></path>
+              </svg>
+            </button>
             <button
               class="p-iconbtn"
               data-notif-scope="student"
@@ -200,7 +225,7 @@
                 <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
                 <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
               ><span class="p-badge-count" data-unread-count="">2</span></button
-            ><a class="p-me" href="profile.html" style="text-decoration: none; border-radius: 12px"
+            ><a class="p-me" href="profile.html" style="text-decoration: none"
               ><span class="p-avatar">NJ</span
               ><span style="display: flex; flex-direction: column"
                 ><span class="p-me-name">Nusrat Jahan</span><span class="p-me-sub">Student · EIT-24-0148</span></span
@@ -319,10 +344,8 @@
         <main class="p-main" data-list>
           <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
             <div style="display: flex; flex-direction: column; gap: 6px">
-              <h1 class="p-h1">Schedule &amp; recordings</h1>
-              <p class="p-body">
-                Missed a class or want to watch it again? Every class recording is added here once the class ends.
-              </p>
+              <h1 class="p-h1">Routine</h1>
+              <p class="p-body">Your classes, live sessions and due dates in one calendar.</p>
             </div>
             <div class="p-seg" role="group" aria-label="Course">
               <button type="button" data-filter="all" aria-pressed="true">All courses</button
@@ -330,6 +353,245 @@
               ><button type="button" data-filter="design" aria-pressed="false">Graphic Design</button>
             </div>
           </div>
+          <section aria-labelledby="week-title" style="display: flex; flex-direction: column; gap: 12px">
+            <h2 id="week-title" class="p-h3">Weekly routine</h2>
+            <div class="rt-week">
+              <div class="rt-week-item">
+                <span class="cs-eyebrow">OFFLINE · LAB 2, MIRPUR-10</span>
+                <strong style="font-size: 15px">WordPress · Batch 14</strong>
+                <span class="p-small">Mon &amp; Thu, 7–9 PM · Lab 2</span>
+              </div>
+              <div class="rt-week-item">
+                <span class="cs-eyebrow">ONLINE · LIVE</span>
+                <strong style="font-size: 15px">Graphic Design · Batch 9</strong>
+                <span class="p-small">Wed, 8–9:30 PM · Zoom</span>
+              </div>
+            </div>
+          </section>
+          <section
+            id="rt-month"
+            class="p-card"
+            aria-labelledby="rt-month-title"
+            style="display: flex; flex-direction: column; gap: 16px"
+          >
+            <div class="p-card-head">
+              <h2 id="rt-month-title" class="p-h3">October 2026</h2>
+              <span class="p-row" style="gap: 8px"
+                ><button type="button" class="p-ghostbtn" disabled aria-label="Previous month">
+                  <svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M15 18l-6-6 6-6"></path>
+                  </svg>
+                  Prev</button
+                ><button type="button" class="p-ghostbtn" data-show-state="month:nov" aria-label="Next month">
+                  Next
+                  <svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9 18l6-6-6-6"></path>
+                  </svg></button
+              ></span>
+            </div>
+            <div role="group" aria-label="Day" style="display: flex; flex-direction: column; gap: 12px">
+              <div class="p-row" style="justify-content: space-between; flex-wrap: wrap; gap: 8px">
+                <button type="button" class="eit-chip is-on" aria-pressed="true" data-filter="all">
+                  <span class="eit-chip__check" aria-hidden="true"
+                    ><svg
+                      class="eit-icon"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <path d="M20 6L9 17l-5-5"></path></svg></span
+                  ><span class="eit-chip__label">Whole month</span>
+                </button>
+                <span class="p-small">Pick a day to see what is on. Today is Thu 15 Oct.</span>
+              </div>
+              <div class="rt-cal">
+                <span class="rt-cal-h">Sun</span>
+                <span class="rt-cal-h">Mon</span>
+                <span class="rt-cal-h">Tue</span>
+                <span class="rt-cal-h">Wed</span>
+                <span class="rt-cal-h">Thu</span>
+                <span class="rt-cal-h">Fri</span>
+                <span class="rt-cal-h">Sat</span>
+                <div class="rt-day is-empty" aria-hidden="true"></div>
+                <div class="rt-day is-empty" aria-hidden="true"></div>
+                <div class="rt-day is-empty" aria-hidden="true"></div>
+                <div class="rt-day is-empty" aria-hidden="true"></div>
+                <div class="rt-day">
+                  <span class="rt-day-n">1</span>
+                  <span class="rt-ev"
+                    ><span class="rt-chip rt-chip--off">WP · Class 8</span
+                    ><span class="rt-tags"><span class="rt-tag rt-tag--off">Offline</span><span class="rt-tag rt-tag--present">Present</span></span></span
+                  >
+                </div>
+                <div class="rt-day"><span class="rt-day-n">2</span></div>
+                <div class="rt-day"><span class="rt-day-n">3</span></div>
+                <div class="rt-day"><span class="rt-day-n">4</span></div>
+                <div class="rt-day">
+                  <span class="rt-day-n">5</span>
+                  <span class="rt-ev"
+                    ><span class="rt-chip rt-chip--off">WP · Class 9</span
+                    ><span class="rt-tags"><span class="rt-tag rt-tag--off">Offline</span><span class="rt-tag rt-tag--present">Present</span></span></span
+                  >
+                </div>
+                <div class="rt-day"><span class="rt-day-n">6</span></div>
+                <div class="rt-day">
+                  <span class="rt-day-n">7</span>
+                  <span class="rt-ev"
+                    ><span class="rt-chip rt-chip--on">GD · Live 6</span
+                    ><span class="rt-tags"><span class="rt-tag rt-tag--on">Online</span><span class="rt-tag rt-tag--present">Present</span></span></span
+                  >
+                </div>
+                <div class="rt-day">
+                  <span class="rt-day-n">8</span>
+                  <span class="rt-ev"
+                    ><span class="rt-chip rt-chip--off">WP · Class 10</span
+                    ><span class="rt-tags"><span class="rt-tag rt-tag--off">Offline</span><span class="rt-tag rt-tag--late">Late</span></span></span
+                  >
+                </div>
+                <div class="rt-day"><span class="rt-day-n">9</span></div>
+                <div class="rt-day"><span class="rt-day-n">10</span></div>
+                <div class="rt-day"><span class="rt-day-n">11</span></div>
+                <div class="rt-day">
+                  <span class="rt-day-n">12</span>
+                  <span class="rt-ev"
+                    ><span class="rt-chip rt-chip--off">WP · Class 11</span
+                    ><span class="rt-tags"><span class="rt-tag rt-tag--off">Offline</span><span class="rt-tag rt-tag--present">Present</span></span></span
+                  >
+                </div>
+                <div class="rt-day"><span class="rt-day-n">13</span></div>
+                <div class="rt-day">
+                  <span class="rt-day-n">14</span>
+                  <span class="rt-ev"
+                    ><span class="rt-chip rt-chip--on">GD · Live 7</span
+                    ><span class="rt-tags"><span class="rt-tag rt-tag--on">Online</span><span class="rt-tag rt-tag--present">Present</span></span></span
+                  >
+                </div>
+                <button
+                  type="button"
+                  class="rt-day is-today"
+                  data-filter="d15"
+                  aria-pressed="false"
+                  aria-label="Thu 15 Oct, today: WordPress Class 12, offline, present"
+                >
+                  <span class="rt-day-n">15</span>
+                  <span class="rt-ev"
+                    ><span class="rt-chip rt-chip--off">WP · Class 12</span
+                    ><span class="rt-tags"><span class="rt-tag rt-tag--off">Offline</span><span class="rt-tag rt-tag--present">Present</span></span></span
+                  >
+                </button>
+                <div class="rt-day"><span class="rt-day-n">16</span></div>
+                <div class="rt-day"><span class="rt-day-n">17</span></div>
+                <div class="rt-day"><span class="rt-day-n">18</span></div>
+                <button
+                  type="button"
+                  class="rt-day"
+                  data-filter="d19"
+                  aria-pressed="false"
+                  aria-label="Mon 19 Oct: WordPress Class 13, offline, upcoming"
+                >
+                  <span class="rt-day-n">19</span>
+                  <span class="rt-ev"
+                    ><span class="rt-chip rt-chip--off">WP · Class 13</span
+                    ><span class="rt-tags"><span class="rt-tag rt-tag--off">Offline</span><span class="rt-tag rt-tag--soon">Upcoming</span></span></span
+                  >
+                </button>
+                <div class="rt-day"><span class="rt-day-n">20</span></div>
+                <button
+                  type="button"
+                  class="rt-day"
+                  data-filter="d21"
+                  aria-pressed="false"
+                  aria-label="Wed 21 Oct: Graphic Design Live 8, online, upcoming"
+                >
+                  <span class="rt-day-n">21</span>
+                  <span class="rt-ev"
+                    ><span class="rt-chip rt-chip--on">GD · Live 8</span
+                    ><span class="rt-tags"><span class="rt-tag rt-tag--on">Online</span><span class="rt-tag rt-tag--soon">Upcoming</span></span></span
+                  >
+                </button>
+                <button
+                  type="button"
+                  class="rt-day"
+                  data-filter="d22"
+                  aria-pressed="false"
+                  aria-label="Thu 22 Oct: WordPress Class 14, offline, upcoming"
+                >
+                  <span class="rt-day-n">22</span>
+                  <span class="rt-ev"
+                    ><span class="rt-chip rt-chip--off">WP · Class 14</span
+                    ><span class="rt-tags"><span class="rt-tag rt-tag--off">Offline</span><span class="rt-tag rt-tag--soon">Upcoming</span></span></span
+                  >
+                </button>
+                <div class="rt-day"><span class="rt-day-n">23</span></div>
+                <div class="rt-day"><span class="rt-day-n">24</span></div>
+                <div class="rt-day"><span class="rt-day-n">25</span></div>
+                <div class="rt-day">
+                  <span class="rt-day-n">26</span>
+                  <span class="rt-ev"
+                    ><span class="rt-chip rt-chip--off">WP · Class 15</span
+                    ><span class="rt-tags"><span class="rt-tag rt-tag--off">Offline</span><span class="rt-tag rt-tag--soon">Upcoming</span></span></span
+                  >
+                </div>
+                <button
+                  type="button"
+                  class="rt-day"
+                  data-filter="d27"
+                  aria-pressed="false"
+                  aria-label="Tue 27 Oct: Social media post set due"
+                >
+                  <span class="rt-day-n">27</span>
+                  <span class="rt-ev"
+                    ><span class="rt-chip rt-chip--due">Project due</span
+                    ><span class="rt-tags"><span class="rt-tag rt-tag--due">Deadline</span></span></span
+                  >
+                </button>
+                <div class="rt-day">
+                  <span class="rt-day-n">28</span>
+                  <span class="rt-ev"
+                    ><span class="rt-chip rt-chip--on">GD · Live 9</span
+                    ><span class="rt-tags"><span class="rt-tag rt-tag--on">Online</span><span class="rt-tag rt-tag--soon">Upcoming</span></span></span
+                  >
+                </div>
+                <div class="rt-day">
+                  <span class="rt-day-n">29</span>
+                  <span class="rt-ev"
+                    ><span class="rt-chip rt-chip--off">WP · Class 16</span
+                    ><span class="rt-tags"><span class="rt-tag rt-tag--off">Offline</span><span class="rt-tag rt-tag--soon">Upcoming</span></span></span
+                  >
+                </div>
+                <div class="rt-day"><span class="rt-day-n">30</span></div>
+                <div class="rt-day"><span class="rt-day-n">31</span></div>
+              </div>
+            </div>
+            <div class="rt-stats" aria-label="October attendance">
+              <span class="rt-stat"><strong>6</strong> present</span>
+              <span class="rt-stat"><strong>1</strong> late</span>
+              <span class="rt-stat"><strong>6</strong> upcoming</span>
+              <span class="rt-stat"><strong>1</strong> deadline</span>
+            </div>
+            <div class="rt-legend">
+              <span
+                ><span class="rt-chip rt-chip--off" aria-hidden="true" style="width: 28px; padding: 0">&nbsp;</span
+                >Offline class</span
+              ><span
+                ><span class="rt-chip rt-chip--on" aria-hidden="true" style="width: 28px; padding: 0">&nbsp;</span
+                >Online live</span
+              ><span><span class="rt-tag rt-tag--present" aria-hidden="true">Present</span></span
+              ><span><span class="rt-tag rt-tag--late" aria-hidden="true">Late</span></span
+              ><span><span class="rt-tag rt-tag--soon" aria-hidden="true">Upcoming</span></span
+              ><span
+                ><span class="rt-chip rt-chip--due" aria-hidden="true" style="width: 28px; padding: 0">&nbsp;</span>Due
+                date</span
+              >
+            </div>
+          </section>
           <section
             class="p-card"
             data-list-group
@@ -337,32 +599,14 @@
             style="display: flex; flex-direction: column; gap: 16px"
           >
             <div class="p-card-head">
-              <h2 id="up-title" class="p-h3">Coming up</h2>
-              <a class="p-link" href="#"
-                ><svg
-                  class="eit-icon"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  focusable="false"
-                  aria-hidden="true"
-                >
-                  <rect x="3" y="4" width="18" height="18" rx="2"></rect>
-                  <path d="M16 2v4M8 2v4M3 10h18"></path></svg
-                >Add to Google Calendar</a
-              >
+              <h2 id="up-title" class="p-h3">Next up</h2>
             </div>
             <div
               style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); gap: 16px"
             >
               <article
                 data-list-item
-                data-tags="wordpress"
+                data-tags="wordpress d19"
                 style="
                   border: 1px solid var(--line);
                   border-radius: var(--radius-md);
@@ -375,6 +619,7 @@
                   style="
                     width: 56px;
                     flex: 0 0 auto;
+                    align-self: flex-start;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
@@ -394,12 +639,13 @@
                   </div>
                   <strong style="font-size: 15px">WordPress · Class 13</strong>
                   <span class="p-small">7:00–9:00 PM · Lab 2, Mirpur-10</span
-                  ><span class="p-small">Theme customizer</span>
+                  ><span class="p-small">Navigation menus</span>
+                  <a class="p-link" href="course-offline.html#cl-13">Open WordPress classes</a>
                 </div>
               </article>
               <article
                 data-list-item
-                data-tags="design"
+                data-tags="design d21"
                 style="
                   border: 1px solid var(--line);
                   border-radius: var(--radius-md);
@@ -412,6 +658,7 @@
                   style="
                     width: 56px;
                     flex: 0 0 auto;
+                    align-self: flex-start;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
@@ -431,11 +678,12 @@
                   <strong style="font-size: 15px">Graphic Design · Live 8</strong>
                   <span class="p-small">8:00–9:30 PM · Zoom link opens 10 min before</span
                   ><span class="p-small">Typography for social posts</span>
+                  <a class="p-link" href="course-player.html">Open Graphic Design</a>
                 </div>
               </article>
               <article
                 data-list-item
-                data-tags="wordpress"
+                data-tags="wordpress d22"
                 style="
                   border: 1px solid var(--line);
                   border-radius: var(--radius-md);
@@ -448,6 +696,7 @@
                   style="
                     width: 56px;
                     flex: 0 0 auto;
+                    align-self: flex-start;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
@@ -467,353 +716,440 @@
                   <strong style="font-size: 15px">WordPress · Class 14</strong>
                   <span class="p-small">7:00–9:00 PM · Lab 2, Mirpur-10</span
                   ><span class="p-small">Custom post types</span>
+                  <a class="p-link" href="course-offline.html">Open WordPress classes</a>
+                </div>
+              </article>
+              <article
+                data-list-item
+                data-tags="design d27"
+                style="
+                  border: 1px solid var(--line);
+                  border-radius: var(--radius-md);
+                  padding: 16px;
+                  display: flex;
+                  gap: 16px;
+                "
+              >
+                <div
+                  style="
+                    width: 56px;
+                    flex: 0 0 auto;
+                    align-self: flex-start;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 12px;
+                    background: var(--track);
+                    padding: 8px 0px;
+                  "
+                >
+                  <span class="p-mono" style="font-size: 11px">Tue</span
+                  ><span style="font-size: 22px; font-weight: 700">27</span>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0px">
+                  <div class="p-row" style="gap: 6px; flex-wrap: wrap">
+                    <span class="eit-badge eit-badge--warning">Due</span>
+                  </div>
+                  <strong style="font-size: 15px">Social media post set</strong>
+                  <span class="p-small">Milestone 2 project · Graphic Design</span
+                  ><span class="p-small">Due Tue 27 Oct</span>
+                  <a class="p-link" href="project-detail.html">Open project</a>
+                </div>
+              </article>
+              <article
+                data-list-item
+                data-tags="wordpress n15"
+                style="
+                  border: 1px solid var(--line);
+                  border-radius: var(--radius-md);
+                  padding: 16px;
+                  display: flex;
+                  gap: 16px;
+                "
+              >
+                <div
+                  style="
+                    width: 56px;
+                    flex: 0 0 auto;
+                    align-self: flex-start;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 12px;
+                    background: var(--track);
+                    padding: 8px 0px;
+                  "
+                >
+                  <span class="p-mono" style="font-size: 11px">Nov</span
+                  ><span style="font-size: 22px; font-weight: 700">15</span>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0px">
+                  <div class="p-row" style="gap: 6px; flex-wrap: wrap">
+                    <span class="eit-badge eit-badge--warning">Due</span>
+                  </div>
+                  <strong style="font-size: 15px">Installment 2 of 3</strong>
+                  <span class="p-small">Web Design &amp; Development with WordPress</span
+                  ><span class="p-small">৳5,000 · due 15 Nov 2026</span>
+                  <a class="p-link" href="payments.html">Go to Payments</a>
                 </div>
               </article>
             </div>
           </section>
-          <section class="p-card p-card--flush" data-list-group aria-labelledby="rec-title">
-            <div class="p-card-head" style="padding: 20px 24px 12px">
-              <h2 id="rec-title" class="p-h3">Class recordings</h2>
-              <span class="p-row" style="gap: 12px; flex-wrap: wrap"
-                ><span class="p-small" data-list-item data-tags="wordpress">WordPress: attended 11 of 12</span
-                ><span class="p-small" data-list-item data-tags="design">Graphic Design: attended 7 of 7</span></span
-              >
+          <div class="p-notice" data-list-empty hidden style="font-size: 14px">
+            <svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 16v-5"></path>
+              <path d="M12 8h.01"></path></svg
+            ><span
+              >Nothing coming up for this choice. Pick another day, or open
+              <a class="p-link" href="course-offline.html">your WordPress classes</a> to watch past recordings.</span
+            >
+          </div>
+          <section class="p-card" aria-labelledby="att-title" style="display: flex; flex-direction: column; gap: 12px">
+            <h2 id="att-title" class="p-h3">Attendance</h2>
+            <div class="p-row" style="gap: 24px; flex-wrap: wrap">
+              <span class="p-small">WordPress: attended 11 of 12</span
+              ><span class="p-small">Graphic Design: attended 7 of 7</span>
             </div>
-            <ul class="p-list" style="padding: 0px 12px 12px">
-              <li
-                data-list-item
-                data-tags="wordpress"
-                style="padding: 12px; border-radius: 12px; gap: 16px; border-bottom: 1px solid var(--line-soft)"
-              >
-                <div
-                  style="
-                    width: 96px;
-                    height: 56px;
-                    flex: 0 0 auto;
-                    border-radius: 10px;
-                    display: grid;
-                    place-items: center;
-                    background: var(--track);
-                    color: var(--ink-3);
-                  "
-                >
-                  <svg
-                    class="eit-icon"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    focusable="false"
-                    aria-hidden="true"
-                  >
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <path d="M12 6v6l4 2"></path>
-                  </svg>
-                </div>
-                <span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
-                  ><strong style="font-size: 15px">WordPress · Class 12 · Custom header walkthrough</strong
-                  ><span class="p-small">Thu, 15 Oct · Offline · Lab 2</span></span
-                ><span class="eit-badge eit-badge--success">Present</span
-                ><span style="min-width: 150px; display: flex; justify-content: flex-end"
-                  ><span class="p-small">Mentor is uploading</span></span
-                >
-              </li>
-              <li
-                data-list-item
-                data-tags="design"
-                style="padding: 12px; border-radius: 12px; gap: 16px; border-bottom: 1px solid var(--line-soft)"
-              >
-                <div
-                  style="
-                    width: 96px;
-                    height: 56px;
-                    flex: 0 0 auto;
-                    border-radius: 10px;
-                    display: grid;
-                    place-items: center;
-                    background: var(--ink);
-                    color: var(--on-ink);
-                  "
-                >
-                  <svg
-                    class="eit-icon"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    focusable="false"
-                    aria-hidden="true"
-                  >
-                    <path d="M6 4l14 8-14 8z"></path>
-                  </svg>
-                </div>
-                <span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
-                  ><strong style="font-size: 15px">Graphic Design · Live 7 · Colour and contrast</strong
-                  ><span class="p-small">Wed, 14 Oct · Online · 1:24:08</span></span
-                ><span class="eit-badge eit-badge--success">Present</span
-                ><span style="min-width: 150px; display: flex; justify-content: flex-end"
-                  ><a class="p-ghostbtn" href="course-player.html"
-                    ><svg
-                      class="eit-icon"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M10 8l6 4-6 4z"></path></svg
-                    >Watch</a
-                  ></span
-                >
-              </li>
-              <li
-                data-list-item
-                data-tags="wordpress"
-                style="padding: 12px; border-radius: 12px; gap: 16px; border-bottom: 1px solid var(--line-soft)"
-              >
-                <div
-                  style="
-                    width: 96px;
-                    height: 56px;
-                    flex: 0 0 auto;
-                    border-radius: 10px;
-                    display: grid;
-                    place-items: center;
-                    background: var(--ink);
-                    color: var(--on-ink);
-                  "
-                >
-                  <svg
-                    class="eit-icon"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    focusable="false"
-                    aria-hidden="true"
-                  >
-                    <path d="M6 4l14 8-14 8z"></path>
-                  </svg>
-                </div>
-                <span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
-                  ><strong style="font-size: 15px">WordPress · Class 11 · Enqueueing scripts</strong
-                  ><span class="p-small">Mon, 12 Oct · Offline · 1:52:10</span></span
-                ><span class="eit-badge eit-badge--danger">Absent</span
-                ><span style="min-width: 150px; display: flex; justify-content: flex-end"
-                  ><a class="p-ghostbtn" href="course-player.html"
-                    ><svg
-                      class="eit-icon"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M10 8l6 4-6 4z"></path></svg
-                    >Watch</a
-                  ></span
-                >
-              </li>
-              <li
-                data-list-item
-                data-tags="wordpress"
-                style="padding: 12px; border-radius: 12px; gap: 16px; border-bottom: 1px solid var(--line-soft)"
-              >
-                <div
-                  style="
-                    width: 96px;
-                    height: 56px;
-                    flex: 0 0 auto;
-                    border-radius: 10px;
-                    display: grid;
-                    place-items: center;
-                    background: var(--ink);
-                    color: var(--on-ink);
-                  "
-                >
-                  <svg
-                    class="eit-icon"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    focusable="false"
-                    aria-hidden="true"
-                  >
-                    <path d="M6 4l14 8-14 8z"></path>
-                  </svg>
-                </div>
-                <span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
-                  ><strong style="font-size: 15px">WordPress · Class 10 · Template hierarchy</strong
-                  ><span class="p-small">Thu, 8 Oct · Offline · 1:48:33</span></span
-                ><span class="eit-badge eit-badge--success">Present</span
-                ><span style="min-width: 150px; display: flex; justify-content: flex-end"
-                  ><a class="p-ghostbtn" href="course-player.html"
-                    ><svg
-                      class="eit-icon"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M10 8l6 4-6 4z"></path></svg
-                    >Watch</a
-                  ></span
-                >
-              </li>
-              <li
-                data-list-item
-                data-tags="design"
-                style="padding: 12px; border-radius: 12px; gap: 16px; border-bottom: 1px solid var(--line-soft)"
-              >
-                <div
-                  style="
-                    width: 96px;
-                    height: 56px;
-                    flex: 0 0 auto;
-                    border-radius: 10px;
-                    display: grid;
-                    place-items: center;
-                    background: var(--ink);
-                    color: var(--on-ink);
-                  "
-                >
-                  <svg
-                    class="eit-icon"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    focusable="false"
-                    aria-hidden="true"
-                  >
-                    <path d="M6 4l14 8-14 8z"></path>
-                  </svg>
-                </div>
-                <span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
-                  ><strong style="font-size: 15px">Graphic Design · Live 6 · Grids and layout</strong
-                  ><span class="p-small">Wed, 7 Oct · Online · 1:30:41</span></span
-                ><span class="eit-badge eit-badge--success">Present</span
-                ><span style="min-width: 150px; display: flex; justify-content: flex-end"
-                  ><a class="p-ghostbtn" href="course-player.html"
-                    ><svg
-                      class="eit-icon"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M10 8l6 4-6 4z"></path></svg
-                    >Watch</a
-                  ></span
-                >
-              </li>
-              <li
-                data-list-item
-                data-tags="wordpress"
-                style="padding: 12px; border-radius: 12px; gap: 16px; border-bottom: 1px solid var(--line-soft)"
-              >
-                <div
-                  style="
-                    width: 96px;
-                    height: 56px;
-                    flex: 0 0 auto;
-                    border-radius: 10px;
-                    display: grid;
-                    place-items: center;
-                    background: var(--ink);
-                    color: var(--on-ink);
-                  "
-                >
-                  <svg
-                    class="eit-icon"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    focusable="false"
-                    aria-hidden="true"
-                  >
-                    <path d="M6 4l14 8-14 8z"></path>
-                  </svg>
-                </div>
-                <span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
-                  ><strong style="font-size: 15px">WordPress · Class 9 · Theme folder structure</strong
-                  ><span class="p-small">Mon, 5 Oct · Offline · 1:55:02</span></span
-                ><span class="eit-badge eit-badge--success">Present</span
-                ><span style="min-width: 150px; display: flex; justify-content: flex-end"
-                  ><a class="p-ghostbtn" href="course-player.html"
-                    ><svg
-                      class="eit-icon"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M10 8l6 4-6 4z"></path></svg
-                    >Watch</a
-                  ></span
-                >
-              </li>
-            </ul>
           </section>
+          <template data-state="month:nov" data-region="#rt-month">
+            <section
+              id="rt-month"
+              class="p-card"
+              aria-labelledby="rt-month-title"
+              style="display: flex; flex-direction: column; gap: 16px"
+            >
+              <div class="p-card-head">
+                <h2 id="rt-month-title" class="p-h3">November 2026</h2>
+                <span class="p-row" style="gap: 8px"
+                  ><button type="button" class="p-ghostbtn" data-show-state="month:oct" aria-label="Previous month">
+                    <svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M15 18l-6-6 6-6"></path>
+                    </svg>
+                    Prev</button
+                  ><button type="button" class="p-ghostbtn" disabled aria-label="Next month">
+                    Next
+                    <svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M9 18l6-6-6-6"></path>
+                    </svg></button
+                ></span>
+              </div>
+              <div role="group" aria-label="Day" style="display: flex; flex-direction: column; gap: 12px">
+                <div class="p-row" style="justify-content: space-between; flex-wrap: wrap; gap: 8px">
+                  <button type="button" class="eit-chip is-on" aria-pressed="true" data-filter="all">
+                    <span class="eit-chip__check" aria-hidden="true"
+                      ><svg
+                        class="eit-icon"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        focusable="false"
+                        aria-hidden="true"
+                      >
+                        <path d="M20 6L9 17l-5-5"></path></svg></span
+                    ><span class="eit-chip__label">Whole month</span>
+                  </button>
+                  <span class="p-small">Class dates after October are not published yet.</span>
+                </div>
+                <div class="rt-cal">
+                  <span class="rt-cal-h">Sun</span>
+                  <span class="rt-cal-h">Mon</span>
+                  <span class="rt-cal-h">Tue</span>
+                  <span class="rt-cal-h">Wed</span>
+                  <span class="rt-cal-h">Thu</span>
+                  <span class="rt-cal-h">Fri</span>
+                  <span class="rt-cal-h">Sat</span>
+                  <div class="rt-day"><span class="rt-day-n">1</span></div>
+                  <div class="rt-day"><span class="rt-day-n">2</span></div>
+                  <div class="rt-day"><span class="rt-day-n">3</span></div>
+                  <div class="rt-day"><span class="rt-day-n">4</span></div>
+                  <div class="rt-day"><span class="rt-day-n">5</span></div>
+                  <div class="rt-day"><span class="rt-day-n">6</span></div>
+                  <div class="rt-day"><span class="rt-day-n">7</span></div>
+                  <div class="rt-day"><span class="rt-day-n">8</span></div>
+                  <div class="rt-day"><span class="rt-day-n">9</span></div>
+                  <div class="rt-day"><span class="rt-day-n">10</span></div>
+                  <div class="rt-day"><span class="rt-day-n">11</span></div>
+                  <div class="rt-day"><span class="rt-day-n">12</span></div>
+                  <div class="rt-day"><span class="rt-day-n">13</span></div>
+                  <div class="rt-day"><span class="rt-day-n">14</span></div>
+                  <button
+                    type="button"
+                    class="rt-day"
+                    data-filter="n15"
+                    aria-pressed="false"
+                    aria-label="Sun 15 Nov: Installment 2 due"
+                  >
+                    <span class="rt-day-n">15</span>
+                  <span class="rt-ev"
+                    ><span class="rt-chip rt-chip--due">Installment 2</span
+                    ><span class="rt-tags"><span class="rt-tag rt-tag--due">Deadline</span></span></span
+                  >
+                  </button>
+                  <div class="rt-day"><span class="rt-day-n">16</span></div>
+                  <div class="rt-day"><span class="rt-day-n">17</span></div>
+                  <div class="rt-day"><span class="rt-day-n">18</span></div>
+                  <div class="rt-day"><span class="rt-day-n">19</span></div>
+                  <div class="rt-day"><span class="rt-day-n">20</span></div>
+                  <div class="rt-day"><span class="rt-day-n">21</span></div>
+                  <div class="rt-day"><span class="rt-day-n">22</span></div>
+                  <div class="rt-day"><span class="rt-day-n">23</span></div>
+                  <div class="rt-day"><span class="rt-day-n">24</span></div>
+                  <div class="rt-day"><span class="rt-day-n">25</span></div>
+                  <div class="rt-day"><span class="rt-day-n">26</span></div>
+                  <div class="rt-day"><span class="rt-day-n">27</span></div>
+                  <div class="rt-day"><span class="rt-day-n">28</span></div>
+                  <div class="rt-day"><span class="rt-day-n">29</span></div>
+                  <div class="rt-day"><span class="rt-day-n">30</span></div>
+                </div>
+              </div>
+              <div class="rt-legend">
+                <span
+                  ><span class="rt-chip rt-chip--off" aria-hidden="true" style="width: 28px; padding: 0">&nbsp;</span
+                  >Offline class</span
+                ><span
+                  ><span class="rt-chip rt-chip--on" aria-hidden="true" style="width: 28px; padding: 0">&nbsp;</span
+                  >Online live</span
+                ><span
+                  ><span class="rt-chip rt-chip--due" aria-hidden="true" style="width: 28px; padding: 0">&nbsp;</span
+                  >Due date</span
+                >
+              </div>
+            </section>
+          </template>
+          <template data-state="month:oct" data-region="#rt-month">
+            <section
+              id="rt-month"
+              class="p-card"
+              aria-labelledby="rt-month-title"
+              style="display: flex; flex-direction: column; gap: 16px"
+            >
+              <div class="p-card-head">
+                <h2 id="rt-month-title" class="p-h3">October 2026</h2>
+                <span class="p-row" style="gap: 8px"
+                  ><button type="button" class="p-ghostbtn" disabled aria-label="Previous month">
+                    <svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M15 18l-6-6 6-6"></path>
+                    </svg>
+                    Prev</button
+                  ><button type="button" class="p-ghostbtn" data-show-state="month:nov" aria-label="Next month">
+                    Next
+                    <svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M9 18l6-6-6-6"></path>
+                    </svg></button
+                ></span>
+              </div>
+              <div role="group" aria-label="Day" style="display: flex; flex-direction: column; gap: 12px">
+                <div class="p-row" style="justify-content: space-between; flex-wrap: wrap; gap: 8px">
+                  <button type="button" class="eit-chip is-on" aria-pressed="true" data-filter="all">
+                    <span class="eit-chip__check" aria-hidden="true"
+                      ><svg
+                        class="eit-icon"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        focusable="false"
+                        aria-hidden="true"
+                      >
+                        <path d="M20 6L9 17l-5-5"></path></svg></span
+                    ><span class="eit-chip__label">Whole month</span>
+                  </button>
+                  <span class="p-small">Pick a day to see what is on. Today is Thu 15 Oct.</span>
+                </div>
+                <div class="rt-cal">
+                  <span class="rt-cal-h">Sun</span>
+                  <span class="rt-cal-h">Mon</span>
+                  <span class="rt-cal-h">Tue</span>
+                  <span class="rt-cal-h">Wed</span>
+                  <span class="rt-cal-h">Thu</span>
+                  <span class="rt-cal-h">Fri</span>
+                  <span class="rt-cal-h">Sat</span>
+                  <div class="rt-day is-empty" aria-hidden="true"></div>
+                  <div class="rt-day is-empty" aria-hidden="true"></div>
+                  <div class="rt-day is-empty" aria-hidden="true"></div>
+                  <div class="rt-day is-empty" aria-hidden="true"></div>
+                  <div class="rt-day">
+                    <span class="rt-day-n">1</span>
+                    <span class="rt-ev"
+                      ><span class="rt-chip rt-chip--off">WP · Class 8</span
+                      ><span class="rt-tags"><span class="rt-tag rt-tag--off">Offline</span><span class="rt-tag rt-tag--present">Present</span></span></span
+                    >
+                  </div>
+                  <div class="rt-day"><span class="rt-day-n">2</span></div>
+                  <div class="rt-day"><span class="rt-day-n">3</span></div>
+                  <div class="rt-day"><span class="rt-day-n">4</span></div>
+                  <div class="rt-day">
+                    <span class="rt-day-n">5</span>
+                    <span class="rt-ev"
+                      ><span class="rt-chip rt-chip--off">WP · Class 9</span
+                      ><span class="rt-tags"><span class="rt-tag rt-tag--off">Offline</span><span class="rt-tag rt-tag--present">Present</span></span></span
+                    >
+                  </div>
+                  <div class="rt-day"><span class="rt-day-n">6</span></div>
+                  <div class="rt-day">
+                    <span class="rt-day-n">7</span>
+                    <span class="rt-ev"
+                      ><span class="rt-chip rt-chip--on">GD · Live 6</span
+                      ><span class="rt-tags"><span class="rt-tag rt-tag--on">Online</span><span class="rt-tag rt-tag--present">Present</span></span></span
+                    >
+                  </div>
+                  <div class="rt-day">
+                    <span class="rt-day-n">8</span>
+                    <span class="rt-ev"
+                      ><span class="rt-chip rt-chip--off">WP · Class 10</span
+                      ><span class="rt-tags"><span class="rt-tag rt-tag--off">Offline</span><span class="rt-tag rt-tag--late">Late</span></span></span
+                    >
+                  </div>
+                  <div class="rt-day"><span class="rt-day-n">9</span></div>
+                  <div class="rt-day"><span class="rt-day-n">10</span></div>
+                  <div class="rt-day"><span class="rt-day-n">11</span></div>
+                  <div class="rt-day">
+                    <span class="rt-day-n">12</span>
+                    <span class="rt-ev"
+                      ><span class="rt-chip rt-chip--off">WP · Class 11</span
+                      ><span class="rt-tags"><span class="rt-tag rt-tag--off">Offline</span><span class="rt-tag rt-tag--present">Present</span></span></span
+                    >
+                  </div>
+                  <div class="rt-day"><span class="rt-day-n">13</span></div>
+                  <div class="rt-day">
+                    <span class="rt-day-n">14</span>
+                    <span class="rt-ev"
+                      ><span class="rt-chip rt-chip--on">GD · Live 7</span
+                      ><span class="rt-tags"><span class="rt-tag rt-tag--on">Online</span><span class="rt-tag rt-tag--present">Present</span></span></span
+                    >
+                  </div>
+                  <button
+                    type="button"
+                    class="rt-day is-today"
+                    data-filter="d15"
+                    aria-pressed="false"
+                    aria-label="Thu 15 Oct, today: WordPress Class 12, offline, present"
+                  >
+                    <span class="rt-day-n">15</span>
+                    <span class="rt-ev"
+                      ><span class="rt-chip rt-chip--off">WP · Class 12</span
+                      ><span class="rt-tags"><span class="rt-tag rt-tag--off">Offline</span><span class="rt-tag rt-tag--present">Present</span></span></span
+                    >
+                  </button>
+                  <div class="rt-day"><span class="rt-day-n">16</span></div>
+                  <div class="rt-day"><span class="rt-day-n">17</span></div>
+                  <div class="rt-day"><span class="rt-day-n">18</span></div>
+                  <button
+                    type="button"
+                    class="rt-day"
+                    data-filter="d19"
+                    aria-pressed="false"
+                    aria-label="Mon 19 Oct: WordPress Class 13, offline, upcoming"
+                  >
+                    <span class="rt-day-n">19</span>
+                    <span class="rt-ev"
+                      ><span class="rt-chip rt-chip--off">WP · Class 13</span
+                      ><span class="rt-tags"><span class="rt-tag rt-tag--off">Offline</span><span class="rt-tag rt-tag--soon">Upcoming</span></span></span
+                    >
+                  </button>
+                  <div class="rt-day"><span class="rt-day-n">20</span></div>
+                  <button
+                    type="button"
+                    class="rt-day"
+                    data-filter="d21"
+                    aria-pressed="false"
+                    aria-label="Wed 21 Oct: Graphic Design Live 8, online, upcoming"
+                  >
+                    <span class="rt-day-n">21</span>
+                    <span class="rt-ev"
+                      ><span class="rt-chip rt-chip--on">GD · Live 8</span
+                      ><span class="rt-tags"><span class="rt-tag rt-tag--on">Online</span><span class="rt-tag rt-tag--soon">Upcoming</span></span></span
+                    >
+                  </button>
+                  <button
+                    type="button"
+                    class="rt-day"
+                    data-filter="d22"
+                    aria-pressed="false"
+                    aria-label="Thu 22 Oct: WordPress Class 14, offline, upcoming"
+                  >
+                    <span class="rt-day-n">22</span>
+                    <span class="rt-ev"
+                      ><span class="rt-chip rt-chip--off">WP · Class 14</span
+                      ><span class="rt-tags"><span class="rt-tag rt-tag--off">Offline</span><span class="rt-tag rt-tag--soon">Upcoming</span></span></span
+                    >
+                  </button>
+                  <div class="rt-day"><span class="rt-day-n">23</span></div>
+                  <div class="rt-day"><span class="rt-day-n">24</span></div>
+                  <div class="rt-day"><span class="rt-day-n">25</span></div>
+                  <div class="rt-day">
+                    <span class="rt-day-n">26</span>
+                    <span class="rt-ev"
+                      ><span class="rt-chip rt-chip--off">WP · Class 15</span
+                      ><span class="rt-tags"><span class="rt-tag rt-tag--off">Offline</span><span class="rt-tag rt-tag--soon">Upcoming</span></span></span
+                    >
+                  </div>
+                  <button
+                    type="button"
+                    class="rt-day"
+                    data-filter="d27"
+                    aria-pressed="false"
+                    aria-label="Tue 27 Oct: Social media post set due"
+                  >
+                    <span class="rt-day-n">27</span>
+                    <span class="rt-ev"
+                      ><span class="rt-chip rt-chip--due">Project due</span
+                      ><span class="rt-tags"><span class="rt-tag rt-tag--due">Deadline</span></span></span
+                    >
+                  </button>
+                  <div class="rt-day">
+                    <span class="rt-day-n">28</span>
+                    <span class="rt-ev"
+                      ><span class="rt-chip rt-chip--on">GD · Live 9</span
+                      ><span class="rt-tags"><span class="rt-tag rt-tag--on">Online</span><span class="rt-tag rt-tag--soon">Upcoming</span></span></span
+                    >
+                  </div>
+                  <div class="rt-day">
+                    <span class="rt-day-n">29</span>
+                    <span class="rt-ev"
+                      ><span class="rt-chip rt-chip--off">WP · Class 16</span
+                      ><span class="rt-tags"><span class="rt-tag rt-tag--off">Offline</span><span class="rt-tag rt-tag--soon">Upcoming</span></span></span
+                    >
+                  </div>
+                  <div class="rt-day"><span class="rt-day-n">30</span></div>
+                  <div class="rt-day"><span class="rt-day-n">31</span></div>
+                </div>
+              </div>
+              <div class="rt-stats" aria-label="October attendance">
+                <span class="rt-stat"><strong>6</strong> present</span>
+                <span class="rt-stat"><strong>1</strong> late</span>
+                <span class="rt-stat"><strong>6</strong> upcoming</span>
+                <span class="rt-stat"><strong>1</strong> deadline</span>
+              </div>
+              <div class="rt-legend">
+                <span
+                  ><span class="rt-chip rt-chip--off" aria-hidden="true" style="width: 28px; padding: 0">&nbsp;</span
+                  >Offline class</span
+                ><span
+                  ><span class="rt-chip rt-chip--on" aria-hidden="true" style="width: 28px; padding: 0">&nbsp;</span
+                  >Online live</span
+                ><span><span class="rt-tag rt-tag--present" aria-hidden="true">Present</span></span
+                ><span><span class="rt-tag rt-tag--late" aria-hidden="true">Late</span></span
+                ><span><span class="rt-tag rt-tag--soon" aria-hidden="true">Upcoming</span></span
+                ><span
+                  ><span class="rt-chip rt-chip--due" aria-hidden="true" style="width: 28px; padding: 0">&nbsp;</span>Due
+                  date</span
+                >
+              </div>
+            </section>
+          </template>
         </main>
       </div>
     </div>

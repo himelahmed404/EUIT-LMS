@@ -92,7 +92,8 @@
   --page-max: 1320px;
   --page-pad: 32px;
 }
-[data-theme="ink"] {
+[data-theme="ink"],
+html.is-student[data-theme="dark"] {
   --cyan-hover: #33c1f3;
   --cyan-ink: #00aeee;
   --cyan-deep: #8ed9f7;
@@ -119,6 +120,11 @@
   --danger-soft: #47211d;
   --focus-ring: 0 0 0 2px #0a1b2c, 0 0 0 5px #00aeee;
   background: var(--surface);
+  color: var(--ink);
+}
+/* An ink hero inside a dark student page would be navy-on-navy: lift it to the card surface. */
+html.is-student[data-theme="dark"] [data-theme="ink"] {
+  --surface: var(--surface-card);
   color: var(--ink);
 }
 
@@ -477,10 +483,12 @@
   /* Line the bar's contents up with the centred page column below it. */
   padding: 12px max(var(--page-pad), calc((100% - var(--page-max)) / 2 + var(--page-pad)));
   box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.92);
+  /* Frosted bar: mix the themed card surface so light and dark both read correctly. */
+  background: color-mix(in srgb, var(--surface-card) 92%, transparent);
   -webkit-backdrop-filter: saturate(1.4) blur(10px);
   backdrop-filter: saturate(1.4) blur(10px);
   border-bottom: 1px solid var(--line);
+  color: var(--ink);
 }
 /* The brand mark only shows in the top bar on phones, where the sidebar becomes bottom tabs. */
 .p-top-brand {
@@ -1723,29 +1731,8 @@ textarea:focus-visible {
     width: 32px;
     height: 32px;
   }
-  .p-search {
-    order: 1;
-    flex: 0 0 40px;
-    width: 40px;
-    height: 40px;
-    padding: 0;
-    justify-content: center;
-    border-color: var(--line);
-    cursor: pointer;
-  }
-  .p-search input {
-    flex: 0 0 0;
-    width: 0;
-    padding: 0;
-  }
-  .p-search:focus-within {
-    order: 3;
-    flex: 1 0 100%;
-    justify-content: flex-start;
-    padding: 0 14px;
-  }
-  .p-search:focus-within input {
-    flex: 1 1 auto;
+  .p-next {
+    display: none;
   }
   .p-top-right {
     order: 2;
@@ -1753,10 +1740,6 @@ textarea:focus-visible {
     gap: 6px;
     flex-wrap: nowrap;
     position: static;
-  }
-  /* Panel top bars: the brand's auto margin already pushes search and the right group over. */
-  .p-top:has(> .p-search) > .p-top-right {
-    margin-left: 0;
   }
   .p-top-right .eit-seg__btn {
     min-width: 36px;

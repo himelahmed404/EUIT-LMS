@@ -22,13 +22,13 @@ On the log-in page, the **Demo: log in as** switch picks which panel **Log in** 
 
 ## Pages
 
-| Area     | Pages                                                                                                                                                                                                                                                               |
-| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Everyone | `index.html` (log in), `forgot-password.html`, `ui-guide.html`                                                                                                                                                                                                      |
-| Enroll   | `enroll/course.html` → `enroll/checkout.html` → `enroll/result.html`                                                                                                                                                                                                |
-| Student  | `student/dashboard.html`, `course-player`, `quizzes`, `quiz`, `quiz-result`, `projects`, `project-detail`, `project-feedback`, `schedule`, `leaderboard`, `certificates`, `certificate` (A4 print), `payments`, `access-paused`, `profile`, `help`, `notifications` |
-| Mentor   | `mentor/dashboard.html`, `batch`, `course-builder`, `review`, `questions`, `schedule`, `profile`, `quiz-builder`, `notifications`                                                                                                                                   |
-| Admin    | `admin/overview.html`, `courses`, `course-review`, `batch-detail`, `batch-edit`, `students`, `student-record`, `mentors`, `coupons`, `announcements`, `roles`, `activity`, `leads`, `settings`, `profile`, `notifications`                                          |
+| Area     | Pages                                                                                                                                                                                                                                                                                           |
+| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Everyone | `index.html` (log in), `forgot-password.html`, `ui-guide.html`                                                                                                                                                                                                                                  |
+| Enroll   | `enroll/course.html` → `enroll/checkout.html` → `enroll/result.html`                                                                                                                                                                                                                            |
+| Student  | `student/dashboard.html`, `courses`, `course-player`, `course-offline`, `quizzes`, `quiz`, `quiz-result`, `projects`, `project-detail`, `project-feedback`, `routine`, `leaderboard`, `certificates`, `certificate` (A4 print), `payments`, `access-paused`, `profile`, `help`, `notifications` |
+| Mentor   | `mentor/dashboard.html`, `batch`, `course-builder`, `review`, `questions`, `schedule`, `profile`, `quiz-builder`, `notifications`                                                                                                                                                               |
+| Admin    | `admin/overview.html`, `courses`, `course-review`, `batch-detail`, `batch-edit`, `students`, `student-record`, `mentors`, `coupons`, `announcements`, `roles`, `activity`, `leads`, `settings`, `profile`, `notifications`                                                                      |
 
 **[docs/PAGES.md](docs/PAGES.md)** describes every page: what's on it, what you can click, and what's not built yet.
 
@@ -42,7 +42,7 @@ assets/css/console.css    Console (admin and mentor): SchoolofGenZ-style sidebar
                           the review queue, light and dark tokens
 assets/js/app.js          Shared behaviour for every page
 assets/js/theme.js        Admin and mentor pages: light/dark and collapsed sidebar, applied before the page paints
-assets/js/pages/*.js      Page scripts: help, notifications, questions (mentor), review (mentor), announcements and
+assets/js/pages/*.js      Page scripts: help, notifications, questions (mentor), player (student), review (mentor), announcements and
                           coupons (admin)
 docs/PAGES.md             Page-by-page map
 docs/DESIGN-REVIEW.md     Design review, changes made, open suggestions
@@ -52,6 +52,7 @@ tools/design-export/      The script that first generated the pages from the des
 
 ## Layout
 
+The **student panel** keeps its own shell (`p-side` / `p-top`) with a light/dark toggle (same `eit-theme` key as the console).
 The **admin and mentor panels** use the SchoolofGenZ console look in European IT colours (Anek Bangla and
 JetBrains Mono, grouped sidebar with icon tiles and count pills, page titles and buttons in the top bar,
 full-width pages, light mode by default with a dark mode). From 1280px the sidebar can be collapsed to icons;
@@ -101,7 +102,7 @@ uses the layout below for now:
   instead of in a pane; below 1100px the queue becomes a row of cards above the review.
   Student pages filter cards the same way without tabs: a `[data-list]` holds the filters and
   `[data-list-item]` cards with `data-tags`; a `[data-list-group]` section hides once none of its cards
-  show (Explore courses, Schedule & recordings, My questions, Saved & notes).
+  show (Routine, My questions, Saved & notes).
 - `[data-checklist]` keeps an "n of n done" line (`data-checklist-count`) and a bar (`data-checklist-bar`)
   in step with the `role="checkbox"` buttons inside it (the mentor's to-do).
 - `data-toast="Changes saved"` shows a short confirmation; `data-copy="text"` copies to the clipboard;

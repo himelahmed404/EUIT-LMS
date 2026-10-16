@@ -126,10 +126,10 @@ get around, with the sidebar's groups and link order taken from SchoolofGenZ. Th
 
 Still open for the student panel:
 
-- **Course pages** behind Explore courses' See course (only WordPress has an enroll page).
 - **Bangla:** the language switch is remembered but the copy stays English.
 - **Points card in the sidebar** pushes below the fold on screens under about 860px tall (the sidebar scrolls).
 - **Login and enroll pages** still use Geist; switch them to the same fonts when they are next touched.
+- **Public course / enroll pages** for courses other than WordPress (Explore was removed; enroll still only has WordPress).
 
 ## Overall impression
 
@@ -226,13 +226,11 @@ interactive but did nothing** (tabs, the bell on half the pages, accordions, sav
 
 1. **Receipt** (`student/receipt.html`): payment, method, transaction id, printable. Linked from Payments, the enroll
    result and the student record. Every "Receipt" link is a placeholder today.
-2. **My courses** overview for students: Nusrat has two courses, but "My courses" opens the WordPress player
-   directly. A list with progress and "continue" per course.
-3. **Mentor handbook**: rubrics, attendance rules, recording steps (the sidebar card links nowhere).
-4. **Admin: all students** list with pagination and search results (pagination and Export are placeholders).
-5. **Search results** page for the top-bar search (it doesn't search yet).
-6. **Seminar booking** (public): the "Book a free seminar" link in the enroll flow.
-7. **404 / no access** page for wrong links and for pages a role can't open.
+2. **Mentor handbook**: rubrics, attendance rules, recording steps (the sidebar card links nowhere).
+3. **Admin: all students** list with pagination and search results (pagination and Export are placeholders).
+4. **Search results** page for the top-bar search on admin/mentor (student search was replaced by the next-class strip).
+5. **Seminar booking** (public): the "Book a free seminar" link in the enroll flow.
+6. **404 / no access** page for wrong links and for pages a role can't open.
 
 ### Suggested improvements to existing pages
 
@@ -250,3 +248,33 @@ interactive but did nothing** (tabs, the bell on half the pages, accordions, sav
 - Every captured state rendered before and after the template change and compared pixel by pixel (51 states).
 - `npm run check`: links, every page at nine widths (overflow, sidebar, script errors, duplicate ids,
   broken references, unnamed controls), every state, tab and dialog, and the main journeys.
+
+## Student panel rework (Oct 2026)
+
+Kept the student shell (`p-side` / `p-top`); did **not** move it to the admin/mentor console.
+
+### What shipped
+
+| Area           | Change                                                                                                                                                                                                  |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| My courses     | New hub `courses.html`: online (Graphic Design → `course-player.html`) vs offline (WordPress → `course-offline.html`) vs completed (Digital Marketing certificate). Sidebar "My courses" opens the hub. |
+| Offline course | New `course-offline.html`: class recordings ledger, notes, resources, Ask the mentor. Free seeking; no unlock ladder.                                                                                   |
+| Online player  | Relabeled for Graphic Design B9. Stand-in video (`player.js`) finishes and unlocks the next lesson. Cinema chrome stays `#0a1b2c` / white so theme tokens do not wash out the player.                   |
+| Routine        | Replaces Schedule & recordings. Month grid (`.rt-cal` / `.rt-day`), weekly strip, day + course filters on Next up. Recordings are not listed here.                                                      |
+| Explore        | Page removed. Referrals and coupon redeem live on Profile → **Referrals & coupons**.                                                                                                                    |
+| Profile        | Tabbed Account / Referrals & coupons / Notifications / Security; ID-card header with points and referral code.                                                                                          |
+| Points         | Leaderboard total is the sum of marked project marks (164 for Nusrat). Quizzes unlock modules only; copy updated across sidebar, dashboard, leaderboard and help.                                       |
+| Top bar        | Next-class strip instead of search; light/dark toggle (`data-theme-toggle`, `eit-theme`) with student dark tokens under `html.is-student[data-theme="dark"]`.                                           |
+| Scripts        | `assets/js/pages/player.js`, `profile.js`, `routine.js`.                                                                                                                                                |
+
+### Polish pass (browser-checked)
+
+| Finding                                                           | Fix                                                                                            |
+| ----------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Dark mode: pills on ink heroes used `--on-ink` and went invisible | Hero pills use `--ink` (or solid soft fills); CSS safety net so theme swaps cannot blank them. |
+| Routine calendar days had no boxes                                | `.rt-cal` cells get borders, radius and a clear hover/pressed state.                           |
+| Dashboard WordPress card still opened the online player           | Links to `course-offline.html`; progress "11 of 12 classes" / 92%; "See all courses" → hub.    |
+| Certificate checklist said "54 lessons" for WordPress             | "All 24 classes · 11 attended".                                                                |
+| Routine "Add to Google Calendar" was a dead `#`                   | Removed.                                                                                       |
+
+**Checked in the browser** (local `python3 -m http.server 8080`): dashboard, My courses, Routine, Profile — light and dark. `npm run check` was skipped for this pass.
