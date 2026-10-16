@@ -2,7 +2,8 @@
 
 The front-end UI for the European IT Institute learning portal: the student, mentor and admin
 panels, log in, and the enroll flow. Plain HTML, CSS and JavaScript with no framework and no build step.
-It is a faithful copy of the **European IT LMS Panels** design (42 screens), including its motion.
+It started as a copy of the **European IT LMS Panels** design (42 screens, with its motion) and has since
+had a full design review: see [docs/DESIGN-REVIEW.md](docs/DESIGN-REVIEW.md).
 
 There is no backend yet. Every page can be clicked through, and forms and buttons respond, but nothing
 is saved or sent anywhere.
@@ -21,70 +22,106 @@ On the log-in page, the **Demo: log in as** switch picks which panel **Log in** 
 
 ## Pages
 
-| Area | Pages |
-| --- | --- |
-| Everyone | `index.html` (log in), `forgot-password.html`, `notifications.html`, `ui-guide.html` |
-| Enroll | `enroll/course.html` → `enroll/checkout.html` → `enroll/result.html` |
-| Student | `student/dashboard.html`, `course-player`, `quizzes`, `quiz`, `quiz-result`, `projects`, `project-detail`, `project-feedback`, `schedule`, `leaderboard`, `certificates`, `certificate` (A4 print), `payments`, `access-paused`, `profile`, `help` |
-| Mentor | `mentor/dashboard.html`, `batch`, `course-builder`, `review`, `schedule`, `profile`, `quiz-builder` |
-| Admin | `admin/overview.html`, `courses`, `course-review`, `batch-detail`, `batch-edit`, `students`, `student-record`, `mentors`, `roles`, `leads`, `settings`, `profile` |
+| Area     | Pages                                                                                                                                                                                                                                                               |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Everyone | `index.html` (log in), `forgot-password.html`, `ui-guide.html`                                                                                                                                                                                                      |
+| Enroll   | `enroll/course.html` → `enroll/checkout.html` → `enroll/result.html`                                                                                                                                                                                                |
+| Student  | `student/dashboard.html`, `course-player`, `quizzes`, `quiz`, `quiz-result`, `projects`, `project-detail`, `project-feedback`, `schedule`, `leaderboard`, `certificates`, `certificate` (A4 print), `payments`, `access-paused`, `profile`, `help`, `notifications` |
+| Mentor   | `mentor/dashboard.html`, `batch`, `course-builder`, `review`, `questions`, `schedule`, `profile`, `quiz-builder`, `notifications`                                                                                                                                   |
+| Admin    | `admin/overview.html`, `courses`, `course-review`, `batch-detail`, `batch-edit`, `students`, `student-record`, `mentors`, `roles`, `leads`, `settings`, `profile`, `notifications`                                                                                  |
+
+**[docs/PAGES.md](docs/PAGES.md)** describes every page: what's on it, what you can click, and what's not built yet.
 
 ## Structure
 
 ```
-assets/css/eit.css      European IT design-system components (buttons, fields, badges, motion)
-assets/css/panel.css    Panel shell, tokens and all panel animations, copied as-is from the design
-assets/css/app.css      Small additions for the static site (phone-width fixes, demo switch)
-assets/js/app.js        Shared behaviour for every page
-assets/js/pages/help.js Help centre topic and search filtering
-tools/design-export/    The script that regenerated these pages from the design (see below)
+assets/css/eit.css        European IT design-system components (buttons, fields, badges, motion)
+assets/css/panel.css      Tokens, the panel shell (sidebar, top bar, tablet rail, phone tab bar), components
+assets/css/app.css        Additions for this site: balanced grids, notifications, questions, certificate print, toast
+assets/js/app.js          Shared behaviour for every page
+assets/js/pages/*.js      Page scripts: help, notifications, questions (mentor), review (mentor)
+docs/PAGES.md             Page-by-page map
+docs/DESIGN-REVIEW.md     Design review, changes made, open suggestions
+tools/check/              Checks for every page (npm run check)
+tools/design-export/      The script that first generated the pages from the design (see below)
 ```
+
+## Layout
+
+- **Desktop (1100px and up):** a 280px sidebar that stays in view, and a page column up to 1320px wide,
+  centred beside it. The top bar lines up with the column.
+- **Tablet (721–1099px):** the sidebar folds into an icon rail; hover an icon for its name.
+- **Phone (720px and below):** a one-row top bar (search opens when tapped) and a bottom tab bar with
+  the first four links plus **More**, which opens a sheet with the rest.
+- Card grids divide evenly: four cards show as 4 or 2 × 2, six as 3 × 2, five as 5 or 3 + 2.
 
 ## How the interactivity works
 
-`app.js` has no page-specific code. It reads the ARIA state that is already in the markup:
+`app.js` has no page-specific code. It reads the ARIA state and `data-*` hooks in the markup:
 
 - `aria-pressed` and `role="radio"` buttons act as single-choice groups (segmented controls, filter
-  chips, option cards). Add `data-multi` to a group to let several be on at once.
-- `role="switch"` and `role="checkbox"` buttons toggle `aria-checked`.
-- `.p-tabs` links with `href="#"` move `aria-current`.
-- The bell button opens the notifications menu (`aria-controls` and `data-popover`). Esc or a click outside closes it.
+  chips, option cards). Add `data-multi` to a group to let several be on at once. Options that are
+  coloured one by one (Present / Late / Absent) keep their own colour.
+- `role="switch"` and `role="checkbox"` buttons toggle `aria-checked`; `data-toggles` shows or hides what they control.
+- **Tabs:** `role="tab"` with `aria-controls` shows its `role="tabpanel"` and hides the others; arrow
+  keys, Home and End move between tabs. `data-select-tab="tab-id"` opens a tab from elsewhere.
+- `button[aria-expanded]` with `data-panel="id"` opens and closes an accordion panel.
+- The bell (`data-notif-scope`) opens the notifications menu (`aria-controls` and `data-popover`). Esc or
+  a click outside closes it. **Mark all as read** clears the dots and the count, and remembers it for that panel.
 - Dialogs: `data-open-dialog="id"` opens one, and `data-close-dialog`, the backdrop or Esc closes it.
+  Focus goes back to the button that opened it.
 - **Captured states.** When a choice changes what a screen shows (the steps of a form, filters, quiz
-  questions, course switches), each state is in the page as a `<template data-state>`. A button with
-  `data-show-state="name"` swaps it in. When several choices combine (format × batch × plan on the
+  questions, course switches), each state is in the page as a `<template data-state>` holding only the
+  element that changes (named by `data-region`; a state can have several templates). A button with
+  `data-show-state="name"` swaps them in. When several choices combine (format × batch × plan on the
   enroll page), options carry `data-part-of`, `data-part` and `data-value`, and the matching
-  `region:v0|v1|v2` template is shown.
+  `region:v0|v1|v2` templates are shown.
 - **Reveal and conceal.** Accordions and "show more" buttons list the elements they show
-  (`data-reveal`) or hide (`data-conceal`). `data-on-look` holds the trigger's own "open" look,
-  such as a rotated chevron.
+  (`data-reveal`) or hide (`data-conceal`). `data-on-look` holds the trigger's own "open" look.
+- `data-toast="Changes saved"` shows a short confirmation; `data-copy="text"` copies to the clipboard;
+  `data-print` opens the print dialog; `data-press-all="selector"` presses every matching option
+  (Mark all present); `data-fit` scales a fixed-size sheet down to fit (the certificate);
+  `nav[data-scrollspy]` highlights the section you're reading (admin settings).
 - Motion: headline words rise in and numbers count up as they scroll into view. Everything else
-  (page rise, filling bars and rings, pulsing dots, the ringing bell, floating stickers) is CSS in
-  `panel.css`. All motion stops when the visitor has reduced motion turned on.
+  (page rise, filling bars and rings, pulsing dots, the ringing bell, floating stickers, sparklines) is
+  CSS. All motion stops when the visitor has reduced motion turned on.
 - The language switch (EN / বাং) is remembered across pages, but the copy stays English for now.
 
 When real data arrives, replace the captured templates with rendering from the API. The ARIA
 attributes and CSS classes stay the same.
 
+## Check your changes
+
+```sh
+npm run check     # links, every page at 360–1920px, every state, tab and dialog, the main journeys
+npm run format    # Prettier, print width 120
+```
+
+The checks start their own local server and use Playwright's Chromium (`npm install`, then
+`npx playwright install chromium` if you don't have it).
+
 ## Not built yet (on purpose)
 
-- Business logic: payments, unlocking lessons, marking, points, attendance totals and other counters
-  stay as drawn in the design and don't recalculate when you click.
-- Links marked `href="#"` are actions with no page in the design yet (download, send reminder, receipt, and so on).
-- Copy link on Certificates and the Leaderboard's course switch only change the button state.
+- Business logic: payments, unlocking lessons, marking, points and attendance totals stay as drawn and
+  don't recalculate when you click (the mentor rubric total is the one exception).
+- Links marked `href="#"` are actions with no page yet (downloads, receipts, call and WhatsApp links,
+  pagination). The list is in [docs/PAGES.md](docs/PAGES.md#links-that-are-still-placeholders).
 - Bangla translations.
+- Suggested next pages (receipt, My courses overview, mentor handbook and more) are listed in
+  [docs/DESIGN-REVIEW.md](docs/DESIGN-REVIEW.md#still-open).
 
 ## Regenerating from the design
 
 `tools/design-export/build.mjs` renders each design screen in headless Chromium through the design's
-own runtime, cleans the markup and writes these pages. `recipes.mjs` captures the states that only
-appear after a click. To use it, download the design's `project/` folder, save the design runtime
-(`artifact-type/dc-runtime.js`) into it as `support.js`, and serve that folder:
+own runtime, cleans the markup and writes pages; `recipes.mjs` captures the states that only appear after
+a click. **The pages in this repo have been fixed by hand since, so don't export over them**: the script
+refuses to write into this folder unless you pass `--force`. To compare with the original design, export
+into an empty folder:
 
 ```sh
 npm install
 (cd path/to/design/project && python3 -m http.server 8765) &
-cd path/to/design/project && node /path/to/EUIT-LMS/tools/design-export/build.mjs . /path/to/EUIT-LMS
+node tools/design-export/build.mjs path/to/design/project /tmp/design-export
 ```
 
-It overwrites the HTML pages. The files in `assets/` are maintained by hand.
+The design's `project/` folder needs the design runtime (`artifact-type/dc-runtime.js`) saved into it as `support.js`.

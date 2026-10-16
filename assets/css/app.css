@@ -544,3 +544,31 @@ body.page-print {
     top: 96px;
   }
 }
+
+/* Phones: in a list row that ends with a status badge, the badge drops under the text
+   instead of squeezing it into a narrow column ("Up next" on the dashboard). */
+@media (max-width: 720px) {
+  .p-rows > li:has(> .eit-badge:last-child),
+  .p-list > li:has(> .eit-badge:last-child) {
+    flex-wrap: wrap;
+  }
+  .p-rows > li:has(> .eit-badge:last-child) > .p-grow,
+  .p-list > li:has(> .eit-badge:last-child) > .p-grow {
+    flex: 1 1 calc(100% - 64px);
+  }
+  .p-rows > li:has(> .p-tile:first-child) > .eit-badge:last-child,
+  .p-list > li:has(> .p-tile:first-child) > .eit-badge:last-child {
+    margin-left: 56px;
+  }
+}
+
+/* Course player: module rows open and close their class list; the chevron turns with them. */
+.pl-mod > svg:last-child {
+  transition: transform var(--duration-base) var(--ease-standard);
+}
+.pl-mod[aria-expanded="true"] > svg:last-child {
+  transform: rotate(180deg);
+}
+.pl-mod:hover {
+  background: var(--surface) !important;
+}

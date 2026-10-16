@@ -1,12 +1,23 @@
 // Renders each design screen through the design runtime, then writes a static HTML page.
-// usage: node build.mjs <design project dir> <output site dir> [Only.dc.html,...]
+// usage: node build.mjs <design project dir> <output site dir> [Only.dc.html,...] [--force]
 // The design project must be served (with dc-runtime.js saved as support.js) at DESIGN_URL.
+//
+// The pages in this repo were exported once and have since been fixed and extended by hand
+// (see docs/DESIGN-REVIEW.md). Exporting over them would undo that work, so the script refuses
+// to write into a folder that has docs/DESIGN-REVIEW.md unless you pass --force. Export into an
+// empty folder instead and compare, or copy over only what you need.
 import { chromium } from 'playwright';
 import fs from 'fs';
 import path from 'path';
 import { recipes } from './recipes.mjs';
 
-const [,, SRC, OUT, only] = process.argv;
+const args = process.argv.slice(2).filter((a) => a !== '--force');
+const force = process.argv.includes('--force');
+const [SRC, OUT, only] = args;
+if (!force && fs.existsSync(path.join(OUT, 'docs', 'DESIGN-REVIEW.md'))) {
+  console.error(`${OUT} holds hand-fixed pages (docs/DESIGN-REVIEW.md). Export into an empty folder, or pass --force.`);
+  process.exit(1);
+}
 const DESIGN_URL = (process.env.DESIGN_URL || 'http://localhost:8765') + '/';
 
 export const MAP = {

@@ -1,0 +1,124 @@
+# Design review: European IT LMS Panels
+
+A review of all 42 screens as built from the design, the fixes made, and what's still open.
+Reviewed on 16 Oct 2026 at 360–1920px. For what's on each page now, see [PAGES.md](PAGES.md).
+
+## Overall impression
+
+The design system is strong: calm colours that pass contrast, a clear "next step first" order on every
+dashboard, and rich, realistic content. Most of the problems were in the **layout around the content**
+(page width, the sidebar at tablet sizes, the phone header and tab bar) and in **controls that looked
+interactive but did nothing** (tabs, the bell on half the pages, accordions, save buttons). Both are now fixed.
+
+## Usability
+
+| Finding                                                                                                                                                    | Severity    | What changed                                                                                                                                                                                                  |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| On tablets (721–815px) the sidebar wrapped into a full-width block, so the whole menu (about 700px) sat above every page.                                  | 🔴 Critical | The sidebar now stays beside the page and folds into an 84px icon rail from 721 to 1099px, with tooltips.                                                                                                     |
+| The Notifications page was a floating 440px card with no sidebar, no way back and one copy for all three roles.                                            | 🔴 Critical | A full page inside each panel (`student/`, `mentor/`, `admin/notifications.html`) with All/Unread and type filters, grouped by day, items that open their page, and "How we reach you". The old URL forwards. |
+| The quiz builder showed **[object Object]** in the question and explanation boxes.                                                                         | 🔴 Critical | Real text from the design's data.                                                                                                                                                                             |
+| Quiz result: the "Full marks" badge stretched across the hero and hid the +10 sticker; "10/10" overflowed the ring; "Wrong only · 0" showed an empty list. | 🔴 Critical | Badge keeps its width; the score fits; the filter is two tabs with a "no wrong answers" state; a What's next column uses the space.                                                                           |
+| The bell opened a menu on 3 pages, linked away on 11 and did nothing on 12, with different counts (2, "2 new", "4 new", 3).                                | 🟡 Moderate | Same bell, menu and count on every page of a role; Mark all as read carries across pages.                                                                                                                     |
+| Tabs moved a highlight but never changed the content: lesson tabs, mentor batch, admin batch detail, Courses & batches.                                    | 🟡 Moderate | Every tab switches a real panel, with arrow-key support.                                                                                                                                                      |
+| The mentor sidebar, dashboard to-do and counts all pointed at a "Student questions" page that didn't exist.                                                | 🟡 Moderate | New `mentor/questions.html`: inbox, filters and an answer form.                                                                                                                                               |
+| On phones the top bar took three rows (about 195px) and the tab bar scrolled sideways through 7–11 items with 2-line labels.                               | 🟡 Moderate | One-row top bar (search opens on tap); four tabs plus **More**, which opens a sheet with the rest.                                                                                                            |
+| The certificate page had no way back or to print, and was a fixed 1123px sheet that scrolled sideways below that.                                          | 🟡 Moderate | Toolbar (Back, Copy verify link, Download PDF), centred, scales to fit, prints on one A4 landscape page.                                                                                                      |
+| Save, Send, Approve, Nudge and similar buttons gave no feedback.                                                                                           | 🟡 Moderate | A short toast confirms each one (`data-toast`).                                                                                                                                                               |
+| Leaving or submitting a timed quiz happened on one click.                                                                                                  | 🟡 Moderate | Exit and Submit ask first.                                                                                                                                                                                    |
+| Admin tables were cut off on laptops: Mentors needed 1010px in 728, Batch detail's "Open" was cut to "Op".                                                 | 🟡 Moderate | Add a mentor moved into a dialog so the table gets the full width; row-action columns stay visible while a table scrolls; tighter cell padding below 1440px.                                                  |
+| Course player: modules 1 and 2 toggled an arrow but had no classes; locked modules looked clickable.                                                       | 🟢 Minor    | Modules 1–3 open and close their class lists; 4–5 show as locked.                                                                                                                                             |
+| Mentor review: the rubric total didn't change with the marks; device chips were static.                                                                    | 🟢 Minor    | The total adds up; Desktop / Tablet / Phone resize the preview.                                                                                                                                               |
+| Settings: the section menu scrolled away on a long page.                                                                                                   | 🟢 Minor    | It follows the page and highlights the section you're in.                                                                                                                                                     |
+| "Mark all present" did nothing; changing attendance gave options the wrong colour (Late turned red).                                                       | 🟢 Minor    | Mark all present works; each option keeps its own colour.                                                                                                                                                     |
+| "Change what we send" had nowhere to go.                                                                                                                   | 🟢 Minor    | Notification preferences on the student and mentor profiles (`#notifications`); admin goes to Settings → SMS messages.                                                                                        |
+
+## Visual hierarchy
+
+- **What draws the eye first:** the dark hero on each dashboard, which is right: it holds the one thing to
+  do next. On the quiz result the broken badge used to compete with the score; now the score ring leads.
+- **Reading flow:** hero → stat cards → main column → side column. At 1920px the old layout pushed
+  everything to the left with up to 600px of empty space on the right; the page column is now centred.
+- **Emphasis:** one cyan button per screen holds up well. Stretched badges (quiz result, Certificates,
+  enroll) read as banners and pulled focus; they now keep their own width.
+
+## Consistency
+
+| Element                                  | Issue                                                                                  | What changed                                                                                                  |
+| ---------------------------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| Page width                               | Seven different widths (1040, 1100, 1160, 1200, 1240, 1280, 1360px), all left-aligned. | One centred column for every panel page (`--page-max: 1320px`); the top bar lines up with it.                 |
+| Card grids                               | Four cards wrapped 3 + 1, six wrapped 4 + 2 or 5 + 1, five wrapped 4 + 1.              | Balanced grids: 4 → 4 or 2 × 2, 6 → 3 × 2, 5 → 5 or 3 + 2, 3 → 3 or stacked. Stat cards stay 2 × 2 on phones. |
+| Sidebar labels                           | "Schedule & recordings" wrapped next to a count or lock.                               | Sidebar 280px with tighter gaps; every label fits on one line.                                                |
+| Admin sub-pages                          | The parent item was highlighted on some sub-pages, not others.                         | The parent of the current sub-page always highlights.                                                         |
+| Sparklines                               | Drawn as dashes with gaps (a dash animation on a stretched line).                      | A left-to-right wipe; the line is continuous.                                                                 |
+| Help topics, role cards, payment options | 4 + 2, 5 + 1 and 3 + 1 layouts.                                                        | 3 × 2, 3 × 2 and 2 × 2.                                                                                       |
+| Log in / reset password                  | The dark panel changed width between the two pages.                                    | Same split on both.                                                                                           |
+| Mentor dashboard                         | The third stop of today's timeline wrapped under the first.                            | Three stops on one line; a vertical list on phones.                                                           |
+| Enroll header                            | Brand pinned to the far left while the page was a centred 1200px column.               | Header aligned to the column; the order summary follows the form.                                             |
+
+## Accessibility
+
+- **Colour contrast:** passes AA for text throughout (checked on every page; the palette was built for it).
+- **Keyboard:** dialogs return focus to what opened them; Esc closes dialogs and menus; tabs follow the
+  ARIA tabs pattern (arrow keys, Home/End). The phone More sheet is a modal dialog.
+- **Names and ids:** every control has an accessible name; duplicate ids in the roles dialogs (labels
+  pointing at the wrong field) are now unique; all `aria-*` and `for` references resolve.
+- **Touch targets:** buttons and tabs are 36–52px tall and switches 46 × 28px, all above the 24px minimum.
+  Some text links in dense lists are 21px tall; worth enlarging later.
+- **Motion:** everything still stops under reduced motion, including the new toast, sheet and wipe.
+
+## What works well
+
+- The palette, type and tiles are consistent and friendly, and badges always carry a word, not just a colour.
+- Content is specific and believable (real fees in taka, installment rules, late passes), which makes the
+  flows easy to judge.
+- Status is shown where the decision is made: locks on paused items, "Opens after…" on locked quizzes,
+  "Oldest 3 days" on waiting reviews.
+
+## What changed in the code
+
+| Area                                                                                                    | Files                                                                                                                                                                                                                                                       |
+| ------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Shell: widths, sticky sidebar and top bar, icon rail, phone top bar, tab bar + More sheet, tabs, toasts | `assets/css/panel.css`, `assets/css/app.css`, `assets/js/app.js`                                                                                                                                                                                            |
+| Balanced grids, sticky side columns, certificate print, notifications and questions styles              | `assets/css/app.css`                                                                                                                                                                                                                                        |
+| Page scripts                                                                                            | `assets/js/pages/notifications.js`, `questions.js`, `review.js` (and the existing `help.js`)                                                                                                                                                                |
+| New pages                                                                                               | `student/notifications.html`, `mentor/notifications.html`, `admin/notifications.html`, `mentor/questions.html`                                                                                                                                              |
+| Captured states                                                                                         | Templates now hold only the part of the page that changes, not a copy of the whole `<main>` (pages 20–60% smaller, same rendering, checked state by state). `admin/student-record.html` still copies the whole page because the banner is added or removed. |
+| Checks                                                                                                  | `tools/check/` (`npm run check`), and the design export refuses to overwrite these pages without `--force`.                                                                                                                                                 |
+
+## Still open
+
+### Content you need to supply
+
+- **Support phone number** (log in page, Help → Call us).
+- **Director's name** and real signatures for the certificate; a real QR code from the verify service.
+- **SMS provider name** (admin settings).
+- WhatsApp and phone links for the office and for seminar leads.
+
+### Suggested new pages (in priority order)
+
+1. **Receipt** (`student/receipt.html`): payment, method, transaction id, printable. Linked from Payments, the enroll
+   result and the student record. Every "Receipt" link is a placeholder today.
+2. **My courses** overview for students: Nusrat has two courses, but "My courses" opens the WordPress player
+   directly. A list with progress and "continue" per course.
+3. **Mentor handbook**: rubrics, attendance rules, recording steps (the sidebar card links nowhere).
+4. **Admin: all students** list with pagination and search results (pagination and Export are placeholders).
+5. **Search results** page for the top-bar search (it doesn't search yet).
+6. **Seminar booking** (public): the "Book a free seminar" link in the enroll flow.
+7. **404 / no access** page for wrong links and for pages a role can't open.
+
+### Suggested improvements to existing pages
+
+- **Course builder and quiz builder:** choosing another lesson or question should open it in the editor
+  (today only the selected one is drawn).
+- **Leaderboard and student schedule:** the course switch only changes the button; it should change the list.
+- **Admin overview:** the "This month / Last 90 days" switch should change the numbers.
+- **Leaderboard data:** the classmates' names don't match the Batch 14 roster used elsewhere.
+- **Bangla:** the language switch is remembered but the copy stays English; plan a translation file.
+- **Downloads:** resources, project files and feedback need real files or links.
+
+## How it was checked
+
+- Screenshots of every page at 390, 900 and 1440px before and after, plus 360–1920px overflow checks.
+- Every captured state rendered before and after the template change and compared pixel by pixel (51 states).
+- `npm run check`: links, every page at nine widths (overflow, sidebar, script errors, duplicate ids,
+  broken references, unnamed controls), every state, tab and dialog, and the main journeys.
