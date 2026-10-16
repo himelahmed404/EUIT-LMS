@@ -3,6 +3,17 @@
   display: none !important;
 }
 
+/* Student panel type: the same fonts as the admin and mentor console (Anek Bangla, JetBrains Mono). */
+html.is-student {
+  --font-sans: "Anek Bangla", system-ui, sans-serif;
+  --font-bangla: "Anek Bangla", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+/* Anek Bangla is narrower than Geist, so headings and big numbers lose their negative tracking. */
+html.is-student :is(.p-h1, .p-h2, .p-h3, .p-num, .p-brand-name, .eit-hl) {
+  letter-spacing: 0;
+}
+
 /* Notifications as its own page: the panel centred on the page surface. */
 body.page-panel {
   min-height: 100vh;

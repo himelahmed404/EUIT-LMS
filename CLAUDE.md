@@ -26,7 +26,8 @@ Run `npm run check` after any change; it must end with "Everything passed".
 - `assets/css/panel.css`: tokens, the panel shell (sidebar, top bar, page column, tablet rail, phone tab
   bar), and panel components. Layout tokens: `--side-w`, `--page-max`, `--page-pad`.
 - `assets/css/app.css`: additions for this site (balanced grids, notifications, certificate print, toast)
-  and fixes that override the design's inline styles.
+  and fixes that override the design's inline styles. Student pages (`<html class="is-student">`) use the
+  console's fonts, Anek Bangla and JetBrains Mono; the login and enroll pages still use Geist.
 - `assets/css/console.css`: the **console** for the admin and mentor panels (SchoolofGenZ look in European IT
   colours): sidebar `.c-side`, top bar `.c-top`, dashboards (`.c-kpi`, `.c-panel`), record lists
   (`.c-list` + `.c-pane`), the mentor's review queue (`.c-queue`), batch and course switchers (`.c-switch`),
