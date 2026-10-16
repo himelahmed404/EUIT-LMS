@@ -31,7 +31,7 @@
               <rect x="14" y="3" width="7" height="5" rx="1"></rect>
               <rect x="14" y="12" width="7" height="9" rx="1"></rect>
               <rect x="3" y="16" width="7" height="5" rx="1"></rect></svg
-            >Dashboard</a
+            ><span class="p-nav-text">Dashboard</span></a
           ><a href="course-player.html"
             ><svg
               class="eit-icon"
@@ -48,13 +48,13 @@
             >
               <path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path>
               <path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg
-            >My courses</a
+            ><span class="p-nav-text">My courses</span></a
           ><a href="quizzes.html"
             ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
               <rect x="8" y="2" width="8" height="4" rx="1"></rect>
               <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
               <path d="m9 14 2 2 4-4"></path></svg
-            >Quizzes<span class="p-count">1</span></a
+            ><span class="p-nav-text">Quizzes</span><span class="p-count">1</span></a
           ><a href="projects.html" aria-current="page"
             ><svg
               class="eit-icon"
@@ -70,7 +70,7 @@
               aria-hidden="true"
             >
               <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg
-            >Projects<span class="p-count">1</span></a
+            ><span class="p-nav-text">Projects</span><span class="p-count">1</span></a
           ><a href="schedule.html"
             ><svg
               class="eit-icon"
@@ -87,7 +87,8 @@
             >
               <rect x="3" y="4" width="18" height="18" rx="2"></rect>
               <path d="M16 2v4M8 2v4M3 10h18"></path></svg
-            >Schedule &amp; recordings</a
+            ><span class="p-nav-text">Schedule &amp; recordings</span
+            ><span class="p-nav-short" aria-hidden="true">Schedule</span></a
           ><a href="leaderboard.html"
             ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
@@ -96,7 +97,7 @@
               <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
               <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
               <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg
-            >Leaderboard</a
+            ><span class="p-nav-text">Leaderboard</span></a
           ><a href="certificates.html"
             ><svg
               class="eit-icon"
@@ -113,18 +114,18 @@
             >
               <circle cx="12" cy="8" r="6"></circle>
               <path d="M15.5 13.5L17 22l-5-3-5 3 1.5-8.5"></path></svg
-            >Certificates</a
+            ><span class="p-nav-text">Certificates</span></a
           ><a href="payments.html"
             ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
               <rect x="2" y="5" width="20" height="14" rx="2"></rect>
               <path d="M2 10h20"></path></svg
-            >Payments</a
+            ><span class="p-nav-text">Payments</span></a
           ><a href="help.html"
             ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
               <circle cx="12" cy="12" r="10"></circle>
               <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
               <path d="M12 17h.01"></path></svg
-            >Help</a
+            ><span class="p-nav-text">Help</span></a
           >
         </nav>
         <a class="p-help p-lift" href="leaderboard.html" style="margin-top: auto; text-decoration: none; color: inherit"
@@ -170,17 +171,132 @@
               ><button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button
               ><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button>
             </div>
-            <a class="p-iconbtn" href="../notifications.html" aria-label="Notifications, 2 unread"
-              ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <button
+              class="p-iconbtn"
+              data-notif-scope="student"
+              type="button"
+              aria-label="Notifications, 2 unread"
+              aria-expanded="false"
+              aria-controls="notif-menu"
+            >
+              <svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
                 <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
-              ><span class="p-badge-count">2</span></a
+              ><span class="p-badge-count" data-unread-count="">2</span></button
             ><a class="p-me" href="profile.html" style="text-decoration: none"
               ><span class="p-avatar">NJ</span
               ><span style="display: flex; flex-direction: column"
                 ><span class="p-me-name">Nusrat Jahan</span><span class="p-me-sub">Student · EIT-24-0148</span></span
               ></a
             >
+            <div class="p-dropdown" role="dialog" aria-label="Notifications" id="notif-menu" hidden="" data-popover="">
+              <div class="p-row" style="justify-content: space-between; padding: 16px 18px 10px">
+                <strong style="font-size: 16px">Notifications</strong
+                ><button
+                  type="button"
+                  class="p-link"
+                  style="
+                    border: 0px;
+                    background: none;
+                    padding: 0px;
+                    font-style: inherit;
+                    font-variant: inherit;
+                    font-stretch: inherit;
+                    line-height: inherit;
+                    font-family: inherit;
+                    font-optical-sizing: inherit;
+                    font-size-adjust: inherit;
+                    font-kerning: inherit;
+                    font-feature-settings: inherit;
+                    font-variation-settings: inherit;
+                    font-weight: 600;
+                    font-size: 13px;
+                    cursor: pointer;
+                  "
+                  data-mark-read="#notif-menu"
+                >
+                  Mark all as read
+                </button>
+              </div>
+              <ul class="p-rows" style="padding: 0px 8px 8px">
+                <li style="align-items: flex-start">
+                  <span class="p-tile" style="width: 36px; height: 36px; border-radius: 10px"
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M5 3l14 9-14 9V3z"></path></svg></span
+                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                      >Class 12 recording is ready</span
+                    ><span class="p-small" style="font-size: 12px">WordPress · Batch 14 · 10 min ago</span></span
+                  ><span
+                    aria-label="Unread"
+                    style="
+                      width: 8px;
+                      height: 8px;
+                      border-radius: 50%;
+                      background: var(--cyan);
+                      margin-top: 6px;
+                      flex: 0 0 auto;
+                    "
+                    data-unread=""
+                  ></span>
+                </li>
+                <li style="align-items: flex-start">
+                  <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20 6 9 17l-5-5"></path></svg></span
+                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                      >Personal portfolio homepage approved · 86/100</span
+                    ><span class="p-small" style="font-size: 12px">Kamrul Hasan · 2 h ago</span></span
+                  ><span
+                    aria-label="Unread"
+                    style="
+                      width: 8px;
+                      height: 8px;
+                      border-radius: 50%;
+                      background: var(--cyan);
+                      margin-top: 6px;
+                      flex: 0 0 auto;
+                    "
+                    data-unread=""
+                  ></span>
+                </li>
+                <li style="align-items: flex-start">
+                  <span class="p-tile p-tile--amber" style="width: 36px; height: 36px; border-radius: 10px"
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12 6v6l4 2M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z"></path></svg></span
+                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 500"
+                      >Installment 2 is due on 15 Nov</span
+                    ><span class="p-small" style="font-size: 12px">৳5,000 · yesterday</span></span
+                  >
+                </li>
+                <li style="align-items: flex-start">
+                  <span class="p-tile p-tile--muted" style="width: 36px; height: 36px; border-radius: 10px"
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"
+                      ></path></svg></span
+                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 500"
+                      >Graphic Design Live 8 moved to 8:00 PM</span
+                    ><span class="p-small" style="font-size: 12px">Wed, 21 Oct · 2 days ago</span></span
+                  >
+                </li>
+              </ul>
+              <a
+                href="notifications.html"
+                class="p-link"
+                style="
+                  display: flex;
+                  justify-content: center;
+                  padding: 12px;
+                  border-top: 1px solid var(--line-soft);
+                  border-radius: 0px;
+                "
+                >See all notifications</a
+              >
+            </div>
           </div>
         </header>
         <main class="p-main" data-region="filtered">
@@ -635,7 +751,7 @@
       </div>
     </div>
     <template data-state="filtered:0" data-region="[data-region='filtered']"
-      ><main data-dc-tpl="81" class="p-main" data-region="filtered">
+      ><main class="p-main" data-region="filtered">
         <div style="display: flex; flex-direction: column; gap: 6px; max-width: 680px">
           <h1 class="p-h1">Projects</h1>
           <p class="p-body">Each milestone ends with a project. Submit it here, and your mentor marks it out of 100.</p>
@@ -1080,7 +1196,7 @@
       </main></template
     >
     <template data-state="filtered:1" data-region="[data-region='filtered']"
-      ><main data-dc-tpl="81" class="p-main" data-region="filtered">
+      ><main class="p-main" data-region="filtered">
         <div style="display: flex; flex-direction: column; gap: 6px; max-width: 680px">
           <h1 class="p-h1">Projects</h1>
           <p class="p-body">Each milestone ends with a project. Submit it here, and your mentor marks it out of 100.</p>
@@ -1388,7 +1504,7 @@
       </main></template
     >
     <template data-state="filtered:2" data-region="[data-region='filtered']"
-      ><main data-dc-tpl="81" class="p-main" data-region="filtered">
+      ><main class="p-main" data-region="filtered">
         <div style="display: flex; flex-direction: column; gap: 6px; max-width: 680px">
           <h1 class="p-h1">Projects</h1>
           <p class="p-body">Each milestone ends with a project. Submit it here, and your mentor marks it out of 100.</p>
@@ -1696,7 +1812,7 @@
       </main></template
     >
     <template data-state="filtered:3" data-region="[data-region='filtered']"
-      ><main data-dc-tpl="81" class="p-main" data-region="filtered">
+      ><main class="p-main" data-region="filtered">
         <div style="display: flex; flex-direction: column; gap: 6px; max-width: 680px">
           <h1 class="p-h1">Projects</h1>
           <p class="p-body">Each milestone ends with a project. Submit it here, and your mentor marks it out of 100.</p>

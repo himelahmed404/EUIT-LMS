@@ -840,6 +840,8 @@ body {
 
 /* Badge */
 .eit-badge {
+  /* fit-content: a badge in a column layout keeps its own width instead of stretching to the column */
+  width: fit-content;
   display: inline-flex;
   align-items: center;
   gap: 6px;

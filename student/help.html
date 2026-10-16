@@ -158,7 +158,7 @@
               <rect x="14" y="3" width="7" height="5" rx="1"></rect>
               <rect x="14" y="12" width="7" height="9" rx="1"></rect>
               <rect x="3" y="16" width="7" height="5" rx="1"></rect></svg
-            >Dashboard</a
+            ><span class="p-nav-text">Dashboard</span></a
           ><a href="course-player.html"
             ><svg
               class="eit-icon"
@@ -175,13 +175,13 @@
             >
               <path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path>
               <path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg
-            >My courses</a
+            ><span class="p-nav-text">My courses</span></a
           ><a href="quizzes.html"
             ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
               <rect x="8" y="2" width="8" height="4" rx="1"></rect>
               <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
               <path d="m9 14 2 2 4-4"></path></svg
-            >Quizzes<span class="p-count">1</span></a
+            ><span class="p-nav-text">Quizzes</span><span class="p-count">1</span></a
           ><a href="projects.html"
             ><svg
               class="eit-icon"
@@ -197,7 +197,7 @@
               aria-hidden="true"
             >
               <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg
-            >Projects<span class="p-count">1</span></a
+            ><span class="p-nav-text">Projects</span><span class="p-count">1</span></a
           ><a href="schedule.html"
             ><svg
               class="eit-icon"
@@ -214,7 +214,8 @@
             >
               <rect x="3" y="4" width="18" height="18" rx="2"></rect>
               <path d="M16 2v4M8 2v4M3 10h18"></path></svg
-            >Schedule &amp; recordings</a
+            ><span class="p-nav-text">Schedule &amp; recordings</span
+            ><span class="p-nav-short" aria-hidden="true">Schedule</span></a
           ><a href="leaderboard.html"
             ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
@@ -223,7 +224,7 @@
               <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
               <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
               <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg
-            >Leaderboard</a
+            ><span class="p-nav-text">Leaderboard</span></a
           ><a href="certificates.html"
             ><svg
               class="eit-icon"
@@ -240,18 +241,18 @@
             >
               <circle cx="12" cy="8" r="6"></circle>
               <path d="M15.5 13.5L17 22l-5-3-5 3 1.5-8.5"></path></svg
-            >Certificates</a
+            ><span class="p-nav-text">Certificates</span></a
           ><a href="payments.html"
             ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
               <rect x="2" y="5" width="20" height="14" rx="2"></rect>
               <path d="M2 10h20"></path></svg
-            >Payments</a
+            ><span class="p-nav-text">Payments</span></a
           ><a href="help.html" aria-current="page"
             ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
               <circle cx="12" cy="12" r="10"></circle>
               <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
               <path d="M12 17h.01"></path></svg
-            >Help</a
+            ><span class="p-nav-text">Help</span></a
           >
         </nav>
         <a class="p-help p-lift" href="leaderboard.html" style="margin-top: auto; text-decoration: none; color: inherit"
@@ -297,17 +298,132 @@
               ><button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button
               ><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button>
             </div>
-            <a class="p-iconbtn" href="../notifications.html" aria-label="Notifications, 2 unread"
-              ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <button
+              class="p-iconbtn"
+              data-notif-scope="student"
+              type="button"
+              aria-label="Notifications, 2 unread"
+              aria-expanded="false"
+              aria-controls="notif-menu"
+            >
+              <svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
                 <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
-              ><span class="p-badge-count">2</span></a
+              ><span class="p-badge-count" data-unread-count="">2</span></button
             ><a class="p-me" href="profile.html" style="text-decoration: none"
               ><span class="p-avatar">NJ</span
               ><span style="display: flex; flex-direction: column"
                 ><span class="p-me-name">Nusrat Jahan</span><span class="p-me-sub">Student · EIT-24-0148</span></span
               ></a
             >
+            <div class="p-dropdown" role="dialog" aria-label="Notifications" id="notif-menu" hidden="" data-popover="">
+              <div class="p-row" style="justify-content: space-between; padding: 16px 18px 10px">
+                <strong style="font-size: 16px">Notifications</strong
+                ><button
+                  type="button"
+                  class="p-link"
+                  style="
+                    border: 0px;
+                    background: none;
+                    padding: 0px;
+                    font-style: inherit;
+                    font-variant: inherit;
+                    font-stretch: inherit;
+                    line-height: inherit;
+                    font-family: inherit;
+                    font-optical-sizing: inherit;
+                    font-size-adjust: inherit;
+                    font-kerning: inherit;
+                    font-feature-settings: inherit;
+                    font-variation-settings: inherit;
+                    font-weight: 600;
+                    font-size: 13px;
+                    cursor: pointer;
+                  "
+                  data-mark-read="#notif-menu"
+                >
+                  Mark all as read
+                </button>
+              </div>
+              <ul class="p-rows" style="padding: 0px 8px 8px">
+                <li style="align-items: flex-start">
+                  <span class="p-tile" style="width: 36px; height: 36px; border-radius: 10px"
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M5 3l14 9-14 9V3z"></path></svg></span
+                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                      >Class 12 recording is ready</span
+                    ><span class="p-small" style="font-size: 12px">WordPress · Batch 14 · 10 min ago</span></span
+                  ><span
+                    aria-label="Unread"
+                    style="
+                      width: 8px;
+                      height: 8px;
+                      border-radius: 50%;
+                      background: var(--cyan);
+                      margin-top: 6px;
+                      flex: 0 0 auto;
+                    "
+                    data-unread=""
+                  ></span>
+                </li>
+                <li style="align-items: flex-start">
+                  <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20 6 9 17l-5-5"></path></svg></span
+                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                      >Personal portfolio homepage approved · 86/100</span
+                    ><span class="p-small" style="font-size: 12px">Kamrul Hasan · 2 h ago</span></span
+                  ><span
+                    aria-label="Unread"
+                    style="
+                      width: 8px;
+                      height: 8px;
+                      border-radius: 50%;
+                      background: var(--cyan);
+                      margin-top: 6px;
+                      flex: 0 0 auto;
+                    "
+                    data-unread=""
+                  ></span>
+                </li>
+                <li style="align-items: flex-start">
+                  <span class="p-tile p-tile--amber" style="width: 36px; height: 36px; border-radius: 10px"
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12 6v6l4 2M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z"></path></svg></span
+                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 500"
+                      >Installment 2 is due on 15 Nov</span
+                    ><span class="p-small" style="font-size: 12px">৳5,000 · yesterday</span></span
+                  >
+                </li>
+                <li style="align-items: flex-start">
+                  <span class="p-tile p-tile--muted" style="width: 36px; height: 36px; border-radius: 10px"
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"
+                      ></path></svg></span
+                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 500"
+                      >Graphic Design Live 8 moved to 8:00 PM</span
+                    ><span class="p-small" style="font-size: 12px">Wed, 21 Oct · 2 days ago</span></span
+                  >
+                </li>
+              </ul>
+              <a
+                href="notifications.html"
+                class="p-link"
+                style="
+                  display: flex;
+                  justify-content: center;
+                  padding: 12px;
+                  border-top: 1px solid var(--line-soft);
+                  border-radius: 0px;
+                "
+                >See all notifications</a
+              >
+            </div>
           </div>
         </header>
         <main class="p-main">
@@ -559,7 +675,7 @@
                         <path d="M6 9l6 6 6-6"></path></svg
                     ></span>
                   </button>
-                  <div data-dc-tpl="132" class="hp-a" id="rv2" hidden="">
+                  <div class="hp-a" id="rv2" hidden="">
                     <p class="p-body" style="max-width: 620px">
                       Right after each class ends, online or offline. You’ll get a notification. Take it soon while the
                       class is fresh in your mind.
@@ -624,7 +740,7 @@
                         <path d="M6 9l6 6 6-6"></path></svg
                     ></span>
                   </button>
-                  <div data-dc-tpl="132" class="hp-a" id="rv4" hidden="">
+                  <div class="hp-a" id="rv4" hidden="">
                     <p class="p-body" style="max-width: 620px">
                       You need to take every class quiz in a module before the next module opens. Your score doesn’t
                       hold you back. Only a quiz you haven’t taken does.
@@ -688,7 +804,7 @@
                         <path d="M6 9l6 6 6-6"></path></svg
                     ></span>
                   </button>
-                  <div data-dc-tpl="132" class="hp-a" id="rv6" hidden="">
+                  <div class="hp-a" id="rv6" hidden="">
                     <p class="p-body" style="max-width: 620px">
                       Yes, you can retake a quiz to practise. Points only come from your first try.
                     </p>
@@ -734,7 +850,7 @@
                         <path d="M6 9l6 6 6-6"></path></svg
                     ></span>
                   </button>
-                  <div data-dc-tpl="132" class="hp-a" id="rv8" hidden="">
+                  <div class="hp-a" id="rv8" hidden="">
                     <p class="p-body" style="max-width: 620px">
                       Right now, late passes for milestone projects: 15 points buys 1 extra day, up to 3 days for each
                       project. European IT will add more rewards later.
@@ -799,7 +915,7 @@
                         <path d="M6 9l6 6 6-6"></path></svg
                     ></span>
                   </button>
-                  <div data-dc-tpl="132" class="hp-a" id="rv10" hidden="">
+                  <div class="hp-a" id="rv10" hidden="">
                     <p class="p-body" style="max-width: 620px">
                       By the points you’ve earned in that batch. Spending points on a late pass never moves you down. If
                       two students have the same points, whoever got there first ranks higher. You can hide your name
@@ -863,7 +979,7 @@
                         <path d="M6 9l6 6 6-6"></path></svg
                     ></span>
                   </button>
-                  <div data-dc-tpl="132" class="hp-a" id="rv12" hidden="">
+                  <div class="hp-a" id="rv12" hidden="">
                     <p class="p-body" style="max-width: 620px">
                       Videos open one at a time. Watch the current video to the end and the next one unlocks straight
                       away.
@@ -926,7 +1042,7 @@
                         <path d="M6 9l6 6 6-6"></path></svg
                     ></span>
                   </button>
-                  <div data-dc-tpl="132" class="hp-a" id="rv14" hidden="">
+                  <div class="hp-a" id="rv14" hidden="">
                     <p class="p-body" style="max-width: 620px">
                       Your mentor uploads the recording after every class, online or offline. Find it on Schedule &amp;
                       recordings under the class date.
@@ -989,7 +1105,7 @@
                         <path d="M6 9l6 6 6-6"></path></svg
                     ></span>
                   </button>
-                  <div data-dc-tpl="132" class="hp-a" id="rv16" hidden="">
+                  <div class="hp-a" id="rv16" hidden="">
                     <p class="p-body" style="max-width: 620px">
                       Watch the recording, then take that class’s quiz so your next module still opens. The class still
                       counts as absent, and you need 75% attendance for your certificate.
@@ -1050,7 +1166,7 @@
                         <path d="M6 9l6 6 6-6"></path></svg
                     ></span>
                   </button>
-                  <div data-dc-tpl="132" class="hp-a" id="rv18" hidden="">
+                  <div class="hp-a" id="rv18" hidden="">
                     <p class="p-body" style="max-width: 620px">
                       There’s one project at the end of every milestone. Its due date is on the Projects page and in the
                       project’s details.
@@ -1110,7 +1226,7 @@
                         <path d="M6 9l6 6 6-6"></path></svg
                     ></span>
                   </button>
-                  <div data-dc-tpl="132" class="hp-a" id="rv20" hidden="">
+                  <div class="hp-a" id="rv20" hidden="">
                     <p class="p-body" style="max-width: 620px">
                       Open Projects and press Details on the project. Add your files or a link, then press Submit. Your
                       mentor gets it straight away.
@@ -1171,7 +1287,7 @@
                         <path d="M6 9l6 6 6-6"></path></svg
                     ></span>
                   </button>
-                  <div data-dc-tpl="132" class="hp-a" id="rv22" hidden="">
+                  <div class="hp-a" id="rv22" hidden="">
                     <p class="p-body" style="max-width: 620px">
                       After the due date the project closes. You can open it again with a late pass from the project’s
                       details: 15 points per day, up to 3 days.
@@ -1231,7 +1347,7 @@
                         <path d="M6 9l6 6 6-6"></path></svg
                     ></span>
                   </button>
-                  <div data-dc-tpl="132" class="hp-a" id="rv24" hidden="">
+                  <div class="hp-a" id="rv24" hidden="">
                     <p class="p-body" style="max-width: 620px">
                       Your mentor marks it out of 100 using the rubric in the project’s details, and leaves feedback.
                       Marks usually arrive within 3 days, with a notification and an SMS.
@@ -1296,7 +1412,7 @@
                         <path d="M6 9l6 6 6-6"></path></svg
                     ></span>
                   </button>
-                  <div data-dc-tpl="132" class="hp-a" id="rv26" hidden="">
+                  <div class="hp-a" id="rv26" hidden="">
                     <p class="p-body" style="max-width: 620px">
                       Go to Payments and press Pay now. You pay on SSLCommerz’s secure page with bKash, Nagad, Rocket or
                       a card. Your receipt shows straight after.
@@ -1361,7 +1477,7 @@
                         <path d="M6 9l6 6 6-6"></path></svg
                     ></span>
                   </button>
-                  <div data-dc-tpl="132" class="hp-a" id="rv28" hidden="">
+                  <div class="hp-a" id="rv28" hidden="">
                     <p class="p-body" style="max-width: 620px">
                       If an installment is 7 days late, your course access pauses. Your progress and points are kept.
                       Pay the installment and access opens again.
@@ -1426,7 +1542,7 @@
                         <path d="M6 9l6 6 6-6"></path></svg
                     ></span>
                   </button>
-                  <div data-dc-tpl="132" class="hp-a" id="rv30" hidden="">
+                  <div class="hp-a" id="rv30" hidden="">
                     <p class="p-body" style="max-width: 620px">
                       Prices and installment plans are set by European IT. Talk to the support team if you need a
                       different plan.
@@ -1472,7 +1588,7 @@
                         <path d="M6 9l6 6 6-6"></path></svg
                     ></span>
                   </button>
-                  <div data-dc-tpl="132" class="hp-a" id="rv32" hidden="">
+                  <div class="hp-a" id="rv32" hidden="">
                     <p class="p-body" style="max-width: 620px">
                       Everyone logs in on the same page with their phone number and password. Your account was made when
                       you paid at checkout.
@@ -1518,7 +1634,7 @@
                         <path d="M6 9l6 6 6-6"></path></svg
                     ></span>
                   </button>
-                  <div data-dc-tpl="132" class="hp-a" id="rv34" hidden="">
+                  <div class="hp-a" id="rv34" hidden="">
                     <p class="p-body" style="max-width: 620px">
                       On the login page, choose Forgot password. Enter your phone number, type the 6-digit code we send
                       by SMS, then choose a new password.
@@ -1583,7 +1699,7 @@
                         <path d="M6 9l6 6 6-6"></path></svg
                     ></span>
                   </button>
-                  <div data-dc-tpl="132" class="hp-a" id="rv36" hidden="">
+                  <div class="hp-a" id="rv36" hidden="">
                     <p class="p-body" style="max-width: 620px">
                       Yes. One account holds all your courses. On Quizzes and the Leaderboard, use the course switch at
                       the top to move between them.
@@ -1630,7 +1746,7 @@
                         <path d="M6 9l6 6 6-6"></path></svg
                     ></span>
                   </button>
-                  <div data-dc-tpl="132" class="hp-a" id="rv38" hidden="">
+                  <div class="hp-a" id="rv38" hidden="">
                     <p class="p-body" style="max-width: 620px">
                       Finish every lesson, attend at least 75% of classes and get all 3 milestone projects marked. Your
                       certificate then unlocks on the Certificates page.
@@ -1695,7 +1811,7 @@
                         <path d="M6 9l6 6 6-6"></path></svg
                     ></span>
                   </button>
-                  <div data-dc-tpl="132" class="hp-a" id="rv40" hidden="">
+                  <div class="hp-a" id="rv40" hidden="">
                     <p class="p-body" style="max-width: 620px">
                       Yes. Every certificate has an ID and a QR code. Anyone can check it at europeanit-inst.com/verify.
                     </p>

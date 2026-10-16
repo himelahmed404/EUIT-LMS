@@ -32,7 +32,7 @@
               <rect x="14" y="3" width="7" height="5" rx="1"></rect>
               <rect x="14" y="12" width="7" height="9" rx="1"></rect>
               <rect x="3" y="16" width="7" height="5" rx="1"></rect></svg
-            >Dashboard</a
+            ><span class="p-nav-text">Dashboard</span></a
           ><a href="batch.html"
             ><svg
               class="eit-icon"
@@ -51,13 +51,13 @@
               <circle cx="9" cy="7" r="4"></circle>
               <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
               <path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg
-            >My batches</a
+            ><span class="p-nav-text">My batches</span></a
           ><a href="review.html"
             ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
               <rect x="8" y="2" width="8" height="4" rx="1"></rect>
               <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
               <path d="m9 14 2 2 4-4"></path></svg
-            >Reviews<span class="p-count">5</span></a
+            ><span class="p-nav-text">Reviews</span><span class="p-count">5</span></a
           ><a href="course-builder.html" aria-current="page"
             ><svg
               class="eit-icon"
@@ -74,7 +74,7 @@
             >
               <path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path>
               <path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg
-            >Courses</a
+            ><span class="p-nav-text">Courses</span></a
           ><a href="#"
             ><svg
               class="eit-icon"
@@ -90,7 +90,8 @@
               aria-hidden="true"
             >
               <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg
-            >Student questions<span class="p-count">3</span></a
+            ><span class="p-nav-text">Student questions</span
+            ><span class="p-nav-short" aria-hidden="true">Questions</span><span class="p-count">3</span></a
           ><a href="schedule.html"
             ><svg
               class="eit-icon"
@@ -107,11 +108,9 @@
             >
               <rect x="3" y="4" width="18" height="18" rx="2"></rect>
               <path d="M16 2v4M8 2v4M3 10h18"></path></svg
-            >Schedule &amp; recordings<span
-              class="p-count"
-              style="background: var(--warning); color: rgb(255, 255, 255)"
-              >1</span
-            ></a
+            ><span class="p-nav-text">Schedule &amp; recordings</span
+            ><span class="p-nav-short" aria-hidden="true">Schedule</span
+            ><span class="p-count" style="background: var(--warning); color: rgb(255, 255, 255)">1</span></a
           >
         </nav>
         <div class="p-help" style="margin-top: auto">
@@ -146,20 +145,150 @@
               ><button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button
               ><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button>
             </div>
-            <a class="p-iconbtn" href="../notifications.html" aria-label="Notifications, 3 unread"
-              ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <button
+              class="p-iconbtn"
+              data-notif-scope="mentor"
+              type="button"
+              aria-label="Notifications, 3 unread"
+              aria-expanded="false"
+              aria-controls="notif-menu"
+            >
+              <svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
                 <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
-              ><span class="p-badge-count">3</span></a
+              ><span class="p-badge-count" data-unread-count="">3</span></button
             ><a class="p-me" href="profile.html" style="text-decoration: none"
               ><span class="p-avatar">KH</span
               ><span style="display: flex; flex-direction: column"
                 ><span class="p-me-name">Kamrul Hasan</span><span class="p-me-sub">Mentor · Web Development</span></span
               ></a
             >
+            <div class="p-dropdown" role="dialog" aria-label="Notifications" id="notif-menu" hidden="" data-popover="">
+              <div class="p-row" style="justify-content: space-between; padding: 16px 18px 10px">
+                <strong style="font-size: 16px">Notifications</strong
+                ><button
+                  type="button"
+                  class="p-link"
+                  style="
+                    border: 0px;
+                    background: none;
+                    padding: 0px;
+                    font-style: inherit;
+                    font-variant: inherit;
+                    font-stretch: inherit;
+                    line-height: inherit;
+                    font-family: inherit;
+                    font-optical-sizing: inherit;
+                    font-size-adjust: inherit;
+                    font-kerning: inherit;
+                    font-feature-settings: inherit;
+                    font-variation-settings: inherit;
+                    font-weight: 600;
+                    font-size: 13px;
+                    cursor: pointer;
+                  "
+                  data-mark-read="#notif-menu"
+                >
+                  Mark all as read
+                </button>
+              </div>
+              <ul class="p-rows" style="padding: 0px 8px 8px">
+                <li style="align-items: flex-start">
+                  <span class="p-tile" style="width: 36px; height: 36px; border-radius: 10px"
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7l-5-5zM14 2v4a2 2 0 0 0 2 2h4"
+                      ></path></svg></span
+                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                      >Tanvir Hasan sent "Responsive landing page"</span
+                    ><span class="p-small" style="font-size: 12px">WordPress · Batch 14 · 1 h ago</span></span
+                  ><span
+                    aria-label="Unread"
+                    style="
+                      width: 8px;
+                      height: 8px;
+                      border-radius: 50%;
+                      background: var(--cyan);
+                      margin-top: 6px;
+                      flex: 0 0 auto;
+                    "
+                    data-unread=""
+                  ></span>
+                </li>
+                <li style="align-items: flex-start">
+                  <span class="p-tile p-tile--muted" style="width: 36px; height: 36px; border-radius: 10px"
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span
+                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                      >New question on "Building a custom header"</span
+                    ><span class="p-small" style="font-size: 12px">Nusrat Jahan · 2 h ago</span></span
+                  ><span
+                    aria-label="Unread"
+                    style="
+                      width: 8px;
+                      height: 8px;
+                      border-radius: 50%;
+                      background: var(--cyan);
+                      margin-top: 6px;
+                      flex: 0 0 auto;
+                    "
+                    data-unread=""
+                  ></span>
+                </li>
+                <li style="align-items: flex-start">
+                  <span class="p-tile p-tile--amber" style="width: 36px; height: 36px; border-radius: 10px"
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg></span
+                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                      >Class 12 recording is due by 9:00 AM</span
+                    ><span class="p-small" style="font-size: 12px">WordPress · Batch 14 · 3 h ago</span></span
+                  ><span
+                    aria-label="Unread"
+                    style="
+                      width: 8px;
+                      height: 8px;
+                      border-radius: 50%;
+                      background: var(--cyan);
+                      margin-top: 6px;
+                      flex: 0 0 auto;
+                    "
+                    data-unread=""
+                  ></span>
+                </li>
+                <li style="align-items: flex-start">
+                  <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
+                      ></path></svg></span
+                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 500"
+                      >Admin started reviewing your course</span
+                    ><span class="p-small" style="font-size: 12px"
+                      >Advanced WordPress Theme Development · yesterday</span
+                    ></span
+                  >
+                </li>
+              </ul>
+              <a
+                href="notifications.html"
+                class="p-link"
+                style="
+                  display: flex;
+                  justify-content: center;
+                  padding: 12px;
+                  border-top: 1px solid var(--line-soft);
+                  border-radius: 0px;
+                "
+                >See all notifications</a
+              >
+            </div>
           </div>
         </header>
-        <main class="p-main" style="max-width: 1360px">
+        <main class="p-main">
           <nav
             aria-label="Breadcrumb"
             class="p-row"

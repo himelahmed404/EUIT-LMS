@@ -239,19 +239,59 @@
       }
     });
   }
-  function openDialog(id) {
+  var lastOpener = null;
+  function openDialog(id, opener) {
     var d = document.getElementById(id);
     if (!d) {
       return;
     }
     d.hidden = false;
-    var focusable = d.querySelector("input, select, textarea, button");
+    lastOpener = opener || document.activeElement;
+    if (opener && opener.hasAttribute("aria-expanded")) {
+      opener.setAttribute("aria-expanded", "true");
+    }
+    var focusable = d.querySelector("input, select, textarea, button") || d.querySelector("a[href]");
     if (focusable) {
       focusable.focus();
     }
   }
   function closeDialog(d) {
+    if (!d || d.hidden) {
+      return;
+    }
     d.hidden = true;
+    var opener = document.querySelector('[aria-controls="' + d.id + '"][aria-expanded]');
+    if (opener) {
+      opener.setAttribute("aria-expanded", "false");
+    }
+    // Give focus back to whatever opened the dialog.
+    if (lastOpener && document.contains(lastOpener)) {
+      lastOpener.focus();
+    }
+    lastOpener = null;
+  }
+
+  /* ---------- Notifications: unread dots and counts ---------- */
+  function markAllRead(scope) {
+    $all("[data-unread]", scope).forEach(function (u) {
+      u.remove();
+    });
+    $all("[data-unread-count]").forEach(function (c) {
+      c.remove();
+    });
+    $all(".is-unread").forEach(function (el) {
+      el.classList.remove("is-unread");
+    });
+    $all("[data-notif-scope]").forEach(function (b) {
+      b.setAttribute("aria-label", "Notifications");
+    });
+    document.dispatchEvent(new CustomEvent("eit:read"));
+  }
+  function initReadState() {
+    var bell = document.querySelector("[data-notif-scope]");
+    if (bell && store.get("eit-read-" + bell.getAttribute("data-notif-scope")) === "1") {
+      markAllRead(document);
+    }
   }
 
   /* ---------- Click handling ---------- */
@@ -272,7 +312,7 @@
     var opener = t.closest("[data-open-dialog]");
     if (opener) {
       e.preventDefault();
-      openDialog(opener.getAttribute("data-open-dialog"));
+      openDialog(opener.getAttribute("data-open-dialog"), opener);
       return;
     }
     var closer = t.closest("[data-close-dialog]");
@@ -306,13 +346,13 @@
 
     var markRead = t.closest("[data-mark-read]");
     if (markRead) {
-      var scope = document.querySelector(markRead.getAttribute("data-mark-read")) || document;
-      $all("[data-unread]", scope).forEach(function (u) {
-        u.remove();
-      });
-      $all("[data-unread-count]").forEach(function (c) {
-        c.remove();
-      });
+      // "Mark all as read" clears the bell menu and the notifications page alike.
+      markAllRead(document);
+      // Remember it for this panel so the bell stays clear on the next page too.
+      var bell = document.querySelector("[data-notif-scope]");
+      if (bell) {
+        store.set("eit-read-" + bell.getAttribute("data-notif-scope"), "1");
+      }
       return;
     }
 
@@ -483,11 +523,133 @@
     });
   }
 
+  /* ---------- Shell: phone tabs + "More" sheet, top-bar brand, rail tooltips ----------
+     Phones show the first four sidebar links as tabs; everything else moves into a bottom sheet. */
+  var MORE_ICON =
+    '<svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1.5"></circle>' +
+    '<circle cx="12" cy="12" r="1.5"></circle><circle cx="19" cy="12" r="1.5"></circle></svg>';
+  function initShell() {
+    var side = document.querySelector(".p-side");
+    var nav = side && side.querySelector(".p-nav");
+    var top = document.querySelector(".p-top");
+    if (!side || !nav) {
+      return;
+    }
+    var brand = side.querySelector(".p-brand");
+    if (top && brand && !top.querySelector(".p-top-brand")) {
+      var mark = brand.cloneNode(true);
+      mark.classList.add("p-top-brand");
+      mark.setAttribute("aria-label", "European IT Institute, home");
+      top.insertBefore(mark, top.firstChild);
+    }
+
+    var links = $all(":scope > a", nav);
+    if (links.length > 5) {
+      var items = [];
+      var label = null;
+      Array.prototype.forEach.call(nav.children, function (el) {
+        if (el.classList.contains("p-nav-label")) {
+          label = el.textContent;
+        } else if (el.tagName === "A" && links.indexOf(el) >= 4) {
+          items.push({ label: label, el: el, sub: false });
+        } else if (el.classList.contains("p-subnav")) {
+          $all("a", el).forEach(function (a) {
+            items.push({ label: label, el: a, sub: true });
+          });
+        }
+      });
+      var sheet = document.createElement("div");
+      sheet.className = "p-sheet-wrap";
+      sheet.id = "more-sheet";
+      sheet.hidden = true;
+      sheet.setAttribute("data-dialog", "");
+      var body = document.createElement("div");
+      body.className = "p-sheet";
+      body.setAttribute("role", "dialog");
+      body.setAttribute("aria-modal", "true");
+      body.setAttribute("aria-label", "More pages");
+      body.innerHTML = '<span class="p-sheet-grip" aria-hidden="true"></span>';
+      var me = top && top.querySelector(".p-me");
+      if (me) {
+        var meCopy = me.cloneNode(true);
+        meCopy.className = "p-sheet-me";
+        body.appendChild(meCopy);
+      }
+      var shown = null;
+      items.forEach(function (it) {
+        if (it.label && it.label !== shown) {
+          var h = document.createElement("span");
+          h.className = "p-nav-label";
+          h.textContent = it.label;
+          body.appendChild(h);
+          shown = it.label;
+        }
+        var a = it.el.cloneNode(true);
+        a.removeAttribute("style");
+        if (it.sub) {
+          a.className = "p-sheet-sub";
+        }
+        body.appendChild(a);
+      });
+      var promo = side.querySelector(".p-help");
+      if (promo) {
+        var promoCopy = promo.cloneNode(true);
+        promoCopy.style.marginTop = "8px";
+        body.appendChild(promoCopy);
+      }
+      sheet.appendChild(body);
+      document.body.appendChild(sheet);
+
+      var more = document.createElement("button");
+      more.type = "button";
+      more.className = "p-more";
+      more.setAttribute("aria-expanded", "false");
+      more.setAttribute("aria-controls", "more-sheet");
+      more.setAttribute("data-open-dialog", "more-sheet");
+      more.innerHTML = MORE_ICON + "<span>More</span>";
+      var current = items.some(function (it) {
+        return it.el.getAttribute("aria-current") === "page";
+      });
+      if (current) {
+        more.classList.add("is-current");
+      }
+      if (
+        items.some(function (it) {
+          return it.el.querySelector(".p-count");
+        })
+      ) {
+        more.insertAdjacentHTML("beforeend", '<span class="p-pip" aria-hidden="true"></span>');
+        more.setAttribute("aria-label", "More pages, some have updates");
+      }
+      nav.appendChild(more);
+      side.classList.add("has-more");
+    }
+
+    // Icon rail (tablets): the labels are visually hidden, so show them as tooltips.
+    var rail = window.matchMedia("(min-width: 721px) and (max-width: 1099px)");
+    function syncRail() {
+      links.forEach(function (a) {
+        var text = a.querySelector(".p-nav-text");
+        if (rail.matches && text) {
+          a.setAttribute("title", text.textContent.trim());
+        } else {
+          a.removeAttribute("title");
+        }
+      });
+    }
+    syncRail();
+    if (rail.addEventListener) {
+      rail.addEventListener("change", syncRail);
+    }
+  }
+
   window.addEventListener("resize", function () {
     $all(".eit-seg").forEach(placeThumb);
   });
 
   function init() {
+    initShell();
+    initReadState();
     initLanguage(document);
     initMotion(document);
     initCountdowns();

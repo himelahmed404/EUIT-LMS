@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Notifications · European IT LMS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap"
+    />
+    <link rel="stylesheet" href="../assets/css/eit.css" />
+    <link rel="stylesheet" href="../assets/css/panel.css" />
+    <link rel="stylesheet" href="../assets/css/app.css" />
+    <script src="../assets/js/app.js" defer></script>
+    <script src="../assets/js/pages/notifications.js" defer></script>
+  </head>
+  <body>
+    <div class="p-shell">
+      <aside class="p-side">
+        <a class="p-brand" href="dashboard.html"
+          ><span class="p-brand-mark" aria-hidden="true"></span
+          ><span class="p-brand-text"
+            ><span class="p-brand-name">European IT</span><span class="p-brand-sub">INSTITUTE</span></span
+          ></a
+        >
+        <nav class="p-nav" aria-label="Mentor panel">
+          <span class="p-nav-label">Mentor</span
+          ><a href="dashboard.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="9" rx="1"></rect>
+              <rect x="14" y="3" width="7" height="5" rx="1"></rect>
+              <rect x="14" y="12" width="7" height="9" rx="1"></rect>
+              <rect x="3" y="16" width="7" height="5" rx="1"></rect></svg
+            ><span class="p-nav-text">Dashboard</span></a
+          ><a href="batch.html"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg
+            ><span class="p-nav-text">My batches</span></a
+          ><a href="review.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="8" y="2" width="8" height="4" rx="1"></rect>
+              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+              <path d="m9 14 2 2 4-4"></path></svg
+            ><span class="p-nav-text">Reviews</span><span class="p-count">5</span></a
+          ><a href="course-builder.html"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path>
+              <path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg
+            ><span class="p-nav-text">Courses</span></a
+          ><a href="#"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg
+            ><span class="p-nav-text">Student questions</span
+            ><span class="p-nav-short" aria-hidden="true">Questions</span><span class="p-count">3</span></a
+          ><a href="schedule.html"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+              <path d="M16 2v4M8 2v4M3 10h18"></path></svg
+            ><span class="p-nav-text">Schedule &amp; recordings</span
+            ><span class="p-nav-short" aria-hidden="true">Schedule</span
+            ><span class="p-count" style="background: var(--warning); color: rgb(255, 255, 255)">1</span></a
+          >
+        </nav>
+        <div class="p-help" style="margin-top: auto">
+          <span class="p-h3" style="font-size: 15px">Mentor handbook</span
+          ><span class="p-muted">Rubrics, attendance rules and how course review works.</span
+          ><a class="p-link" href="#">Open handbook</a>
+        </div>
+      </aside>
+      <div class="p-content">
+        <header class="p-top">
+          <label class="p-search"
+            ><svg
+              class="eit-icon"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="M21 21l-4.35-4.35"></path></svg
+            ><span class="eit-sr">Search</span><input type="search" placeholder="Search students, batches, lessons"
+          /></label>
+          <div class="p-top-right">
+            <div class="eit-seg has-thumb" role="group" aria-label="Language">
+              <span class="eit-seg__thumb" aria-hidden="true" style="width: 52px; transform: translateX(4px)"></span
+              ><button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button
+              ><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button>
+            </div>
+            <button
+              class="p-iconbtn"
+              data-notif-scope="mentor"
+              type="button"
+              aria-label="Notifications, 3 unread"
+              aria-expanded="false"
+              aria-controls="notif-menu"
+            >
+              <svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
+              ><span class="p-badge-count" data-unread-count="">3</span></button
+            ><a class="p-me" href="profile.html" style="text-decoration: none"
+              ><span class="p-avatar">KH</span
+              ><span style="display: flex; flex-direction: column"
+                ><span class="p-me-name">Kamrul Hasan</span><span class="p-me-sub">Mentor · Web Development</span></span
+              ></a
+            >
+            <div class="p-dropdown" role="dialog" aria-label="Notifications" id="notif-menu" hidden="" data-popover="">
+              <div class="p-row" style="justify-content: space-between; padding: 16px 18px 10px">
+                <strong style="font-size: 16px">Notifications</strong
+                ><button
+                  type="button"
+                  class="p-link"
+                  style="
+                    border: 0px;
+                    background: none;
+                    padding: 0px;
+                    font-style: inherit;
+                    font-variant: inherit;
+                    font-stretch: inherit;
+                    line-height: inherit;
+                    font-family: inherit;
+                    font-optical-sizing: inherit;
+                    font-size-adjust: inherit;
+                    font-kerning: inherit;
+                    font-feature-settings: inherit;
+                    font-variation-settings: inherit;
+                    font-weight: 600;
+                    font-size: 13px;
+                    cursor: pointer;
+                  "
+                  data-mark-read="#notif-menu"
+                >
+                  Mark all as read
+                </button>
+              </div>
+              <ul class="p-rows" style="padding: 0px 8px 8px">
+                <li style="align-items: flex-start">
+                  <span class="p-tile" style="width: 36px; height: 36px; border-radius: 10px"
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7l-5-5zM14 2v4a2 2 0 0 0 2 2h4"
+                      ></path></svg></span
+                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                      >Tanvir Hasan sent "Responsive landing page"</span
+                    ><span class="p-small" style="font-size: 12px">WordPress · Batch 14 · 1 h ago</span></span
+                  ><span
+                    aria-label="Unread"
+                    style="
+                      width: 8px;
+                      height: 8px;
+                      border-radius: 50%;
+                      background: var(--cyan);
+                      margin-top: 6px;
+                      flex: 0 0 auto;
+                    "
+                    data-unread=""
+                  ></span>
+                </li>
+                <li style="align-items: flex-start">
+                  <span class="p-tile p-tile--muted" style="width: 36px; height: 36px; border-radius: 10px"
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span
+                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                      >New question on "Building a custom header"</span
+                    ><span class="p-small" style="font-size: 12px">Nusrat Jahan · 2 h ago</span></span
+                  ><span
+                    aria-label="Unread"
+                    style="
+                      width: 8px;
+                      height: 8px;
+                      border-radius: 50%;
+                      background: var(--cyan);
+                      margin-top: 6px;
+                      flex: 0 0 auto;
+                    "
+                    data-unread=""
+                  ></span>
+                </li>
+                <li style="align-items: flex-start">
+                  <span class="p-tile p-tile--amber" style="width: 36px; height: 36px; border-radius: 10px"
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg></span
+                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                      >Class 12 recording is due by 9:00 AM</span
+                    ><span class="p-small" style="font-size: 12px">WordPress · Batch 14 · 3 h ago</span></span
+                  ><span
+                    aria-label="Unread"
+                    style="
+                      width: 8px;
+                      height: 8px;
+                      border-radius: 50%;
+                      background: var(--cyan);
+                      margin-top: 6px;
+                      flex: 0 0 auto;
+                    "
+                    data-unread=""
+                  ></span>
+                </li>
+                <li style="align-items: flex-start">
+                  <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
+                      ></path></svg></span
+                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 500"
+                      >Admin started reviewing your course</span
+                    ><span class="p-small" style="font-size: 12px"
+                      >Advanced WordPress Theme Development · yesterday</span
+                    ></span
+                  >
+                </li>
+              </ul>
+              <a
+                href="notifications.html"
+                class="p-link"
+                style="
+                  display: flex;
+                  justify-content: center;
+                  padding: 12px;
+                  border-top: 1px solid var(--line-soft);
+                  border-radius: 0px;
+                "
+                >See all notifications</a
+              >
+            </div>
+          </div>
+        </header>
+        <main class="p-main">
+          <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
+            <div style="display: flex; flex-direction: column; gap: 6px">
+              <h1 class="p-h1">Notifications</h1>
+              <p class="p-body">
+                Submissions, student questions and class reminders for your batches.
+                <strong data-notif-summary>3 unread</strong>
+              </p>
+            </div>
+            <button type="button" class="p-ghostbtn" data-mark-read="#notif-page">
+              <svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 6 7 17l-5-5"></path>
+                <path d="m22 10-7.5 7.5L13 16"></path></svg
+              >Mark all as read
+            </button>
+          </div>
+          <div class="p-split">
+            <section class="p-card p-card--flush" id="notif-page" aria-labelledby="nt-title" style="flex: 2 1 560px">
+              <h2 id="nt-title" class="eit-sr">All notifications</h2>
+              <div class="nt-head">
+                <div class="p-seg" role="group" aria-label="Show">
+                  <button type="button" aria-pressed="true" data-notif-show="all">All</button
+                  ><button type="button" aria-pressed="false" data-notif-show="unread">
+                    Unread <span data-notif-count>3</span>
+                  </button>
+                </div>
+                <div class="eit-chips" role="group" aria-label="Type">
+                  <button type="button" class="eit-chip is-on" aria-pressed="true" data-notif-type="">
+                    <span class="eit-chip__check" aria-hidden="true"
+                      ><svg class="eit-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 6 9 17l-5-5"></path></svg></span
+                    ><span class="eit-chip__label">All types</span></button
+                  ><button type="button" class="eit-chip" aria-pressed="false" data-notif-type="reviews">
+                    <span class="eit-chip__check" aria-hidden="true"
+                      ><svg class="eit-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 6 9 17l-5-5"></path></svg></span
+                    ><span class="eit-chip__label">Reviews</span></button
+                  ><button type="button" class="eit-chip" aria-pressed="false" data-notif-type="questions">
+                    <span class="eit-chip__check" aria-hidden="true"
+                      ><svg class="eit-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 6 9 17l-5-5"></path></svg></span
+                    ><span class="eit-chip__label">Questions</span></button
+                  ><button type="button" class="eit-chip" aria-pressed="false" data-notif-type="classes">
+                    <span class="eit-chip__check" aria-hidden="true"
+                      ><svg class="eit-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 6 9 17l-5-5"></path></svg></span
+                    ><span class="eit-chip__label">Classes</span></button
+                  ><button type="button" class="eit-chip" aria-pressed="false" data-notif-type="courses">
+                    <span class="eit-chip__check" aria-hidden="true"
+                      ><svg class="eit-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 6 9 17l-5-5"></path></svg></span
+                    ><span class="eit-chip__label">Courses</span></button
+                  ><button type="button" class="eit-chip" aria-pressed="false" data-notif-type="students">
+                    <span class="eit-chip__check" aria-hidden="true"
+                      ><svg class="eit-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 6 9 17l-5-5"></path></svg></span
+                    ><span class="eit-chip__label">Students</span>
+                  </button>
+                </div>
+              </div>
+              <div class="nt-group">
+                <h3 class="p-mono nt-day">Today</h3>
+                <ul class="nt-list">
+                  <li class="nt-item is-unread" data-type="reviews">
+                    <span class="p-tile"
+                      ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="8" y="2" width="8" height="4" rx="1"></rect>
+                        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                        <path d="m9 14 2 2 4-4"></path></svg></span
+                    ><a class="nt-link" href="review.html"
+                      ><span class="nt-title">Tanvir Hasan sent “Responsive landing page”</span
+                      ><span class="p-small">WordPress · Batch 14 · first attempt</span></a
+                    ><span class="nt-meta"
+                      ><span class="p-small">1 h ago</span
+                      ><span class="nt-dot" aria-label="Unread" data-unread=""></span
+                    ></span>
+                  </li>
+                  <li class="nt-item is-unread" data-type="questions">
+                    <span class="p-tile"
+                      ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span
+                    ><a class="nt-link" href="questions.html"
+                      ><span class="nt-title">New question on “Building a custom header”</span
+                      ><span class="p-small">Nusrat Jahan: “Is the mobile menu timing okay?”</span></a
+                    ><span class="nt-meta"
+                      ><span class="p-small">2 h ago</span
+                      ><span class="nt-dot" aria-label="Unread" data-unread=""></span
+                    ></span>
+                  </li>
+                  <li class="nt-item is-unread" data-type="classes">
+                    <span class="p-tile p-tile--amber"
+                      ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg></span
+                    ><a class="nt-link" href="schedule.html"
+                      ><span class="nt-title">Class 12 recording is due by 9:00 AM</span
+                      ><span class="p-small">WordPress · Batch 14 · 20 students are waiting</span></a
+                    ><span class="nt-meta"
+                      ><span class="p-small">3 h ago</span
+                      ><span class="nt-dot" aria-label="Unread" data-unread=""></span
+                    ></span>
+                  </li>
+                </ul>
+              </div>
+              <div class="nt-group">
+                <h3 class="p-mono nt-day">Yesterday</h3>
+                <ul class="nt-list">
+                  <li class="nt-item" data-type="courses">
+                    <span class="p-tile p-tile--muted"
+                      ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path>
+                        <path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg></span
+                    ><a class="nt-link" href="course-builder.html"
+                      ><span class="nt-title">Admin started reviewing your course</span
+                      ><span class="p-small"
+                        >Advanced WordPress Theme Development · locked while it is in review</span
+                      ></a
+                    ><span class="nt-meta"><span class="p-small">Yesterday</span></span>
+                  </li>
+                  <li class="nt-item" data-type="students">
+                    <span class="p-tile p-tile--red"
+                      ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 8v4M12 16h.01M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z"></path></svg></span
+                    ><a class="nt-link" href="batch.html"
+                      ><span class="nt-title">Rafiq Islam missed 2 classes in a row</span
+                      ><span class="p-small">WordPress · Batch 14 · 14% progress</span></a
+                    ><span class="nt-meta"><span class="p-small">Yesterday</span></span>
+                  </li>
+                </ul>
+              </div>
+              <div class="nt-group">
+                <h3 class="p-mono nt-day">Earlier</h3>
+                <ul class="nt-list">
+                  <li class="nt-item" data-type="reviews">
+                    <span class="p-tile"
+                      ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="8" y="2" width="8" height="4" rx="1"></rect>
+                        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                        <path d="m9 14 2 2 4-4"></path></svg></span
+                    ><a class="nt-link" href="review.html"
+                      ><span class="nt-title">Sadia Afrin resubmitted “Todo app with hooks”</span
+                      ><span class="p-small">React JS · Batch 6</span></a
+                    ><span class="nt-meta"><span class="p-small">13 Oct</span></span>
+                  </li>
+                  <li class="nt-item" data-type="classes">
+                    <span class="p-tile p-tile--muted"
+                      ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                          d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"
+                        ></path></svg></span
+                    ><a class="nt-link" href="schedule.html"
+                      ><span class="nt-title">React JS Batch 6 · Class 18 moved to 9:30 PM</span
+                      ><span class="p-small">Thu, 15 Oct · Zoom</span></a
+                    ><span class="nt-meta"><span class="p-small">12 Oct</span></span>
+                  </li>
+                  <li class="nt-item" data-type="courses">
+                    <span class="p-tile p-tile--green"
+                      ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 6 9 17l-5-5"></path></svg></span
+                    ><a class="nt-link" href="course-builder.html"
+                      ><span class="nt-title">Draft saved: WooCommerce Store Building</span
+                      ><span class="p-small">2 modules · 7 lessons</span></a
+                    ><span class="nt-meta"><span class="p-small">12 Oct</span></span>
+                  </li>
+                </ul>
+              </div>
+              <div class="hp-empty" data-notif-empty hidden>
+                <span class="p-tile p-tile--green" style="width: 52px; height: 52px; border-radius: 16px"
+                  ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M18 6 7 17l-5-5"></path>
+                    <path d="m22 10-7.5 7.5L13 16"></path></svg
+                ></span>
+                <strong style="font-size: 16px">You are all caught up</strong>
+                <span class="p-small" style="max-width: 360px"
+                  >Nothing here right now. New updates show up as they happen.</span
+                >
+              </div>
+            </section>
+            <aside style="flex: 1 1 280px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+              <section
+                class="p-card"
+                aria-labelledby="reach-title"
+                style="display: flex; flex-direction: column; gap: 16px"
+              >
+                <h2 id="reach-title" class="p-h3">How we reach you</h2>
+                <ul class="p-list">
+                  <li>
+                    <span class="p-tile"
+                      ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                        <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column"
+                      ><strong style="font-size: 14px">In the panel</strong
+                      ><span class="p-small">Every update, as it happens</span></span
+                    ><span class="eit-badge eit-badge--success">On</span>
+                  </li>
+                  <li>
+                    <span class="p-tile"
+                      ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="5" y="2" width="14" height="20" rx="2"></rect>
+                        <path d="M12 18h.01"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column"
+                      ><strong style="font-size: 14px">SMS</strong
+                      ><span class="p-small">+880 18XXXXXX21 · payments and class changes</span></span
+                    ><span class="eit-badge eit-badge--success">On</span>
+                  </li>
+                  <li>
+                    <span class="p-tile p-tile--muted"
+                      ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                        <path d="m22 7-10 5L2 7"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column"
+                      ><strong style="font-size: 14px">Email</strong><span class="p-small">Receipts only</span></span
+                    ><span class="eit-badge eit-badge--neutral">Some</span>
+                  </li>
+                </ul>
+                <a class="p-link" href="profile.html#notifications"
+                  >Change what we send
+                  <span class="p-arrow"
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M5 12h14M12 5l7 7-7 7"></path></svg></span
+                ></a>
+              </section>
+              <section
+                class="p-card"
+                aria-labelledby="side-title"
+                style="display: flex; flex-direction: column; gap: 12px"
+              >
+                <h2 id="side-title" class="p-h3">Waiting on you</h2>
+                <ul class="p-rows nt-side">
+                  <li>
+                    <span class="p-tile p-tile--muted"
+                      ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="8" y="2" width="8" height="4" rx="1"></rect>
+                        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                        <path d="m9 14 2 2 4-4"></path></svg></span
+                    ><a class="nt-side-link" href="review.html"
+                      ><strong>5 projects to review</strong><span class="p-small">Oldest sent 3 days ago</span></a
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m9 18 6-6-6-6"></path>
+                    </svg>
+                  </li>
+                  <li>
+                    <span class="p-tile p-tile--muted"
+                      ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span
+                    ><a class="nt-side-link" href="questions.html"
+                      ><strong>3 student questions</strong><span class="p-small">Oldest from this morning</span></a
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m9 18 6-6-6-6"></path>
+                    </svg>
+                  </li>
+                  <li>
+                    <span class="p-tile p-tile--muted"
+                      ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg></span
+                    ><a class="nt-side-link" href="schedule.html"
+                      ><strong>1 recording to upload</strong><span class="p-small">Class 12 · due 9:00 AM</span></a
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m9 18 6-6-6-6"></path>
+                    </svg>
+                  </li>
+                </ul>
+              </section>
+            </aside>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

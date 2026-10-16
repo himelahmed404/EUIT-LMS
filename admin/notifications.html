@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Notifications · European IT LMS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap"
+    />
+    <link rel="stylesheet" href="../assets/css/eit.css" />
+    <link rel="stylesheet" href="../assets/css/panel.css" />
+    <link rel="stylesheet" href="../assets/css/app.css" />
+    <script src="../assets/js/app.js" defer></script>
+    <script src="../assets/js/pages/notifications.js" defer></script>
+  </head>
+  <body>
+    <div class="p-shell">
+      <aside class="p-side">
+        <a class="p-brand" href="overview.html"
+          ><span class="p-brand-mark" aria-hidden="true"></span
+          ><span class="p-brand-text"
+            ><span class="p-brand-name">European IT</span><span class="p-brand-sub">INSTITUTE</span></span
+          ></a
+        >
+        <nav class="p-nav" aria-label="Admin panel">
+          <a href="overview.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="9" rx="1"></rect>
+              <rect x="14" y="3" width="7" height="5" rx="1"></rect>
+              <rect x="14" y="12" width="7" height="9" rx="1"></rect>
+              <rect x="3" y="16" width="7" height="5" rx="1"></rect></svg
+            ><span class="p-nav-text">Overview</span></a
+          ><span class="p-nav-label">Courses</span
+          ><a href="courses.html"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path>
+              <path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg
+            ><span class="p-nav-text">Courses &amp; batches</span
+            ><span class="p-nav-short" aria-hidden="true">Courses</span><span class="p-count">3</span></a
+          >
+          <div class="p-subnav">
+            <a href="course-review.html">Review &amp; publish<span class="p-count">1</span></a
+            ><a href="batch-detail.html">Batch detail</a><a href="batch-edit.html">Create a batch</a>
+          </div>
+          <span class="p-nav-label">People</span
+          ><a href="students.html"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg
+            ><span class="p-nav-text">Students &amp; payments</span
+            ><span class="p-nav-short" aria-hidden="true">Students</span></a
+          >
+          <div class="p-subnav"><a href="student-record.html">Student record</a></div>
+          <a href="mentors.html"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <rect x="2" y="7" width="20" height="14" rx="2"></rect>
+              <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path></svg
+            ><span class="p-nav-text">Mentors</span></a
+          ><a href="roles.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+              ></path>
+              <path d="m9 12 2 2 4-4"></path></svg
+            ><span class="p-nav-text">Roles &amp; access</span
+            ><span class="p-nav-short" aria-hidden="true">Roles</span></a
+          ><span class="p-nav-label">Admissions</span
+          ><a href="leads.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m3 11 18-5v12L3 14v-3z"></path>
+              <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg
+            ><span class="p-nav-text">Seminar leads</span><span class="p-nav-short" aria-hidden="true">Leads</span
+            ><span class="p-count">6</span></a
+          ><span class="p-nav-label">Account</span
+          ><a href="notifications.html" aria-current="page"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+              <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
+            ><span class="p-nav-text">Notifications</span><span class="p-count" data-unread-count="">3</span></a
+          ><a href="settings.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
+              ></path>
+              <circle cx="12" cy="12" r="3"></circle></svg
+            ><span class="p-nav-text">Settings</span></a
+          ><a href="profile.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle></svg
+            ><span class="p-nav-text">My profile</span></a
+          >
+        </nav>
+      </aside>
+      <div class="p-content">
+        <header class="p-top">
+          <label class="p-search"
+            ><svg
+              class="eit-icon"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="M21 21l-4.35-4.35"></path></svg
+            ><span class="eit-sr">Search</span><input type="search" placeholder="Search students, courses, payments"
+          /></label>
+          <div class="p-top-right">
+            <div class="eit-seg has-thumb" role="group" aria-label="Language">
+              <span class="eit-seg__thumb" aria-hidden="true" style="width: 52px; transform: translateX(4px)"></span
+              ><button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button
+              ><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button>
+            </div>
+            <button
+              class="p-iconbtn"
+              data-notif-scope="admin"
+              type="button"
+              aria-label="Notifications, 3 unread"
+              aria-expanded="false"
+              aria-controls="notif-menu"
+            >
+              <svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
+              ><span class="p-badge-count" data-unread-count="">3</span></button
+            ><a class="p-me" href="profile.html" style="text-decoration: none"
+              ><span class="p-avatar">SS</span
+              ><span style="display: flex; flex-direction: column"
+                ><span class="p-me-name">Sharmin Sultana</span><span class="p-me-sub">Admin</span></span
+              ></a
+            >
+            <div class="p-dropdown" role="dialog" aria-label="Notifications" id="notif-menu" hidden="" data-popover="">
+              <div class="p-row" style="justify-content: space-between; padding: 16px 18px 10px">
+                <strong style="font-size: 16px">Notifications</strong
+                ><button
+                  type="button"
+                  class="p-link"
+                  style="
+                    border: 0px;
+                    background: none;
+                    padding: 0px;
+                    font-style: inherit;
+                    font-variant: inherit;
+                    font-stretch: inherit;
+                    line-height: inherit;
+                    font-family: inherit;
+                    font-optical-sizing: inherit;
+                    font-size-adjust: inherit;
+                    font-kerning: inherit;
+                    font-feature-settings: inherit;
+                    font-variation-settings: inherit;
+                    font-weight: 600;
+                    font-size: 13px;
+                    cursor: pointer;
+                  "
+                  data-mark-read="#notif-menu"
+                >
+                  Mark all as read
+                </button>
+              </div>
+              <ul class="p-rows" style="padding: 0px 8px 8px">
+                <li style="align-items: flex-start">
+                  <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"
+                      ></path></svg></span
+                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                      >৳5,000 received from Tanvir Hasan</span
+                    ><span class="p-small" style="font-size: 12px">bKash · installment 2 of 3 · 12 min ago</span></span
+                  ><span
+                    aria-label="Unread"
+                    style="
+                      width: 8px;
+                      height: 8px;
+                      border-radius: 50%;
+                      background: var(--cyan);
+                      margin-top: 6px;
+                      flex: 0 0 auto;
+                    "
+                    data-unread=""
+                  ></span>
+                </li>
+                <li style="align-items: flex-start">
+                  <span class="p-tile" style="width: 36px; height: 36px; border-radius: 10px"
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
+                      ></path></svg></span
+                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                      >New course sent for review</span
+                    ><span class="p-small" style="font-size: 12px"
+                      >Facebook Ads in Practice · Imran Kabir · 1 h ago</span
+                    ></span
+                  ><span
+                    aria-label="Unread"
+                    style="
+                      width: 8px;
+                      height: 8px;
+                      border-radius: 50%;
+                      background: var(--cyan);
+                      margin-top: 6px;
+                      flex: 0 0 auto;
+                    "
+                    data-unread=""
+                  ></span>
+                </li>
+                <li style="align-items: flex-start">
+                  <span class="p-tile p-tile--muted" style="width: 36px; height: 36px; border-radius: 10px"
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m3 11 18-5v12L3 14v-3zM11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg></span
+                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                      >6 new bookings for Saturday’s seminar</span
+                    ><span class="p-small" style="font-size: 12px">Web Development · 3 h ago</span></span
+                  ><span
+                    aria-label="Unread"
+                    style="
+                      width: 8px;
+                      height: 8px;
+                      border-radius: 50%;
+                      background: var(--cyan);
+                      margin-top: 6px;
+                      flex: 0 0 auto;
+                    "
+                    data-unread=""
+                  ></span>
+                </li>
+                <li style="align-items: flex-start">
+                  <span class="p-tile p-tile--amber" style="width: 36px; height: 36px; border-radius: 10px"
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M5 11h14v11H5zM7 11V7a5 5 0 0 1 10 0v4"></path></svg></span
+                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 500"
+                      >Access paused for Mehedi Hasan</span
+                    ><span class="p-small" style="font-size: 12px">Installment 2 overdue 7 days · 8 Oct</span></span
+                  >
+                </li>
+              </ul>
+              <a
+                href="notifications.html"
+                class="p-link"
+                style="
+                  display: flex;
+                  justify-content: center;
+                  padding: 12px;
+                  border-top: 1px solid var(--line-soft);
+                  border-radius: 0px;
+                "
+                >See all notifications</a
+              >
+            </div>
+          </div>
+        </header>
+        <main class="p-main">
+          <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
+            <div style="display: flex; flex-direction: column; gap: 6px">
+              <h1 class="p-h1">Notifications</h1>
+              <p class="p-body">
+                Payments, course reviews, seminar bookings and team changes.
+                <strong data-notif-summary>3 unread</strong>
+              </p>
+            </div>
+            <button type="button" class="p-ghostbtn" data-mark-read="#notif-page">
+              <svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 6 7 17l-5-5"></path>
+                <path d="m22 10-7.5 7.5L13 16"></path></svg
+              >Mark all as read
+            </button>
+          </div>
+          <div class="p-split">
+            <section class="p-card p-card--flush" id="notif-page" aria-labelledby="nt-title" style="flex: 2 1 560px">
+              <h2 id="nt-title" class="eit-sr">All notifications</h2>
+              <div class="nt-head">
+                <div class="p-seg" role="group" aria-label="Show">
+                  <button type="button" aria-pressed="true" data-notif-show="all">All</button
+                  ><button type="button" aria-pressed="false" data-notif-show="unread">
+                    Unread <span data-notif-count>3</span>
+                  </button>
+                </div>
+                <div class="eit-chips" role="group" aria-label="Type">
+                  <button type="button" class="eit-chip is-on" aria-pressed="true" data-notif-type="">
+                    <span class="eit-chip__check" aria-hidden="true"
+                      ><svg class="eit-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 6 9 17l-5-5"></path></svg></span
+                    ><span class="eit-chip__label">All types</span></button
+                  ><button type="button" class="eit-chip" aria-pressed="false" data-notif-type="payments">
+                    <span class="eit-chip__check" aria-hidden="true"
+                      ><svg class="eit-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 6 9 17l-5-5"></path></svg></span
+                    ><span class="eit-chip__label">Payments</span></button
+                  ><button type="button" class="eit-chip" aria-pressed="false" data-notif-type="courses">
+                    <span class="eit-chip__check" aria-hidden="true"
+                      ><svg class="eit-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 6 9 17l-5-5"></path></svg></span
+                    ><span class="eit-chip__label">Courses</span></button
+                  ><button type="button" class="eit-chip" aria-pressed="false" data-notif-type="admissions">
+                    <span class="eit-chip__check" aria-hidden="true"
+                      ><svg class="eit-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 6 9 17l-5-5"></path></svg></span
+                    ><span class="eit-chip__label">Admissions</span></button
+                  ><button type="button" class="eit-chip" aria-pressed="false" data-notif-type="team">
+                    <span class="eit-chip__check" aria-hidden="true"
+                      ><svg class="eit-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 6 9 17l-5-5"></path></svg></span
+                    ><span class="eit-chip__label">Team</span>
+                  </button>
+                </div>
+              </div>
+              <div class="nt-group">
+                <h3 class="p-mono nt-day">Today</h3>
+                <ul class="nt-list">
+                  <li class="nt-item is-unread" data-type="payments">
+                    <span class="p-tile p-tile--green"
+                      ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+                        <circle cx="12" cy="12" r="2"></circle>
+                        <path d="M6 12h.01M18 12h.01"></path></svg></span
+                    ><a class="nt-link" href="students.html"
+                      ><span class="nt-title">৳5,000 received from Tanvir Hasan</span
+                      ><span class="p-small">bKash · installment 2 of 3 · WordPress Batch 14</span></a
+                    ><span class="nt-meta"
+                      ><span class="p-small">12 min ago</span
+                      ><span class="nt-dot" aria-label="Unread" data-unread=""></span
+                    ></span>
+                  </li>
+                  <li class="nt-item is-unread" data-type="courses">
+                    <span class="p-tile"
+                      ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path>
+                        <path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg></span
+                    ><a class="nt-link" href="course-review.html"
+                      ><span class="nt-title">New course sent for review</span
+                      ><span class="p-small">Facebook Ads in Practice · Imran Kabir · 12 lessons</span></a
+                    ><span class="nt-meta"
+                      ><span class="p-small">1 h ago</span
+                      ><span class="nt-dot" aria-label="Unread" data-unread=""></span
+                    ></span>
+                  </li>
+                  <li class="nt-item is-unread" data-type="admissions">
+                    <span class="p-tile"
+                      ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m3 11 18-5v12L3 14v-3z"></path>
+                        <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg></span
+                    ><a class="nt-link" href="leads.html"
+                      ><span class="nt-title">6 new bookings for Saturday’s seminar</span
+                      ><span class="p-small">Web Development · 32 of 40 seats booked</span></a
+                    ><span class="nt-meta"
+                      ><span class="p-small">3 h ago</span
+                      ><span class="nt-dot" aria-label="Unread" data-unread=""></span
+                    ></span>
+                  </li>
+                </ul>
+              </div>
+              <div class="nt-group">
+                <h3 class="p-mono nt-day">Yesterday</h3>
+                <ul class="nt-list">
+                  <li class="nt-item" data-type="payments">
+                    <span class="p-tile p-tile--red"
+                      ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 8v4M12 16h.01M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z"></path></svg></span
+                    ><a class="nt-link" href="students.html"
+                      ><span class="nt-title">Installment overdue: Rafiq Islam</span
+                      ><span class="p-small">৳5,000 · 6 days late · SMS reminder sent</span></a
+                    ><span class="nt-meta"><span class="p-small">Yesterday</span></span>
+                  </li>
+                  <li class="nt-item" data-type="team">
+                    <span class="p-tile p-tile--muted"
+                      ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></span
+                    ><a class="nt-link" href="roles.html"
+                      ><span class="nt-title">Tania Akter invited Sabbir Rahman as Admissions</span
+                      ><span class="p-small">Invite waiting · sent by SMS</span></a
+                    ><span class="nt-meta"><span class="p-small">Yesterday</span></span>
+                  </li>
+                </ul>
+              </div>
+              <div class="nt-group">
+                <h3 class="p-mono nt-day">Earlier</h3>
+                <ul class="nt-list">
+                  <li class="nt-item" data-type="payments">
+                    <span class="p-tile p-tile--amber"
+                      ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="3" y="11" width="18" height="11" rx="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span
+                    ><a class="nt-link" href="student-record.html"
+                      ><span class="nt-title">Access paused for Mehedi Hasan</span
+                      ><span class="p-small">Installment 2 overdue 7 days</span></a
+                    ><span class="nt-meta"><span class="p-small">8 Oct</span></span>
+                  </li>
+                  <li class="nt-item" data-type="courses">
+                    <span class="p-tile p-tile--amber"
+                      ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span
+                    ><a class="nt-link" href="courses.html"
+                      ><span class="nt-title">Cyber Security · Batch 4 is under half full</span
+                      ><span class="p-small">9 of 20 seats · starts Mon, 26 Oct</span></a
+                    ><span class="nt-meta"><span class="p-small">7 Oct</span></span>
+                  </li>
+                  <li class="nt-item" data-type="admissions">
+                    <span class="p-tile p-tile--green"
+                      ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 6 9 17l-5-5"></path></svg></span
+                    ><a class="nt-link" href="leads.html"
+                      ><span class="nt-title">Lamia Chowdhury enrolled after the seminar</span
+                      ><span class="p-small">Graphic Design · Batch 10 · paid ৳6,000</span></a
+                    ><span class="nt-meta"><span class="p-small">6 Oct</span></span>
+                  </li>
+                </ul>
+              </div>
+              <div class="hp-empty" data-notif-empty hidden>
+                <span class="p-tile p-tile--green" style="width: 52px; height: 52px; border-radius: 16px"
+                  ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M18 6 7 17l-5-5"></path>
+                    <path d="m22 10-7.5 7.5L13 16"></path></svg
+                ></span>
+                <strong style="font-size: 16px">You are all caught up</strong>
+                <span class="p-small" style="max-width: 360px"
+                  >Nothing here right now. New updates show up as they happen.</span
+                >
+              </div>
+            </section>
+            <aside style="flex: 1 1 280px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+              <section
+                class="p-card"
+                aria-labelledby="reach-title"
+                style="display: flex; flex-direction: column; gap: 16px"
+              >
+                <h2 id="reach-title" class="p-h3">How we reach you</h2>
+                <ul class="p-list">
+                  <li>
+                    <span class="p-tile"
+                      ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                        <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column"
+                      ><strong style="font-size: 14px">In the panel</strong
+                      ><span class="p-small">Every update, as it happens</span></span
+                    ><span class="eit-badge eit-badge--success">On</span>
+                  </li>
+                  <li>
+                    <span class="p-tile"
+                      ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="5" y="2" width="14" height="20" rx="2"></rect>
+                        <path d="M12 18h.01"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column"
+                      ><strong style="font-size: 14px">SMS</strong
+                      ><span class="p-small">+880 17XXXXXX30 · payments and class changes</span></span
+                    ><span class="eit-badge eit-badge--success">On</span>
+                  </li>
+                  <li>
+                    <span class="p-tile p-tile--muted"
+                      ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                        <path d="m22 7-10 5L2 7"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column"
+                      ><strong style="font-size: 14px">Email</strong><span class="p-small">Receipts only</span></span
+                    ><span class="eit-badge eit-badge--neutral">Some</span>
+                  </li>
+                </ul>
+                <a class="p-link" href="settings.html#sms"
+                  >Change what we send
+                  <span class="p-arrow"
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M5 12h14M12 5l7 7-7 7"></path></svg></span
+                ></a>
+              </section>
+              <section
+                class="p-card"
+                aria-labelledby="side-title"
+                style="display: flex; flex-direction: column; gap: 12px"
+              >
+                <h2 id="side-title" class="p-h3">Needs your attention</h2>
+                <ul class="p-rows nt-side">
+                  <li>
+                    <span class="p-tile p-tile--muted"
+                      ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path>
+                        <path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg></span
+                    ><a class="nt-side-link" href="courses.html"
+                      ><strong>3 courses waiting for review</strong><span class="p-small">Oldest sent 13 Oct</span></a
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m9 18 6-6-6-6"></path>
+                    </svg>
+                  </li>
+                  <li>
+                    <span class="p-tile p-tile--muted"
+                      ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 8v4M12 16h.01M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z"></path></svg></span
+                    ><a class="nt-side-link" href="students.html"
+                      ><strong>14 installments overdue</strong
+                      ><span class="p-small">৳70,000 · 2 accesses paused</span></a
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m9 18 6-6-6-6"></path>
+                    </svg>
+                  </li>
+                  <li>
+                    <span class="p-tile p-tile--muted"
+                      ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m3 11 18-5v12L3 14v-3z"></path>
+                        <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg></span
+                    ><a class="nt-side-link" href="leads.html"
+                      ><strong>6 new seminar bookings</strong><span class="p-small">For Sat, 17 Oct</span></a
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m9 18 6-6-6-6"></path>
+                    </svg>
+                  </li>
+                </ul>
+              </section>
+            </aside>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

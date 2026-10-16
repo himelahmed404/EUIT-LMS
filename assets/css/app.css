@@ -78,3 +78,209 @@ body.page-panel {
 .p-scroll {
   position: relative;
 }
+
+/* ---------- Balanced card grids ----------
+   The design's grids use repeat(auto-fit, minmax(...)), which strands one card on its own row
+   (4 cards as 3 + 1, 6 as 4 + 2). These rules pick a column count that divides the cards evenly.
+   The calc((W - 100%) * 999) term is 0 or huge, so it switches the minimum column width at a
+   container width W: no media queries, so it works in any column. Gaps up to 24px are allowed for. */
+[style*="repeat(auto-fit"]:has(> :nth-child(3):last-child) {
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(max(calc((100% - 48px) / 3), min(100%, calc((600px - 100%) * 999))), 1fr)
+  ) !important;
+}
+[style*="repeat(auto-fit"]:has(> :nth-child(4):last-child) {
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(
+      max(
+        calc((100% - 72px) / 4),
+        min(calc((100% - 24px) / 2), calc((860px - 100%) * 999)),
+        min(100%, calc((480px - 100%) * 999))
+      ),
+      1fr
+    )
+  ) !important;
+}
+[style*="repeat(auto-fit"]:has(> :nth-child(6):last-child) {
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(
+      max(
+        calc((100% - 48px) / 3),
+        min(calc((100% - 24px) / 2), calc((640px - 100%) * 999)),
+        min(100%, calc((480px - 100%) * 999))
+      ),
+      1fr
+    )
+  ) !important;
+}
+/* Four stat cards: 4 across, otherwise 2 x 2, phones included (compact cards). */
+[style*="repeat(auto-fit"]:has(> .p-stat:nth-child(4):last-child) {
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(max(calc((100% - 72px) / 4), min(calc((100% - 24px) / 2), calc((800px - 100%) * 999))), 1fr)
+  ) !important;
+}
+@media (max-width: 720px) {
+  .p-stat {
+    padding: 16px;
+    gap: 10px;
+  }
+  .p-stat .p-num {
+    font-size: 24px;
+  }
+  .p-stat-top {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+
+/* ---------- Tables ----------
+   Wide tables scroll inside their card. On phones a soft edge shows there is more to the right. */
+@media (max-width: 1099px) {
+  .p-scroll {
+    background:
+      linear-gradient(to right, var(--surface-card) 30%, rgba(255, 255, 255, 0)) left center / 32px 100% no-repeat local,
+      linear-gradient(to left, var(--surface-card) 30%, rgba(255, 255, 255, 0)) right center / 32px 100% no-repeat local,
+      radial-gradient(farthest-side at 0 50%, rgba(10, 27, 44, 0.14), transparent) left center / 12px 100% no-repeat
+        scroll,
+      radial-gradient(farthest-side at 100% 50%, rgba(10, 27, 44, 0.14), transparent) right center / 12px 100% no-repeat
+        scroll;
+  }
+}
+
+/* ---------- Notifications page (student, mentor and admin) ---------- */
+.nt-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--line-soft);
+}
+.nt-head .eit-chip {
+  min-height: 36px;
+  padding: 0 14px;
+  font-size: 14px;
+}
+.nt-group {
+  padding: 4px 12px 12px;
+}
+.nt-group + .nt-group {
+  border-top: 1px solid var(--line-soft);
+}
+.nt-day {
+  margin: 0;
+  padding: 14px 8px 6px;
+}
+.nt-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.nt-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 12px;
+  border-radius: 14px;
+  transition: background var(--duration-fast) var(--ease-standard);
+}
+.nt-item:hover {
+  background: var(--surface);
+}
+.nt-item:hover > .p-tile {
+  transform: rotate(-8deg) scale(1.08);
+}
+.nt-item.is-unread {
+  background: rgba(227, 246, 253, 0.6);
+}
+.nt-item:has(.nt-link:focus-visible) {
+  box-shadow: var(--focus-ring);
+}
+.nt-link {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: var(--ink);
+  text-decoration: none;
+  outline: none;
+}
+/* The whole row opens the notification. */
+.nt-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+.nt-title {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.nt-item.is-unread .nt-title {
+  font-weight: 700;
+}
+.nt-meta {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  white-space: nowrap;
+}
+.nt-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(0, 174, 238, 0.18);
+}
+.nt-side > li {
+  position: relative;
+}
+.nt-side-link {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 14px;
+}
+.nt-side-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+}
+.nt-side > li > svg {
+  color: var(--ink-3);
+}
+@media (max-width: 720px) {
+  .nt-head {
+    padding: 14px 12px;
+  }
+  .nt-group {
+    padding: 4px 4px 8px;
+  }
+  .nt-item {
+    gap: 12px;
+    padding: 12px 10px;
+  }
+}
+
+/* A switch the person can't change (for example payment reminders while paying in parts). */
+.p-switch:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}

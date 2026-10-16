@@ -87,6 +87,10 @@
   --lift: translateY(-2px);
   --reveal-from: translateY(16px);
   --pop-from: scale(0.85);
+  /* Layout: one page width for every panel screen, centred in the space beside the sidebar. */
+  --side-w: 272px;
+  --page-max: 1320px;
+  --page-pad: 32px;
 }
 [data-theme="ink"] {
   --cyan-hover: #33c1f3;
@@ -255,10 +259,12 @@
   animation-delay: 280ms;
 }
 
-/* ---------- Shell ---------- */
+/* ---------- Shell ----------
+   Desktop (1100px+): full sidebar. Tablet (721-1099px): icon rail. Phone (720px and below): bottom tabs.
+   The sidebar never wraps above the page: it stays beside it and sticks while the page scrolls. */
 .p-shell {
   display: flex;
-  flex-wrap: wrap;
+  align-items: flex-start;
   min-height: 100vh;
   background: var(--surface);
   color: var(--ink);
@@ -268,8 +274,15 @@
   -webkit-font-smoothing: antialiased;
 }
 .p-side {
-  flex: 1 1 256px;
-  max-width: 100%;
+  flex: 0 0 var(--side-w);
+  width: var(--side-w);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
   box-sizing: border-box;
   background: var(--surface-card);
   border-right: 1px solid var(--line);
@@ -279,8 +292,9 @@
   gap: 24px;
 }
 .p-content {
-  flex: 999 1 560px;
+  flex: 1 1 0;
   min-width: 0;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -339,7 +353,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   min-height: 48px;
   padding: 0 10px 0 8px;
   border-radius: 14px;
@@ -449,15 +463,25 @@
 }
 
 .p-top {
+  position: sticky;
+  top: 0;
+  z-index: 25;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 16px;
   min-height: 72px;
-  padding: 12px 32px;
+  /* Line the bar's contents up with the centred page column below it. */
+  padding: 12px max(var(--page-pad), calc((100% - var(--page-max)) / 2 + var(--page-pad)));
   box-sizing: border-box;
   background: rgba(255, 255, 255, 0.92);
+  -webkit-backdrop-filter: saturate(1.4) blur(10px);
+  backdrop-filter: saturate(1.4) blur(10px);
   border-bottom: 1px solid var(--line);
+}
+/* The brand mark only shows in the top bar on phones, where the sidebar becomes bottom tabs. */
+.p-top-brand {
+  display: none;
 }
 .p-top-right {
   margin-left: auto;
@@ -610,9 +634,10 @@
 }
 .p-main {
   width: 100%;
-  max-width: 1280px;
+  max-width: var(--page-max);
+  margin-inline: auto;
   box-sizing: border-box;
-  padding: 32px;
+  padding: var(--page-pad);
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -1502,27 +1527,207 @@ textarea:focus-visible {
   box-shadow: var(--focus-ring);
 }
 
+/* Nav labels: the full label, plus an optional short one for the phone tab bar. */
+.p-nav-text {
+  min-width: 0;
+}
+.p-nav-short {
+  display: none;
+}
+/* Parent of the current sub-page (admin "Courses & batches" while on "Batch detail"). */
+.p-nav a:has(+ .p-subnav [aria-current="page"]) {
+  color: var(--cyan-deep);
+  font-weight: 600;
+}
+.p-nav a:has(+ .p-subnav [aria-current="page"]) > :first-child:not(.p-count) {
+  background: var(--cyan-soft);
+  color: var(--cyan-ink);
+}
+/* "More" tab and sheet: built by app.js for phones only. */
+.p-more {
+  display: none;
+}
+
+/* ---------- Tablets: the sidebar folds into an icon rail ---------- */
+@media (min-width: 721px) and (max-width: 1099px) {
+  :root {
+    --side-w: 84px;
+    --page-pad: 24px;
+  }
+  .p-side {
+    padding: 16px 12px;
+    align-items: center;
+    gap: 18px;
+  }
+  .p-side > .p-brand {
+    padding: 6px;
+  }
+  .p-side .p-brand-text,
+  .p-side > .p-help,
+  .p-side .p-nav-label,
+  .p-side .p-subnav {
+    display: none;
+  }
+  .p-side .p-nav {
+    align-items: center;
+    gap: 6px;
+  }
+  .p-side .p-nav a {
+    width: 56px;
+    min-height: 52px;
+    padding: 0;
+    gap: 0;
+    justify-content: center;
+    font-size: 0;
+  }
+  .p-side .p-nav a > :first-child:not(.p-count) {
+    width: 38px;
+    height: 38px;
+    padding: 9px;
+  }
+  .p-side .p-nav-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  .p-side .p-nav .p-count {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    font-size: 10px;
+    box-shadow: 0 0 0 2px var(--surface-card);
+  }
+  /* Lock shown on paused items sits on the tile's corner. */
+  .p-side .p-nav a > svg:last-child:not(:first-child) {
+    position: absolute;
+    right: 4px;
+    bottom: 4px;
+    width: 14px;
+    height: 14px;
+    margin: 0 !important;
+    padding: 2px;
+    border-radius: 50%;
+    background: var(--surface-card);
+  }
+  .p-top .p-me-name,
+  .p-top .p-me-sub {
+    display: none;
+  }
+  .p-top .p-me {
+    padding: 2px;
+  }
+}
+
 /* ---------- Phones: sidebar becomes a bottom tab bar (School of GenZ pattern) ---------- */
 @media (max-width: 720px) {
-  .p-main {
-    padding: 20px 16px 104px;
+  :root {
+    --page-pad: 16px;
   }
+  .p-main {
+    padding: 20px 16px 112px;
+  }
+  /* One compact row: brand, search (opens wide when tapped), language, bell, avatar. */
   .p-top {
-    padding: 12px 16px;
+    position: relative;
+    gap: 8px;
+    min-height: 60px;
+    padding: 8px 12px;
+  }
+  .p-top-brand {
+    display: inline-flex;
+    margin-right: auto;
+    padding: 4px;
+  }
+  .p-top-brand .p-brand-text {
+    display: none;
+  }
+  .p-top-brand .p-brand-mark {
+    width: 32px;
+    height: 32px;
+  }
+  .p-search {
+    order: 1;
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    justify-content: center;
+    border-color: var(--line);
+    cursor: pointer;
+  }
+  .p-search input {
+    flex: 0 0 0;
+    width: 0;
+    padding: 0;
+  }
+  .p-search:focus-within {
+    order: 3;
+    flex: 1 0 100%;
+    justify-content: flex-start;
+    padding: 0 14px;
+  }
+  .p-search:focus-within input {
+    flex: 1 1 auto;
+  }
+  .p-top-right {
+    order: 2;
+    margin-left: 0;
+    gap: 6px;
+    flex-wrap: nowrap;
+    position: static;
+  }
+  .p-top-right .eit-seg__btn {
+    min-width: 36px;
+    padding: 0 8px;
+  }
+  .p-iconbtn {
+    width: 40px;
+    height: 40px;
+  }
+  .p-top .p-me {
+    padding: 0;
+  }
+  .p-top .p-me .p-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 13px;
+  }
+  .p-top .p-me-name,
+  .p-top .p-me-sub {
+    display: none;
+  }
+  .p-dropdown {
+    top: calc(100% + 6px);
+    left: 8px;
+    right: 8px;
+    width: auto;
+    max-height: calc(100vh - 160px);
+    overflow-y: auto;
   }
   .p-side {
     position: fixed;
     left: 0;
     right: 0;
+    top: auto;
     bottom: 0;
     z-index: 30;
+    width: auto;
+    height: auto;
+    overflow: visible;
     flex: none;
     flex-direction: row;
-    padding: 6px 8px;
+    padding: 6px 8px calc(6px + env(safe-area-inset-bottom, 0px));
     gap: 0;
     border-right: 0;
     border-top: 1px solid var(--line);
     background: var(--surface-card);
+    box-shadow: 0 -6px 20px rgba(10, 27, 44, 0.06);
   }
   .p-side > .p-brand,
   .p-side > .p-help,
@@ -1536,7 +1741,15 @@ textarea:focus-visible {
     gap: 2px;
     overflow-x: auto;
   }
-  .p-side .p-nav a {
+  /* Four main tabs plus "More" once app.js has built the sheet; without it the bar scrolls. */
+  .p-side.has-more .p-nav {
+    overflow: visible;
+  }
+  .p-side.has-more .p-nav > a:nth-of-type(n + 5) {
+    display: none;
+  }
+  .p-side .p-nav a,
+  .p-side .p-more {
     flex: 1 0 64px;
     flex-direction: column;
     justify-content: center;
@@ -1544,13 +1757,38 @@ textarea:focus-visible {
     min-height: 60px;
     padding: 4px;
     font-size: 11px;
+    line-height: 1.2;
     text-align: center;
     border-radius: 12px;
+  }
+  .p-side.has-more .p-nav a,
+  .p-side.has-more .p-more {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  .p-side .p-nav-text:has(+ .p-nav-short) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  .p-side .p-nav-short {
+    display: inline;
   }
   .p-side .p-nav a > :first-child:not(.p-count) {
     width: 30px;
     height: 30px;
     padding: 6px;
+  }
+  .p-side .p-nav a > svg:last-child:not(:first-child) {
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    width: 14px;
+    height: 14px;
+    margin: 0 !important;
   }
   .p-side .p-count {
     position: absolute;
@@ -1561,6 +1799,149 @@ textarea:focus-visible {
     font-size: 10px;
     padding: 0 5px;
   }
+  .p-more {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 0;
+    background: transparent;
+    color: var(--ink-2);
+    font: inherit;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .p-more > svg {
+    width: 30px;
+    height: 30px;
+    padding: 6px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background: var(--track);
+  }
+  .p-more.is-current {
+    background: var(--cyan-soft);
+    color: var(--cyan-deep);
+    font-weight: 600;
+  }
+  .p-more.is-current > svg {
+    background: var(--cyan);
+    color: var(--on-cyan);
+  }
+  .p-more .p-pip {
+    top: 6px;
+    right: calc(50% - 20px);
+  }
+}
+
+/* Bottom sheet listing the tabs that don't fit (phones). */
+.p-sheet-wrap {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  display: flex;
+  align-items: flex-end;
+  background: rgba(10, 27, 44, 0.5);
+  animation: p-fade 200ms var(--ease-standard) both;
+}
+.p-sheet {
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+  background: var(--surface-card);
+  border-radius: 24px 24px 0 0;
+  padding: 10px 16px calc(20px + env(safe-area-inset-bottom, 0px));
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  animation: p-sheet-up 320ms var(--ease-out-expo) both;
+}
+@keyframes p-sheet-up {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+.p-sheet-grip {
+  align-self: center;
+  width: 40px;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--line-strong);
+}
+.p-sheet .p-nav-label {
+  padding: 10px 4px 2px;
+}
+.p-sheet a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 0 10px;
+  border-radius: 14px;
+  color: var(--ink);
+  font-weight: 500;
+  text-decoration: none;
+}
+.p-sheet a:hover,
+.p-sheet a:focus-visible {
+  background: var(--surface);
+}
+.p-sheet a[aria-current="page"] {
+  background: var(--cyan-soft);
+  color: var(--cyan-deep);
+  font-weight: 600;
+}
+.p-sheet a > svg:first-child,
+.p-sheet .p-sheet-ico {
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background: var(--track);
+  color: var(--ink-2);
+  flex: none;
+}
+.p-sheet a[aria-current="page"] > svg:first-child {
+  background: var(--cyan);
+  color: var(--on-cyan);
+}
+.p-sheet a > svg:last-child:not(:first-child) {
+  margin-left: auto;
+  width: 16px;
+  height: 16px;
+}
+.p-sheet .p-sheet-sub {
+  padding-left: 58px;
+  min-height: 44px;
+  font-size: 14px;
+  color: var(--ink-2);
+}
+.p-sheet .p-nav-short {
+  display: none;
+}
+.p-sheet a[aria-disabled="true"] {
+  color: var(--ink-3);
+  cursor: not-allowed;
+}
+.p-sheet .p-sheet-me {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 60px;
+  margin: 4px 0;
+  padding: 8px 12px;
+  border-radius: 16px;
+  background: var(--surface);
+}
+.p-sheet-me > span:last-child {
+  display: flex;
+  flex-direction: column;
 }
 
 @media (prefers-reduced-motion: reduce) {
