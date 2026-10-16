@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="is-console">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,310 +8,623 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap"
     />
     <link rel="stylesheet" href="../assets/css/eit.css" />
     <link rel="stylesheet" href="../assets/css/panel.css" />
     <link rel="stylesheet" href="../assets/css/app.css" />
+    <link rel="stylesheet" href="../assets/css/console.css" />
+    <script src="../assets/js/theme.js"></script>
     <script src="../assets/js/app.js" defer=""></script>
   </head>
   <body>
-    <div class="p-shell">
-      <aside class="p-side">
-        <a class="p-brand" href="overview.html"
-          ><span class="p-brand-mark" aria-hidden="true"></span
-          ><span class="p-brand-text"
-            ><span class="p-brand-name">European IT</span><span class="p-brand-sub">INSTITUTE</span></span
-          ></a
-        >
-        <nav class="p-nav" aria-label="Admin panel">
-          <a href="overview.html"
-            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="3" y="3" width="7" height="9" rx="1"></rect>
-              <rect x="14" y="3" width="7" height="5" rx="1"></rect>
-              <rect x="14" y="12" width="7" height="9" rx="1"></rect>
-              <rect x="3" y="16" width="7" height="5" rx="1"></rect></svg
-            ><span class="p-nav-text">Overview</span></a
-          ><span class="p-nav-label">Courses</span
-          ><a href="courses.html"
-            ><svg
-              class="eit-icon"
-              width="20"
-              height="20"
+    <div class="p-shell p-console">
+      <aside class="c-side" id="c-side">
+        <div class="c-brand">
+          <a class="c-brand-link" href="overview.html" aria-label="European IT admin console, overview"
+            ><span class="c-logo" aria-hidden="true"
+              ><svg
+                width="17"
+                height="17"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M2 9l10-5 10 5-10 5zM6 11v5c3 2.5 9 2.5 12 0v-5M22 9v6"></path></svg></span
+            ><span class="c-brand-text"
+              ><span class="c-brand-name">European IT</span><span class="c-brand-sub">admin console</span></span
+            ></a
+          ><button
+            type="button"
+            class="c-iconbtn c-collapse"
+            data-nav-toggle=""
+            aria-label="Collapse menu"
+            title="Collapse menu"
+          >
+            <svg
+              width="16"
+              height="16"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
+              stroke-width="1.8"
               stroke-linecap="round"
               stroke-linejoin="round"
-              focusable="false"
               aria-hidden="true"
-            >
-              <path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path>
-              <path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg
-            ><span class="p-nav-text">Courses &amp; batches</span
-            ><span class="p-nav-short" aria-hidden="true">Courses</span><span class="p-count">3</span></a
-          >
-          <div class="p-subnav">
-            <a href="course-review.html">Review &amp; publish<span class="p-count">1</span></a
-            ><a href="batch-detail.html">Batch detail</a
-            ><a href="batch-edit.html" aria-current="page">Create a batch</a>
-          </div>
-          <span class="p-nav-label">People</span
-          ><a href="students.html"
-            ><svg
-              class="eit-icon"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
               focusable="false"
-              aria-hidden="true"
             >
-              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-              <circle cx="9" cy="7" r="4"></circle>
-              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg
-            ><span class="p-nav-text">Students &amp; payments</span
-            ><span class="p-nav-short" aria-hidden="true">Students</span></a
-          >
-          <div class="p-subnav"><a href="student-record.html">Student record</a></div>
-          <a href="mentors.html"
-            ><svg
-              class="eit-icon"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              focusable="false"
-              aria-hidden="true"
-            >
-              <rect x="2" y="7" width="20" height="14" rx="2"></rect>
-              <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path></svg
-            ><span class="p-nav-text">Mentors</span></a
-          ><a href="roles.html"
-            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
-              ></path>
-              <path d="m9 12 2 2 4-4"></path></svg
-            ><span class="p-nav-text">Roles &amp; access</span
-            ><span class="p-nav-short" aria-hidden="true">Roles</span></a
-          ><span class="p-nav-label">Admissions</span
-          ><a href="leads.html"
-            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="m3 11 18-5v12L3 14v-3z"></path>
-              <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg
-            ><span class="p-nav-text">Seminar leads</span><span class="p-nav-short" aria-hidden="true">Leads</span
-            ><span class="p-count">6</span></a
-          ><span class="p-nav-label">Account</span
-          ><a href="notifications.html"
-            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
-              <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
-            ><span class="p-nav-text">Notifications</span><span class="p-count" data-unread-count="">3</span></a
-          ><a href="settings.html"
-            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
-              ></path>
-              <circle cx="12" cy="12" r="3"></circle></svg
-            ><span class="p-nav-text">Settings</span></a
-          ><a href="profile.html"
-            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
-              <circle cx="12" cy="7" r="4"></circle></svg
-            ><span class="p-nav-text">My profile</span></a
-          >
-        </nav>
-      </aside>
-      <div class="p-content">
-        <header class="p-top">
-          <label class="p-search"
-            ><svg
-              class="eit-icon"
+              <path d="M3 3h18v18H3zM9 3v18M16 9l-3 3 3 3"></path>
+            </svg></button
+          ><button type="button" class="c-iconbtn c-close" data-nav-close="" aria-label="Close menu">
+            <svg
               width="18"
               height="18"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
+              stroke-width="1.9"
               stroke-linecap="round"
               stroke-linejoin="round"
-              focusable="false"
               aria-hidden="true"
+              focusable="false"
             >
-              <circle cx="11" cy="11" r="8"></circle>
-              <path d="M21 21l-4.35-4.35"></path></svg
-            ><span class="eit-sr">Search</span><input type="search" placeholder="Search students, courses, payments"
-          /></label>
-          <div class="p-top-right">
-            <div class="eit-seg has-thumb" role="group" aria-label="Language">
-              <span class="eit-seg__thumb" aria-hidden="true" style="width: 52px; transform: translateX(4px)"></span
-              ><button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button
-              ><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button>
-            </div>
+              <path d="M18 6 6 18M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <nav class="c-nav" aria-label="Admin panel">
+          <div class="c-group">
             <button
-              class="p-iconbtn"
-              data-notif-scope="admin"
               type="button"
-              aria-label="Notifications, 3 unread"
+              class="c-item c-expand"
+              data-nav-toggle=""
+              aria-label="Expand menu"
+              title="Expand menu"
+            >
+              <span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M3 3h18v18H3zM9 3v18M13 9l3 3-3 3"></path></svg
+              ></span></button
+            ><a class="c-item" href="overview.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M3 3h7v9H3zM14 3h7v5h-7zM14 12h7v9h-7zM3 16h7v5H3z"></path></svg></span
+              ><span class="c-label">Overview</span></a
+            >
+          </div>
+          <div class="c-group" role="group" aria-labelledby="nav-queues">
+            <span class="c-group-label" id="nav-queues">Queues</span
+            ><a class="c-item" href="courses.html#cbp-queue"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M9 3h6v3H9zM8 4.5H5V21h14V4.5h-3M9 13l2 2 4-4"></path></svg></span
+              ><span class="c-label">Course review</span><span class="c-count">3</span></a
+            ><a class="c-item" href="leads.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M3 11v3l13 5V6zM16 9a3 3 0 0 1 0 6M7 15.5V20h3v-3"></path></svg></span
+              ><span class="c-label">Seminar leads</span><span class="c-count">6</span></a
+            >
+          </div>
+          <div class="c-group" role="group" aria-labelledby="nav-people">
+            <span class="c-group-label" id="nav-people">People</span
+            ><a class="c-item" href="students.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M2 9l10-5 10 5-10 5zM6 11v5c3 2.5 9 2.5 12 0v-5M22 9v6"></path></svg></span
+              ><span class="c-label">Students &amp; payments</span></a
+            ><a class="c-item" href="mentors.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21c0-4 3.6-7 8-7s8 3 8 7"></path></svg></span
+              ><span class="c-label">Mentors</span></a
+            >
+          </div>
+          <div class="c-group" role="group" aria-labelledby="nav-catalog">
+            <span class="c-group-label" id="nav-catalog">Catalog</span
+            ><a class="c-item" href="courses.html" aria-current="true"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5zM4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"
+                  ></path></svg></span
+              ><span class="c-label">Courses &amp; batches</span></a
+            >
+          </div>
+          <div class="c-group" role="group" aria-labelledby="nav-system">
+            <span class="c-group-label" id="nav-system">System</span
+            ><a class="c-item" href="settings.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"></path></svg></span
+              ><span class="c-label">Settings</span></a
+            ><a class="c-item" href="roles.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4"></path></svg></span
+              ><span class="c-label">Roles &amp; access</span></a
+            >
+          </div>
+        </nav>
+      </aside>
+      <div class="p-content">
+        <header class="c-top">
+          <div class="c-top-in">
+            <button
+              type="button"
+              class="c-iconbtn c-menu"
+              data-nav-open=""
+              aria-label="Open menu"
+              aria-controls="c-side"
               aria-expanded="false"
-              aria-controls="notif-menu"
             >
-              <svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
-                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
-              ><span class="p-badge-count" data-unread-count="">3</span></button
-            ><a class="p-me" href="profile.html" style="text-decoration: none; border-radius: 12px"
-              ><span class="p-avatar">SS</span
-              ><span style="display: flex; flex-direction: column"
-                ><span class="p-me-name">Sharmin Sultana</span><span class="p-me-sub">Admin</span></span
-              ></a
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M3 6h18M3 12h18M3 18h18"></path>
+              </svg></button
+            ><span class="c-top-ico" aria-hidden="true"
+              ><svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M3 5h18v16H3zM3 10h18M8 3v4M16 3v4M12 13v5M9.5 15.5h5"></path></svg
+            ></span>
+            <div class="c-top-title">
+              <h1>Create a batch</h1>
+              <nav class="c-top-sub c-crumbs" aria-label="Breadcrumb">
+                <a href="courses.html">Courses &amp; batches</a><span aria-hidden="true">/</span
+                ><a href="courses.html#cbp-batches">Batches</a>
+              </nav>
+            </div>
+            <div class="c-grow"></div>
+            <label class="c-search" title="Search"
+              ><svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM21 21l-4.3-4.3"></path></svg
+              ><span class="eit-sr">Search</span><input type="search" placeholder="Search…" /><kbd
+                class="c-kbd"
+                aria-hidden="true"
+                >Ctrl K</kbd
+              ></label
             >
-            <div class="p-dropdown" role="dialog" aria-label="Notifications" id="notif-menu" hidden="" data-popover="">
-              <div class="p-row" style="justify-content: space-between; padding: 16px 18px 10px">
-                <strong style="font-size: 16px">Notifications</strong
-                ><button
-                  type="button"
+            <div class="c-pop-wrap">
+              <button
+                type="button"
+                class="c-iconbtn c-bordered"
+                data-notif-scope="admin"
+                aria-label="Notifications, 3 unread"
+                aria-expanded="false"
+                aria-controls="notif-menu"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
+                ><span class="c-badge" data-unread-count="">3</span>
+              </button>
+              <div
+                class="p-dropdown"
+                role="dialog"
+                aria-label="Notifications"
+                id="notif-menu"
+                hidden=""
+                data-popover=""
+              >
+                <div class="p-row" style="justify-content: space-between; padding: 16px 18px 10px">
+                  <strong style="font-size: 16px">Notifications</strong
+                  ><button
+                    type="button"
+                    class="p-link"
+                    style="
+                      border: 0px;
+                      background: none;
+                      padding: 0px;
+                      font-style: inherit;
+                      font-variant: inherit;
+                      font-stretch: inherit;
+                      line-height: inherit;
+                      font-family: inherit;
+                      font-optical-sizing: inherit;
+                      font-size-adjust: inherit;
+                      font-kerning: inherit;
+                      font-feature-settings: inherit;
+                      font-variation-settings: inherit;
+                      font-weight: 600;
+                      font-size: 13px;
+                      cursor: pointer;
+                    "
+                    data-mark-read="#notif-menu"
+                  >
+                    Mark all as read
+                  </button>
+                </div>
+                <ul class="p-rows" style="padding: 0px 8px 8px">
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                          d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"
+                        ></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                      ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                        >৳5,000 received from Tanvir Hasan</span
+                      ><span class="p-small" style="font-size: 12px"
+                        >bKash · installment 2 of 3 · 12 min ago</span
+                      ></span
+                    ><span
+                      aria-label="Unread"
+                      style="
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background: var(--cyan);
+                        margin-top: 6px;
+                        flex: 0 0 auto;
+                      "
+                      data-unread=""
+                    ></span>
+                  </li>
+                  <li style="align-items: flex-start">
+                    <span class="p-tile" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                          d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
+                        ></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                      ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                        >New course sent for review</span
+                      ><span class="p-small" style="font-size: 12px"
+                        >Facebook Ads in Practice · Imran Kabir · 1 h ago</span
+                      ></span
+                    ><span
+                      aria-label="Unread"
+                      style="
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background: var(--cyan);
+                        margin-top: 6px;
+                        flex: 0 0 auto;
+                      "
+                      data-unread=""
+                    ></span>
+                  </li>
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--muted" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m3 11 18-5v12L3 14v-3zM11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                      ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                        >6 new bookings for Saturday’s seminar</span
+                      ><span class="p-small" style="font-size: 12px">Web Development · 3 h ago</span></span
+                    ><span
+                      aria-label="Unread"
+                      style="
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background: var(--cyan);
+                        margin-top: 6px;
+                        flex: 0 0 auto;
+                      "
+                      data-unread=""
+                    ></span>
+                  </li>
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--amber" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M5 11h14v11H5zM7 11V7a5 5 0 0 1 10 0v4"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                      ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 500"
+                        >Access paused for Mehedi Hasan</span
+                      ><span class="p-small" style="font-size: 12px">Installment 2 overdue 7 days · 8 Oct</span></span
+                    >
+                  </li>
+                </ul>
+                <a
+                  href="notifications.html"
                   class="p-link"
                   style="
-                    border: 0px;
-                    background: none;
-                    padding: 0px;
-                    font-style: inherit;
-                    font-variant: inherit;
-                    font-stretch: inherit;
-                    line-height: inherit;
-                    font-family: inherit;
-                    font-optical-sizing: inherit;
-                    font-size-adjust: inherit;
-                    font-kerning: inherit;
-                    font-feature-settings: inherit;
-                    font-variation-settings: inherit;
-                    font-weight: 600;
-                    font-size: 13px;
-                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    padding: 12px;
+                    border-top: 1px solid var(--line-soft);
+                    border-radius: 0px;
                   "
-                  data-mark-read="#notif-menu"
+                  >See all notifications</a
                 >
-                  Mark all as read
-                </button>
               </div>
-              <ul class="p-rows" style="padding: 0px 8px 8px">
-                <li style="align-items: flex-start">
-                  <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
-                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"
-                      ></path></svg></span
-                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
-                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
-                      >৳5,000 received from Tanvir Hasan</span
-                    ><span class="p-small" style="font-size: 12px">bKash · installment 2 of 3 · 12 min ago</span></span
-                  ><span
-                    aria-label="Unread"
-                    style="
-                      width: 8px;
-                      height: 8px;
-                      border-radius: 50%;
-                      background: var(--cyan);
-                      margin-top: 6px;
-                      flex: 0 0 auto;
-                    "
-                    data-unread=""
-                  ></span>
-                </li>
-                <li style="align-items: flex-start">
-                  <span class="p-tile" style="width: 36px; height: 36px; border-radius: 10px"
-                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
-                      ></path></svg></span
-                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
-                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
-                      >New course sent for review</span
-                    ><span class="p-small" style="font-size: 12px"
-                      >Facebook Ads in Practice · Imran Kabir · 1 h ago</span
-                    ></span
-                  ><span
-                    aria-label="Unread"
-                    style="
-                      width: 8px;
-                      height: 8px;
-                      border-radius: 50%;
-                      background: var(--cyan);
-                      margin-top: 6px;
-                      flex: 0 0 auto;
-                    "
-                    data-unread=""
-                  ></span>
-                </li>
-                <li style="align-items: flex-start">
-                  <span class="p-tile p-tile--muted" style="width: 36px; height: 36px; border-radius: 10px"
-                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="m3 11 18-5v12L3 14v-3zM11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg></span
-                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
-                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
-                      >6 new bookings for Saturday’s seminar</span
-                    ><span class="p-small" style="font-size: 12px">Web Development · 3 h ago</span></span
-                  ><span
-                    aria-label="Unread"
-                    style="
-                      width: 8px;
-                      height: 8px;
-                      border-radius: 50%;
-                      background: var(--cyan);
-                      margin-top: 6px;
-                      flex: 0 0 auto;
-                    "
-                    data-unread=""
-                  ></span>
-                </li>
-                <li style="align-items: flex-start">
-                  <span class="p-tile p-tile--amber" style="width: 36px; height: 36px; border-radius: 10px"
-                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M5 11h14v11H5zM7 11V7a5 5 0 0 1 10 0v4"></path></svg></span
-                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
-                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 500"
-                      >Access paused for Mehedi Hasan</span
-                    ><span class="p-small" style="font-size: 12px">Installment 2 overdue 7 days · 8 Oct</span></span
-                  >
-                </li>
-              </ul>
-              <a
-                href="notifications.html"
-                class="p-link"
-                style="
-                  display: flex;
-                  justify-content: center;
-                  padding: 12px;
-                  border-top: 1px solid var(--line-soft);
-                  border-radius: 0px;
-                "
-                >See all notifications</a
+            </div>
+            <button
+              type="button"
+              class="c-iconbtn c-bordered c-theme"
+              data-theme-toggle=""
+              aria-label="Dark mode"
+              aria-pressed="false"
+              title="Switch to dark mode"
+            >
+              <svg
+                class="c-moon"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
               >
+                <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg
+              ><svg
+                class="c-sun"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zM12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"
+                ></path>
+              </svg>
+            </button>
+            <div class="c-pop-wrap">
+              <button
+                type="button"
+                class="c-me"
+                aria-expanded="false"
+                aria-controls="me-menu"
+                aria-label="Your account: Sharmin Sultana"
+              >
+                <span class="c-avatar" aria-hidden="true">SS</span
+                ><span class="c-me-text"
+                  ><span class="c-me-name">Sharmin Sultana</span><span class="c-me-sub">Owner</span></span
+                >
+              </button>
+              <div class="c-pop" id="me-menu" hidden="" data-popover="" role="group" aria-label="Your account">
+                <div class="c-pop-head">
+                  <strong>Sharmin Sultana</strong><span class="p-small">Owner · admin@europeanit-inst.com</span>
+                </div>
+                <a href="profile.html"
+                  ><svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21c0-4 3.6-7 8-7s8 3 8 7"></path></svg
+                  >My profile</a
+                ><a href="notifications.html"
+                  ><svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
+                  >Notifications</a
+                ><a href="settings.html"
+                  ><svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"></path></svg
+                  >Settings</a
+                >
+                <div class="c-pop-row">
+                  <span class="p-row" style="gap: 10px"
+                    ><svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path
+                        d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"
+                      ></path></svg
+                    >Language</span
+                  >
+                  <div class="eit-seg" role="group" aria-label="Language">
+                    <button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button
+                    ><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button>
+                  </div>
+                </div>
+                <hr />
+                <a href="../index.html"
+                  ><svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"></path></svg
+                  >Log out</a
+                >
+              </div>
             </div>
           </div>
         </header>
         <main class="p-main">
-          <nav
-            aria-label="Breadcrumb"
-            class="p-row"
-            style="gap: 8px; font-size: 14px; color: var(--ink-3); flex-wrap: wrap"
-          >
-            <a class="p-link" href="courses.html" style="font-weight: 500">Courses &amp; batches</a
-            ><span aria-hidden="true">/</span><span style="color: var(--ink-2)">New batch</span>
-          </nav>
-          <h1 class="p-h1">Create a batch</h1>
           <div class="p-split" data-region="batch-form">
             <form
               aria-label="Batch details"
@@ -520,9 +833,9 @@
                       type="button"
                       aria-pressed="true"
                       style="
-                        min-width: 56px;
-                        height: 44px;
-                        border-radius: 12px;
+                        min-width: 48px;
+                        height: 36px;
+                        border-radius: 10px;
                         font-style: inherit;
                         font-variant: inherit;
                         font-stretch: inherit;
@@ -536,9 +849,9 @@
                         font-size: 14px;
                         font-weight: 600;
                         cursor: pointer;
-                        border: 1px solid var(--ink);
-                        background: var(--ink);
-                        color: var(--on-ink);
+                        border: 1px solid var(--cyan-line);
+                        background: var(--cyan-soft);
+                        color: var(--cyan-deep);
                       "
                     >
                       Sat</button
@@ -546,9 +859,9 @@
                       type="button"
                       aria-pressed="false"
                       style="
-                        min-width: 56px;
-                        height: 44px;
-                        border-radius: 12px;
+                        min-width: 48px;
+                        height: 36px;
+                        border-radius: 10px;
                         font-style: inherit;
                         font-variant: inherit;
                         font-stretch: inherit;
@@ -572,9 +885,9 @@
                       type="button"
                       aria-pressed="false"
                       style="
-                        min-width: 56px;
-                        height: 44px;
-                        border-radius: 12px;
+                        min-width: 48px;
+                        height: 36px;
+                        border-radius: 10px;
                         font-style: inherit;
                         font-variant: inherit;
                         font-stretch: inherit;
@@ -598,9 +911,9 @@
                       type="button"
                       aria-pressed="true"
                       style="
-                        min-width: 56px;
-                        height: 44px;
-                        border-radius: 12px;
+                        min-width: 48px;
+                        height: 36px;
+                        border-radius: 10px;
                         font-style: inherit;
                         font-variant: inherit;
                         font-stretch: inherit;
@@ -614,9 +927,9 @@
                         font-size: 14px;
                         font-weight: 600;
                         cursor: pointer;
-                        border: 1px solid var(--ink);
-                        background: var(--ink);
-                        color: var(--on-ink);
+                        border: 1px solid var(--cyan-line);
+                        background: var(--cyan-soft);
+                        color: var(--cyan-deep);
                       "
                     >
                       Tue</button
@@ -624,9 +937,9 @@
                       type="button"
                       aria-pressed="false"
                       style="
-                        min-width: 56px;
-                        height: 44px;
-                        border-radius: 12px;
+                        min-width: 48px;
+                        height: 36px;
+                        border-radius: 10px;
                         font-style: inherit;
                         font-variant: inherit;
                         font-stretch: inherit;
@@ -650,9 +963,9 @@
                       type="button"
                       aria-pressed="false"
                       style="
-                        min-width: 56px;
-                        height: 44px;
-                        border-radius: 12px;
+                        min-width: 48px;
+                        height: 36px;
+                        border-radius: 10px;
                         font-style: inherit;
                         font-variant: inherit;
                         font-stretch: inherit;
@@ -676,9 +989,9 @@
                       type="button"
                       aria-pressed="false"
                       style="
-                        min-width: 56px;
-                        height: 44px;
-                        border-radius: 12px;
+                        min-width: 48px;
+                        height: 36px;
+                        border-radius: 10px;
                         font-style: inherit;
                         font-variant: inherit;
                         font-stretch: inherit;
@@ -1101,9 +1414,9 @@
                   type="button"
                   aria-pressed="true"
                   style="
-                    min-width: 56px;
-                    height: 44px;
-                    border-radius: 12px;
+                    min-width: 48px;
+                    height: 36px;
+                    border-radius: 10px;
                     font-style: inherit;
                     font-variant: inherit;
                     font-stretch: inherit;
@@ -1117,9 +1430,9 @@
                     font-size: 14px;
                     font-weight: 600;
                     cursor: pointer;
-                    border: 1px solid var(--ink);
-                    background: var(--ink);
-                    color: var(--on-ink);
+                    border: 1px solid var(--cyan-line);
+                    background: var(--cyan-soft);
+                    color: var(--cyan-deep);
                   "
                 >
                   Sat</button
@@ -1127,9 +1440,9 @@
                   type="button"
                   aria-pressed="false"
                   style="
-                    min-width: 56px;
-                    height: 44px;
-                    border-radius: 12px;
+                    min-width: 48px;
+                    height: 36px;
+                    border-radius: 10px;
                     font-style: inherit;
                     font-variant: inherit;
                     font-stretch: inherit;
@@ -1153,9 +1466,9 @@
                   type="button"
                   aria-pressed="false"
                   style="
-                    min-width: 56px;
-                    height: 44px;
-                    border-radius: 12px;
+                    min-width: 48px;
+                    height: 36px;
+                    border-radius: 10px;
                     font-style: inherit;
                     font-variant: inherit;
                     font-stretch: inherit;
@@ -1179,9 +1492,9 @@
                   type="button"
                   aria-pressed="true"
                   style="
-                    min-width: 56px;
-                    height: 44px;
-                    border-radius: 12px;
+                    min-width: 48px;
+                    height: 36px;
+                    border-radius: 10px;
                     font-style: inherit;
                     font-variant: inherit;
                     font-stretch: inherit;
@@ -1195,9 +1508,9 @@
                     font-size: 14px;
                     font-weight: 600;
                     cursor: pointer;
-                    border: 1px solid var(--ink);
-                    background: var(--ink);
-                    color: var(--on-ink);
+                    border: 1px solid var(--cyan-line);
+                    background: var(--cyan-soft);
+                    color: var(--cyan-deep);
                   "
                 >
                   Tue</button
@@ -1205,9 +1518,9 @@
                   type="button"
                   aria-pressed="false"
                   style="
-                    min-width: 56px;
-                    height: 44px;
-                    border-radius: 12px;
+                    min-width: 48px;
+                    height: 36px;
+                    border-radius: 10px;
                     font-style: inherit;
                     font-variant: inherit;
                     font-stretch: inherit;
@@ -1231,9 +1544,9 @@
                   type="button"
                   aria-pressed="false"
                   style="
-                    min-width: 56px;
-                    height: 44px;
-                    border-radius: 12px;
+                    min-width: 48px;
+                    height: 36px;
+                    border-radius: 10px;
                     font-style: inherit;
                     font-variant: inherit;
                     font-stretch: inherit;
@@ -1257,9 +1570,9 @@
                   type="button"
                   aria-pressed="false"
                   style="
-                    min-width: 56px;
-                    height: 44px;
-                    border-radius: 12px;
+                    min-width: 48px;
+                    height: 36px;
+                    border-radius: 10px;
                     font-style: inherit;
                     font-variant: inherit;
                     font-stretch: inherit;
@@ -1632,9 +1945,9 @@
                   type="button"
                   aria-pressed="true"
                   style="
-                    min-width: 56px;
-                    height: 44px;
-                    border-radius: 12px;
+                    min-width: 48px;
+                    height: 36px;
+                    border-radius: 10px;
                     font-style: inherit;
                     font-variant: inherit;
                     font-stretch: inherit;
@@ -1648,9 +1961,9 @@
                     font-size: 14px;
                     font-weight: 600;
                     cursor: pointer;
-                    border: 1px solid var(--ink);
-                    background: var(--ink);
-                    color: var(--on-ink);
+                    border: 1px solid var(--cyan-line);
+                    background: var(--cyan-soft);
+                    color: var(--cyan-deep);
                   "
                 >
                   Sat</button
@@ -1658,9 +1971,9 @@
                   type="button"
                   aria-pressed="false"
                   style="
-                    min-width: 56px;
-                    height: 44px;
-                    border-radius: 12px;
+                    min-width: 48px;
+                    height: 36px;
+                    border-radius: 10px;
                     font-style: inherit;
                     font-variant: inherit;
                     font-stretch: inherit;
@@ -1684,9 +1997,9 @@
                   type="button"
                   aria-pressed="false"
                   style="
-                    min-width: 56px;
-                    height: 44px;
-                    border-radius: 12px;
+                    min-width: 48px;
+                    height: 36px;
+                    border-radius: 10px;
                     font-style: inherit;
                     font-variant: inherit;
                     font-stretch: inherit;
@@ -1710,9 +2023,9 @@
                   type="button"
                   aria-pressed="true"
                   style="
-                    min-width: 56px;
-                    height: 44px;
-                    border-radius: 12px;
+                    min-width: 48px;
+                    height: 36px;
+                    border-radius: 10px;
                     font-style: inherit;
                     font-variant: inherit;
                     font-stretch: inherit;
@@ -1726,9 +2039,9 @@
                     font-size: 14px;
                     font-weight: 600;
                     cursor: pointer;
-                    border: 1px solid var(--ink);
-                    background: var(--ink);
-                    color: var(--on-ink);
+                    border: 1px solid var(--cyan-line);
+                    background: var(--cyan-soft);
+                    color: var(--cyan-deep);
                   "
                 >
                   Tue</button
@@ -1736,9 +2049,9 @@
                   type="button"
                   aria-pressed="false"
                   style="
-                    min-width: 56px;
-                    height: 44px;
-                    border-radius: 12px;
+                    min-width: 48px;
+                    height: 36px;
+                    border-radius: 10px;
                     font-style: inherit;
                     font-variant: inherit;
                     font-stretch: inherit;
@@ -1762,9 +2075,9 @@
                   type="button"
                   aria-pressed="false"
                   style="
-                    min-width: 56px;
-                    height: 44px;
-                    border-radius: 12px;
+                    min-width: 48px;
+                    height: 36px;
+                    border-radius: 10px;
                     font-style: inherit;
                     font-variant: inherit;
                     font-stretch: inherit;
@@ -1788,9 +2101,9 @@
                   type="button"
                   aria-pressed="false"
                   style="
-                    min-width: 56px;
-                    height: 44px;
-                    border-radius: 12px;
+                    min-width: 48px;
+                    height: 36px;
+                    border-radius: 10px;
                     font-style: inherit;
                     font-variant: inherit;
                     font-stretch: inherit;

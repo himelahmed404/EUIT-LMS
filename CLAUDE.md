@@ -27,6 +27,11 @@ Run `npm run check` after any change; it must end with "Everything passed".
   bar), and panel components. Layout tokens: `--side-w`, `--page-max`, `--page-pad`.
 - `assets/css/app.css`: additions for this site (balanced grids, notifications, questions, certificate
   print, toast) and fixes that override the design's inline styles.
+- `assets/css/console.css`: the **admin console** (SchoolofGenZ look in European IT colours): console
+  sidebar `.c-side`, top bar `.c-top`, the Overview dashboard (`.c-kpi`, `.c-panel`), compact versions of
+  the shared components, and the light and dark tokens. Only admin pages load it (`<html class="is-console">`).
+- `assets/js/theme.js`: admin pages only, in `<head>` without `defer`: sets light/dark and the collapsed
+  sidebar before the page paints.
 - `assets/js/app.js`: shared behaviour driven by ARIA attributes and `data-*` hooks. **No page-specific
   code here**; a page that needs its own logic gets `assets/js/pages/<page>.js` (help, notifications,
   questions, review).
@@ -35,6 +40,11 @@ Run `npm run check` after any change; it must end with "Everything passed".
 
 - **Shared chrome is repeated per page.** The sidebar, top bar and bell menu appear in every page of a
   role. Change them in all of that role's pages (`student/*.html`, `mentor/*.html`, `admin/*.html`).
+- **Admin pages use the console shell** (`aside.c-side`, `header.c-top`), not `p-side` / `p-top`. A page's
+  title, subtitle and buttons live in the top bar; record pages (batch, course review, student) put the
+  breadcrumb there and keep the record's name and actions at the top of `<main>`.
+- **Dark mode (admin):** colours must come from tokens (`var(--ink)`, `var(--surface-card)`, `var(--line)`…).
+  A fixed colour in markup won't change with the theme. Check both themes (the moon button, or the device setting).
 - **Captured states:** a `<template data-state="name" data-region="[data-region='x']">` holds only the
   element that changes. Edit the live element and every template for it together.
 - State lives in ARIA (`aria-pressed`, `aria-checked`, `aria-selected`, `aria-expanded`, `aria-current`).
@@ -46,6 +56,7 @@ Run `npm run check` after any change; it must end with "Everything passed".
   bracketed placeholders ([SUPPORT PHONE], [DIRECTOR NAME], [SMS PROVIDER]) wait for the owner's content.
 - New page: copy a sibling page in the same folder, set the sidebar's `aria-current="page"`, title it
   "Name · European IT LMS", add it to `docs/PAGES.md`, run `npm run check`.
+- The student and mentor panels are next to move to the console look; the owner will ask for them.
 - **Never run `tools/design-export/` over this repo.** The pages were exported once and then fixed by hand;
   the script refuses without `--force`. Export into an empty folder if you need the original design.
 - Format with Prettier (width 120) before committing.

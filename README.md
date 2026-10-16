@@ -38,7 +38,9 @@ On the log-in page, the **Demo: log in as** switch picks which panel **Log in** 
 assets/css/eit.css        European IT design-system components (buttons, fields, badges, motion)
 assets/css/panel.css      Tokens, the panel shell (sidebar, top bar, tablet rail, phone tab bar), components
 assets/css/app.css        Additions for this site: balanced grids, notifications, questions, certificate print, toast
+assets/css/console.css    Admin console: SchoolofGenZ-style sidebar, top bar and dashboard, light and dark tokens
 assets/js/app.js          Shared behaviour for every page
+assets/js/theme.js        Admin pages: light/dark and collapsed sidebar, applied before the page paints
 assets/js/pages/*.js      Page scripts: help, notifications, questions (mentor), review (mentor)
 docs/PAGES.md             Page-by-page map
 docs/DESIGN-REVIEW.md     Design review, changes made, open suggestions
@@ -47,6 +49,12 @@ tools/design-export/      The script that first generated the pages from the des
 ```
 
 ## Layout
+
+The **admin panel** uses the SchoolofGenZ console look in European IT colours (Anek Bangla and JetBrains
+Mono, grouped sidebar with icon tiles and count pills, page titles and buttons in the top bar, full-width
+pages, light and dark mode). From 1280px the sidebar can be collapsed to icons; from 768 to 1279px it is
+an icon rail; below that it opens as a drawer from the top bar. The student and mentor panels use the
+layout below for now:
 
 - **Desktop (1100px and up):** a 280px sidebar that stays in view, and a page column up to 1320px wide,
   centred beside it. The top bar lines up with the column.
@@ -78,6 +86,9 @@ tools/design-export/      The script that first generated the pages from the des
   `region:v0|v1|v2` templates are shown.
 - **Reveal and conceal.** Accordions and "show more" buttons list the elements they show
   (`data-reveal`) or hide (`data-conceal`). `data-on-look` holds the trigger's own "open" look.
+- Admin console: `data-theme-toggle` switches light and dark (saved), `data-nav-toggle` collapses the
+  sidebar (saved), `data-nav-open` opens the phone drawer, Ctrl K / ⌘ K goes to the search. A link to
+  `page.html#panel-id` opens that tab; tab lists with `data-linkable` keep the address in step.
 - `data-toast="Changes saved"` shows a short confirmation; `data-copy="text"` copies to the clipboard;
   `data-print` opens the print dialog; `data-press-all="selector"` presses every matching option
   (Mark all present); `data-fit` scales a fixed-size sheet down to fit (the certificate);

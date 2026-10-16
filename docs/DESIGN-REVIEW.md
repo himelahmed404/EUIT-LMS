@@ -2,6 +2,38 @@
 
 A review of all 42 screens as built from the design, the fixes made, and what's still open.
 Reviewed on 16 Oct 2026 at 360–1920px. For what's on each page now, see [PAGES.md](PAGES.md).
+The admin panel has since been restyled to the SchoolofGenZ console look: see the next section.
+
+## Admin console restyle (SchoolofGenZ look)
+
+The admin panel now follows the SchoolofGenZ admin console (its sidebar, fonts, icons and dashboard),
+in European IT colours. The student and mentor panels are unchanged for now and will follow.
+
+**Decisions (from the owner):** keep European IT blue rather than SchoolofGenZ green; regroup the existing
+admin pages into SchoolofGenZ-style sections instead of adding new pages; add a working dark mode.
+
+| Area       | Before                                                                                       | Now                                                                                                                                                                                                  |
+| ---------- | -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Type       | Geist and Geist Mono.                                                                        | Anek Bangla for text (it also covers Bangla), JetBrains Mono for section labels, codes and the Ctrl K hint. 14px base, 13px tables, 12px secondary text.                                             |
+| Sidebar    | 280px, 48px items, sub-links, black count bubbles, Notifications and My profile in the list. | 232px, "European IT · admin console", sections QUEUES / PEOPLE / CATALOG / SYSTEM in mono, 38px items with 28px icon tiles, yellow count pills, a collapse button. Sub-pages highlight their parent. |
+| Icons      | Mixed Lucide sets at 20px, 2px stroke.                                                       | SchoolofGenZ's admin icon paths at 16px, 1.9px stroke, in tiles.                                                                                                                                     |
+| Top bar    | Search, language, bell and avatar; page titles and buttons in the page.                      | Page icon, title and subtitle (or breadcrumb), the page's buttons, search with Ctrl K, bell, dark mode, account menu (profile, settings, language, log out).                                         |
+| Width      | A centred 1320px column.                                                                     | The full width beside the sidebar, as in SchoolofGenZ.                                                                                                                                               |
+| Overview   | Greeting, big stat cards, bar chart, attention list, quick-action tiles, a wide table.       | Stat tiles with a grey trend line and a dot for the latest week, panels with header strips on a 12-column grid, small buttons in the attention list, a compact batches table, quick actions as rows. |
+| Components | 20px radius cards, pill tabs, 44–48px controls, mono uppercase table headers.                | 12px radius panels without shadows, underline tabs, 34–38px controls, sentence-case table headers, calmer hover (no tilting icons).                                                                  |
+| Smaller    | —                                                                                            | Dark mode (follows the device on the first visit); a 68px icon rail on tablets; a drawer on phones; the action column of a wide table gets an edge only while there is more under it.                |
+
+**What it fixed on the way:** the profile said Sharmin is the Owner while the top bar said Admin (now Owner
+everywhere); "Review & publish 1" disagreed with "3 courses waiting" (the queue item now says 3 and opens
+the queue); two sticky side columns sat 20px low; three colours were fixed in the markup and would not have
+changed in dark mode.
+
+**Checked:** every admin page at 360–1920px in light and dark (no sideways scroll, text contrast AA in both
+themes), and the new flows in `npm run check` (dark mode, collapse, drawer, account menu, Ctrl K, the
+Course review link).
+
+**Next:** the student and mentor panels, with the same shell (`console.css` is written so another panel can
+take it by adding `class="is-console"` and the console sidebar and top bar).
 
 ## Overall impression
 

@@ -402,6 +402,52 @@
     if (focus) {
       tab.focus();
     }
+    // Tab lists marked data-linkable keep the address in step (courses.html#cbp-queue), so a tab
+    // can be linked to, and a sidebar link that points at the tab lights up.
+    var list = tab.closest('[role="tablist"]');
+    if (list && list.hasAttribute("data-linkable") && window.history && history.replaceState) {
+      history.replaceState(null, "", "#" + tab.getAttribute("aria-controls"));
+      syncNavCurrent();
+    }
+  }
+  // page.html#panel-id opens the tab that controls that panel.
+  function openHashTab() {
+    var id = window.location.hash.slice(1);
+    var panel = id && document.getElementById(id);
+    if (!panel || panel.getAttribute("role") !== "tabpanel") {
+      return;
+    }
+    var tab = document.querySelector('[role="tab"][aria-controls="' + id + '"]');
+    if (tab) {
+      selectTab(tab);
+    }
+  }
+  // Admin sidebar: the link for this page is current; a link to this page's open tab wins over it.
+  function syncNavCurrent() {
+    var nav = document.querySelector(".c-nav");
+    if (!nav) {
+      return;
+    }
+    var page = window.location.pathname.split("/").pop();
+    var mine = $all("a[href]", nav).filter(function (a) {
+      return a.getAttribute("href").split("#")[0] === page;
+    });
+    var hash = window.location.hash;
+    var match =
+      mine.filter(function (a) {
+        var h = a.getAttribute("href");
+        return hash && h.indexOf("#") !== -1 && h.slice(h.indexOf("#")) === hash;
+      })[0] ||
+      mine.filter(function (a) {
+        return a.getAttribute("href").indexOf("#") === -1;
+      })[0];
+    if (!match) {
+      return;
+    }
+    mine.forEach(function (a) {
+      a.removeAttribute("aria-current");
+    });
+    match.setAttribute("aria-current", "page");
   }
 
   /* ---------- Notifications: unread dots and counts ---------- */
@@ -450,9 +496,115 @@
     }, 2800);
   }
 
+  /* ---------- Admin console: light/dark, collapsible sidebar, phone drawer ---------- */
+  var root = document.documentElement;
+  function syncThemeButtons() {
+    var dark = root.getAttribute("data-theme") === "dark";
+    $all("[data-theme-toggle]").forEach(function (b) {
+      b.setAttribute("aria-pressed", dark ? "true" : "false");
+      b.setAttribute("title", dark ? "Switch to light mode" : "Switch to dark mode");
+    });
+  }
+  function isMini() {
+    var rail = window.matchMedia("(min-width: 768px) and (max-width: 1279px)").matches;
+    var wide = window.matchMedia("(min-width: 1280px)").matches;
+    return rail || (wide && root.getAttribute("data-nav") === "mini");
+  }
+  // With the labels hidden, each icon shows its name on hover.
+  function syncNavTitles() {
+    var mini = isMini();
+    $all(".c-side .c-item").forEach(function (a) {
+      var label = a.querySelector(".c-label");
+      if (mini && label) {
+        a.setAttribute("title", label.textContent.trim());
+      } else if (label) {
+        a.removeAttribute("title");
+      }
+    });
+  }
+  function setDrawer(open) {
+    var side = document.querySelector(".c-side");
+    var menu = document.querySelector("[data-nav-open]");
+    var scrim = document.querySelector(".c-scrim");
+    if (!side) {
+      return;
+    }
+    side.classList.toggle("is-open", open);
+    if (scrim) {
+      scrim.hidden = !open;
+    }
+    // While the drawer is open, the page behind it can't be reached with Tab.
+    var content = document.querySelector(".p-console > .p-content");
+    if (content) {
+      content.inert = open;
+    }
+    if (menu) {
+      menu.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+    if (open) {
+      var first = side.querySelector(".c-close") || side.querySelector("a[href]");
+      if (first) {
+        first.focus();
+      }
+    } else if (menu && side.contains(document.activeElement)) {
+      menu.focus();
+    }
+  }
+  function initConsole() {
+    if (!document.querySelector(".c-side")) {
+      return;
+    }
+    syncThemeButtons();
+    syncNavTitles();
+    var scrim = document.createElement("div");
+    scrim.className = "c-scrim";
+    scrim.hidden = true;
+    scrim.setAttribute("data-nav-close", "");
+    document.body.appendChild(scrim);
+    // Ctrl K on Windows and Linux, Command K on a Mac.
+    if (/Mac|iPhone|iPad/.test(navigator.platform || "")) {
+      $all(".c-kbd").forEach(function (k) {
+        k.textContent = "⌘ K";
+      });
+    }
+    window.addEventListener("resize", function () {
+      syncNavTitles();
+      if (window.innerWidth > 767) {
+        setDrawer(false);
+      }
+    });
+  }
+
   /* ---------- Click handling ---------- */
   document.addEventListener("click", function (e) {
     var t = e.target;
+
+    if (t.closest("[data-theme-toggle]")) {
+      var dark = root.getAttribute("data-theme") !== "dark";
+      root.setAttribute("data-theme", dark ? "dark" : "light");
+      store.set("eit-theme", dark ? "dark" : "light");
+      syncThemeButtons();
+      return;
+    }
+    if (t.closest("[data-nav-toggle]")) {
+      var mini = root.getAttribute("data-nav") !== "mini";
+      if (mini) {
+        root.setAttribute("data-nav", "mini");
+      } else {
+        root.removeAttribute("data-nav");
+      }
+      store.set("eit-nav", mini ? "mini" : "full");
+      syncNavTitles();
+      return;
+    }
+    if (t.closest("[data-nav-open]")) {
+      setDrawer(true);
+      return;
+    }
+    if (t.closest("[data-nav-close]")) {
+      setDrawer(false);
+      return;
+    }
 
     // Actions that would save or send say so, then carry on with any other behaviour they have.
     var done = t.closest("[data-toast]");
@@ -683,6 +835,16 @@
   });
 
   document.addEventListener("keydown", function (e) {
+    // Ctrl K / Command K jumps to the search in the admin top bar.
+    if ((e.ctrlKey || e.metaKey) && (e.key === "k" || e.key === "K")) {
+      var search = document.querySelector(".c-search input");
+      if (search) {
+        e.preventDefault();
+        search.focus();
+        search.select();
+        return;
+      }
+    }
     // Arrow keys move between tabs, as screen-reader users expect from a tab list.
     var tab = e.target.closest && e.target.closest('[role="tab"][aria-controls]');
     var keys = ["ArrowRight", "ArrowLeft", "ArrowDown", "ArrowUp", "Home", "End"];
@@ -703,6 +865,18 @@
     }
     closeAllPopovers();
     $all("[data-dialog]").forEach(closeDialog);
+    var drawer = document.querySelector(".c-side.is-open");
+    if (drawer) {
+      setDrawer(false);
+    }
+    if (document.activeElement && document.activeElement.closest(".c-search")) {
+      document.activeElement.blur();
+    }
+  });
+  window.addEventListener("hashchange", function () {
+    openHashTab();
+    syncNavCurrent();
+    setDrawer(false);
   });
 
   // Forms are mock-ups: never post anywhere. A form can name where it leads with data-next.
@@ -869,6 +1043,9 @@
 
   function init() {
     initShell();
+    initConsole();
+    openHashTab();
+    syncNavCurrent();
     initReadState();
     initLanguage(document);
     initMotion(document);

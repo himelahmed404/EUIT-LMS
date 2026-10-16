@@ -14,7 +14,7 @@ Read this before you change a page, so you don't have to open all 46 to find you
 - [Public pages](#public-pages): log in, reset password, enroll, UI guide
 - [Student panel](#student-panel) (17 pages)
 - [Mentor panel](#mentor-panel) (9 pages)
-- [Admin panel](#admin-panel) (13 pages)
+- [Admin panel](#admin-panel) (13 pages, console look)
 - [Links that are still placeholders](#links-that-are-still-placeholders)
 - [Checking your changes](#checking-your-changes)
 
@@ -43,15 +43,35 @@ Each panel page is a self-contained HTML file. The sidebar, top bar and bell men
 every page of that role**: if you change one, change it in all of that role's pages (a find-and-replace
 across `student/*.html`, `mentor/*.html` or `admin/*.html`).
 
-| Part                           | Markup                                               | Notes                                                                                                                                                                                                                                                                                                              |
-| ------------------------------ | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Sidebar                        | `<aside class="p-side">` → `<nav class="p-nav">`     | The current page's link has `aria-current="page"`. Labels are wrapped in `<span class="p-nav-text">`; long ones also have `<span class="p-nav-short" aria-hidden="true">` for the phone tab bar. Admin sub-links sit in `<div class="p-subnav">`; the parent link highlights by itself when a sub-page is current. |
-| Sidebar card                   | `.p-help` at the bottom of the sidebar               | Student: points (Leaderboard shows "+10 waiting"; Paused shows "60 points"). Mentor: Mentor handbook (no page yet).                                                                                                                                                                                                |
-| Top bar                        | `<header class="p-top">`                             | Search (not wired), language switch, bell, profile chip (`.p-me`, links to the role's profile page).                                                                                                                                                                                                               |
-| Language switch                | `.eit-seg[aria-label="Language"]`                    | EN / বাং. The choice is saved in `localStorage` (`eit-lang`) and kept across pages. The copy stays English.                                                                                                                                                                                                        |
-| Bell                           | `<button class="p-iconbtn" data-notif-scope="student | mentor                                                                                                                                                                                                                                                                                                             | admin" aria-controls="notif-menu">`plus`<div class="p-dropdown" id="notif-menu" data-popover>` | Same items and count on every page of a role: student 2 unread, mentor 3, admin 3 (the paused student has their own menu with 1). "Mark all as read" clears the dots and the count and remembers it for that role (`localStorage` `eit-read-<role>`). "See all notifications" opens the role's `notifications.html`. |
-| Phone layout (720px and below) | Built by `app.js`                                    | The top bar becomes one row (logo, search icon, language, bell, avatar). The sidebar becomes a bottom tab bar with the first four links plus **More**, which opens a sheet with everything else (the profile, the remaining links, the sidebar card).                                                              |
-| Tablet layout (721–1099px)     | CSS only                                             | The sidebar becomes an 84px icon rail; hovering an icon shows its name.                                                                                                                                                                                                                                            |
+### Student and mentor panels
+
+| Part                           | Markup                                                                                     | Notes                                                                                                                                                                                                                                                                                                       |
+| ------------------------------ | ------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Sidebar                        | `<aside class="p-side">` → `<nav class="p-nav">`                                           | The current page's link has `aria-current="page"`. Labels are wrapped in `<span class="p-nav-text">`; long ones also have `<span class="p-nav-short" aria-hidden="true">` for the phone tab bar.                                                                                                            |
+| Sidebar card                   | `.p-help` at the bottom of the sidebar                                                     | Student: points (Leaderboard shows "+10 waiting"; Paused shows "60 points"). Mentor: Mentor handbook (no page yet).                                                                                                                                                                                         |
+| Top bar                        | `<header class="p-top">`                                                                   | Search (not wired), language switch, bell, profile chip (`.p-me`, links to the role's profile page).                                                                                                                                                                                                        |
+| Language switch                | `.eit-seg[aria-label="Language"]`                                                          | EN / বাং. The choice is saved in `localStorage` (`eit-lang`) and kept across pages. The copy stays English.                                                                                                                                                                                                 |
+| Bell                           | `button[data-notif-scope]` with `aria-controls="notif-menu"`, and `#notif-menu.p-dropdown` | `data-notif-scope` is `student`, `mentor` or `admin`. Same items and count on every page of a role: student 2 unread, mentor 3, admin 3 (the paused student has their own menu with 1). "Mark all as read" clears the dots and the count and remembers it for that role (`localStorage` `eit-read-<role>`). |
+| Phone layout (720px and below) | Built by `app.js`                                                                          | The top bar becomes one row (logo, search icon, language, bell, avatar). The sidebar becomes a bottom tab bar with the first four links plus **More**, which opens a sheet with everything else.                                                                                                            |
+| Tablet layout (721–1099px)     | CSS only                                                                                   | The sidebar becomes an 84px icon rail; hovering an icon shows its name.                                                                                                                                                                                                                                     |
+
+### Admin console (`admin/*.html`)
+
+The admin panel follows the SchoolofGenZ admin console, in European IT colours. Its pages have
+`<html class="is-console">`, load `assets/css/console.css` and, in `<head>` without `defer`,
+`assets/js/theme.js` (it sets light or dark and the collapsed sidebar before the page paints).
+Fonts: Anek Bangla for text, JetBrains Mono for section labels, codes and the Ctrl K hint.
+
+| Part                    | Markup                                                                     | Notes                                                                                                                                                                                                                                                                                         |
+| ----------------------- | -------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Shell                   | `<div class="p-shell p-console">` → `aside.c-side` + `.p-content`          | Pages use the full width beside the sidebar (no 1320px column).                                                                                                                                                                                                                               |
+| Sidebar                 | `aside.c-side#c-side` → `.c-brand` + `nav.c-nav` → `.c-group` → `a.c-item` | 232px. "European IT · admin console" with the collapse button. Groups with mono labels (`.c-group-label`). Each item: `.c-ico` (28px tile, 16px icon) + `.c-label` + optional `.c-count` (yellow pill). Current page: `aria-current="page"`; the parent of a sub-page: `aria-current="true"`. |
+| Top bar                 | `header.c-top` → `.c-top-in`                                               | Phone menu button, page icon (`.c-top-ico`), title (`h1`, or `p.c-top-h` on record pages) with a subtitle (`.c-top-sub`) or breadcrumb (`nav.c-crumbs`), the page's own buttons (`.c-actions`), search (`label.c-search`, Ctrl K / ⌘ K), bell, theme button, account.                         |
+| Account menu            | `button.c-me` → `#me-menu.c-pop[data-popover]`                             | My profile, Notifications, Settings, Language (EN / বাং), Log out.                                                                                                                                                                                                                            |
+| Light / dark            | `button[data-theme-toggle]` sets `html[data-theme]`                        | Saved in `localStorage` (`eit-theme`); the first visit follows the device. Dark colours are the tokens under `html.is-console[data-theme="dark"]` in `console.css`, so pages must use tokens (`var(--ink)`, `var(--surface-card)`…), never fixed colours.                                     |
+| Collapse                | `button[data-nav-toggle]` (`.c-collapse`, and `.c-expand` when collapsed)  | 1280px and up: the sidebar folds to a 68px icon rail; saved in `localStorage` (`eit-nav`).                                                                                                                                                                                                    |
+| Tablet (768–1279px)     | CSS only                                                                   | Always the 68px icon rail; counts become a red dot on the icon; names show on hover.                                                                                                                                                                                                          |
+| Phone (767px and below) | `button[data-nav-open]` (`.c-menu`)                                        | The sidebar is a drawer over the page (Esc, the backdrop or ✕ closes it). Page buttons move to a second row of the top bar.                                                                                                                                                                   |
 
 Sidebar links per role:
 
@@ -59,11 +79,15 @@ Sidebar links per role:
   Leaderboard, Certificates, Payments, Help. Profile is reached from the avatar.
 - **Mentor:** Dashboard, My batches (`batch.html`), Reviews (`review.html`), Courses (`course-builder.html`),
   Student questions (`questions.html`), Schedule & recordings.
-- **Admin:** Overview; Courses & batches (sub: Review & publish, Batch detail, Create a batch); Students &
-  payments (sub: Student record); Mentors; Roles & access; Seminar leads; Notifications; Settings; My profile.
+- **Admin:** Overview · **Queues:** Course review 3 (`courses.html#cbp-queue`, opens the Review queue tab),
+  Seminar leads 6 · **People:** Students & payments, Mentors · **Catalog:** Courses & batches · **System:**
+  Settings, Roles & access. Course review, Batch detail and Create a batch highlight their parent (Course
+  review, Courses & batches); Student record highlights Students & payments. Notifications and My profile
+  are in the bell and the account menu.
 
-Page widths: all panel pages share one column, up to 1320px wide and centred beside the sidebar
-(`--page-max` in `panel.css`). The enroll pages use a 1200px column; the enroll result uses 760px.
+Page widths: student and mentor pages share one column, up to 1320px wide and centred beside the sidebar
+(`--page-max` in `panel.css`). Admin pages use the full width. The enroll pages use a 1200px column; the
+enroll result uses 760px.
 
 ## Public pages
 
@@ -258,64 +282,70 @@ Same layout as the student version with mentor items (submissions, questions, re
 
 ### `admin/overview.html` · Overview
 
-Period switch (button state only), Create batch, 4 stats with sparklines, enrollments bar chart, Needs
-your attention, Quick actions, Upcoming batches table.
+A SchoolofGenZ-style dashboard. Top bar: the period switch (This month / Last 90 days, button state only).
+4 stat tiles (label, icon, value that counts up, grey sparkline with a dot for the latest week, change
+against September); a 12-column grid of panels with header strips: Enrollments per week (bar chart with a
+scale), Needs your attention (5 rows with small buttons), Upcoming batches (seats and status), Quick actions.
 
 ### `admin/courses.html` · Courses & batches
 
-**Tabs:** Courses (review-queue notice, track chips as captured states of the table rows, courses table
+Top bar: Add course. **Tabs** (linkable: `courses.html#cbp-courses`, `#cbp-batches`, `#cbp-queue`; the
+sidebar's Course review item is current while the queue is open): Courses (review-queue notice, track chips as captured states of the table rows, courses table
 with Edit → course review), Batches (all batches with seats and status; Create a batch), Review queue (3
 courses: Send back / Review and publish).
 
 ### `admin/course-review.html` · Review & publish
 
-Before-publishing checklist, curriculum with Watch links, price and installments (the plan choice, Full only
+Top bar: "Review & publish" with the breadcrumb Courses & batches / Review queue. The course's name, status
+and Publish course / Send back to mentor sit at the top of the page. Before-publishing checklist, curriculum with Watch links, price and installments (the plan choice, Full only
 / 2 / 3 / 4 parts, is a captured state of the price card), list on the website, note to the mentor;
 Publish course / Send back to mentor (toasts).
 
 ### `admin/batch-detail.html` · Batch detail (WordPress Batch 14)
 
-Header actions, 5 stats. **Tabs:** Students (All / Payment issues / Behind chips swap the table rows),
+Top bar: "Batch detail" with the breadcrumb Courses & batches / Batches. The batch name, badges, schedule
+and Edit batch / SMS the batch at the top of the page, then 5 stats. **Tabs:** Students (All / Payment issues / Behind chips swap the table rows),
 Payments (plan, paid, next installment; Remind), Attendance (last 6 classes), Recordings. Side: next
 classes, payments in this batch.
 
 ### `admin/batch-edit.html` · Create a batch
 
-Four sections (course and mentor, format and place, schedule, seats and fee). Offline / Online is a captured
+Top bar: "Create a batch" with the breadcrumb. Four sections (course and mentor, format and place, schedule, seats and fee). Offline / Online is a captured
 state of the form (`batch-form`). Class days allow several (`data-multi`). The summary follows the page;
 Create batch / Save as draft show toasts.
 
 ### `admin/students.html` · Students & payments
 
-Totals (collected, due this week, overdue), filter chips (states of the `filtered` table), student rows
+Top bar: Record cash payment, Enroll a student. Totals (collected, due this week, overdue), filter chips (states of the `filtered` table), student rows
 with progress bars and status; Send reminder (toast). Placeholders: pagination, Export CSV (toast only).
 
 ### `admin/student-record.html` · Student record (Mehedi Hasan)
 
-Paused banner, course progress, attendance strip, payments, details, notes and history.
+Top bar: "Student record" with the breadcrumb Students & payments. Name, badge and actions at the top of
+the page, then the paused banner, course progress, attendance strip, payments, details, notes and history.
 **Resume access / Pause access** switch between the `paused` and `active` states (these two copy the
 whole page, because the banner is added or removed).
 
 ### `admin/mentors.html` · Mentors
 
-Full-width mentors table (Assign batch stays visible when the table scrolls). **Add a mentor** opens the
+Top bar: Add a mentor. Full-width mentors table (Assign batch stays visible when the table scrolls). **Add a mentor** opens the
 `#add-mentor` dialog; Send login invite shows a toast.
 
 ### `admin/roles.html` · Roles & access
 
-6 role cards (3 × 2) that switch the permissions editor (`role-editor` states), None / View / Edit per
+Top bar: New role, Invite team member. 6 role cards (3 × 2) that switch the permissions editor (`role-editor` states), None / View / Edit per
 area, people with the role, recent changes, team members with All / Staff / Mentors (`team` states) and
 Edit dialogs (`#edit-<tab>-<row>`), **Invite team member** (`#invite-dialog`), **New role** (`#role-dialog`).
 Dialog field ids are prefixed with the dialog id so labels stay unique.
 
 ### `admin/leads.html` · Seminar leads
 
-Next two seminars with bookings, a 4-column board (Booked / Attended / Following up / Enrolled).
+Top bar: Add lead, Schedule a seminar. Next two seminars with bookings, a 4-column board (Booked / Attended / Following up / Enrolled).
 Placeholders: Call and WhatsApp links (no numbers yet), Add lead, Schedule a seminar.
 
 ### `admin/settings.html` · Settings
 
-Sections: Payments (`#pay`), Installments & access (`#access`, the pause switch hides its options), SMS
+Top bar: Save changes. Sections: Payments (`#pay`), Installments & access (`#access`, the pause switch hides its options), SMS
 messages (`#sms`), Learning defaults (`#learning`), Team & roles (`#team`). The section menu follows the
 page and highlights where you are. Placeholder: **[SMS PROVIDER]**.
 
@@ -326,7 +356,8 @@ Placeholders: Change photo, Full activity log.
 
 ### `admin/notifications.html` · Notifications
 
-Admin items (payments, course reviews, admissions, team); the sidebar's Notifications item is current.
+Admin items (payments, course reviews, admissions, team). Reached from the bell and the account menu; Mark
+all as read is in the top bar.
 
 ## Links that are still placeholders
 
@@ -348,9 +379,9 @@ npm run format      # Prettier, print width 120
 
 The checks start their own local server; they need Playwright's Chromium. They live in `tools/check/`:
 
-| Script       | What it covers                                                                                                                                                               |
-| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `links.mjs`  | Every relative link and `#anchor` resolves.                                                                                                                                  |
-| `pages.mjs`  | Every page at 360–1920px: no sideways scroll, sidebar never stacks, no script errors, no duplicate ids, every `aria-*` / `for` reference resolves, every control has a name. |
-| `states.mjs` | Every captured-state option shows its templates, every tab shows only its panel, every dialog opens and closes with Esc.                                                     |
-| `flows.mjs`  | Log in per role, reset password, quiz, upload a recording, roles, enroll, notifications, questions, dialogs.                                                                 |
+| Script       | What it covers                                                                                                                                                                                              |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `links.mjs`  | Every relative link and `#anchor` resolves.                                                                                                                                                                 |
+| `pages.mjs`  | Every page at 360–1920px: no sideways scroll, sidebar never stacks, no script errors, no duplicate ids, every `aria-*` / `for` reference resolves, every control has a name.                                |
+| `states.mjs` | Every captured-state option shows its templates, every tab shows only its panel, every dialog opens and closes with Esc.                                                                                    |
+| `flows.mjs`  | Log in per role, reset password, quiz, upload a recording, roles, enroll, notifications, questions, dialogs, and the admin console (dark mode, collapse, drawer, account menu, Ctrl K, Course review link). |

@@ -23,7 +23,7 @@ for (const p of pages()) {
     await page.goto(base + p, { waitUntil: "networkidle" });
     const r = await page.evaluate(() => {
       const vw = document.documentElement.clientWidth;
-      const side = document.querySelector(".p-side");
+      const side = document.querySelector(".p-side, .c-side");
       const stacked =
         side && getComputedStyle(side).position !== "fixed" && side.getBoundingClientRect().width > vw * 0.9;
       return { over: document.documentElement.scrollWidth - vw, stacked };

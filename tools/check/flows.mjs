@@ -1,5 +1,6 @@
 // Click-throughs of the main journeys: log in as each role, reset a password, take a quiz,
-// upload a recording, edit roles, enroll, notifications, mentor questions and dialogs.
+// upload a recording, edit roles, enroll, notifications, mentor questions, dialogs and the admin console
+// (light/dark, collapsed sidebar, phone drawer, account menu, Ctrl K, links that open a tab).
 import { chromium } from "playwright";
 import { startServer, report, done } from "./lib.mjs";
 
@@ -154,6 +155,48 @@ ok("quiz submit asks first", await vis(p.locator("#submit-quiz")));
 await go("admin/mentors.html");
 await click(btn("Add a mentor"));
 ok("add mentor dialog", await vis(p.locator("#add-mentor")));
+// Admin console.
+await go("admin/overview.html");
+const attr = (a) => p.evaluate((n) => document.documentElement.getAttribute(n), a);
+const themeBefore = await attr("data-theme");
+await click(p.locator("[data-theme-toggle]"));
+const themeAfter = await attr("data-theme");
+await go("admin/students.html");
+ok(
+  "console: dark mode switch, remembered on the next page",
+  themeBefore !== themeAfter && (await attr("data-theme")) === themeAfter,
+);
+await click(p.locator("[data-theme-toggle]"));
+await click(p.locator(".c-collapse"));
+const sideW = () => p.evaluate(() => document.querySelector(".c-side").getBoundingClientRect().width);
+await go("admin/mentors.html");
+ok("console: collapsed sidebar, remembered on the next page", (await sideW()) < 80);
+await click(p.locator(".c-expand"));
+ok("console: sidebar expands again", (await sideW()) > 200);
+await click(p.locator(".c-me"));
+ok("console: account menu", await vis(p.locator("#me-menu")));
+await p.keyboard.press("Escape");
+await p.keyboard.press("Control+k");
+ok("console: Ctrl K goes to search", await p.evaluate(() => !!document.activeElement.closest(".c-search")));
+await click(p.locator('.c-nav a[href="courses.html#cbp-queue"]'));
+await p.waitForLoadState("networkidle");
+const current = () => p.evaluate(() => document.querySelector(".c-nav [aria-current]").textContent.trim());
+ok(
+  "console: Course review opens the review queue tab",
+  (await p.locator("#cbt-queue").getAttribute("aria-selected")) === "true" &&
+    (await current()).startsWith("Course review"),
+);
+await click(p.locator("#cbt-courses"));
+ok("console: Courses tab moves the sidebar highlight back", (await current()).startsWith("Courses"));
+await p.setViewportSize({ width: 390, height: 844 });
+await go("admin/students.html");
+await click(p.locator("[data-nav-open]"));
+ok("console: phone menu opens as a drawer", await vis(p.locator(".c-side.is-open")));
+await p.keyboard.press("Escape");
+await p.waitForTimeout(300);
+ok("console: Esc closes the drawer", !(await p.locator(".c-side.is-open").count()));
+await p.setViewportSize({ width: 1440, height: 900 });
+
 report("no script errors", errs.length === 0, errs.join(" | "));
 await b.close();
 close();
