@@ -1,20 +1,1877 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Create a batch · European IT LMS</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
-<link rel="stylesheet" href="../assets/css/eit.css">
-<link rel="stylesheet" href="../assets/css/panel.css">
-<link rel="stylesheet" href="../assets/css/app.css">
-<script src="../assets/js/app.js" defer></script>
-</head>
-<body>
-<div class="p-shell"><aside class="p-side"><a class="p-brand" href="overview.html"><span class="p-brand-mark" aria-hidden="true"></span><span class="p-brand-text"><span class="p-brand-name">European IT</span><span class="p-brand-sub">INSTITUTE</span></span></a><nav class="p-nav" aria-label="Admin panel"><a href="overview.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1"></rect><rect x="14" y="3" width="7" height="5" rx="1"></rect><rect x="14" y="12" width="7" height="9" rx="1"></rect><rect x="3" y="16" width="7" height="5" rx="1"></rect></svg>Overview</a><span class="p-nav-label">Courses</span><a href="courses.html"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg>Courses &amp; batches<span class="p-count">3</span></a><div class="p-subnav"><a href="course-review.html">Review &amp; publish<span class="p-count">1</span></a><a href="batch-detail.html">Batch detail</a><a href="batch-edit.html" aria-current="page">Create a batch</a></div><span class="p-nav-label">People</span><a href="students.html"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>Students &amp; payments</a><div class="p-subnav"><a href="student-record.html">Student record</a></div><a href="mentors.html"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path></svg>Mentors</a><a href="roles.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>Roles &amp; access</a><span class="p-nav-label">Admissions</span><a href="leads.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"></path><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg>Seminar leads<span class="p-count">6</span></a><span class="p-nav-label">Account</span><a href="../notifications.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg>Notifications<span class="p-count">3</span></a><a href="settings.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>Settings</a><a href="profile.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>My profile</a></nav></aside><div class="p-content"><header class="p-top"><label class="p-search"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg><span class="eit-sr">Search</span><input type="search" placeholder="Search students, courses, payments"></label><div class="p-top-right"><div class="eit-seg has-thumb" role="group" aria-label="Language"><span class="eit-seg__thumb" aria-hidden="true" style="width: 52px; transform: translateX(4px);"></span><button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button></div><a class="p-iconbtn" href="../notifications.html" aria-label="Notifications, 3 unread"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg><span class="p-badge-count">3</span></a><a class="p-me" href="profile.html" style="text-decoration: none; border-radius: 12px;"><span class="p-avatar">SS</span><span style="display: flex; flex-direction: column;"><span class="p-me-name">Sharmin Sultana</span><span class="p-me-sub">Admin</span></span></a></div></header><main class="p-main" style="max-width: 1360px;" data-region="batch-form"><nav aria-label="Breadcrumb" class="p-row" style="gap: 8px; font-size: 14px; color: var(--ink-3); flex-wrap: wrap;"><a class="p-link" href="courses.html" style="font-weight: 500;">Courses &amp; batches</a><span aria-hidden="true">/</span><span style="color: var(--ink-2);">New batch</span></nav><h1 class="p-h1">Create a batch</h1><div class="p-split"><form aria-label="Batch details" style="flex: 1.6 1 560px; min-width: 0px; display: flex; flex-direction: column; gap: 24px;"><section class="p-card" aria-labelledby="s1" style="display: flex; flex-direction: column; gap: 18px;"><h2 id="s1" class="p-h3"><span class="p-mono" style="color: var(--cyan-ink); margin-right: 8px;">01</span>Course and mentor</h2><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 16px 20px;"><div class="eit-field"><label class="eit-field__label" for="eit-field-1">Course</label><div class="eit-field__wrap"><select id="eit-field-1" name="course" class="eit-field__control eit-field__select"><option value="gd" selected="">Graphic Design</option><option value="wp">Web Design &amp; Development with WordPress</option><option value="react">React JS</option><option value="dm">Digital Marketing</option><option value="ccna">CCNA</option></select><svg class="eit-icon eit-field__chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></div></div><div class="eit-field"><label class="eit-field__label" for="eit-field-2">Batch name</label><div class="eit-field__wrap"><input id="eit-field-2" name="batch" type="text" class="eit-field__control" aria-describedby="eit-field-2-note" value="Batch 11"></div><p id="eit-field-2-note" class="eit-field__note">Next number for this course</p></div><div class="eit-field"><label class="eit-field__label" for="eit-field-3">Mentor</label><div class="eit-field__wrap"><select id="eit-field-3" name="mentor" class="eit-field__control eit-field__select"><option value="nadia" selected="">Nadia Rahman</option><option value="tahmid">Tahmid Chowdhury</option></select><svg class="eit-icon eit-field__chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></div></div><div class="eit-field"><label class="eit-field__label" for="eit-field-4">Assistant mentor (optional)</label><div class="eit-field__wrap"><select id="eit-field-4" name="assistant" class="eit-field__control eit-field__select"><option value="none" selected="">None</option><option value="tahmid">Tahmid Chowdhury</option></select><svg class="eit-icon eit-field__chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></div></div></div></section><section class="p-card" aria-labelledby="s2" style="display: flex; flex-direction: column; gap: 18px;"><h2 id="s2" class="p-h3"><span class="p-mono" style="color: var(--cyan-ink); margin-right: 8px;">02</span>Format and place</h2><div class="p-seg" role="group" aria-label="Format" style="align-self: flex-start;"><button type="button" aria-pressed="true" style="background: var(--surface-card); color: var(--ink); box-shadow: var(--shadow-sm);" data-part-of="batch-form" data-part="0" data-value="0">Offline</button><button type="button" aria-pressed="false" style="" data-part-of="batch-form" data-part="0" data-value="1">Online</button></div><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 16px 20px;"><div class="eit-field"><label class="eit-field__label" for="eit-field-5">Room</label><div class="eit-field__wrap"><select id="eit-field-5" name="room" class="eit-field__control eit-field__select"><option value="lab1" selected="">Lab 1 · 25 seats</option><option value="lab2">Lab 2 · 20 seats</option><option value="lab3">Lab 3 · 30 seats</option></select><svg class="eit-icon eit-field__chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></div></div><div class="p-notice" style="background: var(--success-soft); color: var(--success); align-self: end; min-height: 48px; box-sizing: border-box; align-items: center;"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg><span>Lab 1 is free at these times</span></div></div><span class="p-small">The mentor uploads a recording after every class, online or offline.</span></section><section class="p-card" aria-labelledby="s3" style="display: flex; flex-direction: column; gap: 18px;"><h2 id="s3" class="p-h3"><span class="p-mono" style="color: var(--cyan-ink); margin-right: 8px;">03</span>Schedule</h2><div style="display: flex; flex-direction: column; gap: 8px;"><span class="p-label" id="days-label">Class days</span><div class="p-row" role="group" aria-labelledby="days-label" style="gap: 8px; flex-wrap: wrap;" data-multi=""><button type="button" aria-pressed="true" style="min-width: 56px; height: 44px; border-radius: 12px; font-style: inherit; font-variant: inherit; font-stretch: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 14px; font-weight: 600; cursor: pointer; border: 1px solid var(--ink); background: var(--ink); color: var(--on-ink);">Sat</button><button type="button" aria-pressed="false" style="min-width: 56px; height: 44px; border-radius: 12px; font-style: inherit; font-variant: inherit; font-stretch: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 14px; font-weight: 600; cursor: pointer; border: 1px solid var(--line-strong); background: var(--surface-card); color: var(--ink-2);">Sun</button><button type="button" aria-pressed="false" style="min-width: 56px; height: 44px; border-radius: 12px; font-style: inherit; font-variant: inherit; font-stretch: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 14px; font-weight: 600; cursor: pointer; border: 1px solid var(--line-strong); background: var(--surface-card); color: var(--ink-2);">Mon</button><button type="button" aria-pressed="true" style="min-width: 56px; height: 44px; border-radius: 12px; font-style: inherit; font-variant: inherit; font-stretch: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 14px; font-weight: 600; cursor: pointer; border: 1px solid var(--ink); background: var(--ink); color: var(--on-ink);">Tue</button><button type="button" aria-pressed="false" style="min-width: 56px; height: 44px; border-radius: 12px; font-style: inherit; font-variant: inherit; font-stretch: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 14px; font-weight: 600; cursor: pointer; border: 1px solid var(--line-strong); background: var(--surface-card); color: var(--ink-2);">Wed</button><button type="button" aria-pressed="false" style="min-width: 56px; height: 44px; border-radius: 12px; font-style: inherit; font-variant: inherit; font-stretch: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 14px; font-weight: 600; cursor: pointer; border: 1px solid var(--line-strong); background: var(--surface-card); color: var(--ink-2);">Thu</button><button type="button" aria-pressed="false" style="min-width: 56px; height: 44px; border-radius: 12px; font-style: inherit; font-variant: inherit; font-stretch: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 14px; font-weight: 600; cursor: pointer; border: 1px solid var(--line-strong); background: var(--surface-card); color: var(--ink-2);">Fri</button></div></div><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr)); gap: 16px 20px;"><div class="eit-field"><label class="eit-field__label" for="eit-field-6">First class</label><div class="eit-field__wrap"><input id="eit-field-6" name="start" type="date" class="eit-field__control" value="2026-10-31"></div></div><div class="eit-field"><label class="eit-field__label" for="eit-field-7">Starts at</label><div class="eit-field__wrap"><input id="eit-field-7" name="from" type="time" class="eit-field__control" value="18:00"></div></div><div class="eit-field"><label class="eit-field__label" for="eit-field-8">Ends at</label><div class="eit-field__wrap"><input id="eit-field-8" name="to" type="time" class="eit-field__control" value="20:00"></div></div><div class="eit-field"><label class="eit-field__label" for="eit-field-9">Number of classes</label><div class="eit-field__wrap"><input id="eit-field-9" name="classes" type="text" class="eit-field__control" inputmode="numeric" value="24"></div></div></div></section><section class="p-card" aria-labelledby="s4" style="display: flex; flex-direction: column; gap: 18px;"><h2 id="s4" class="p-h3"><span class="p-mono" style="color: var(--cyan-ink); margin-right: 8px;">04</span>Seats, fee and admission</h2><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr)); gap: 16px 20px;"><div class="eit-field"><label class="eit-field__label" for="eit-field-10">Seats</label><div class="eit-field__wrap"><input id="eit-field-10" name="seats" type="text" class="eit-field__control" inputmode="numeric" value="25"></div></div><div class="eit-field"><label class="eit-field__label" for="eit-field-11">Fee</label><div class="eit-field__wrap"><span class="eit-field__prefix" aria-hidden="true">৳</span><input id="eit-field-11" name="fee" type="text" class="eit-field__control" inputmode="numeric" aria-describedby="eit-field-11-note" value="12,000"></div><p id="eit-field-11-note" class="eit-field__note">From the course price</p></div><div class="eit-field"><label class="eit-field__label" for="eit-field-12">Installments</label><div class="eit-field__wrap"><select id="eit-field-12" name="plan" class="eit-field__control eit-field__select"><option value="1">Full payment only</option><option value="2" selected="">2 parts (course default)</option><option value="3">3 parts</option></select><svg class="eit-icon eit-field__chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></div></div></div><div class="p-row" style="justify-content: space-between; gap: 16px; border-top: 1px solid var(--line-soft); padding-top: 14px;"><span style="display: flex; flex-direction: column;"><span id="open-label" style="font-size: 14px; font-weight: 600;">Open for admission now</span><span class="p-small">Students can enroll and pay at checkout</span></span><button type="button" class="p-switch" role="switch" aria-checked="true" aria-labelledby="open-label"></button></div><div class="p-row" style="justify-content: space-between; gap: 16px;"><span style="display: flex; flex-direction: column;"><span id="ticker-label" style="font-size: 14px; font-weight: 600;">Show in the website's batch ticker</span><span class="p-small">"Graphic Design · Batch 11 · starts 31 Oct"</span></span><button type="button" class="p-switch" role="switch" aria-checked="true" aria-labelledby="ticker-label"></button></div></section></form><aside class="p-card" aria-labelledby="sum-title" style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 16px;"><span class="p-eyebrow">Summary</span><h2 id="sum-title" class="p-h2">Graphic Design · Batch 11</h2><dl style="margin: 0px; display: grid; grid-template-columns: auto 1fr; gap: 12px 16px; font-size: 14px;"><dt class="p-small">Mentor</dt><dd style="margin: 0px;">Nadia Rahman</dd><dt class="p-small">Format</dt><dd style="margin: 0px;">Offline · Lab 1, Mirpur-10</dd><dt class="p-small">Classes</dt><dd style="margin: 0px;">Sat &amp; Tue · 6:00–8:00 PM</dd><dt class="p-small">Runs</dt><dd style="margin: 0px;">31 Oct 2026 · 24 classes · about 12 weeks</dd><dt class="p-small">Seats</dt><dd style="margin: 0px;">25</dd><dt class="p-small">Fee</dt><dd style="margin: 0px;">৳12,000 or 2 × ৳6,000</dd></dl><hr class="p-divider"><button type="button" class="eit-btn eit-btn--primary eit-btn--md eit-btn--block"><svg class="eit-icon eit-btn__lead" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg><span class="eit-btn__label">Create batch</span></button><button class="p-ghostbtn" type="button" style="width: 100%;">Save as draft</button></aside></div></main></div></div>
-<template data-state="batch-form:0" data-region="[data-region='batch-form']"><main data-dc-tpl="75" class="p-main" style="max-width: 1360px;" data-region="batch-form"><nav aria-label="Breadcrumb" class="p-row" style="gap: 8px; font-size: 14px; color: var(--ink-3); flex-wrap: wrap;"><a class="p-link" href="courses.html" style="font-weight: 500;">Courses &amp; batches</a><span aria-hidden="true">/</span><span style="color: var(--ink-2);">New batch</span></nav><h1 class="p-h1">Create a batch</h1><div class="p-split"><form aria-label="Batch details" style="flex: 1.6 1 560px; min-width: 0px; display: flex; flex-direction: column; gap: 24px;"><section class="p-card" aria-labelledby="s1" style="display: flex; flex-direction: column; gap: 18px;"><h2 id="s1" class="p-h3"><span class="p-mono" style="color: var(--cyan-ink); margin-right: 8px;">01</span>Course and mentor</h2><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 16px 20px;"><div class="eit-field"><label class="eit-field__label" for="eit-field-1">Course</label><div class="eit-field__wrap"><select id="eit-field-1" name="course" class="eit-field__control eit-field__select"><option value="gd" selected="">Graphic Design</option><option value="wp">Web Design &amp; Development with WordPress</option><option value="react">React JS</option><option value="dm">Digital Marketing</option><option value="ccna">CCNA</option></select><svg class="eit-icon eit-field__chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></div></div><div class="eit-field"><label class="eit-field__label" for="eit-field-2">Batch name</label><div class="eit-field__wrap"><input id="eit-field-2" name="batch" type="text" class="eit-field__control" aria-describedby="eit-field-2-note" value="Batch 11"></div><p id="eit-field-2-note" class="eit-field__note">Next number for this course</p></div><div class="eit-field"><label class="eit-field__label" for="eit-field-3">Mentor</label><div class="eit-field__wrap"><select id="eit-field-3" name="mentor" class="eit-field__control eit-field__select"><option value="nadia" selected="">Nadia Rahman</option><option value="tahmid">Tahmid Chowdhury</option></select><svg class="eit-icon eit-field__chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></div></div><div class="eit-field"><label class="eit-field__label" for="eit-field-4">Assistant mentor (optional)</label><div class="eit-field__wrap"><select id="eit-field-4" name="assistant" class="eit-field__control eit-field__select"><option value="none" selected="">None</option><option value="tahmid">Tahmid Chowdhury</option></select><svg class="eit-icon eit-field__chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></div></div></div></section><section class="p-card" aria-labelledby="s2" style="display: flex; flex-direction: column; gap: 18px;"><h2 id="s2" class="p-h3"><span class="p-mono" style="color: var(--cyan-ink); margin-right: 8px;">02</span>Format and place</h2><div class="p-seg" role="group" aria-label="Format" style="align-self: flex-start;"><button type="button" aria-pressed="true" style="background: var(--surface-card); color: var(--ink); box-shadow: var(--shadow-sm);" data-part-of="batch-form" data-part="0" data-value="0">Offline</button><button type="button" aria-pressed="false" style="" data-part-of="batch-form" data-part="0" data-value="1">Online</button></div><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 16px 20px;"><div class="eit-field"><label class="eit-field__label" for="eit-field-5">Room</label><div class="eit-field__wrap"><select id="eit-field-5" name="room" class="eit-field__control eit-field__select"><option value="lab1" selected="">Lab 1 · 25 seats</option><option value="lab2">Lab 2 · 20 seats</option><option value="lab3">Lab 3 · 30 seats</option></select><svg class="eit-icon eit-field__chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></div></div><div class="p-notice" style="background: var(--success-soft); color: var(--success); align-self: end; min-height: 48px; box-sizing: border-box; align-items: center;"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg><span>Lab 1 is free at these times</span></div></div><span class="p-small">The mentor uploads a recording after every class, online or offline.</span></section><section class="p-card" aria-labelledby="s3" style="display: flex; flex-direction: column; gap: 18px;"><h2 id="s3" class="p-h3"><span class="p-mono" style="color: var(--cyan-ink); margin-right: 8px;">03</span>Schedule</h2><div style="display: flex; flex-direction: column; gap: 8px;"><span class="p-label" id="days-label">Class days</span><div class="p-row" role="group" aria-labelledby="days-label" style="gap: 8px; flex-wrap: wrap;" data-multi=""><button type="button" aria-pressed="true" style="min-width: 56px; height: 44px; border-radius: 12px; font-style: inherit; font-variant: inherit; font-stretch: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 14px; font-weight: 600; cursor: pointer; border: 1px solid var(--ink); background: var(--ink); color: var(--on-ink);">Sat</button><button type="button" aria-pressed="false" style="min-width: 56px; height: 44px; border-radius: 12px; font-style: inherit; font-variant: inherit; font-stretch: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 14px; font-weight: 600; cursor: pointer; border: 1px solid var(--line-strong); background: var(--surface-card); color: var(--ink-2);">Sun</button><button type="button" aria-pressed="false" style="min-width: 56px; height: 44px; border-radius: 12px; font-style: inherit; font-variant: inherit; font-stretch: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 14px; font-weight: 600; cursor: pointer; border: 1px solid var(--line-strong); background: var(--surface-card); color: var(--ink-2);">Mon</button><button type="button" aria-pressed="true" style="min-width: 56px; height: 44px; border-radius: 12px; font-style: inherit; font-variant: inherit; font-stretch: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 14px; font-weight: 600; cursor: pointer; border: 1px solid var(--ink); background: var(--ink); color: var(--on-ink);">Tue</button><button type="button" aria-pressed="false" style="min-width: 56px; height: 44px; border-radius: 12px; font-style: inherit; font-variant: inherit; font-stretch: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 14px; font-weight: 600; cursor: pointer; border: 1px solid var(--line-strong); background: var(--surface-card); color: var(--ink-2);">Wed</button><button type="button" aria-pressed="false" style="min-width: 56px; height: 44px; border-radius: 12px; font-style: inherit; font-variant: inherit; font-stretch: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 14px; font-weight: 600; cursor: pointer; border: 1px solid var(--line-strong); background: var(--surface-card); color: var(--ink-2);">Thu</button><button type="button" aria-pressed="false" style="min-width: 56px; height: 44px; border-radius: 12px; font-style: inherit; font-variant: inherit; font-stretch: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 14px; font-weight: 600; cursor: pointer; border: 1px solid var(--line-strong); background: var(--surface-card); color: var(--ink-2);">Fri</button></div></div><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr)); gap: 16px 20px;"><div class="eit-field"><label class="eit-field__label" for="eit-field-6">First class</label><div class="eit-field__wrap"><input id="eit-field-6" name="start" type="date" class="eit-field__control" value="2026-10-31"></div></div><div class="eit-field"><label class="eit-field__label" for="eit-field-7">Starts at</label><div class="eit-field__wrap"><input id="eit-field-7" name="from" type="time" class="eit-field__control" value="18:00"></div></div><div class="eit-field"><label class="eit-field__label" for="eit-field-8">Ends at</label><div class="eit-field__wrap"><input id="eit-field-8" name="to" type="time" class="eit-field__control" value="20:00"></div></div><div class="eit-field"><label class="eit-field__label" for="eit-field-9">Number of classes</label><div class="eit-field__wrap"><input id="eit-field-9" name="classes" type="text" class="eit-field__control" inputmode="numeric" value="24"></div></div></div></section><section class="p-card" aria-labelledby="s4" style="display: flex; flex-direction: column; gap: 18px;"><h2 id="s4" class="p-h3"><span class="p-mono" style="color: var(--cyan-ink); margin-right: 8px;">04</span>Seats, fee and admission</h2><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr)); gap: 16px 20px;"><div class="eit-field"><label class="eit-field__label" for="eit-field-10">Seats</label><div class="eit-field__wrap"><input id="eit-field-10" name="seats" type="text" class="eit-field__control" inputmode="numeric" value="25"></div></div><div class="eit-field"><label class="eit-field__label" for="eit-field-11">Fee</label><div class="eit-field__wrap"><span class="eit-field__prefix" aria-hidden="true">৳</span><input id="eit-field-11" name="fee" type="text" class="eit-field__control" inputmode="numeric" aria-describedby="eit-field-11-note" value="12,000"></div><p id="eit-field-11-note" class="eit-field__note">From the course price</p></div><div class="eit-field"><label class="eit-field__label" for="eit-field-12">Installments</label><div class="eit-field__wrap"><select id="eit-field-12" name="plan" class="eit-field__control eit-field__select"><option value="1">Full payment only</option><option value="2" selected="">2 parts (course default)</option><option value="3">3 parts</option></select><svg class="eit-icon eit-field__chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></div></div></div><div class="p-row" style="justify-content: space-between; gap: 16px; border-top: 1px solid var(--line-soft); padding-top: 14px;"><span style="display: flex; flex-direction: column;"><span id="open-label" style="font-size: 14px; font-weight: 600;">Open for admission now</span><span class="p-small">Students can enroll and pay at checkout</span></span><button type="button" class="p-switch" role="switch" aria-checked="true" aria-labelledby="open-label"></button></div><div class="p-row" style="justify-content: space-between; gap: 16px;"><span style="display: flex; flex-direction: column;"><span id="ticker-label" style="font-size: 14px; font-weight: 600;">Show in the website's batch ticker</span><span class="p-small">"Graphic Design · Batch 11 · starts 31 Oct"</span></span><button type="button" class="p-switch" role="switch" aria-checked="true" aria-labelledby="ticker-label"></button></div></section></form><aside class="p-card" aria-labelledby="sum-title" style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 16px;"><span class="p-eyebrow">Summary</span><h2 id="sum-title" class="p-h2">Graphic Design · Batch 11</h2><dl style="margin: 0px; display: grid; grid-template-columns: auto 1fr; gap: 12px 16px; font-size: 14px;"><dt class="p-small">Mentor</dt><dd style="margin: 0px;">Nadia Rahman</dd><dt class="p-small">Format</dt><dd style="margin: 0px;">Offline · Lab 1, Mirpur-10</dd><dt class="p-small">Classes</dt><dd style="margin: 0px;">Sat &amp; Tue · 6:00–8:00 PM</dd><dt class="p-small">Runs</dt><dd style="margin: 0px;">31 Oct 2026 · 24 classes · about 12 weeks</dd><dt class="p-small">Seats</dt><dd style="margin: 0px;">25</dd><dt class="p-small">Fee</dt><dd style="margin: 0px;">৳12,000 or 2 × ৳6,000</dd></dl><hr class="p-divider"><button type="button" class="eit-btn eit-btn--primary eit-btn--md eit-btn--block"><svg class="eit-icon eit-btn__lead" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg><span class="eit-btn__label">Create batch</span></button><button class="p-ghostbtn" type="button" style="width: 100%;">Save as draft</button></aside></div></main></template>
-<template data-state="batch-form:1" data-region="[data-region='batch-form']"><main data-dc-tpl="75" class="p-main" style="max-width: 1360px;" data-region="batch-form"><nav aria-label="Breadcrumb" class="p-row" style="gap: 8px; font-size: 14px; color: var(--ink-3); flex-wrap: wrap;"><a class="p-link" href="courses.html" style="font-weight: 500;">Courses &amp; batches</a><span aria-hidden="true">/</span><span style="color: var(--ink-2);">New batch</span></nav><h1 class="p-h1">Create a batch</h1><div class="p-split"><form aria-label="Batch details" style="flex: 1.6 1 560px; min-width: 0px; display: flex; flex-direction: column; gap: 24px;"><section class="p-card" aria-labelledby="s1" style="display: flex; flex-direction: column; gap: 18px;"><h2 id="s1" class="p-h3"><span class="p-mono" style="color: var(--cyan-ink); margin-right: 8px;">01</span>Course and mentor</h2><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 16px 20px;"><div class="eit-field"><label class="eit-field__label" for="eit-field-1">Course</label><div class="eit-field__wrap"><select id="eit-field-1" name="course" class="eit-field__control eit-field__select"><option value="gd" selected="">Graphic Design</option><option value="wp">Web Design &amp; Development with WordPress</option><option value="react">React JS</option><option value="dm">Digital Marketing</option><option value="ccna">CCNA</option></select><svg class="eit-icon eit-field__chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></div></div><div class="eit-field"><label class="eit-field__label" for="eit-field-2">Batch name</label><div class="eit-field__wrap"><input id="eit-field-2" name="batch" type="text" class="eit-field__control" aria-describedby="eit-field-2-note" value="Batch 11"></div><p id="eit-field-2-note" class="eit-field__note">Next number for this course</p></div><div class="eit-field"><label class="eit-field__label" for="eit-field-3">Mentor</label><div class="eit-field__wrap"><select id="eit-field-3" name="mentor" class="eit-field__control eit-field__select"><option value="nadia" selected="">Nadia Rahman</option><option value="tahmid">Tahmid Chowdhury</option></select><svg class="eit-icon eit-field__chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></div></div><div class="eit-field"><label class="eit-field__label" for="eit-field-4">Assistant mentor (optional)</label><div class="eit-field__wrap"><select id="eit-field-4" name="assistant" class="eit-field__control eit-field__select"><option value="none" selected="">None</option><option value="tahmid">Tahmid Chowdhury</option></select><svg class="eit-icon eit-field__chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></div></div></div></section><section class="p-card" aria-labelledby="s2" style="display: flex; flex-direction: column; gap: 18px;"><h2 id="s2" class="p-h3"><span class="p-mono" style="color: var(--cyan-ink); margin-right: 8px;">02</span>Format and place</h2><div class="p-seg" role="group" aria-label="Format" style="align-self: flex-start;"><button type="button" aria-pressed="false" style="" data-part-of="batch-form" data-part="0" data-value="0">Offline</button><button type="button" aria-pressed="true" style="background: var(--surface-card); color: var(--ink); box-shadow: var(--shadow-sm);" data-part-of="batch-form" data-part="0" data-value="1">Online</button></div><div class="eit-field"><label class="eit-field__label" for="eit-field-13">Zoom or Google Meet link</label><div class="eit-field__wrap"><input id="eit-field-13" name="link" type="url" class="eit-field__control" placeholder="https://" aria-describedby="eit-field-13-note" value=""></div><p id="eit-field-13-note" class="eit-field__note">Students see it 10 minutes before each class</p></div><span class="p-small">The mentor uploads a recording after every class, online or offline.</span></section><section class="p-card" aria-labelledby="s3" style="display: flex; flex-direction: column; gap: 18px;"><h2 id="s3" class="p-h3"><span class="p-mono" style="color: var(--cyan-ink); margin-right: 8px;">03</span>Schedule</h2><div style="display: flex; flex-direction: column; gap: 8px;"><span class="p-label" id="days-label">Class days</span><div class="p-row" role="group" aria-labelledby="days-label" style="gap: 8px; flex-wrap: wrap;" data-multi=""><button type="button" aria-pressed="true" style="min-width: 56px; height: 44px; border-radius: 12px; font-style: inherit; font-variant: inherit; font-stretch: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 14px; font-weight: 600; cursor: pointer; border: 1px solid var(--ink); background: var(--ink); color: var(--on-ink);">Sat</button><button type="button" aria-pressed="false" style="min-width: 56px; height: 44px; border-radius: 12px; font-style: inherit; font-variant: inherit; font-stretch: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 14px; font-weight: 600; cursor: pointer; border: 1px solid var(--line-strong); background: var(--surface-card); color: var(--ink-2);">Sun</button><button type="button" aria-pressed="false" style="min-width: 56px; height: 44px; border-radius: 12px; font-style: inherit; font-variant: inherit; font-stretch: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 14px; font-weight: 600; cursor: pointer; border: 1px solid var(--line-strong); background: var(--surface-card); color: var(--ink-2);">Mon</button><button type="button" aria-pressed="true" style="min-width: 56px; height: 44px; border-radius: 12px; font-style: inherit; font-variant: inherit; font-stretch: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 14px; font-weight: 600; cursor: pointer; border: 1px solid var(--ink); background: var(--ink); color: var(--on-ink);">Tue</button><button type="button" aria-pressed="false" style="min-width: 56px; height: 44px; border-radius: 12px; font-style: inherit; font-variant: inherit; font-stretch: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 14px; font-weight: 600; cursor: pointer; border: 1px solid var(--line-strong); background: var(--surface-card); color: var(--ink-2);">Wed</button><button type="button" aria-pressed="false" style="min-width: 56px; height: 44px; border-radius: 12px; font-style: inherit; font-variant: inherit; font-stretch: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 14px; font-weight: 600; cursor: pointer; border: 1px solid var(--line-strong); background: var(--surface-card); color: var(--ink-2);">Thu</button><button type="button" aria-pressed="false" style="min-width: 56px; height: 44px; border-radius: 12px; font-style: inherit; font-variant: inherit; font-stretch: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 14px; font-weight: 600; cursor: pointer; border: 1px solid var(--line-strong); background: var(--surface-card); color: var(--ink-2);">Fri</button></div></div><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr)); gap: 16px 20px;"><div class="eit-field"><label class="eit-field__label" for="eit-field-6">First class</label><div class="eit-field__wrap"><input id="eit-field-6" name="start" type="date" class="eit-field__control" value="2026-10-31"></div></div><div class="eit-field"><label class="eit-field__label" for="eit-field-7">Starts at</label><div class="eit-field__wrap"><input id="eit-field-7" name="from" type="time" class="eit-field__control" value="18:00"></div></div><div class="eit-field"><label class="eit-field__label" for="eit-field-8">Ends at</label><div class="eit-field__wrap"><input id="eit-field-8" name="to" type="time" class="eit-field__control" value="20:00"></div></div><div class="eit-field"><label class="eit-field__label" for="eit-field-9">Number of classes</label><div class="eit-field__wrap"><input id="eit-field-9" name="classes" type="text" class="eit-field__control" inputmode="numeric" value="24"></div></div></div></section><section class="p-card" aria-labelledby="s4" style="display: flex; flex-direction: column; gap: 18px;"><h2 id="s4" class="p-h3"><span class="p-mono" style="color: var(--cyan-ink); margin-right: 8px;">04</span>Seats, fee and admission</h2><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr)); gap: 16px 20px;"><div class="eit-field"><label class="eit-field__label" for="eit-field-10">Seats</label><div class="eit-field__wrap"><input id="eit-field-10" name="seats" type="text" class="eit-field__control" inputmode="numeric" value="25"></div></div><div class="eit-field"><label class="eit-field__label" for="eit-field-11">Fee</label><div class="eit-field__wrap"><span class="eit-field__prefix" aria-hidden="true">৳</span><input id="eit-field-11" name="fee" type="text" class="eit-field__control" inputmode="numeric" aria-describedby="eit-field-11-note" value="12,000"></div><p id="eit-field-11-note" class="eit-field__note">From the course price</p></div><div class="eit-field"><label class="eit-field__label" for="eit-field-12">Installments</label><div class="eit-field__wrap"><select id="eit-field-12" name="plan" class="eit-field__control eit-field__select"><option value="1">Full payment only</option><option value="2" selected="">2 parts (course default)</option><option value="3">3 parts</option></select><svg class="eit-icon eit-field__chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></div></div></div><div class="p-row" style="justify-content: space-between; gap: 16px; border-top: 1px solid var(--line-soft); padding-top: 14px;"><span style="display: flex; flex-direction: column;"><span id="open-label" style="font-size: 14px; font-weight: 600;">Open for admission now</span><span class="p-small">Students can enroll and pay at checkout</span></span><button type="button" class="p-switch" role="switch" aria-checked="true" aria-labelledby="open-label"></button></div><div class="p-row" style="justify-content: space-between; gap: 16px;"><span style="display: flex; flex-direction: column;"><span id="ticker-label" style="font-size: 14px; font-weight: 600;">Show in the website's batch ticker</span><span class="p-small">"Graphic Design · Batch 11 · starts 31 Oct"</span></span><button type="button" class="p-switch" role="switch" aria-checked="true" aria-labelledby="ticker-label"></button></div></section></form><aside class="p-card" aria-labelledby="sum-title" style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 16px;"><span class="p-eyebrow">Summary</span><h2 id="sum-title" class="p-h2">Graphic Design · Batch 11</h2><dl style="margin: 0px; display: grid; grid-template-columns: auto 1fr; gap: 12px 16px; font-size: 14px;"><dt class="p-small">Mentor</dt><dd style="margin: 0px;">Nadia Rahman</dd><dt class="p-small">Format</dt><dd style="margin: 0px;">Online · Zoom</dd><dt class="p-small">Classes</dt><dd style="margin: 0px;">Sat &amp; Tue · 6:00–8:00 PM</dd><dt class="p-small">Runs</dt><dd style="margin: 0px;">31 Oct 2026 · 24 classes · about 12 weeks</dd><dt class="p-small">Seats</dt><dd style="margin: 0px;">25</dd><dt class="p-small">Fee</dt><dd style="margin: 0px;">৳12,000 or 2 × ৳6,000</dd></dl><hr class="p-divider"><button type="button" class="eit-btn eit-btn--primary eit-btn--md eit-btn--block"><svg class="eit-icon eit-btn__lead" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg><span class="eit-btn__label">Create batch</span></button><button class="p-ghostbtn" type="button" style="width: 100%;">Save as draft</button></aside></div></main></template>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Create a batch · European IT LMS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap"
+    />
+    <link rel="stylesheet" href="../assets/css/eit.css" />
+    <link rel="stylesheet" href="../assets/css/panel.css" />
+    <link rel="stylesheet" href="../assets/css/app.css" />
+    <script src="../assets/js/app.js" defer></script>
+  </head>
+  <body>
+    <div class="p-shell">
+      <aside class="p-side">
+        <a class="p-brand" href="overview.html"
+          ><span class="p-brand-mark" aria-hidden="true"></span
+          ><span class="p-brand-text"
+            ><span class="p-brand-name">European IT</span><span class="p-brand-sub">INSTITUTE</span></span
+          ></a
+        >
+        <nav class="p-nav" aria-label="Admin panel">
+          <a href="overview.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="9" rx="1"></rect>
+              <rect x="14" y="3" width="7" height="5" rx="1"></rect>
+              <rect x="14" y="12" width="7" height="9" rx="1"></rect>
+              <rect x="3" y="16" width="7" height="5" rx="1"></rect></svg
+            >Overview</a
+          ><span class="p-nav-label">Courses</span
+          ><a href="courses.html"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path>
+              <path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg
+            >Courses &amp; batches<span class="p-count">3</span></a
+          >
+          <div class="p-subnav">
+            <a href="course-review.html">Review &amp; publish<span class="p-count">1</span></a
+            ><a href="batch-detail.html">Batch detail</a
+            ><a href="batch-edit.html" aria-current="page">Create a batch</a>
+          </div>
+          <span class="p-nav-label">People</span
+          ><a href="students.html"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg
+            >Students &amp; payments</a
+          >
+          <div class="p-subnav"><a href="student-record.html">Student record</a></div>
+          <a href="mentors.html"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <rect x="2" y="7" width="20" height="14" rx="2"></rect>
+              <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path></svg
+            >Mentors</a
+          ><a href="roles.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+              ></path>
+              <path d="m9 12 2 2 4-4"></path></svg
+            >Roles &amp; access</a
+          ><span class="p-nav-label">Admissions</span
+          ><a href="leads.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m3 11 18-5v12L3 14v-3z"></path>
+              <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg
+            >Seminar leads<span class="p-count">6</span></a
+          ><span class="p-nav-label">Account</span
+          ><a href="../notifications.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+              <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
+            >Notifications<span class="p-count">3</span></a
+          ><a href="settings.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
+              ></path>
+              <circle cx="12" cy="12" r="3"></circle></svg
+            >Settings</a
+          ><a href="profile.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle></svg
+            >My profile</a
+          >
+        </nav>
+      </aside>
+      <div class="p-content">
+        <header class="p-top">
+          <label class="p-search"
+            ><svg
+              class="eit-icon"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="M21 21l-4.35-4.35"></path></svg
+            ><span class="eit-sr">Search</span><input type="search" placeholder="Search students, courses, payments"
+          /></label>
+          <div class="p-top-right">
+            <div class="eit-seg has-thumb" role="group" aria-label="Language">
+              <span class="eit-seg__thumb" aria-hidden="true" style="width: 52px; transform: translateX(4px)"></span
+              ><button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button
+              ><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button>
+            </div>
+            <a class="p-iconbtn" href="../notifications.html" aria-label="Notifications, 3 unread"
+              ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
+              ><span class="p-badge-count">3</span></a
+            ><a class="p-me" href="profile.html" style="text-decoration: none; border-radius: 12px"
+              ><span class="p-avatar">SS</span
+              ><span style="display: flex; flex-direction: column"
+                ><span class="p-me-name">Sharmin Sultana</span><span class="p-me-sub">Admin</span></span
+              ></a
+            >
+          </div>
+        </header>
+        <main class="p-main" style="max-width: 1360px" data-region="batch-form">
+          <nav
+            aria-label="Breadcrumb"
+            class="p-row"
+            style="gap: 8px; font-size: 14px; color: var(--ink-3); flex-wrap: wrap"
+          >
+            <a class="p-link" href="courses.html" style="font-weight: 500">Courses &amp; batches</a
+            ><span aria-hidden="true">/</span><span style="color: var(--ink-2)">New batch</span>
+          </nav>
+          <h1 class="p-h1">Create a batch</h1>
+          <div class="p-split">
+            <form
+              aria-label="Batch details"
+              style="flex: 1.6 1 560px; min-width: 0px; display: flex; flex-direction: column; gap: 24px"
+            >
+              <section class="p-card" aria-labelledby="s1" style="display: flex; flex-direction: column; gap: 18px">
+                <h2 id="s1" class="p-h3">
+                  <span class="p-mono" style="color: var(--cyan-ink); margin-right: 8px">01</span>Course and mentor
+                </h2>
+                <div
+                  style="
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+                    gap: 16px 20px;
+                  "
+                >
+                  <div class="eit-field">
+                    <label class="eit-field__label" for="eit-field-1">Course</label>
+                    <div class="eit-field__wrap">
+                      <select id="eit-field-1" name="course" class="eit-field__control eit-field__select">
+                        <option value="gd" selected="">Graphic Design</option>
+                        <option value="wp">Web Design &amp; Development with WordPress</option>
+                        <option value="react">React JS</option>
+                        <option value="dm">Digital Marketing</option>
+                        <option value="ccna">CCNA</option></select
+                      ><svg
+                        class="eit-icon eit-field__chev"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        focusable="false"
+                        aria-hidden="true"
+                      >
+                        <path d="M6 9l6 6 6-6"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="eit-field">
+                    <label class="eit-field__label" for="eit-field-2">Batch name</label>
+                    <div class="eit-field__wrap">
+                      <input
+                        id="eit-field-2"
+                        name="batch"
+                        type="text"
+                        class="eit-field__control"
+                        aria-describedby="eit-field-2-note"
+                        value="Batch 11"
+                      />
+                    </div>
+                    <p id="eit-field-2-note" class="eit-field__note">Next number for this course</p>
+                  </div>
+                  <div class="eit-field">
+                    <label class="eit-field__label" for="eit-field-3">Mentor</label>
+                    <div class="eit-field__wrap">
+                      <select id="eit-field-3" name="mentor" class="eit-field__control eit-field__select">
+                        <option value="nadia" selected="">Nadia Rahman</option>
+                        <option value="tahmid">Tahmid Chowdhury</option></select
+                      ><svg
+                        class="eit-icon eit-field__chev"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        focusable="false"
+                        aria-hidden="true"
+                      >
+                        <path d="M6 9l6 6 6-6"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="eit-field">
+                    <label class="eit-field__label" for="eit-field-4">Assistant mentor (optional)</label>
+                    <div class="eit-field__wrap">
+                      <select id="eit-field-4" name="assistant" class="eit-field__control eit-field__select">
+                        <option value="none" selected="">None</option>
+                        <option value="tahmid">Tahmid Chowdhury</option></select
+                      ><svg
+                        class="eit-icon eit-field__chev"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        focusable="false"
+                        aria-hidden="true"
+                      >
+                        <path d="M6 9l6 6 6-6"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="p-card" aria-labelledby="s2" style="display: flex; flex-direction: column; gap: 18px">
+                <h2 id="s2" class="p-h3">
+                  <span class="p-mono" style="color: var(--cyan-ink); margin-right: 8px">02</span>Format and place
+                </h2>
+                <div class="p-seg" role="group" aria-label="Format" style="align-self: flex-start">
+                  <button
+                    type="button"
+                    aria-pressed="true"
+                    style="background: var(--surface-card); color: var(--ink); box-shadow: var(--shadow-sm)"
+                    data-part-of="batch-form"
+                    data-part="0"
+                    data-value="0"
+                  >
+                    Offline</button
+                  ><button
+                    type="button"
+                    aria-pressed="false"
+                    style=""
+                    data-part-of="batch-form"
+                    data-part="0"
+                    data-value="1"
+                  >
+                    Online
+                  </button>
+                </div>
+                <div
+                  style="
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+                    gap: 16px 20px;
+                  "
+                >
+                  <div class="eit-field">
+                    <label class="eit-field__label" for="eit-field-5">Room</label>
+                    <div class="eit-field__wrap">
+                      <select id="eit-field-5" name="room" class="eit-field__control eit-field__select">
+                        <option value="lab1" selected="">Lab 1 · 25 seats</option>
+                        <option value="lab2">Lab 2 · 20 seats</option>
+                        <option value="lab3">Lab 3 · 30 seats</option></select
+                      ><svg
+                        class="eit-icon eit-field__chev"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        focusable="false"
+                        aria-hidden="true"
+                      >
+                        <path d="M6 9l6 6 6-6"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="p-notice"
+                    style="
+                      background: var(--success-soft);
+                      color: var(--success);
+                      align-self: end;
+                      min-height: 48px;
+                      box-sizing: border-box;
+                      align-items: center;
+                    "
+                  >
+                    <svg
+                      class="eit-icon"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg
+                    ><span>Lab 1 is free at these times</span>
+                  </div>
+                </div>
+                <span class="p-small">The mentor uploads a recording after every class, online or offline.</span>
+              </section>
+              <section class="p-card" aria-labelledby="s3" style="display: flex; flex-direction: column; gap: 18px">
+                <h2 id="s3" class="p-h3">
+                  <span class="p-mono" style="color: var(--cyan-ink); margin-right: 8px">03</span>Schedule
+                </h2>
+                <div style="display: flex; flex-direction: column; gap: 8px">
+                  <span class="p-label" id="days-label">Class days</span>
+                  <div
+                    class="p-row"
+                    role="group"
+                    aria-labelledby="days-label"
+                    style="gap: 8px; flex-wrap: wrap"
+                    data-multi=""
+                  >
+                    <button
+                      type="button"
+                      aria-pressed="true"
+                      style="
+                        min-width: 56px;
+                        height: 44px;
+                        border-radius: 12px;
+                        font-style: inherit;
+                        font-variant: inherit;
+                        font-stretch: inherit;
+                        line-height: inherit;
+                        font-family: inherit;
+                        font-optical-sizing: inherit;
+                        font-size-adjust: inherit;
+                        font-kerning: inherit;
+                        font-feature-settings: inherit;
+                        font-variation-settings: inherit;
+                        font-size: 14px;
+                        font-weight: 600;
+                        cursor: pointer;
+                        border: 1px solid var(--ink);
+                        background: var(--ink);
+                        color: var(--on-ink);
+                      "
+                    >
+                      Sat</button
+                    ><button
+                      type="button"
+                      aria-pressed="false"
+                      style="
+                        min-width: 56px;
+                        height: 44px;
+                        border-radius: 12px;
+                        font-style: inherit;
+                        font-variant: inherit;
+                        font-stretch: inherit;
+                        line-height: inherit;
+                        font-family: inherit;
+                        font-optical-sizing: inherit;
+                        font-size-adjust: inherit;
+                        font-kerning: inherit;
+                        font-feature-settings: inherit;
+                        font-variation-settings: inherit;
+                        font-size: 14px;
+                        font-weight: 600;
+                        cursor: pointer;
+                        border: 1px solid var(--line-strong);
+                        background: var(--surface-card);
+                        color: var(--ink-2);
+                      "
+                    >
+                      Sun</button
+                    ><button
+                      type="button"
+                      aria-pressed="false"
+                      style="
+                        min-width: 56px;
+                        height: 44px;
+                        border-radius: 12px;
+                        font-style: inherit;
+                        font-variant: inherit;
+                        font-stretch: inherit;
+                        line-height: inherit;
+                        font-family: inherit;
+                        font-optical-sizing: inherit;
+                        font-size-adjust: inherit;
+                        font-kerning: inherit;
+                        font-feature-settings: inherit;
+                        font-variation-settings: inherit;
+                        font-size: 14px;
+                        font-weight: 600;
+                        cursor: pointer;
+                        border: 1px solid var(--line-strong);
+                        background: var(--surface-card);
+                        color: var(--ink-2);
+                      "
+                    >
+                      Mon</button
+                    ><button
+                      type="button"
+                      aria-pressed="true"
+                      style="
+                        min-width: 56px;
+                        height: 44px;
+                        border-radius: 12px;
+                        font-style: inherit;
+                        font-variant: inherit;
+                        font-stretch: inherit;
+                        line-height: inherit;
+                        font-family: inherit;
+                        font-optical-sizing: inherit;
+                        font-size-adjust: inherit;
+                        font-kerning: inherit;
+                        font-feature-settings: inherit;
+                        font-variation-settings: inherit;
+                        font-size: 14px;
+                        font-weight: 600;
+                        cursor: pointer;
+                        border: 1px solid var(--ink);
+                        background: var(--ink);
+                        color: var(--on-ink);
+                      "
+                    >
+                      Tue</button
+                    ><button
+                      type="button"
+                      aria-pressed="false"
+                      style="
+                        min-width: 56px;
+                        height: 44px;
+                        border-radius: 12px;
+                        font-style: inherit;
+                        font-variant: inherit;
+                        font-stretch: inherit;
+                        line-height: inherit;
+                        font-family: inherit;
+                        font-optical-sizing: inherit;
+                        font-size-adjust: inherit;
+                        font-kerning: inherit;
+                        font-feature-settings: inherit;
+                        font-variation-settings: inherit;
+                        font-size: 14px;
+                        font-weight: 600;
+                        cursor: pointer;
+                        border: 1px solid var(--line-strong);
+                        background: var(--surface-card);
+                        color: var(--ink-2);
+                      "
+                    >
+                      Wed</button
+                    ><button
+                      type="button"
+                      aria-pressed="false"
+                      style="
+                        min-width: 56px;
+                        height: 44px;
+                        border-radius: 12px;
+                        font-style: inherit;
+                        font-variant: inherit;
+                        font-stretch: inherit;
+                        line-height: inherit;
+                        font-family: inherit;
+                        font-optical-sizing: inherit;
+                        font-size-adjust: inherit;
+                        font-kerning: inherit;
+                        font-feature-settings: inherit;
+                        font-variation-settings: inherit;
+                        font-size: 14px;
+                        font-weight: 600;
+                        cursor: pointer;
+                        border: 1px solid var(--line-strong);
+                        background: var(--surface-card);
+                        color: var(--ink-2);
+                      "
+                    >
+                      Thu</button
+                    ><button
+                      type="button"
+                      aria-pressed="false"
+                      style="
+                        min-width: 56px;
+                        height: 44px;
+                        border-radius: 12px;
+                        font-style: inherit;
+                        font-variant: inherit;
+                        font-stretch: inherit;
+                        line-height: inherit;
+                        font-family: inherit;
+                        font-optical-sizing: inherit;
+                        font-size-adjust: inherit;
+                        font-kerning: inherit;
+                        font-feature-settings: inherit;
+                        font-variation-settings: inherit;
+                        font-size: 14px;
+                        font-weight: 600;
+                        cursor: pointer;
+                        border: 1px solid var(--line-strong);
+                        background: var(--surface-card);
+                        color: var(--ink-2);
+                      "
+                    >
+                      Fri
+                    </button>
+                  </div>
+                </div>
+                <div
+                  style="
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
+                    gap: 16px 20px;
+                  "
+                >
+                  <div class="eit-field">
+                    <label class="eit-field__label" for="eit-field-6">First class</label>
+                    <div class="eit-field__wrap">
+                      <input id="eit-field-6" name="start" type="date" class="eit-field__control" value="2026-10-31" />
+                    </div>
+                  </div>
+                  <div class="eit-field">
+                    <label class="eit-field__label" for="eit-field-7">Starts at</label>
+                    <div class="eit-field__wrap">
+                      <input id="eit-field-7" name="from" type="time" class="eit-field__control" value="18:00" />
+                    </div>
+                  </div>
+                  <div class="eit-field">
+                    <label class="eit-field__label" for="eit-field-8">Ends at</label>
+                    <div class="eit-field__wrap">
+                      <input id="eit-field-8" name="to" type="time" class="eit-field__control" value="20:00" />
+                    </div>
+                  </div>
+                  <div class="eit-field">
+                    <label class="eit-field__label" for="eit-field-9">Number of classes</label>
+                    <div class="eit-field__wrap">
+                      <input
+                        id="eit-field-9"
+                        name="classes"
+                        type="text"
+                        class="eit-field__control"
+                        inputmode="numeric"
+                        value="24"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="p-card" aria-labelledby="s4" style="display: flex; flex-direction: column; gap: 18px">
+                <h2 id="s4" class="p-h3">
+                  <span class="p-mono" style="color: var(--cyan-ink); margin-right: 8px">04</span>Seats, fee and
+                  admission
+                </h2>
+                <div
+                  style="
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
+                    gap: 16px 20px;
+                  "
+                >
+                  <div class="eit-field">
+                    <label class="eit-field__label" for="eit-field-10">Seats</label>
+                    <div class="eit-field__wrap">
+                      <input
+                        id="eit-field-10"
+                        name="seats"
+                        type="text"
+                        class="eit-field__control"
+                        inputmode="numeric"
+                        value="25"
+                      />
+                    </div>
+                  </div>
+                  <div class="eit-field">
+                    <label class="eit-field__label" for="eit-field-11">Fee</label>
+                    <div class="eit-field__wrap">
+                      <span class="eit-field__prefix" aria-hidden="true">৳</span
+                      ><input
+                        id="eit-field-11"
+                        name="fee"
+                        type="text"
+                        class="eit-field__control"
+                        inputmode="numeric"
+                        aria-describedby="eit-field-11-note"
+                        value="12,000"
+                      />
+                    </div>
+                    <p id="eit-field-11-note" class="eit-field__note">From the course price</p>
+                  </div>
+                  <div class="eit-field">
+                    <label class="eit-field__label" for="eit-field-12">Installments</label>
+                    <div class="eit-field__wrap">
+                      <select id="eit-field-12" name="plan" class="eit-field__control eit-field__select">
+                        <option value="1">Full payment only</option>
+                        <option value="2" selected="">2 parts (course default)</option>
+                        <option value="3">3 parts</option></select
+                      ><svg
+                        class="eit-icon eit-field__chev"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        focusable="false"
+                        aria-hidden="true"
+                      >
+                        <path d="M6 9l6 6 6-6"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="p-row"
+                  style="
+                    justify-content: space-between;
+                    gap: 16px;
+                    border-top: 1px solid var(--line-soft);
+                    padding-top: 14px;
+                  "
+                >
+                  <span style="display: flex; flex-direction: column"
+                    ><span id="open-label" style="font-size: 14px; font-weight: 600">Open for admission now</span
+                    ><span class="p-small">Students can enroll and pay at checkout</span></span
+                  ><button
+                    type="button"
+                    class="p-switch"
+                    role="switch"
+                    aria-checked="true"
+                    aria-labelledby="open-label"
+                  ></button>
+                </div>
+                <div class="p-row" style="justify-content: space-between; gap: 16px">
+                  <span style="display: flex; flex-direction: column"
+                    ><span id="ticker-label" style="font-size: 14px; font-weight: 600"
+                      >Show in the website's batch ticker</span
+                    ><span class="p-small">"Graphic Design · Batch 11 · starts 31 Oct"</span></span
+                  ><button
+                    type="button"
+                    class="p-switch"
+                    role="switch"
+                    aria-checked="true"
+                    aria-labelledby="ticker-label"
+                  ></button>
+                </div>
+              </section>
+            </form>
+            <aside
+              class="p-card"
+              aria-labelledby="sum-title"
+              style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 16px"
+            >
+              <span class="p-eyebrow">Summary</span>
+              <h2 id="sum-title" class="p-h2">Graphic Design · Batch 11</h2>
+              <dl style="margin: 0px; display: grid; grid-template-columns: auto 1fr; gap: 12px 16px; font-size: 14px">
+                <dt class="p-small">Mentor</dt>
+                <dd style="margin: 0px">Nadia Rahman</dd>
+                <dt class="p-small">Format</dt>
+                <dd style="margin: 0px">Offline · Lab 1, Mirpur-10</dd>
+                <dt class="p-small">Classes</dt>
+                <dd style="margin: 0px">Sat &amp; Tue · 6:00–8:00 PM</dd>
+                <dt class="p-small">Runs</dt>
+                <dd style="margin: 0px">31 Oct 2026 · 24 classes · about 12 weeks</dd>
+                <dt class="p-small">Seats</dt>
+                <dd style="margin: 0px">25</dd>
+                <dt class="p-small">Fee</dt>
+                <dd style="margin: 0px">৳12,000 or 2 × ৳6,000</dd>
+              </dl>
+              <hr class="p-divider" />
+              <button type="button" class="eit-btn eit-btn--primary eit-btn--md eit-btn--block">
+                <svg
+                  class="eit-icon eit-btn__lead"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  focusable="false"
+                  aria-hidden="true"
+                >
+                  <path d="M20 6L9 17l-5-5"></path></svg
+                ><span class="eit-btn__label">Create batch</span></button
+              ><button class="p-ghostbtn" type="button" style="width: 100%">Save as draft</button>
+            </aside>
+          </div>
+        </main>
+      </div>
+    </div>
+    <template data-state="batch-form:0" data-region="[data-region='batch-form']"
+      ><main data-dc-tpl="75" class="p-main" style="max-width: 1360px" data-region="batch-form">
+        <nav
+          aria-label="Breadcrumb"
+          class="p-row"
+          style="gap: 8px; font-size: 14px; color: var(--ink-3); flex-wrap: wrap"
+        >
+          <a class="p-link" href="courses.html" style="font-weight: 500">Courses &amp; batches</a
+          ><span aria-hidden="true">/</span><span style="color: var(--ink-2)">New batch</span>
+        </nav>
+        <h1 class="p-h1">Create a batch</h1>
+        <div class="p-split">
+          <form
+            aria-label="Batch details"
+            style="flex: 1.6 1 560px; min-width: 0px; display: flex; flex-direction: column; gap: 24px"
+          >
+            <section class="p-card" aria-labelledby="s1" style="display: flex; flex-direction: column; gap: 18px">
+              <h2 id="s1" class="p-h3">
+                <span class="p-mono" style="color: var(--cyan-ink); margin-right: 8px">01</span>Course and mentor
+              </h2>
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+                  gap: 16px 20px;
+                "
+              >
+                <div class="eit-field">
+                  <label class="eit-field__label" for="eit-field-1">Course</label>
+                  <div class="eit-field__wrap">
+                    <select id="eit-field-1" name="course" class="eit-field__control eit-field__select">
+                      <option value="gd" selected="">Graphic Design</option>
+                      <option value="wp">Web Design &amp; Development with WordPress</option>
+                      <option value="react">React JS</option>
+                      <option value="dm">Digital Marketing</option>
+                      <option value="ccna">CCNA</option></select
+                    ><svg
+                      class="eit-icon eit-field__chev"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <path d="M6 9l6 6 6-6"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="eit-field">
+                  <label class="eit-field__label" for="eit-field-2">Batch name</label>
+                  <div class="eit-field__wrap">
+                    <input
+                      id="eit-field-2"
+                      name="batch"
+                      type="text"
+                      class="eit-field__control"
+                      aria-describedby="eit-field-2-note"
+                      value="Batch 11"
+                    />
+                  </div>
+                  <p id="eit-field-2-note" class="eit-field__note">Next number for this course</p>
+                </div>
+                <div class="eit-field">
+                  <label class="eit-field__label" for="eit-field-3">Mentor</label>
+                  <div class="eit-field__wrap">
+                    <select id="eit-field-3" name="mentor" class="eit-field__control eit-field__select">
+                      <option value="nadia" selected="">Nadia Rahman</option>
+                      <option value="tahmid">Tahmid Chowdhury</option></select
+                    ><svg
+                      class="eit-icon eit-field__chev"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <path d="M6 9l6 6 6-6"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="eit-field">
+                  <label class="eit-field__label" for="eit-field-4">Assistant mentor (optional)</label>
+                  <div class="eit-field__wrap">
+                    <select id="eit-field-4" name="assistant" class="eit-field__control eit-field__select">
+                      <option value="none" selected="">None</option>
+                      <option value="tahmid">Tahmid Chowdhury</option></select
+                    ><svg
+                      class="eit-icon eit-field__chev"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <path d="M6 9l6 6 6-6"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="p-card" aria-labelledby="s2" style="display: flex; flex-direction: column; gap: 18px">
+              <h2 id="s2" class="p-h3">
+                <span class="p-mono" style="color: var(--cyan-ink); margin-right: 8px">02</span>Format and place
+              </h2>
+              <div class="p-seg" role="group" aria-label="Format" style="align-self: flex-start">
+                <button
+                  type="button"
+                  aria-pressed="true"
+                  style="background: var(--surface-card); color: var(--ink); box-shadow: var(--shadow-sm)"
+                  data-part-of="batch-form"
+                  data-part="0"
+                  data-value="0"
+                >
+                  Offline</button
+                ><button
+                  type="button"
+                  aria-pressed="false"
+                  style=""
+                  data-part-of="batch-form"
+                  data-part="0"
+                  data-value="1"
+                >
+                  Online
+                </button>
+              </div>
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+                  gap: 16px 20px;
+                "
+              >
+                <div class="eit-field">
+                  <label class="eit-field__label" for="eit-field-5">Room</label>
+                  <div class="eit-field__wrap">
+                    <select id="eit-field-5" name="room" class="eit-field__control eit-field__select">
+                      <option value="lab1" selected="">Lab 1 · 25 seats</option>
+                      <option value="lab2">Lab 2 · 20 seats</option>
+                      <option value="lab3">Lab 3 · 30 seats</option></select
+                    ><svg
+                      class="eit-icon eit-field__chev"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <path d="M6 9l6 6 6-6"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="p-notice"
+                  style="
+                    background: var(--success-soft);
+                    color: var(--success);
+                    align-self: end;
+                    min-height: 48px;
+                    box-sizing: border-box;
+                    align-items: center;
+                  "
+                >
+                  <svg
+                    class="eit-icon"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    focusable="false"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg
+                  ><span>Lab 1 is free at these times</span>
+                </div>
+              </div>
+              <span class="p-small">The mentor uploads a recording after every class, online or offline.</span>
+            </section>
+            <section class="p-card" aria-labelledby="s3" style="display: flex; flex-direction: column; gap: 18px">
+              <h2 id="s3" class="p-h3">
+                <span class="p-mono" style="color: var(--cyan-ink); margin-right: 8px">03</span>Schedule
+              </h2>
+              <div style="display: flex; flex-direction: column; gap: 8px">
+                <span class="p-label" id="days-label">Class days</span>
+                <div
+                  class="p-row"
+                  role="group"
+                  aria-labelledby="days-label"
+                  style="gap: 8px; flex-wrap: wrap"
+                  data-multi=""
+                >
+                  <button
+                    type="button"
+                    aria-pressed="true"
+                    style="
+                      min-width: 56px;
+                      height: 44px;
+                      border-radius: 12px;
+                      font-style: inherit;
+                      font-variant: inherit;
+                      font-stretch: inherit;
+                      line-height: inherit;
+                      font-family: inherit;
+                      font-optical-sizing: inherit;
+                      font-size-adjust: inherit;
+                      font-kerning: inherit;
+                      font-feature-settings: inherit;
+                      font-variation-settings: inherit;
+                      font-size: 14px;
+                      font-weight: 600;
+                      cursor: pointer;
+                      border: 1px solid var(--ink);
+                      background: var(--ink);
+                      color: var(--on-ink);
+                    "
+                  >
+                    Sat</button
+                  ><button
+                    type="button"
+                    aria-pressed="false"
+                    style="
+                      min-width: 56px;
+                      height: 44px;
+                      border-radius: 12px;
+                      font-style: inherit;
+                      font-variant: inherit;
+                      font-stretch: inherit;
+                      line-height: inherit;
+                      font-family: inherit;
+                      font-optical-sizing: inherit;
+                      font-size-adjust: inherit;
+                      font-kerning: inherit;
+                      font-feature-settings: inherit;
+                      font-variation-settings: inherit;
+                      font-size: 14px;
+                      font-weight: 600;
+                      cursor: pointer;
+                      border: 1px solid var(--line-strong);
+                      background: var(--surface-card);
+                      color: var(--ink-2);
+                    "
+                  >
+                    Sun</button
+                  ><button
+                    type="button"
+                    aria-pressed="false"
+                    style="
+                      min-width: 56px;
+                      height: 44px;
+                      border-radius: 12px;
+                      font-style: inherit;
+                      font-variant: inherit;
+                      font-stretch: inherit;
+                      line-height: inherit;
+                      font-family: inherit;
+                      font-optical-sizing: inherit;
+                      font-size-adjust: inherit;
+                      font-kerning: inherit;
+                      font-feature-settings: inherit;
+                      font-variation-settings: inherit;
+                      font-size: 14px;
+                      font-weight: 600;
+                      cursor: pointer;
+                      border: 1px solid var(--line-strong);
+                      background: var(--surface-card);
+                      color: var(--ink-2);
+                    "
+                  >
+                    Mon</button
+                  ><button
+                    type="button"
+                    aria-pressed="true"
+                    style="
+                      min-width: 56px;
+                      height: 44px;
+                      border-radius: 12px;
+                      font-style: inherit;
+                      font-variant: inherit;
+                      font-stretch: inherit;
+                      line-height: inherit;
+                      font-family: inherit;
+                      font-optical-sizing: inherit;
+                      font-size-adjust: inherit;
+                      font-kerning: inherit;
+                      font-feature-settings: inherit;
+                      font-variation-settings: inherit;
+                      font-size: 14px;
+                      font-weight: 600;
+                      cursor: pointer;
+                      border: 1px solid var(--ink);
+                      background: var(--ink);
+                      color: var(--on-ink);
+                    "
+                  >
+                    Tue</button
+                  ><button
+                    type="button"
+                    aria-pressed="false"
+                    style="
+                      min-width: 56px;
+                      height: 44px;
+                      border-radius: 12px;
+                      font-style: inherit;
+                      font-variant: inherit;
+                      font-stretch: inherit;
+                      line-height: inherit;
+                      font-family: inherit;
+                      font-optical-sizing: inherit;
+                      font-size-adjust: inherit;
+                      font-kerning: inherit;
+                      font-feature-settings: inherit;
+                      font-variation-settings: inherit;
+                      font-size: 14px;
+                      font-weight: 600;
+                      cursor: pointer;
+                      border: 1px solid var(--line-strong);
+                      background: var(--surface-card);
+                      color: var(--ink-2);
+                    "
+                  >
+                    Wed</button
+                  ><button
+                    type="button"
+                    aria-pressed="false"
+                    style="
+                      min-width: 56px;
+                      height: 44px;
+                      border-radius: 12px;
+                      font-style: inherit;
+                      font-variant: inherit;
+                      font-stretch: inherit;
+                      line-height: inherit;
+                      font-family: inherit;
+                      font-optical-sizing: inherit;
+                      font-size-adjust: inherit;
+                      font-kerning: inherit;
+                      font-feature-settings: inherit;
+                      font-variation-settings: inherit;
+                      font-size: 14px;
+                      font-weight: 600;
+                      cursor: pointer;
+                      border: 1px solid var(--line-strong);
+                      background: var(--surface-card);
+                      color: var(--ink-2);
+                    "
+                  >
+                    Thu</button
+                  ><button
+                    type="button"
+                    aria-pressed="false"
+                    style="
+                      min-width: 56px;
+                      height: 44px;
+                      border-radius: 12px;
+                      font-style: inherit;
+                      font-variant: inherit;
+                      font-stretch: inherit;
+                      line-height: inherit;
+                      font-family: inherit;
+                      font-optical-sizing: inherit;
+                      font-size-adjust: inherit;
+                      font-kerning: inherit;
+                      font-feature-settings: inherit;
+                      font-variation-settings: inherit;
+                      font-size: 14px;
+                      font-weight: 600;
+                      cursor: pointer;
+                      border: 1px solid var(--line-strong);
+                      background: var(--surface-card);
+                      color: var(--ink-2);
+                    "
+                  >
+                    Fri
+                  </button>
+                </div>
+              </div>
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
+                  gap: 16px 20px;
+                "
+              >
+                <div class="eit-field">
+                  <label class="eit-field__label" for="eit-field-6">First class</label>
+                  <div class="eit-field__wrap">
+                    <input id="eit-field-6" name="start" type="date" class="eit-field__control" value="2026-10-31" />
+                  </div>
+                </div>
+                <div class="eit-field">
+                  <label class="eit-field__label" for="eit-field-7">Starts at</label>
+                  <div class="eit-field__wrap">
+                    <input id="eit-field-7" name="from" type="time" class="eit-field__control" value="18:00" />
+                  </div>
+                </div>
+                <div class="eit-field">
+                  <label class="eit-field__label" for="eit-field-8">Ends at</label>
+                  <div class="eit-field__wrap">
+                    <input id="eit-field-8" name="to" type="time" class="eit-field__control" value="20:00" />
+                  </div>
+                </div>
+                <div class="eit-field">
+                  <label class="eit-field__label" for="eit-field-9">Number of classes</label>
+                  <div class="eit-field__wrap">
+                    <input
+                      id="eit-field-9"
+                      name="classes"
+                      type="text"
+                      class="eit-field__control"
+                      inputmode="numeric"
+                      value="24"
+                    />
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="p-card" aria-labelledby="s4" style="display: flex; flex-direction: column; gap: 18px">
+              <h2 id="s4" class="p-h3">
+                <span class="p-mono" style="color: var(--cyan-ink); margin-right: 8px">04</span>Seats, fee and admission
+              </h2>
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
+                  gap: 16px 20px;
+                "
+              >
+                <div class="eit-field">
+                  <label class="eit-field__label" for="eit-field-10">Seats</label>
+                  <div class="eit-field__wrap">
+                    <input
+                      id="eit-field-10"
+                      name="seats"
+                      type="text"
+                      class="eit-field__control"
+                      inputmode="numeric"
+                      value="25"
+                    />
+                  </div>
+                </div>
+                <div class="eit-field">
+                  <label class="eit-field__label" for="eit-field-11">Fee</label>
+                  <div class="eit-field__wrap">
+                    <span class="eit-field__prefix" aria-hidden="true">৳</span
+                    ><input
+                      id="eit-field-11"
+                      name="fee"
+                      type="text"
+                      class="eit-field__control"
+                      inputmode="numeric"
+                      aria-describedby="eit-field-11-note"
+                      value="12,000"
+                    />
+                  </div>
+                  <p id="eit-field-11-note" class="eit-field__note">From the course price</p>
+                </div>
+                <div class="eit-field">
+                  <label class="eit-field__label" for="eit-field-12">Installments</label>
+                  <div class="eit-field__wrap">
+                    <select id="eit-field-12" name="plan" class="eit-field__control eit-field__select">
+                      <option value="1">Full payment only</option>
+                      <option value="2" selected="">2 parts (course default)</option>
+                      <option value="3">3 parts</option></select
+                    ><svg
+                      class="eit-icon eit-field__chev"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <path d="M6 9l6 6 6-6"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="p-row"
+                style="
+                  justify-content: space-between;
+                  gap: 16px;
+                  border-top: 1px solid var(--line-soft);
+                  padding-top: 14px;
+                "
+              >
+                <span style="display: flex; flex-direction: column"
+                  ><span id="open-label" style="font-size: 14px; font-weight: 600">Open for admission now</span
+                  ><span class="p-small">Students can enroll and pay at checkout</span></span
+                ><button
+                  type="button"
+                  class="p-switch"
+                  role="switch"
+                  aria-checked="true"
+                  aria-labelledby="open-label"
+                ></button>
+              </div>
+              <div class="p-row" style="justify-content: space-between; gap: 16px">
+                <span style="display: flex; flex-direction: column"
+                  ><span id="ticker-label" style="font-size: 14px; font-weight: 600"
+                    >Show in the website's batch ticker</span
+                  ><span class="p-small">"Graphic Design · Batch 11 · starts 31 Oct"</span></span
+                ><button
+                  type="button"
+                  class="p-switch"
+                  role="switch"
+                  aria-checked="true"
+                  aria-labelledby="ticker-label"
+                ></button>
+              </div>
+            </section>
+          </form>
+          <aside
+            class="p-card"
+            aria-labelledby="sum-title"
+            style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 16px"
+          >
+            <span class="p-eyebrow">Summary</span>
+            <h2 id="sum-title" class="p-h2">Graphic Design · Batch 11</h2>
+            <dl style="margin: 0px; display: grid; grid-template-columns: auto 1fr; gap: 12px 16px; font-size: 14px">
+              <dt class="p-small">Mentor</dt>
+              <dd style="margin: 0px">Nadia Rahman</dd>
+              <dt class="p-small">Format</dt>
+              <dd style="margin: 0px">Offline · Lab 1, Mirpur-10</dd>
+              <dt class="p-small">Classes</dt>
+              <dd style="margin: 0px">Sat &amp; Tue · 6:00–8:00 PM</dd>
+              <dt class="p-small">Runs</dt>
+              <dd style="margin: 0px">31 Oct 2026 · 24 classes · about 12 weeks</dd>
+              <dt class="p-small">Seats</dt>
+              <dd style="margin: 0px">25</dd>
+              <dt class="p-small">Fee</dt>
+              <dd style="margin: 0px">৳12,000 or 2 × ৳6,000</dd>
+            </dl>
+            <hr class="p-divider" />
+            <button type="button" class="eit-btn eit-btn--primary eit-btn--md eit-btn--block">
+              <svg
+                class="eit-icon eit-btn__lead"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                focusable="false"
+                aria-hidden="true"
+              >
+                <path d="M20 6L9 17l-5-5"></path></svg
+              ><span class="eit-btn__label">Create batch</span></button
+            ><button class="p-ghostbtn" type="button" style="width: 100%">Save as draft</button>
+          </aside>
+        </div>
+      </main></template
+    >
+    <template data-state="batch-form:1" data-region="[data-region='batch-form']"
+      ><main data-dc-tpl="75" class="p-main" style="max-width: 1360px" data-region="batch-form">
+        <nav
+          aria-label="Breadcrumb"
+          class="p-row"
+          style="gap: 8px; font-size: 14px; color: var(--ink-3); flex-wrap: wrap"
+        >
+          <a class="p-link" href="courses.html" style="font-weight: 500">Courses &amp; batches</a
+          ><span aria-hidden="true">/</span><span style="color: var(--ink-2)">New batch</span>
+        </nav>
+        <h1 class="p-h1">Create a batch</h1>
+        <div class="p-split">
+          <form
+            aria-label="Batch details"
+            style="flex: 1.6 1 560px; min-width: 0px; display: flex; flex-direction: column; gap: 24px"
+          >
+            <section class="p-card" aria-labelledby="s1" style="display: flex; flex-direction: column; gap: 18px">
+              <h2 id="s1" class="p-h3">
+                <span class="p-mono" style="color: var(--cyan-ink); margin-right: 8px">01</span>Course and mentor
+              </h2>
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+                  gap: 16px 20px;
+                "
+              >
+                <div class="eit-field">
+                  <label class="eit-field__label" for="eit-field-1">Course</label>
+                  <div class="eit-field__wrap">
+                    <select id="eit-field-1" name="course" class="eit-field__control eit-field__select">
+                      <option value="gd" selected="">Graphic Design</option>
+                      <option value="wp">Web Design &amp; Development with WordPress</option>
+                      <option value="react">React JS</option>
+                      <option value="dm">Digital Marketing</option>
+                      <option value="ccna">CCNA</option></select
+                    ><svg
+                      class="eit-icon eit-field__chev"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <path d="M6 9l6 6 6-6"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="eit-field">
+                  <label class="eit-field__label" for="eit-field-2">Batch name</label>
+                  <div class="eit-field__wrap">
+                    <input
+                      id="eit-field-2"
+                      name="batch"
+                      type="text"
+                      class="eit-field__control"
+                      aria-describedby="eit-field-2-note"
+                      value="Batch 11"
+                    />
+                  </div>
+                  <p id="eit-field-2-note" class="eit-field__note">Next number for this course</p>
+                </div>
+                <div class="eit-field">
+                  <label class="eit-field__label" for="eit-field-3">Mentor</label>
+                  <div class="eit-field__wrap">
+                    <select id="eit-field-3" name="mentor" class="eit-field__control eit-field__select">
+                      <option value="nadia" selected="">Nadia Rahman</option>
+                      <option value="tahmid">Tahmid Chowdhury</option></select
+                    ><svg
+                      class="eit-icon eit-field__chev"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <path d="M6 9l6 6 6-6"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="eit-field">
+                  <label class="eit-field__label" for="eit-field-4">Assistant mentor (optional)</label>
+                  <div class="eit-field__wrap">
+                    <select id="eit-field-4" name="assistant" class="eit-field__control eit-field__select">
+                      <option value="none" selected="">None</option>
+                      <option value="tahmid">Tahmid Chowdhury</option></select
+                    ><svg
+                      class="eit-icon eit-field__chev"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <path d="M6 9l6 6 6-6"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="p-card" aria-labelledby="s2" style="display: flex; flex-direction: column; gap: 18px">
+              <h2 id="s2" class="p-h3">
+                <span class="p-mono" style="color: var(--cyan-ink); margin-right: 8px">02</span>Format and place
+              </h2>
+              <div class="p-seg" role="group" aria-label="Format" style="align-self: flex-start">
+                <button
+                  type="button"
+                  aria-pressed="false"
+                  style=""
+                  data-part-of="batch-form"
+                  data-part="0"
+                  data-value="0"
+                >
+                  Offline</button
+                ><button
+                  type="button"
+                  aria-pressed="true"
+                  style="background: var(--surface-card); color: var(--ink); box-shadow: var(--shadow-sm)"
+                  data-part-of="batch-form"
+                  data-part="0"
+                  data-value="1"
+                >
+                  Online
+                </button>
+              </div>
+              <div class="eit-field">
+                <label class="eit-field__label" for="eit-field-13">Zoom or Google Meet link</label>
+                <div class="eit-field__wrap">
+                  <input
+                    id="eit-field-13"
+                    name="link"
+                    type="url"
+                    class="eit-field__control"
+                    placeholder="https://"
+                    aria-describedby="eit-field-13-note"
+                    value=""
+                  />
+                </div>
+                <p id="eit-field-13-note" class="eit-field__note">Students see it 10 minutes before each class</p>
+              </div>
+              <span class="p-small">The mentor uploads a recording after every class, online or offline.</span>
+            </section>
+            <section class="p-card" aria-labelledby="s3" style="display: flex; flex-direction: column; gap: 18px">
+              <h2 id="s3" class="p-h3">
+                <span class="p-mono" style="color: var(--cyan-ink); margin-right: 8px">03</span>Schedule
+              </h2>
+              <div style="display: flex; flex-direction: column; gap: 8px">
+                <span class="p-label" id="days-label">Class days</span>
+                <div
+                  class="p-row"
+                  role="group"
+                  aria-labelledby="days-label"
+                  style="gap: 8px; flex-wrap: wrap"
+                  data-multi=""
+                >
+                  <button
+                    type="button"
+                    aria-pressed="true"
+                    style="
+                      min-width: 56px;
+                      height: 44px;
+                      border-radius: 12px;
+                      font-style: inherit;
+                      font-variant: inherit;
+                      font-stretch: inherit;
+                      line-height: inherit;
+                      font-family: inherit;
+                      font-optical-sizing: inherit;
+                      font-size-adjust: inherit;
+                      font-kerning: inherit;
+                      font-feature-settings: inherit;
+                      font-variation-settings: inherit;
+                      font-size: 14px;
+                      font-weight: 600;
+                      cursor: pointer;
+                      border: 1px solid var(--ink);
+                      background: var(--ink);
+                      color: var(--on-ink);
+                    "
+                  >
+                    Sat</button
+                  ><button
+                    type="button"
+                    aria-pressed="false"
+                    style="
+                      min-width: 56px;
+                      height: 44px;
+                      border-radius: 12px;
+                      font-style: inherit;
+                      font-variant: inherit;
+                      font-stretch: inherit;
+                      line-height: inherit;
+                      font-family: inherit;
+                      font-optical-sizing: inherit;
+                      font-size-adjust: inherit;
+                      font-kerning: inherit;
+                      font-feature-settings: inherit;
+                      font-variation-settings: inherit;
+                      font-size: 14px;
+                      font-weight: 600;
+                      cursor: pointer;
+                      border: 1px solid var(--line-strong);
+                      background: var(--surface-card);
+                      color: var(--ink-2);
+                    "
+                  >
+                    Sun</button
+                  ><button
+                    type="button"
+                    aria-pressed="false"
+                    style="
+                      min-width: 56px;
+                      height: 44px;
+                      border-radius: 12px;
+                      font-style: inherit;
+                      font-variant: inherit;
+                      font-stretch: inherit;
+                      line-height: inherit;
+                      font-family: inherit;
+                      font-optical-sizing: inherit;
+                      font-size-adjust: inherit;
+                      font-kerning: inherit;
+                      font-feature-settings: inherit;
+                      font-variation-settings: inherit;
+                      font-size: 14px;
+                      font-weight: 600;
+                      cursor: pointer;
+                      border: 1px solid var(--line-strong);
+                      background: var(--surface-card);
+                      color: var(--ink-2);
+                    "
+                  >
+                    Mon</button
+                  ><button
+                    type="button"
+                    aria-pressed="true"
+                    style="
+                      min-width: 56px;
+                      height: 44px;
+                      border-radius: 12px;
+                      font-style: inherit;
+                      font-variant: inherit;
+                      font-stretch: inherit;
+                      line-height: inherit;
+                      font-family: inherit;
+                      font-optical-sizing: inherit;
+                      font-size-adjust: inherit;
+                      font-kerning: inherit;
+                      font-feature-settings: inherit;
+                      font-variation-settings: inherit;
+                      font-size: 14px;
+                      font-weight: 600;
+                      cursor: pointer;
+                      border: 1px solid var(--ink);
+                      background: var(--ink);
+                      color: var(--on-ink);
+                    "
+                  >
+                    Tue</button
+                  ><button
+                    type="button"
+                    aria-pressed="false"
+                    style="
+                      min-width: 56px;
+                      height: 44px;
+                      border-radius: 12px;
+                      font-style: inherit;
+                      font-variant: inherit;
+                      font-stretch: inherit;
+                      line-height: inherit;
+                      font-family: inherit;
+                      font-optical-sizing: inherit;
+                      font-size-adjust: inherit;
+                      font-kerning: inherit;
+                      font-feature-settings: inherit;
+                      font-variation-settings: inherit;
+                      font-size: 14px;
+                      font-weight: 600;
+                      cursor: pointer;
+                      border: 1px solid var(--line-strong);
+                      background: var(--surface-card);
+                      color: var(--ink-2);
+                    "
+                  >
+                    Wed</button
+                  ><button
+                    type="button"
+                    aria-pressed="false"
+                    style="
+                      min-width: 56px;
+                      height: 44px;
+                      border-radius: 12px;
+                      font-style: inherit;
+                      font-variant: inherit;
+                      font-stretch: inherit;
+                      line-height: inherit;
+                      font-family: inherit;
+                      font-optical-sizing: inherit;
+                      font-size-adjust: inherit;
+                      font-kerning: inherit;
+                      font-feature-settings: inherit;
+                      font-variation-settings: inherit;
+                      font-size: 14px;
+                      font-weight: 600;
+                      cursor: pointer;
+                      border: 1px solid var(--line-strong);
+                      background: var(--surface-card);
+                      color: var(--ink-2);
+                    "
+                  >
+                    Thu</button
+                  ><button
+                    type="button"
+                    aria-pressed="false"
+                    style="
+                      min-width: 56px;
+                      height: 44px;
+                      border-radius: 12px;
+                      font-style: inherit;
+                      font-variant: inherit;
+                      font-stretch: inherit;
+                      line-height: inherit;
+                      font-family: inherit;
+                      font-optical-sizing: inherit;
+                      font-size-adjust: inherit;
+                      font-kerning: inherit;
+                      font-feature-settings: inherit;
+                      font-variation-settings: inherit;
+                      font-size: 14px;
+                      font-weight: 600;
+                      cursor: pointer;
+                      border: 1px solid var(--line-strong);
+                      background: var(--surface-card);
+                      color: var(--ink-2);
+                    "
+                  >
+                    Fri
+                  </button>
+                </div>
+              </div>
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
+                  gap: 16px 20px;
+                "
+              >
+                <div class="eit-field">
+                  <label class="eit-field__label" for="eit-field-6">First class</label>
+                  <div class="eit-field__wrap">
+                    <input id="eit-field-6" name="start" type="date" class="eit-field__control" value="2026-10-31" />
+                  </div>
+                </div>
+                <div class="eit-field">
+                  <label class="eit-field__label" for="eit-field-7">Starts at</label>
+                  <div class="eit-field__wrap">
+                    <input id="eit-field-7" name="from" type="time" class="eit-field__control" value="18:00" />
+                  </div>
+                </div>
+                <div class="eit-field">
+                  <label class="eit-field__label" for="eit-field-8">Ends at</label>
+                  <div class="eit-field__wrap">
+                    <input id="eit-field-8" name="to" type="time" class="eit-field__control" value="20:00" />
+                  </div>
+                </div>
+                <div class="eit-field">
+                  <label class="eit-field__label" for="eit-field-9">Number of classes</label>
+                  <div class="eit-field__wrap">
+                    <input
+                      id="eit-field-9"
+                      name="classes"
+                      type="text"
+                      class="eit-field__control"
+                      inputmode="numeric"
+                      value="24"
+                    />
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="p-card" aria-labelledby="s4" style="display: flex; flex-direction: column; gap: 18px">
+              <h2 id="s4" class="p-h3">
+                <span class="p-mono" style="color: var(--cyan-ink); margin-right: 8px">04</span>Seats, fee and admission
+              </h2>
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
+                  gap: 16px 20px;
+                "
+              >
+                <div class="eit-field">
+                  <label class="eit-field__label" for="eit-field-10">Seats</label>
+                  <div class="eit-field__wrap">
+                    <input
+                      id="eit-field-10"
+                      name="seats"
+                      type="text"
+                      class="eit-field__control"
+                      inputmode="numeric"
+                      value="25"
+                    />
+                  </div>
+                </div>
+                <div class="eit-field">
+                  <label class="eit-field__label" for="eit-field-11">Fee</label>
+                  <div class="eit-field__wrap">
+                    <span class="eit-field__prefix" aria-hidden="true">৳</span
+                    ><input
+                      id="eit-field-11"
+                      name="fee"
+                      type="text"
+                      class="eit-field__control"
+                      inputmode="numeric"
+                      aria-describedby="eit-field-11-note"
+                      value="12,000"
+                    />
+                  </div>
+                  <p id="eit-field-11-note" class="eit-field__note">From the course price</p>
+                </div>
+                <div class="eit-field">
+                  <label class="eit-field__label" for="eit-field-12">Installments</label>
+                  <div class="eit-field__wrap">
+                    <select id="eit-field-12" name="plan" class="eit-field__control eit-field__select">
+                      <option value="1">Full payment only</option>
+                      <option value="2" selected="">2 parts (course default)</option>
+                      <option value="3">3 parts</option></select
+                    ><svg
+                      class="eit-icon eit-field__chev"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <path d="M6 9l6 6 6-6"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="p-row"
+                style="
+                  justify-content: space-between;
+                  gap: 16px;
+                  border-top: 1px solid var(--line-soft);
+                  padding-top: 14px;
+                "
+              >
+                <span style="display: flex; flex-direction: column"
+                  ><span id="open-label" style="font-size: 14px; font-weight: 600">Open for admission now</span
+                  ><span class="p-small">Students can enroll and pay at checkout</span></span
+                ><button
+                  type="button"
+                  class="p-switch"
+                  role="switch"
+                  aria-checked="true"
+                  aria-labelledby="open-label"
+                ></button>
+              </div>
+              <div class="p-row" style="justify-content: space-between; gap: 16px">
+                <span style="display: flex; flex-direction: column"
+                  ><span id="ticker-label" style="font-size: 14px; font-weight: 600"
+                    >Show in the website's batch ticker</span
+                  ><span class="p-small">"Graphic Design · Batch 11 · starts 31 Oct"</span></span
+                ><button
+                  type="button"
+                  class="p-switch"
+                  role="switch"
+                  aria-checked="true"
+                  aria-labelledby="ticker-label"
+                ></button>
+              </div>
+            </section>
+          </form>
+          <aside
+            class="p-card"
+            aria-labelledby="sum-title"
+            style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 16px"
+          >
+            <span class="p-eyebrow">Summary</span>
+            <h2 id="sum-title" class="p-h2">Graphic Design · Batch 11</h2>
+            <dl style="margin: 0px; display: grid; grid-template-columns: auto 1fr; gap: 12px 16px; font-size: 14px">
+              <dt class="p-small">Mentor</dt>
+              <dd style="margin: 0px">Nadia Rahman</dd>
+              <dt class="p-small">Format</dt>
+              <dd style="margin: 0px">Online · Zoom</dd>
+              <dt class="p-small">Classes</dt>
+              <dd style="margin: 0px">Sat &amp; Tue · 6:00–8:00 PM</dd>
+              <dt class="p-small">Runs</dt>
+              <dd style="margin: 0px">31 Oct 2026 · 24 classes · about 12 weeks</dd>
+              <dt class="p-small">Seats</dt>
+              <dd style="margin: 0px">25</dd>
+              <dt class="p-small">Fee</dt>
+              <dd style="margin: 0px">৳12,000 or 2 × ৳6,000</dd>
+            </dl>
+            <hr class="p-divider" />
+            <button type="button" class="eit-btn eit-btn--primary eit-btn--md eit-btn--block">
+              <svg
+                class="eit-icon eit-btn__lead"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                focusable="false"
+                aria-hidden="true"
+              >
+                <path d="M20 6L9 17l-5-5"></path></svg
+              ><span class="eit-btn__label">Create batch</span></button
+            ><button class="p-ghostbtn" type="button" style="width: 100%">Save as draft</button>
+          </aside>
+        </div>
+      </main></template
+    >
+  </body>
 </html>

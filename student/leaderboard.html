@@ -1,32 +1,1110 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Leaderboard · European IT LMS</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
-<link rel="stylesheet" href="../assets/css/eit.css">
-<link rel="stylesheet" href="../assets/css/panel.css">
-<link rel="stylesheet" href="../assets/css/app.css">
-<style>
-.lb-podium{flex:1 1 380px;display:flex;align-items:flex-end;justify-content:center;gap:14px;min-height:280px}
-.lb-col{flex:1 1 0;max-width:150px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;animation:p-rise 640ms var(--ease-out-expo) both}
-.lb-av{position:relative;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:17px;background:#FFFFFF;color:#0A1B2C;transition:transform var(--duration-base) var(--ease-spring)}
-.lb-col:hover .lb-av{transform:translateY(-5px) rotate(-6deg)}
-.lb-crown{display:grid;place-items:center;width:34px;height:34px;border-radius:12px;background:#F4B04F;color:#0A1B2C;margin-bottom:2px;animation:p-float 5s ease-in-out infinite}
-.lb-block{width:100%;border-radius:16px 16px 6px 6px;display:flex;justify-content:center;padding-top:12px;box-sizing:border-box;font-size:30px;font-weight:700;letter-spacing:-0.02em;transform-origin:bottom;animation:p-grow-up 1000ms var(--ease-out-expo) both}
-.lb-me td{background:var(--cyan-soft) !important}
-.lb-me td:first-child{box-shadow:inset 3px 0 0 var(--cyan)}
-.lb-rank{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:50%;font-weight:700;font-size:14px;font-variant-numeric:tabular-nums}
-.lb-trend{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:700;white-space:nowrap}
-.lb-hist{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--line-soft)}
-.lb-hist:last-child{border-bottom:0}
-</style>
-<script src="../assets/js/app.js" defer></script>
-</head>
-<body>
-<div class="p-shell"><aside class="p-side"><a class="p-brand" href="dashboard.html"><span class="p-brand-mark" aria-hidden="true"></span><span class="p-brand-text"><span class="p-brand-name">European IT</span><span class="p-brand-sub">INSTITUTE</span></span></a><nav class="p-nav" aria-label="Student panel"><a href="dashboard.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1"></rect><rect x="14" y="3" width="7" height="5" rx="1"></rect><rect x="14" y="12" width="7" height="9" rx="1"></rect><rect x="3" y="16" width="7" height="5" rx="1"></rect></svg>Dashboard</a><a href="course-player.html"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg>My courses</a><a href="quizzes.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="2" width="8" height="4" rx="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="m9 14 2 2 4-4"></path></svg>Quizzes<span class="p-count">1</span></a><a href="projects.html"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>Projects<span class="p-count">1</span></a><a href="schedule.html"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>Schedule &amp; recordings</a><a href="leaderboard.html" aria-current="page"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg>Leaderboard</a><a href="certificates.html"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="8" r="6"></circle><path d="M15.5 13.5L17 22l-5-3-5 3 1.5-8.5"></path></svg>Certificates</a><a href="payments.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"></rect><path d="M2 10h20"></path></svg>Payments</a><a href="help.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path></svg>Help</a></nav><a class="p-help p-lift" href="quizzes.html" style="margin-top: auto; text-decoration: none; color: inherit;"><span class="p-row" style="gap: 10px;"><span class="p-tile" style="width: 38px; height: 38px; background: var(--cyan); color: rgb(10, 27, 44);"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="2" width="8" height="4" rx="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="m9 14 2 2 4-4"></path></svg></span><span style="display: flex; flex-direction: column;"><strong style="font-size: 18px; line-height: 1.15;">+10 waiting</strong><span class="p-small" style="color: var(--cyan-deep);">Class 12 quiz is open</span></span></span><span class="p-small" style="color: var(--cyan-deep);">Full marks takes you to 100 points</span></a></aside><div class="p-content"><header class="p-top"><label class="p-search"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg><span class="eit-sr">Search</span><input type="search" placeholder="Search lessons and resources"></label><div class="p-top-right"><div class="eit-seg has-thumb" role="group" aria-label="Language"><span class="eit-seg__thumb" aria-hidden="true" style="width: 52px; transform: translateX(4px);"></span><button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button></div><a class="p-iconbtn" href="../notifications.html" aria-label="Notifications, 2 unread"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg><span class="p-badge-count">2</span></a><a class="p-me" href="profile.html" style="text-decoration: none;"><span class="p-avatar">NJ</span><span style="display: flex; flex-direction: column;"><span class="p-me-name">Nusrat Jahan</span><span class="p-me-sub">Student · EIT-24-0148</span></span></a></div></header><main class="p-main"><div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px;"><div style="display: flex; flex-direction: column; gap: 6px; max-width: 660px;"><h1 class="p-h1">Leaderboard</h1><p class="p-body">See your points and where you stand in your batch. Every class quiz you finish with full marks adds 10 points.</p></div><div class="p-seg" role="group" aria-label="Course"><button type="button" aria-pressed="true">WordPress · B14</button><button type="button" aria-pressed="false">Graphic Design · B9</button></div></div><section class="p-hero" data-theme="ink" aria-labelledby="pos-title" style="display: flex; flex-wrap: wrap; gap: 32px; align-items: stretch;"><div style="flex: 1 1 360px; display: flex; flex-direction: column; gap: 16px; justify-content: center;"><span class="p-eyebrow" style="color: var(--cyan);">Your position · WordPress B14</span><div class="p-row" style="gap: 16px; align-items: flex-end;"><h2 id="pos-title" style="margin: 0px; font-size: 72px; line-height: 0.9; font-weight: 700; letter-spacing: -0.04em; color: rgb(255, 255, 255);"><span class="eit-sr">Rank </span>#3</h2><span style="display: flex; flex-direction: column; padding-bottom: 4px;"><strong style="font-size: 18px; color: rgb(255, 255, 255);">of 20 students</strong><span class="p-small" style="color: var(--ink-2);">Top 15% of your batch</span></span></div><div class="p-row" style="flex-wrap: wrap; gap: 8px;"><span class="p-pill" style="background: rgba(255, 255, 255, 0.1); color: rgb(255, 255, 255); height: 32px; font-weight: 600;"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true" style="color: rgb(0, 174, 238);"><path d="M12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"></path></svg><span class="eit-count"><span class="eit-sr">90</span><span class="eit-count__ghost" aria-hidden="true">90</span><span class="eit-count__n" aria-hidden="true">90</span></span>&nbsp;points</span><span class="p-pill" style="background: rgba(255, 255, 255, 0.1); color: rgb(255, 255, 255); height: 32px;"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true" style="color: rgb(79, 211, 154);"><path d="M20 6 9 17l-5-5"></path></svg>9 full-mark quizzes</span><span class="p-pill" style="height: 32px; font-weight: 600; background: rgba(79, 211, 154, 0.16); color: rgb(79, 211, 154);"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m18 15-6-6-6 6"></path></svg>Up 2 places this week</span></div><div style="display: flex; flex-direction: column; gap: 10px; padding: 16px 18px; border-radius: 18px; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.12);"><div class="p-row" style="justify-content: space-between; gap: 12px; flex-wrap: wrap;"><strong style="font-size: 16px; color: rgb(255, 255, 255);">20 points to reach #2</strong><span class="p-small" style="color: var(--ink-2);">Farhana R. has 110</span></div><div class="p-bar" role="img" aria-label="90 of 110 points" style="background: rgba(255, 255, 255, 0.14);"><span style="width: 82%;"></span></div><div class="p-row" style="justify-content: space-between; gap: 12px; flex-wrap: wrap;"><span class="p-small" style="color: var(--ink-2);">Two full-mark quizzes get you there.</span><a href="quiz.html" class="eit-btn eit-btn--primary eit-btn--md"><span class="eit-btn__label">Take the Class 12 quiz</span><svg class="eit-icon eit-btn__trail" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a></div></div></div><div class="lb-podium" role="list" aria-label="Top 3 in the batch"><div role="listitem" class="lb-col" style="animation-delay: 120ms;"><span class="lb-av" style="">FR</span><strong style="font-size: 15px; color: rgb(255, 255, 255); line-height: 1.2;">Farhana R.</strong><span class="p-small" style="color: var(--ink-2);">110 points</span><div class="lb-block" aria-label="Rank 2, 110 points" style="height: 112px; background: rgba(255, 255, 255, 0.16); color: rgb(255, 255, 255); animation-delay: 320ms;"><span aria-hidden="true">2</span></div></div><div role="listitem" class="lb-col" style="animation-delay: 0ms;"><span class="lb-crown" aria-hidden="true"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zM5 20h14"></path></svg></span><span class="lb-av" style="">TA</span><strong style="font-size: 15px; color: rgb(255, 255, 255); line-height: 1.2;">Tanvir A.</strong><span class="p-small" style="color: var(--ink-2);">120 points</span><div class="lb-block" aria-label="Rank 1, 120 points" style="height: 150px; background: rgb(0, 174, 238); color: rgb(10, 27, 44); animation-delay: 200ms;"><span aria-hidden="true">1</span></div></div><div role="listitem" class="lb-col" style="animation-delay: 240ms;"><span class="lb-av" style="box-shadow: rgb(10, 27, 44) 0px 0px 0px 3px, rgb(0, 174, 238) 0px 0px 0px 5px;">NJ</span><strong style="font-size: 15px; color: rgb(255, 255, 255); line-height: 1.2;">You</strong><span class="p-small" style="color: var(--ink-2);">90 points</span><div class="lb-block" aria-label="Rank 3, 90 points" style="height: 84px; background: rgba(255, 255, 255, 0.09); color: rgb(255, 255, 255); animation-delay: 440ms;"><span aria-hidden="true">3</span></div></div></div></section><div class="p-split"><section class="p-card p-card--flush" aria-labelledby="rank-title" style="flex: 1.6 1 560px; min-width: 0px; display: flex; flex-direction: column;"><div class="p-card-head" style="padding: 20px 24px 16px;"><span style="display: flex; flex-direction: column; gap: 2px;"><h2 id="rank-title" class="p-h3">Batch ranking</h2><span class="p-small">WordPress B14 · 20 students</span></span><span class="p-pill" style="height: 28px; font-size: 12px;"><span class="p-live"></span>Updated after every class quiz</span></div><div class="p-scroll"><table class="p-table"><thead><tr><th scope="col" style="width: 64px;">Rank</th><th scope="col">Student</th><th scope="col">Full-mark quizzes</th><th scope="col">Points</th><th scope="col">This week</th></tr></thead><tbody class="p-stagger"><tr class=""><td><span class="lb-rank" style="background: rgb(0, 174, 238); color: rgb(10, 27, 44);">1</span></td><td><span class="p-cell-person"><span class="p-avatar p-avatar--sm" style="">TA</span><strong>Tanvir A.</strong></span></td><td style="font-variant-numeric: tabular-nums;">12</td><td><strong style="font-variant-numeric: tabular-nums;">120</strong></td><td><span class="lb-trend" style="color: var(--ink-3);"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path></svg>Same</span></td></tr><tr class=""><td><span class="lb-rank" style="background: var(--ink); color: var(--on-ink);">2</span></td><td><span class="p-cell-person"><span class="p-avatar p-avatar--sm" style="">FR</span><strong>Farhana R.</strong></span></td><td style="font-variant-numeric: tabular-nums;">11</td><td><strong style="font-variant-numeric: tabular-nums;">110</strong></td><td><span class="lb-trend" style="color: var(--ink-3);"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path></svg>Same</span></td></tr><tr class="lb-me"><td><span class="lb-rank" style="background: var(--warning-soft); color: var(--warning);">3</span></td><td><span class="p-cell-person"><span class="p-avatar p-avatar--sm" style="background: rgb(0, 174, 238); color: rgb(10, 27, 44);">NJ</span><strong>Nusrat J.</strong><span class="eit-badge eit-badge--cyan">You</span></span></td><td style="font-variant-numeric: tabular-nums;">9</td><td><strong style="font-variant-numeric: tabular-nums;">90</strong></td><td><span class="lb-trend" style="color: var(--success);"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m18 15-6-6-6 6"></path></svg>Up 2</span></td></tr><tr class=""><td><span class="lb-rank" style="color: var(--ink-3);">4</span></td><td><span class="p-cell-person"><span class="p-avatar p-avatar--sm" style="">RH</span><strong>Rakib H.</strong></span></td><td style="font-variant-numeric: tabular-nums;">8</td><td><strong style="font-variant-numeric: tabular-nums;">80</strong></td><td><span class="lb-trend" style="color: var(--danger);"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>Down 1</span></td></tr><tr class=""><td><span class="lb-rank" style="color: var(--ink-3);">5</span></td><td><span class="p-cell-person"><span class="p-avatar p-avatar--sm" style="">SI</span><strong>Sadia I.</strong></span></td><td style="font-variant-numeric: tabular-nums;">8</td><td><strong style="font-variant-numeric: tabular-nums;">80</strong></td><td><span class="lb-trend" style="color: var(--danger);"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>Down 1</span></td></tr><tr class=""><td><span class="lb-rank" style="color: var(--ink-3);">6</span></td><td><span class="p-cell-person"><span class="p-avatar p-avatar--sm" style="">MH</span><strong>Mehedi H.</strong></span></td><td style="font-variant-numeric: tabular-nums;">7</td><td><strong style="font-variant-numeric: tabular-nums;">70</strong></td><td><span class="lb-trend" style="color: var(--success);"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m18 15-6-6-6 6"></path></svg>Up 1</span></td></tr><tr class=""><td><span class="lb-rank" style="color: var(--ink-3);">7</span></td><td><span class="p-cell-person"><span class="p-avatar p-avatar--sm" style="">AS</span><strong>Ayesha S.</strong></span></td><td style="font-variant-numeric: tabular-nums;">7</td><td><strong style="font-variant-numeric: tabular-nums;">70</strong></td><td><span class="lb-trend" style="color: var(--danger);"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>Down 1</span></td></tr><tr class=""><td><span class="lb-rank" style="color: var(--ink-3);">8</span></td><td><span class="p-cell-person"><span class="p-avatar p-avatar--sm" style="">JK</span><strong>Jubayer K.</strong></span></td><td style="font-variant-numeric: tabular-nums;">6</td><td><strong style="font-variant-numeric: tabular-nums;">60</strong></td><td><span class="lb-trend" style="color: var(--ink-3);"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path></svg>Same</span></td></tr><tr data-dc-tpl="147" class="" id="rv11" hidden=""><td><span class="lb-rank" style="color: var(--ink-3);">20</span></td><td><span class="p-cell-person"><span class="p-avatar p-avatar--sm" style="">SM</span><strong>Shuvo M.</strong></span></td><td style="font-variant-numeric: tabular-nums;">0</td><td><strong style="font-variant-numeric: tabular-nums;">0</strong></td><td><span class="lb-trend" style="color: var(--ink-3);"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path></svg>Same</span></td></tr><tr data-dc-tpl="147" class="" id="rv10" hidden=""><td><span class="lb-rank" style="color: var(--ink-3);">19</span></td><td><span class="p-cell-person"><span class="p-avatar p-avatar--sm" style="">RD</span><strong>Raihan D.</strong></span></td><td style="font-variant-numeric: tabular-nums;">1</td><td><strong style="font-variant-numeric: tabular-nums;">10</strong></td><td><span class="lb-trend" style="color: var(--ink-3);"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path></svg>Same</span></td></tr><tr data-dc-tpl="147" class="" id="rv9" hidden=""><td><span class="lb-rank" style="color: var(--ink-3);">18</span></td><td><span class="p-cell-person"><span class="p-avatar p-avatar--sm" style="">OS</span><strong>Ovi S.</strong></span></td><td style="font-variant-numeric: tabular-nums;">2</td><td><strong style="font-variant-numeric: tabular-nums;">20</strong></td><td><span class="lb-trend" style="color: var(--ink-3);"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path></svg>Same</span></td></tr><tr data-dc-tpl="147" class="" id="rv8" hidden=""><td><span class="lb-rank" style="color: var(--ink-3);">17</span></td><td><span class="p-cell-person"><span class="p-avatar p-avatar--sm" style="">MT</span><strong>Mim T.</strong></span></td><td style="font-variant-numeric: tabular-nums;">2</td><td><strong style="font-variant-numeric: tabular-nums;">20</strong></td><td><span class="lb-trend" style="color: var(--danger);"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>Down 1</span></td></tr><tr data-dc-tpl="147" class="" id="rv7" hidden=""><td><span class="lb-rank" style="color: var(--ink-3);">16</span></td><td><span class="p-cell-person"><span class="p-avatar p-avatar--sm" style="">HU</span><strong>Habib U.</strong></span></td><td style="font-variant-numeric: tabular-nums;">3</td><td><strong style="font-variant-numeric: tabular-nums;">30</strong></td><td><span class="lb-trend" style="color: var(--success);"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m18 15-6-6-6 6"></path></svg>Up 1</span></td></tr><tr data-dc-tpl="147" class="" id="rv6" hidden=""><td><span class="lb-rank" style="color: var(--ink-3);">15</span></td><td><span class="p-cell-person"><span class="p-avatar p-avatar--sm" style="">LK</span><strong>Lima K.</strong></span></td><td style="font-variant-numeric: tabular-nums;">3</td><td><strong style="font-variant-numeric: tabular-nums;">30</strong></td><td><span class="lb-trend" style="color: var(--ink-3);"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path></svg>Same</span></td></tr><tr data-dc-tpl="147" class="" id="rv5" hidden=""><td><span class="lb-rank" style="color: var(--ink-3);">14</span></td><td><span class="p-cell-person"><span class="p-avatar p-avatar--sm" style="">FB</span><strong>Fahim B.</strong></span></td><td style="font-variant-numeric: tabular-nums;">4</td><td><strong style="font-variant-numeric: tabular-nums;">40</strong></td><td><span class="lb-trend" style="color: var(--ink-3);"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path></svg>Same</span></td></tr><tr data-dc-tpl="147" class="" id="rv4" hidden=""><td><span class="lb-rank" style="color: var(--ink-3);">13</span></td><td><span class="p-cell-person"><span class="p-avatar p-avatar--sm" style="">SA</span><strong>Sharmin A.</strong></span></td><td style="font-variant-numeric: tabular-nums;">4</td><td><strong style="font-variant-numeric: tabular-nums;">40</strong></td><td><span class="lb-trend" style="color: var(--danger);"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>Down 1</span></td></tr><tr data-dc-tpl="147" class="" id="rv3" hidden=""><td><span class="lb-rank" style="color: var(--ink-3);">12</span></td><td><span class="p-cell-person"><span class="p-avatar p-avatar--sm" style="">NC</span><strong>Naeem C.</strong></span></td><td style="font-variant-numeric: tabular-nums;">5</td><td><strong style="font-variant-numeric: tabular-nums;">50</strong></td><td><span class="lb-trend" style="color: var(--success);"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m18 15-6-6-6 6"></path></svg>Up 1</span></td></tr><tr data-dc-tpl="147" class="" id="rv2" hidden=""><td><span class="lb-rank" style="color: var(--ink-3);">11</span></td><td><span class="p-cell-person"><span class="p-avatar p-avatar--sm" style="">RP</span><strong>Rumana P.</strong></span></td><td style="font-variant-numeric: tabular-nums;">5</td><td><strong style="font-variant-numeric: tabular-nums;">50</strong></td><td><span class="lb-trend" style="color: var(--ink-3);"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path></svg>Same</span></td></tr><tr data-dc-tpl="147" class="" id="rv1" hidden=""><td><span class="lb-rank" style="color: var(--ink-3);">10</span></td><td><span class="p-cell-person"><span class="p-avatar p-avatar--sm" style="">SR</span><strong>Sajid R.</strong></span></td><td style="font-variant-numeric: tabular-nums;">6</td><td><strong style="font-variant-numeric: tabular-nums;">60</strong></td><td><span class="lb-trend" style="color: var(--danger);"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>Down 1</span></td></tr><tr data-dc-tpl="147" class="" id="rv0" hidden=""><td><span class="lb-rank" style="color: var(--ink-3);">9</span></td><td><span class="p-cell-person"><span class="p-avatar p-avatar--sm" style="">TM</span><strong>Tania M.</strong></span></td><td style="font-variant-numeric: tabular-nums;">6</td><td><strong style="font-variant-numeric: tabular-nums;">60</strong></td><td><span class="lb-trend" style="color: var(--success);"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m18 15-6-6-6 6"></path></svg>Up 1</span></td></tr></tbody></table></div><div class="p-row" style="justify-content: space-between; flex-wrap: wrap; gap: 12px; padding: 16px 24px; border-top: 1px solid var(--line-soft);"><span class="p-small">Same points? The student who reached them first ranks higher.</span><button type="button" class="p-ghostbtn" aria-expanded="false" data-reveal="rv0 rv1 rv2 rv3 rv4 rv5 rv6 rv7 rv8 rv9 rv10 rv11" data-on-look="rvlook12">Show all 20 students<span style="display: inline-flex; transition: transform 200ms; transform: rotate(0deg);"><svg class="eit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span></button></div></section><div class="p-stagger" style="flex: 1 1 320px; min-width: 0px; display: flex; flex-direction: column; gap: 20px;"><section class="p-card" aria-labelledby="how-title" style="display: flex; flex-direction: column; gap: 14px;"><h2 id="how-title" class="p-h3">How points work</h2><ul class="p-rows" style="margin: 0px -12px;"><li style="align-items: flex-start;"><span class="p-tile p-tile--green"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span><span style="display: flex; flex-direction: column; gap: 2px;"><strong style="font-size: 15px;">Earn 10 points</strong><span class="p-small">Get every answer right on a class quiz. Only your first try counts.</span></span></li><li style="align-items: flex-start;"><span class="p-tile p-tile--amber"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg></span><span style="display: flex; flex-direction: column; gap: 2px;"><strong style="font-size: 15px;">Spend 15 points a day</strong><span class="p-small">Buy a late pass for a milestone project, up to 3 extra days. Your 90 points cover 6 days.</span><a class="p-link" href="projects.html" style="margin-top: 4px;">Go to projects<span class="p-arrow" style="display: inline-flex;"><svg class="eit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span></a></span></li><li style="align-items: flex-start;"><span class="p-tile p-tile--muted"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"></rect><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"></path></svg></span><span style="display: flex; flex-direction: column; gap: 2px;"><strong style="font-size: 15px;">More rewards coming</strong><span class="p-small">European IT will add more ways to use your points.</span></span></li></ul><div class="p-notice" style="font-size: 13px;"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-5"></path><path d="M12 8h.01"></path></svg><span>Your rank counts the points you've earned, so spending points on a late pass never moves you down.</span></div></section><section class="p-card" aria-labelledby="hist-title" style="display: flex; flex-direction: column; gap: 6px;"><div class="p-card-head"><h2 id="hist-title" class="p-h3">Points history</h2><a class="p-link" href="quizzes.html">All quizzes</a></div><ul style="list-style: none; margin: 0px; padding: 0px;"><li class="lb-hist"><span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px;"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span><span class="p-grow" style="display: flex; flex-direction: column;"><strong style="font-size: 14px;">Class 11 quiz · 10/10</strong><span class="p-small" style="font-size: 12px;">Enqueueing styles and scripts · 12 Oct</span></span><span style="font-weight: 700; font-size: 15px; font-variant-numeric: tabular-nums; color: var(--success);">+10</span></li><li class="lb-hist"><span class="p-tile p-tile--muted" style="width: 36px; height: 36px; border-radius: 10px;"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg></span><span class="p-grow" style="display: flex; flex-direction: column;"><strong style="font-size: 14px;">Class 10 quiz · 8/10</strong><span class="p-small" style="font-size: 12px;">The template hierarchy · 8 Oct</span></span><span style="font-weight: 700; font-size: 15px; font-variant-numeric: tabular-nums; color: var(--ink-3);">0</span></li><li class="lb-hist"><span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px;"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span><span class="p-grow" style="display: flex; flex-direction: column;"><strong style="font-size: 14px;">Class 9 quiz · 10/10</strong><span class="p-small" style="font-size: 12px;">Theme folder structure · 5 Oct</span></span><span style="font-weight: 700; font-size: 15px; font-variant-numeric: tabular-nums; color: var(--success);">+10</span></li><li class="lb-hist"><span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px;"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span><span class="p-grow" style="display: flex; flex-direction: column;"><strong style="font-size: 14px;">Class 8 quiz · 10/10</strong><span class="p-small" style="font-size: 12px;">CSS for WordPress themes · 28 Sep</span></span><span style="font-weight: 700; font-size: 15px; font-variant-numeric: tabular-nums; color: var(--success);">+10</span></li><li class="lb-hist"><span class="p-tile p-tile--muted" style="width: 36px; height: 36px; border-radius: 10px;"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg></span><span class="p-grow" style="display: flex; flex-direction: column;"><strong style="font-size: 14px;">Class 7 quiz · 9/10</strong><span class="p-small" style="font-size: 12px;">Responsive images · 24 Sep</span></span><span style="font-weight: 700; font-size: 15px; font-variant-numeric: tabular-nums; color: var(--ink-3);">0</span></li></ul><div class="p-row" style="justify-content: space-between; padding-top: 12px; border-top: 1px solid var(--line);"><span class="p-small">Balance · none spent yet</span><strong style="font-size: 18px; font-variant-numeric: tabular-nums;">90 points</strong></div></section><section class="p-card" aria-label="Leaderboard privacy" style="display: flex; align-items: center; gap: 16px;"><span style="display: flex; flex-direction: column; gap: 2px; flex: 1 1 0%;"><span id="name-label" style="font-size: 14px; font-weight: 600;">Show my name to classmates</span><span class="p-small">Classmates see "Nusrat J." on this board.</span></span><button type="button" class="p-switch" role="switch" aria-checked="true" aria-labelledby="name-label"></button></section></div></div></main></div></div><template id="rvlook12">Show top 8<span style="display: inline-flex; transition: transform 200ms; transform: rotate(180deg);"><svg class="eit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span></template>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Leaderboard · European IT LMS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap"
+    />
+    <link rel="stylesheet" href="../assets/css/eit.css" />
+    <link rel="stylesheet" href="../assets/css/panel.css" />
+    <link rel="stylesheet" href="../assets/css/app.css" />
+    <style>
+      .lb-podium {
+        flex: 1 1 380px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 14px;
+        min-height: 280px;
+      }
+      .lb-col {
+        flex: 1 1 0;
+        max-width: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        text-align: center;
+        animation: p-rise 640ms var(--ease-out-expo) both;
+      }
+      .lb-av {
+        position: relative;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        font-weight: 700;
+        font-size: 17px;
+        background: #ffffff;
+        color: #0a1b2c;
+        transition: transform var(--duration-base) var(--ease-spring);
+      }
+      .lb-col:hover .lb-av {
+        transform: translateY(-5px) rotate(-6deg);
+      }
+      .lb-crown {
+        display: grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 12px;
+        background: #f4b04f;
+        color: #0a1b2c;
+        margin-bottom: 2px;
+        animation: p-float 5s ease-in-out infinite;
+      }
+      .lb-block {
+        width: 100%;
+        border-radius: 16px 16px 6px 6px;
+        display: flex;
+        justify-content: center;
+        padding-top: 12px;
+        box-sizing: border-box;
+        font-size: 30px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        transform-origin: bottom;
+        animation: p-grow-up 1000ms var(--ease-out-expo) both;
+      }
+      .lb-me td {
+        background: var(--cyan-soft) !important;
+      }
+      .lb-me td:first-child {
+        box-shadow: inset 3px 0 0 var(--cyan);
+      }
+      .lb-rank {
+        display: inline-grid;
+        place-items: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        font-weight: 700;
+        font-size: 14px;
+        font-variant-numeric: tabular-nums;
+      }
+      .lb-trend {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 13px;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+      .lb-hist {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 0;
+        border-bottom: 1px solid var(--line-soft);
+      }
+      .lb-hist:last-child {
+        border-bottom: 0;
+      }
+    </style>
+    <script src="../assets/js/app.js" defer></script>
+  </head>
+  <body>
+    <div class="p-shell">
+      <aside class="p-side">
+        <a class="p-brand" href="dashboard.html"
+          ><span class="p-brand-mark" aria-hidden="true"></span
+          ><span class="p-brand-text"
+            ><span class="p-brand-name">European IT</span><span class="p-brand-sub">INSTITUTE</span></span
+          ></a
+        >
+        <nav class="p-nav" aria-label="Student panel">
+          <a href="dashboard.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="9" rx="1"></rect>
+              <rect x="14" y="3" width="7" height="5" rx="1"></rect>
+              <rect x="14" y="12" width="7" height="9" rx="1"></rect>
+              <rect x="3" y="16" width="7" height="5" rx="1"></rect></svg
+            >Dashboard</a
+          ><a href="course-player.html"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path>
+              <path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg
+            >My courses</a
+          ><a href="quizzes.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="8" y="2" width="8" height="4" rx="1"></rect>
+              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+              <path d="m9 14 2 2 4-4"></path></svg
+            >Quizzes<span class="p-count">1</span></a
+          ><a href="projects.html"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg
+            >Projects<span class="p-count">1</span></a
+          ><a href="schedule.html"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+              <path d="M16 2v4M8 2v4M3 10h18"></path></svg
+            >Schedule &amp; recordings</a
+          ><a href="leaderboard.html" aria-current="page"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+              <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+              <path d="M4 22h16"></path>
+              <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+              <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+              <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg
+            >Leaderboard</a
+          ><a href="certificates.html"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="8" r="6"></circle>
+              <path d="M15.5 13.5L17 22l-5-3-5 3 1.5-8.5"></path></svg
+            >Certificates</a
+          ><a href="payments.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+              <path d="M2 10h20"></path></svg
+            >Payments</a
+          ><a href="help.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+              <path d="M12 17h.01"></path></svg
+            >Help</a
+          >
+        </nav>
+        <a class="p-help p-lift" href="quizzes.html" style="margin-top: auto; text-decoration: none; color: inherit"
+          ><span class="p-row" style="gap: 10px"
+            ><span class="p-tile" style="width: 38px; height: 38px; background: var(--cyan); color: rgb(10, 27, 44)"
+              ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="8" y="2" width="8" height="4" rx="1"></rect>
+                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                <path d="m9 14 2 2 4-4"></path></svg></span
+            ><span style="display: flex; flex-direction: column"
+              ><strong style="font-size: 18px; line-height: 1.15">+10 waiting</strong
+              ><span class="p-small" style="color: var(--cyan-deep)">Class 12 quiz is open</span></span
+            ></span
+          ><span class="p-small" style="color: var(--cyan-deep)">Full marks takes you to 100 points</span></a
+        >
+      </aside>
+      <div class="p-content">
+        <header class="p-top">
+          <label class="p-search"
+            ><svg
+              class="eit-icon"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="M21 21l-4.35-4.35"></path></svg
+            ><span class="eit-sr">Search</span><input type="search" placeholder="Search lessons and resources"
+          /></label>
+          <div class="p-top-right">
+            <div class="eit-seg has-thumb" role="group" aria-label="Language">
+              <span class="eit-seg__thumb" aria-hidden="true" style="width: 52px; transform: translateX(4px)"></span
+              ><button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button
+              ><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button>
+            </div>
+            <a class="p-iconbtn" href="../notifications.html" aria-label="Notifications, 2 unread"
+              ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
+              ><span class="p-badge-count">2</span></a
+            ><a class="p-me" href="profile.html" style="text-decoration: none"
+              ><span class="p-avatar">NJ</span
+              ><span style="display: flex; flex-direction: column"
+                ><span class="p-me-name">Nusrat Jahan</span><span class="p-me-sub">Student · EIT-24-0148</span></span
+              ></a
+            >
+          </div>
+        </header>
+        <main class="p-main">
+          <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
+            <div style="display: flex; flex-direction: column; gap: 6px; max-width: 660px">
+              <h1 class="p-h1">Leaderboard</h1>
+              <p class="p-body">
+                See your points and where you stand in your batch. Every class quiz you finish with full marks adds 10
+                points.
+              </p>
+            </div>
+            <div class="p-seg" role="group" aria-label="Course">
+              <button type="button" aria-pressed="true">WordPress · B14</button
+              ><button type="button" aria-pressed="false">Graphic Design · B9</button>
+            </div>
+          </div>
+          <section
+            class="p-hero"
+            data-theme="ink"
+            aria-labelledby="pos-title"
+            style="display: flex; flex-wrap: wrap; gap: 32px; align-items: stretch"
+          >
+            <div style="flex: 1 1 360px; display: flex; flex-direction: column; gap: 16px; justify-content: center">
+              <span class="p-eyebrow" style="color: var(--cyan)">Your position · WordPress B14</span>
+              <div class="p-row" style="gap: 16px; align-items: flex-end">
+                <h2
+                  id="pos-title"
+                  style="
+                    margin: 0px;
+                    font-size: 72px;
+                    line-height: 0.9;
+                    font-weight: 700;
+                    letter-spacing: -0.04em;
+                    color: rgb(255, 255, 255);
+                  "
+                >
+                  <span class="eit-sr">Rank </span>#3
+                </h2>
+                <span style="display: flex; flex-direction: column; padding-bottom: 4px"
+                  ><strong style="font-size: 18px; color: rgb(255, 255, 255)">of 20 students</strong
+                  ><span class="p-small" style="color: var(--ink-2)">Top 15% of your batch</span></span
+                >
+              </div>
+              <div class="p-row" style="flex-wrap: wrap; gap: 8px">
+                <span
+                  class="p-pill"
+                  style="
+                    background: rgba(255, 255, 255, 0.1);
+                    color: rgb(255, 255, 255);
+                    height: 32px;
+                    font-weight: 600;
+                  "
+                  ><svg
+                    class="p-icon p-icon--sm"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    style="color: rgb(0, 174, 238)"
+                  >
+                    <path
+                      d="M12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"
+                    ></path></svg
+                  ><span class="eit-count"
+                    ><span class="eit-sr">90</span><span class="eit-count__ghost" aria-hidden="true">90</span
+                    ><span class="eit-count__n" aria-hidden="true">90</span></span
+                  >&nbsp;points</span
+                ><span
+                  class="p-pill"
+                  style="background: rgba(255, 255, 255, 0.1); color: rgb(255, 255, 255); height: 32px"
+                  ><svg
+                    class="p-icon p-icon--sm"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    style="color: rgb(79, 211, 154)"
+                  >
+                    <path d="M20 6 9 17l-5-5"></path></svg
+                  >9 full-mark quizzes</span
+                ><span
+                  class="p-pill"
+                  style="height: 32px; font-weight: 600; background: rgba(79, 211, 154, 0.16); color: rgb(79, 211, 154)"
+                  ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m18 15-6-6-6 6"></path></svg
+                  >Up 2 places this week</span
+                >
+              </div>
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: 10px;
+                  padding: 16px 18px;
+                  border-radius: 18px;
+                  background: rgba(255, 255, 255, 0.06);
+                  border: 1px solid rgba(255, 255, 255, 0.12);
+                "
+              >
+                <div class="p-row" style="justify-content: space-between; gap: 12px; flex-wrap: wrap">
+                  <strong style="font-size: 16px; color: rgb(255, 255, 255)">20 points to reach #2</strong
+                  ><span class="p-small" style="color: var(--ink-2)">Farhana R. has 110</span>
+                </div>
+                <div
+                  class="p-bar"
+                  role="img"
+                  aria-label="90 of 110 points"
+                  style="background: rgba(255, 255, 255, 0.14)"
+                >
+                  <span style="width: 82%"></span>
+                </div>
+                <div class="p-row" style="justify-content: space-between; gap: 12px; flex-wrap: wrap">
+                  <span class="p-small" style="color: var(--ink-2)">Two full-mark quizzes get you there.</span
+                  ><a href="quiz.html" class="eit-btn eit-btn--primary eit-btn--md"
+                    ><span class="eit-btn__label">Take the Class 12 quiz</span
+                    ><svg
+                      class="eit-icon eit-btn__trail"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <path d="M5 12h14"></path>
+                      <path d="M13 6l6 6-6 6"></path></svg
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="lb-podium" role="list" aria-label="Top 3 in the batch">
+              <div role="listitem" class="lb-col" style="animation-delay: 120ms">
+                <span class="lb-av" style="">FR</span
+                ><strong style="font-size: 15px; color: rgb(255, 255, 255); line-height: 1.2">Farhana R.</strong
+                ><span class="p-small" style="color: var(--ink-2)">110 points</span>
+                <div
+                  class="lb-block"
+                  aria-label="Rank 2, 110 points"
+                  style="
+                    height: 112px;
+                    background: rgba(255, 255, 255, 0.16);
+                    color: rgb(255, 255, 255);
+                    animation-delay: 320ms;
+                  "
+                >
+                  <span aria-hidden="true">2</span>
+                </div>
+              </div>
+              <div role="listitem" class="lb-col" style="animation-delay: 0ms">
+                <span class="lb-crown" aria-hidden="true"
+                  ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24">
+                    <path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zM5 20h14"></path></svg></span
+                ><span class="lb-av" style="">TA</span
+                ><strong style="font-size: 15px; color: rgb(255, 255, 255); line-height: 1.2">Tanvir A.</strong
+                ><span class="p-small" style="color: var(--ink-2)">120 points</span>
+                <div
+                  class="lb-block"
+                  aria-label="Rank 1, 120 points"
+                  style="height: 150px; background: rgb(0, 174, 238); color: rgb(10, 27, 44); animation-delay: 200ms"
+                >
+                  <span aria-hidden="true">1</span>
+                </div>
+              </div>
+              <div role="listitem" class="lb-col" style="animation-delay: 240ms">
+                <span
+                  class="lb-av"
+                  style="
+                    box-shadow:
+                      rgb(10, 27, 44) 0px 0px 0px 3px,
+                      rgb(0, 174, 238) 0px 0px 0px 5px;
+                  "
+                  >NJ</span
+                ><strong style="font-size: 15px; color: rgb(255, 255, 255); line-height: 1.2">You</strong
+                ><span class="p-small" style="color: var(--ink-2)">90 points</span>
+                <div
+                  class="lb-block"
+                  aria-label="Rank 3, 90 points"
+                  style="
+                    height: 84px;
+                    background: rgba(255, 255, 255, 0.09);
+                    color: rgb(255, 255, 255);
+                    animation-delay: 440ms;
+                  "
+                >
+                  <span aria-hidden="true">3</span>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div class="p-split">
+            <section
+              class="p-card p-card--flush"
+              aria-labelledby="rank-title"
+              style="flex: 1.6 1 560px; min-width: 0px; display: flex; flex-direction: column"
+            >
+              <div class="p-card-head" style="padding: 20px 24px 16px">
+                <span style="display: flex; flex-direction: column; gap: 2px"
+                  ><h2 id="rank-title" class="p-h3">Batch ranking</h2>
+                  <span class="p-small">WordPress B14 · 20 students</span></span
+                ><span class="p-pill" style="height: 28px; font-size: 12px"
+                  ><span class="p-live"></span>Updated after every class quiz</span
+                >
+              </div>
+              <div class="p-scroll">
+                <table class="p-table">
+                  <thead>
+                    <tr>
+                      <th scope="col" style="width: 64px">Rank</th>
+                      <th scope="col">Student</th>
+                      <th scope="col">Full-mark quizzes</th>
+                      <th scope="col">Points</th>
+                      <th scope="col">This week</th>
+                    </tr>
+                  </thead>
+                  <tbody class="p-stagger">
+                    <tr class="">
+                      <td>
+                        <span class="lb-rank" style="background: rgb(0, 174, 238); color: rgb(10, 27, 44)">1</span>
+                      </td>
+                      <td>
+                        <span class="p-cell-person"
+                          ><span class="p-avatar p-avatar--sm" style="">TA</span><strong>Tanvir A.</strong></span
+                        >
+                      </td>
+                      <td style="font-variant-numeric: tabular-nums">12</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">120</strong></td>
+                      <td>
+                        <span class="lb-trend" style="color: var(--ink-3)"
+                          ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M5 12h14"></path></svg
+                          >Same</span
+                        >
+                      </td>
+                    </tr>
+                    <tr class="">
+                      <td><span class="lb-rank" style="background: var(--ink); color: var(--on-ink)">2</span></td>
+                      <td>
+                        <span class="p-cell-person"
+                          ><span class="p-avatar p-avatar--sm" style="">FR</span><strong>Farhana R.</strong></span
+                        >
+                      </td>
+                      <td style="font-variant-numeric: tabular-nums">11</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">110</strong></td>
+                      <td>
+                        <span class="lb-trend" style="color: var(--ink-3)"
+                          ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M5 12h14"></path></svg
+                          >Same</span
+                        >
+                      </td>
+                    </tr>
+                    <tr class="lb-me">
+                      <td>
+                        <span class="lb-rank" style="background: var(--warning-soft); color: var(--warning)">3</span>
+                      </td>
+                      <td>
+                        <span class="p-cell-person"
+                          ><span
+                            class="p-avatar p-avatar--sm"
+                            style="background: rgb(0, 174, 238); color: rgb(10, 27, 44)"
+                            >NJ</span
+                          ><strong>Nusrat J.</strong><span class="eit-badge eit-badge--cyan">You</span></span
+                        >
+                      </td>
+                      <td style="font-variant-numeric: tabular-nums">9</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">90</strong></td>
+                      <td>
+                        <span class="lb-trend" style="color: var(--success)"
+                          ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m18 15-6-6-6 6"></path></svg
+                          >Up 2</span
+                        >
+                      </td>
+                    </tr>
+                    <tr class="">
+                      <td><span class="lb-rank" style="color: var(--ink-3)">4</span></td>
+                      <td>
+                        <span class="p-cell-person"
+                          ><span class="p-avatar p-avatar--sm" style="">RH</span><strong>Rakib H.</strong></span
+                        >
+                      </td>
+                      <td style="font-variant-numeric: tabular-nums">8</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">80</strong></td>
+                      <td>
+                        <span class="lb-trend" style="color: var(--danger)"
+                          ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m6 9 6 6 6-6"></path></svg
+                          >Down 1</span
+                        >
+                      </td>
+                    </tr>
+                    <tr class="">
+                      <td><span class="lb-rank" style="color: var(--ink-3)">5</span></td>
+                      <td>
+                        <span class="p-cell-person"
+                          ><span class="p-avatar p-avatar--sm" style="">SI</span><strong>Sadia I.</strong></span
+                        >
+                      </td>
+                      <td style="font-variant-numeric: tabular-nums">8</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">80</strong></td>
+                      <td>
+                        <span class="lb-trend" style="color: var(--danger)"
+                          ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m6 9 6 6 6-6"></path></svg
+                          >Down 1</span
+                        >
+                      </td>
+                    </tr>
+                    <tr class="">
+                      <td><span class="lb-rank" style="color: var(--ink-3)">6</span></td>
+                      <td>
+                        <span class="p-cell-person"
+                          ><span class="p-avatar p-avatar--sm" style="">MH</span><strong>Mehedi H.</strong></span
+                        >
+                      </td>
+                      <td style="font-variant-numeric: tabular-nums">7</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">70</strong></td>
+                      <td>
+                        <span class="lb-trend" style="color: var(--success)"
+                          ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m18 15-6-6-6 6"></path></svg
+                          >Up 1</span
+                        >
+                      </td>
+                    </tr>
+                    <tr class="">
+                      <td><span class="lb-rank" style="color: var(--ink-3)">7</span></td>
+                      <td>
+                        <span class="p-cell-person"
+                          ><span class="p-avatar p-avatar--sm" style="">AS</span><strong>Ayesha S.</strong></span
+                        >
+                      </td>
+                      <td style="font-variant-numeric: tabular-nums">7</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">70</strong></td>
+                      <td>
+                        <span class="lb-trend" style="color: var(--danger)"
+                          ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m6 9 6 6 6-6"></path></svg
+                          >Down 1</span
+                        >
+                      </td>
+                    </tr>
+                    <tr class="">
+                      <td><span class="lb-rank" style="color: var(--ink-3)">8</span></td>
+                      <td>
+                        <span class="p-cell-person"
+                          ><span class="p-avatar p-avatar--sm" style="">JK</span><strong>Jubayer K.</strong></span
+                        >
+                      </td>
+                      <td style="font-variant-numeric: tabular-nums">6</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">60</strong></td>
+                      <td>
+                        <span class="lb-trend" style="color: var(--ink-3)"
+                          ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M5 12h14"></path></svg
+                          >Same</span
+                        >
+                      </td>
+                    </tr>
+                    <tr data-dc-tpl="147" class="" id="rv11" hidden="">
+                      <td><span class="lb-rank" style="color: var(--ink-3)">20</span></td>
+                      <td>
+                        <span class="p-cell-person"
+                          ><span class="p-avatar p-avatar--sm" style="">SM</span><strong>Shuvo M.</strong></span
+                        >
+                      </td>
+                      <td style="font-variant-numeric: tabular-nums">0</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">0</strong></td>
+                      <td>
+                        <span class="lb-trend" style="color: var(--ink-3)"
+                          ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M5 12h14"></path></svg
+                          >Same</span
+                        >
+                      </td>
+                    </tr>
+                    <tr data-dc-tpl="147" class="" id="rv10" hidden="">
+                      <td><span class="lb-rank" style="color: var(--ink-3)">19</span></td>
+                      <td>
+                        <span class="p-cell-person"
+                          ><span class="p-avatar p-avatar--sm" style="">RD</span><strong>Raihan D.</strong></span
+                        >
+                      </td>
+                      <td style="font-variant-numeric: tabular-nums">1</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">10</strong></td>
+                      <td>
+                        <span class="lb-trend" style="color: var(--ink-3)"
+                          ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M5 12h14"></path></svg
+                          >Same</span
+                        >
+                      </td>
+                    </tr>
+                    <tr data-dc-tpl="147" class="" id="rv9" hidden="">
+                      <td><span class="lb-rank" style="color: var(--ink-3)">18</span></td>
+                      <td>
+                        <span class="p-cell-person"
+                          ><span class="p-avatar p-avatar--sm" style="">OS</span><strong>Ovi S.</strong></span
+                        >
+                      </td>
+                      <td style="font-variant-numeric: tabular-nums">2</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">20</strong></td>
+                      <td>
+                        <span class="lb-trend" style="color: var(--ink-3)"
+                          ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M5 12h14"></path></svg
+                          >Same</span
+                        >
+                      </td>
+                    </tr>
+                    <tr data-dc-tpl="147" class="" id="rv8" hidden="">
+                      <td><span class="lb-rank" style="color: var(--ink-3)">17</span></td>
+                      <td>
+                        <span class="p-cell-person"
+                          ><span class="p-avatar p-avatar--sm" style="">MT</span><strong>Mim T.</strong></span
+                        >
+                      </td>
+                      <td style="font-variant-numeric: tabular-nums">2</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">20</strong></td>
+                      <td>
+                        <span class="lb-trend" style="color: var(--danger)"
+                          ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m6 9 6 6 6-6"></path></svg
+                          >Down 1</span
+                        >
+                      </td>
+                    </tr>
+                    <tr data-dc-tpl="147" class="" id="rv7" hidden="">
+                      <td><span class="lb-rank" style="color: var(--ink-3)">16</span></td>
+                      <td>
+                        <span class="p-cell-person"
+                          ><span class="p-avatar p-avatar--sm" style="">HU</span><strong>Habib U.</strong></span
+                        >
+                      </td>
+                      <td style="font-variant-numeric: tabular-nums">3</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">30</strong></td>
+                      <td>
+                        <span class="lb-trend" style="color: var(--success)"
+                          ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m18 15-6-6-6 6"></path></svg
+                          >Up 1</span
+                        >
+                      </td>
+                    </tr>
+                    <tr data-dc-tpl="147" class="" id="rv6" hidden="">
+                      <td><span class="lb-rank" style="color: var(--ink-3)">15</span></td>
+                      <td>
+                        <span class="p-cell-person"
+                          ><span class="p-avatar p-avatar--sm" style="">LK</span><strong>Lima K.</strong></span
+                        >
+                      </td>
+                      <td style="font-variant-numeric: tabular-nums">3</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">30</strong></td>
+                      <td>
+                        <span class="lb-trend" style="color: var(--ink-3)"
+                          ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M5 12h14"></path></svg
+                          >Same</span
+                        >
+                      </td>
+                    </tr>
+                    <tr data-dc-tpl="147" class="" id="rv5" hidden="">
+                      <td><span class="lb-rank" style="color: var(--ink-3)">14</span></td>
+                      <td>
+                        <span class="p-cell-person"
+                          ><span class="p-avatar p-avatar--sm" style="">FB</span><strong>Fahim B.</strong></span
+                        >
+                      </td>
+                      <td style="font-variant-numeric: tabular-nums">4</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">40</strong></td>
+                      <td>
+                        <span class="lb-trend" style="color: var(--ink-3)"
+                          ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M5 12h14"></path></svg
+                          >Same</span
+                        >
+                      </td>
+                    </tr>
+                    <tr data-dc-tpl="147" class="" id="rv4" hidden="">
+                      <td><span class="lb-rank" style="color: var(--ink-3)">13</span></td>
+                      <td>
+                        <span class="p-cell-person"
+                          ><span class="p-avatar p-avatar--sm" style="">SA</span><strong>Sharmin A.</strong></span
+                        >
+                      </td>
+                      <td style="font-variant-numeric: tabular-nums">4</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">40</strong></td>
+                      <td>
+                        <span class="lb-trend" style="color: var(--danger)"
+                          ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m6 9 6 6 6-6"></path></svg
+                          >Down 1</span
+                        >
+                      </td>
+                    </tr>
+                    <tr data-dc-tpl="147" class="" id="rv3" hidden="">
+                      <td><span class="lb-rank" style="color: var(--ink-3)">12</span></td>
+                      <td>
+                        <span class="p-cell-person"
+                          ><span class="p-avatar p-avatar--sm" style="">NC</span><strong>Naeem C.</strong></span
+                        >
+                      </td>
+                      <td style="font-variant-numeric: tabular-nums">5</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">50</strong></td>
+                      <td>
+                        <span class="lb-trend" style="color: var(--success)"
+                          ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m18 15-6-6-6 6"></path></svg
+                          >Up 1</span
+                        >
+                      </td>
+                    </tr>
+                    <tr data-dc-tpl="147" class="" id="rv2" hidden="">
+                      <td><span class="lb-rank" style="color: var(--ink-3)">11</span></td>
+                      <td>
+                        <span class="p-cell-person"
+                          ><span class="p-avatar p-avatar--sm" style="">RP</span><strong>Rumana P.</strong></span
+                        >
+                      </td>
+                      <td style="font-variant-numeric: tabular-nums">5</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">50</strong></td>
+                      <td>
+                        <span class="lb-trend" style="color: var(--ink-3)"
+                          ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M5 12h14"></path></svg
+                          >Same</span
+                        >
+                      </td>
+                    </tr>
+                    <tr data-dc-tpl="147" class="" id="rv1" hidden="">
+                      <td><span class="lb-rank" style="color: var(--ink-3)">10</span></td>
+                      <td>
+                        <span class="p-cell-person"
+                          ><span class="p-avatar p-avatar--sm" style="">SR</span><strong>Sajid R.</strong></span
+                        >
+                      </td>
+                      <td style="font-variant-numeric: tabular-nums">6</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">60</strong></td>
+                      <td>
+                        <span class="lb-trend" style="color: var(--danger)"
+                          ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m6 9 6 6 6-6"></path></svg
+                          >Down 1</span
+                        >
+                      </td>
+                    </tr>
+                    <tr data-dc-tpl="147" class="" id="rv0" hidden="">
+                      <td><span class="lb-rank" style="color: var(--ink-3)">9</span></td>
+                      <td>
+                        <span class="p-cell-person"
+                          ><span class="p-avatar p-avatar--sm" style="">TM</span><strong>Tania M.</strong></span
+                        >
+                      </td>
+                      <td style="font-variant-numeric: tabular-nums">6</td>
+                      <td><strong style="font-variant-numeric: tabular-nums">60</strong></td>
+                      <td>
+                        <span class="lb-trend" style="color: var(--success)"
+                          ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m18 15-6-6-6 6"></path></svg
+                          >Up 1</span
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div
+                class="p-row"
+                style="
+                  justify-content: space-between;
+                  flex-wrap: wrap;
+                  gap: 12px;
+                  padding: 16px 24px;
+                  border-top: 1px solid var(--line-soft);
+                "
+              >
+                <span class="p-small">Same points? The student who reached them first ranks higher.</span
+                ><button
+                  type="button"
+                  class="p-ghostbtn"
+                  aria-expanded="false"
+                  data-reveal="rv0 rv1 rv2 rv3 rv4 rv5 rv6 rv7 rv8 rv9 rv10 rv11"
+                  data-on-look="rvlook12"
+                >
+                  Show all 20 students<span
+                    style="display: inline-flex; transition: transform 200ms; transform: rotate(0deg)"
+                    ><svg
+                      class="eit-icon"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <path d="M6 9l6 6 6-6"></path></svg
+                  ></span>
+                </button>
+              </div>
+            </section>
+            <div
+              class="p-stagger"
+              style="flex: 1 1 320px; min-width: 0px; display: flex; flex-direction: column; gap: 20px"
+            >
+              <section
+                class="p-card"
+                aria-labelledby="how-title"
+                style="display: flex; flex-direction: column; gap: 14px"
+              >
+                <h2 id="how-title" class="p-h3">How points work</h2>
+                <ul class="p-rows" style="margin: 0px -12px">
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--green"
+                      ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 5v14M5 12h14"></path></svg></span
+                    ><span style="display: flex; flex-direction: column; gap: 2px"
+                      ><strong style="font-size: 15px">Earn 10 points</strong
+                      ><span class="p-small"
+                        >Get every answer right on a class quiz. Only your first try counts.</span
+                      ></span
+                    >
+                  </li>
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--amber"
+                      ><svg
+                        class="eit-icon"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        focusable="false"
+                        aria-hidden="true"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 6v6l4 2"></path></svg></span
+                    ><span style="display: flex; flex-direction: column; gap: 2px"
+                      ><strong style="font-size: 15px">Spend 15 points a day</strong
+                      ><span class="p-small"
+                        >Buy a late pass for a milestone project, up to 3 extra days. Your 90 points cover 6 days.</span
+                      ><a class="p-link" href="projects.html" style="margin-top: 4px"
+                        >Go to projects<span class="p-arrow" style="display: inline-flex"
+                          ><svg
+                            class="eit-icon"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            focusable="false"
+                            aria-hidden="true"
+                          >
+                            <path d="M5 12h14"></path>
+                            <path d="M13 6l6 6-6 6"></path></svg></span></a
+                    ></span>
+                  </li>
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--muted"
+                      ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="3" y="8" width="18" height="4" rx="1"></rect>
+                        <path
+                          d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"
+                        ></path></svg></span
+                    ><span style="display: flex; flex-direction: column; gap: 2px"
+                      ><strong style="font-size: 15px">More rewards coming</strong
+                      ><span class="p-small">European IT will add more ways to use your points.</span></span
+                    >
+                  </li>
+                </ul>
+                <div class="p-notice" style="font-size: 13px">
+                  <svg
+                    class="eit-icon"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    focusable="false"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 16v-5"></path>
+                    <path d="M12 8h.01"></path></svg
+                  ><span
+                    >Your rank counts the points you've earned, so spending points on a late pass never moves you
+                    down.</span
+                  >
+                </div>
+              </section>
+              <section
+                class="p-card"
+                aria-labelledby="hist-title"
+                style="display: flex; flex-direction: column; gap: 6px"
+              >
+                <div class="p-card-head">
+                  <h2 id="hist-title" class="p-h3">Points history</h2>
+                  <a class="p-link" href="quizzes.html">All quizzes</a>
+                </div>
+                <ul style="list-style: none; margin: 0px; padding: 0px">
+                  <li class="lb-hist">
+                    <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 5v14M5 12h14"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column"
+                      ><strong style="font-size: 14px">Class 11 quiz · 10/10</strong
+                      ><span class="p-small" style="font-size: 12px">Enqueueing styles and scripts · 12 Oct</span></span
+                    ><span
+                      style="
+                        font-weight: 700;
+                        font-size: 15px;
+                        font-variant-numeric: tabular-nums;
+                        color: var(--success);
+                      "
+                      >+10</span
+                    >
+                  </li>
+                  <li class="lb-hist">
+                    <span class="p-tile p-tile--muted" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M18 6 6 18M6 6l12 12"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column"
+                      ><strong style="font-size: 14px">Class 10 quiz · 8/10</strong
+                      ><span class="p-small" style="font-size: 12px">The template hierarchy · 8 Oct</span></span
+                    ><span
+                      style="font-weight: 700; font-size: 15px; font-variant-numeric: tabular-nums; color: var(--ink-3)"
+                      >0</span
+                    >
+                  </li>
+                  <li class="lb-hist">
+                    <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 5v14M5 12h14"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column"
+                      ><strong style="font-size: 14px">Class 9 quiz · 10/10</strong
+                      ><span class="p-small" style="font-size: 12px">Theme folder structure · 5 Oct</span></span
+                    ><span
+                      style="
+                        font-weight: 700;
+                        font-size: 15px;
+                        font-variant-numeric: tabular-nums;
+                        color: var(--success);
+                      "
+                      >+10</span
+                    >
+                  </li>
+                  <li class="lb-hist">
+                    <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 5v14M5 12h14"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column"
+                      ><strong style="font-size: 14px">Class 8 quiz · 10/10</strong
+                      ><span class="p-small" style="font-size: 12px">CSS for WordPress themes · 28 Sep</span></span
+                    ><span
+                      style="
+                        font-weight: 700;
+                        font-size: 15px;
+                        font-variant-numeric: tabular-nums;
+                        color: var(--success);
+                      "
+                      >+10</span
+                    >
+                  </li>
+                  <li class="lb-hist">
+                    <span class="p-tile p-tile--muted" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M18 6 6 18M6 6l12 12"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column"
+                      ><strong style="font-size: 14px">Class 7 quiz · 9/10</strong
+                      ><span class="p-small" style="font-size: 12px">Responsive images · 24 Sep</span></span
+                    ><span
+                      style="font-weight: 700; font-size: 15px; font-variant-numeric: tabular-nums; color: var(--ink-3)"
+                      >0</span
+                    >
+                  </li>
+                </ul>
+                <div
+                  class="p-row"
+                  style="justify-content: space-between; padding-top: 12px; border-top: 1px solid var(--line)"
+                >
+                  <span class="p-small">Balance · none spent yet</span
+                  ><strong style="font-size: 18px; font-variant-numeric: tabular-nums">90 points</strong>
+                </div>
+              </section>
+              <section
+                class="p-card"
+                aria-label="Leaderboard privacy"
+                style="display: flex; align-items: center; gap: 16px"
+              >
+                <span style="display: flex; flex-direction: column; gap: 2px; flex: 1 1 0%"
+                  ><span id="name-label" style="font-size: 14px; font-weight: 600">Show my name to classmates</span
+                  ><span class="p-small">Classmates see "Nusrat J." on this board.</span></span
+                ><button
+                  type="button"
+                  class="p-switch"
+                  role="switch"
+                  aria-checked="true"
+                  aria-labelledby="name-label"
+                ></button>
+              </section>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <template id="rvlook12"
+      >Show top 8<span style="display: inline-flex; transition: transform 200ms; transform: rotate(180deg)"
+        ><svg
+          class="eit-icon"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          focusable="false"
+          aria-hidden="true"
+        >
+          <path d="M6 9l6 6 6-6"></path></svg></span
+    ></template>
+  </body>
 </html>

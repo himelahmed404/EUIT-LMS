@@ -1,18 +1,834 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Admin overview · European IT LMS</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
-<link rel="stylesheet" href="../assets/css/eit.css">
-<link rel="stylesheet" href="../assets/css/panel.css">
-<link rel="stylesheet" href="../assets/css/app.css">
-<script src="../assets/js/app.js" defer></script>
-</head>
-<body>
-<div class="p-shell"><aside class="p-side"><a class="p-brand" href="overview.html"><span class="p-brand-mark" aria-hidden="true"></span><span class="p-brand-text"><span class="p-brand-name">European IT</span><span class="p-brand-sub">INSTITUTE</span></span></a><nav class="p-nav" aria-label="Admin panel"><a href="overview.html" aria-current="page"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1"></rect><rect x="14" y="3" width="7" height="5" rx="1"></rect><rect x="14" y="12" width="7" height="9" rx="1"></rect><rect x="3" y="16" width="7" height="5" rx="1"></rect></svg>Overview</a><span class="p-nav-label">Courses</span><a href="courses.html"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg>Courses &amp; batches<span class="p-count">3</span></a><div class="p-subnav"><a href="course-review.html">Review &amp; publish<span class="p-count">1</span></a><a href="batch-detail.html">Batch detail</a><a href="batch-edit.html">Create a batch</a></div><span class="p-nav-label">People</span><a href="students.html"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>Students &amp; payments</a><div class="p-subnav"><a href="student-record.html">Student record</a></div><a href="mentors.html"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path></svg>Mentors</a><a href="roles.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>Roles &amp; access</a><span class="p-nav-label">Admissions</span><a href="leads.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"></path><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg>Seminar leads<span class="p-count">6</span></a><span class="p-nav-label">Account</span><a href="../notifications.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg>Notifications<span class="p-count">3</span></a><a href="settings.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>Settings</a><a href="profile.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>My profile</a></nav></aside><div class="p-content"><header class="p-top"><label class="p-search"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg><span class="eit-sr">Search</span><input type="search" placeholder="Search students, courses, payments"></label><div class="p-top-right"><div class="eit-seg has-thumb" role="group" aria-label="Language"><span class="eit-seg__thumb" aria-hidden="true" style="width: 52px; transform: translateX(4px);"></span><button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button></div><button class="p-iconbtn" type="button" aria-label="Notifications" aria-expanded="false" aria-controls="notif-menu"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg><span class="p-badge-count" data-unread-count="">3</span></button><a class="p-me" href="profile.html" style="text-decoration: none;"><span class="p-avatar">SS</span><span style="display: flex; flex-direction: column;"><span class="p-me-name">Sharmin Sultana</span><span class="p-me-sub">Admin</span></span></a><div data-dc-tpl="77" class="p-dropdown" role="dialog" aria-label="Notifications" id="notif-menu" hidden="" data-popover=""><div class="p-row" style="justify-content: space-between; padding: 16px 18px 10px;"><strong style="font-size: 16px;">Notifications</strong><button type="button" class="p-link" style="border: 0px; background: none; padding: 0px; font-style: inherit; font-variant: inherit; font-stretch: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-weight: 600; font-size: 13px; cursor: pointer;" data-mark-read="#notif-menu">Mark all as read</button></div><ul class="p-rows" style="padding: 0px 8px 8px;"><li style="align-items: flex-start;"><span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px;"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"></path></svg></span><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600;">৳5,000 received from Tanvir Hasan</span><span class="p-small" style="font-size: 12px;">bKash · installment 2 of 3 · 12 min ago</span></span><span aria-label="Unread" style="width: 8px; height: 8px; border-radius: 50%; background: var(--cyan); margin-top: 6px; flex: 0 0 auto;" data-unread=""></span></li><li style="align-items: flex-start;"><span class="p-tile" style="width: 36px; height: 36px; border-radius: 10px;"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg></span><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600;">New course sent for review</span><span class="p-small" style="font-size: 12px;">Facebook Ads in Practice · Imran Kabir · 1 h ago</span></span><span aria-label="Unread" style="width: 8px; height: 8px; border-radius: 50%; background: var(--cyan); margin-top: 6px; flex: 0 0 auto;" data-unread=""></span></li><li style="align-items: flex-start;"><span class="p-tile p-tile--muted" style="width: 36px; height: 36px; border-radius: 10px;"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3zM11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg></span><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600;">6 new bookings for Saturday’s seminar</span><span class="p-small" style="font-size: 12px;">Web Development · 3 h ago</span></span><span aria-label="Unread" style="width: 8px; height: 8px; border-radius: 50%; background: var(--cyan); margin-top: 6px; flex: 0 0 auto;" data-unread=""></span></li><li style="align-items: flex-start;"><span class="p-tile p-tile--amber" style="width: 36px; height: 36px; border-radius: 10px;"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 11h14v11H5zM7 11V7a5 5 0 0 1 10 0v4"></path></svg></span><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 500;">Access paused for Mehedi Hasan</span><span class="p-small" style="font-size: 12px;">Installment 2 overdue 7 days · 8 Oct</span></span></li></ul><a href="../notifications.html" class="p-link" style="display: flex; justify-content: center; padding: 12px; border-top: 1px solid var(--line-soft); border-radius: 0px;">See all notifications</a></div></div></header><main class="p-main"><div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px;"><div style="display: flex; flex-direction: column; gap: 6px;"><span class="p-eyebrow">October 2026</span><h1 class="p-h1">Good evening, Sharmin</h1><p class="p-body">Here's how European IT is doing this month.</p></div><div class="p-row" style="flex-wrap: wrap;"><div class="p-seg" role="group" aria-label="Period"><button type="button" aria-pressed="true">This month</button><button type="button" aria-pressed="false">Last 90 days</button></div><a href="batch-edit.html" class="eit-btn eit-btn--primary eit-btn--md"><svg class="eit-icon eit-btn__lead" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg><span class="eit-btn__label">Create batch</span></a></div></div><div class="p-stagger" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 16px;"><a href="students.html" class="p-card p-stat p-lift" style="text-decoration: none; color: inherit;"><div class="p-stat-top"><span class="p-tile p-tile--green"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"></path></svg></span><span class="p-delta">+12%</span></div><div style="display: flex; flex-direction: column; gap: 2px;"><span class="p-num"><span class="eit-count"><span class="eit-sr">৳6,85,000</span><span class="eit-count__ghost" aria-hidden="true">৳6,85,000</span><span class="eit-count__n" aria-hidden="true">৳6,85,000</span></span></span><span class="p-small">Collected in October</span></div><svg class="p-spark" width="100%" height="34" viewBox="0 0 100 34" preserveAspectRatio="none" role="img" aria-label="Collected in October, last 8 weeks: 120, 140, 110, 165, 150, 190, 170, 185"><polyline points="0.0,27.5 14.3,20.5 28.6,31.0 42.9,11.8 57.1,17.0 71.4,3.0 85.7,10.0 100.0,4.8" pathLength="100" vector-effect="non-scaling-stroke"></polyline></svg></a><a href="students.html" class="p-card p-stat p-lift" style="text-decoration: none; color: inherit;"><div class="p-stat-top"><span class="p-tile"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM19 8v6M22 11h-6"></path></svg></span><span class="p-delta">+8 vs Sep</span></div><div style="display: flex; flex-direction: column; gap: 2px;"><span class="p-num"><span class="eit-count"><span class="eit-sr">58</span><span class="eit-count__ghost" aria-hidden="true">58</span><span class="eit-count__n" aria-hidden="true">58</span></span></span><span class="p-small">New enrollments</span></div><svg class="p-spark" width="100%" height="34" viewBox="0 0 100 34" preserveAspectRatio="none" role="img" aria-label="New enrollments, last 8 weeks: 9, 12, 8, 14, 11, 16, 13, 15"><polyline points="0.0,27.5 14.3,17.0 28.6,31.0 42.9,10.0 57.1,20.5 71.4,3.0 85.7,13.5 100.0,6.5" pathLength="100" vector-effect="non-scaling-stroke"></polyline></svg></a><a href="courses.html" class="p-card p-stat p-lift" style="text-decoration: none; color: inherit;"><div class="p-stat-top"><span class="p-tile p-tile--amber"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"></path></svg></span><span class="p-delta">+5 pts</span></div><div style="display: flex; flex-direction: column; gap: 2px;"><span class="p-num"><span class="eit-count"><span class="eit-sr">81%</span><span class="eit-count__ghost" aria-hidden="true">81%</span><span class="eit-count__n" aria-hidden="true">81%</span></span></span><span class="p-small">Seats filled · 9 open batches</span></div><svg class="p-spark" width="100%" height="34" viewBox="0 0 100 34" preserveAspectRatio="none" role="img" aria-label="Seats filled · 9 open batches, last 8 weeks: 62, 65, 68, 70, 74, 76, 79, 81"><polyline points="0.0,31.0 14.3,26.6 28.6,22.2 42.9,19.2 57.1,13.3 71.4,10.4 85.7,5.9 100.0,3.0" pathLength="100" vector-effect="non-scaling-stroke"></polyline></svg></a><a href="students.html" class="p-card p-stat p-lift" style="text-decoration: none; color: inherit;"><div class="p-stat-top"><span class="p-tile p-tile--red"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8v4M12 16h.01M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z"></path></svg></span><span class="p-delta">−3 this week</span></div><div style="display: flex; flex-direction: column; gap: 2px;"><span class="p-num"><span class="eit-count"><span class="eit-sr">14</span><span class="eit-count__ghost" aria-hidden="true">14</span><span class="eit-count__n" aria-hidden="true">14</span></span></span><span class="p-small">Overdue installments</span></div><svg class="p-spark" width="100%" height="34" viewBox="0 0 100 34" preserveAspectRatio="none" role="img" aria-label="Overdue installments, last 8 weeks: 20, 19, 21, 18, 17, 17, 15, 14"><polyline points="0.0,7.0 14.3,11.0 28.6,3.0 42.9,15.0 57.1,19.0 71.4,19.0 85.7,27.0 100.0,31.0" pathLength="100" vector-effect="non-scaling-stroke"></polyline></svg></a></div><div class="p-split"><section class="p-card" aria-labelledby="enr-title" style="flex: 1.5 1 520px; display: flex; flex-direction: column; gap: 14px;"><div class="p-card-head"><div style="display: flex; flex-direction: column; gap: 2px;"><h2 id="enr-title" class="p-h3">Enrollments per week</h2><span class="p-small">Last 8 weeks · hover a bar for the number</span></div><a class="p-link" href="students.html">See students</a></div><div class="p-chart" role="list" aria-label="Weekly enrollments"><div class="p-barcol" role="listitem" tabindex="0" aria-label="Week of 24 Aug: 9 enrollments"><span class="p-tip">9 enrollments</span><span class="p-bar-mark" style="height: 90px; animation-delay: 0ms;"></span></div><div class="p-barcol" role="listitem" tabindex="0" aria-label="Week of 31 Aug: 12 enrollments"><span class="p-tip">12 enrollments</span><span class="p-bar-mark" style="height: 120px; animation-delay: 60ms;"></span></div><div class="p-barcol" role="listitem" tabindex="0" aria-label="Week of 7 Sep: 8 enrollments"><span class="p-tip">8 enrollments</span><span class="p-bar-mark" style="height: 80px; animation-delay: 120ms;"></span></div><div class="p-barcol" role="listitem" tabindex="0" aria-label="Week of 14 Sep: 14 enrollments"><span class="p-tip">14 enrollments</span><span class="p-bar-mark" style="height: 140px; animation-delay: 180ms;"></span></div><div class="p-barcol" role="listitem" tabindex="0" aria-label="Week of 21 Sep: 11 enrollments"><span class="p-tip">11 enrollments</span><span class="p-bar-mark" style="height: 110px; animation-delay: 240ms;"></span></div><div class="p-barcol" role="listitem" tabindex="0" aria-label="Week of 28 Sep: 16 enrollments"><span class="p-tip">16 enrollments</span><span class="p-bar-mark" style="height: 160px; animation-delay: 300ms;"></span></div><div class="p-barcol" role="listitem" tabindex="0" aria-label="Week of 5 Oct: 13 enrollments"><span class="p-tip">13 enrollments</span><span class="p-bar-mark" style="height: 130px; animation-delay: 360ms;"></span></div><div class="p-barcol" role="listitem" tabindex="0" aria-label="Week of 12 Oct: 15 enrollments"><span class="p-tip">15 enrollments</span><span class="p-bar-label">15</span><span class="p-bar-mark" style="height: 150px; animation-delay: 420ms;"></span></div></div><div aria-hidden="true" style="display: flex; gap: 12px; margin-top: -6px;"><span style="flex: 1 1 0%; text-align: center; font-size: 12px; color: var(--ink-3);">24 Aug</span><span style="flex: 1 1 0%; text-align: center; font-size: 12px; color: var(--ink-3);">31 Aug</span><span style="flex: 1 1 0%; text-align: center; font-size: 12px; color: var(--ink-3);">7 Sep</span><span style="flex: 1 1 0%; text-align: center; font-size: 12px; color: var(--ink-3);">14 Sep</span><span style="flex: 1 1 0%; text-align: center; font-size: 12px; color: var(--ink-3);">21 Sep</span><span style="flex: 1 1 0%; text-align: center; font-size: 12px; color: var(--ink-3);">28 Sep</span><span style="flex: 1 1 0%; text-align: center; font-size: 12px; color: var(--ink-3);">5 Oct</span><span style="flex: 1 1 0%; text-align: center; font-size: 12px; color: var(--ink-3);">12 Oct</span></div></section><section class="p-card" aria-labelledby="att-title" style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 12px;"><h2 id="att-title" class="p-h3">Needs your attention</h2><ul class="p-rows" style="margin: 0px -12px -12px;"><li><span class="p-tile"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg></span><span class="p-grow" style="display: flex; flex-direction: column;"><strong style="font-size: 14px;">3 courses waiting for review</strong><span class="p-small">Oldest sent 13 Oct</span></span><a class="p-link" href="course-review.html">Review</a></li><li><span class="p-tile p-tile--red"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 7.5v5"></path><path d="M12 16h.01"></path></svg></span><span class="p-grow" style="display: flex; flex-direction: column;"><strong style="font-size: 14px;">14 installments overdue</strong><span class="p-small">৳70,000 · 2 accesses paused</span></span><a class="p-link" href="students.html">Follow up</a></li><li><span class="p-tile"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"></path><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg></span><span class="p-grow" style="display: flex; flex-direction: column;"><strong style="font-size: 14px;">6 new seminar bookings</strong><span class="p-small">For Sat, 17 Oct</span></span><a class="p-link" href="leads.html">Confirm</a></li><li><span class="p-tile p-tile--amber"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span><span class="p-grow" style="display: flex; flex-direction: column;"><strong style="font-size: 14px;">2 batches under half full</strong><span class="p-small">Both start within 10 days</span></span><a class="p-link" href="batch-detail.html">View</a></li><li><span class="p-tile p-tile--muted"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M10 8l6 4-6 4z"></path></svg></span><span class="p-grow" style="display: flex; flex-direction: column;"><strong style="font-size: 14px;">2 class recordings late</strong><span class="p-small">Kamrul Hasan, Habibur Rahman</span></span><a class="p-link" href="mentors.html">Remind</a></li></ul></section></div><section aria-labelledby="quick-title" style="display: flex; flex-direction: column; gap: 12px;"><h2 id="quick-title" class="p-h3">Quick actions</h2><div class="p-stagger" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 12px;"><a href="batch-edit.html" class="p-card p-lift" style="padding: 16px; display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit;"><span class="p-tile"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg></span><strong style="font-size: 15px;">Create a batch</strong></a><a href="student-record.html" class="p-card p-lift" style="padding: 16px; display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit;"><span class="p-tile p-tile--green"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 12h.01M18 12h.01"></path></svg></span><strong style="font-size: 15px;">Record cash payment</strong></a><a href="mentors.html" class="p-card p-lift" style="padding: 16px; display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit;"><span class="p-tile p-tile--amber"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path></svg></span><strong style="font-size: 15px;">Invite a mentor</strong></a><a href="leads.html" class="p-card p-lift" style="padding: 16px; display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit;"><span class="p-tile p-tile--ink"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"></path><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg></span><strong style="font-size: 15px;">Schedule a seminar</strong></a></div></section><section class="p-card p-card--flush" aria-labelledby="up-title"><div class="p-card-head" style="padding: 20px 24px 12px;"><h2 id="up-title" class="p-h3">Upcoming batches</h2><a class="p-link" href="courses.html">All batches</a></div><div class="p-scroll"><table class="p-table" style="min-width: 820px;"><thead><tr><th scope="col">Batch</th><th scope="col">Starts</th><th scope="col">Format</th><th scope="col">Mentor</th><th scope="col" style="width: 200px;">Seats</th><th scope="col">Status</th></tr></thead><tbody><tr><td><a class="p-link" href="batch-detail.html" style="color: var(--ink);">Graphic Design · Batch 10</a></td><td style="white-space: nowrap;">Sat, 24 Oct</td><td>Offline</td><td>Nadia Rahman</td><td><span class="p-row" style="gap: 10px;"><span class="p-bar p-bar--thin" style="flex: 1 1 0%;"><span style="width: 88%;"></span></span><span style="font-variant-numeric: tabular-nums; min-width: 44px;">22/25</span></span></td><td><span class="eit-badge eit-badge--warning">3 seats left</span></td></tr><tr><td><a class="p-link" href="batch-detail.html" style="color: var(--ink);">Digital Marketing · Batch 12</a></td><td style="white-space: nowrap;">Sun, 25 Oct</td><td>Online</td><td>Imran Kabir</td><td><span class="p-row" style="gap: 10px;"><span class="p-bar p-bar--thin" style="flex: 1 1 0%;"><span style="width: 75%;"></span></span><span style="font-variant-numeric: tabular-nums; min-width: 44px;">30/40</span></span></td><td><span class="eit-badge eit-badge--success">Admission open</span></td></tr><tr><td><a class="p-link" href="batch-detail.html" style="color: var(--ink);">Cyber Security · Batch 4</a></td><td style="white-space: nowrap;">Mon, 26 Oct</td><td>Offline</td><td>Ashik Mahmud</td><td><span class="p-row" style="gap: 10px;"><span class="p-bar p-bar--thin p-bar--warn" style="flex: 1 1 0%;"><span style="width: 45%;"></span></span><span style="font-variant-numeric: tabular-nums; min-width: 44px;">9/20</span></span></td><td><span class="eit-badge eit-badge--danger">Under half full</span></td></tr><tr><td><a class="p-link" href="batch-detail.html" style="color: var(--ink);">React JS · Batch 7</a></td><td style="white-space: nowrap;">Sat, 31 Oct</td><td>Online</td><td>Kamrul Hasan</td><td><span class="p-row" style="gap: 10px;"><span class="p-bar p-bar--thin p-bar--warn" style="flex: 1 1 0%;"><span style="width: 40%;"></span></span><span style="font-variant-numeric: tabular-nums; min-width: 44px;">14/35</span></span></td><td><span class="eit-badge eit-badge--danger">Under half full</span></td></tr><tr><td><a class="p-link" href="batch-detail.html" style="color: var(--ink);">CCNA · Batch 8</a></td><td style="white-space: nowrap;">Sun, 1 Nov</td><td>Offline</td><td>Habibur Rahman</td><td><span class="p-row" style="gap: 10px;"><span class="p-bar p-bar--thin" style="flex: 1 1 0%;"><span style="width: 100%;"></span></span><span style="font-variant-numeric: tabular-nums; min-width: 44px;">20/20</span></span></td><td><span class="eit-badge eit-badge--neutral">Batch full</span></td></tr></tbody></table></div></section></main></div></div>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin overview · European IT LMS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap"
+    />
+    <link rel="stylesheet" href="../assets/css/eit.css" />
+    <link rel="stylesheet" href="../assets/css/panel.css" />
+    <link rel="stylesheet" href="../assets/css/app.css" />
+    <script src="../assets/js/app.js" defer></script>
+  </head>
+  <body>
+    <div class="p-shell">
+      <aside class="p-side">
+        <a class="p-brand" href="overview.html"
+          ><span class="p-brand-mark" aria-hidden="true"></span
+          ><span class="p-brand-text"
+            ><span class="p-brand-name">European IT</span><span class="p-brand-sub">INSTITUTE</span></span
+          ></a
+        >
+        <nav class="p-nav" aria-label="Admin panel">
+          <a href="overview.html" aria-current="page"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="9" rx="1"></rect>
+              <rect x="14" y="3" width="7" height="5" rx="1"></rect>
+              <rect x="14" y="12" width="7" height="9" rx="1"></rect>
+              <rect x="3" y="16" width="7" height="5" rx="1"></rect></svg
+            >Overview</a
+          ><span class="p-nav-label">Courses</span
+          ><a href="courses.html"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path>
+              <path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg
+            >Courses &amp; batches<span class="p-count">3</span></a
+          >
+          <div class="p-subnav">
+            <a href="course-review.html">Review &amp; publish<span class="p-count">1</span></a
+            ><a href="batch-detail.html">Batch detail</a><a href="batch-edit.html">Create a batch</a>
+          </div>
+          <span class="p-nav-label">People</span
+          ><a href="students.html"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg
+            >Students &amp; payments</a
+          >
+          <div class="p-subnav"><a href="student-record.html">Student record</a></div>
+          <a href="mentors.html"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <rect x="2" y="7" width="20" height="14" rx="2"></rect>
+              <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path></svg
+            >Mentors</a
+          ><a href="roles.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+              ></path>
+              <path d="m9 12 2 2 4-4"></path></svg
+            >Roles &amp; access</a
+          ><span class="p-nav-label">Admissions</span
+          ><a href="leads.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m3 11 18-5v12L3 14v-3z"></path>
+              <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg
+            >Seminar leads<span class="p-count">6</span></a
+          ><span class="p-nav-label">Account</span
+          ><a href="../notifications.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+              <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
+            >Notifications<span class="p-count">3</span></a
+          ><a href="settings.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
+              ></path>
+              <circle cx="12" cy="12" r="3"></circle></svg
+            >Settings</a
+          ><a href="profile.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle></svg
+            >My profile</a
+          >
+        </nav>
+      </aside>
+      <div class="p-content">
+        <header class="p-top">
+          <label class="p-search"
+            ><svg
+              class="eit-icon"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="M21 21l-4.35-4.35"></path></svg
+            ><span class="eit-sr">Search</span><input type="search" placeholder="Search students, courses, payments"
+          /></label>
+          <div class="p-top-right">
+            <div class="eit-seg has-thumb" role="group" aria-label="Language">
+              <span class="eit-seg__thumb" aria-hidden="true" style="width: 52px; transform: translateX(4px)"></span
+              ><button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button
+              ><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button>
+            </div>
+            <button
+              class="p-iconbtn"
+              type="button"
+              aria-label="Notifications"
+              aria-expanded="false"
+              aria-controls="notif-menu"
+            >
+              <svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
+              ><span class="p-badge-count" data-unread-count="">3</span></button
+            ><a class="p-me" href="profile.html" style="text-decoration: none"
+              ><span class="p-avatar">SS</span
+              ><span style="display: flex; flex-direction: column"
+                ><span class="p-me-name">Sharmin Sultana</span><span class="p-me-sub">Admin</span></span
+              ></a
+            >
+            <div
+              data-dc-tpl="77"
+              class="p-dropdown"
+              role="dialog"
+              aria-label="Notifications"
+              id="notif-menu"
+              hidden=""
+              data-popover=""
+            >
+              <div class="p-row" style="justify-content: space-between; padding: 16px 18px 10px">
+                <strong style="font-size: 16px">Notifications</strong
+                ><button
+                  type="button"
+                  class="p-link"
+                  style="
+                    border: 0px;
+                    background: none;
+                    padding: 0px;
+                    font-style: inherit;
+                    font-variant: inherit;
+                    font-stretch: inherit;
+                    line-height: inherit;
+                    font-family: inherit;
+                    font-optical-sizing: inherit;
+                    font-size-adjust: inherit;
+                    font-kerning: inherit;
+                    font-feature-settings: inherit;
+                    font-variation-settings: inherit;
+                    font-weight: 600;
+                    font-size: 13px;
+                    cursor: pointer;
+                  "
+                  data-mark-read="#notif-menu"
+                >
+                  Mark all as read
+                </button>
+              </div>
+              <ul class="p-rows" style="padding: 0px 8px 8px">
+                <li style="align-items: flex-start">
+                  <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"
+                      ></path></svg></span
+                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                      >৳5,000 received from Tanvir Hasan</span
+                    ><span class="p-small" style="font-size: 12px">bKash · installment 2 of 3 · 12 min ago</span></span
+                  ><span
+                    aria-label="Unread"
+                    style="
+                      width: 8px;
+                      height: 8px;
+                      border-radius: 50%;
+                      background: var(--cyan);
+                      margin-top: 6px;
+                      flex: 0 0 auto;
+                    "
+                    data-unread=""
+                  ></span>
+                </li>
+                <li style="align-items: flex-start">
+                  <span class="p-tile" style="width: 36px; height: 36px; border-radius: 10px"
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
+                      ></path></svg></span
+                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                      >New course sent for review</span
+                    ><span class="p-small" style="font-size: 12px"
+                      >Facebook Ads in Practice · Imran Kabir · 1 h ago</span
+                    ></span
+                  ><span
+                    aria-label="Unread"
+                    style="
+                      width: 8px;
+                      height: 8px;
+                      border-radius: 50%;
+                      background: var(--cyan);
+                      margin-top: 6px;
+                      flex: 0 0 auto;
+                    "
+                    data-unread=""
+                  ></span>
+                </li>
+                <li style="align-items: flex-start">
+                  <span class="p-tile p-tile--muted" style="width: 36px; height: 36px; border-radius: 10px"
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m3 11 18-5v12L3 14v-3zM11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg></span
+                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                      >6 new bookings for Saturday’s seminar</span
+                    ><span class="p-small" style="font-size: 12px">Web Development · 3 h ago</span></span
+                  ><span
+                    aria-label="Unread"
+                    style="
+                      width: 8px;
+                      height: 8px;
+                      border-radius: 50%;
+                      background: var(--cyan);
+                      margin-top: 6px;
+                      flex: 0 0 auto;
+                    "
+                    data-unread=""
+                  ></span>
+                </li>
+                <li style="align-items: flex-start">
+                  <span class="p-tile p-tile--amber" style="width: 36px; height: 36px; border-radius: 10px"
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M5 11h14v11H5zM7 11V7a5 5 0 0 1 10 0v4"></path></svg></span
+                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 500"
+                      >Access paused for Mehedi Hasan</span
+                    ><span class="p-small" style="font-size: 12px">Installment 2 overdue 7 days · 8 Oct</span></span
+                  >
+                </li>
+              </ul>
+              <a
+                href="../notifications.html"
+                class="p-link"
+                style="
+                  display: flex;
+                  justify-content: center;
+                  padding: 12px;
+                  border-top: 1px solid var(--line-soft);
+                  border-radius: 0px;
+                "
+                >See all notifications</a
+              >
+            </div>
+          </div>
+        </header>
+        <main class="p-main">
+          <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
+            <div style="display: flex; flex-direction: column; gap: 6px">
+              <span class="p-eyebrow">October 2026</span>
+              <h1 class="p-h1">Good evening, Sharmin</h1>
+              <p class="p-body">Here's how European IT is doing this month.</p>
+            </div>
+            <div class="p-row" style="flex-wrap: wrap">
+              <div class="p-seg" role="group" aria-label="Period">
+                <button type="button" aria-pressed="true">This month</button
+                ><button type="button" aria-pressed="false">Last 90 days</button>
+              </div>
+              <a href="batch-edit.html" class="eit-btn eit-btn--primary eit-btn--md"
+                ><svg
+                  class="eit-icon eit-btn__lead"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  focusable="false"
+                  aria-hidden="true"
+                >
+                  <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+                  <path d="M16 2v4M8 2v4M3 10h18"></path></svg
+                ><span class="eit-btn__label">Create batch</span></a
+              >
+            </div>
+          </div>
+          <div
+            class="p-stagger"
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 16px"
+          >
+            <a href="students.html" class="p-card p-stat p-lift" style="text-decoration: none; color: inherit"
+              ><div class="p-stat-top">
+                <span class="p-tile p-tile--green"
+                  ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"
+                    ></path></svg></span
+                ><span class="p-delta">+12%</span>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 2px">
+                <span class="p-num"
+                  ><span class="eit-count"
+                    ><span class="eit-sr">৳6,85,000</span
+                    ><span class="eit-count__ghost" aria-hidden="true">৳6,85,000</span
+                    ><span class="eit-count__n" aria-hidden="true">৳6,85,000</span></span
+                  ></span
+                ><span class="p-small">Collected in October</span>
+              </div>
+              <svg
+                class="p-spark"
+                width="100%"
+                height="34"
+                viewBox="0 0 100 34"
+                preserveAspectRatio="none"
+                role="img"
+                aria-label="Collected in October, last 8 weeks: 120, 140, 110, 165, 150, 190, 170, 185"
+              >
+                <polyline
+                  points="0.0,27.5 14.3,20.5 28.6,31.0 42.9,11.8 57.1,17.0 71.4,3.0 85.7,10.0 100.0,4.8"
+                  pathLength="100"
+                  vector-effect="non-scaling-stroke"
+                ></polyline></svg></a
+            ><a href="students.html" class="p-card p-stat p-lift" style="text-decoration: none; color: inherit"
+              ><div class="p-stat-top">
+                <span class="p-tile"
+                  ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM19 8v6M22 11h-6"
+                    ></path></svg></span
+                ><span class="p-delta">+8 vs Sep</span>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 2px">
+                <span class="p-num"
+                  ><span class="eit-count"
+                    ><span class="eit-sr">58</span><span class="eit-count__ghost" aria-hidden="true">58</span
+                    ><span class="eit-count__n" aria-hidden="true">58</span></span
+                  ></span
+                ><span class="p-small">New enrollments</span>
+              </div>
+              <svg
+                class="p-spark"
+                width="100%"
+                height="34"
+                viewBox="0 0 100 34"
+                preserveAspectRatio="none"
+                role="img"
+                aria-label="New enrollments, last 8 weeks: 9, 12, 8, 14, 11, 16, 13, 15"
+              >
+                <polyline
+                  points="0.0,27.5 14.3,17.0 28.6,31.0 42.9,10.0 57.1,20.5 71.4,3.0 85.7,13.5 100.0,6.5"
+                  pathLength="100"
+                  vector-effect="non-scaling-stroke"
+                ></polyline></svg></a
+            ><a href="courses.html" class="p-card p-stat p-lift" style="text-decoration: none; color: inherit"
+              ><div class="p-stat-top">
+                <span class="p-tile p-tile--amber"
+                  ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"></path></svg></span
+                ><span class="p-delta">+5 pts</span>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 2px">
+                <span class="p-num"
+                  ><span class="eit-count"
+                    ><span class="eit-sr">81%</span><span class="eit-count__ghost" aria-hidden="true">81%</span
+                    ><span class="eit-count__n" aria-hidden="true">81%</span></span
+                  ></span
+                ><span class="p-small">Seats filled · 9 open batches</span>
+              </div>
+              <svg
+                class="p-spark"
+                width="100%"
+                height="34"
+                viewBox="0 0 100 34"
+                preserveAspectRatio="none"
+                role="img"
+                aria-label="Seats filled · 9 open batches, last 8 weeks: 62, 65, 68, 70, 74, 76, 79, 81"
+              >
+                <polyline
+                  points="0.0,31.0 14.3,26.6 28.6,22.2 42.9,19.2 57.1,13.3 71.4,10.4 85.7,5.9 100.0,3.0"
+                  pathLength="100"
+                  vector-effect="non-scaling-stroke"
+                ></polyline></svg></a
+            ><a href="students.html" class="p-card p-stat p-lift" style="text-decoration: none; color: inherit"
+              ><div class="p-stat-top">
+                <span class="p-tile p-tile--red"
+                  ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 8v4M12 16h.01M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z"></path></svg></span
+                ><span class="p-delta">−3 this week</span>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 2px">
+                <span class="p-num"
+                  ><span class="eit-count"
+                    ><span class="eit-sr">14</span><span class="eit-count__ghost" aria-hidden="true">14</span
+                    ><span class="eit-count__n" aria-hidden="true">14</span></span
+                  ></span
+                ><span class="p-small">Overdue installments</span>
+              </div>
+              <svg
+                class="p-spark"
+                width="100%"
+                height="34"
+                viewBox="0 0 100 34"
+                preserveAspectRatio="none"
+                role="img"
+                aria-label="Overdue installments, last 8 weeks: 20, 19, 21, 18, 17, 17, 15, 14"
+              >
+                <polyline
+                  points="0.0,7.0 14.3,11.0 28.6,3.0 42.9,15.0 57.1,19.0 71.4,19.0 85.7,27.0 100.0,31.0"
+                  pathLength="100"
+                  vector-effect="non-scaling-stroke"
+                ></polyline></svg
+            ></a>
+          </div>
+          <div class="p-split">
+            <section
+              class="p-card"
+              aria-labelledby="enr-title"
+              style="flex: 1.5 1 520px; display: flex; flex-direction: column; gap: 14px"
+            >
+              <div class="p-card-head">
+                <div style="display: flex; flex-direction: column; gap: 2px">
+                  <h2 id="enr-title" class="p-h3">Enrollments per week</h2>
+                  <span class="p-small">Last 8 weeks · hover a bar for the number</span>
+                </div>
+                <a class="p-link" href="students.html">See students</a>
+              </div>
+              <div class="p-chart" role="list" aria-label="Weekly enrollments">
+                <div class="p-barcol" role="listitem" tabindex="0" aria-label="Week of 24 Aug: 9 enrollments">
+                  <span class="p-tip">9 enrollments</span
+                  ><span class="p-bar-mark" style="height: 90px; animation-delay: 0ms"></span>
+                </div>
+                <div class="p-barcol" role="listitem" tabindex="0" aria-label="Week of 31 Aug: 12 enrollments">
+                  <span class="p-tip">12 enrollments</span
+                  ><span class="p-bar-mark" style="height: 120px; animation-delay: 60ms"></span>
+                </div>
+                <div class="p-barcol" role="listitem" tabindex="0" aria-label="Week of 7 Sep: 8 enrollments">
+                  <span class="p-tip">8 enrollments</span
+                  ><span class="p-bar-mark" style="height: 80px; animation-delay: 120ms"></span>
+                </div>
+                <div class="p-barcol" role="listitem" tabindex="0" aria-label="Week of 14 Sep: 14 enrollments">
+                  <span class="p-tip">14 enrollments</span
+                  ><span class="p-bar-mark" style="height: 140px; animation-delay: 180ms"></span>
+                </div>
+                <div class="p-barcol" role="listitem" tabindex="0" aria-label="Week of 21 Sep: 11 enrollments">
+                  <span class="p-tip">11 enrollments</span
+                  ><span class="p-bar-mark" style="height: 110px; animation-delay: 240ms"></span>
+                </div>
+                <div class="p-barcol" role="listitem" tabindex="0" aria-label="Week of 28 Sep: 16 enrollments">
+                  <span class="p-tip">16 enrollments</span
+                  ><span class="p-bar-mark" style="height: 160px; animation-delay: 300ms"></span>
+                </div>
+                <div class="p-barcol" role="listitem" tabindex="0" aria-label="Week of 5 Oct: 13 enrollments">
+                  <span class="p-tip">13 enrollments</span
+                  ><span class="p-bar-mark" style="height: 130px; animation-delay: 360ms"></span>
+                </div>
+                <div class="p-barcol" role="listitem" tabindex="0" aria-label="Week of 12 Oct: 15 enrollments">
+                  <span class="p-tip">15 enrollments</span><span class="p-bar-label">15</span
+                  ><span class="p-bar-mark" style="height: 150px; animation-delay: 420ms"></span>
+                </div>
+              </div>
+              <div aria-hidden="true" style="display: flex; gap: 12px; margin-top: -6px">
+                <span style="flex: 1 1 0%; text-align: center; font-size: 12px; color: var(--ink-3)">24 Aug</span
+                ><span style="flex: 1 1 0%; text-align: center; font-size: 12px; color: var(--ink-3)">31 Aug</span
+                ><span style="flex: 1 1 0%; text-align: center; font-size: 12px; color: var(--ink-3)">7 Sep</span
+                ><span style="flex: 1 1 0%; text-align: center; font-size: 12px; color: var(--ink-3)">14 Sep</span
+                ><span style="flex: 1 1 0%; text-align: center; font-size: 12px; color: var(--ink-3)">21 Sep</span
+                ><span style="flex: 1 1 0%; text-align: center; font-size: 12px; color: var(--ink-3)">28 Sep</span
+                ><span style="flex: 1 1 0%; text-align: center; font-size: 12px; color: var(--ink-3)">5 Oct</span
+                ><span style="flex: 1 1 0%; text-align: center; font-size: 12px; color: var(--ink-3)">12 Oct</span>
+              </div>
+            </section>
+            <section
+              class="p-card"
+              aria-labelledby="att-title"
+              style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 12px"
+            >
+              <h2 id="att-title" class="p-h3">Needs your attention</h2>
+              <ul class="p-rows" style="margin: 0px -12px -12px">
+                <li>
+                  <span class="p-tile"
+                    ><svg
+                      class="eit-icon"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path>
+                      <path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg></span
+                  ><span class="p-grow" style="display: flex; flex-direction: column"
+                    ><strong style="font-size: 14px">3 courses waiting for review</strong
+                    ><span class="p-small">Oldest sent 13 Oct</span></span
+                  ><a class="p-link" href="course-review.html">Review</a>
+                </li>
+                <li>
+                  <span class="p-tile p-tile--red"
+                    ><svg
+                      class="eit-icon"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M12 7.5v5"></path>
+                      <path d="M12 16h.01"></path></svg></span
+                  ><span class="p-grow" style="display: flex; flex-direction: column"
+                    ><strong style="font-size: 14px">14 installments overdue</strong
+                    ><span class="p-small">৳70,000 · 2 accesses paused</span></span
+                  ><a class="p-link" href="students.html">Follow up</a>
+                </li>
+                <li>
+                  <span class="p-tile"
+                    ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m3 11 18-5v12L3 14v-3z"></path>
+                      <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg></span
+                  ><span class="p-grow" style="display: flex; flex-direction: column"
+                    ><strong style="font-size: 14px">6 new seminar bookings</strong
+                    ><span class="p-small">For Sat, 17 Oct</span></span
+                  ><a class="p-link" href="leads.html">Confirm</a>
+                </li>
+                <li>
+                  <span class="p-tile p-tile--amber"
+                    ><svg
+                      class="eit-icon"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span
+                  ><span class="p-grow" style="display: flex; flex-direction: column"
+                    ><strong style="font-size: 14px">2 batches under half full</strong
+                    ><span class="p-small">Both start within 10 days</span></span
+                  ><a class="p-link" href="batch-detail.html">View</a>
+                </li>
+                <li>
+                  <span class="p-tile p-tile--muted"
+                    ><svg
+                      class="eit-icon"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M10 8l6 4-6 4z"></path></svg></span
+                  ><span class="p-grow" style="display: flex; flex-direction: column"
+                    ><strong style="font-size: 14px">2 class recordings late</strong
+                    ><span class="p-small">Kamrul Hasan, Habibur Rahman</span></span
+                  ><a class="p-link" href="mentors.html">Remind</a>
+                </li>
+              </ul>
+            </section>
+          </div>
+          <section aria-labelledby="quick-title" style="display: flex; flex-direction: column; gap: 12px">
+            <h2 id="quick-title" class="p-h3">Quick actions</h2>
+            <div
+              class="p-stagger"
+              style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 12px"
+            >
+              <a
+                href="batch-edit.html"
+                class="p-card p-lift"
+                style="
+                  padding: 16px;
+                  display: flex;
+                  align-items: center;
+                  gap: 12px;
+                  text-decoration: none;
+                  color: inherit;
+                "
+                ><span class="p-tile"
+                  ><svg
+                    class="eit-icon"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    focusable="false"
+                    aria-hidden="true"
+                  >
+                    <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+                    <path d="M16 2v4M8 2v4M3 10h18"></path></svg></span
+                ><strong style="font-size: 15px">Create a batch</strong></a
+              ><a
+                href="student-record.html"
+                class="p-card p-lift"
+                style="
+                  padding: 16px;
+                  display: flex;
+                  align-items: center;
+                  gap: 12px;
+                  text-decoration: none;
+                  color: inherit;
+                "
+                ><span class="p-tile p-tile--green"
+                  ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+                    <circle cx="12" cy="12" r="2"></circle>
+                    <path d="M6 12h.01M18 12h.01"></path></svg></span
+                ><strong style="font-size: 15px">Record cash payment</strong></a
+              ><a
+                href="mentors.html"
+                class="p-card p-lift"
+                style="
+                  padding: 16px;
+                  display: flex;
+                  align-items: center;
+                  gap: 12px;
+                  text-decoration: none;
+                  color: inherit;
+                "
+                ><span class="p-tile p-tile--amber"
+                  ><svg
+                    class="eit-icon"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    focusable="false"
+                    aria-hidden="true"
+                  >
+                    <rect x="2" y="7" width="20" height="14" rx="2"></rect>
+                    <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path></svg></span
+                ><strong style="font-size: 15px">Invite a mentor</strong></a
+              ><a
+                href="leads.html"
+                class="p-card p-lift"
+                style="
+                  padding: 16px;
+                  display: flex;
+                  align-items: center;
+                  gap: 12px;
+                  text-decoration: none;
+                  color: inherit;
+                "
+                ><span class="p-tile p-tile--ink"
+                  ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m3 11 18-5v12L3 14v-3z"></path>
+                    <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg></span
+                ><strong style="font-size: 15px">Schedule a seminar</strong></a
+              >
+            </div>
+          </section>
+          <section class="p-card p-card--flush" aria-labelledby="up-title">
+            <div class="p-card-head" style="padding: 20px 24px 12px">
+              <h2 id="up-title" class="p-h3">Upcoming batches</h2>
+              <a class="p-link" href="courses.html">All batches</a>
+            </div>
+            <div class="p-scroll">
+              <table class="p-table" style="min-width: 820px">
+                <thead>
+                  <tr>
+                    <th scope="col">Batch</th>
+                    <th scope="col">Starts</th>
+                    <th scope="col">Format</th>
+                    <th scope="col">Mentor</th>
+                    <th scope="col" style="width: 200px">Seats</th>
+                    <th scope="col">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <a class="p-link" href="batch-detail.html" style="color: var(--ink)">Graphic Design · Batch 10</a>
+                    </td>
+                    <td style="white-space: nowrap">Sat, 24 Oct</td>
+                    <td>Offline</td>
+                    <td>Nadia Rahman</td>
+                    <td>
+                      <span class="p-row" style="gap: 10px"
+                        ><span class="p-bar p-bar--thin" style="flex: 1 1 0%"><span style="width: 88%"></span></span
+                        ><span style="font-variant-numeric: tabular-nums; min-width: 44px">22/25</span></span
+                      >
+                    </td>
+                    <td><span class="eit-badge eit-badge--warning">3 seats left</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a class="p-link" href="batch-detail.html" style="color: var(--ink)"
+                        >Digital Marketing · Batch 12</a
+                      >
+                    </td>
+                    <td style="white-space: nowrap">Sun, 25 Oct</td>
+                    <td>Online</td>
+                    <td>Imran Kabir</td>
+                    <td>
+                      <span class="p-row" style="gap: 10px"
+                        ><span class="p-bar p-bar--thin" style="flex: 1 1 0%"><span style="width: 75%"></span></span
+                        ><span style="font-variant-numeric: tabular-nums; min-width: 44px">30/40</span></span
+                      >
+                    </td>
+                    <td><span class="eit-badge eit-badge--success">Admission open</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a class="p-link" href="batch-detail.html" style="color: var(--ink)">Cyber Security · Batch 4</a>
+                    </td>
+                    <td style="white-space: nowrap">Mon, 26 Oct</td>
+                    <td>Offline</td>
+                    <td>Ashik Mahmud</td>
+                    <td>
+                      <span class="p-row" style="gap: 10px"
+                        ><span class="p-bar p-bar--thin p-bar--warn" style="flex: 1 1 0%"
+                          ><span style="width: 45%"></span></span
+                        ><span style="font-variant-numeric: tabular-nums; min-width: 44px">9/20</span></span
+                      >
+                    </td>
+                    <td><span class="eit-badge eit-badge--danger">Under half full</span></td>
+                  </tr>
+                  <tr>
+                    <td><a class="p-link" href="batch-detail.html" style="color: var(--ink)">React JS · Batch 7</a></td>
+                    <td style="white-space: nowrap">Sat, 31 Oct</td>
+                    <td>Online</td>
+                    <td>Kamrul Hasan</td>
+                    <td>
+                      <span class="p-row" style="gap: 10px"
+                        ><span class="p-bar p-bar--thin p-bar--warn" style="flex: 1 1 0%"
+                          ><span style="width: 40%"></span></span
+                        ><span style="font-variant-numeric: tabular-nums; min-width: 44px">14/35</span></span
+                      >
+                    </td>
+                    <td><span class="eit-badge eit-badge--danger">Under half full</span></td>
+                  </tr>
+                  <tr>
+                    <td><a class="p-link" href="batch-detail.html" style="color: var(--ink)">CCNA · Batch 8</a></td>
+                    <td style="white-space: nowrap">Sun, 1 Nov</td>
+                    <td>Offline</td>
+                    <td>Habibur Rahman</td>
+                    <td>
+                      <span class="p-row" style="gap: 10px"
+                        ><span class="p-bar p-bar--thin" style="flex: 1 1 0%"><span style="width: 100%"></span></span
+                        ><span style="font-variant-numeric: tabular-nums; min-width: 44px">20/20</span></span
+                      >
+                    </td>
+                    <td><span class="eit-badge eit-badge--neutral">Batch full</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
 </html>

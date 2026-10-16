@@ -1,18 +1,651 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Class schedule and recordings · European IT LMS</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
-<link rel="stylesheet" href="../assets/css/eit.css">
-<link rel="stylesheet" href="../assets/css/panel.css">
-<link rel="stylesheet" href="../assets/css/app.css">
-<script src="../assets/js/app.js" defer></script>
-</head>
-<body>
-<div class="p-shell"><aside class="p-side"><a class="p-brand" href="dashboard.html"><span class="p-brand-mark" aria-hidden="true"></span><span class="p-brand-text"><span class="p-brand-name">European IT</span><span class="p-brand-sub">INSTITUTE</span></span></a><nav class="p-nav" aria-label="Student panel"><a href="dashboard.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1"></rect><rect x="14" y="3" width="7" height="5" rx="1"></rect><rect x="14" y="12" width="7" height="9" rx="1"></rect><rect x="3" y="16" width="7" height="5" rx="1"></rect></svg>Dashboard</a><a href="course-player.html"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg>My courses</a><a href="quizzes.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="2" width="8" height="4" rx="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="m9 14 2 2 4-4"></path></svg>Quizzes<span class="p-count">1</span></a><a href="projects.html"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>Projects<span class="p-count">1</span></a><a href="schedule.html" aria-current="page"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>Schedule &amp; recordings</a><a href="leaderboard.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg>Leaderboard</a><a href="certificates.html"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="8" r="6"></circle><path d="M15.5 13.5L17 22l-5-3-5 3 1.5-8.5"></path></svg>Certificates</a><a href="payments.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"></rect><path d="M2 10h20"></path></svg>Payments</a><a href="help.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path></svg>Help</a></nav><a class="p-help p-lift" href="leaderboard.html" style="margin-top: auto; text-decoration: none; color: inherit;"><span class="p-row" style="gap: 10px;"><span class="p-tile" style="width: 38px; height: 38px; background: var(--cyan); color: rgb(10, 27, 44);"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg></span><span style="display: flex; flex-direction: column;"><strong style="font-size: 18px; line-height: 1.15;">90 points</strong><span class="p-small" style="color: var(--cyan-deep);">#3 in WordPress B14</span></span></span><span class="p-small" style="color: var(--cyan-deep);">Full marks on a class quiz = +10</span></a></aside><div class="p-content"><header class="p-top"><label class="p-search"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg><span class="eit-sr">Search</span><input type="search" placeholder="Search lessons and resources"></label><div class="p-top-right"><div class="eit-seg has-thumb" role="group" aria-label="Language"><span class="eit-seg__thumb" aria-hidden="true" style="width: 52px; transform: translateX(4px);"></span><button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button></div><button class="p-iconbtn" type="button" aria-label="Notifications, 2 new"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg><span class="p-pip"></span></button><a class="p-me" href="profile.html" style="text-decoration: none; border-radius: 12px;"><span class="p-avatar">NJ</span><span style="display: flex; flex-direction: column;"><span class="p-me-name">Nusrat Jahan</span><span class="p-me-sub">Student · EIT-24-0148</span></span></a></div></header><main class="p-main"><div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px;"><div style="display: flex; flex-direction: column; gap: 6px;"><h1 class="p-h1">Schedule &amp; recordings</h1><p class="p-body">Missed a class or want to watch it again? Every class recording is added here once the class ends.</p></div><div class="p-seg" role="group" aria-label="Course"><button type="button" aria-pressed="true">All courses</button><button type="button" aria-pressed="false">WordPress</button><button type="button" aria-pressed="false">Graphic Design</button></div></div><section class="p-card" aria-labelledby="up-title" style="display: flex; flex-direction: column; gap: 16px;"><div class="p-card-head"><h2 id="up-title" class="p-h3">Coming up</h2><a class="p-link" href="#"><svg class="eit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>Add to Google Calendar</a></div><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 16px;"><article style="border: 1px solid var(--line); border-radius: var(--radius-md); padding: 16px; display: flex; gap: 16px;"><div style="width: 56px; flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 12px; background: var(--track); padding: 8px 0px;"><span class="p-mono" style="font-size: 11px;">Mon</span><span style="font-size: 22px; font-weight: 700;">19</span></div><div style="display: flex; flex-direction: column; gap: 4px; min-width: 0px;"><div class="p-row" style="gap: 8px; flex-wrap: wrap;"><strong style="font-size: 15px;">WordPress · Class 13</strong><span class="eit-badge eit-badge--neutral">Offline</span></div><span class="p-small">7:00–9:00 PM · Lab 2, Mirpur-10</span><span class="p-small">Theme customizer</span></div></article><article style="border: 1px solid var(--cyan-line); background: var(--cyan-soft); border-radius: var(--radius-md); padding: 16px; display: flex; gap: 16px;"><div style="width: 56px; flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 12px; background: var(--surface-card); padding: 8px 0px;"><span class="p-mono" style="font-size: 11px;">Wed</span><span style="font-size: 22px; font-weight: 700;">21</span></div><div style="display: flex; flex-direction: column; gap: 4px; min-width: 0px;"><div class="p-row" style="gap: 8px; flex-wrap: wrap;"><strong style="font-size: 15px;">Graphic Design · Live 8</strong><span class="eit-badge eit-badge--neutral">Online</span></div><span class="p-small" style="color: var(--cyan-deep);">8:00–9:30 PM · Zoom link opens 10 min before</span><span class="p-small" style="color: var(--cyan-deep);">Typography for social posts</span></div></article><article style="border: 1px solid var(--line); border-radius: var(--radius-md); padding: 16px; display: flex; gap: 16px;"><div style="width: 56px; flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 12px; background: var(--track); padding: 8px 0px;"><span class="p-mono" style="font-size: 11px;">Thu</span><span style="font-size: 22px; font-weight: 700;">22</span></div><div style="display: flex; flex-direction: column; gap: 4px; min-width: 0px;"><div class="p-row" style="gap: 8px; flex-wrap: wrap;"><strong style="font-size: 15px;">WordPress · Class 14</strong><span class="eit-badge eit-badge--neutral">Offline</span></div><span class="p-small">7:00–9:00 PM · Lab 2, Mirpur-10</span><span class="p-small">Custom post types</span></div></article></div></section><section class="p-card p-card--flush" aria-labelledby="rec-title"><div class="p-card-head" style="padding: 20px 24px 12px;"><h2 id="rec-title" class="p-h3">Class recordings</h2><span class="p-small">Attended 11 of 12 WordPress classes</span></div><ul class="p-list" style="padding: 0px 12px 12px;"><li style="padding: 12px; border-radius: 12px; gap: 16px; border-bottom: 1px solid var(--line-soft);"><div style="width: 96px; height: 56px; flex: 0 0 auto; border-radius: 10px; display: grid; place-items: center; background: var(--track); color: var(--ink-3);"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg></div><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px;"><strong style="font-size: 15px;">WordPress · Class 12 · Custom header walkthrough</strong><span class="p-small">Thu, 15 Oct · Offline · Lab 2</span></span><span class="eit-badge eit-badge--success">Present</span><span style="min-width: 150px; display: flex; justify-content: flex-end;"><span class="p-small">Mentor is uploading</span></span></li><li style="padding: 12px; border-radius: 12px; gap: 16px; border-bottom: 1px solid var(--line-soft);"><div style="width: 96px; height: 56px; flex: 0 0 auto; border-radius: 10px; display: grid; place-items: center; background: var(--ink); color: var(--on-ink);"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M6 4l14 8-14 8z"></path></svg></div><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px;"><strong style="font-size: 15px;">Graphic Design · Live 7 · Colour and contrast</strong><span class="p-small">Wed, 14 Oct · Online · 1:24:08</span></span><span class="eit-badge eit-badge--success">Present</span><span style="min-width: 150px; display: flex; justify-content: flex-end;"><a class="p-ghostbtn" href="course-player.html"><svg class="eit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M10 8l6 4-6 4z"></path></svg>Watch</a></span></li><li style="padding: 12px; border-radius: 12px; gap: 16px; border-bottom: 1px solid var(--line-soft);"><div style="width: 96px; height: 56px; flex: 0 0 auto; border-radius: 10px; display: grid; place-items: center; background: var(--ink); color: var(--on-ink);"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M6 4l14 8-14 8z"></path></svg></div><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px;"><strong style="font-size: 15px;">WordPress · Class 11 · Enqueueing scripts</strong><span class="p-small">Mon, 12 Oct · Offline · 1:52:10</span></span><span class="eit-badge eit-badge--danger">Absent</span><span style="min-width: 150px; display: flex; justify-content: flex-end;"><a class="p-ghostbtn" href="course-player.html"><svg class="eit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M10 8l6 4-6 4z"></path></svg>Watch</a></span></li><li style="padding: 12px; border-radius: 12px; gap: 16px; border-bottom: 1px solid var(--line-soft);"><div style="width: 96px; height: 56px; flex: 0 0 auto; border-radius: 10px; display: grid; place-items: center; background: var(--ink); color: var(--on-ink);"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M6 4l14 8-14 8z"></path></svg></div><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px;"><strong style="font-size: 15px;">WordPress · Class 10 · Template hierarchy</strong><span class="p-small">Thu, 8 Oct · Offline · 1:48:33</span></span><span class="eit-badge eit-badge--success">Present</span><span style="min-width: 150px; display: flex; justify-content: flex-end;"><a class="p-ghostbtn" href="course-player.html"><svg class="eit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M10 8l6 4-6 4z"></path></svg>Watch</a></span></li><li style="padding: 12px; border-radius: 12px; gap: 16px; border-bottom: 1px solid var(--line-soft);"><div style="width: 96px; height: 56px; flex: 0 0 auto; border-radius: 10px; display: grid; place-items: center; background: var(--ink); color: var(--on-ink);"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M6 4l14 8-14 8z"></path></svg></div><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px;"><strong style="font-size: 15px;">Graphic Design · Live 6 · Grids and layout</strong><span class="p-small">Wed, 7 Oct · Online · 1:30:41</span></span><span class="eit-badge eit-badge--success">Present</span><span style="min-width: 150px; display: flex; justify-content: flex-end;"><a class="p-ghostbtn" href="course-player.html"><svg class="eit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M10 8l6 4-6 4z"></path></svg>Watch</a></span></li><li style="padding: 12px; border-radius: 12px; gap: 16px; border-bottom: 1px solid var(--line-soft);"><div style="width: 96px; height: 56px; flex: 0 0 auto; border-radius: 10px; display: grid; place-items: center; background: var(--ink); color: var(--on-ink);"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M6 4l14 8-14 8z"></path></svg></div><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px;"><strong style="font-size: 15px;">WordPress · Class 9 · Theme folder structure</strong><span class="p-small">Mon, 5 Oct · Offline · 1:55:02</span></span><span class="eit-badge eit-badge--success">Present</span><span style="min-width: 150px; display: flex; justify-content: flex-end;"><a class="p-ghostbtn" href="course-player.html"><svg class="eit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M10 8l6 4-6 4z"></path></svg>Watch</a></span></li></ul></section></main></div></div>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Class schedule and recordings · European IT LMS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap"
+    />
+    <link rel="stylesheet" href="../assets/css/eit.css" />
+    <link rel="stylesheet" href="../assets/css/panel.css" />
+    <link rel="stylesheet" href="../assets/css/app.css" />
+    <script src="../assets/js/app.js" defer></script>
+  </head>
+  <body>
+    <div class="p-shell">
+      <aside class="p-side">
+        <a class="p-brand" href="dashboard.html"
+          ><span class="p-brand-mark" aria-hidden="true"></span
+          ><span class="p-brand-text"
+            ><span class="p-brand-name">European IT</span><span class="p-brand-sub">INSTITUTE</span></span
+          ></a
+        >
+        <nav class="p-nav" aria-label="Student panel">
+          <a href="dashboard.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="9" rx="1"></rect>
+              <rect x="14" y="3" width="7" height="5" rx="1"></rect>
+              <rect x="14" y="12" width="7" height="9" rx="1"></rect>
+              <rect x="3" y="16" width="7" height="5" rx="1"></rect></svg
+            >Dashboard</a
+          ><a href="course-player.html"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path>
+              <path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg
+            >My courses</a
+          ><a href="quizzes.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="8" y="2" width="8" height="4" rx="1"></rect>
+              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+              <path d="m9 14 2 2 4-4"></path></svg
+            >Quizzes<span class="p-count">1</span></a
+          ><a href="projects.html"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg
+            >Projects<span class="p-count">1</span></a
+          ><a href="schedule.html" aria-current="page"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+              <path d="M16 2v4M8 2v4M3 10h18"></path></svg
+            >Schedule &amp; recordings</a
+          ><a href="leaderboard.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+              <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+              <path d="M4 22h16"></path>
+              <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+              <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+              <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg
+            >Leaderboard</a
+          ><a href="certificates.html"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="8" r="6"></circle>
+              <path d="M15.5 13.5L17 22l-5-3-5 3 1.5-8.5"></path></svg
+            >Certificates</a
+          ><a href="payments.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+              <path d="M2 10h20"></path></svg
+            >Payments</a
+          ><a href="help.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+              <path d="M12 17h.01"></path></svg
+            >Help</a
+          >
+        </nav>
+        <a class="p-help p-lift" href="leaderboard.html" style="margin-top: auto; text-decoration: none; color: inherit"
+          ><span class="p-row" style="gap: 10px"
+            ><span class="p-tile" style="width: 38px; height: 38px; background: var(--cyan); color: rgb(10, 27, 44)"
+              ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                <path d="M4 22h16"></path>
+                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg></span
+            ><span style="display: flex; flex-direction: column"
+              ><strong style="font-size: 18px; line-height: 1.15">90 points</strong
+              ><span class="p-small" style="color: var(--cyan-deep)">#3 in WordPress B14</span></span
+            ></span
+          ><span class="p-small" style="color: var(--cyan-deep)">Full marks on a class quiz = +10</span></a
+        >
+      </aside>
+      <div class="p-content">
+        <header class="p-top">
+          <label class="p-search"
+            ><svg
+              class="eit-icon"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="M21 21l-4.35-4.35"></path></svg
+            ><span class="eit-sr">Search</span><input type="search" placeholder="Search lessons and resources"
+          /></label>
+          <div class="p-top-right">
+            <div class="eit-seg has-thumb" role="group" aria-label="Language">
+              <span class="eit-seg__thumb" aria-hidden="true" style="width: 52px; transform: translateX(4px)"></span
+              ><button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button
+              ><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button>
+            </div>
+            <button class="p-iconbtn" type="button" aria-label="Notifications, 2 new">
+              <svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
+              ><span class="p-pip"></span></button
+            ><a class="p-me" href="profile.html" style="text-decoration: none; border-radius: 12px"
+              ><span class="p-avatar">NJ</span
+              ><span style="display: flex; flex-direction: column"
+                ><span class="p-me-name">Nusrat Jahan</span><span class="p-me-sub">Student · EIT-24-0148</span></span
+              ></a
+            >
+          </div>
+        </header>
+        <main class="p-main">
+          <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
+            <div style="display: flex; flex-direction: column; gap: 6px">
+              <h1 class="p-h1">Schedule &amp; recordings</h1>
+              <p class="p-body">
+                Missed a class or want to watch it again? Every class recording is added here once the class ends.
+              </p>
+            </div>
+            <div class="p-seg" role="group" aria-label="Course">
+              <button type="button" aria-pressed="true">All courses</button
+              ><button type="button" aria-pressed="false">WordPress</button
+              ><button type="button" aria-pressed="false">Graphic Design</button>
+            </div>
+          </div>
+          <section class="p-card" aria-labelledby="up-title" style="display: flex; flex-direction: column; gap: 16px">
+            <div class="p-card-head">
+              <h2 id="up-title" class="p-h3">Coming up</h2>
+              <a class="p-link" href="#"
+                ><svg
+                  class="eit-icon"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  focusable="false"
+                  aria-hidden="true"
+                >
+                  <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+                  <path d="M16 2v4M8 2v4M3 10h18"></path></svg
+                >Add to Google Calendar</a
+              >
+            </div>
+            <div
+              style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 16px"
+            >
+              <article
+                style="
+                  border: 1px solid var(--line);
+                  border-radius: var(--radius-md);
+                  padding: 16px;
+                  display: flex;
+                  gap: 16px;
+                "
+              >
+                <div
+                  style="
+                    width: 56px;
+                    flex: 0 0 auto;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 12px;
+                    background: var(--track);
+                    padding: 8px 0px;
+                  "
+                >
+                  <span class="p-mono" style="font-size: 11px">Mon</span
+                  ><span style="font-size: 22px; font-weight: 700">19</span>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0px">
+                  <div class="p-row" style="gap: 8px; flex-wrap: wrap">
+                    <strong style="font-size: 15px">WordPress · Class 13</strong
+                    ><span class="eit-badge eit-badge--neutral">Offline</span>
+                  </div>
+                  <span class="p-small">7:00–9:00 PM · Lab 2, Mirpur-10</span
+                  ><span class="p-small">Theme customizer</span>
+                </div>
+              </article>
+              <article
+                style="
+                  border: 1px solid var(--cyan-line);
+                  background: var(--cyan-soft);
+                  border-radius: var(--radius-md);
+                  padding: 16px;
+                  display: flex;
+                  gap: 16px;
+                "
+              >
+                <div
+                  style="
+                    width: 56px;
+                    flex: 0 0 auto;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 12px;
+                    background: var(--surface-card);
+                    padding: 8px 0px;
+                  "
+                >
+                  <span class="p-mono" style="font-size: 11px">Wed</span
+                  ><span style="font-size: 22px; font-weight: 700">21</span>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0px">
+                  <div class="p-row" style="gap: 8px; flex-wrap: wrap">
+                    <strong style="font-size: 15px">Graphic Design · Live 8</strong
+                    ><span class="eit-badge eit-badge--neutral">Online</span>
+                  </div>
+                  <span class="p-small" style="color: var(--cyan-deep)"
+                    >8:00–9:30 PM · Zoom link opens 10 min before</span
+                  ><span class="p-small" style="color: var(--cyan-deep)">Typography for social posts</span>
+                </div>
+              </article>
+              <article
+                style="
+                  border: 1px solid var(--line);
+                  border-radius: var(--radius-md);
+                  padding: 16px;
+                  display: flex;
+                  gap: 16px;
+                "
+              >
+                <div
+                  style="
+                    width: 56px;
+                    flex: 0 0 auto;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 12px;
+                    background: var(--track);
+                    padding: 8px 0px;
+                  "
+                >
+                  <span class="p-mono" style="font-size: 11px">Thu</span
+                  ><span style="font-size: 22px; font-weight: 700">22</span>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0px">
+                  <div class="p-row" style="gap: 8px; flex-wrap: wrap">
+                    <strong style="font-size: 15px">WordPress · Class 14</strong
+                    ><span class="eit-badge eit-badge--neutral">Offline</span>
+                  </div>
+                  <span class="p-small">7:00–9:00 PM · Lab 2, Mirpur-10</span
+                  ><span class="p-small">Custom post types</span>
+                </div>
+              </article>
+            </div>
+          </section>
+          <section class="p-card p-card--flush" aria-labelledby="rec-title">
+            <div class="p-card-head" style="padding: 20px 24px 12px">
+              <h2 id="rec-title" class="p-h3">Class recordings</h2>
+              <span class="p-small">Attended 11 of 12 WordPress classes</span>
+            </div>
+            <ul class="p-list" style="padding: 0px 12px 12px">
+              <li style="padding: 12px; border-radius: 12px; gap: 16px; border-bottom: 1px solid var(--line-soft)">
+                <div
+                  style="
+                    width: 96px;
+                    height: 56px;
+                    flex: 0 0 auto;
+                    border-radius: 10px;
+                    display: grid;
+                    place-items: center;
+                    background: var(--track);
+                    color: var(--ink-3);
+                  "
+                >
+                  <svg
+                    class="eit-icon"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    focusable="false"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 6v6l4 2"></path>
+                  </svg>
+                </div>
+                <span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                  ><strong style="font-size: 15px">WordPress · Class 12 · Custom header walkthrough</strong
+                  ><span class="p-small">Thu, 15 Oct · Offline · Lab 2</span></span
+                ><span class="eit-badge eit-badge--success">Present</span
+                ><span style="min-width: 150px; display: flex; justify-content: flex-end"
+                  ><span class="p-small">Mentor is uploading</span></span
+                >
+              </li>
+              <li style="padding: 12px; border-radius: 12px; gap: 16px; border-bottom: 1px solid var(--line-soft)">
+                <div
+                  style="
+                    width: 96px;
+                    height: 56px;
+                    flex: 0 0 auto;
+                    border-radius: 10px;
+                    display: grid;
+                    place-items: center;
+                    background: var(--ink);
+                    color: var(--on-ink);
+                  "
+                >
+                  <svg
+                    class="eit-icon"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    focusable="false"
+                    aria-hidden="true"
+                  >
+                    <path d="M6 4l14 8-14 8z"></path>
+                  </svg>
+                </div>
+                <span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                  ><strong style="font-size: 15px">Graphic Design · Live 7 · Colour and contrast</strong
+                  ><span class="p-small">Wed, 14 Oct · Online · 1:24:08</span></span
+                ><span class="eit-badge eit-badge--success">Present</span
+                ><span style="min-width: 150px; display: flex; justify-content: flex-end"
+                  ><a class="p-ghostbtn" href="course-player.html"
+                    ><svg
+                      class="eit-icon"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M10 8l6 4-6 4z"></path></svg
+                    >Watch</a
+                  ></span
+                >
+              </li>
+              <li style="padding: 12px; border-radius: 12px; gap: 16px; border-bottom: 1px solid var(--line-soft)">
+                <div
+                  style="
+                    width: 96px;
+                    height: 56px;
+                    flex: 0 0 auto;
+                    border-radius: 10px;
+                    display: grid;
+                    place-items: center;
+                    background: var(--ink);
+                    color: var(--on-ink);
+                  "
+                >
+                  <svg
+                    class="eit-icon"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    focusable="false"
+                    aria-hidden="true"
+                  >
+                    <path d="M6 4l14 8-14 8z"></path>
+                  </svg>
+                </div>
+                <span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                  ><strong style="font-size: 15px">WordPress · Class 11 · Enqueueing scripts</strong
+                  ><span class="p-small">Mon, 12 Oct · Offline · 1:52:10</span></span
+                ><span class="eit-badge eit-badge--danger">Absent</span
+                ><span style="min-width: 150px; display: flex; justify-content: flex-end"
+                  ><a class="p-ghostbtn" href="course-player.html"
+                    ><svg
+                      class="eit-icon"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M10 8l6 4-6 4z"></path></svg
+                    >Watch</a
+                  ></span
+                >
+              </li>
+              <li style="padding: 12px; border-radius: 12px; gap: 16px; border-bottom: 1px solid var(--line-soft)">
+                <div
+                  style="
+                    width: 96px;
+                    height: 56px;
+                    flex: 0 0 auto;
+                    border-radius: 10px;
+                    display: grid;
+                    place-items: center;
+                    background: var(--ink);
+                    color: var(--on-ink);
+                  "
+                >
+                  <svg
+                    class="eit-icon"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    focusable="false"
+                    aria-hidden="true"
+                  >
+                    <path d="M6 4l14 8-14 8z"></path>
+                  </svg>
+                </div>
+                <span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                  ><strong style="font-size: 15px">WordPress · Class 10 · Template hierarchy</strong
+                  ><span class="p-small">Thu, 8 Oct · Offline · 1:48:33</span></span
+                ><span class="eit-badge eit-badge--success">Present</span
+                ><span style="min-width: 150px; display: flex; justify-content: flex-end"
+                  ><a class="p-ghostbtn" href="course-player.html"
+                    ><svg
+                      class="eit-icon"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M10 8l6 4-6 4z"></path></svg
+                    >Watch</a
+                  ></span
+                >
+              </li>
+              <li style="padding: 12px; border-radius: 12px; gap: 16px; border-bottom: 1px solid var(--line-soft)">
+                <div
+                  style="
+                    width: 96px;
+                    height: 56px;
+                    flex: 0 0 auto;
+                    border-radius: 10px;
+                    display: grid;
+                    place-items: center;
+                    background: var(--ink);
+                    color: var(--on-ink);
+                  "
+                >
+                  <svg
+                    class="eit-icon"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    focusable="false"
+                    aria-hidden="true"
+                  >
+                    <path d="M6 4l14 8-14 8z"></path>
+                  </svg>
+                </div>
+                <span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                  ><strong style="font-size: 15px">Graphic Design · Live 6 · Grids and layout</strong
+                  ><span class="p-small">Wed, 7 Oct · Online · 1:30:41</span></span
+                ><span class="eit-badge eit-badge--success">Present</span
+                ><span style="min-width: 150px; display: flex; justify-content: flex-end"
+                  ><a class="p-ghostbtn" href="course-player.html"
+                    ><svg
+                      class="eit-icon"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M10 8l6 4-6 4z"></path></svg
+                    >Watch</a
+                  ></span
+                >
+              </li>
+              <li style="padding: 12px; border-radius: 12px; gap: 16px; border-bottom: 1px solid var(--line-soft)">
+                <div
+                  style="
+                    width: 96px;
+                    height: 56px;
+                    flex: 0 0 auto;
+                    border-radius: 10px;
+                    display: grid;
+                    place-items: center;
+                    background: var(--ink);
+                    color: var(--on-ink);
+                  "
+                >
+                  <svg
+                    class="eit-icon"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    focusable="false"
+                    aria-hidden="true"
+                  >
+                    <path d="M6 4l14 8-14 8z"></path>
+                  </svg>
+                </div>
+                <span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                  ><strong style="font-size: 15px">WordPress · Class 9 · Theme folder structure</strong
+                  ><span class="p-small">Mon, 5 Oct · Offline · 1:55:02</span></span
+                ><span class="eit-badge eit-badge--success">Present</span
+                ><span style="min-width: 150px; display: flex; justify-content: flex-end"
+                  ><a class="p-ghostbtn" href="course-player.html"
+                    ><svg
+                      class="eit-icon"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M10 8l6 4-6 4z"></path></svg
+                    >Watch</a
+                  ></span
+                >
+              </li>
+            </ul>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
 </html>

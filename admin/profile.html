@@ -1,18 +1,395 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Admin profile · European IT LMS</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
-<link rel="stylesheet" href="../assets/css/eit.css">
-<link rel="stylesheet" href="../assets/css/panel.css">
-<link rel="stylesheet" href="../assets/css/app.css">
-<script src="../assets/js/app.js" defer></script>
-</head>
-<body>
-<div class="p-shell"><aside class="p-side"><a class="p-brand" href="overview.html"><span class="p-brand-mark" aria-hidden="true"></span><span class="p-brand-text"><span class="p-brand-name">European IT</span><span class="p-brand-sub">INSTITUTE</span></span></a><nav class="p-nav" aria-label="Admin panel"><a href="overview.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1"></rect><rect x="14" y="3" width="7" height="5" rx="1"></rect><rect x="14" y="12" width="7" height="9" rx="1"></rect><rect x="3" y="16" width="7" height="5" rx="1"></rect></svg>Overview</a><span class="p-nav-label">Courses</span><a href="courses.html"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg>Courses &amp; batches<span class="p-count">3</span></a><div class="p-subnav"><a href="course-review.html">Review &amp; publish<span class="p-count">1</span></a><a href="batch-detail.html">Batch detail</a><a href="batch-edit.html">Create a batch</a></div><span class="p-nav-label">People</span><a href="students.html"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>Students &amp; payments</a><div class="p-subnav"><a href="student-record.html">Student record</a></div><a href="mentors.html"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path></svg>Mentors</a><a href="roles.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>Roles &amp; access</a><span class="p-nav-label">Admissions</span><a href="leads.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"></path><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg>Seminar leads<span class="p-count">6</span></a><span class="p-nav-label">Account</span><a href="../notifications.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg>Notifications<span class="p-count">3</span></a><a href="settings.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>Settings</a><a href="profile.html" aria-current="page"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>My profile</a></nav></aside><div class="p-content"><header class="p-top"><label class="p-search"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg><span class="eit-sr">Search</span><input type="search" placeholder="Search students, courses, payments"></label><div class="p-top-right"><div class="eit-seg has-thumb" role="group" aria-label="Language"><span class="eit-seg__thumb" aria-hidden="true" style="width: 52px; transform: translateX(4px);"></span><button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button></div><a class="p-iconbtn" href="../notifications.html" aria-label="Notifications, 3 unread"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg><span class="p-badge-count">3</span></a><a class="p-me" href="profile.html" aria-current="page" style="text-decoration: none; border-radius: 12px;"><span class="p-avatar">SS</span><span style="display: flex; flex-direction: column;"><span class="p-me-name">Sharmin Sultana</span><span class="p-me-sub">Admin</span></span></a></div></header><main class="p-main"><div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px;"><h1 class="p-h1">Your account</h1><a class="p-ghostbtn" href="../index.html"><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><path d="m16 17 5-5-5-5"></path><path d="M21 12H9"></path></svg>Log out</a></div><div class="p-split"><div style="flex: 2 1 560px; min-width: 0px; display: flex; flex-direction: column; gap: 24px;"><section class="p-card" aria-labelledby="me-title" style="display: flex; flex-direction: column; gap: 20px;"><div class="p-row" style="gap: 16px; flex-wrap: wrap;"><span class="p-avatar" style="width: 72px; height: 72px; font-size: 22px;">SS</span><div style="display: flex; flex-direction: column; gap: 4px;"><h2 id="me-title" class="p-h3">Sharmin Sultana</h2><div class="p-row" style="gap: 8px;"><span class="eit-badge eit-badge--ink"><svg class="eit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>Owner</span><span class="p-small">Full access</span></div><a class="p-link" href="#">Change photo</a></div></div><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 16px 20px;"><div class="eit-field"><label class="eit-field__label" for="eit-field-1">Full name</label><div class="eit-field__wrap"><input id="eit-field-1" name="name" type="text" class="eit-field__control" value="Sharmin Sultana"></div></div><div class="eit-field"><label class="eit-field__label" for="eit-field-2">Mobile number</label><div class="eit-field__wrap"><span class="eit-field__prefix" aria-hidden="true">+880</span><input id="eit-field-2" name="phone" type="text" class="eit-field__control" aria-describedby="eit-field-2-note" value="17XXXXXX30"></div><p id="eit-field-2-note" class="eit-field__note">You log in with this number</p></div><div class="eit-field"><label class="eit-field__label" for="eit-field-3">Email</label><div class="eit-field__wrap"><input id="eit-field-3" name="email" type="email" class="eit-field__control" aria-describedby="eit-field-3-note" value="admin@europeanit-inst.com"></div><p id="eit-field-3-note" class="eit-field__note">Payment and review alerts go here</p></div></div><div class="p-row" style="justify-content: flex-end;"><button type="button" class="eit-btn eit-btn--primary eit-btn--md"><svg class="eit-icon eit-btn__lead" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg><span class="eit-btn__label">Save changes</span></button></div></section><section class="p-card" aria-labelledby="sec-title" style="display: flex; flex-direction: column; gap: 16px;"><h2 id="sec-title" class="p-h3">Security</h2><div class="p-row" style="justify-content: space-between; gap: 16px;"><span style="display: flex; flex-direction: column;"><span id="code-label" style="font-size: 14px; font-weight: 600;">SMS code on a new device</span><span class="p-small">Recommended for admin accounts: they can see payments</span></span><button type="button" class="p-switch" role="switch" aria-checked="true" aria-labelledby="code-label"></button></div><hr class="p-divider"><div class="p-row" style="justify-content: space-between; gap: 16px; flex-wrap: wrap;"><span style="display: flex; flex-direction: column;"><span style="font-size: 14px; font-weight: 600;">Password</span><span class="p-small">Last changed 12 Sep 2026</span></span><button class="p-ghostbtn" type="button" style="min-height: 40px;">Change password</button></div><hr class="p-divider"><ul class="p-list" aria-label="Logged-in devices"><li><span class="p-tile"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8"></path><path d="M12 17v4"></path></svg></span><span class="p-grow" style="display: flex; flex-direction: column;"><strong style="font-size: 14px;">Office PC · Chrome</strong><span class="p-small">Mirpur-10 · active now</span></span><span class="eit-badge eit-badge--cyan">This device</span></li><li><span class="p-tile p-tile--muted"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span><span class="p-grow" style="display: flex; flex-direction: column;"><strong style="font-size: 14px;">iPhone · Safari</strong><span class="p-small">Dhaka · last active 14 Oct</span></span><a class="p-link" href="../index.html">Log out</a></li></ul></section></div><section class="p-card" aria-labelledby="act-title" style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 14px;"><h2 id="act-title" class="p-h3">Your recent activity</h2><ol style="list-style: none; margin: 0px; padding: 0px; display: flex; flex-direction: column; gap: 16px;"><li style="display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 14px; color: var(--ink);">Added a note on <a class="p-link" href="student-record.html">Mehedi Hasan</a></span><span class="p-small">Today, 4:12 PM</span></li><li style="display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 14px; color: var(--ink);">Created Graphic Design · Batch 10</span><span class="p-small">14 Oct, 11:30 AM</span></li><li style="display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 14px; color: var(--ink);">Recorded ৳6,000 cash from Lamia Chowdhury</span><span class="p-small">13 Oct, 5:05 PM</span></li><li style="display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 14px; color: var(--ink);">Published Graphic Design (updated curriculum)</span><span class="p-small">11 Oct, 2:40 PM</span></li><li style="display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 14px; color: var(--ink);">Changed "Pause after" to 7 days late</span><span class="p-small">2 Oct, 10:15 AM</span></li></ol><a class="p-link" href="#">Full activity log</a></section></div></main></div></div>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin profile · European IT LMS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap"
+    />
+    <link rel="stylesheet" href="../assets/css/eit.css" />
+    <link rel="stylesheet" href="../assets/css/panel.css" />
+    <link rel="stylesheet" href="../assets/css/app.css" />
+    <script src="../assets/js/app.js" defer></script>
+  </head>
+  <body>
+    <div class="p-shell">
+      <aside class="p-side">
+        <a class="p-brand" href="overview.html"
+          ><span class="p-brand-mark" aria-hidden="true"></span
+          ><span class="p-brand-text"
+            ><span class="p-brand-name">European IT</span><span class="p-brand-sub">INSTITUTE</span></span
+          ></a
+        >
+        <nav class="p-nav" aria-label="Admin panel">
+          <a href="overview.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="9" rx="1"></rect>
+              <rect x="14" y="3" width="7" height="5" rx="1"></rect>
+              <rect x="14" y="12" width="7" height="9" rx="1"></rect>
+              <rect x="3" y="16" width="7" height="5" rx="1"></rect></svg
+            >Overview</a
+          ><span class="p-nav-label">Courses</span
+          ><a href="courses.html"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path>
+              <path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg
+            >Courses &amp; batches<span class="p-count">3</span></a
+          >
+          <div class="p-subnav">
+            <a href="course-review.html">Review &amp; publish<span class="p-count">1</span></a
+            ><a href="batch-detail.html">Batch detail</a><a href="batch-edit.html">Create a batch</a>
+          </div>
+          <span class="p-nav-label">People</span
+          ><a href="students.html"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg
+            >Students &amp; payments</a
+          >
+          <div class="p-subnav"><a href="student-record.html">Student record</a></div>
+          <a href="mentors.html"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <rect x="2" y="7" width="20" height="14" rx="2"></rect>
+              <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path></svg
+            >Mentors</a
+          ><a href="roles.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+              ></path>
+              <path d="m9 12 2 2 4-4"></path></svg
+            >Roles &amp; access</a
+          ><span class="p-nav-label">Admissions</span
+          ><a href="leads.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m3 11 18-5v12L3 14v-3z"></path>
+              <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg
+            >Seminar leads<span class="p-count">6</span></a
+          ><span class="p-nav-label">Account</span
+          ><a href="../notifications.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+              <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
+            >Notifications<span class="p-count">3</span></a
+          ><a href="settings.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
+              ></path>
+              <circle cx="12" cy="12" r="3"></circle></svg
+            >Settings</a
+          ><a href="profile.html" aria-current="page"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle></svg
+            >My profile</a
+          >
+        </nav>
+      </aside>
+      <div class="p-content">
+        <header class="p-top">
+          <label class="p-search"
+            ><svg
+              class="eit-icon"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="M21 21l-4.35-4.35"></path></svg
+            ><span class="eit-sr">Search</span><input type="search" placeholder="Search students, courses, payments"
+          /></label>
+          <div class="p-top-right">
+            <div class="eit-seg has-thumb" role="group" aria-label="Language">
+              <span class="eit-seg__thumb" aria-hidden="true" style="width: 52px; transform: translateX(4px)"></span
+              ><button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button
+              ><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button>
+            </div>
+            <a class="p-iconbtn" href="../notifications.html" aria-label="Notifications, 3 unread"
+              ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
+              ><span class="p-badge-count">3</span></a
+            ><a class="p-me" href="profile.html" aria-current="page" style="text-decoration: none; border-radius: 12px"
+              ><span class="p-avatar">SS</span
+              ><span style="display: flex; flex-direction: column"
+                ><span class="p-me-name">Sharmin Sultana</span><span class="p-me-sub">Admin</span></span
+              ></a
+            >
+          </div>
+        </header>
+        <main class="p-main">
+          <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
+            <h1 class="p-h1">Your account</h1>
+            <a class="p-ghostbtn" href="../index.html"
+              ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                <path d="m16 17 5-5-5-5"></path>
+                <path d="M21 12H9"></path></svg
+              >Log out</a
+            >
+          </div>
+          <div class="p-split">
+            <div style="flex: 2 1 560px; min-width: 0px; display: flex; flex-direction: column; gap: 24px">
+              <section
+                class="p-card"
+                aria-labelledby="me-title"
+                style="display: flex; flex-direction: column; gap: 20px"
+              >
+                <div class="p-row" style="gap: 16px; flex-wrap: wrap">
+                  <span class="p-avatar" style="width: 72px; height: 72px; font-size: 22px">SS</span>
+                  <div style="display: flex; flex-direction: column; gap: 4px">
+                    <h2 id="me-title" class="p-h3">Sharmin Sultana</h2>
+                    <div class="p-row" style="gap: 8px">
+                      <span class="eit-badge eit-badge--ink"
+                        ><svg
+                          class="eit-icon"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          focusable="false"
+                          aria-hidden="true"
+                        >
+                          <path d="M20 6L9 17l-5-5"></path></svg
+                        >Owner</span
+                      ><span class="p-small">Full access</span>
+                    </div>
+                    <a class="p-link" href="#">Change photo</a>
+                  </div>
+                </div>
+                <div
+                  style="
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+                    gap: 16px 20px;
+                  "
+                >
+                  <div class="eit-field">
+                    <label class="eit-field__label" for="eit-field-1">Full name</label>
+                    <div class="eit-field__wrap">
+                      <input
+                        id="eit-field-1"
+                        name="name"
+                        type="text"
+                        class="eit-field__control"
+                        value="Sharmin Sultana"
+                      />
+                    </div>
+                  </div>
+                  <div class="eit-field">
+                    <label class="eit-field__label" for="eit-field-2">Mobile number</label>
+                    <div class="eit-field__wrap">
+                      <span class="eit-field__prefix" aria-hidden="true">+880</span
+                      ><input
+                        id="eit-field-2"
+                        name="phone"
+                        type="text"
+                        class="eit-field__control"
+                        aria-describedby="eit-field-2-note"
+                        value="17XXXXXX30"
+                      />
+                    </div>
+                    <p id="eit-field-2-note" class="eit-field__note">You log in with this number</p>
+                  </div>
+                  <div class="eit-field">
+                    <label class="eit-field__label" for="eit-field-3">Email</label>
+                    <div class="eit-field__wrap">
+                      <input
+                        id="eit-field-3"
+                        name="email"
+                        type="email"
+                        class="eit-field__control"
+                        aria-describedby="eit-field-3-note"
+                        value="admin@europeanit-inst.com"
+                      />
+                    </div>
+                    <p id="eit-field-3-note" class="eit-field__note">Payment and review alerts go here</p>
+                  </div>
+                </div>
+                <div class="p-row" style="justify-content: flex-end">
+                  <button type="button" class="eit-btn eit-btn--primary eit-btn--md">
+                    <svg
+                      class="eit-icon eit-btn__lead"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <path d="M20 6L9 17l-5-5"></path></svg
+                    ><span class="eit-btn__label">Save changes</span>
+                  </button>
+                </div>
+              </section>
+              <section
+                class="p-card"
+                aria-labelledby="sec-title"
+                style="display: flex; flex-direction: column; gap: 16px"
+              >
+                <h2 id="sec-title" class="p-h3">Security</h2>
+                <div class="p-row" style="justify-content: space-between; gap: 16px">
+                  <span style="display: flex; flex-direction: column"
+                    ><span id="code-label" style="font-size: 14px; font-weight: 600">SMS code on a new device</span
+                    ><span class="p-small">Recommended for admin accounts: they can see payments</span></span
+                  ><button
+                    type="button"
+                    class="p-switch"
+                    role="switch"
+                    aria-checked="true"
+                    aria-labelledby="code-label"
+                  ></button>
+                </div>
+                <hr class="p-divider" />
+                <div class="p-row" style="justify-content: space-between; gap: 16px; flex-wrap: wrap">
+                  <span style="display: flex; flex-direction: column"
+                    ><span style="font-size: 14px; font-weight: 600">Password</span
+                    ><span class="p-small">Last changed 12 Sep 2026</span></span
+                  ><button class="p-ghostbtn" type="button" style="min-height: 40px">Change password</button>
+                </div>
+                <hr class="p-divider" />
+                <ul class="p-list" aria-label="Logged-in devices">
+                  <li>
+                    <span class="p-tile"
+                      ><svg
+                        class="eit-icon"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        focusable="false"
+                        aria-hidden="true"
+                      >
+                        <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                        <path d="M8 21h8"></path>
+                        <path d="M12 17v4"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column"
+                      ><strong style="font-size: 14px">Office PC · Chrome</strong
+                      ><span class="p-small">Mirpur-10 · active now</span></span
+                    ><span class="eit-badge eit-badge--cyan">This device</span>
+                  </li>
+                  <li>
+                    <span class="p-tile p-tile--muted"
+                      ><svg
+                        class="eit-icon"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        focusable="false"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"
+                        ></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column"
+                      ><strong style="font-size: 14px">iPhone · Safari</strong
+                      ><span class="p-small">Dhaka · last active 14 Oct</span></span
+                    ><a class="p-link" href="../index.html">Log out</a>
+                  </li>
+                </ul>
+              </section>
+            </div>
+            <section
+              class="p-card"
+              aria-labelledby="act-title"
+              style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 14px"
+            >
+              <h2 id="act-title" class="p-h3">Your recent activity</h2>
+              <ol style="list-style: none; margin: 0px; padding: 0px; display: flex; flex-direction: column; gap: 16px">
+                <li style="display: flex; flex-direction: column; gap: 2px">
+                  <span style="font-size: 14px; color: var(--ink)"
+                    >Added a note on <a class="p-link" href="student-record.html">Mehedi Hasan</a></span
+                  ><span class="p-small">Today, 4:12 PM</span>
+                </li>
+                <li style="display: flex; flex-direction: column; gap: 2px">
+                  <span style="font-size: 14px; color: var(--ink)">Created Graphic Design · Batch 10</span
+                  ><span class="p-small">14 Oct, 11:30 AM</span>
+                </li>
+                <li style="display: flex; flex-direction: column; gap: 2px">
+                  <span style="font-size: 14px; color: var(--ink)">Recorded ৳6,000 cash from Lamia Chowdhury</span
+                  ><span class="p-small">13 Oct, 5:05 PM</span>
+                </li>
+                <li style="display: flex; flex-direction: column; gap: 2px">
+                  <span style="font-size: 14px; color: var(--ink)">Published Graphic Design (updated curriculum)</span
+                  ><span class="p-small">11 Oct, 2:40 PM</span>
+                </li>
+                <li style="display: flex; flex-direction: column; gap: 2px">
+                  <span style="font-size: 14px; color: var(--ink)">Changed "Pause after" to 7 days late</span
+                  ><span class="p-small">2 Oct, 10:15 AM</span>
+                </li>
+              </ol>
+              <a class="p-link" href="#">Full activity log</a>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
 </html>

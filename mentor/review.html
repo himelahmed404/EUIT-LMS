@@ -1,18 +1,414 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Review a project · European IT LMS</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
-<link rel="stylesheet" href="../assets/css/eit.css">
-<link rel="stylesheet" href="../assets/css/panel.css">
-<link rel="stylesheet" href="../assets/css/app.css">
-<script src="../assets/js/app.js" defer></script>
-</head>
-<body>
-<div class="p-shell"><aside class="p-side"><a class="p-brand" href="dashboard.html"><span class="p-brand-mark" aria-hidden="true"></span><span class="p-brand-text"><span class="p-brand-name">European IT</span><span class="p-brand-sub">INSTITUTE</span></span></a><nav class="p-nav" aria-label="Mentor panel"><span class="p-nav-label">Mentor</span><a href="dashboard.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1"></rect><rect x="14" y="3" width="7" height="5" rx="1"></rect><rect x="14" y="12" width="7" height="9" rx="1"></rect><rect x="3" y="16" width="7" height="5" rx="1"></rect></svg>Dashboard</a><a href="batch.html"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>My batches</a><a href="review.html" aria-current="page"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="2" width="8" height="4" rx="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="m9 14 2 2 4-4"></path></svg>Reviews<span class="p-count">5</span></a><a href="course-builder.html"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg>Courses</a><a href="#"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>Student questions<span class="p-count">3</span></a><a href="schedule.html"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>Schedule &amp; recordings<span class="p-count" style="background: var(--warning); color: rgb(255, 255, 255);">1</span></a></nav><div class="p-help" style="margin-top: auto;"><span class="p-h3" style="font-size: 15px;">Mentor handbook</span><span class="p-muted">Rubrics, attendance rules and how course review works.</span><a class="p-link" href="#">Open handbook</a></div></aside><div class="p-content"><header class="p-top"><label class="p-search"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg><span class="eit-sr">Search</span><input type="search" placeholder="Search students, batches, lessons"></label><div class="p-top-right"><div class="eit-seg has-thumb" role="group" aria-label="Language"><span class="eit-seg__thumb" aria-hidden="true" style="width: 52px; transform: translateX(4px);"></span><button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button></div><button class="p-iconbtn" type="button" aria-label="Notifications, 4 new"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg><span class="p-pip"></span></button><a class="p-me" href="profile.html" style="text-decoration: none; border-radius: 12px;"><span class="p-avatar">KH</span><span style="display: flex; flex-direction: column;"><span class="p-me-name">Kamrul Hasan</span><span class="p-me-sub">Mentor · Web Development</span></span></a></div></header><main class="p-main" style="max-width: 1360px;"><div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;"><nav aria-label="Breadcrumb" class="p-row" style="gap: 8px; font-size: 14px; color: var(--ink-3); flex-wrap: wrap;"><a class="p-link" href="dashboard.html" style="font-weight: 500;">Reviews</a><span aria-hidden="true">/</span><span style="color: var(--ink-2);">Nusrat Jahan</span></nav><div class="p-row" style="gap: 8px;"><span class="p-small">1 of 5 waiting</span><a class="p-ghostbtn" href="#" style="min-width: 44px; padding: 0px 12px;">Next submission</a></div></div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px;"><span class="p-avatar" style="width: 52px; height: 52px; font-size: 16px;">NJ</span><div style="display: flex; flex-direction: column; gap: 4px; flex: 1 1 320px;"><h1 class="p-h1" style="font-size: 26px;">Responsive landing page</h1><span class="p-muted">Nusrat Jahan · WordPress, Batch 14 · sent 14 Oct, 11:20 PM · first attempt</span></div><span class="eit-badge eit-badge--success">On time</span></div><div class="p-split"><div style="flex: 1.3 1 560px; min-width: 0px; display: flex; flex-direction: column; gap: 24px;"><section class="p-card" aria-labelledby="sub-title" style="display: flex; flex-direction: column; gap: 16px;"><div class="p-card-head"><h2 id="sub-title" class="p-h3">Submission</h2><a class="p-link" href="#">nusrat-landing.netlify.app<svg class="eit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M7 17L17 7"></path><path d="M8 7h9v9"></path></svg></a></div><div style="border: 1px solid var(--line); border-radius: var(--radius-md); overflow: hidden;"><div class="p-row" style="gap: 6px; padding: 10px 14px; background: var(--track); border-bottom: 1px solid var(--line);"><span style="width: 10px; height: 10px; border-radius: 50%; background: var(--line-strong);"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: var(--line-strong);"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: var(--line-strong);"></span></div><div class="p-thumb" style="aspect-ratio: 16 / 9; border-radius: 0px;">Live site preview</div></div><div class="p-row" style="flex-wrap: wrap; gap: 8px;"><span class="p-pill">Desktop 1440</span><span class="p-pill">Tablet 768</span><span class="p-pill">Phone 360</span></div><ul class="p-list"><li><span class="p-tile"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path></svg></span><span class="p-grow" style="display: flex; flex-direction: column;"><strong style="font-size: 14px;">landing-page.zip</strong><span class="p-small">2.4 MB · 18 files</span></span><a class="p-link" href="#">Download</a></li></ul></section><section class="p-card" aria-labelledby="note-title" style="display: flex; flex-direction: column; gap: 10px;"><h2 id="note-title" class="p-h3">Note from Nusrat</h2><p class="p-body">I wasn't sure about the mobile menu animation. Is the timing okay, or should it be faster?</p></section></div><section class="p-card" aria-labelledby="rubric-title" style="flex: 1 1 400px; display: flex; flex-direction: column; gap: 18px;"><div class="p-card-head"><h2 id="rubric-title" class="p-h3">Rubric</h2><span class="p-small">Pass mark 60</span></div><div style="display: flex; flex-direction: column;"><div class="p-row" style="justify-content: space-between; gap: 16px; padding: 12px 0px; border-bottom: 1px solid var(--line-soft);"><label for="score-layout" style="display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 14px; font-weight: 600; color: var(--ink);">Layout and responsiveness</span><span class="p-small">Works from 360px to 1440px</span></label><span class="p-row" style="gap: 6px; flex: 0 0 auto;"><input id="score-layout" class="p-input" type="number" min="0" max="30" value="27" style="width: 72px; text-align: right; font-variant-numeric: tabular-nums;"><span class="p-small" style="min-width: 28px;">/ 30</span></span></div><div class="p-row" style="justify-content: space-between; gap: 16px; padding: 12px 0px; border-bottom: 1px solid var(--line-soft);"><label for="score-code" style="display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 14px; font-weight: 600; color: var(--ink);">Code quality</span><span class="p-small">Semantic HTML, tidy CSS</span></label><span class="p-row" style="gap: 6px; flex: 0 0 auto;"><input id="score-code" class="p-input" type="number" min="0" max="25" value="21" style="width: 72px; text-align: right; font-variant-numeric: tabular-nums;"><span class="p-small" style="min-width: 28px;">/ 25</span></span></div><div class="p-row" style="justify-content: space-between; gap: 16px; padding: 12px 0px; border-bottom: 1px solid var(--line-soft);"><label for="score-design" style="display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 14px; font-weight: 600; color: var(--ink);">Visual design</span><span class="p-small">Spacing, type, colour</span></label><span class="p-row" style="gap: 6px; flex: 0 0 auto;"><input id="score-design" class="p-input" type="number" min="0" max="25" value="22" style="width: 72px; text-align: right; font-variant-numeric: tabular-nums;"><span class="p-small" style="min-width: 28px;">/ 25</span></span></div><div class="p-row" style="justify-content: space-between; gap: 16px; padding: 12px 0px; border-bottom: 1px solid var(--line-soft);"><label for="score-perf" style="display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 14px; font-weight: 600; color: var(--ink);">Performance and accessibility</span><span class="p-small">Image sizes, alt text, contrast</span></label><span class="p-row" style="gap: 6px; flex: 0 0 auto;"><input id="score-perf" class="p-input" type="number" min="0" max="20" value="16" style="width: 72px; text-align: right; font-variant-numeric: tabular-nums;"><span class="p-small" style="min-width: 28px;">/ 20</span></span></div></div><div class="p-row" style="justify-content: space-between;"><strong style="font-size: 15px;">Total</strong><span class="p-num" style="font-size: 28px;">86<span style="font-size: 16px; color: var(--ink-3); font-weight: 500;"> / 100</span></span></div><div style="display: flex; flex-direction: column; gap: 8px;"><label class="p-label" for="feedback">Feedback for Nusrat</label><textarea id="feedback" class="p-textarea" style="min-height: 132px;">Clean, well-structured page and it holds up at every width. The mobile menu timing is fine; try 200ms instead of 400ms so it feels snappier. Compress the hero image (it's 1.8 MB) and add alt text to the testimonial photos.</textarea></div><div class="p-row" style="flex-wrap: wrap;"><button type="button" class="eit-btn eit-btn--primary eit-btn--md"><svg class="eit-icon eit-btn__lead" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg><span class="eit-btn__label">Approve project</span></button><button class="p-ghostbtn" type="button"><svg class="eit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"></path><path d="M21 3v5h-5"></path></svg>Request changes</button></div><span class="p-small">Nusrat is told straight away and sees your feedback under Projects.</span></section></div></main></div></div>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Review a project · European IT LMS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap"
+    />
+    <link rel="stylesheet" href="../assets/css/eit.css" />
+    <link rel="stylesheet" href="../assets/css/panel.css" />
+    <link rel="stylesheet" href="../assets/css/app.css" />
+    <script src="../assets/js/app.js" defer></script>
+  </head>
+  <body>
+    <div class="p-shell">
+      <aside class="p-side">
+        <a class="p-brand" href="dashboard.html"
+          ><span class="p-brand-mark" aria-hidden="true"></span
+          ><span class="p-brand-text"
+            ><span class="p-brand-name">European IT</span><span class="p-brand-sub">INSTITUTE</span></span
+          ></a
+        >
+        <nav class="p-nav" aria-label="Mentor panel">
+          <span class="p-nav-label">Mentor</span
+          ><a href="dashboard.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="9" rx="1"></rect>
+              <rect x="14" y="3" width="7" height="5" rx="1"></rect>
+              <rect x="14" y="12" width="7" height="9" rx="1"></rect>
+              <rect x="3" y="16" width="7" height="5" rx="1"></rect></svg
+            >Dashboard</a
+          ><a href="batch.html"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg
+            >My batches</a
+          ><a href="review.html" aria-current="page"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="8" y="2" width="8" height="4" rx="1"></rect>
+              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+              <path d="m9 14 2 2 4-4"></path></svg
+            >Reviews<span class="p-count">5</span></a
+          ><a href="course-builder.html"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path>
+              <path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg
+            >Courses</a
+          ><a href="#"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg
+            >Student questions<span class="p-count">3</span></a
+          ><a href="schedule.html"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+              <path d="M16 2v4M8 2v4M3 10h18"></path></svg
+            >Schedule &amp; recordings<span
+              class="p-count"
+              style="background: var(--warning); color: rgb(255, 255, 255)"
+              >1</span
+            ></a
+          >
+        </nav>
+        <div class="p-help" style="margin-top: auto">
+          <span class="p-h3" style="font-size: 15px">Mentor handbook</span
+          ><span class="p-muted">Rubrics, attendance rules and how course review works.</span
+          ><a class="p-link" href="#">Open handbook</a>
+        </div>
+      </aside>
+      <div class="p-content">
+        <header class="p-top">
+          <label class="p-search"
+            ><svg
+              class="eit-icon"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="M21 21l-4.35-4.35"></path></svg
+            ><span class="eit-sr">Search</span><input type="search" placeholder="Search students, batches, lessons"
+          /></label>
+          <div class="p-top-right">
+            <div class="eit-seg has-thumb" role="group" aria-label="Language">
+              <span class="eit-seg__thumb" aria-hidden="true" style="width: 52px; transform: translateX(4px)"></span
+              ><button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button
+              ><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button>
+            </div>
+            <button class="p-iconbtn" type="button" aria-label="Notifications, 4 new">
+              <svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
+              ><span class="p-pip"></span></button
+            ><a class="p-me" href="profile.html" style="text-decoration: none; border-radius: 12px"
+              ><span class="p-avatar">KH</span
+              ><span style="display: flex; flex-direction: column"
+                ><span class="p-me-name">Kamrul Hasan</span><span class="p-me-sub">Mentor · Web Development</span></span
+              ></a
+            >
+          </div>
+        </header>
+        <main class="p-main" style="max-width: 1360px">
+          <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
+            <nav
+              aria-label="Breadcrumb"
+              class="p-row"
+              style="gap: 8px; font-size: 14px; color: var(--ink-3); flex-wrap: wrap"
+            >
+              <a class="p-link" href="dashboard.html" style="font-weight: 500">Reviews</a
+              ><span aria-hidden="true">/</span><span style="color: var(--ink-2)">Nusrat Jahan</span>
+            </nav>
+            <div class="p-row" style="gap: 8px">
+              <span class="p-small">1 of 5 waiting</span
+              ><a class="p-ghostbtn" href="#" style="min-width: 44px; padding: 0px 12px">Next submission</a>
+            </div>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px">
+            <span class="p-avatar" style="width: 52px; height: 52px; font-size: 16px">NJ</span>
+            <div style="display: flex; flex-direction: column; gap: 4px; flex: 1 1 320px">
+              <h1 class="p-h1" style="font-size: 26px">Responsive landing page</h1>
+              <span class="p-muted">Nusrat Jahan · WordPress, Batch 14 · sent 14 Oct, 11:20 PM · first attempt</span>
+            </div>
+            <span class="eit-badge eit-badge--success">On time</span>
+          </div>
+          <div class="p-split">
+            <div style="flex: 1.3 1 560px; min-width: 0px; display: flex; flex-direction: column; gap: 24px">
+              <section
+                class="p-card"
+                aria-labelledby="sub-title"
+                style="display: flex; flex-direction: column; gap: 16px"
+              >
+                <div class="p-card-head">
+                  <h2 id="sub-title" class="p-h3">Submission</h2>
+                  <a class="p-link" href="#"
+                    >nusrat-landing.netlify.app<svg
+                      class="eit-icon"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <path d="M7 17L17 7"></path>
+                      <path d="M8 7h9v9"></path></svg
+                  ></a>
+                </div>
+                <div style="border: 1px solid var(--line); border-radius: var(--radius-md); overflow: hidden">
+                  <div
+                    class="p-row"
+                    style="gap: 6px; padding: 10px 14px; background: var(--track); border-bottom: 1px solid var(--line)"
+                  >
+                    <span style="width: 10px; height: 10px; border-radius: 50%; background: var(--line-strong)"></span
+                    ><span style="width: 10px; height: 10px; border-radius: 50%; background: var(--line-strong)"></span
+                    ><span style="width: 10px; height: 10px; border-radius: 50%; background: var(--line-strong)"></span>
+                  </div>
+                  <div class="p-thumb" style="aspect-ratio: 16 / 9; border-radius: 0px">Live site preview</div>
+                </div>
+                <div class="p-row" style="flex-wrap: wrap; gap: 8px">
+                  <span class="p-pill">Desktop 1440</span><span class="p-pill">Tablet 768</span
+                  ><span class="p-pill">Phone 360</span>
+                </div>
+                <ul class="p-list">
+                  <li>
+                    <span class="p-tile"
+                      ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                        <path d="M14 2v4a2 2 0 0 0 2 2h4"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column"
+                      ><strong style="font-size: 14px">landing-page.zip</strong
+                      ><span class="p-small">2.4 MB · 18 files</span></span
+                    ><a class="p-link" href="#">Download</a>
+                  </li>
+                </ul>
+              </section>
+              <section
+                class="p-card"
+                aria-labelledby="note-title"
+                style="display: flex; flex-direction: column; gap: 10px"
+              >
+                <h2 id="note-title" class="p-h3">Note from Nusrat</h2>
+                <p class="p-body">
+                  I wasn't sure about the mobile menu animation. Is the timing okay, or should it be faster?
+                </p>
+              </section>
+            </div>
+            <section
+              class="p-card"
+              aria-labelledby="rubric-title"
+              style="flex: 1 1 400px; display: flex; flex-direction: column; gap: 18px"
+            >
+              <div class="p-card-head">
+                <h2 id="rubric-title" class="p-h3">Rubric</h2>
+                <span class="p-small">Pass mark 60</span>
+              </div>
+              <div style="display: flex; flex-direction: column">
+                <div
+                  class="p-row"
+                  style="
+                    justify-content: space-between;
+                    gap: 16px;
+                    padding: 12px 0px;
+                    border-bottom: 1px solid var(--line-soft);
+                  "
+                >
+                  <label for="score-layout" style="display: flex; flex-direction: column; gap: 2px"
+                    ><span style="font-size: 14px; font-weight: 600; color: var(--ink)">Layout and responsiveness</span
+                    ><span class="p-small">Works from 360px to 1440px</span></label
+                  ><span class="p-row" style="gap: 6px; flex: 0 0 auto"
+                    ><input
+                      id="score-layout"
+                      class="p-input"
+                      type="number"
+                      min="0"
+                      max="30"
+                      value="27"
+                      style="width: 72px; text-align: right; font-variant-numeric: tabular-nums"
+                    /><span class="p-small" style="min-width: 28px">/ 30</span></span
+                  >
+                </div>
+                <div
+                  class="p-row"
+                  style="
+                    justify-content: space-between;
+                    gap: 16px;
+                    padding: 12px 0px;
+                    border-bottom: 1px solid var(--line-soft);
+                  "
+                >
+                  <label for="score-code" style="display: flex; flex-direction: column; gap: 2px"
+                    ><span style="font-size: 14px; font-weight: 600; color: var(--ink)">Code quality</span
+                    ><span class="p-small">Semantic HTML, tidy CSS</span></label
+                  ><span class="p-row" style="gap: 6px; flex: 0 0 auto"
+                    ><input
+                      id="score-code"
+                      class="p-input"
+                      type="number"
+                      min="0"
+                      max="25"
+                      value="21"
+                      style="width: 72px; text-align: right; font-variant-numeric: tabular-nums"
+                    /><span class="p-small" style="min-width: 28px">/ 25</span></span
+                  >
+                </div>
+                <div
+                  class="p-row"
+                  style="
+                    justify-content: space-between;
+                    gap: 16px;
+                    padding: 12px 0px;
+                    border-bottom: 1px solid var(--line-soft);
+                  "
+                >
+                  <label for="score-design" style="display: flex; flex-direction: column; gap: 2px"
+                    ><span style="font-size: 14px; font-weight: 600; color: var(--ink)">Visual design</span
+                    ><span class="p-small">Spacing, type, colour</span></label
+                  ><span class="p-row" style="gap: 6px; flex: 0 0 auto"
+                    ><input
+                      id="score-design"
+                      class="p-input"
+                      type="number"
+                      min="0"
+                      max="25"
+                      value="22"
+                      style="width: 72px; text-align: right; font-variant-numeric: tabular-nums"
+                    /><span class="p-small" style="min-width: 28px">/ 25</span></span
+                  >
+                </div>
+                <div
+                  class="p-row"
+                  style="
+                    justify-content: space-between;
+                    gap: 16px;
+                    padding: 12px 0px;
+                    border-bottom: 1px solid var(--line-soft);
+                  "
+                >
+                  <label for="score-perf" style="display: flex; flex-direction: column; gap: 2px"
+                    ><span style="font-size: 14px; font-weight: 600; color: var(--ink)"
+                      >Performance and accessibility</span
+                    ><span class="p-small">Image sizes, alt text, contrast</span></label
+                  ><span class="p-row" style="gap: 6px; flex: 0 0 auto"
+                    ><input
+                      id="score-perf"
+                      class="p-input"
+                      type="number"
+                      min="0"
+                      max="20"
+                      value="16"
+                      style="width: 72px; text-align: right; font-variant-numeric: tabular-nums"
+                    /><span class="p-small" style="min-width: 28px">/ 20</span></span
+                  >
+                </div>
+              </div>
+              <div class="p-row" style="justify-content: space-between">
+                <strong style="font-size: 15px">Total</strong
+                ><span class="p-num" style="font-size: 28px"
+                  >86<span style="font-size: 16px; color: var(--ink-3); font-weight: 500"> / 100</span></span
+                >
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px">
+                <label class="p-label" for="feedback">Feedback for Nusrat</label
+                ><textarea id="feedback" class="p-textarea" style="min-height: 132px">
+Clean, well-structured page and it holds up at every width. The mobile menu timing is fine; try 200ms instead of 400ms so it feels snappier. Compress the hero image (it's 1.8 MB) and add alt text to the testimonial photos.</textarea
+                >
+              </div>
+              <div class="p-row" style="flex-wrap: wrap">
+                <button type="button" class="eit-btn eit-btn--primary eit-btn--md">
+                  <svg
+                    class="eit-icon eit-btn__lead"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    focusable="false"
+                    aria-hidden="true"
+                  >
+                    <path d="M20 6L9 17l-5-5"></path></svg
+                  ><span class="eit-btn__label">Approve project</span></button
+                ><button class="p-ghostbtn" type="button">
+                  <svg
+                    class="eit-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    focusable="false"
+                    aria-hidden="true"
+                  >
+                    <path d="M21 12a9 9 0 1 1-3-6.7L21 8"></path>
+                    <path d="M21 3v5h-5"></path></svg
+                  >Request changes
+                </button>
+              </div>
+              <span class="p-small">Nusrat is told straight away and sees your feedback under Projects.</span>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
 </html>

@@ -1,22 +1,2394 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Review and publish a course · European IT LMS</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
-<link rel="stylesheet" href="../assets/css/eit.css">
-<link rel="stylesheet" href="../assets/css/panel.css">
-<link rel="stylesheet" href="../assets/css/app.css">
-<script src="../assets/js/app.js" defer></script>
-</head>
-<body>
-<div class="p-shell"><aside class="p-side"><a class="p-brand" href="overview.html"><span class="p-brand-mark" aria-hidden="true"></span><span class="p-brand-text"><span class="p-brand-name">European IT</span><span class="p-brand-sub">INSTITUTE</span></span></a><nav class="p-nav" aria-label="Admin panel"><a href="overview.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1"></rect><rect x="14" y="3" width="7" height="5" rx="1"></rect><rect x="14" y="12" width="7" height="9" rx="1"></rect><rect x="3" y="16" width="7" height="5" rx="1"></rect></svg>Overview</a><span class="p-nav-label">Courses</span><a href="courses.html"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg>Courses &amp; batches<span class="p-count">3</span></a><div class="p-subnav"><a href="course-review.html" aria-current="page">Review &amp; publish<span class="p-count">1</span></a><a href="batch-detail.html">Batch detail</a><a href="batch-edit.html">Create a batch</a></div><span class="p-nav-label">People</span><a href="students.html"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>Students &amp; payments</a><div class="p-subnav"><a href="student-record.html">Student record</a></div><a href="mentors.html"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path></svg>Mentors</a><a href="roles.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>Roles &amp; access</a><span class="p-nav-label">Admissions</span><a href="leads.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"></path><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg>Seminar leads<span class="p-count">6</span></a><span class="p-nav-label">Account</span><a href="../notifications.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg>Notifications<span class="p-count">3</span></a><a href="settings.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>Settings</a><a href="profile.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>My profile</a></nav></aside><div class="p-content"><header class="p-top"><label class="p-search"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg><span class="eit-sr">Search</span><input type="search" placeholder="Search students, courses, payments"></label><div class="p-top-right"><div class="eit-seg has-thumb" role="group" aria-label="Language"><span class="eit-seg__thumb" aria-hidden="true" style="width: 52px; transform: translateX(4px);"></span><button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button></div><a class="p-iconbtn" href="../notifications.html" aria-label="Notifications, 3 unread"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg><span class="p-badge-count">3</span></a><a class="p-me" href="profile.html" style="text-decoration: none; border-radius: 12px;"><span class="p-avatar">SS</span><span style="display: flex; flex-direction: column;"><span class="p-me-name">Sharmin Sultana</span><span class="p-me-sub">Admin</span></span></a></div></header><main class="p-main" style="max-width: 1360px;" data-region="filtered"><nav aria-label="Breadcrumb" class="p-row" style="gap: 8px; font-size: 14px; color: var(--ink-3); flex-wrap: wrap;"><a class="p-link" href="courses.html" style="font-weight: 500;">Courses &amp; batches</a><span aria-hidden="true">/</span><a class="p-link" href="courses.html" style="font-weight: 500;">Review queue</a><span aria-hidden="true">/</span><span style="color: var(--ink-2);">Advanced WordPress Theme Development</span></nav><div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px;"><div style="display: flex; flex-direction: column; gap: 6px;"><div class="p-row" style="gap: 12px; flex-wrap: wrap;"><h1 class="p-h1">Advanced WordPress Theme Development</h1><span class="eit-badge eit-badge--cyan">In review</span></div><span class="p-muted">Sent by Kamrul Hasan on 13 Oct · 4 modules · 24 lessons · 6 h 40 min of video</span></div><div class="p-row" style="flex-wrap: wrap;"><button class="p-ghostbtn" type="button"><svg class="eit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"></path><path d="M21 3v5h-5"></path></svg>Send back to mentor</button><button type="button" class="eit-btn eit-btn--primary eit-btn--md"><svg class="eit-icon eit-btn__lead" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg><span class="eit-btn__label">Publish course</span></button></div></div><div class="p-split"><div style="flex: 1.4 1 560px; min-width: 0px; display: flex; flex-direction: column; gap: 24px;"><section class="p-card" aria-labelledby="check-title" style="display: flex; flex-direction: column; gap: 14px;"><h2 id="check-title" class="p-h3">Before publishing</h2><ul style="list-style: none; margin: 0px; padding: 0px; display: flex; flex-direction: column; gap: 10px; font-size: 14px;"><li class="p-row" style="gap: 10px;"><span style="color: var(--success);"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span>All 22 video lessons have a processed video</li><li class="p-row" style="gap: 10px;"><span style="color: var(--success);"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span>Every module ends with a quiz or a project</li><li class="p-row" style="gap: 10px;"><span style="color: var(--success);"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span>Lessons unlock in order, at 90% watched</li><li class="p-row" style="gap: 10px;"><span style="color: var(--warning);"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 7.5v5"></path><path d="M12 16h.01"></path></svg></span>2 lessons have no starter files<a class="p-link" href="#" style="margin-left: auto;">Show</a></li><li class="p-row" style="gap: 10px;"><span style="color: var(--warning);"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 7.5v5"></path><path d="M12 16h.01"></path></svg></span>No price set yet<span class="p-small" style="margin-left: auto;">Set it on the right</span></li></ul></section><section class="p-card p-card--flush" aria-labelledby="curr-title"><div class="p-card-head" style="padding: 20px 24px 12px;"><h2 id="curr-title" class="p-h3">Curriculum</h2><span class="p-small">Watch any lesson as a student would</span></div><div style="padding: 0px 12px 12px; display: flex; flex-direction: column;"><div style="border-top: 1px solid var(--line-soft); padding: 12px;"><div class="p-row" style="justify-content: space-between; gap: 12px;"><span class="p-row" style="gap: 10px;"><span class="p-mono" style="color: var(--cyan-ink);">01</span><strong style="font-size: 15px;">Theme architecture</strong></span><span class="p-small">6 lessons · 1 h 42 min</span></div><ul style="list-style: none; margin: 10px 0px 0px; padding: 0px 0px 0px 34px; display: flex; flex-direction: column; gap: 2px;"><li class="p-row" style="justify-content: space-between; min-height: 40px; font-size: 14px; color: var(--ink-2); gap: 12px;"><span>Classic vs block themes</span><span class="p-row" style="gap: 14px;"><span class="p-small">14:20</span><a class="p-link" href="#">Watch</a></span></li><li class="p-row" style="justify-content: space-between; min-height: 40px; font-size: 14px; color: var(--ink-2); gap: 12px;"><span>theme.json in depth</span><span class="p-row" style="gap: 14px;"><span class="p-small">21:05</span><a class="p-link" href="#">Watch</a></span></li><li class="p-row" style="justify-content: space-between; min-height: 40px; font-size: 14px; color: var(--ink-2); gap: 12px;"><span>Template parts and patterns</span><span class="p-row" style="gap: 14px;"><span class="p-small">18:40</span><a class="p-link" href="#">Watch</a></span></li><li class="p-row" style="justify-content: space-between; min-height: 40px; font-size: 14px; color: var(--ink-2); gap: 12px;"><span>Child themes done right</span><span class="p-row" style="gap: 14px;"><span class="p-small">16:12</span><a class="p-link" href="#">Watch</a></span></li><li class="p-row" style="justify-content: space-between; min-height: 40px; font-size: 14px; color: var(--ink-2); gap: 12px;"><span>Module 1 quiz</span><span class="p-row" style="gap: 14px;"><span class="p-small">8 questions</span><a class="p-link" href="#">Watch</a></span></li></ul></div><div style="border-top: 1px solid var(--line-soft); padding: 12px;"><div class="p-row" style="justify-content: space-between; gap: 12px;"><span class="p-row" style="gap: 10px;"><span class="p-mono" style="color: var(--cyan-ink);">02</span><strong style="font-size: 15px;">Custom blocks</strong></span><span class="p-small">7 lessons · 2 h 05 min</span></div></div><div style="border-top: 1px solid var(--line-soft); padding: 12px;"><div class="p-row" style="justify-content: space-between; gap: 12px;"><span class="p-row" style="gap: 10px;"><span class="p-mono" style="color: var(--cyan-ink);">03</span><strong style="font-size: 15px;">Performance and security</strong></span><span class="p-small">6 lessons · 1 h 38 min</span></div></div><div style="border-top: 1px solid var(--line-soft); padding: 12px;"><div class="p-row" style="justify-content: space-between; gap: 12px;"><span class="p-row" style="gap: 10px;"><span class="p-mono" style="color: var(--cyan-ink);">04</span><strong style="font-size: 15px;">Shipping a client theme</strong></span><span class="p-small">5 lessons · 1 h 15 min · final project</span></div></div></div></section></div><div style="flex: 1 1 380px; min-width: 0px; display: flex; flex-direction: column; gap: 24px;"><section class="p-card" aria-labelledby="price-title" style="display: flex; flex-direction: column; gap: 18px;"><div class="p-card-head"><h2 id="price-title" class="p-h3">Price &amp; installments</h2><span class="p-small">Only admins see this</span></div><div class="eit-field"><label class="eit-field__label" for="eit-field-1">Track</label><div class="eit-field__wrap"><select id="eit-field-1" name="track" class="eit-field__control eit-field__select"><option value="dev" selected="">Development</option><option value="design">Design</option><option value="marketing">Marketing</option><option value="netsec">Networking &amp; Security</option></select><svg class="eit-icon eit-field__chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></div></div><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 16px;"><div class="eit-field"><label class="eit-field__label" for="eit-field-2">Online fee</label><div class="eit-field__wrap"><span class="eit-field__prefix" aria-hidden="true">৳</span><input id="eit-field-2" name="online" type="text" class="eit-field__control" inputmode="numeric" value="12,000"></div></div><div class="eit-field"><label class="eit-field__label" for="eit-field-3">Offline fee</label><div class="eit-field__wrap"><span class="eit-field__prefix" aria-hidden="true">৳</span><input id="eit-field-3" name="offline" type="text" class="eit-field__control" inputmode="numeric" value="18,000"></div></div></div><div style="display: flex; flex-direction: column; gap: 8px;"><span class="p-label" id="plan-label">Installment plan</span><div class="p-seg" role="group" aria-labelledby="plan-label" style="align-self: flex-start;"><button type="button" aria-pressed="false" style="" data-part-of="filtered" data-part="0" data-value="0">Full only</button><button type="button" aria-pressed="false" style="" data-part-of="filtered" data-part="0" data-value="1">2 parts</button><button type="button" aria-pressed="true" style="background: var(--surface-card); color: var(--ink); box-shadow: var(--shadow-sm);" data-part-of="filtered" data-part="0" data-value="2">3 parts</button><button type="button" aria-pressed="false" style="" data-part-of="filtered" data-part="0" data-value="3">4 parts</button></div><span class="p-small">Offline: 3 × ৳6,000 · Online: 3 × ৳4,000 · one every 30 days</span></div><div class="p-row" style="justify-content: space-between; gap: 16px;"><span style="display: flex; flex-direction: column;"><span id="web-label" style="font-size: 14px; font-weight: 600;">List on the website</span><span class="p-small">Course page goes live when published</span></span><button type="button" class="p-switch" role="switch" aria-checked="true" aria-labelledby="web-label"></button></div></section><section class="p-card" aria-labelledby="fb-title" style="display: flex; flex-direction: column; gap: 10px;"><h2 id="fb-title" class="p-h3">Note to Kamrul</h2><label class="eit-sr" for="fb">Note to the mentor</label><textarea id="fb" class="p-textarea" placeholder="Required if you send it back. Say what needs to change." style="min-height: 100px;"></textarea><span class="p-small">Sent with the course if you send it back, or as a thank-you when you publish.</span></section></div></div></main></div></div>
-<template data-state="filtered:0" data-region="[data-region='filtered']"><main data-dc-tpl="75" class="p-main" style="max-width: 1360px;" data-region="filtered"><nav aria-label="Breadcrumb" class="p-row" style="gap: 8px; font-size: 14px; color: var(--ink-3); flex-wrap: wrap;"><a class="p-link" href="courses.html" style="font-weight: 500;">Courses &amp; batches</a><span aria-hidden="true">/</span><a class="p-link" href="courses.html" style="font-weight: 500;">Review queue</a><span aria-hidden="true">/</span><span style="color: var(--ink-2);">Advanced WordPress Theme Development</span></nav><div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px;"><div style="display: flex; flex-direction: column; gap: 6px;"><div class="p-row" style="gap: 12px; flex-wrap: wrap;"><h1 class="p-h1">Advanced WordPress Theme Development</h1><span class="eit-badge eit-badge--cyan">In review</span></div><span class="p-muted">Sent by Kamrul Hasan on 13 Oct · 4 modules · 24 lessons · 6 h 40 min of video</span></div><div class="p-row" style="flex-wrap: wrap;"><button class="p-ghostbtn" type="button"><svg class="eit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"></path><path d="M21 3v5h-5"></path></svg>Send back to mentor</button><button type="button" class="eit-btn eit-btn--primary eit-btn--md"><svg class="eit-icon eit-btn__lead" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg><span class="eit-btn__label">Publish course</span></button></div></div><div class="p-split"><div style="flex: 1.4 1 560px; min-width: 0px; display: flex; flex-direction: column; gap: 24px;"><section class="p-card" aria-labelledby="check-title" style="display: flex; flex-direction: column; gap: 14px;"><h2 id="check-title" class="p-h3">Before publishing</h2><ul style="list-style: none; margin: 0px; padding: 0px; display: flex; flex-direction: column; gap: 10px; font-size: 14px;"><li class="p-row" style="gap: 10px;"><span style="color: var(--success);"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span>All 22 video lessons have a processed video</li><li class="p-row" style="gap: 10px;"><span style="color: var(--success);"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span>Every module ends with a quiz or a project</li><li class="p-row" style="gap: 10px;"><span style="color: var(--success);"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span>Lessons unlock in order, at 90% watched</li><li class="p-row" style="gap: 10px;"><span style="color: var(--warning);"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 7.5v5"></path><path d="M12 16h.01"></path></svg></span>2 lessons have no starter files<a class="p-link" href="#" style="margin-left: auto;">Show</a></li><li class="p-row" style="gap: 10px;"><span style="color: var(--warning);"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 7.5v5"></path><path d="M12 16h.01"></path></svg></span>No price set yet<span class="p-small" style="margin-left: auto;">Set it on the right</span></li></ul></section><section class="p-card p-card--flush" aria-labelledby="curr-title"><div class="p-card-head" style="padding: 20px 24px 12px;"><h2 id="curr-title" class="p-h3">Curriculum</h2><span class="p-small">Watch any lesson as a student would</span></div><div style="padding: 0px 12px 12px; display: flex; flex-direction: column;"><div style="border-top: 1px solid var(--line-soft); padding: 12px;"><div class="p-row" style="justify-content: space-between; gap: 12px;"><span class="p-row" style="gap: 10px;"><span class="p-mono" style="color: var(--cyan-ink);">01</span><strong style="font-size: 15px;">Theme architecture</strong></span><span class="p-small">6 lessons · 1 h 42 min</span></div><ul style="list-style: none; margin: 10px 0px 0px; padding: 0px 0px 0px 34px; display: flex; flex-direction: column; gap: 2px;"><li class="p-row" style="justify-content: space-between; min-height: 40px; font-size: 14px; color: var(--ink-2); gap: 12px;"><span>Classic vs block themes</span><span class="p-row" style="gap: 14px;"><span class="p-small">14:20</span><a class="p-link" href="#">Watch</a></span></li><li class="p-row" style="justify-content: space-between; min-height: 40px; font-size: 14px; color: var(--ink-2); gap: 12px;"><span>theme.json in depth</span><span class="p-row" style="gap: 14px;"><span class="p-small">21:05</span><a class="p-link" href="#">Watch</a></span></li><li class="p-row" style="justify-content: space-between; min-height: 40px; font-size: 14px; color: var(--ink-2); gap: 12px;"><span>Template parts and patterns</span><span class="p-row" style="gap: 14px;"><span class="p-small">18:40</span><a class="p-link" href="#">Watch</a></span></li><li class="p-row" style="justify-content: space-between; min-height: 40px; font-size: 14px; color: var(--ink-2); gap: 12px;"><span>Child themes done right</span><span class="p-row" style="gap: 14px;"><span class="p-small">16:12</span><a class="p-link" href="#">Watch</a></span></li><li class="p-row" style="justify-content: space-between; min-height: 40px; font-size: 14px; color: var(--ink-2); gap: 12px;"><span>Module 1 quiz</span><span class="p-row" style="gap: 14px;"><span class="p-small">8 questions</span><a class="p-link" href="#">Watch</a></span></li></ul></div><div style="border-top: 1px solid var(--line-soft); padding: 12px;"><div class="p-row" style="justify-content: space-between; gap: 12px;"><span class="p-row" style="gap: 10px;"><span class="p-mono" style="color: var(--cyan-ink);">02</span><strong style="font-size: 15px;">Custom blocks</strong></span><span class="p-small">7 lessons · 2 h 05 min</span></div></div><div style="border-top: 1px solid var(--line-soft); padding: 12px;"><div class="p-row" style="justify-content: space-between; gap: 12px;"><span class="p-row" style="gap: 10px;"><span class="p-mono" style="color: var(--cyan-ink);">03</span><strong style="font-size: 15px;">Performance and security</strong></span><span class="p-small">6 lessons · 1 h 38 min</span></div></div><div style="border-top: 1px solid var(--line-soft); padding: 12px;"><div class="p-row" style="justify-content: space-between; gap: 12px;"><span class="p-row" style="gap: 10px;"><span class="p-mono" style="color: var(--cyan-ink);">04</span><strong style="font-size: 15px;">Shipping a client theme</strong></span><span class="p-small">5 lessons · 1 h 15 min · final project</span></div></div></div></section></div><div style="flex: 1 1 380px; min-width: 0px; display: flex; flex-direction: column; gap: 24px;"><section class="p-card" aria-labelledby="price-title" style="display: flex; flex-direction: column; gap: 18px;"><div class="p-card-head"><h2 id="price-title" class="p-h3">Price &amp; installments</h2><span class="p-small">Only admins see this</span></div><div class="eit-field"><label class="eit-field__label" for="eit-field-1">Track</label><div class="eit-field__wrap"><select id="eit-field-1" name="track" class="eit-field__control eit-field__select"><option value="dev" selected="">Development</option><option value="design">Design</option><option value="marketing">Marketing</option><option value="netsec">Networking &amp; Security</option></select><svg class="eit-icon eit-field__chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></div></div><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 16px;"><div class="eit-field"><label class="eit-field__label" for="eit-field-2">Online fee</label><div class="eit-field__wrap"><span class="eit-field__prefix" aria-hidden="true">৳</span><input id="eit-field-2" name="online" type="text" class="eit-field__control" inputmode="numeric" value="12,000"></div></div><div class="eit-field"><label class="eit-field__label" for="eit-field-3">Offline fee</label><div class="eit-field__wrap"><span class="eit-field__prefix" aria-hidden="true">৳</span><input id="eit-field-3" name="offline" type="text" class="eit-field__control" inputmode="numeric" value="18,000"></div></div></div><div style="display: flex; flex-direction: column; gap: 8px;"><span class="p-label" id="plan-label">Installment plan</span><div class="p-seg" role="group" aria-labelledby="plan-label" style="align-self: flex-start;"><button type="button" aria-pressed="true" style="background: var(--surface-card); color: var(--ink); box-shadow: var(--shadow-sm);" data-part-of="filtered" data-part="0" data-value="0">Full only</button><button type="button" aria-pressed="false" style="" data-part-of="filtered" data-part="0" data-value="1">2 parts</button><button type="button" aria-pressed="false" style="" data-part-of="filtered" data-part="0" data-value="2">3 parts</button><button type="button" aria-pressed="false" style="" data-part-of="filtered" data-part="0" data-value="3">4 parts</button></div><span class="p-small">Students pay the full fee at checkout.</span></div><div class="p-row" style="justify-content: space-between; gap: 16px;"><span style="display: flex; flex-direction: column;"><span id="web-label" style="font-size: 14px; font-weight: 600;">List on the website</span><span class="p-small">Course page goes live when published</span></span><button type="button" class="p-switch" role="switch" aria-checked="true" aria-labelledby="web-label"></button></div></section><section class="p-card" aria-labelledby="fb-title" style="display: flex; flex-direction: column; gap: 10px;"><h2 id="fb-title" class="p-h3">Note to Kamrul</h2><label class="eit-sr" for="fb">Note to the mentor</label><textarea id="fb" class="p-textarea" placeholder="Required if you send it back. Say what needs to change." style="min-height: 100px;"></textarea><span class="p-small">Sent with the course if you send it back, or as a thank-you when you publish.</span></section></div></div></main></template>
-<template data-state="filtered:1" data-region="[data-region='filtered']"><main data-dc-tpl="75" class="p-main" style="max-width: 1360px;" data-region="filtered"><nav aria-label="Breadcrumb" class="p-row" style="gap: 8px; font-size: 14px; color: var(--ink-3); flex-wrap: wrap;"><a class="p-link" href="courses.html" style="font-weight: 500;">Courses &amp; batches</a><span aria-hidden="true">/</span><a class="p-link" href="courses.html" style="font-weight: 500;">Review queue</a><span aria-hidden="true">/</span><span style="color: var(--ink-2);">Advanced WordPress Theme Development</span></nav><div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px;"><div style="display: flex; flex-direction: column; gap: 6px;"><div class="p-row" style="gap: 12px; flex-wrap: wrap;"><h1 class="p-h1">Advanced WordPress Theme Development</h1><span class="eit-badge eit-badge--cyan">In review</span></div><span class="p-muted">Sent by Kamrul Hasan on 13 Oct · 4 modules · 24 lessons · 6 h 40 min of video</span></div><div class="p-row" style="flex-wrap: wrap;"><button class="p-ghostbtn" type="button"><svg class="eit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"></path><path d="M21 3v5h-5"></path></svg>Send back to mentor</button><button type="button" class="eit-btn eit-btn--primary eit-btn--md"><svg class="eit-icon eit-btn__lead" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg><span class="eit-btn__label">Publish course</span></button></div></div><div class="p-split"><div style="flex: 1.4 1 560px; min-width: 0px; display: flex; flex-direction: column; gap: 24px;"><section class="p-card" aria-labelledby="check-title" style="display: flex; flex-direction: column; gap: 14px;"><h2 id="check-title" class="p-h3">Before publishing</h2><ul style="list-style: none; margin: 0px; padding: 0px; display: flex; flex-direction: column; gap: 10px; font-size: 14px;"><li class="p-row" style="gap: 10px;"><span style="color: var(--success);"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span>All 22 video lessons have a processed video</li><li class="p-row" style="gap: 10px;"><span style="color: var(--success);"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span>Every module ends with a quiz or a project</li><li class="p-row" style="gap: 10px;"><span style="color: var(--success);"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span>Lessons unlock in order, at 90% watched</li><li class="p-row" style="gap: 10px;"><span style="color: var(--warning);"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 7.5v5"></path><path d="M12 16h.01"></path></svg></span>2 lessons have no starter files<a class="p-link" href="#" style="margin-left: auto;">Show</a></li><li class="p-row" style="gap: 10px;"><span style="color: var(--warning);"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 7.5v5"></path><path d="M12 16h.01"></path></svg></span>No price set yet<span class="p-small" style="margin-left: auto;">Set it on the right</span></li></ul></section><section class="p-card p-card--flush" aria-labelledby="curr-title"><div class="p-card-head" style="padding: 20px 24px 12px;"><h2 id="curr-title" class="p-h3">Curriculum</h2><span class="p-small">Watch any lesson as a student would</span></div><div style="padding: 0px 12px 12px; display: flex; flex-direction: column;"><div style="border-top: 1px solid var(--line-soft); padding: 12px;"><div class="p-row" style="justify-content: space-between; gap: 12px;"><span class="p-row" style="gap: 10px;"><span class="p-mono" style="color: var(--cyan-ink);">01</span><strong style="font-size: 15px;">Theme architecture</strong></span><span class="p-small">6 lessons · 1 h 42 min</span></div><ul style="list-style: none; margin: 10px 0px 0px; padding: 0px 0px 0px 34px; display: flex; flex-direction: column; gap: 2px;"><li class="p-row" style="justify-content: space-between; min-height: 40px; font-size: 14px; color: var(--ink-2); gap: 12px;"><span>Classic vs block themes</span><span class="p-row" style="gap: 14px;"><span class="p-small">14:20</span><a class="p-link" href="#">Watch</a></span></li><li class="p-row" style="justify-content: space-between; min-height: 40px; font-size: 14px; color: var(--ink-2); gap: 12px;"><span>theme.json in depth</span><span class="p-row" style="gap: 14px;"><span class="p-small">21:05</span><a class="p-link" href="#">Watch</a></span></li><li class="p-row" style="justify-content: space-between; min-height: 40px; font-size: 14px; color: var(--ink-2); gap: 12px;"><span>Template parts and patterns</span><span class="p-row" style="gap: 14px;"><span class="p-small">18:40</span><a class="p-link" href="#">Watch</a></span></li><li class="p-row" style="justify-content: space-between; min-height: 40px; font-size: 14px; color: var(--ink-2); gap: 12px;"><span>Child themes done right</span><span class="p-row" style="gap: 14px;"><span class="p-small">16:12</span><a class="p-link" href="#">Watch</a></span></li><li class="p-row" style="justify-content: space-between; min-height: 40px; font-size: 14px; color: var(--ink-2); gap: 12px;"><span>Module 1 quiz</span><span class="p-row" style="gap: 14px;"><span class="p-small">8 questions</span><a class="p-link" href="#">Watch</a></span></li></ul></div><div style="border-top: 1px solid var(--line-soft); padding: 12px;"><div class="p-row" style="justify-content: space-between; gap: 12px;"><span class="p-row" style="gap: 10px;"><span class="p-mono" style="color: var(--cyan-ink);">02</span><strong style="font-size: 15px;">Custom blocks</strong></span><span class="p-small">7 lessons · 2 h 05 min</span></div></div><div style="border-top: 1px solid var(--line-soft); padding: 12px;"><div class="p-row" style="justify-content: space-between; gap: 12px;"><span class="p-row" style="gap: 10px;"><span class="p-mono" style="color: var(--cyan-ink);">03</span><strong style="font-size: 15px;">Performance and security</strong></span><span class="p-small">6 lessons · 1 h 38 min</span></div></div><div style="border-top: 1px solid var(--line-soft); padding: 12px;"><div class="p-row" style="justify-content: space-between; gap: 12px;"><span class="p-row" style="gap: 10px;"><span class="p-mono" style="color: var(--cyan-ink);">04</span><strong style="font-size: 15px;">Shipping a client theme</strong></span><span class="p-small">5 lessons · 1 h 15 min · final project</span></div></div></div></section></div><div style="flex: 1 1 380px; min-width: 0px; display: flex; flex-direction: column; gap: 24px;"><section class="p-card" aria-labelledby="price-title" style="display: flex; flex-direction: column; gap: 18px;"><div class="p-card-head"><h2 id="price-title" class="p-h3">Price &amp; installments</h2><span class="p-small">Only admins see this</span></div><div class="eit-field"><label class="eit-field__label" for="eit-field-1">Track</label><div class="eit-field__wrap"><select id="eit-field-1" name="track" class="eit-field__control eit-field__select"><option value="dev" selected="">Development</option><option value="design">Design</option><option value="marketing">Marketing</option><option value="netsec">Networking &amp; Security</option></select><svg class="eit-icon eit-field__chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></div></div><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 16px;"><div class="eit-field"><label class="eit-field__label" for="eit-field-2">Online fee</label><div class="eit-field__wrap"><span class="eit-field__prefix" aria-hidden="true">৳</span><input id="eit-field-2" name="online" type="text" class="eit-field__control" inputmode="numeric" value="12,000"></div></div><div class="eit-field"><label class="eit-field__label" for="eit-field-3">Offline fee</label><div class="eit-field__wrap"><span class="eit-field__prefix" aria-hidden="true">৳</span><input id="eit-field-3" name="offline" type="text" class="eit-field__control" inputmode="numeric" value="18,000"></div></div></div><div style="display: flex; flex-direction: column; gap: 8px;"><span class="p-label" id="plan-label">Installment plan</span><div class="p-seg" role="group" aria-labelledby="plan-label" style="align-self: flex-start;"><button type="button" aria-pressed="false" style="" data-part-of="filtered" data-part="0" data-value="0">Full only</button><button type="button" aria-pressed="true" style="background: var(--surface-card); color: var(--ink); box-shadow: var(--shadow-sm);" data-part-of="filtered" data-part="0" data-value="1">2 parts</button><button type="button" aria-pressed="false" style="" data-part-of="filtered" data-part="0" data-value="2">3 parts</button><button type="button" aria-pressed="false" style="" data-part-of="filtered" data-part="0" data-value="3">4 parts</button></div><span class="p-small">Offline: 2 × ৳9,000 · Online: 2 × ৳6,000 · one every 30 days</span></div><div class="p-row" style="justify-content: space-between; gap: 16px;"><span style="display: flex; flex-direction: column;"><span id="web-label" style="font-size: 14px; font-weight: 600;">List on the website</span><span class="p-small">Course page goes live when published</span></span><button type="button" class="p-switch" role="switch" aria-checked="true" aria-labelledby="web-label"></button></div></section><section class="p-card" aria-labelledby="fb-title" style="display: flex; flex-direction: column; gap: 10px;"><h2 id="fb-title" class="p-h3">Note to Kamrul</h2><label class="eit-sr" for="fb">Note to the mentor</label><textarea id="fb" class="p-textarea" placeholder="Required if you send it back. Say what needs to change." style="min-height: 100px;"></textarea><span class="p-small">Sent with the course if you send it back, or as a thank-you when you publish.</span></section></div></div></main></template>
-<template data-state="filtered:2" data-region="[data-region='filtered']"><main data-dc-tpl="75" class="p-main" style="max-width: 1360px;" data-region="filtered"><nav aria-label="Breadcrumb" class="p-row" style="gap: 8px; font-size: 14px; color: var(--ink-3); flex-wrap: wrap;"><a class="p-link" href="courses.html" style="font-weight: 500;">Courses &amp; batches</a><span aria-hidden="true">/</span><a class="p-link" href="courses.html" style="font-weight: 500;">Review queue</a><span aria-hidden="true">/</span><span style="color: var(--ink-2);">Advanced WordPress Theme Development</span></nav><div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px;"><div style="display: flex; flex-direction: column; gap: 6px;"><div class="p-row" style="gap: 12px; flex-wrap: wrap;"><h1 class="p-h1">Advanced WordPress Theme Development</h1><span class="eit-badge eit-badge--cyan">In review</span></div><span class="p-muted">Sent by Kamrul Hasan on 13 Oct · 4 modules · 24 lessons · 6 h 40 min of video</span></div><div class="p-row" style="flex-wrap: wrap;"><button class="p-ghostbtn" type="button"><svg class="eit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"></path><path d="M21 3v5h-5"></path></svg>Send back to mentor</button><button type="button" class="eit-btn eit-btn--primary eit-btn--md"><svg class="eit-icon eit-btn__lead" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg><span class="eit-btn__label">Publish course</span></button></div></div><div class="p-split"><div style="flex: 1.4 1 560px; min-width: 0px; display: flex; flex-direction: column; gap: 24px;"><section class="p-card" aria-labelledby="check-title" style="display: flex; flex-direction: column; gap: 14px;"><h2 id="check-title" class="p-h3">Before publishing</h2><ul style="list-style: none; margin: 0px; padding: 0px; display: flex; flex-direction: column; gap: 10px; font-size: 14px;"><li class="p-row" style="gap: 10px;"><span style="color: var(--success);"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span>All 22 video lessons have a processed video</li><li class="p-row" style="gap: 10px;"><span style="color: var(--success);"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span>Every module ends with a quiz or a project</li><li class="p-row" style="gap: 10px;"><span style="color: var(--success);"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span>Lessons unlock in order, at 90% watched</li><li class="p-row" style="gap: 10px;"><span style="color: var(--warning);"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 7.5v5"></path><path d="M12 16h.01"></path></svg></span>2 lessons have no starter files<a class="p-link" href="#" style="margin-left: auto;">Show</a></li><li class="p-row" style="gap: 10px;"><span style="color: var(--warning);"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 7.5v5"></path><path d="M12 16h.01"></path></svg></span>No price set yet<span class="p-small" style="margin-left: auto;">Set it on the right</span></li></ul></section><section class="p-card p-card--flush" aria-labelledby="curr-title"><div class="p-card-head" style="padding: 20px 24px 12px;"><h2 id="curr-title" class="p-h3">Curriculum</h2><span class="p-small">Watch any lesson as a student would</span></div><div style="padding: 0px 12px 12px; display: flex; flex-direction: column;"><div style="border-top: 1px solid var(--line-soft); padding: 12px;"><div class="p-row" style="justify-content: space-between; gap: 12px;"><span class="p-row" style="gap: 10px;"><span class="p-mono" style="color: var(--cyan-ink);">01</span><strong style="font-size: 15px;">Theme architecture</strong></span><span class="p-small">6 lessons · 1 h 42 min</span></div><ul style="list-style: none; margin: 10px 0px 0px; padding: 0px 0px 0px 34px; display: flex; flex-direction: column; gap: 2px;"><li class="p-row" style="justify-content: space-between; min-height: 40px; font-size: 14px; color: var(--ink-2); gap: 12px;"><span>Classic vs block themes</span><span class="p-row" style="gap: 14px;"><span class="p-small">14:20</span><a class="p-link" href="#">Watch</a></span></li><li class="p-row" style="justify-content: space-between; min-height: 40px; font-size: 14px; color: var(--ink-2); gap: 12px;"><span>theme.json in depth</span><span class="p-row" style="gap: 14px;"><span class="p-small">21:05</span><a class="p-link" href="#">Watch</a></span></li><li class="p-row" style="justify-content: space-between; min-height: 40px; font-size: 14px; color: var(--ink-2); gap: 12px;"><span>Template parts and patterns</span><span class="p-row" style="gap: 14px;"><span class="p-small">18:40</span><a class="p-link" href="#">Watch</a></span></li><li class="p-row" style="justify-content: space-between; min-height: 40px; font-size: 14px; color: var(--ink-2); gap: 12px;"><span>Child themes done right</span><span class="p-row" style="gap: 14px;"><span class="p-small">16:12</span><a class="p-link" href="#">Watch</a></span></li><li class="p-row" style="justify-content: space-between; min-height: 40px; font-size: 14px; color: var(--ink-2); gap: 12px;"><span>Module 1 quiz</span><span class="p-row" style="gap: 14px;"><span class="p-small">8 questions</span><a class="p-link" href="#">Watch</a></span></li></ul></div><div style="border-top: 1px solid var(--line-soft); padding: 12px;"><div class="p-row" style="justify-content: space-between; gap: 12px;"><span class="p-row" style="gap: 10px;"><span class="p-mono" style="color: var(--cyan-ink);">02</span><strong style="font-size: 15px;">Custom blocks</strong></span><span class="p-small">7 lessons · 2 h 05 min</span></div></div><div style="border-top: 1px solid var(--line-soft); padding: 12px;"><div class="p-row" style="justify-content: space-between; gap: 12px;"><span class="p-row" style="gap: 10px;"><span class="p-mono" style="color: var(--cyan-ink);">03</span><strong style="font-size: 15px;">Performance and security</strong></span><span class="p-small">6 lessons · 1 h 38 min</span></div></div><div style="border-top: 1px solid var(--line-soft); padding: 12px;"><div class="p-row" style="justify-content: space-between; gap: 12px;"><span class="p-row" style="gap: 10px;"><span class="p-mono" style="color: var(--cyan-ink);">04</span><strong style="font-size: 15px;">Shipping a client theme</strong></span><span class="p-small">5 lessons · 1 h 15 min · final project</span></div></div></div></section></div><div style="flex: 1 1 380px; min-width: 0px; display: flex; flex-direction: column; gap: 24px;"><section class="p-card" aria-labelledby="price-title" style="display: flex; flex-direction: column; gap: 18px;"><div class="p-card-head"><h2 id="price-title" class="p-h3">Price &amp; installments</h2><span class="p-small">Only admins see this</span></div><div class="eit-field"><label class="eit-field__label" for="eit-field-1">Track</label><div class="eit-field__wrap"><select id="eit-field-1" name="track" class="eit-field__control eit-field__select"><option value="dev" selected="">Development</option><option value="design">Design</option><option value="marketing">Marketing</option><option value="netsec">Networking &amp; Security</option></select><svg class="eit-icon eit-field__chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></div></div><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 16px;"><div class="eit-field"><label class="eit-field__label" for="eit-field-2">Online fee</label><div class="eit-field__wrap"><span class="eit-field__prefix" aria-hidden="true">৳</span><input id="eit-field-2" name="online" type="text" class="eit-field__control" inputmode="numeric" value="12,000"></div></div><div class="eit-field"><label class="eit-field__label" for="eit-field-3">Offline fee</label><div class="eit-field__wrap"><span class="eit-field__prefix" aria-hidden="true">৳</span><input id="eit-field-3" name="offline" type="text" class="eit-field__control" inputmode="numeric" value="18,000"></div></div></div><div style="display: flex; flex-direction: column; gap: 8px;"><span class="p-label" id="plan-label">Installment plan</span><div class="p-seg" role="group" aria-labelledby="plan-label" style="align-self: flex-start;"><button type="button" aria-pressed="false" style="" data-part-of="filtered" data-part="0" data-value="0">Full only</button><button type="button" aria-pressed="false" style="" data-part-of="filtered" data-part="0" data-value="1">2 parts</button><button type="button" aria-pressed="true" style="background: var(--surface-card); color: var(--ink); box-shadow: var(--shadow-sm);" data-part-of="filtered" data-part="0" data-value="2">3 parts</button><button type="button" aria-pressed="false" style="" data-part-of="filtered" data-part="0" data-value="3">4 parts</button></div><span class="p-small">Offline: 3 × ৳6,000 · Online: 3 × ৳4,000 · one every 30 days</span></div><div class="p-row" style="justify-content: space-between; gap: 16px;"><span style="display: flex; flex-direction: column;"><span id="web-label" style="font-size: 14px; font-weight: 600;">List on the website</span><span class="p-small">Course page goes live when published</span></span><button type="button" class="p-switch" role="switch" aria-checked="true" aria-labelledby="web-label"></button></div></section><section class="p-card" aria-labelledby="fb-title" style="display: flex; flex-direction: column; gap: 10px;"><h2 id="fb-title" class="p-h3">Note to Kamrul</h2><label class="eit-sr" for="fb">Note to the mentor</label><textarea id="fb" class="p-textarea" placeholder="Required if you send it back. Say what needs to change." style="min-height: 100px;"></textarea><span class="p-small">Sent with the course if you send it back, or as a thank-you when you publish.</span></section></div></div></main></template>
-<template data-state="filtered:3" data-region="[data-region='filtered']"><main data-dc-tpl="75" class="p-main" style="max-width: 1360px;" data-region="filtered"><nav aria-label="Breadcrumb" class="p-row" style="gap: 8px; font-size: 14px; color: var(--ink-3); flex-wrap: wrap;"><a class="p-link" href="courses.html" style="font-weight: 500;">Courses &amp; batches</a><span aria-hidden="true">/</span><a class="p-link" href="courses.html" style="font-weight: 500;">Review queue</a><span aria-hidden="true">/</span><span style="color: var(--ink-2);">Advanced WordPress Theme Development</span></nav><div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px;"><div style="display: flex; flex-direction: column; gap: 6px;"><div class="p-row" style="gap: 12px; flex-wrap: wrap;"><h1 class="p-h1">Advanced WordPress Theme Development</h1><span class="eit-badge eit-badge--cyan">In review</span></div><span class="p-muted">Sent by Kamrul Hasan on 13 Oct · 4 modules · 24 lessons · 6 h 40 min of video</span></div><div class="p-row" style="flex-wrap: wrap;"><button class="p-ghostbtn" type="button"><svg class="eit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"></path><path d="M21 3v5h-5"></path></svg>Send back to mentor</button><button type="button" class="eit-btn eit-btn--primary eit-btn--md"><svg class="eit-icon eit-btn__lead" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg><span class="eit-btn__label">Publish course</span></button></div></div><div class="p-split"><div style="flex: 1.4 1 560px; min-width: 0px; display: flex; flex-direction: column; gap: 24px;"><section class="p-card" aria-labelledby="check-title" style="display: flex; flex-direction: column; gap: 14px;"><h2 id="check-title" class="p-h3">Before publishing</h2><ul style="list-style: none; margin: 0px; padding: 0px; display: flex; flex-direction: column; gap: 10px; font-size: 14px;"><li class="p-row" style="gap: 10px;"><span style="color: var(--success);"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span>All 22 video lessons have a processed video</li><li class="p-row" style="gap: 10px;"><span style="color: var(--success);"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span>Every module ends with a quiz or a project</li><li class="p-row" style="gap: 10px;"><span style="color: var(--success);"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span>Lessons unlock in order, at 90% watched</li><li class="p-row" style="gap: 10px;"><span style="color: var(--warning);"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 7.5v5"></path><path d="M12 16h.01"></path></svg></span>2 lessons have no starter files<a class="p-link" href="#" style="margin-left: auto;">Show</a></li><li class="p-row" style="gap: 10px;"><span style="color: var(--warning);"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 7.5v5"></path><path d="M12 16h.01"></path></svg></span>No price set yet<span class="p-small" style="margin-left: auto;">Set it on the right</span></li></ul></section><section class="p-card p-card--flush" aria-labelledby="curr-title"><div class="p-card-head" style="padding: 20px 24px 12px;"><h2 id="curr-title" class="p-h3">Curriculum</h2><span class="p-small">Watch any lesson as a student would</span></div><div style="padding: 0px 12px 12px; display: flex; flex-direction: column;"><div style="border-top: 1px solid var(--line-soft); padding: 12px;"><div class="p-row" style="justify-content: space-between; gap: 12px;"><span class="p-row" style="gap: 10px;"><span class="p-mono" style="color: var(--cyan-ink);">01</span><strong style="font-size: 15px;">Theme architecture</strong></span><span class="p-small">6 lessons · 1 h 42 min</span></div><ul style="list-style: none; margin: 10px 0px 0px; padding: 0px 0px 0px 34px; display: flex; flex-direction: column; gap: 2px;"><li class="p-row" style="justify-content: space-between; min-height: 40px; font-size: 14px; color: var(--ink-2); gap: 12px;"><span>Classic vs block themes</span><span class="p-row" style="gap: 14px;"><span class="p-small">14:20</span><a class="p-link" href="#">Watch</a></span></li><li class="p-row" style="justify-content: space-between; min-height: 40px; font-size: 14px; color: var(--ink-2); gap: 12px;"><span>theme.json in depth</span><span class="p-row" style="gap: 14px;"><span class="p-small">21:05</span><a class="p-link" href="#">Watch</a></span></li><li class="p-row" style="justify-content: space-between; min-height: 40px; font-size: 14px; color: var(--ink-2); gap: 12px;"><span>Template parts and patterns</span><span class="p-row" style="gap: 14px;"><span class="p-small">18:40</span><a class="p-link" href="#">Watch</a></span></li><li class="p-row" style="justify-content: space-between; min-height: 40px; font-size: 14px; color: var(--ink-2); gap: 12px;"><span>Child themes done right</span><span class="p-row" style="gap: 14px;"><span class="p-small">16:12</span><a class="p-link" href="#">Watch</a></span></li><li class="p-row" style="justify-content: space-between; min-height: 40px; font-size: 14px; color: var(--ink-2); gap: 12px;"><span>Module 1 quiz</span><span class="p-row" style="gap: 14px;"><span class="p-small">8 questions</span><a class="p-link" href="#">Watch</a></span></li></ul></div><div style="border-top: 1px solid var(--line-soft); padding: 12px;"><div class="p-row" style="justify-content: space-between; gap: 12px;"><span class="p-row" style="gap: 10px;"><span class="p-mono" style="color: var(--cyan-ink);">02</span><strong style="font-size: 15px;">Custom blocks</strong></span><span class="p-small">7 lessons · 2 h 05 min</span></div></div><div style="border-top: 1px solid var(--line-soft); padding: 12px;"><div class="p-row" style="justify-content: space-between; gap: 12px;"><span class="p-row" style="gap: 10px;"><span class="p-mono" style="color: var(--cyan-ink);">03</span><strong style="font-size: 15px;">Performance and security</strong></span><span class="p-small">6 lessons · 1 h 38 min</span></div></div><div style="border-top: 1px solid var(--line-soft); padding: 12px;"><div class="p-row" style="justify-content: space-between; gap: 12px;"><span class="p-row" style="gap: 10px;"><span class="p-mono" style="color: var(--cyan-ink);">04</span><strong style="font-size: 15px;">Shipping a client theme</strong></span><span class="p-small">5 lessons · 1 h 15 min · final project</span></div></div></div></section></div><div style="flex: 1 1 380px; min-width: 0px; display: flex; flex-direction: column; gap: 24px;"><section class="p-card" aria-labelledby="price-title" style="display: flex; flex-direction: column; gap: 18px;"><div class="p-card-head"><h2 id="price-title" class="p-h3">Price &amp; installments</h2><span class="p-small">Only admins see this</span></div><div class="eit-field"><label class="eit-field__label" for="eit-field-1">Track</label><div class="eit-field__wrap"><select id="eit-field-1" name="track" class="eit-field__control eit-field__select"><option value="dev" selected="">Development</option><option value="design">Design</option><option value="marketing">Marketing</option><option value="netsec">Networking &amp; Security</option></select><svg class="eit-icon eit-field__chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></div></div><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 16px;"><div class="eit-field"><label class="eit-field__label" for="eit-field-2">Online fee</label><div class="eit-field__wrap"><span class="eit-field__prefix" aria-hidden="true">৳</span><input id="eit-field-2" name="online" type="text" class="eit-field__control" inputmode="numeric" value="12,000"></div></div><div class="eit-field"><label class="eit-field__label" for="eit-field-3">Offline fee</label><div class="eit-field__wrap"><span class="eit-field__prefix" aria-hidden="true">৳</span><input id="eit-field-3" name="offline" type="text" class="eit-field__control" inputmode="numeric" value="18,000"></div></div></div><div style="display: flex; flex-direction: column; gap: 8px;"><span class="p-label" id="plan-label">Installment plan</span><div class="p-seg" role="group" aria-labelledby="plan-label" style="align-self: flex-start;"><button type="button" aria-pressed="false" style="" data-part-of="filtered" data-part="0" data-value="0">Full only</button><button type="button" aria-pressed="false" style="" data-part-of="filtered" data-part="0" data-value="1">2 parts</button><button type="button" aria-pressed="false" style="" data-part-of="filtered" data-part="0" data-value="2">3 parts</button><button type="button" aria-pressed="true" style="background: var(--surface-card); color: var(--ink); box-shadow: var(--shadow-sm);" data-part-of="filtered" data-part="0" data-value="3">4 parts</button></div><span class="p-small">Offline: 4 × ৳4,500 · Online: 4 × ৳3,000 · one every 30 days</span></div><div class="p-row" style="justify-content: space-between; gap: 16px;"><span style="display: flex; flex-direction: column;"><span id="web-label" style="font-size: 14px; font-weight: 600;">List on the website</span><span class="p-small">Course page goes live when published</span></span><button type="button" class="p-switch" role="switch" aria-checked="true" aria-labelledby="web-label"></button></div></section><section class="p-card" aria-labelledby="fb-title" style="display: flex; flex-direction: column; gap: 10px;"><h2 id="fb-title" class="p-h3">Note to Kamrul</h2><label class="eit-sr" for="fb">Note to the mentor</label><textarea id="fb" class="p-textarea" placeholder="Required if you send it back. Say what needs to change." style="min-height: 100px;"></textarea><span class="p-small">Sent with the course if you send it back, or as a thank-you when you publish.</span></section></div></div></main></template>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Review and publish a course · European IT LMS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap"
+    />
+    <link rel="stylesheet" href="../assets/css/eit.css" />
+    <link rel="stylesheet" href="../assets/css/panel.css" />
+    <link rel="stylesheet" href="../assets/css/app.css" />
+    <script src="../assets/js/app.js" defer></script>
+  </head>
+  <body>
+    <div class="p-shell">
+      <aside class="p-side">
+        <a class="p-brand" href="overview.html"
+          ><span class="p-brand-mark" aria-hidden="true"></span
+          ><span class="p-brand-text"
+            ><span class="p-brand-name">European IT</span><span class="p-brand-sub">INSTITUTE</span></span
+          ></a
+        >
+        <nav class="p-nav" aria-label="Admin panel">
+          <a href="overview.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="9" rx="1"></rect>
+              <rect x="14" y="3" width="7" height="5" rx="1"></rect>
+              <rect x="14" y="12" width="7" height="9" rx="1"></rect>
+              <rect x="3" y="16" width="7" height="5" rx="1"></rect></svg
+            >Overview</a
+          ><span class="p-nav-label">Courses</span
+          ><a href="courses.html"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path>
+              <path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg
+            >Courses &amp; batches<span class="p-count">3</span></a
+          >
+          <div class="p-subnav">
+            <a href="course-review.html" aria-current="page">Review &amp; publish<span class="p-count">1</span></a
+            ><a href="batch-detail.html">Batch detail</a><a href="batch-edit.html">Create a batch</a>
+          </div>
+          <span class="p-nav-label">People</span
+          ><a href="students.html"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg
+            >Students &amp; payments</a
+          >
+          <div class="p-subnav"><a href="student-record.html">Student record</a></div>
+          <a href="mentors.html"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <rect x="2" y="7" width="20" height="14" rx="2"></rect>
+              <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path></svg
+            >Mentors</a
+          ><a href="roles.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+              ></path>
+              <path d="m9 12 2 2 4-4"></path></svg
+            >Roles &amp; access</a
+          ><span class="p-nav-label">Admissions</span
+          ><a href="leads.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m3 11 18-5v12L3 14v-3z"></path>
+              <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg
+            >Seminar leads<span class="p-count">6</span></a
+          ><span class="p-nav-label">Account</span
+          ><a href="../notifications.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+              <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
+            >Notifications<span class="p-count">3</span></a
+          ><a href="settings.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
+              ></path>
+              <circle cx="12" cy="12" r="3"></circle></svg
+            >Settings</a
+          ><a href="profile.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle></svg
+            >My profile</a
+          >
+        </nav>
+      </aside>
+      <div class="p-content">
+        <header class="p-top">
+          <label class="p-search"
+            ><svg
+              class="eit-icon"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="M21 21l-4.35-4.35"></path></svg
+            ><span class="eit-sr">Search</span><input type="search" placeholder="Search students, courses, payments"
+          /></label>
+          <div class="p-top-right">
+            <div class="eit-seg has-thumb" role="group" aria-label="Language">
+              <span class="eit-seg__thumb" aria-hidden="true" style="width: 52px; transform: translateX(4px)"></span
+              ><button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button
+              ><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button>
+            </div>
+            <a class="p-iconbtn" href="../notifications.html" aria-label="Notifications, 3 unread"
+              ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
+              ><span class="p-badge-count">3</span></a
+            ><a class="p-me" href="profile.html" style="text-decoration: none; border-radius: 12px"
+              ><span class="p-avatar">SS</span
+              ><span style="display: flex; flex-direction: column"
+                ><span class="p-me-name">Sharmin Sultana</span><span class="p-me-sub">Admin</span></span
+              ></a
+            >
+          </div>
+        </header>
+        <main class="p-main" style="max-width: 1360px" data-region="filtered">
+          <nav
+            aria-label="Breadcrumb"
+            class="p-row"
+            style="gap: 8px; font-size: 14px; color: var(--ink-3); flex-wrap: wrap"
+          >
+            <a class="p-link" href="courses.html" style="font-weight: 500">Courses &amp; batches</a
+            ><span aria-hidden="true">/</span
+            ><a class="p-link" href="courses.html" style="font-weight: 500">Review queue</a
+            ><span aria-hidden="true">/</span
+            ><span style="color: var(--ink-2)">Advanced WordPress Theme Development</span>
+          </nav>
+          <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
+            <div style="display: flex; flex-direction: column; gap: 6px">
+              <div class="p-row" style="gap: 12px; flex-wrap: wrap">
+                <h1 class="p-h1">Advanced WordPress Theme Development</h1>
+                <span class="eit-badge eit-badge--cyan">In review</span>
+              </div>
+              <span class="p-muted">Sent by Kamrul Hasan on 13 Oct · 4 modules · 24 lessons · 6 h 40 min of video</span>
+            </div>
+            <div class="p-row" style="flex-wrap: wrap">
+              <button class="p-ghostbtn" type="button">
+                <svg
+                  class="eit-icon"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  focusable="false"
+                  aria-hidden="true"
+                >
+                  <path d="M21 12a9 9 0 1 1-3-6.7L21 8"></path>
+                  <path d="M21 3v5h-5"></path></svg
+                >Send back to mentor</button
+              ><button type="button" class="eit-btn eit-btn--primary eit-btn--md">
+                <svg
+                  class="eit-icon eit-btn__lead"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  focusable="false"
+                  aria-hidden="true"
+                >
+                  <path d="M20 6L9 17l-5-5"></path></svg
+                ><span class="eit-btn__label">Publish course</span>
+              </button>
+            </div>
+          </div>
+          <div class="p-split">
+            <div style="flex: 1.4 1 560px; min-width: 0px; display: flex; flex-direction: column; gap: 24px">
+              <section
+                class="p-card"
+                aria-labelledby="check-title"
+                style="display: flex; flex-direction: column; gap: 14px"
+              >
+                <h2 id="check-title" class="p-h3">Before publishing</h2>
+                <ul
+                  style="
+                    list-style: none;
+                    margin: 0px;
+                    padding: 0px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    font-size: 14px;
+                  "
+                >
+                  <li class="p-row" style="gap: 10px">
+                    <span style="color: var(--success)"
+                      ><svg
+                        class="eit-icon"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        focusable="false"
+                        aria-hidden="true"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span
+                    >All 22 video lessons have a processed video
+                  </li>
+                  <li class="p-row" style="gap: 10px">
+                    <span style="color: var(--success)"
+                      ><svg
+                        class="eit-icon"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        focusable="false"
+                        aria-hidden="true"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span
+                    >Every module ends with a quiz or a project
+                  </li>
+                  <li class="p-row" style="gap: 10px">
+                    <span style="color: var(--success)"
+                      ><svg
+                        class="eit-icon"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        focusable="false"
+                        aria-hidden="true"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span
+                    >Lessons unlock in order, at 90% watched
+                  </li>
+                  <li class="p-row" style="gap: 10px">
+                    <span style="color: var(--warning)"
+                      ><svg
+                        class="eit-icon"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        focusable="false"
+                        aria-hidden="true"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 7.5v5"></path>
+                        <path d="M12 16h.01"></path></svg></span
+                    >2 lessons have no starter files<a class="p-link" href="#" style="margin-left: auto">Show</a>
+                  </li>
+                  <li class="p-row" style="gap: 10px">
+                    <span style="color: var(--warning)"
+                      ><svg
+                        class="eit-icon"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        focusable="false"
+                        aria-hidden="true"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 7.5v5"></path>
+                        <path d="M12 16h.01"></path></svg></span
+                    >No price set yet<span class="p-small" style="margin-left: auto">Set it on the right</span>
+                  </li>
+                </ul>
+              </section>
+              <section class="p-card p-card--flush" aria-labelledby="curr-title">
+                <div class="p-card-head" style="padding: 20px 24px 12px">
+                  <h2 id="curr-title" class="p-h3">Curriculum</h2>
+                  <span class="p-small">Watch any lesson as a student would</span>
+                </div>
+                <div style="padding: 0px 12px 12px; display: flex; flex-direction: column">
+                  <div style="border-top: 1px solid var(--line-soft); padding: 12px">
+                    <div class="p-row" style="justify-content: space-between; gap: 12px">
+                      <span class="p-row" style="gap: 10px"
+                        ><span class="p-mono" style="color: var(--cyan-ink)">01</span
+                        ><strong style="font-size: 15px">Theme architecture</strong></span
+                      ><span class="p-small">6 lessons · 1 h 42 min</span>
+                    </div>
+                    <ul
+                      style="
+                        list-style: none;
+                        margin: 10px 0px 0px;
+                        padding: 0px 0px 0px 34px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 2px;
+                      "
+                    >
+                      <li
+                        class="p-row"
+                        style="
+                          justify-content: space-between;
+                          min-height: 40px;
+                          font-size: 14px;
+                          color: var(--ink-2);
+                          gap: 12px;
+                        "
+                      >
+                        <span>Classic vs block themes</span
+                        ><span class="p-row" style="gap: 14px"
+                          ><span class="p-small">14:20</span><a class="p-link" href="#">Watch</a></span
+                        >
+                      </li>
+                      <li
+                        class="p-row"
+                        style="
+                          justify-content: space-between;
+                          min-height: 40px;
+                          font-size: 14px;
+                          color: var(--ink-2);
+                          gap: 12px;
+                        "
+                      >
+                        <span>theme.json in depth</span
+                        ><span class="p-row" style="gap: 14px"
+                          ><span class="p-small">21:05</span><a class="p-link" href="#">Watch</a></span
+                        >
+                      </li>
+                      <li
+                        class="p-row"
+                        style="
+                          justify-content: space-between;
+                          min-height: 40px;
+                          font-size: 14px;
+                          color: var(--ink-2);
+                          gap: 12px;
+                        "
+                      >
+                        <span>Template parts and patterns</span
+                        ><span class="p-row" style="gap: 14px"
+                          ><span class="p-small">18:40</span><a class="p-link" href="#">Watch</a></span
+                        >
+                      </li>
+                      <li
+                        class="p-row"
+                        style="
+                          justify-content: space-between;
+                          min-height: 40px;
+                          font-size: 14px;
+                          color: var(--ink-2);
+                          gap: 12px;
+                        "
+                      >
+                        <span>Child themes done right</span
+                        ><span class="p-row" style="gap: 14px"
+                          ><span class="p-small">16:12</span><a class="p-link" href="#">Watch</a></span
+                        >
+                      </li>
+                      <li
+                        class="p-row"
+                        style="
+                          justify-content: space-between;
+                          min-height: 40px;
+                          font-size: 14px;
+                          color: var(--ink-2);
+                          gap: 12px;
+                        "
+                      >
+                        <span>Module 1 quiz</span
+                        ><span class="p-row" style="gap: 14px"
+                          ><span class="p-small">8 questions</span><a class="p-link" href="#">Watch</a></span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div style="border-top: 1px solid var(--line-soft); padding: 12px">
+                    <div class="p-row" style="justify-content: space-between; gap: 12px">
+                      <span class="p-row" style="gap: 10px"
+                        ><span class="p-mono" style="color: var(--cyan-ink)">02</span
+                        ><strong style="font-size: 15px">Custom blocks</strong></span
+                      ><span class="p-small">7 lessons · 2 h 05 min</span>
+                    </div>
+                  </div>
+                  <div style="border-top: 1px solid var(--line-soft); padding: 12px">
+                    <div class="p-row" style="justify-content: space-between; gap: 12px">
+                      <span class="p-row" style="gap: 10px"
+                        ><span class="p-mono" style="color: var(--cyan-ink)">03</span
+                        ><strong style="font-size: 15px">Performance and security</strong></span
+                      ><span class="p-small">6 lessons · 1 h 38 min</span>
+                    </div>
+                  </div>
+                  <div style="border-top: 1px solid var(--line-soft); padding: 12px">
+                    <div class="p-row" style="justify-content: space-between; gap: 12px">
+                      <span class="p-row" style="gap: 10px"
+                        ><span class="p-mono" style="color: var(--cyan-ink)">04</span
+                        ><strong style="font-size: 15px">Shipping a client theme</strong></span
+                      ><span class="p-small">5 lessons · 1 h 15 min · final project</span>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div style="flex: 1 1 380px; min-width: 0px; display: flex; flex-direction: column; gap: 24px">
+              <section
+                class="p-card"
+                aria-labelledby="price-title"
+                style="display: flex; flex-direction: column; gap: 18px"
+              >
+                <div class="p-card-head">
+                  <h2 id="price-title" class="p-h3">Price &amp; installments</h2>
+                  <span class="p-small">Only admins see this</span>
+                </div>
+                <div class="eit-field">
+                  <label class="eit-field__label" for="eit-field-1">Track</label>
+                  <div class="eit-field__wrap">
+                    <select id="eit-field-1" name="track" class="eit-field__control eit-field__select">
+                      <option value="dev" selected="">Development</option>
+                      <option value="design">Design</option>
+                      <option value="marketing">Marketing</option>
+                      <option value="netsec">Networking &amp; Security</option></select
+                    ><svg
+                      class="eit-icon eit-field__chev"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <path d="M6 9l6 6 6-6"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  style="
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr));
+                    gap: 16px;
+                  "
+                >
+                  <div class="eit-field">
+                    <label class="eit-field__label" for="eit-field-2">Online fee</label>
+                    <div class="eit-field__wrap">
+                      <span class="eit-field__prefix" aria-hidden="true">৳</span
+                      ><input
+                        id="eit-field-2"
+                        name="online"
+                        type="text"
+                        class="eit-field__control"
+                        inputmode="numeric"
+                        value="12,000"
+                      />
+                    </div>
+                  </div>
+                  <div class="eit-field">
+                    <label class="eit-field__label" for="eit-field-3">Offline fee</label>
+                    <div class="eit-field__wrap">
+                      <span class="eit-field__prefix" aria-hidden="true">৳</span
+                      ><input
+                        id="eit-field-3"
+                        name="offline"
+                        type="text"
+                        class="eit-field__control"
+                        inputmode="numeric"
+                        value="18,000"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 8px">
+                  <span class="p-label" id="plan-label">Installment plan</span>
+                  <div class="p-seg" role="group" aria-labelledby="plan-label" style="align-self: flex-start">
+                    <button
+                      type="button"
+                      aria-pressed="false"
+                      style=""
+                      data-part-of="filtered"
+                      data-part="0"
+                      data-value="0"
+                    >
+                      Full only</button
+                    ><button
+                      type="button"
+                      aria-pressed="false"
+                      style=""
+                      data-part-of="filtered"
+                      data-part="0"
+                      data-value="1"
+                    >
+                      2 parts</button
+                    ><button
+                      type="button"
+                      aria-pressed="true"
+                      style="background: var(--surface-card); color: var(--ink); box-shadow: var(--shadow-sm)"
+                      data-part-of="filtered"
+                      data-part="0"
+                      data-value="2"
+                    >
+                      3 parts</button
+                    ><button
+                      type="button"
+                      aria-pressed="false"
+                      style=""
+                      data-part-of="filtered"
+                      data-part="0"
+                      data-value="3"
+                    >
+                      4 parts
+                    </button>
+                  </div>
+                  <span class="p-small">Offline: 3 × ৳6,000 · Online: 3 × ৳4,000 · one every 30 days</span>
+                </div>
+                <div class="p-row" style="justify-content: space-between; gap: 16px">
+                  <span style="display: flex; flex-direction: column"
+                    ><span id="web-label" style="font-size: 14px; font-weight: 600">List on the website</span
+                    ><span class="p-small">Course page goes live when published</span></span
+                  ><button
+                    type="button"
+                    class="p-switch"
+                    role="switch"
+                    aria-checked="true"
+                    aria-labelledby="web-label"
+                  ></button>
+                </div>
+              </section>
+              <section
+                class="p-card"
+                aria-labelledby="fb-title"
+                style="display: flex; flex-direction: column; gap: 10px"
+              >
+                <h2 id="fb-title" class="p-h3">Note to Kamrul</h2>
+                <label class="eit-sr" for="fb">Note to the mentor</label
+                ><textarea
+                  id="fb"
+                  class="p-textarea"
+                  placeholder="Required if you send it back. Say what needs to change."
+                  style="min-height: 100px"
+                ></textarea
+                ><span class="p-small"
+                  >Sent with the course if you send it back, or as a thank-you when you publish.</span
+                >
+              </section>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <template data-state="filtered:0" data-region="[data-region='filtered']"
+      ><main data-dc-tpl="75" class="p-main" style="max-width: 1360px" data-region="filtered">
+        <nav
+          aria-label="Breadcrumb"
+          class="p-row"
+          style="gap: 8px; font-size: 14px; color: var(--ink-3); flex-wrap: wrap"
+        >
+          <a class="p-link" href="courses.html" style="font-weight: 500">Courses &amp; batches</a
+          ><span aria-hidden="true">/</span
+          ><a class="p-link" href="courses.html" style="font-weight: 500">Review queue</a
+          ><span aria-hidden="true">/</span
+          ><span style="color: var(--ink-2)">Advanced WordPress Theme Development</span>
+        </nav>
+        <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
+          <div style="display: flex; flex-direction: column; gap: 6px">
+            <div class="p-row" style="gap: 12px; flex-wrap: wrap">
+              <h1 class="p-h1">Advanced WordPress Theme Development</h1>
+              <span class="eit-badge eit-badge--cyan">In review</span>
+            </div>
+            <span class="p-muted">Sent by Kamrul Hasan on 13 Oct · 4 modules · 24 lessons · 6 h 40 min of video</span>
+          </div>
+          <div class="p-row" style="flex-wrap: wrap">
+            <button class="p-ghostbtn" type="button">
+              <svg
+                class="eit-icon"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                focusable="false"
+                aria-hidden="true"
+              >
+                <path d="M21 12a9 9 0 1 1-3-6.7L21 8"></path>
+                <path d="M21 3v5h-5"></path></svg
+              >Send back to mentor</button
+            ><button type="button" class="eit-btn eit-btn--primary eit-btn--md">
+              <svg
+                class="eit-icon eit-btn__lead"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                focusable="false"
+                aria-hidden="true"
+              >
+                <path d="M20 6L9 17l-5-5"></path></svg
+              ><span class="eit-btn__label">Publish course</span>
+            </button>
+          </div>
+        </div>
+        <div class="p-split">
+          <div style="flex: 1.4 1 560px; min-width: 0px; display: flex; flex-direction: column; gap: 24px">
+            <section
+              class="p-card"
+              aria-labelledby="check-title"
+              style="display: flex; flex-direction: column; gap: 14px"
+            >
+              <h2 id="check-title" class="p-h3">Before publishing</h2>
+              <ul
+                style="
+                  list-style: none;
+                  margin: 0px;
+                  padding: 0px;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 10px;
+                  font-size: 14px;
+                "
+              >
+                <li class="p-row" style="gap: 10px">
+                  <span style="color: var(--success)"
+                    ><svg
+                      class="eit-icon"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span
+                  >All 22 video lessons have a processed video
+                </li>
+                <li class="p-row" style="gap: 10px">
+                  <span style="color: var(--success)"
+                    ><svg
+                      class="eit-icon"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span
+                  >Every module ends with a quiz or a project
+                </li>
+                <li class="p-row" style="gap: 10px">
+                  <span style="color: var(--success)"
+                    ><svg
+                      class="eit-icon"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span
+                  >Lessons unlock in order, at 90% watched
+                </li>
+                <li class="p-row" style="gap: 10px">
+                  <span style="color: var(--warning)"
+                    ><svg
+                      class="eit-icon"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M12 7.5v5"></path>
+                      <path d="M12 16h.01"></path></svg></span
+                  >2 lessons have no starter files<a class="p-link" href="#" style="margin-left: auto">Show</a>
+                </li>
+                <li class="p-row" style="gap: 10px">
+                  <span style="color: var(--warning)"
+                    ><svg
+                      class="eit-icon"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M12 7.5v5"></path>
+                      <path d="M12 16h.01"></path></svg></span
+                  >No price set yet<span class="p-small" style="margin-left: auto">Set it on the right</span>
+                </li>
+              </ul>
+            </section>
+            <section class="p-card p-card--flush" aria-labelledby="curr-title">
+              <div class="p-card-head" style="padding: 20px 24px 12px">
+                <h2 id="curr-title" class="p-h3">Curriculum</h2>
+                <span class="p-small">Watch any lesson as a student would</span>
+              </div>
+              <div style="padding: 0px 12px 12px; display: flex; flex-direction: column">
+                <div style="border-top: 1px solid var(--line-soft); padding: 12px">
+                  <div class="p-row" style="justify-content: space-between; gap: 12px">
+                    <span class="p-row" style="gap: 10px"
+                      ><span class="p-mono" style="color: var(--cyan-ink)">01</span
+                      ><strong style="font-size: 15px">Theme architecture</strong></span
+                    ><span class="p-small">6 lessons · 1 h 42 min</span>
+                  </div>
+                  <ul
+                    style="
+                      list-style: none;
+                      margin: 10px 0px 0px;
+                      padding: 0px 0px 0px 34px;
+                      display: flex;
+                      flex-direction: column;
+                      gap: 2px;
+                    "
+                  >
+                    <li
+                      class="p-row"
+                      style="
+                        justify-content: space-between;
+                        min-height: 40px;
+                        font-size: 14px;
+                        color: var(--ink-2);
+                        gap: 12px;
+                      "
+                    >
+                      <span>Classic vs block themes</span
+                      ><span class="p-row" style="gap: 14px"
+                        ><span class="p-small">14:20</span><a class="p-link" href="#">Watch</a></span
+                      >
+                    </li>
+                    <li
+                      class="p-row"
+                      style="
+                        justify-content: space-between;
+                        min-height: 40px;
+                        font-size: 14px;
+                        color: var(--ink-2);
+                        gap: 12px;
+                      "
+                    >
+                      <span>theme.json in depth</span
+                      ><span class="p-row" style="gap: 14px"
+                        ><span class="p-small">21:05</span><a class="p-link" href="#">Watch</a></span
+                      >
+                    </li>
+                    <li
+                      class="p-row"
+                      style="
+                        justify-content: space-between;
+                        min-height: 40px;
+                        font-size: 14px;
+                        color: var(--ink-2);
+                        gap: 12px;
+                      "
+                    >
+                      <span>Template parts and patterns</span
+                      ><span class="p-row" style="gap: 14px"
+                        ><span class="p-small">18:40</span><a class="p-link" href="#">Watch</a></span
+                      >
+                    </li>
+                    <li
+                      class="p-row"
+                      style="
+                        justify-content: space-between;
+                        min-height: 40px;
+                        font-size: 14px;
+                        color: var(--ink-2);
+                        gap: 12px;
+                      "
+                    >
+                      <span>Child themes done right</span
+                      ><span class="p-row" style="gap: 14px"
+                        ><span class="p-small">16:12</span><a class="p-link" href="#">Watch</a></span
+                      >
+                    </li>
+                    <li
+                      class="p-row"
+                      style="
+                        justify-content: space-between;
+                        min-height: 40px;
+                        font-size: 14px;
+                        color: var(--ink-2);
+                        gap: 12px;
+                      "
+                    >
+                      <span>Module 1 quiz</span
+                      ><span class="p-row" style="gap: 14px"
+                        ><span class="p-small">8 questions</span><a class="p-link" href="#">Watch</a></span
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div style="border-top: 1px solid var(--line-soft); padding: 12px">
+                  <div class="p-row" style="justify-content: space-between; gap: 12px">
+                    <span class="p-row" style="gap: 10px"
+                      ><span class="p-mono" style="color: var(--cyan-ink)">02</span
+                      ><strong style="font-size: 15px">Custom blocks</strong></span
+                    ><span class="p-small">7 lessons · 2 h 05 min</span>
+                  </div>
+                </div>
+                <div style="border-top: 1px solid var(--line-soft); padding: 12px">
+                  <div class="p-row" style="justify-content: space-between; gap: 12px">
+                    <span class="p-row" style="gap: 10px"
+                      ><span class="p-mono" style="color: var(--cyan-ink)">03</span
+                      ><strong style="font-size: 15px">Performance and security</strong></span
+                    ><span class="p-small">6 lessons · 1 h 38 min</span>
+                  </div>
+                </div>
+                <div style="border-top: 1px solid var(--line-soft); padding: 12px">
+                  <div class="p-row" style="justify-content: space-between; gap: 12px">
+                    <span class="p-row" style="gap: 10px"
+                      ><span class="p-mono" style="color: var(--cyan-ink)">04</span
+                      ><strong style="font-size: 15px">Shipping a client theme</strong></span
+                    ><span class="p-small">5 lessons · 1 h 15 min · final project</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div style="flex: 1 1 380px; min-width: 0px; display: flex; flex-direction: column; gap: 24px">
+            <section
+              class="p-card"
+              aria-labelledby="price-title"
+              style="display: flex; flex-direction: column; gap: 18px"
+            >
+              <div class="p-card-head">
+                <h2 id="price-title" class="p-h3">Price &amp; installments</h2>
+                <span class="p-small">Only admins see this</span>
+              </div>
+              <div class="eit-field">
+                <label class="eit-field__label" for="eit-field-1">Track</label>
+                <div class="eit-field__wrap">
+                  <select id="eit-field-1" name="track" class="eit-field__control eit-field__select">
+                    <option value="dev" selected="">Development</option>
+                    <option value="design">Design</option>
+                    <option value="marketing">Marketing</option>
+                    <option value="netsec">Networking &amp; Security</option></select
+                  ><svg
+                    class="eit-icon eit-field__chev"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    focusable="false"
+                    aria-hidden="true"
+                  >
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </div>
+              </div>
+              <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 16px"
+              >
+                <div class="eit-field">
+                  <label class="eit-field__label" for="eit-field-2">Online fee</label>
+                  <div class="eit-field__wrap">
+                    <span class="eit-field__prefix" aria-hidden="true">৳</span
+                    ><input
+                      id="eit-field-2"
+                      name="online"
+                      type="text"
+                      class="eit-field__control"
+                      inputmode="numeric"
+                      value="12,000"
+                    />
+                  </div>
+                </div>
+                <div class="eit-field">
+                  <label class="eit-field__label" for="eit-field-3">Offline fee</label>
+                  <div class="eit-field__wrap">
+                    <span class="eit-field__prefix" aria-hidden="true">৳</span
+                    ><input
+                      id="eit-field-3"
+                      name="offline"
+                      type="text"
+                      class="eit-field__control"
+                      inputmode="numeric"
+                      value="18,000"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px">
+                <span class="p-label" id="plan-label">Installment plan</span>
+                <div class="p-seg" role="group" aria-labelledby="plan-label" style="align-self: flex-start">
+                  <button
+                    type="button"
+                    aria-pressed="true"
+                    style="background: var(--surface-card); color: var(--ink); box-shadow: var(--shadow-sm)"
+                    data-part-of="filtered"
+                    data-part="0"
+                    data-value="0"
+                  >
+                    Full only</button
+                  ><button
+                    type="button"
+                    aria-pressed="false"
+                    style=""
+                    data-part-of="filtered"
+                    data-part="0"
+                    data-value="1"
+                  >
+                    2 parts</button
+                  ><button
+                    type="button"
+                    aria-pressed="false"
+                    style=""
+                    data-part-of="filtered"
+                    data-part="0"
+                    data-value="2"
+                  >
+                    3 parts</button
+                  ><button
+                    type="button"
+                    aria-pressed="false"
+                    style=""
+                    data-part-of="filtered"
+                    data-part="0"
+                    data-value="3"
+                  >
+                    4 parts
+                  </button>
+                </div>
+                <span class="p-small">Students pay the full fee at checkout.</span>
+              </div>
+              <div class="p-row" style="justify-content: space-between; gap: 16px">
+                <span style="display: flex; flex-direction: column"
+                  ><span id="web-label" style="font-size: 14px; font-weight: 600">List on the website</span
+                  ><span class="p-small">Course page goes live when published</span></span
+                ><button
+                  type="button"
+                  class="p-switch"
+                  role="switch"
+                  aria-checked="true"
+                  aria-labelledby="web-label"
+                ></button>
+              </div>
+            </section>
+            <section class="p-card" aria-labelledby="fb-title" style="display: flex; flex-direction: column; gap: 10px">
+              <h2 id="fb-title" class="p-h3">Note to Kamrul</h2>
+              <label class="eit-sr" for="fb">Note to the mentor</label
+              ><textarea
+                id="fb"
+                class="p-textarea"
+                placeholder="Required if you send it back. Say what needs to change."
+                style="min-height: 100px"
+              ></textarea
+              ><span class="p-small"
+                >Sent with the course if you send it back, or as a thank-you when you publish.</span
+              >
+            </section>
+          </div>
+        </div>
+      </main></template
+    >
+    <template data-state="filtered:1" data-region="[data-region='filtered']"
+      ><main data-dc-tpl="75" class="p-main" style="max-width: 1360px" data-region="filtered">
+        <nav
+          aria-label="Breadcrumb"
+          class="p-row"
+          style="gap: 8px; font-size: 14px; color: var(--ink-3); flex-wrap: wrap"
+        >
+          <a class="p-link" href="courses.html" style="font-weight: 500">Courses &amp; batches</a
+          ><span aria-hidden="true">/</span
+          ><a class="p-link" href="courses.html" style="font-weight: 500">Review queue</a
+          ><span aria-hidden="true">/</span
+          ><span style="color: var(--ink-2)">Advanced WordPress Theme Development</span>
+        </nav>
+        <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
+          <div style="display: flex; flex-direction: column; gap: 6px">
+            <div class="p-row" style="gap: 12px; flex-wrap: wrap">
+              <h1 class="p-h1">Advanced WordPress Theme Development</h1>
+              <span class="eit-badge eit-badge--cyan">In review</span>
+            </div>
+            <span class="p-muted">Sent by Kamrul Hasan on 13 Oct · 4 modules · 24 lessons · 6 h 40 min of video</span>
+          </div>
+          <div class="p-row" style="flex-wrap: wrap">
+            <button class="p-ghostbtn" type="button">
+              <svg
+                class="eit-icon"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                focusable="false"
+                aria-hidden="true"
+              >
+                <path d="M21 12a9 9 0 1 1-3-6.7L21 8"></path>
+                <path d="M21 3v5h-5"></path></svg
+              >Send back to mentor</button
+            ><button type="button" class="eit-btn eit-btn--primary eit-btn--md">
+              <svg
+                class="eit-icon eit-btn__lead"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                focusable="false"
+                aria-hidden="true"
+              >
+                <path d="M20 6L9 17l-5-5"></path></svg
+              ><span class="eit-btn__label">Publish course</span>
+            </button>
+          </div>
+        </div>
+        <div class="p-split">
+          <div style="flex: 1.4 1 560px; min-width: 0px; display: flex; flex-direction: column; gap: 24px">
+            <section
+              class="p-card"
+              aria-labelledby="check-title"
+              style="display: flex; flex-direction: column; gap: 14px"
+            >
+              <h2 id="check-title" class="p-h3">Before publishing</h2>
+              <ul
+                style="
+                  list-style: none;
+                  margin: 0px;
+                  padding: 0px;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 10px;
+                  font-size: 14px;
+                "
+              >
+                <li class="p-row" style="gap: 10px">
+                  <span style="color: var(--success)"
+                    ><svg
+                      class="eit-icon"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span
+                  >All 22 video lessons have a processed video
+                </li>
+                <li class="p-row" style="gap: 10px">
+                  <span style="color: var(--success)"
+                    ><svg
+                      class="eit-icon"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span
+                  >Every module ends with a quiz or a project
+                </li>
+                <li class="p-row" style="gap: 10px">
+                  <span style="color: var(--success)"
+                    ><svg
+                      class="eit-icon"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span
+                  >Lessons unlock in order, at 90% watched
+                </li>
+                <li class="p-row" style="gap: 10px">
+                  <span style="color: var(--warning)"
+                    ><svg
+                      class="eit-icon"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M12 7.5v5"></path>
+                      <path d="M12 16h.01"></path></svg></span
+                  >2 lessons have no starter files<a class="p-link" href="#" style="margin-left: auto">Show</a>
+                </li>
+                <li class="p-row" style="gap: 10px">
+                  <span style="color: var(--warning)"
+                    ><svg
+                      class="eit-icon"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M12 7.5v5"></path>
+                      <path d="M12 16h.01"></path></svg></span
+                  >No price set yet<span class="p-small" style="margin-left: auto">Set it on the right</span>
+                </li>
+              </ul>
+            </section>
+            <section class="p-card p-card--flush" aria-labelledby="curr-title">
+              <div class="p-card-head" style="padding: 20px 24px 12px">
+                <h2 id="curr-title" class="p-h3">Curriculum</h2>
+                <span class="p-small">Watch any lesson as a student would</span>
+              </div>
+              <div style="padding: 0px 12px 12px; display: flex; flex-direction: column">
+                <div style="border-top: 1px solid var(--line-soft); padding: 12px">
+                  <div class="p-row" style="justify-content: space-between; gap: 12px">
+                    <span class="p-row" style="gap: 10px"
+                      ><span class="p-mono" style="color: var(--cyan-ink)">01</span
+                      ><strong style="font-size: 15px">Theme architecture</strong></span
+                    ><span class="p-small">6 lessons · 1 h 42 min</span>
+                  </div>
+                  <ul
+                    style="
+                      list-style: none;
+                      margin: 10px 0px 0px;
+                      padding: 0px 0px 0px 34px;
+                      display: flex;
+                      flex-direction: column;
+                      gap: 2px;
+                    "
+                  >
+                    <li
+                      class="p-row"
+                      style="
+                        justify-content: space-between;
+                        min-height: 40px;
+                        font-size: 14px;
+                        color: var(--ink-2);
+                        gap: 12px;
+                      "
+                    >
+                      <span>Classic vs block themes</span
+                      ><span class="p-row" style="gap: 14px"
+                        ><span class="p-small">14:20</span><a class="p-link" href="#">Watch</a></span
+                      >
+                    </li>
+                    <li
+                      class="p-row"
+                      style="
+                        justify-content: space-between;
+                        min-height: 40px;
+                        font-size: 14px;
+                        color: var(--ink-2);
+                        gap: 12px;
+                      "
+                    >
+                      <span>theme.json in depth</span
+                      ><span class="p-row" style="gap: 14px"
+                        ><span class="p-small">21:05</span><a class="p-link" href="#">Watch</a></span
+                      >
+                    </li>
+                    <li
+                      class="p-row"
+                      style="
+                        justify-content: space-between;
+                        min-height: 40px;
+                        font-size: 14px;
+                        color: var(--ink-2);
+                        gap: 12px;
+                      "
+                    >
+                      <span>Template parts and patterns</span
+                      ><span class="p-row" style="gap: 14px"
+                        ><span class="p-small">18:40</span><a class="p-link" href="#">Watch</a></span
+                      >
+                    </li>
+                    <li
+                      class="p-row"
+                      style="
+                        justify-content: space-between;
+                        min-height: 40px;
+                        font-size: 14px;
+                        color: var(--ink-2);
+                        gap: 12px;
+                      "
+                    >
+                      <span>Child themes done right</span
+                      ><span class="p-row" style="gap: 14px"
+                        ><span class="p-small">16:12</span><a class="p-link" href="#">Watch</a></span
+                      >
+                    </li>
+                    <li
+                      class="p-row"
+                      style="
+                        justify-content: space-between;
+                        min-height: 40px;
+                        font-size: 14px;
+                        color: var(--ink-2);
+                        gap: 12px;
+                      "
+                    >
+                      <span>Module 1 quiz</span
+                      ><span class="p-row" style="gap: 14px"
+                        ><span class="p-small">8 questions</span><a class="p-link" href="#">Watch</a></span
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div style="border-top: 1px solid var(--line-soft); padding: 12px">
+                  <div class="p-row" style="justify-content: space-between; gap: 12px">
+                    <span class="p-row" style="gap: 10px"
+                      ><span class="p-mono" style="color: var(--cyan-ink)">02</span
+                      ><strong style="font-size: 15px">Custom blocks</strong></span
+                    ><span class="p-small">7 lessons · 2 h 05 min</span>
+                  </div>
+                </div>
+                <div style="border-top: 1px solid var(--line-soft); padding: 12px">
+                  <div class="p-row" style="justify-content: space-between; gap: 12px">
+                    <span class="p-row" style="gap: 10px"
+                      ><span class="p-mono" style="color: var(--cyan-ink)">03</span
+                      ><strong style="font-size: 15px">Performance and security</strong></span
+                    ><span class="p-small">6 lessons · 1 h 38 min</span>
+                  </div>
+                </div>
+                <div style="border-top: 1px solid var(--line-soft); padding: 12px">
+                  <div class="p-row" style="justify-content: space-between; gap: 12px">
+                    <span class="p-row" style="gap: 10px"
+                      ><span class="p-mono" style="color: var(--cyan-ink)">04</span
+                      ><strong style="font-size: 15px">Shipping a client theme</strong></span
+                    ><span class="p-small">5 lessons · 1 h 15 min · final project</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div style="flex: 1 1 380px; min-width: 0px; display: flex; flex-direction: column; gap: 24px">
+            <section
+              class="p-card"
+              aria-labelledby="price-title"
+              style="display: flex; flex-direction: column; gap: 18px"
+            >
+              <div class="p-card-head">
+                <h2 id="price-title" class="p-h3">Price &amp; installments</h2>
+                <span class="p-small">Only admins see this</span>
+              </div>
+              <div class="eit-field">
+                <label class="eit-field__label" for="eit-field-1">Track</label>
+                <div class="eit-field__wrap">
+                  <select id="eit-field-1" name="track" class="eit-field__control eit-field__select">
+                    <option value="dev" selected="">Development</option>
+                    <option value="design">Design</option>
+                    <option value="marketing">Marketing</option>
+                    <option value="netsec">Networking &amp; Security</option></select
+                  ><svg
+                    class="eit-icon eit-field__chev"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    focusable="false"
+                    aria-hidden="true"
+                  >
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </div>
+              </div>
+              <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 16px"
+              >
+                <div class="eit-field">
+                  <label class="eit-field__label" for="eit-field-2">Online fee</label>
+                  <div class="eit-field__wrap">
+                    <span class="eit-field__prefix" aria-hidden="true">৳</span
+                    ><input
+                      id="eit-field-2"
+                      name="online"
+                      type="text"
+                      class="eit-field__control"
+                      inputmode="numeric"
+                      value="12,000"
+                    />
+                  </div>
+                </div>
+                <div class="eit-field">
+                  <label class="eit-field__label" for="eit-field-3">Offline fee</label>
+                  <div class="eit-field__wrap">
+                    <span class="eit-field__prefix" aria-hidden="true">৳</span
+                    ><input
+                      id="eit-field-3"
+                      name="offline"
+                      type="text"
+                      class="eit-field__control"
+                      inputmode="numeric"
+                      value="18,000"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px">
+                <span class="p-label" id="plan-label">Installment plan</span>
+                <div class="p-seg" role="group" aria-labelledby="plan-label" style="align-self: flex-start">
+                  <button
+                    type="button"
+                    aria-pressed="false"
+                    style=""
+                    data-part-of="filtered"
+                    data-part="0"
+                    data-value="0"
+                  >
+                    Full only</button
+                  ><button
+                    type="button"
+                    aria-pressed="true"
+                    style="background: var(--surface-card); color: var(--ink); box-shadow: var(--shadow-sm)"
+                    data-part-of="filtered"
+                    data-part="0"
+                    data-value="1"
+                  >
+                    2 parts</button
+                  ><button
+                    type="button"
+                    aria-pressed="false"
+                    style=""
+                    data-part-of="filtered"
+                    data-part="0"
+                    data-value="2"
+                  >
+                    3 parts</button
+                  ><button
+                    type="button"
+                    aria-pressed="false"
+                    style=""
+                    data-part-of="filtered"
+                    data-part="0"
+                    data-value="3"
+                  >
+                    4 parts
+                  </button>
+                </div>
+                <span class="p-small">Offline: 2 × ৳9,000 · Online: 2 × ৳6,000 · one every 30 days</span>
+              </div>
+              <div class="p-row" style="justify-content: space-between; gap: 16px">
+                <span style="display: flex; flex-direction: column"
+                  ><span id="web-label" style="font-size: 14px; font-weight: 600">List on the website</span
+                  ><span class="p-small">Course page goes live when published</span></span
+                ><button
+                  type="button"
+                  class="p-switch"
+                  role="switch"
+                  aria-checked="true"
+                  aria-labelledby="web-label"
+                ></button>
+              </div>
+            </section>
+            <section class="p-card" aria-labelledby="fb-title" style="display: flex; flex-direction: column; gap: 10px">
+              <h2 id="fb-title" class="p-h3">Note to Kamrul</h2>
+              <label class="eit-sr" for="fb">Note to the mentor</label
+              ><textarea
+                id="fb"
+                class="p-textarea"
+                placeholder="Required if you send it back. Say what needs to change."
+                style="min-height: 100px"
+              ></textarea
+              ><span class="p-small"
+                >Sent with the course if you send it back, or as a thank-you when you publish.</span
+              >
+            </section>
+          </div>
+        </div>
+      </main></template
+    >
+    <template data-state="filtered:2" data-region="[data-region='filtered']"
+      ><main data-dc-tpl="75" class="p-main" style="max-width: 1360px" data-region="filtered">
+        <nav
+          aria-label="Breadcrumb"
+          class="p-row"
+          style="gap: 8px; font-size: 14px; color: var(--ink-3); flex-wrap: wrap"
+        >
+          <a class="p-link" href="courses.html" style="font-weight: 500">Courses &amp; batches</a
+          ><span aria-hidden="true">/</span
+          ><a class="p-link" href="courses.html" style="font-weight: 500">Review queue</a
+          ><span aria-hidden="true">/</span
+          ><span style="color: var(--ink-2)">Advanced WordPress Theme Development</span>
+        </nav>
+        <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
+          <div style="display: flex; flex-direction: column; gap: 6px">
+            <div class="p-row" style="gap: 12px; flex-wrap: wrap">
+              <h1 class="p-h1">Advanced WordPress Theme Development</h1>
+              <span class="eit-badge eit-badge--cyan">In review</span>
+            </div>
+            <span class="p-muted">Sent by Kamrul Hasan on 13 Oct · 4 modules · 24 lessons · 6 h 40 min of video</span>
+          </div>
+          <div class="p-row" style="flex-wrap: wrap">
+            <button class="p-ghostbtn" type="button">
+              <svg
+                class="eit-icon"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                focusable="false"
+                aria-hidden="true"
+              >
+                <path d="M21 12a9 9 0 1 1-3-6.7L21 8"></path>
+                <path d="M21 3v5h-5"></path></svg
+              >Send back to mentor</button
+            ><button type="button" class="eit-btn eit-btn--primary eit-btn--md">
+              <svg
+                class="eit-icon eit-btn__lead"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                focusable="false"
+                aria-hidden="true"
+              >
+                <path d="M20 6L9 17l-5-5"></path></svg
+              ><span class="eit-btn__label">Publish course</span>
+            </button>
+          </div>
+        </div>
+        <div class="p-split">
+          <div style="flex: 1.4 1 560px; min-width: 0px; display: flex; flex-direction: column; gap: 24px">
+            <section
+              class="p-card"
+              aria-labelledby="check-title"
+              style="display: flex; flex-direction: column; gap: 14px"
+            >
+              <h2 id="check-title" class="p-h3">Before publishing</h2>
+              <ul
+                style="
+                  list-style: none;
+                  margin: 0px;
+                  padding: 0px;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 10px;
+                  font-size: 14px;
+                "
+              >
+                <li class="p-row" style="gap: 10px">
+                  <span style="color: var(--success)"
+                    ><svg
+                      class="eit-icon"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span
+                  >All 22 video lessons have a processed video
+                </li>
+                <li class="p-row" style="gap: 10px">
+                  <span style="color: var(--success)"
+                    ><svg
+                      class="eit-icon"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span
+                  >Every module ends with a quiz or a project
+                </li>
+                <li class="p-row" style="gap: 10px">
+                  <span style="color: var(--success)"
+                    ><svg
+                      class="eit-icon"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span
+                  >Lessons unlock in order, at 90% watched
+                </li>
+                <li class="p-row" style="gap: 10px">
+                  <span style="color: var(--warning)"
+                    ><svg
+                      class="eit-icon"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M12 7.5v5"></path>
+                      <path d="M12 16h.01"></path></svg></span
+                  >2 lessons have no starter files<a class="p-link" href="#" style="margin-left: auto">Show</a>
+                </li>
+                <li class="p-row" style="gap: 10px">
+                  <span style="color: var(--warning)"
+                    ><svg
+                      class="eit-icon"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M12 7.5v5"></path>
+                      <path d="M12 16h.01"></path></svg></span
+                  >No price set yet<span class="p-small" style="margin-left: auto">Set it on the right</span>
+                </li>
+              </ul>
+            </section>
+            <section class="p-card p-card--flush" aria-labelledby="curr-title">
+              <div class="p-card-head" style="padding: 20px 24px 12px">
+                <h2 id="curr-title" class="p-h3">Curriculum</h2>
+                <span class="p-small">Watch any lesson as a student would</span>
+              </div>
+              <div style="padding: 0px 12px 12px; display: flex; flex-direction: column">
+                <div style="border-top: 1px solid var(--line-soft); padding: 12px">
+                  <div class="p-row" style="justify-content: space-between; gap: 12px">
+                    <span class="p-row" style="gap: 10px"
+                      ><span class="p-mono" style="color: var(--cyan-ink)">01</span
+                      ><strong style="font-size: 15px">Theme architecture</strong></span
+                    ><span class="p-small">6 lessons · 1 h 42 min</span>
+                  </div>
+                  <ul
+                    style="
+                      list-style: none;
+                      margin: 10px 0px 0px;
+                      padding: 0px 0px 0px 34px;
+                      display: flex;
+                      flex-direction: column;
+                      gap: 2px;
+                    "
+                  >
+                    <li
+                      class="p-row"
+                      style="
+                        justify-content: space-between;
+                        min-height: 40px;
+                        font-size: 14px;
+                        color: var(--ink-2);
+                        gap: 12px;
+                      "
+                    >
+                      <span>Classic vs block themes</span
+                      ><span class="p-row" style="gap: 14px"
+                        ><span class="p-small">14:20</span><a class="p-link" href="#">Watch</a></span
+                      >
+                    </li>
+                    <li
+                      class="p-row"
+                      style="
+                        justify-content: space-between;
+                        min-height: 40px;
+                        font-size: 14px;
+                        color: var(--ink-2);
+                        gap: 12px;
+                      "
+                    >
+                      <span>theme.json in depth</span
+                      ><span class="p-row" style="gap: 14px"
+                        ><span class="p-small">21:05</span><a class="p-link" href="#">Watch</a></span
+                      >
+                    </li>
+                    <li
+                      class="p-row"
+                      style="
+                        justify-content: space-between;
+                        min-height: 40px;
+                        font-size: 14px;
+                        color: var(--ink-2);
+                        gap: 12px;
+                      "
+                    >
+                      <span>Template parts and patterns</span
+                      ><span class="p-row" style="gap: 14px"
+                        ><span class="p-small">18:40</span><a class="p-link" href="#">Watch</a></span
+                      >
+                    </li>
+                    <li
+                      class="p-row"
+                      style="
+                        justify-content: space-between;
+                        min-height: 40px;
+                        font-size: 14px;
+                        color: var(--ink-2);
+                        gap: 12px;
+                      "
+                    >
+                      <span>Child themes done right</span
+                      ><span class="p-row" style="gap: 14px"
+                        ><span class="p-small">16:12</span><a class="p-link" href="#">Watch</a></span
+                      >
+                    </li>
+                    <li
+                      class="p-row"
+                      style="
+                        justify-content: space-between;
+                        min-height: 40px;
+                        font-size: 14px;
+                        color: var(--ink-2);
+                        gap: 12px;
+                      "
+                    >
+                      <span>Module 1 quiz</span
+                      ><span class="p-row" style="gap: 14px"
+                        ><span class="p-small">8 questions</span><a class="p-link" href="#">Watch</a></span
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div style="border-top: 1px solid var(--line-soft); padding: 12px">
+                  <div class="p-row" style="justify-content: space-between; gap: 12px">
+                    <span class="p-row" style="gap: 10px"
+                      ><span class="p-mono" style="color: var(--cyan-ink)">02</span
+                      ><strong style="font-size: 15px">Custom blocks</strong></span
+                    ><span class="p-small">7 lessons · 2 h 05 min</span>
+                  </div>
+                </div>
+                <div style="border-top: 1px solid var(--line-soft); padding: 12px">
+                  <div class="p-row" style="justify-content: space-between; gap: 12px">
+                    <span class="p-row" style="gap: 10px"
+                      ><span class="p-mono" style="color: var(--cyan-ink)">03</span
+                      ><strong style="font-size: 15px">Performance and security</strong></span
+                    ><span class="p-small">6 lessons · 1 h 38 min</span>
+                  </div>
+                </div>
+                <div style="border-top: 1px solid var(--line-soft); padding: 12px">
+                  <div class="p-row" style="justify-content: space-between; gap: 12px">
+                    <span class="p-row" style="gap: 10px"
+                      ><span class="p-mono" style="color: var(--cyan-ink)">04</span
+                      ><strong style="font-size: 15px">Shipping a client theme</strong></span
+                    ><span class="p-small">5 lessons · 1 h 15 min · final project</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div style="flex: 1 1 380px; min-width: 0px; display: flex; flex-direction: column; gap: 24px">
+            <section
+              class="p-card"
+              aria-labelledby="price-title"
+              style="display: flex; flex-direction: column; gap: 18px"
+            >
+              <div class="p-card-head">
+                <h2 id="price-title" class="p-h3">Price &amp; installments</h2>
+                <span class="p-small">Only admins see this</span>
+              </div>
+              <div class="eit-field">
+                <label class="eit-field__label" for="eit-field-1">Track</label>
+                <div class="eit-field__wrap">
+                  <select id="eit-field-1" name="track" class="eit-field__control eit-field__select">
+                    <option value="dev" selected="">Development</option>
+                    <option value="design">Design</option>
+                    <option value="marketing">Marketing</option>
+                    <option value="netsec">Networking &amp; Security</option></select
+                  ><svg
+                    class="eit-icon eit-field__chev"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    focusable="false"
+                    aria-hidden="true"
+                  >
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </div>
+              </div>
+              <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 16px"
+              >
+                <div class="eit-field">
+                  <label class="eit-field__label" for="eit-field-2">Online fee</label>
+                  <div class="eit-field__wrap">
+                    <span class="eit-field__prefix" aria-hidden="true">৳</span
+                    ><input
+                      id="eit-field-2"
+                      name="online"
+                      type="text"
+                      class="eit-field__control"
+                      inputmode="numeric"
+                      value="12,000"
+                    />
+                  </div>
+                </div>
+                <div class="eit-field">
+                  <label class="eit-field__label" for="eit-field-3">Offline fee</label>
+                  <div class="eit-field__wrap">
+                    <span class="eit-field__prefix" aria-hidden="true">৳</span
+                    ><input
+                      id="eit-field-3"
+                      name="offline"
+                      type="text"
+                      class="eit-field__control"
+                      inputmode="numeric"
+                      value="18,000"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px">
+                <span class="p-label" id="plan-label">Installment plan</span>
+                <div class="p-seg" role="group" aria-labelledby="plan-label" style="align-self: flex-start">
+                  <button
+                    type="button"
+                    aria-pressed="false"
+                    style=""
+                    data-part-of="filtered"
+                    data-part="0"
+                    data-value="0"
+                  >
+                    Full only</button
+                  ><button
+                    type="button"
+                    aria-pressed="false"
+                    style=""
+                    data-part-of="filtered"
+                    data-part="0"
+                    data-value="1"
+                  >
+                    2 parts</button
+                  ><button
+                    type="button"
+                    aria-pressed="true"
+                    style="background: var(--surface-card); color: var(--ink); box-shadow: var(--shadow-sm)"
+                    data-part-of="filtered"
+                    data-part="0"
+                    data-value="2"
+                  >
+                    3 parts</button
+                  ><button
+                    type="button"
+                    aria-pressed="false"
+                    style=""
+                    data-part-of="filtered"
+                    data-part="0"
+                    data-value="3"
+                  >
+                    4 parts
+                  </button>
+                </div>
+                <span class="p-small">Offline: 3 × ৳6,000 · Online: 3 × ৳4,000 · one every 30 days</span>
+              </div>
+              <div class="p-row" style="justify-content: space-between; gap: 16px">
+                <span style="display: flex; flex-direction: column"
+                  ><span id="web-label" style="font-size: 14px; font-weight: 600">List on the website</span
+                  ><span class="p-small">Course page goes live when published</span></span
+                ><button
+                  type="button"
+                  class="p-switch"
+                  role="switch"
+                  aria-checked="true"
+                  aria-labelledby="web-label"
+                ></button>
+              </div>
+            </section>
+            <section class="p-card" aria-labelledby="fb-title" style="display: flex; flex-direction: column; gap: 10px">
+              <h2 id="fb-title" class="p-h3">Note to Kamrul</h2>
+              <label class="eit-sr" for="fb">Note to the mentor</label
+              ><textarea
+                id="fb"
+                class="p-textarea"
+                placeholder="Required if you send it back. Say what needs to change."
+                style="min-height: 100px"
+              ></textarea
+              ><span class="p-small"
+                >Sent with the course if you send it back, or as a thank-you when you publish.</span
+              >
+            </section>
+          </div>
+        </div>
+      </main></template
+    >
+    <template data-state="filtered:3" data-region="[data-region='filtered']"
+      ><main data-dc-tpl="75" class="p-main" style="max-width: 1360px" data-region="filtered">
+        <nav
+          aria-label="Breadcrumb"
+          class="p-row"
+          style="gap: 8px; font-size: 14px; color: var(--ink-3); flex-wrap: wrap"
+        >
+          <a class="p-link" href="courses.html" style="font-weight: 500">Courses &amp; batches</a
+          ><span aria-hidden="true">/</span
+          ><a class="p-link" href="courses.html" style="font-weight: 500">Review queue</a
+          ><span aria-hidden="true">/</span
+          ><span style="color: var(--ink-2)">Advanced WordPress Theme Development</span>
+        </nav>
+        <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
+          <div style="display: flex; flex-direction: column; gap: 6px">
+            <div class="p-row" style="gap: 12px; flex-wrap: wrap">
+              <h1 class="p-h1">Advanced WordPress Theme Development</h1>
+              <span class="eit-badge eit-badge--cyan">In review</span>
+            </div>
+            <span class="p-muted">Sent by Kamrul Hasan on 13 Oct · 4 modules · 24 lessons · 6 h 40 min of video</span>
+          </div>
+          <div class="p-row" style="flex-wrap: wrap">
+            <button class="p-ghostbtn" type="button">
+              <svg
+                class="eit-icon"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                focusable="false"
+                aria-hidden="true"
+              >
+                <path d="M21 12a9 9 0 1 1-3-6.7L21 8"></path>
+                <path d="M21 3v5h-5"></path></svg
+              >Send back to mentor</button
+            ><button type="button" class="eit-btn eit-btn--primary eit-btn--md">
+              <svg
+                class="eit-icon eit-btn__lead"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                focusable="false"
+                aria-hidden="true"
+              >
+                <path d="M20 6L9 17l-5-5"></path></svg
+              ><span class="eit-btn__label">Publish course</span>
+            </button>
+          </div>
+        </div>
+        <div class="p-split">
+          <div style="flex: 1.4 1 560px; min-width: 0px; display: flex; flex-direction: column; gap: 24px">
+            <section
+              class="p-card"
+              aria-labelledby="check-title"
+              style="display: flex; flex-direction: column; gap: 14px"
+            >
+              <h2 id="check-title" class="p-h3">Before publishing</h2>
+              <ul
+                style="
+                  list-style: none;
+                  margin: 0px;
+                  padding: 0px;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 10px;
+                  font-size: 14px;
+                "
+              >
+                <li class="p-row" style="gap: 10px">
+                  <span style="color: var(--success)"
+                    ><svg
+                      class="eit-icon"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span
+                  >All 22 video lessons have a processed video
+                </li>
+                <li class="p-row" style="gap: 10px">
+                  <span style="color: var(--success)"
+                    ><svg
+                      class="eit-icon"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span
+                  >Every module ends with a quiz or a project
+                </li>
+                <li class="p-row" style="gap: 10px">
+                  <span style="color: var(--success)"
+                    ><svg
+                      class="eit-icon"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span
+                  >Lessons unlock in order, at 90% watched
+                </li>
+                <li class="p-row" style="gap: 10px">
+                  <span style="color: var(--warning)"
+                    ><svg
+                      class="eit-icon"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M12 7.5v5"></path>
+                      <path d="M12 16h.01"></path></svg></span
+                  >2 lessons have no starter files<a class="p-link" href="#" style="margin-left: auto">Show</a>
+                </li>
+                <li class="p-row" style="gap: 10px">
+                  <span style="color: var(--warning)"
+                    ><svg
+                      class="eit-icon"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M12 7.5v5"></path>
+                      <path d="M12 16h.01"></path></svg></span
+                  >No price set yet<span class="p-small" style="margin-left: auto">Set it on the right</span>
+                </li>
+              </ul>
+            </section>
+            <section class="p-card p-card--flush" aria-labelledby="curr-title">
+              <div class="p-card-head" style="padding: 20px 24px 12px">
+                <h2 id="curr-title" class="p-h3">Curriculum</h2>
+                <span class="p-small">Watch any lesson as a student would</span>
+              </div>
+              <div style="padding: 0px 12px 12px; display: flex; flex-direction: column">
+                <div style="border-top: 1px solid var(--line-soft); padding: 12px">
+                  <div class="p-row" style="justify-content: space-between; gap: 12px">
+                    <span class="p-row" style="gap: 10px"
+                      ><span class="p-mono" style="color: var(--cyan-ink)">01</span
+                      ><strong style="font-size: 15px">Theme architecture</strong></span
+                    ><span class="p-small">6 lessons · 1 h 42 min</span>
+                  </div>
+                  <ul
+                    style="
+                      list-style: none;
+                      margin: 10px 0px 0px;
+                      padding: 0px 0px 0px 34px;
+                      display: flex;
+                      flex-direction: column;
+                      gap: 2px;
+                    "
+                  >
+                    <li
+                      class="p-row"
+                      style="
+                        justify-content: space-between;
+                        min-height: 40px;
+                        font-size: 14px;
+                        color: var(--ink-2);
+                        gap: 12px;
+                      "
+                    >
+                      <span>Classic vs block themes</span
+                      ><span class="p-row" style="gap: 14px"
+                        ><span class="p-small">14:20</span><a class="p-link" href="#">Watch</a></span
+                      >
+                    </li>
+                    <li
+                      class="p-row"
+                      style="
+                        justify-content: space-between;
+                        min-height: 40px;
+                        font-size: 14px;
+                        color: var(--ink-2);
+                        gap: 12px;
+                      "
+                    >
+                      <span>theme.json in depth</span
+                      ><span class="p-row" style="gap: 14px"
+                        ><span class="p-small">21:05</span><a class="p-link" href="#">Watch</a></span
+                      >
+                    </li>
+                    <li
+                      class="p-row"
+                      style="
+                        justify-content: space-between;
+                        min-height: 40px;
+                        font-size: 14px;
+                        color: var(--ink-2);
+                        gap: 12px;
+                      "
+                    >
+                      <span>Template parts and patterns</span
+                      ><span class="p-row" style="gap: 14px"
+                        ><span class="p-small">18:40</span><a class="p-link" href="#">Watch</a></span
+                      >
+                    </li>
+                    <li
+                      class="p-row"
+                      style="
+                        justify-content: space-between;
+                        min-height: 40px;
+                        font-size: 14px;
+                        color: var(--ink-2);
+                        gap: 12px;
+                      "
+                    >
+                      <span>Child themes done right</span
+                      ><span class="p-row" style="gap: 14px"
+                        ><span class="p-small">16:12</span><a class="p-link" href="#">Watch</a></span
+                      >
+                    </li>
+                    <li
+                      class="p-row"
+                      style="
+                        justify-content: space-between;
+                        min-height: 40px;
+                        font-size: 14px;
+                        color: var(--ink-2);
+                        gap: 12px;
+                      "
+                    >
+                      <span>Module 1 quiz</span
+                      ><span class="p-row" style="gap: 14px"
+                        ><span class="p-small">8 questions</span><a class="p-link" href="#">Watch</a></span
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div style="border-top: 1px solid var(--line-soft); padding: 12px">
+                  <div class="p-row" style="justify-content: space-between; gap: 12px">
+                    <span class="p-row" style="gap: 10px"
+                      ><span class="p-mono" style="color: var(--cyan-ink)">02</span
+                      ><strong style="font-size: 15px">Custom blocks</strong></span
+                    ><span class="p-small">7 lessons · 2 h 05 min</span>
+                  </div>
+                </div>
+                <div style="border-top: 1px solid var(--line-soft); padding: 12px">
+                  <div class="p-row" style="justify-content: space-between; gap: 12px">
+                    <span class="p-row" style="gap: 10px"
+                      ><span class="p-mono" style="color: var(--cyan-ink)">03</span
+                      ><strong style="font-size: 15px">Performance and security</strong></span
+                    ><span class="p-small">6 lessons · 1 h 38 min</span>
+                  </div>
+                </div>
+                <div style="border-top: 1px solid var(--line-soft); padding: 12px">
+                  <div class="p-row" style="justify-content: space-between; gap: 12px">
+                    <span class="p-row" style="gap: 10px"
+                      ><span class="p-mono" style="color: var(--cyan-ink)">04</span
+                      ><strong style="font-size: 15px">Shipping a client theme</strong></span
+                    ><span class="p-small">5 lessons · 1 h 15 min · final project</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div style="flex: 1 1 380px; min-width: 0px; display: flex; flex-direction: column; gap: 24px">
+            <section
+              class="p-card"
+              aria-labelledby="price-title"
+              style="display: flex; flex-direction: column; gap: 18px"
+            >
+              <div class="p-card-head">
+                <h2 id="price-title" class="p-h3">Price &amp; installments</h2>
+                <span class="p-small">Only admins see this</span>
+              </div>
+              <div class="eit-field">
+                <label class="eit-field__label" for="eit-field-1">Track</label>
+                <div class="eit-field__wrap">
+                  <select id="eit-field-1" name="track" class="eit-field__control eit-field__select">
+                    <option value="dev" selected="">Development</option>
+                    <option value="design">Design</option>
+                    <option value="marketing">Marketing</option>
+                    <option value="netsec">Networking &amp; Security</option></select
+                  ><svg
+                    class="eit-icon eit-field__chev"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    focusable="false"
+                    aria-hidden="true"
+                  >
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </div>
+              </div>
+              <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 16px"
+              >
+                <div class="eit-field">
+                  <label class="eit-field__label" for="eit-field-2">Online fee</label>
+                  <div class="eit-field__wrap">
+                    <span class="eit-field__prefix" aria-hidden="true">৳</span
+                    ><input
+                      id="eit-field-2"
+                      name="online"
+                      type="text"
+                      class="eit-field__control"
+                      inputmode="numeric"
+                      value="12,000"
+                    />
+                  </div>
+                </div>
+                <div class="eit-field">
+                  <label class="eit-field__label" for="eit-field-3">Offline fee</label>
+                  <div class="eit-field__wrap">
+                    <span class="eit-field__prefix" aria-hidden="true">৳</span
+                    ><input
+                      id="eit-field-3"
+                      name="offline"
+                      type="text"
+                      class="eit-field__control"
+                      inputmode="numeric"
+                      value="18,000"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px">
+                <span class="p-label" id="plan-label">Installment plan</span>
+                <div class="p-seg" role="group" aria-labelledby="plan-label" style="align-self: flex-start">
+                  <button
+                    type="button"
+                    aria-pressed="false"
+                    style=""
+                    data-part-of="filtered"
+                    data-part="0"
+                    data-value="0"
+                  >
+                    Full only</button
+                  ><button
+                    type="button"
+                    aria-pressed="false"
+                    style=""
+                    data-part-of="filtered"
+                    data-part="0"
+                    data-value="1"
+                  >
+                    2 parts</button
+                  ><button
+                    type="button"
+                    aria-pressed="false"
+                    style=""
+                    data-part-of="filtered"
+                    data-part="0"
+                    data-value="2"
+                  >
+                    3 parts</button
+                  ><button
+                    type="button"
+                    aria-pressed="true"
+                    style="background: var(--surface-card); color: var(--ink); box-shadow: var(--shadow-sm)"
+                    data-part-of="filtered"
+                    data-part="0"
+                    data-value="3"
+                  >
+                    4 parts
+                  </button>
+                </div>
+                <span class="p-small">Offline: 4 × ৳4,500 · Online: 4 × ৳3,000 · one every 30 days</span>
+              </div>
+              <div class="p-row" style="justify-content: space-between; gap: 16px">
+                <span style="display: flex; flex-direction: column"
+                  ><span id="web-label" style="font-size: 14px; font-weight: 600">List on the website</span
+                  ><span class="p-small">Course page goes live when published</span></span
+                ><button
+                  type="button"
+                  class="p-switch"
+                  role="switch"
+                  aria-checked="true"
+                  aria-labelledby="web-label"
+                ></button>
+              </div>
+            </section>
+            <section class="p-card" aria-labelledby="fb-title" style="display: flex; flex-direction: column; gap: 10px">
+              <h2 id="fb-title" class="p-h3">Note to Kamrul</h2>
+              <label class="eit-sr" for="fb">Note to the mentor</label
+              ><textarea
+                id="fb"
+                class="p-textarea"
+                placeholder="Required if you send it back. Say what needs to change."
+                style="min-height: 100px"
+              ></textarea
+              ><span class="p-small"
+                >Sent with the course if you send it back, or as a thank-you when you publish.</span
+              >
+            </section>
+          </div>
+        </div>
+      </main></template
+    >
+  </body>
 </html>

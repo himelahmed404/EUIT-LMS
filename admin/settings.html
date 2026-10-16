@@ -1,18 +1,676 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Settings · European IT LMS</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
-<link rel="stylesheet" href="../assets/css/eit.css">
-<link rel="stylesheet" href="../assets/css/panel.css">
-<link rel="stylesheet" href="../assets/css/app.css">
-<script src="../assets/js/app.js" defer></script>
-</head>
-<body>
-<div class="p-shell"><aside class="p-side"><a class="p-brand" href="overview.html"><span class="p-brand-mark" aria-hidden="true"></span><span class="p-brand-text"><span class="p-brand-name">European IT</span><span class="p-brand-sub">INSTITUTE</span></span></a><nav class="p-nav" aria-label="Admin panel"><a href="overview.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1"></rect><rect x="14" y="3" width="7" height="5" rx="1"></rect><rect x="14" y="12" width="7" height="9" rx="1"></rect><rect x="3" y="16" width="7" height="5" rx="1"></rect></svg>Overview</a><span class="p-nav-label">Courses</span><a href="courses.html"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg>Courses &amp; batches<span class="p-count">3</span></a><div class="p-subnav"><a href="course-review.html">Review &amp; publish<span class="p-count">1</span></a><a href="batch-detail.html">Batch detail</a><a href="batch-edit.html">Create a batch</a></div><span class="p-nav-label">People</span><a href="students.html"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>Students &amp; payments</a><div class="p-subnav"><a href="student-record.html">Student record</a></div><a href="mentors.html"><svg class="eit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path></svg>Mentors</a><a href="roles.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>Roles &amp; access</a><span class="p-nav-label">Admissions</span><a href="leads.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"></path><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg>Seminar leads<span class="p-count">6</span></a><span class="p-nav-label">Account</span><a href="../notifications.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg>Notifications<span class="p-count">3</span></a><a href="settings.html" aria-current="page"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>Settings</a><a href="profile.html"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>My profile</a></nav></aside><div class="p-content"><header class="p-top"><label class="p-search"><svg class="eit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg><span class="eit-sr">Search</span><input type="search" placeholder="Search students, courses, payments"></label><div class="p-top-right"><div class="eit-seg has-thumb" role="group" aria-label="Language"><span class="eit-seg__thumb" aria-hidden="true" style="width: 52px; transform: translateX(4px);"></span><button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button></div><a class="p-iconbtn" href="../notifications.html" aria-label="Notifications, 3 unread"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg><span class="p-badge-count">3</span></a><a class="p-me" href="profile.html" style="text-decoration: none; border-radius: 12px;"><span class="p-avatar">SS</span><span style="display: flex; flex-direction: column;"><span class="p-me-name">Sharmin Sultana</span><span class="p-me-sub">Admin</span></span></a></div></header><main class="p-main" style="max-width: 1240px;"><div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px;"><h1 class="p-h1">Settings</h1><button type="button" class="eit-btn eit-btn--primary eit-btn--md"><svg class="eit-icon eit-btn__lead" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg><span class="eit-btn__label">Save changes</span></button></div><div class="p-split"><nav aria-label="Settings sections" class="p-nav" style="flex: 0 1 200px; display: flex; flex-direction: column; gap: 2px;"><a href="#pay" aria-current="page">Payments</a><a href="#access">Installments &amp; access</a><a href="#sms">SMS messages</a><a href="#learning">Learning defaults</a><a href="#team">Team &amp; roles</a></nav><div style="flex: 999 1 560px; min-width: 0px; display: flex; flex-direction: column; gap: 24px;"><section id="pay" class="p-card" aria-labelledby="pay-title" style="display: flex; flex-direction: column; gap: 16px;"><div class="p-card-head"><h2 id="pay-title" class="p-h3">Payments</h2><span class="eit-badge eit-badge--success">SSLCommerz connected</span></div><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 16px 20px;"><div class="eit-field"><label class="eit-field__label" for="eit-field-1">Store ID</label><div class="eit-field__wrap"><input id="eit-field-1" name="store" type="text" class="eit-field__control" value="europeanit_live"></div></div><div class="eit-field"><label class="eit-field__label" for="eit-field-2">Store password</label><div class="eit-field__wrap"><input id="eit-field-2" name="storepw" type="password" class="eit-field__control" aria-describedby="eit-field-2-note" value="••••••••••"></div><p id="eit-field-2-note" class="eit-field__note">Stored encrypted</p></div></div><div style="display: flex; flex-direction: column;"><div class="p-row" style="justify-content: space-between; gap: 16px; padding: 12px 0px; border-top: 1px solid var(--line-soft);"><span style="display: flex; flex-direction: column;"><span id="sw-bkash" style="font-size: 14px; font-weight: 600;">bKash</span><span class="p-small">Through SSLCommerz</span></span><button type="button" class="p-switch" role="switch" aria-checked="true" aria-labelledby="sw-bkash"></button></div><div class="p-row" style="justify-content: space-between; gap: 16px; padding: 12px 0px; border-top: 1px solid var(--line-soft);"><span style="display: flex; flex-direction: column;"><span id="sw-nagad" style="font-size: 14px; font-weight: 600;">Nagad</span><span class="p-small">Through SSLCommerz</span></span><button type="button" class="p-switch" role="switch" aria-checked="true" aria-labelledby="sw-nagad"></button></div><div class="p-row" style="justify-content: space-between; gap: 16px; padding: 12px 0px; border-top: 1px solid var(--line-soft);"><span style="display: flex; flex-direction: column;"><span id="sw-rocket" style="font-size: 14px; font-weight: 600;">Rocket</span><span class="p-small">Through SSLCommerz</span></span><button type="button" class="p-switch" role="switch" aria-checked="true" aria-labelledby="sw-rocket"></button></div><div class="p-row" style="justify-content: space-between; gap: 16px; padding: 12px 0px; border-top: 1px solid var(--line-soft);"><span style="display: flex; flex-direction: column;"><span id="sw-card" style="font-size: 14px; font-weight: 600;">Debit and credit cards</span><span class="p-small">Visa, Mastercard, Amex</span></span><button type="button" class="p-switch" role="switch" aria-checked="true" aria-labelledby="sw-card"></button></div><div class="p-row" style="justify-content: space-between; gap: 16px; padding: 12px 0px; border-top: 1px solid var(--line-soft);"><span style="display: flex; flex-direction: column;"><span id="sw-cash" style="font-size: 14px; font-weight: 600;">Cash at the campus office</span><span class="p-small">Staff record it on the student page</span></span><button type="button" class="p-switch" role="switch" aria-checked="true" aria-labelledby="sw-cash"></button></div></div></section><section id="access" class="p-card" aria-labelledby="acc-title" style="display: flex; flex-direction: column; gap: 16px;"><h2 id="acc-title" class="p-h3">Installments &amp; access</h2><div class="p-row" style="justify-content: space-between; gap: 16px;"><span style="display: flex; flex-direction: column;"><span id="pause-label" style="font-size: 14px; font-weight: 600;">Pause access when an installment is missed</span><span class="p-small">Progress is kept. Access comes back the moment they pay.</span></span><button type="button" class="p-switch" role="switch" aria-checked="true" aria-labelledby="pause-label" data-conceal="rv0"></button></div><div style="display: flex; flex-direction: column; gap: 16px;" id="rv0"><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 16px 20px;"><div class="eit-field"><label class="eit-field__label" for="eit-field-3">Pause after</label><div class="eit-field__wrap"><select id="eit-field-3" name="grace" class="eit-field__control eit-field__select"><option value="0">On the due date</option><option value="3">3 days late</option><option value="7" selected="">7 days late</option><option value="14">14 days late</option></select><svg class="eit-icon eit-field__chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></div></div><div class="eit-field"><label class="eit-field__label" for="eit-field-4">First reminder</label><div class="eit-field__wrap"><select id="eit-field-4" name="remind" class="eit-field__control eit-field__select"><option value="1">1 day before due</option><option value="3" selected="">3 days before due</option><option value="7">7 days before due</option></select><svg class="eit-icon eit-field__chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></div></div></div><fieldset style="border: 0px; margin: 0px; padding: 0px; display: flex; flex-direction: column; gap: 10px;"><legend class="p-label" style="margin-bottom: 8px;">What pauses</legend><label class="p-row" style="gap: 10px; font-size: 14px; min-height: 32px;"><input type="checkbox" checked="" style="width: 18px; height: 18px; margin: 0px; accent-color: rgb(10, 27, 44);">Lessons and class recordings</label><label class="p-row" style="gap: 10px; font-size: 14px; min-height: 32px;"><input type="checkbox" checked="" style="width: 18px; height: 18px; margin: 0px; accent-color: rgb(10, 27, 44);">Projects and quizzes</label><label class="p-row" style="gap: 10px; font-size: 14px; min-height: 32px;"><input type="checkbox" checked="" style="width: 18px; height: 18px; margin: 0px; accent-color: rgb(10, 27, 44);">Joining classes</label></fieldset></div></section><section id="sms" class="p-card" aria-labelledby="sms-title" style="display: flex; flex-direction: column; gap: 12px;"><div class="p-card-head"><h2 id="sms-title" class="p-h3">SMS messages</h2><span class="p-small">Provider: [SMS PROVIDER]</span></div><div style="display: flex; flex-direction: column;"><div class="p-row" style="justify-content: space-between; gap: 16px; padding: 12px 0px; border-top: 1px solid var(--line-soft);"><span style="display: flex; flex-direction: column;"><span id="sw-s1" style="font-size: 14px; font-weight: 600;">Installment reminder</span><span class="p-small">Sent before the due date</span></span><button type="button" class="p-switch" role="switch" aria-checked="true" aria-labelledby="sw-s1"></button></div><div class="p-row" style="justify-content: space-between; gap: 16px; padding: 12px 0px; border-top: 1px solid var(--line-soft);"><span style="display: flex; flex-direction: column;"><span id="sw-s2" style="font-size: 14px; font-weight: 600;">Access paused</span><span class="p-small">Sent when access pauses, with a payment link</span></span><button type="button" class="p-switch" role="switch" aria-checked="true" aria-labelledby="sw-s2"></button></div><div class="p-row" style="justify-content: space-between; gap: 16px; padding: 12px 0px; border-top: 1px solid var(--line-soft);"><span style="display: flex; flex-direction: column;"><span id="sw-s3" style="font-size: 14px; font-weight: 600;">Class recording is ready</span><span class="p-small">Sent to the batch after each upload</span></span><button type="button" class="p-switch" role="switch" aria-checked="true" aria-labelledby="sw-s3"></button></div><div class="p-row" style="justify-content: space-between; gap: 16px; padding: 12px 0px; border-top: 1px solid var(--line-soft);"><span style="display: flex; flex-direction: column;"><span id="sw-s4" style="font-size: 14px; font-weight: 600;">Class time or room changed</span><span class="p-small">Sent to the batch straight away</span></span><button type="button" class="p-switch" role="switch" aria-checked="true" aria-labelledby="sw-s4"></button></div><div class="p-row" style="justify-content: space-between; gap: 16px; padding: 12px 0px; border-top: 1px solid var(--line-soft);"><span style="display: flex; flex-direction: column;"><span id="sw-s5" style="font-size: 14px; font-weight: 600;">Project reviewed</span><span class="p-small">Students also see this in the panel</span></span><button type="button" class="p-switch" role="switch" aria-checked="false" aria-labelledby="sw-s5"></button></div></div></section><section id="learning" class="p-card" aria-labelledby="learn-title" style="display: flex; flex-direction: column; gap: 16px;"><div class="p-card-head"><h2 id="learn-title" class="p-h3">Learning defaults</h2><span class="p-small">Mentors can change these per lesson</span></div><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 16px 20px;"><div class="eit-field"><label class="eit-field__label" for="eit-field-5">Video counts as finished at</label><div class="eit-field__wrap"><select id="eit-field-5" name="watch" class="eit-field__control eit-field__select"><option value="80">80% watched</option><option value="90" selected="">90% watched</option><option value="100">100% watched</option></select><svg class="eit-icon eit-field__chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></div></div><div class="eit-field"><label class="eit-field__label" for="eit-field-6">Recording upload due</label><div class="eit-field__wrap"><select id="eit-field-6" name="recdue" class="eit-field__control eit-field__select"><option value="6">6 hours after class</option><option value="12" selected="">12 hours after class</option><option value="24">24 hours after class</option></select><svg class="eit-icon eit-field__chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></div></div></div></section><section id="team" class="p-card" aria-labelledby="team-title" style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px;"><span class="p-tile p-tile--ink" style="width: 48px; height: 48px; border-radius: 14px;"><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg></span><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px; min-width: 240px;"><h2 id="team-title" class="p-h3">Team &amp; roles</h2><span class="p-small">12 team members · 6 roles · 2 invites waiting. Invite people and choose what each role can see on the Roles &amp; access page.</span></span><a class="p-ghostbtn" href="roles.html">Open Roles &amp; access<svg class="eit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a></section></div></div></main></div></div>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Settings · European IT LMS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap"
+    />
+    <link rel="stylesheet" href="../assets/css/eit.css" />
+    <link rel="stylesheet" href="../assets/css/panel.css" />
+    <link rel="stylesheet" href="../assets/css/app.css" />
+    <script src="../assets/js/app.js" defer></script>
+  </head>
+  <body>
+    <div class="p-shell">
+      <aside class="p-side">
+        <a class="p-brand" href="overview.html"
+          ><span class="p-brand-mark" aria-hidden="true"></span
+          ><span class="p-brand-text"
+            ><span class="p-brand-name">European IT</span><span class="p-brand-sub">INSTITUTE</span></span
+          ></a
+        >
+        <nav class="p-nav" aria-label="Admin panel">
+          <a href="overview.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="9" rx="1"></rect>
+              <rect x="14" y="3" width="7" height="5" rx="1"></rect>
+              <rect x="14" y="12" width="7" height="9" rx="1"></rect>
+              <rect x="3" y="16" width="7" height="5" rx="1"></rect></svg
+            >Overview</a
+          ><span class="p-nav-label">Courses</span
+          ><a href="courses.html"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path>
+              <path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg
+            >Courses &amp; batches<span class="p-count">3</span></a
+          >
+          <div class="p-subnav">
+            <a href="course-review.html">Review &amp; publish<span class="p-count">1</span></a
+            ><a href="batch-detail.html">Batch detail</a><a href="batch-edit.html">Create a batch</a>
+          </div>
+          <span class="p-nav-label">People</span
+          ><a href="students.html"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg
+            >Students &amp; payments</a
+          >
+          <div class="p-subnav"><a href="student-record.html">Student record</a></div>
+          <a href="mentors.html"
+            ><svg
+              class="eit-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <rect x="2" y="7" width="20" height="14" rx="2"></rect>
+              <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path></svg
+            >Mentors</a
+          ><a href="roles.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+              ></path>
+              <path d="m9 12 2 2 4-4"></path></svg
+            >Roles &amp; access</a
+          ><span class="p-nav-label">Admissions</span
+          ><a href="leads.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m3 11 18-5v12L3 14v-3z"></path>
+              <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg
+            >Seminar leads<span class="p-count">6</span></a
+          ><span class="p-nav-label">Account</span
+          ><a href="../notifications.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+              <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
+            >Notifications<span class="p-count">3</span></a
+          ><a href="settings.html" aria-current="page"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
+              ></path>
+              <circle cx="12" cy="12" r="3"></circle></svg
+            >Settings</a
+          ><a href="profile.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle></svg
+            >My profile</a
+          >
+        </nav>
+      </aside>
+      <div class="p-content">
+        <header class="p-top">
+          <label class="p-search"
+            ><svg
+              class="eit-icon"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="M21 21l-4.35-4.35"></path></svg
+            ><span class="eit-sr">Search</span><input type="search" placeholder="Search students, courses, payments"
+          /></label>
+          <div class="p-top-right">
+            <div class="eit-seg has-thumb" role="group" aria-label="Language">
+              <span class="eit-seg__thumb" aria-hidden="true" style="width: 52px; transform: translateX(4px)"></span
+              ><button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button
+              ><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button>
+            </div>
+            <a class="p-iconbtn" href="../notifications.html" aria-label="Notifications, 3 unread"
+              ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
+              ><span class="p-badge-count">3</span></a
+            ><a class="p-me" href="profile.html" style="text-decoration: none; border-radius: 12px"
+              ><span class="p-avatar">SS</span
+              ><span style="display: flex; flex-direction: column"
+                ><span class="p-me-name">Sharmin Sultana</span><span class="p-me-sub">Admin</span></span
+              ></a
+            >
+          </div>
+        </header>
+        <main class="p-main" style="max-width: 1240px">
+          <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
+            <h1 class="p-h1">Settings</h1>
+            <button type="button" class="eit-btn eit-btn--primary eit-btn--md">
+              <svg
+                class="eit-icon eit-btn__lead"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                focusable="false"
+                aria-hidden="true"
+              >
+                <path d="M20 6L9 17l-5-5"></path></svg
+              ><span class="eit-btn__label">Save changes</span>
+            </button>
+          </div>
+          <div class="p-split">
+            <nav
+              aria-label="Settings sections"
+              class="p-nav"
+              style="flex: 0 1 200px; display: flex; flex-direction: column; gap: 2px"
+            >
+              <a href="#pay" aria-current="page">Payments</a><a href="#access">Installments &amp; access</a
+              ><a href="#sms">SMS messages</a><a href="#learning">Learning defaults</a
+              ><a href="#team">Team &amp; roles</a>
+            </nav>
+            <div style="flex: 999 1 560px; min-width: 0px; display: flex; flex-direction: column; gap: 24px">
+              <section
+                id="pay"
+                class="p-card"
+                aria-labelledby="pay-title"
+                style="display: flex; flex-direction: column; gap: 16px"
+              >
+                <div class="p-card-head">
+                  <h2 id="pay-title" class="p-h3">Payments</h2>
+                  <span class="eit-badge eit-badge--success">SSLCommerz connected</span>
+                </div>
+                <div
+                  style="
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+                    gap: 16px 20px;
+                  "
+                >
+                  <div class="eit-field">
+                    <label class="eit-field__label" for="eit-field-1">Store ID</label>
+                    <div class="eit-field__wrap">
+                      <input
+                        id="eit-field-1"
+                        name="store"
+                        type="text"
+                        class="eit-field__control"
+                        value="europeanit_live"
+                      />
+                    </div>
+                  </div>
+                  <div class="eit-field">
+                    <label class="eit-field__label" for="eit-field-2">Store password</label>
+                    <div class="eit-field__wrap">
+                      <input
+                        id="eit-field-2"
+                        name="storepw"
+                        type="password"
+                        class="eit-field__control"
+                        aria-describedby="eit-field-2-note"
+                        value="••••••••••"
+                      />
+                    </div>
+                    <p id="eit-field-2-note" class="eit-field__note">Stored encrypted</p>
+                  </div>
+                </div>
+                <div style="display: flex; flex-direction: column">
+                  <div
+                    class="p-row"
+                    style="
+                      justify-content: space-between;
+                      gap: 16px;
+                      padding: 12px 0px;
+                      border-top: 1px solid var(--line-soft);
+                    "
+                  >
+                    <span style="display: flex; flex-direction: column"
+                      ><span id="sw-bkash" style="font-size: 14px; font-weight: 600">bKash</span
+                      ><span class="p-small">Through SSLCommerz</span></span
+                    ><button
+                      type="button"
+                      class="p-switch"
+                      role="switch"
+                      aria-checked="true"
+                      aria-labelledby="sw-bkash"
+                    ></button>
+                  </div>
+                  <div
+                    class="p-row"
+                    style="
+                      justify-content: space-between;
+                      gap: 16px;
+                      padding: 12px 0px;
+                      border-top: 1px solid var(--line-soft);
+                    "
+                  >
+                    <span style="display: flex; flex-direction: column"
+                      ><span id="sw-nagad" style="font-size: 14px; font-weight: 600">Nagad</span
+                      ><span class="p-small">Through SSLCommerz</span></span
+                    ><button
+                      type="button"
+                      class="p-switch"
+                      role="switch"
+                      aria-checked="true"
+                      aria-labelledby="sw-nagad"
+                    ></button>
+                  </div>
+                  <div
+                    class="p-row"
+                    style="
+                      justify-content: space-between;
+                      gap: 16px;
+                      padding: 12px 0px;
+                      border-top: 1px solid var(--line-soft);
+                    "
+                  >
+                    <span style="display: flex; flex-direction: column"
+                      ><span id="sw-rocket" style="font-size: 14px; font-weight: 600">Rocket</span
+                      ><span class="p-small">Through SSLCommerz</span></span
+                    ><button
+                      type="button"
+                      class="p-switch"
+                      role="switch"
+                      aria-checked="true"
+                      aria-labelledby="sw-rocket"
+                    ></button>
+                  </div>
+                  <div
+                    class="p-row"
+                    style="
+                      justify-content: space-between;
+                      gap: 16px;
+                      padding: 12px 0px;
+                      border-top: 1px solid var(--line-soft);
+                    "
+                  >
+                    <span style="display: flex; flex-direction: column"
+                      ><span id="sw-card" style="font-size: 14px; font-weight: 600">Debit and credit cards</span
+                      ><span class="p-small">Visa, Mastercard, Amex</span></span
+                    ><button
+                      type="button"
+                      class="p-switch"
+                      role="switch"
+                      aria-checked="true"
+                      aria-labelledby="sw-card"
+                    ></button>
+                  </div>
+                  <div
+                    class="p-row"
+                    style="
+                      justify-content: space-between;
+                      gap: 16px;
+                      padding: 12px 0px;
+                      border-top: 1px solid var(--line-soft);
+                    "
+                  >
+                    <span style="display: flex; flex-direction: column"
+                      ><span id="sw-cash" style="font-size: 14px; font-weight: 600">Cash at the campus office</span
+                      ><span class="p-small">Staff record it on the student page</span></span
+                    ><button
+                      type="button"
+                      class="p-switch"
+                      role="switch"
+                      aria-checked="true"
+                      aria-labelledby="sw-cash"
+                    ></button>
+                  </div>
+                </div>
+              </section>
+              <section
+                id="access"
+                class="p-card"
+                aria-labelledby="acc-title"
+                style="display: flex; flex-direction: column; gap: 16px"
+              >
+                <h2 id="acc-title" class="p-h3">Installments &amp; access</h2>
+                <div class="p-row" style="justify-content: space-between; gap: 16px">
+                  <span style="display: flex; flex-direction: column"
+                    ><span id="pause-label" style="font-size: 14px; font-weight: 600"
+                      >Pause access when an installment is missed</span
+                    ><span class="p-small">Progress is kept. Access comes back the moment they pay.</span></span
+                  ><button
+                    type="button"
+                    class="p-switch"
+                    role="switch"
+                    aria-checked="true"
+                    aria-labelledby="pause-label"
+                    data-conceal="rv0"
+                  ></button>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 16px" id="rv0">
+                  <div
+                    style="
+                      display: grid;
+                      grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+                      gap: 16px 20px;
+                    "
+                  >
+                    <div class="eit-field">
+                      <label class="eit-field__label" for="eit-field-3">Pause after</label>
+                      <div class="eit-field__wrap">
+                        <select id="eit-field-3" name="grace" class="eit-field__control eit-field__select">
+                          <option value="0">On the due date</option>
+                          <option value="3">3 days late</option>
+                          <option value="7" selected="">7 days late</option>
+                          <option value="14">14 days late</option></select
+                        ><svg
+                          class="eit-icon eit-field__chev"
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          focusable="false"
+                          aria-hidden="true"
+                        >
+                          <path d="M6 9l6 6 6-6"></path>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="eit-field">
+                      <label class="eit-field__label" for="eit-field-4">First reminder</label>
+                      <div class="eit-field__wrap">
+                        <select id="eit-field-4" name="remind" class="eit-field__control eit-field__select">
+                          <option value="1">1 day before due</option>
+                          <option value="3" selected="">3 days before due</option>
+                          <option value="7">7 days before due</option></select
+                        ><svg
+                          class="eit-icon eit-field__chev"
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          focusable="false"
+                          aria-hidden="true"
+                        >
+                          <path d="M6 9l6 6 6-6"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <fieldset
+                    style="border: 0px; margin: 0px; padding: 0px; display: flex; flex-direction: column; gap: 10px"
+                  >
+                    <legend class="p-label" style="margin-bottom: 8px">What pauses</legend>
+                    <label class="p-row" style="gap: 10px; font-size: 14px; min-height: 32px"
+                      ><input
+                        type="checkbox"
+                        checked=""
+                        style="width: 18px; height: 18px; margin: 0px; accent-color: rgb(10, 27, 44)"
+                      />Lessons and class recordings</label
+                    ><label class="p-row" style="gap: 10px; font-size: 14px; min-height: 32px"
+                      ><input
+                        type="checkbox"
+                        checked=""
+                        style="width: 18px; height: 18px; margin: 0px; accent-color: rgb(10, 27, 44)"
+                      />Projects and quizzes</label
+                    ><label class="p-row" style="gap: 10px; font-size: 14px; min-height: 32px"
+                      ><input
+                        type="checkbox"
+                        checked=""
+                        style="width: 18px; height: 18px; margin: 0px; accent-color: rgb(10, 27, 44)"
+                      />Joining classes</label
+                    >
+                  </fieldset>
+                </div>
+              </section>
+              <section
+                id="sms"
+                class="p-card"
+                aria-labelledby="sms-title"
+                style="display: flex; flex-direction: column; gap: 12px"
+              >
+                <div class="p-card-head">
+                  <h2 id="sms-title" class="p-h3">SMS messages</h2>
+                  <span class="p-small">Provider: [SMS PROVIDER]</span>
+                </div>
+                <div style="display: flex; flex-direction: column">
+                  <div
+                    class="p-row"
+                    style="
+                      justify-content: space-between;
+                      gap: 16px;
+                      padding: 12px 0px;
+                      border-top: 1px solid var(--line-soft);
+                    "
+                  >
+                    <span style="display: flex; flex-direction: column"
+                      ><span id="sw-s1" style="font-size: 14px; font-weight: 600">Installment reminder</span
+                      ><span class="p-small">Sent before the due date</span></span
+                    ><button
+                      type="button"
+                      class="p-switch"
+                      role="switch"
+                      aria-checked="true"
+                      aria-labelledby="sw-s1"
+                    ></button>
+                  </div>
+                  <div
+                    class="p-row"
+                    style="
+                      justify-content: space-between;
+                      gap: 16px;
+                      padding: 12px 0px;
+                      border-top: 1px solid var(--line-soft);
+                    "
+                  >
+                    <span style="display: flex; flex-direction: column"
+                      ><span id="sw-s2" style="font-size: 14px; font-weight: 600">Access paused</span
+                      ><span class="p-small">Sent when access pauses, with a payment link</span></span
+                    ><button
+                      type="button"
+                      class="p-switch"
+                      role="switch"
+                      aria-checked="true"
+                      aria-labelledby="sw-s2"
+                    ></button>
+                  </div>
+                  <div
+                    class="p-row"
+                    style="
+                      justify-content: space-between;
+                      gap: 16px;
+                      padding: 12px 0px;
+                      border-top: 1px solid var(--line-soft);
+                    "
+                  >
+                    <span style="display: flex; flex-direction: column"
+                      ><span id="sw-s3" style="font-size: 14px; font-weight: 600">Class recording is ready</span
+                      ><span class="p-small">Sent to the batch after each upload</span></span
+                    ><button
+                      type="button"
+                      class="p-switch"
+                      role="switch"
+                      aria-checked="true"
+                      aria-labelledby="sw-s3"
+                    ></button>
+                  </div>
+                  <div
+                    class="p-row"
+                    style="
+                      justify-content: space-between;
+                      gap: 16px;
+                      padding: 12px 0px;
+                      border-top: 1px solid var(--line-soft);
+                    "
+                  >
+                    <span style="display: flex; flex-direction: column"
+                      ><span id="sw-s4" style="font-size: 14px; font-weight: 600">Class time or room changed</span
+                      ><span class="p-small">Sent to the batch straight away</span></span
+                    ><button
+                      type="button"
+                      class="p-switch"
+                      role="switch"
+                      aria-checked="true"
+                      aria-labelledby="sw-s4"
+                    ></button>
+                  </div>
+                  <div
+                    class="p-row"
+                    style="
+                      justify-content: space-between;
+                      gap: 16px;
+                      padding: 12px 0px;
+                      border-top: 1px solid var(--line-soft);
+                    "
+                  >
+                    <span style="display: flex; flex-direction: column"
+                      ><span id="sw-s5" style="font-size: 14px; font-weight: 600">Project reviewed</span
+                      ><span class="p-small">Students also see this in the panel</span></span
+                    ><button
+                      type="button"
+                      class="p-switch"
+                      role="switch"
+                      aria-checked="false"
+                      aria-labelledby="sw-s5"
+                    ></button>
+                  </div>
+                </div>
+              </section>
+              <section
+                id="learning"
+                class="p-card"
+                aria-labelledby="learn-title"
+                style="display: flex; flex-direction: column; gap: 16px"
+              >
+                <div class="p-card-head">
+                  <h2 id="learn-title" class="p-h3">Learning defaults</h2>
+                  <span class="p-small">Mentors can change these per lesson</span>
+                </div>
+                <div
+                  style="
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+                    gap: 16px 20px;
+                  "
+                >
+                  <div class="eit-field">
+                    <label class="eit-field__label" for="eit-field-5">Video counts as finished at</label>
+                    <div class="eit-field__wrap">
+                      <select id="eit-field-5" name="watch" class="eit-field__control eit-field__select">
+                        <option value="80">80% watched</option>
+                        <option value="90" selected="">90% watched</option>
+                        <option value="100">100% watched</option></select
+                      ><svg
+                        class="eit-icon eit-field__chev"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        focusable="false"
+                        aria-hidden="true"
+                      >
+                        <path d="M6 9l6 6 6-6"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="eit-field">
+                    <label class="eit-field__label" for="eit-field-6">Recording upload due</label>
+                    <div class="eit-field__wrap">
+                      <select id="eit-field-6" name="recdue" class="eit-field__control eit-field__select">
+                        <option value="6">6 hours after class</option>
+                        <option value="12" selected="">12 hours after class</option>
+                        <option value="24">24 hours after class</option></select
+                      ><svg
+                        class="eit-icon eit-field__chev"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        focusable="false"
+                        aria-hidden="true"
+                      >
+                        <path d="M6 9l6 6 6-6"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section
+                id="team"
+                class="p-card"
+                aria-labelledby="team-title"
+                style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px"
+              >
+                <span class="p-tile p-tile--ink" style="width: 48px; height: 48px; border-radius: 14px"
+                  ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                    ></path>
+                    <path d="m9 12 2 2 4-4"></path></svg></span
+                ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px; min-width: 240px"
+                  ><h2 id="team-title" class="p-h3">Team &amp; roles</h2>
+                  <span class="p-small"
+                    >12 team members · 6 roles · 2 invites waiting. Invite people and choose what each role can see on
+                    the Roles &amp; access page.</span
+                  ></span
+                ><a class="p-ghostbtn" href="roles.html"
+                  >Open Roles &amp; access<svg
+                    class="eit-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    focusable="false"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 12h14"></path>
+                    <path d="M13 6l6 6-6 6"></path></svg
+                ></a>
+              </section>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
 </html>
