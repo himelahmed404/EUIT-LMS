@@ -1309,6 +1309,22 @@ a.p-lift {
   background: var(--surface-card);
   box-shadow: var(--shadow-sm);
 }
+/* A count in a tab is a small chip that stands out from the tab bar, and from the open tab. */
+.p-tabs .p-pill {
+  min-width: 20px;
+  height: 20px !important;
+  padding: 0 6px;
+  justify-content: center;
+  background: var(--surface-card);
+  color: var(--ink-2);
+  font-size: 12px !important;
+  font-weight: 600;
+}
+.p-tabs [aria-selected="true"] .p-pill,
+.p-tabs a[aria-current="page"] .p-pill {
+  background: var(--cyan-soft);
+  color: var(--cyan-deep);
+}
 
 /* ---------- Tables ---------- */
 .p-scroll {
