@@ -122,6 +122,11 @@
               <circle cx="12" cy="8" r="6"></circle>
               <path d="M15.5 13.5L17 22l-5-3-5 3 1.5-8.5"></path></svg
             ><span class="p-nav-text">Certificates</span></a
+          ><a href="saved.html"
+            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z"></path>
+              <path d="M9 7h6"></path></svg
+            ><span class="p-nav-text">Saved &amp; notes</span></a
           ><span class="p-nav-label">Support</span
           ><a href="questions.html"
             ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -434,7 +439,26 @@
                 </div>
               </section>
               <div style="display: flex; flex-direction: column; gap: 6px">
-                <h1 class="p-h1" style="font-size: 26px">Building a custom header</h1>
+                <div class="p-row" style="justify-content: space-between; align-items: flex-start; gap: 12px">
+                  <h1 class="p-h1" style="font-size: 26px">Building a custom header</h1>
+                  <button type="button" class="p-ghostbtn cp-save" aria-pressed="true" aria-label="Save this lesson">
+                    <svg
+                      class="eit-icon"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <path d="M19 21l-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg
+                    ><span class="cp-on">Saved</span><span class="cp-off">Save</span>
+                  </button>
+                </div>
                 <span class="p-muted">18 min · Mentor: Kamrul Hasan · Last watched today</span>
               </div>
               <section
@@ -483,7 +507,16 @@
                   aria-controls="lp-ask"
                   tabindex="-1"
                 >
-                  Ask the mentor
+                  Ask the mentor</button
+                ><button
+                  type="button"
+                  role="tab"
+                  id="lt-notes"
+                  aria-selected="false"
+                  aria-controls="lp-notes"
+                  tabindex="-1"
+                >
+                  Notes <span class="p-pill" style="height: 22px; font-size: 12px">1</span>
                 </button>
               </div>
               <div
@@ -676,6 +709,45 @@
                         </p>
                       </div>
                     </div>
+                  </article>
+                </div>
+              </div>
+              <div
+                role="tabpanel"
+                id="lp-notes"
+                aria-labelledby="lt-notes"
+                hidden=""
+                style="display: flex; flex-direction: column; gap: 16px"
+              >
+                <form style="display: flex; flex-direction: column; gap: 10px" data-next="">
+                  <label class="p-label" for="note-text">Note at 11:36</label
+                  ><textarea
+                    id="note-text"
+                    class="p-textarea"
+                    style="min-height: 80px"
+                    placeholder="Only you see your notes. They're kept with the time in the video."
+                  ></textarea>
+                  <div class="p-row" style="justify-content: flex-end">
+                    <button
+                      type="submit"
+                      class="eit-btn eit-btn--primary eit-btn--md"
+                      data-toast="Note saved to Saved &amp; notes"
+                    >
+                      <span class="eit-btn__label">Save note</span>
+                    </button>
+                  </div>
+                </form>
+                <div style="display: flex; flex-direction: column; gap: 12px">
+                  <div class="p-row" style="justify-content: space-between; flex-wrap: wrap; gap: 8px">
+                    <span class="p-mono">Your notes on this lesson</span
+                    ><a class="p-link" href="saved.html">All your notes</a>
+                  </div>
+                  <article class="p-card" style="padding: 16px; box-shadow: none; background: var(--surface)">
+                    <span class="p-small">at 6:10 · today</span>
+                    <p class="p-body" style="margin: 4px 0 0; font-size: 14px">
+                      Register the menu in <code>functions.php</code> first, then call <code>wp_nav_menu()</code> in
+                      <code>header.php</code> with the same theme location.
+                    </p>
                   </article>
                 </div>
               </div>

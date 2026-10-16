@@ -12,7 +12,7 @@ Read this before you change a page, so you don't have to open all 49 to find you
 - [Demo people and data](#demo-people-and-data)
 - [Shared parts of every panel page](#shared-parts-of-every-panel-page)
 - [Public pages](#public-pages): log in, reset password, enroll, UI guide
-- [Student panel](#student-panel) (19 pages)
+- [Student panel](#student-panel) (20 pages)
 - [Mentor panel](#mentor-panel) (9 pages)
 - [Admin panel](#admin-panel) (16 pages, console look)
 - [Links that are still placeholders](#links-that-are-still-placeholders)
@@ -79,7 +79,7 @@ Fonts: Anek Bangla for text, JetBrains Mono for section labels, codes and the Ct
 Sidebar links per role:
 
 - **Student** (grouped like SchoolofGenZ's sidebar): **Learn:** Dashboard, My courses (`course-player.html`),
-  Quizzes, Projects, Schedule & recordings, Explore courses · **Progress:** Leaderboard, Certificates · **Support:** My questions,
+  Quizzes, Projects, Schedule & recordings, Explore courses · **Progress:** Leaderboard, Certificates, Saved & notes · **Support:** My questions,
   Payments, Help. Labels are `span.p-nav-label` inside the nav; the tablet rail shows a short rule between groups, and
   the phone More sheet repeats the labels. Profile is reached from the avatar.
 - **Mentor:** Dashboard · **Queues:** Reviews 5 (`review.html`), Student questions 3 (`questions.html`) ·
@@ -143,9 +143,10 @@ progress. Every card links to its page.
 
 ### `student/course-player.html` · Course player (My courses)
 
-Video area with locked skip-ahead, lesson title, "Class 13 opens when you finish this video" card.
-**Tabs:** Overview (what the lesson covers), Resources (2 downloads), Ask the mentor (question form, and
-the earlier question answered by Kamrul). Right column: course content by module. Modules 1–3 open and
+Video area with locked skip-ahead, lesson title with the Saved bookmark, "Class 13 opens when you finish this
+video" card. **Tabs:** Overview (what the lesson covers), Resources (2 downloads), Ask the mentor (question
+form, the waiting question and the one Kamrul answered, All your questions), Notes (Save note, the lesson's
+note, All your notes). Right column: course content by module. Modules 1–3 open and
 close (`button[aria-expanded]` + `data-panel`); 4 and 5 are locked. Placeholders: Download links, Previous lesson.
 
 ### `student/quizzes.html` · Quizzes
@@ -214,6 +215,14 @@ Earned certificate preview with **Copy link** (copies the verify URL) and **View
 Toolbar: Back to certificates, **Copy verify link**, **Download PDF** (opens the print dialog; the page
 prints on one A4 landscape sheet without the toolbar). The 1123 × 794 sheet scales down to fit narrow
 screens (`data-fit`). Placeholder: **[DIRECTOR NAME]**; the signatures and QR code are drawn stand-ins.
+
+### `student/saved.html` · Saved & notes
+
+Saved lessons (Class 12 and Class 10 of WordPress, Graphic Design Live 6) and notes with their time in the
+video (Class 12 at 6:10, Class 11 at 8:15, GD Live 7 at 40:12). Chips All / Saved lessons / Notes and a
+search box filter the cards (`data-list`, `data-search`); each card's bin removes it and moves the counts
+(`assets/js/pages/saved.js`, with a toast). The course player feeds it: the bookmark beside the lesson
+title (`aria-pressed`, Saved / Save) and the **Notes** tab (Save note, the lesson's note, All your notes).
 
 ### `student/questions.html` · My questions
 

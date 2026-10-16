@@ -339,7 +339,7 @@
 .p-nav {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
 }
 /* Group labels (Learn, Progress, Support), set like SchoolofGenZ's: small bold capitals. */
 .p-nav-label {
@@ -356,7 +356,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  min-height: 48px;
+  min-height: 44px;
   padding: 0 8px;
   border-radius: 14px;
   color: var(--ink-2);

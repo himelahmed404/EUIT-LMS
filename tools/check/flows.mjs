@@ -1,4 +1,4 @@
-// Click-throughs of the main journeys: log in as each role, reset a password, take a quiz, explore courses, my questions,
+// Click-throughs of the main journeys: log in as each role, reset a password, take a quiz, explore courses, my questions, saved & notes,
 // upload a recording, edit roles, enroll, notifications, the mentor panel (questions, the review queue, the to-do
 // list), dialogs and the admin console
 // (light by default, dark remembered, collapsed sidebar, phone drawer, account menu, Ctrl K, links that open a tab)
@@ -74,6 +74,23 @@ ok("my questions: shows all 3", (await qs()) === 3);
 await click(p.getByRole("button", { name: /^Waiting/ }));
 ok("my questions: Waiting shows the one Kamrul hasn't answered", (await qs()) === 1);
 ok("my questions: the count follows", (await p.locator("[data-list-shown]").textContent()) === "1");
+
+await go("student/saved.html");
+const svd = async () => p.locator("main [data-list-item]:visible").count();
+ok("saved: 3 lessons and 3 notes", (await svd()) === 6);
+await p.locator("main [data-search]").fill("contrast");
+await p.waitForTimeout(200);
+ok("saved: search finds the contrast note", (await svd()) === 1);
+await p.locator("main [data-search]").fill("");
+await click(p.getByRole("button", { name: "Delete the note on Colour and contrast" }));
+ok(
+  "saved: deleting a note removes it and moves the counts",
+  (await svd()) === 5 && (await p.locator('[data-filter="note"] .ex-n').textContent()) === "2",
+);
+await go("student/course-player.html");
+const save = btn("Save this lesson");
+await click(save);
+ok("course player: the bookmark unsaves the lesson", (await save.getAttribute("aria-pressed")) === "false");
 
 await go("mentor/schedule.html");
 await click(btn("Upload recording").first());

@@ -37,7 +37,7 @@ Run `npm run check` after any change; it must end with "Everything passed".
   unless the moon button picked dark) and the collapsed sidebar before the page paints.
 - `assets/js/app.js`: shared behaviour driven by ARIA attributes and `data-*` hooks. **No page-specific
   code here**; a page that needs its own logic gets `assets/js/pages/<page>.js` (help, notifications,
-  questions, review, announcements, coupons).
+  questions, review, announcements, coupons, saved).
 
 ## Rules when editing
 
