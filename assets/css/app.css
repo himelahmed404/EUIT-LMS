@@ -505,7 +505,8 @@ body.page-print {
 
 /* ---------- Student top bar: next-class strip and theme toggle ---------- */
 .p-next {
-  flex: 1 1 260px;
+  flex: 1 1 200px;
+  min-width: 0;
   max-width: 440px;
   display: flex;
   align-items: center;
@@ -560,6 +561,28 @@ body.page-print {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+/* Must live here: app.css loads after panel.css, so a bare display:flex would
+   undo panel's phone hide and force a two-row top bar under ~720px. */
+@media (max-width: 900px) {
+  .p-next {
+    flex-basis: 160px;
+    padding: 6px 12px;
+    gap: 8px;
+  }
+  .p-next-l {
+    display: none;
+  }
+}
+@media (max-width: 720px) {
+  .p-next {
+    display: none;
+  }
+  /* When utilities sit alone with the brand, keep one compact row. */
+  .p-top-right {
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+  }
 }
 .p-iconbtn .p-sun,
 html[data-theme="dark"] .p-iconbtn .p-moon {
