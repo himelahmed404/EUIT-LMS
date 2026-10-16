@@ -16,149 +16,222 @@
     <script src="../assets/js/app.js" defer></script>
   </head>
   <body class="page-print">
-    <div
-      style="
-        position: relative;
-        width: 1123px;
-        height: 794px;
-        box-sizing: border-box;
-        overflow: hidden;
-        background: rgb(255, 255, 255);
-        color: rgb(10, 27, 44);
-        font-family: Geist, &quot;Anek Bangla&quot;, system-ui, sans-serif;
-      "
-    >
-      <div
-        style="position: absolute; top: 0px; left: 0px; right: 0px; height: 14px; background: rgb(0, 174, 238)"
-      ></div>
-      <div style="position: absolute; inset: 32px; border: 1px solid rgb(201, 214, 224); border-radius: 4px"></div>
-      <svg
-        width="360"
-        height="360"
-        viewBox="0 0 360 360"
-        aria-hidden="true"
-        style="position: absolute; right: -120px; bottom: -120px"
+    <div class="cert-bar">
+      <a class="p-link" href="certificates.html"
+        ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M19 12H5M12 19l-7-7 7-7"></path></svg
+        >Back to certificates</a
       >
-        <circle cx="180" cy="180" r="150" fill="none" stroke="#E3F6FD" stroke-width="40"></circle>
-        <circle cx="180" cy="180" r="96" fill="none" stroke="#B5DDEE" stroke-width="2"></circle></svg
-      ><svg
-        width="200"
-        height="140"
-        viewBox="0 0 200 140"
-        aria-hidden="true"
-        style="position: absolute; left: 56px; bottom: 150px; opacity: 0.6"
-      >
-        <defs>
-          <pattern id="d" width="16" height="16" patternUnits="userSpaceOnUse">
-            <circle cx="2" cy="2" r="1.6" fill="#B5DDEE"></circle>
-          </pattern>
-        </defs>
-        <rect width="200" height="140" fill="url(#d)"></rect>
-      </svg>
-      <div
-        style="
-          position: absolute;
-          inset: 72px 80px 64px;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-        "
-      >
-        <div style="display: flex; justify-content: space-between; align-items: center">
-          <div style="display: flex; align-items: center; gap: 12px">
-            <span style="width: 40px; height: 40px; border-radius: 10px; background: rgb(0, 174, 238)"></span
-            ><span style="display: flex; flex-direction: column"
-              ><span style="font-size: 20px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.1"
-                >European IT</span
-              ><span
+      <div class="p-row" style="gap: 10px; flex-wrap: wrap">
+        <button type="button" class="p-ghostbtn" data-copy="https://europeanit-inst.com/verify/EIT-C-2026-0412">
+          <svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg
+          ><span>Copy verify link</span></button
+        ><button type="button" class="eit-btn eit-btn--primary eit-btn--md" data-print>
+          <svg
+            class="eit-icon eit-btn__lead"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            focusable="false"
+            aria-hidden="true"
+          >
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"></path></svg
+          ><span class="eit-btn__label">Download PDF</span>
+        </button>
+      </div>
+    </div>
+    <p class="cert-hint p-small">
+      Choose “Save as PDF” in the print window. The certificate prints on one A4 page, landscape.
+    </p>
+    <div class="cert-stage">
+      <div class="cert-fit" data-fit>
+        <div
+          class="cert-sheet"
+          style="
+            position: relative;
+            width: 1123px;
+            height: 794px;
+            box-sizing: border-box;
+            overflow: hidden;
+            background: rgb(255, 255, 255);
+            color: rgb(10, 27, 44);
+            font-family: Geist, &quot;Anek Bangla&quot;, system-ui, sans-serif;
+          "
+        >
+          <div
+            style="position: absolute; top: 0px; left: 0px; right: 0px; height: 14px; background: rgb(0, 174, 238)"
+          ></div>
+          <div style="position: absolute; inset: 32px; border: 1px solid rgb(201, 214, 224); border-radius: 4px"></div>
+          <svg
+            width="360"
+            height="360"
+            viewBox="0 0 360 360"
+            aria-hidden="true"
+            style="position: absolute; right: -120px; bottom: -120px"
+          >
+            <circle cx="180" cy="180" r="150" fill="none" stroke="#E3F6FD" stroke-width="40"></circle>
+            <circle cx="180" cy="180" r="96" fill="none" stroke="#B5DDEE" stroke-width="2"></circle></svg
+          ><svg
+            width="200"
+            height="140"
+            viewBox="0 0 200 140"
+            aria-hidden="true"
+            style="position: absolute; left: 56px; bottom: 150px; opacity: 0.6"
+          >
+            <defs>
+              <pattern id="d" width="16" height="16" patternUnits="userSpaceOnUse">
+                <circle cx="2" cy="2" r="1.6" fill="#B5DDEE"></circle>
+              </pattern>
+            </defs>
+            <rect width="200" height="140" fill="url(#d)"></rect>
+          </svg>
+          <div
+            style="
+              position: absolute;
+              inset: 72px 80px 64px;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+            "
+          >
+            <div style="display: flex; justify-content: space-between; align-items: center">
+              <div style="display: flex; align-items: center; gap: 12px">
+                <span style="width: 40px; height: 40px; border-radius: 10px; background: rgb(0, 174, 238)"></span
+                ><span style="display: flex; flex-direction: column"
+                  ><span style="font-size: 20px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.1"
+                    >European IT</span
+                  ><span
+                    style="
+                      font-family: &quot;Geist Mono&quot;, monospace;
+                      font-size: 12px;
+                      letter-spacing: 0.16em;
+                      color: rgb(91, 107, 123);
+                    "
+                    >INSTITUTE</span
+                  ></span
+                >
+              </div>
+              <div style="text-align: right; display: flex; flex-direction: column; gap: 2px">
+                <span
+                  style="
+                    font-family: &quot;Geist Mono&quot;, monospace;
+                    font-size: 12px;
+                    letter-spacing: 0.1em;
+                    color: rgb(91, 107, 123);
+                  "
+                  >CERTIFICATE ID</span
+                ><span style="font-family: &quot;Geist Mono&quot;, monospace; font-size: 15px; font-weight: 500"
+                  >EIT-C-2026-0412</span
+                >
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 14px; padding-left: 4px">
+              <span
                 style="
                   font-family: &quot;Geist Mono&quot;, monospace;
-                  font-size: 12px;
-                  letter-spacing: 0.16em;
-                  color: rgb(91, 107, 123);
+                  font-size: 15px;
+                  letter-spacing: 0.18em;
+                  color: rgb(0, 115, 158);
                 "
-                >INSTITUTE</span
-              ></span
-            >
-          </div>
-          <div style="text-align: right; display: flex; flex-direction: column; gap: 2px">
-            <span
-              style="
-                font-family: &quot;Geist Mono&quot;, monospace;
-                font-size: 12px;
-                letter-spacing: 0.1em;
-                color: rgb(91, 107, 123);
-              "
-              >CERTIFICATE ID</span
-            ><span style="font-family: &quot;Geist Mono&quot;, monospace; font-size: 15px; font-weight: 500"
-              >EIT-C-2026-0412</span
-            >
-          </div>
-        </div>
-        <div style="display: flex; flex-direction: column; gap: 14px; padding-left: 4px">
-          <span
-            style="
-              font-family: &quot;Geist Mono&quot;, monospace;
-              font-size: 15px;
-              letter-spacing: 0.18em;
-              color: rgb(0, 115, 158);
-            "
-            >CERTIFICATE OF COMPLETION</span
-          ><span style="font-size: 18px; color: rgb(59, 75, 92)">This certifies that</span
-          ><span
-            style="
-              font-size: 72px;
-              font-weight: 700;
-              letter-spacing: -0.035em;
-              line-height: 1.05;
-              align-self: flex-start;
-              box-shadow: rgba(0, 174, 238, 0.35) 0px -18px 0px inset;
-            "
-            >Nusrat Jahan</span
-          ><span style="font-size: 18px; color: rgb(59, 75, 92); margin-top: 6px">has completed the course</span
-          ><span style="font-size: 34px; font-weight: 700; letter-spacing: -0.02em">Digital Marketing Essentials</span
-          ><span style="font-size: 16px; color: rgb(59, 75, 92)"
-            >12 weeks · 36 hours of live classes · 2 projects approved by the mentor · completed 30 June 2026</span
-          >
-        </div>
-        <div style="display: flex; align-items: flex-end; gap: 56px">
-          <div style="display: flex; flex-direction: column; gap: 6px; width: 220px">
-            <span style="font-size: 22px; font-style: italic; color: rgb(59, 75, 92); height: 32px">[signature]</span
-            ><span style="height: 1px; background: rgb(10, 27, 44)"></span
-            ><strong style="font-size: 15px">[DIRECTOR NAME]</strong
-            ><span style="font-size: 13px; color: rgb(91, 107, 123)">Director, European IT Institute</span>
-          </div>
-          <div style="display: flex; flex-direction: column; gap: 6px; width: 220px">
-            <span style="font-size: 22px; font-style: italic; color: rgb(59, 75, 92); height: 32px">[signature]</span
-            ><span style="height: 1px; background: rgb(10, 27, 44)"></span
-            ><strong style="font-size: 15px">Imran Kabir</strong
-            ><span style="font-size: 13px; color: rgb(91, 107, 123)">Course mentor</span>
-          </div>
-          <div style="margin-left: auto; display: flex; align-items: center; gap: 16px">
-            <div style="display: flex; flex-direction: column; gap: 4px; text-align: right">
-              <span style="font-size: 13px; color: rgb(91, 107, 123)">Scan or visit to verify</span
-              ><span style="font-family: &quot;Geist Mono&quot;, monospace; font-size: 13px; font-weight: 500"
-                >europeanit-inst.com/verify</span
-              ><span style="font-family: &quot;Geist Mono&quot;, monospace; font-size: 13px; color: rgb(0, 115, 158)"
-                >EIT-C-2026-0412</span
+                >CERTIFICATE OF COMPLETION</span
+              ><span style="font-size: 18px; color: rgb(59, 75, 92)">This certifies that</span
+              ><span
+                style="
+                  font-size: 72px;
+                  font-weight: 700;
+                  letter-spacing: -0.035em;
+                  line-height: 1.05;
+                  align-self: flex-start;
+                  box-shadow: rgba(0, 174, 238, 0.35) 0px -18px 0px inset;
+                "
+                >Nusrat Jahan</span
+              ><span style="font-size: 18px; color: rgb(59, 75, 92); margin-top: 6px">has completed the course</span
+              ><span style="font-size: 34px; font-weight: 700; letter-spacing: -0.02em"
+                >Digital Marketing Essentials</span
+              ><span style="font-size: 16px; color: rgb(59, 75, 92)"
+                >12 weeks · 36 hours of live classes · 2 projects approved by the mentor · completed 30 June 2026</span
               >
             </div>
-            <div
-              style="
-                width: 104px;
-                height: 104px;
-                border: 1px solid rgb(201, 214, 224);
-                border-radius: 8px;
-                display: grid;
-                place-items: center;
-                background: rgb(220, 239, 247);
-                color: rgb(0, 88, 122);
-                font-family: &quot;Geist Mono&quot;, monospace;
-                font-size: 12px;
-                letter-spacing: 0.08em;
-              "
-            >
-              QR CODE
+            <div style="display: flex; align-items: flex-end; gap: 56px">
+              <div style="display: flex; flex-direction: column; gap: 6px; width: 220px">
+                <span style="height: 32px" aria-hidden="true"
+                  ><svg width="150" height="32" viewBox="0 0 150 32" aria-hidden="true" style="display: block">
+                    <path
+                      d="M4 24c10-14 18-18 22-12s-6 14 2 10 12-16 18-14-4 16 4 14 10-10 16-12 6 8 12 6 14-6 22-8 10 2 16 0 14-4 30-6"
+                      fill="none"
+                      stroke="rgb(59, 75, 92)"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path></svg></span
+                ><span style="height: 1px; background: rgb(10, 27, 44)"></span
+                ><strong style="font-size: 15px">[DIRECTOR NAME]</strong
+                ><span style="font-size: 13px; color: rgb(91, 107, 123)">Director, European IT Institute</span>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 6px; width: 220px">
+                <span style="height: 32px" aria-hidden="true"
+                  ><svg width="150" height="32" viewBox="0 0 150 32" aria-hidden="true" style="display: block">
+                    <path
+                      d="M4 24c10-14 18-18 22-12s-6 14 2 10 12-16 18-14-4 16 4 14 10-10 16-12 6 8 12 6 14-6 22-8 10 2 16 0 14-4 30-6"
+                      fill="none"
+                      stroke="rgb(59, 75, 92)"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path></svg></span
+                ><span style="height: 1px; background: rgb(10, 27, 44)"></span
+                ><strong style="font-size: 15px">Imran Kabir</strong
+                ><span style="font-size: 13px; color: rgb(91, 107, 123)">Course mentor</span>
+              </div>
+              <div style="margin-left: auto; display: flex; align-items: center; gap: 16px">
+                <div style="display: flex; flex-direction: column; gap: 4px; text-align: right">
+                  <span style="font-size: 13px; color: rgb(91, 107, 123)">Scan or visit to verify</span
+                  ><span style="font-family: &quot;Geist Mono&quot;, monospace; font-size: 13px; font-weight: 500"
+                    >europeanit-inst.com/verify</span
+                  ><span
+                    style="font-family: &quot;Geist Mono&quot;, monospace; font-size: 13px; color: rgb(0, 115, 158)"
+                    >EIT-C-2026-0412</span
+                  >
+                </div>
+                <div
+                  style="
+                    width: 104px;
+                    height: 104px;
+                    border: 1px solid rgb(201, 214, 224);
+                    border-radius: 8px;
+                    display: grid;
+                    place-items: center;
+                    background: rgb(255, 255, 255);
+                    color: rgb(0, 88, 122);
+                    font-family: &quot;Geist Mono&quot;, monospace;
+                    font-size: 12px;
+                    letter-spacing: 0.08em;
+                  "
+                >
+                  <svg
+                    width="72"
+                    height="72"
+                    viewBox="0 0 29 29"
+                    role="img"
+                    aria-label="QR code for the verify link"
+                    shape-rendering="crispEdges"
+                  >
+                    <path fill="rgb(10, 27, 44)" d="M0 0h7v7H0zM22 0h7v7h-7zM0 22h7v7H0z"></path>
+                    <path fill="rgb(255, 255, 255)" d="M1 1h5v5H1zM23 1h5v5h-5zM1 23h5v5H1z"></path>
+                    <path
+                      fill="rgb(10, 27, 44)"
+                      d="M2 2h3v3H2zM24 2h3v3h-3zM2 24h3v3H2zM9 1h2v2H9zM13 0h1v4h-1zM16 2h3v1h-3zM9 5h4v1H9zM15 5h2v2h-2zM19 4h1v3h-1zM8 8h3v2H8zM13 8h2v1h-2zM17 9h4v1h-4zM23 9h2v3h-2zM27 8h2v2h-2zM0 9h2v2H0zM4 10h3v1H4zM10 11h2v3h-2zM14 11h3v2h-3zM19 12h2v2h-2zM25 13h4v1h-4zM1 13h3v2H1zM6 13h2v3H6zM12 15h4v1h-4zM17 15h1v4h-1zM21 15h3v2h-3zM27 16h2v3h-2zM0 17h3v1H0zM8 17h3v2H8zM13 18h3v1h-3zM20 19h4v1h-4zM9 21h2v3H9zM12 22h4v2h-4zM18 21h2v2h-2zM22 22h3v1h-3zM26 21h3v2h-3zM9 26h3v2H9zM14 25h2v4h-2zM18 25h4v1h-4zM23 25h1v3h-1zM26 26h3v3h-3zM18 27h3v2h-3z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
             </div>
           </div>
         </div>

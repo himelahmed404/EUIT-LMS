@@ -28,8 +28,13 @@
         flex-direction: column;
       "
     >
-      <header class="p-top" style="padding: 12px 32px">
-        <a class="p-ghostbtn" href="quizzes.html" aria-label="Exit quiz"
+      <header class="p-top quiz-top" style="padding: 12px 32px">
+        <a
+          class="p-ghostbtn"
+          href="quizzes.html"
+          aria-label="Exit quiz"
+          data-open-dialog="exit-quiz"
+          aria-haspopup="dialog"
           ><svg
             class="eit-icon"
             width="18"
@@ -82,7 +87,9 @@
               <circle cx="12" cy="12" r="10"></circle>
               <path d="M12 6v6l4 2"></path></svg
             >12:47</span
-          ><a class="p-ghostbtn" href="quiz-result.html">Submit quiz</a>
+          ><a class="p-ghostbtn" href="quiz-result.html" data-open-dialog="submit-quiz" aria-haspopup="dialog"
+            >Submit quiz</a
+          >
         </div>
       </header>
       <div
@@ -5546,5 +5553,62 @@
         </div>
       </main></template
     >
+    <div class="p-modal-wrap" id="exit-quiz" hidden="" data-dialog="">
+      <div
+        class="p-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="exit-quiz-title"
+        style="width: min(460px, 100%)"
+      >
+        <div class="p-modal-head">
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <span class="p-eyebrow">Class 12 quiz</span>
+            <h2 id="exit-quiz-title" class="p-h2">Leave the quiz?</h2>
+          </div>
+          <button type="button" class="p-iconbtn" aria-label="Close" data-close-dialog="">
+            <svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+          </button>
+        </div>
+        <p class="p-body" style="margin: 0">
+          Your answers so far are saved. The timer keeps running while you are away, so come back before it reaches
+          0:00.
+        </p>
+        <div class="p-modal-foot">
+          <button type="button" class="eit-btn eit-btn--primary eit-btn--md" data-close-dialog="">
+            <span class="eit-btn__label">Keep going</span></button
+          ><a class="p-ghostbtn" href="quizzes.html">Leave quiz</a>
+        </div>
+      </div>
+    </div>
+    <div class="p-modal-wrap" id="submit-quiz" hidden="" data-dialog="">
+      <div
+        class="p-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="submit-quiz-title"
+        style="width: min(460px, 100%)"
+      >
+        <div class="p-modal-head">
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <span class="p-eyebrow">Class 12 quiz</span>
+            <h2 id="submit-quiz-title" class="p-h2">Submit your answers?</h2>
+          </div>
+          <button type="button" class="p-iconbtn" aria-label="Close" data-close-dialog="">
+            <svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+          </button>
+        </div>
+        <p class="p-body" style="margin: 0">
+          You have answered 3 of 10 questions. Any question left blank counts as wrong, and only your first try earns
+          points.
+        </p>
+        <div class="p-modal-foot">
+          <button type="button" class="p-ghostbtn" data-close-dialog="">Go back</button
+          ><a class="eit-btn eit-btn--primary eit-btn--md" href="quiz-result.html"
+            ><span class="eit-btn__label">Submit quiz</span></a
+          >
+        </div>
+      </div>
+    </div>
   </body>
 </html>

@@ -116,6 +116,21 @@ body.page-panel {
     )
   ) !important;
 }
+/* 5 cards: 5 across, otherwise 3 + 2, then 2 columns, then stacked. */
+[style*="repeat(auto-fit"]:has(> :nth-child(5):last-child) {
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(
+      max(
+        calc((100% - 96px) / 5),
+        min(calc((100% - 48px) / 3), calc((1000px - 100%) * 999)),
+        min(calc((100% - 24px) / 2), calc((600px - 100%) * 999)),
+        min(100%, calc((400px - 100%) * 999))
+      ),
+      1fr
+    )
+  ) !important;
+}
 /* Four stat cards: 4 across, otherwise 2 x 2, phones included (compact cards). */
 [style*="repeat(auto-fit"]:has(> .p-stat:nth-child(4):last-child) {
   grid-template-columns: repeat(
@@ -283,4 +298,113 @@ body.page-panel {
 .p-switch:disabled {
   opacity: 0.55;
   cursor: not-allowed;
+}
+
+/* ---------- Certificate (A4 landscape) ----------
+   On screen: a toolbar, then the sheet centred and scaled down to fit (app.js, data-fit).
+   On paper: only the sheet, full size, on one A4 landscape page. */
+body.page-print {
+  margin: 0;
+  min-height: 100vh;
+  padding: 24px 24px 48px;
+  box-sizing: border-box;
+  background: var(--surface);
+  font-family: var(--font-sans);
+  color: var(--ink);
+}
+.cert-bar {
+  max-width: 1123px;
+  margin: 0 auto 8px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.cert-hint {
+  max-width: 1123px;
+  margin: 0 auto 16px;
+  text-align: right;
+}
+.cert-stage {
+  max-width: 1123px;
+  margin: 0 auto;
+}
+.cert-fit {
+  transform-origin: top left;
+}
+.cert-sheet {
+  box-shadow: var(--shadow-float);
+  border-radius: 6px;
+}
+@media (max-width: 720px) {
+  body.page-print {
+    padding: 16px 16px 32px;
+  }
+  .cert-hint {
+    text-align: left;
+  }
+}
+@page {
+  size: A4 landscape;
+  margin: 0;
+}
+@media print {
+  body.page-print {
+    padding: 0;
+    background: #ffffff;
+  }
+  .cert-bar,
+  .cert-hint {
+    display: none;
+  }
+  .cert-fit {
+    transform: none !important;
+    height: auto !important;
+  }
+  .cert-sheet {
+    box-shadow: none;
+    border-radius: 0;
+  }
+}
+
+/* Side columns that follow a long page on wide screens (help contacts, order and batch summaries). */
+@media (min-width: 1100px) {
+  .p-sticky {
+    position: sticky;
+    top: 96px;
+  }
+}
+
+/* Enroll flow: the header lines up with the 1200px page column. */
+.enr-top {
+  padding-left: max(24px, calc((100% - 1200px) / 2 + 32px));
+  padding-right: max(24px, calc((100% - 1200px) / 2 + 32px));
+}
+.enr-top--narrow {
+  padding-left: max(24px, calc((100% - 760px) / 2 + 32px));
+  padding-right: max(24px, calc((100% - 760px) / 2 + 32px));
+}
+@media (max-width: 720px) {
+  .enr-top,
+  .enr-top--narrow {
+    padding: 8px 12px;
+  }
+}
+
+/* Quiz top bar on phones: Exit, timer and Submit on one row, the quiz name under them. */
+@media (max-width: 720px) {
+  .quiz-top {
+    padding: 8px 12px !important;
+  }
+  .quiz-top > div:not(.p-top-right) {
+    order: 3;
+    flex: 1 0 100%;
+  }
+}
+
+/* A mark outside its range (mentor review rubric). */
+.p-input[aria-invalid="true"] {
+  border-color: var(--danger);
+  box-shadow: 0 0 0 3px var(--danger-soft);
 }

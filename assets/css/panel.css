@@ -88,7 +88,7 @@
   --reveal-from: translateY(16px);
   --pop-from: scale(0.85);
   /* Layout: one page width for every panel screen, centred in the space beside the sidebar. */
-  --side-w: 272px;
+  --side-w: 280px;
   --page-max: 1320px;
   --page-pad: 32px;
 }
@@ -353,9 +353,9 @@
   position: relative;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   min-height: 48px;
-  padding: 0 10px 0 8px;
+  padding: 0 8px;
   border-radius: 14px;
   color: var(--ink-2);
   text-decoration: none;
@@ -391,7 +391,8 @@
   color: var(--cyan-ink);
   transform: rotate(-8deg) scale(1.08);
 }
-.p-nav a[aria-current="page"] {
+.p-nav a[aria-current="page"],
+.p-nav a[aria-current="true"] {
   background: var(--cyan-soft);
   color: var(--cyan-deep);
   font-weight: 600;
@@ -1241,9 +1242,20 @@ a.p-lift {
   margin-bottom: 6px;
   font-variant-numeric: tabular-nums;
 }
+/* Sparklines draw in from the left with a clip, not a dash: a dash pattern measured on a
+   stretched, non-scaling stroke left gaps in the finished line. */
+@keyframes p-wipe {
+  from {
+    clip-path: inset(-4px 100% -4px -4px);
+  }
+  to {
+    clip-path: inset(-4px -4px -4px -4px);
+  }
+}
 .p-spark {
   display: block;
   overflow: visible;
+  animation: p-wipe 1400ms var(--ease-out-expo) 300ms both;
 }
 .p-spark polyline {
   fill: none;
@@ -1251,8 +1263,6 @@ a.p-lift {
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-dasharray: 100;
-  animation: p-draw 1400ms var(--ease-out-expo) 300ms both;
 }
 
 /* ---------- Tabs ---------- */
@@ -1266,7 +1276,12 @@ a.p-lift {
   align-self: flex-start;
   border: 0;
 }
-.p-tabs a {
+.p-tabs a,
+.p-tabs button {
+  border: 0;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -1281,11 +1296,13 @@ a.p-lift {
     background var(--duration-fast) var(--ease-standard),
     color var(--duration-fast) var(--ease-standard);
 }
-.p-tabs a:hover {
+.p-tabs a:hover,
+.p-tabs button:hover {
   color: var(--ink);
   background: rgba(255, 255, 255, 0.6);
 }
-.p-tabs a[aria-current="page"] {
+.p-tabs a[aria-current="page"],
+.p-tabs [aria-selected="true"] {
   color: var(--ink);
   background: var(--surface-card);
   box-shadow: var(--shadow-sm);
@@ -1335,6 +1352,30 @@ a.p-lift {
   align-items: center;
   gap: 10px;
   white-space: nowrap;
+}
+/* Row actions (a last column with a visually hidden header) stay in view when a wide table
+   scrolls sideways, so "Edit" or "View" is never cut off on a laptop screen. */
+.p-table:has(thead th:last-child .eit-sr) tr > :last-child {
+  position: sticky;
+  right: 0;
+  z-index: 1;
+  background: var(--surface-card);
+}
+.p-table:has(thead th:last-child .eit-sr) thead th:last-child {
+  background: var(--surface);
+}
+.p-table:has(thead th:last-child .eit-sr) tbody tr:hover > :last-child {
+  background: #f1f8fc;
+}
+@media (max-width: 1439px) {
+  .p-table th,
+  .p-table td {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .p-table tr > :first-child {
+    padding-left: 16px;
+  }
 }
 
 /* ---------- Controls ---------- */
@@ -1444,7 +1485,8 @@ a.p-lift {
 .p-seg button:hover {
   color: var(--ink);
 }
-.p-seg button[aria-pressed="true"] {
+.p-seg button[aria-pressed="true"],
+.p-seg button[aria-selected="true"] {
   background: var(--surface-card);
   color: var(--ink);
   box-shadow: var(--shadow-sm);
@@ -1639,7 +1681,8 @@ textarea:focus-visible {
     min-height: 60px;
     padding: 8px 12px;
   }
-  .p-top-brand {
+  .p-top-brand,
+  .p-top > .p-brand {
     display: inline-flex;
     margin-right: auto;
     padding: 4px;
@@ -1677,10 +1720,14 @@ textarea:focus-visible {
   }
   .p-top-right {
     order: 2;
-    margin-left: 0;
+    margin-left: auto;
     gap: 6px;
     flex-wrap: nowrap;
     position: static;
+  }
+  /* Panel top bars: the brand's auto margin already pushes search and the right group over. */
+  .p-top:has(> .p-search) > .p-top-right {
+    margin-left: 0;
   }
   .p-top-right .eit-seg__btn {
     min-width: 36px;

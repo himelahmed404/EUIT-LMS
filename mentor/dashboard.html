@@ -14,16 +14,26 @@
     <link rel="stylesheet" href="../assets/css/panel.css" />
     <link rel="stylesheet" href="../assets/css/app.css" />
     <style>
+      /* Three stops on one line (the third used to wrap under the first); a vertical list on phones. */
       .m-today {
         list-style: none;
         margin: 0;
         padding: 0;
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 12px 0;
       }
+      @media (max-width: 520px) {
+        .m-today {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+        .m-today li::before {
+          display: none;
+        }
+      }
       .m-today li {
-        flex: 1 1 150px;
+        min-width: 0;
         position: relative;
         display: flex;
         flex-direction: column;

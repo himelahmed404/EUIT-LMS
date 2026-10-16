@@ -271,6 +271,97 @@
     lastOpener = null;
   }
 
+  /* ---------- Copy, and fit-to-width ---------- */
+  function copyText(text, btn) {
+    var label = btn.querySelector("span:last-child") || btn;
+    var was = label.textContent;
+    function done() {
+      label.textContent = "Copied";
+      btn.setAttribute("data-copied", "");
+      setTimeout(function () {
+        label.textContent = was;
+        btn.removeAttribute("data-copied");
+      }, 1800);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, done);
+    } else {
+      done();
+    }
+  }
+  // A fixed-size sheet (the A4 certificate) scales down to the width it has, never up.
+  function fitAll() {
+    $all("[data-fit]").forEach(function (box) {
+      var sheet = box.firstElementChild;
+      if (!sheet) {
+        return;
+      }
+      var scale = Math.min(1, box.parentElement.clientWidth / sheet.offsetWidth);
+      box.style.transform = scale < 1 ? "scale(" + scale + ")" : "";
+      box.style.height = scale < 1 ? sheet.offsetHeight * scale + "px" : "";
+    });
+  }
+
+  /* ---------- Section menus that follow the scroll (admin settings) ---------- */
+  function initScrollspy() {
+    $all("nav[data-scrollspy]").forEach(function (nav) {
+      var links = $all('a[href^="#"]', nav);
+      var targets = links
+        .map(function (a) {
+          return document.getElementById(a.getAttribute("href").slice(1));
+        })
+        .filter(Boolean);
+      if (!targets.length || !("IntersectionObserver" in window)) {
+        return;
+      }
+      function mark(id) {
+        links.forEach(function (a) {
+          if (a.getAttribute("href") === "#" + id) {
+            a.setAttribute("aria-current", "true");
+          } else {
+            a.removeAttribute("aria-current");
+          }
+        });
+      }
+      var io = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (en) {
+            if (en.isIntersecting) {
+              mark(en.target.id);
+            }
+          });
+        },
+        { rootMargin: "-100px 0px -60% 0px" },
+      );
+      targets.forEach(function (t) {
+        t.style.scrollMarginTop = "96px";
+        io.observe(t);
+      });
+    });
+  }
+
+  /* ---------- Tabs ---------- */
+  function tabsOf(tab) {
+    return $all('[role="tab"]', tab.closest('[role="tablist"]') || tab.parentElement);
+  }
+  function selectTab(tab, focus) {
+    tabsOf(tab).forEach(function (x) {
+      var on = x === tab;
+      x.setAttribute("aria-selected", on ? "true" : "false");
+      x.tabIndex = on ? 0 : -1;
+      var panel = document.getElementById(x.getAttribute("aria-controls"));
+      if (panel) {
+        panel.hidden = !on;
+        if (on) {
+          initMotion(panel);
+        }
+      }
+    });
+    if (focus) {
+      tab.focus();
+    }
+  }
+
   /* ---------- Notifications: unread dots and counts ---------- */
   function markAllRead(scope) {
     $all("[data-unread]", scope).forEach(function (u) {
@@ -406,6 +497,14 @@
       return;
     }
 
+    // Tabs with panels: role="tab" + aria-controls shows its panel and hides its siblings' panels.
+    var tabBtn = t.closest('[role="tab"][aria-controls]');
+    if (tabBtn) {
+      e.preventDefault();
+      selectTab(tabBtn);
+      return;
+    }
+
     var tab = t.closest('.p-tabs a, [role="tablist"] [aria-current]');
     if (tab && tab.getAttribute("href") === "#") {
       e.preventDefault();
@@ -428,6 +527,20 @@
       if (panel) {
         panel.hidden = isOpen;
       }
+      return;
+    }
+
+    // Print / save as PDF (certificate, receipts).
+    if (t.closest("[data-print]")) {
+      e.preventDefault();
+      window.print();
+      return;
+    }
+    // Copy a link to the clipboard and say so on the button for a moment.
+    var copy = t.closest("[data-copy]");
+    if (copy) {
+      e.preventDefault();
+      copyText(copy.getAttribute("data-copy"), copy);
       return;
     }
 
@@ -479,6 +592,21 @@
   });
 
   document.addEventListener("keydown", function (e) {
+    // Arrow keys move between tabs, as screen-reader users expect from a tab list.
+    var tab = e.target.closest && e.target.closest('[role="tab"][aria-controls]');
+    if (tab && (e.key === "ArrowRight" || e.key === "ArrowLeft" || e.key === "Home" || e.key === "End")) {
+      var list = tabsOf(tab);
+      var i = list.indexOf(tab);
+      var next =
+        e.key === "Home"
+          ? 0
+          : e.key === "End"
+            ? list.length - 1
+            : (i + (e.key === "ArrowRight" ? 1 : -1) + list.length) % list.length;
+      e.preventDefault();
+      selectTab(list[next], true);
+      return;
+    }
     if (e.key !== "Escape") {
       return;
     }
@@ -645,6 +773,7 @@
 
   window.addEventListener("resize", function () {
     $all(".eit-seg").forEach(placeThumb);
+    fitAll();
   });
 
   function init() {
@@ -653,6 +782,8 @@
     initLanguage(document);
     initMotion(document);
     initCountdowns();
+    initScrollspy();
+    fitAll();
     // Thumbs measure text, so place them again once the web fonts are in.
     if (document.fonts && document.fonts.ready) {
       document.fonts.ready.then(function () {

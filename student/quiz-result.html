@@ -299,7 +299,7 @@
             </div>
           </div>
         </header>
-        <main class="p-main" data-region="filtered">
+        <main class="p-main">
           <nav
             aria-label="Breadcrumb"
             class="p-row"
@@ -336,8 +336,8 @@
               class="p-sticker"
               aria-hidden="true"
               style="
-                bottom: 24px;
-                right: 22%;
+                bottom: 26px;
+                right: 36px;
                 width: 36px;
                 height: 36px;
                 background: var(--cyan);
@@ -379,7 +379,7 @@
                   style="stroke-dashoffset: 0; stroke: rgb(244, 176, 79)"
                 ></circle></svg
               ><span style="display: flex; flex-direction: column; align-items: center; color: rgb(255, 255, 255)"
-                ><strong style="font-size: 34px; line-height: 1">10/10</strong
+                ><strong style="font-size: 30px; line-height: 1; letter-spacing: -0.02em">10/10</strong
                 ><span style="font-size: 12px; color: var(--ink-3); font-weight: 500">Class 12</span></span
               ></span
             >
@@ -399,9 +399,9 @@
                   aria-hidden="true"
                 >
                   <path d="M20 6L9 17l-5-5"></path></svg
-                >Full marks · +10 points</span
+                >All 10 right · +10 points</span
               >
-              <h1 id="res-title" class="p-h1" style="font-size: 34px">Full marks, Nusrat! +10 points</h1>
+              <h1 id="res-title" class="p-h1" style="font-size: 34px">Full marks, Nusrat!</h1>
               <p class="p-body" style="font-size: 16px">
                 Every answer right in 6 min 48 s. You now have 100 points and you are 10 behind #2 on the leaderboard.
               </p>
@@ -481,723 +481,282 @@
               <span class="p-num">6:48</span><span class="p-small">Time taken · limit 10:00</span>
             </div>
           </div>
-          <section class="p-card" aria-labelledby="rev-title" style="display: flex; flex-direction: column; gap: 16px">
-            <div class="p-card-head">
-              <h2 id="rev-title" class="p-h3">Check your answers</h2>
-              <div class="p-seg" role="group" aria-label="Show">
-                <button type="button" aria-pressed="true" data-part-of="filtered" data-part="0" data-value="0">
-                  All 10</button
-                ><button type="button" aria-pressed="false" data-part-of="filtered" data-part="0" data-value="1">
-                  Wrong only · 0
-                </button>
+          <div class="p-split">
+            <section
+              class="p-card"
+              aria-labelledby="rev-title"
+              style="flex: 2 1 520px; display: flex; flex-direction: column; gap: 16px"
+            >
+              <div class="p-card-head">
+                <h2 id="rev-title" class="p-h3">Check your answers</h2>
+                <div class="p-seg" role="tablist" aria-label="Show">
+                  <button type="button" role="tab" id="ans-tab-all" aria-selected="true" aria-controls="ans-all">
+                    All 10</button
+                  ><button
+                    type="button"
+                    role="tab"
+                    id="ans-tab-wrong"
+                    aria-selected="false"
+                    aria-controls="ans-wrong"
+                    tabindex="-1"
+                  >
+                    Wrong only · 0
+                  </button>
+                </div>
               </div>
-            </div>
-            <ol class="p-rows" style="margin: 0px -12px -12px">
-              <li style="align-items: flex-start">
-                <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
-                  ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M20 6 9 17l-5-5"></path></svg></span
-                ><span class="p-grow" style="display: flex; flex-direction: column; gap: 4px"
-                  ><strong style="font-size: 15px">1. Which files must every WordPress theme have?</strong
-                  ><span style="font-size: 14px; color: var(--ink-2)"
-                    >Your answer:
-                    <span style="font-weight: 600; font-family: var(--font-mono); font-size: 13px; color: var(--ink)"
-                      >index.php and style.css</span
-                    ></span
-                  ></span
-                ><span class="p-small" style="white-space: nowrap">1 / 1</span>
-              </li>
-              <li style="align-items: flex-start">
-                <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
-                  ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M20 6 9 17l-5-5"></path></svg></span
-                ><span class="p-grow" style="display: flex; flex-direction: column; gap: 4px"
-                  ><strong style="font-size: 15px"
-                    >2. Which function is the right way to load a theme stylesheet?</strong
-                  ><span style="font-size: 14px; color: var(--ink-2)"
-                    >Your answer:
-                    <span style="font-weight: 600; font-family: var(--font-mono); font-size: 13px; color: var(--ink)"
-                      >wp_enqueue_style()</span
-                    ></span
-                  ></span
-                ><span class="p-small" style="white-space: nowrap">1 / 1</span>
-              </li>
-              <li style="align-items: flex-start">
-                <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
-                  ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M20 6 9 17l-5-5"></path></svg></span
-                ><span class="p-grow" style="display: flex; flex-direction: column; gap: 4px"
-                  ><strong style="font-size: 15px"
-                    >3. For a single blog post, which template does WordPress look for first?</strong
-                  ><span style="font-size: 14px; color: var(--ink-2)"
-                    >Your answer:
-                    <span style="font-weight: 600; font-family: var(--font-mono); font-size: 13px; color: var(--ink)"
-                      >single.php</span
-                    ></span
-                  ></span
-                ><span class="p-small" style="white-space: nowrap">1 / 1</span>
-              </li>
-              <li style="align-items: flex-start">
-                <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
-                  ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M20 6 9 17l-5-5"></path></svg></span
-                ><span class="p-grow" style="display: flex; flex-direction: column; gap: 4px"
-                  ><strong style="font-size: 15px">4. What does get_header() do?</strong
-                  ><span style="font-size: 14px; color: var(--ink-2)"
-                    >Your answer:
-                    <span style="font-weight: 600; font-family: var(--font-mono); font-size: 13px; color: var(--ink)"
-                      >Loads the header.php template</span
-                    ></span
-                  ></span
-                ><span class="p-small" style="white-space: nowrap">1 / 1</span>
-              </li>
-              <li style="align-items: flex-start">
-                <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
-                  ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M20 6 9 17l-5-5"></path></svg></span
-                ><span class="p-grow" style="display: flex; flex-direction: column; gap: 4px"
-                  ><strong style="font-size: 15px">5. Where do you register a navigation menu location?</strong
-                  ><span style="font-size: 14px; color: var(--ink-2)"
-                    >Your answer:
-                    <span style="font-weight: 600; font-family: var(--font-mono); font-size: 13px; color: var(--ink)"
-                      >functions.php, with register_nav_menus()</span
-                    ></span
-                  ></span
-                ><span class="p-small" style="white-space: nowrap">1 / 1</span>
-              </li>
-              <li style="align-items: flex-start">
-                <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
-                  ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M20 6 9 17l-5-5"></path></svg></span
-                ><span class="p-grow" style="display: flex; flex-direction: column; gap: 4px"
-                  ><strong style="font-size: 15px">6. What is "The Loop" used for?</strong
-                  ><span style="font-size: 14px; color: var(--ink-2)"
-                    >Your answer:
-                    <span style="font-weight: 600; font-family: var(--font-mono); font-size: 13px; color: var(--ink)"
-                      >Showing posts from the current query</span
-                    ></span
-                  ></span
-                ><span class="p-small" style="white-space: nowrap">1 / 1</span>
-              </li>
-              <li style="align-items: flex-start">
-                <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
-                  ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M20 6 9 17l-5-5"></path></svg></span
-                ><span class="p-grow" style="display: flex; flex-direction: column; gap: 4px"
-                  ><strong style="font-size: 15px">7. Which hook should you use to enqueue scripts?</strong
-                  ><span style="font-size: 14px; color: var(--ink-2)"
-                    >Your answer:
-                    <span style="font-weight: 600; font-family: var(--font-mono); font-size: 13px; color: var(--ink)"
-                      >wp_enqueue_scripts</span
-                    ></span
-                  ></span
-                ><span class="p-small" style="white-space: nowrap">1 / 1</span>
-              </li>
-              <li style="align-items: flex-start">
-                <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
-                  ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M20 6 9 17l-5-5"></path></svg></span
-                ><span class="p-grow" style="display: flex; flex-direction: column; gap: 4px"
-                  ><strong style="font-size: 15px">8. A child theme’s style.css needs which header line?</strong
-                  ><span style="font-size: 14px; color: var(--ink-2)"
-                    >Your answer:
-                    <span style="font-weight: 600; font-family: var(--font-mono); font-size: 13px; color: var(--ink)"
-                      >Template: parent-folder-name</span
-                    ></span
-                  ></span
-                ><span class="p-small" style="white-space: nowrap">1 / 1</span>
-              </li>
-              <li style="align-items: flex-start">
-                <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
-                  ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M20 6 9 17l-5-5"></path></svg></span
-                ><span class="p-grow" style="display: flex; flex-direction: column; gap: 4px"
-                  ><strong style="font-size: 15px">9. What does the_title() do?</strong
-                  ><span style="font-size: 14px; color: var(--ink-2)"
-                    >Your answer:
-                    <span style="font-weight: 600; font-family: var(--font-mono); font-size: 13px; color: var(--ink)"
-                      >Prints the current post’s title</span
-                    ></span
-                  ></span
-                ><span class="p-small" style="white-space: nowrap">1 / 1</span>
-              </li>
-              <li style="align-items: flex-start">
-                <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
-                  ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M20 6 9 17l-5-5"></path></svg></span
-                ><span class="p-grow" style="display: flex; flex-direction: column; gap: 4px"
-                  ><strong style="font-size: 15px"
-                    >10. Which file is the final fallback in the template hierarchy?</strong
-                  ><span style="font-size: 14px; color: var(--ink-2)"
-                    >Your answer:
-                    <span style="font-weight: 600; font-family: var(--font-mono); font-size: 13px; color: var(--ink)"
-                      >index.php</span
-                    ></span
-                  ></span
-                ><span class="p-small" style="white-space: nowrap">1 / 1</span>
-              </li>
-            </ol>
-          </section>
+              <div role="tabpanel" id="ans-all" aria-labelledby="ans-tab-all">
+                <ol class="p-rows" style="margin: 0px -12px -12px">
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 6 9 17l-5-5"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 4px"
+                      ><strong style="font-size: 15px">1. Which files must every WordPress theme have?</strong
+                      ><span style="font-size: 14px; color: var(--ink-2)"
+                        >Your answer:
+                        <span
+                          style="font-weight: 600; font-family: var(--font-mono); font-size: 13px; color: var(--ink)"
+                          >index.php and style.css</span
+                        ></span
+                      ></span
+                    ><span class="p-small" style="white-space: nowrap">1 / 1</span>
+                  </li>
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 6 9 17l-5-5"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 4px"
+                      ><strong style="font-size: 15px"
+                        >2. Which function is the right way to load a theme stylesheet?</strong
+                      ><span style="font-size: 14px; color: var(--ink-2)"
+                        >Your answer:
+                        <span
+                          style="font-weight: 600; font-family: var(--font-mono); font-size: 13px; color: var(--ink)"
+                          >wp_enqueue_style()</span
+                        ></span
+                      ></span
+                    ><span class="p-small" style="white-space: nowrap">1 / 1</span>
+                  </li>
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 6 9 17l-5-5"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 4px"
+                      ><strong style="font-size: 15px"
+                        >3. For a single blog post, which template does WordPress look for first?</strong
+                      ><span style="font-size: 14px; color: var(--ink-2)"
+                        >Your answer:
+                        <span
+                          style="font-weight: 600; font-family: var(--font-mono); font-size: 13px; color: var(--ink)"
+                          >single.php</span
+                        ></span
+                      ></span
+                    ><span class="p-small" style="white-space: nowrap">1 / 1</span>
+                  </li>
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 6 9 17l-5-5"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 4px"
+                      ><strong style="font-size: 15px">4. What does get_header() do?</strong
+                      ><span style="font-size: 14px; color: var(--ink-2)"
+                        >Your answer:
+                        <span
+                          style="font-weight: 600; font-family: var(--font-mono); font-size: 13px; color: var(--ink)"
+                          >Loads the header.php template</span
+                        ></span
+                      ></span
+                    ><span class="p-small" style="white-space: nowrap">1 / 1</span>
+                  </li>
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 6 9 17l-5-5"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 4px"
+                      ><strong style="font-size: 15px">5. Where do you register a navigation menu location?</strong
+                      ><span style="font-size: 14px; color: var(--ink-2)"
+                        >Your answer:
+                        <span
+                          style="font-weight: 600; font-family: var(--font-mono); font-size: 13px; color: var(--ink)"
+                          >functions.php, with register_nav_menus()</span
+                        ></span
+                      ></span
+                    ><span class="p-small" style="white-space: nowrap">1 / 1</span>
+                  </li>
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 6 9 17l-5-5"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 4px"
+                      ><strong style="font-size: 15px">6. What is "The Loop" used for?</strong
+                      ><span style="font-size: 14px; color: var(--ink-2)"
+                        >Your answer:
+                        <span
+                          style="font-weight: 600; font-family: var(--font-mono); font-size: 13px; color: var(--ink)"
+                          >Showing posts from the current query</span
+                        ></span
+                      ></span
+                    ><span class="p-small" style="white-space: nowrap">1 / 1</span>
+                  </li>
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 6 9 17l-5-5"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 4px"
+                      ><strong style="font-size: 15px">7. Which hook should you use to enqueue scripts?</strong
+                      ><span style="font-size: 14px; color: var(--ink-2)"
+                        >Your answer:
+                        <span
+                          style="font-weight: 600; font-family: var(--font-mono); font-size: 13px; color: var(--ink)"
+                          >wp_enqueue_scripts</span
+                        ></span
+                      ></span
+                    ><span class="p-small" style="white-space: nowrap">1 / 1</span>
+                  </li>
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 6 9 17l-5-5"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 4px"
+                      ><strong style="font-size: 15px">8. A child theme’s style.css needs which header line?</strong
+                      ><span style="font-size: 14px; color: var(--ink-2)"
+                        >Your answer:
+                        <span
+                          style="font-weight: 600; font-family: var(--font-mono); font-size: 13px; color: var(--ink)"
+                          >Template: parent-folder-name</span
+                        ></span
+                      ></span
+                    ><span class="p-small" style="white-space: nowrap">1 / 1</span>
+                  </li>
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 6 9 17l-5-5"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 4px"
+                      ><strong style="font-size: 15px">9. What does the_title() do?</strong
+                      ><span style="font-size: 14px; color: var(--ink-2)"
+                        >Your answer:
+                        <span
+                          style="font-weight: 600; font-family: var(--font-mono); font-size: 13px; color: var(--ink)"
+                          >Prints the current post’s title</span
+                        ></span
+                      ></span
+                    ><span class="p-small" style="white-space: nowrap">1 / 1</span>
+                  </li>
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 6 9 17l-5-5"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 4px"
+                      ><strong style="font-size: 15px"
+                        >10. Which file is the final fallback in the template hierarchy?</strong
+                      ><span style="font-size: 14px; color: var(--ink-2)"
+                        >Your answer:
+                        <span
+                          style="font-weight: 600; font-family: var(--font-mono); font-size: 13px; color: var(--ink)"
+                          >index.php</span
+                        ></span
+                      ></span
+                    ><span class="p-small" style="white-space: nowrap">1 / 1</span>
+                  </li>
+                </ol>
+              </div>
+              <div role="tabpanel" id="ans-wrong" aria-labelledby="ans-tab-wrong" hidden>
+                <div class="hp-empty" style="border-top: 0; padding: 32px 16px 24px">
+                  <span class="p-tile p-tile--green" style="width: 52px; height: 52px; border-radius: 16px"
+                    ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20 6 9 17l-5-5"></path></svg></span
+                  ><strong style="font-size: 16px">No wrong answers to go over</strong
+                  ><span class="p-small" style="max-width: 360px"
+                    >You got all 10 right on the first try. Your next quiz opens after Class 13 on Mon, 19 Oct.</span
+                  >
+                </div>
+              </div>
+            </section>
+            <aside style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+              <section
+                class="p-card"
+                aria-labelledby="next-title"
+                style="display: flex; flex-direction: column; gap: 16px"
+              >
+                <div style="display: flex; flex-direction: column; gap: 4px">
+                  <span class="p-eyebrow">What’s next</span>
+                  <h2 id="next-title" class="p-h3">2 more quizzes to unlock Module 4</h2>
+                </div>
+                <div class="p-bar" role="img" aria-label="Module 3 quizzes: 4 of 6 done">
+                  <span style="width: 66.7%"></span>
+                </div>
+                <ul class="p-list">
+                  <li style="align-items: flex-start">
+                    <span class="p-tile" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M5 3l14 9-14 9V3z"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                      ><strong style="font-size: 14px">Class 13 · Navigation menus</strong
+                      ><span class="p-small">Video opens when you finish the Class 12 video</span></span
+                    >
+                  </li>
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--muted" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                          d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"
+                        ></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                      ><strong style="font-size: 14px">Class 13 live class</strong
+                      ><span class="p-small">Mon, 19 Oct · 7:00 PM · Lab 2</span></span
+                    >
+                  </li>
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--muted" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="3" y="11" width="18" height="11" rx="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                      ><strong style="font-size: 14px">Class 13 quiz</strong
+                      ><span class="p-small">Opens after the class · full marks = +10 points</span></span
+                    >
+                  </li>
+                </ul>
+                <a class="eit-btn eit-btn--primary eit-btn--md eit-btn--block" href="course-player.html"
+                  ><span class="eit-btn__label">Back to the course</span
+                  ><svg
+                    class="eit-icon eit-btn__trail"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    focusable="false"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7"></path></svg
+                ></a>
+              </section>
+              <section
+                class="p-card"
+                aria-labelledby="pts-title"
+                style="display: flex; flex-direction: column; gap: 12px"
+              >
+                <h2 id="pts-title" class="p-h3" style="font-size: 16px">How points work</h2>
+                <p class="p-small" style="margin: 0">
+                  Only your first try counts. Full marks on a class quiz adds 10 points, and you can spend points on a
+                  late pass for a project.
+                </p>
+                <a class="p-link" href="leaderboard.html"
+                  >See the leaderboard
+                  <span class="p-arrow"
+                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M5 12h14M12 5l7 7-7 7"></path></svg></span
+                ></a>
+              </section>
+            </aside>
+          </div>
         </main>
       </div>
     </div>
-    <template data-state="filtered:0" data-region="[data-region='filtered']"
-      ><main class="p-main" data-region="filtered">
-        <nav
-          aria-label="Breadcrumb"
-          class="p-row"
-          style="gap: 8px; font-size: 14px; color: var(--ink-3); flex-wrap: wrap"
-        >
-          <a class="p-link" href="quizzes.html" style="font-weight: 500">Quizzes</a><span aria-hidden="true">/</span
-          ><span style="color: var(--ink-2)">Class 12 quiz</span>
-        </nav>
-        <section
-          class="p-hero"
-          data-theme="ink"
-          aria-labelledby="res-title"
-          style="display: flex; flex-wrap: wrap; gap: 32px; align-items: center"
-        >
-          <span
-            class="p-sticker"
-            aria-hidden="true"
-            style="
-              top: 22px;
-              right: 30px;
-              width: 64px;
-              height: 64px;
-              border-radius: 50%;
-              background: rgb(244, 176, 79);
-              color: rgb(10, 27, 44);
-              font-weight: 800;
-              font-size: 20px;
-              animation:
-                p-pop 600ms var(--ease-spring) 500ms both,
-                p-float 6s ease-in-out 1.1s infinite;
-            "
-            >+10</span
-          ><span
-            class="p-sticker"
-            aria-hidden="true"
-            style="
-              bottom: 24px;
-              right: 22%;
-              width: 36px;
-              height: 36px;
-              background: var(--cyan);
-              color: rgb(10, 27, 44);
-              animation-delay: -2s;
-            "
-            ><svg
-              class="eit-icon"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              focusable="false"
-              aria-hidden="true"
-            >
-              <path
-                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
-              ></path></svg></span
-          ><span class="p-ring-wrap"
-            ><svg
-              class="p-ring"
-              width="140"
-              height="140"
-              viewBox="0 0 44 44"
-              role="img"
-              aria-label="Score 10 out of 10"
-            >
-              <circle class="p-ring-track" cx="22" cy="22" r="18" style="stroke: rgba(255, 255, 255, 0.12)"></circle>
-              <circle
-                class="p-ring-fill"
-                cx="22"
-                cy="22"
-                r="18"
-                pathLength="100"
-                style="stroke-dashoffset: 0; stroke: rgb(244, 176, 79)"
-              ></circle></svg
-            ><span style="display: flex; flex-direction: column; align-items: center; color: rgb(255, 255, 255)"
-              ><strong style="font-size: 34px; line-height: 1">10/10</strong
-              ><span style="font-size: 12px; color: var(--ink-3); font-weight: 500">Class 12</span></span
-            ></span
-          >
-          <div style="flex: 1 1 360px; display: flex; flex-direction: column; gap: 12px">
-            <span class="eit-badge eit-badge--warning"
-              ><svg
-                class="eit-icon"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                focusable="false"
-                aria-hidden="true"
-              >
-                <path d="M20 6L9 17l-5-5"></path></svg
-              >Full marks · +10 points</span
-            >
-            <h1 id="res-title" class="p-h1" style="font-size: 34px">Full marks, Nusrat! +10 points</h1>
-            <p class="p-body" style="font-size: 16px">
-              Every answer right in 6 min 48 s. You now have 100 points and you are 10 behind #2 on the leaderboard.
-            </p>
-            <div class="p-row" style="flex-wrap: wrap">
-              <a href="course-player.html" class="eit-btn eit-btn--primary eit-btn--md"
-                ><span class="eit-btn__label">Back to the course</span
-                ><svg
-                  class="eit-icon eit-btn__trail"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  focusable="false"
-                  aria-hidden="true"
-                >
-                  <path d="M5 12h14"></path>
-                  <path d="M13 6l6 6-6 6"></path></svg></a
-              ><a class="p-link" href="leaderboard.html" style="color: rgb(255, 255, 255)">See the leaderboard</a>
-            </div>
-          </div>
-        </section>
-        <div
-          class="p-stagger"
-          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 16px"
-        >
-          <div class="p-card p-stat">
-            <div class="p-stat-top">
-              <span class="p-tile" style="background: var(--cyan); color: rgb(10, 27, 44)"
-                ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0 0 12 0V2Z"
-                  ></path></svg></span
-              ><span class="p-delta">+10 today</span>
-            </div>
-            <span class="p-num"
-              ><span class="eit-count"
-                ><span class="eit-sr">100</span><span class="eit-count__ghost" aria-hidden="true">100</span
-                ><span class="eit-count__n" aria-hidden="true">100</span></span
-              ></span
-            ><span class="p-small">Your points · #3 of 20</span>
-          </div>
-          <div class="p-card p-stat">
-            <div class="p-stat-top">
-              <span class="p-tile p-tile--amber"
-                ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <rect x="3" y="11" width="18" height="11" rx="2"></rect>
-                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg
-              ></span>
-            </div>
-            <span class="p-num">4<span style="font-size: 16px; color: var(--ink-3)"> / 6</span></span
-            ><span class="p-small">Module 3 quizzes done · 2 more to unlock Module 4</span>
-          </div>
-          <div class="p-card p-stat">
-            <div class="p-stat-top">
-              <span class="p-tile"
-                ><svg
-                  class="eit-icon"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  focusable="false"
-                  aria-hidden="true"
-                >
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <path d="M12 6v6l4 2"></path></svg
-              ></span>
-            </div>
-            <span class="p-num">6:48</span><span class="p-small">Time taken · limit 10:00</span>
-          </div>
-        </div>
-        <section class="p-card" aria-labelledby="rev-title" style="display: flex; flex-direction: column; gap: 16px">
-          <div class="p-card-head">
-            <h2 id="rev-title" class="p-h3">Check your answers</h2>
-            <div class="p-seg" role="group" aria-label="Show">
-              <button type="button" aria-pressed="true" data-part-of="filtered" data-part="0" data-value="0">
-                All 10</button
-              ><button type="button" aria-pressed="false" data-part-of="filtered" data-part="0" data-value="1">
-                Wrong only · 0
-              </button>
-            </div>
-          </div>
-          <ol class="p-rows" style="margin: 0px -12px -12px">
-            <li style="align-items: flex-start">
-              <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
-                ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M20 6 9 17l-5-5"></path></svg></span
-              ><span class="p-grow" style="display: flex; flex-direction: column; gap: 4px"
-                ><strong style="font-size: 15px">1. Which files must every WordPress theme have?</strong
-                ><span style="font-size: 14px; color: var(--ink-2)"
-                  >Your answer:
-                  <span style="font-weight: 600; font-family: var(--font-mono); font-size: 13px; color: var(--ink)"
-                    >index.php and style.css</span
-                  ></span
-                ></span
-              ><span class="p-small" style="white-space: nowrap">1 / 1</span>
-            </li>
-            <li style="align-items: flex-start">
-              <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
-                ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M20 6 9 17l-5-5"></path></svg></span
-              ><span class="p-grow" style="display: flex; flex-direction: column; gap: 4px"
-                ><strong style="font-size: 15px">2. Which function is the right way to load a theme stylesheet?</strong
-                ><span style="font-size: 14px; color: var(--ink-2)"
-                  >Your answer:
-                  <span style="font-weight: 600; font-family: var(--font-mono); font-size: 13px; color: var(--ink)"
-                    >wp_enqueue_style()</span
-                  ></span
-                ></span
-              ><span class="p-small" style="white-space: nowrap">1 / 1</span>
-            </li>
-            <li style="align-items: flex-start">
-              <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
-                ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M20 6 9 17l-5-5"></path></svg></span
-              ><span class="p-grow" style="display: flex; flex-direction: column; gap: 4px"
-                ><strong style="font-size: 15px"
-                  >3. For a single blog post, which template does WordPress look for first?</strong
-                ><span style="font-size: 14px; color: var(--ink-2)"
-                  >Your answer:
-                  <span style="font-weight: 600; font-family: var(--font-mono); font-size: 13px; color: var(--ink)"
-                    >single.php</span
-                  ></span
-                ></span
-              ><span class="p-small" style="white-space: nowrap">1 / 1</span>
-            </li>
-            <li style="align-items: flex-start">
-              <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
-                ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M20 6 9 17l-5-5"></path></svg></span
-              ><span class="p-grow" style="display: flex; flex-direction: column; gap: 4px"
-                ><strong style="font-size: 15px">4. What does get_header() do?</strong
-                ><span style="font-size: 14px; color: var(--ink-2)"
-                  >Your answer:
-                  <span style="font-weight: 600; font-family: var(--font-mono); font-size: 13px; color: var(--ink)"
-                    >Loads the header.php template</span
-                  ></span
-                ></span
-              ><span class="p-small" style="white-space: nowrap">1 / 1</span>
-            </li>
-            <li style="align-items: flex-start">
-              <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
-                ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M20 6 9 17l-5-5"></path></svg></span
-              ><span class="p-grow" style="display: flex; flex-direction: column; gap: 4px"
-                ><strong style="font-size: 15px">5. Where do you register a navigation menu location?</strong
-                ><span style="font-size: 14px; color: var(--ink-2)"
-                  >Your answer:
-                  <span style="font-weight: 600; font-family: var(--font-mono); font-size: 13px; color: var(--ink)"
-                    >functions.php, with register_nav_menus()</span
-                  ></span
-                ></span
-              ><span class="p-small" style="white-space: nowrap">1 / 1</span>
-            </li>
-            <li style="align-items: flex-start">
-              <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
-                ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M20 6 9 17l-5-5"></path></svg></span
-              ><span class="p-grow" style="display: flex; flex-direction: column; gap: 4px"
-                ><strong style="font-size: 15px">6. What is "The Loop" used for?</strong
-                ><span style="font-size: 14px; color: var(--ink-2)"
-                  >Your answer:
-                  <span style="font-weight: 600; font-family: var(--font-mono); font-size: 13px; color: var(--ink)"
-                    >Showing posts from the current query</span
-                  ></span
-                ></span
-              ><span class="p-small" style="white-space: nowrap">1 / 1</span>
-            </li>
-            <li style="align-items: flex-start">
-              <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
-                ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M20 6 9 17l-5-5"></path></svg></span
-              ><span class="p-grow" style="display: flex; flex-direction: column; gap: 4px"
-                ><strong style="font-size: 15px">7. Which hook should you use to enqueue scripts?</strong
-                ><span style="font-size: 14px; color: var(--ink-2)"
-                  >Your answer:
-                  <span style="font-weight: 600; font-family: var(--font-mono); font-size: 13px; color: var(--ink)"
-                    >wp_enqueue_scripts</span
-                  ></span
-                ></span
-              ><span class="p-small" style="white-space: nowrap">1 / 1</span>
-            </li>
-            <li style="align-items: flex-start">
-              <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
-                ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M20 6 9 17l-5-5"></path></svg></span
-              ><span class="p-grow" style="display: flex; flex-direction: column; gap: 4px"
-                ><strong style="font-size: 15px">8. A child theme’s style.css needs which header line?</strong
-                ><span style="font-size: 14px; color: var(--ink-2)"
-                  >Your answer:
-                  <span style="font-weight: 600; font-family: var(--font-mono); font-size: 13px; color: var(--ink)"
-                    >Template: parent-folder-name</span
-                  ></span
-                ></span
-              ><span class="p-small" style="white-space: nowrap">1 / 1</span>
-            </li>
-            <li style="align-items: flex-start">
-              <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
-                ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M20 6 9 17l-5-5"></path></svg></span
-              ><span class="p-grow" style="display: flex; flex-direction: column; gap: 4px"
-                ><strong style="font-size: 15px">9. What does the_title() do?</strong
-                ><span style="font-size: 14px; color: var(--ink-2)"
-                  >Your answer:
-                  <span style="font-weight: 600; font-family: var(--font-mono); font-size: 13px; color: var(--ink)"
-                    >Prints the current post’s title</span
-                  ></span
-                ></span
-              ><span class="p-small" style="white-space: nowrap">1 / 1</span>
-            </li>
-            <li style="align-items: flex-start">
-              <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
-                ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M20 6 9 17l-5-5"></path></svg></span
-              ><span class="p-grow" style="display: flex; flex-direction: column; gap: 4px"
-                ><strong style="font-size: 15px">10. Which file is the final fallback in the template hierarchy?</strong
-                ><span style="font-size: 14px; color: var(--ink-2)"
-                  >Your answer:
-                  <span style="font-weight: 600; font-family: var(--font-mono); font-size: 13px; color: var(--ink)"
-                    >index.php</span
-                  ></span
-                ></span
-              ><span class="p-small" style="white-space: nowrap">1 / 1</span>
-            </li>
-          </ol>
-        </section>
-      </main></template
-    >
-    <template data-state="filtered:1" data-region="[data-region='filtered']"
-      ><main class="p-main" data-region="filtered">
-        <nav
-          aria-label="Breadcrumb"
-          class="p-row"
-          style="gap: 8px; font-size: 14px; color: var(--ink-3); flex-wrap: wrap"
-        >
-          <a class="p-link" href="quizzes.html" style="font-weight: 500">Quizzes</a><span aria-hidden="true">/</span
-          ><span style="color: var(--ink-2)">Class 12 quiz</span>
-        </nav>
-        <section
-          class="p-hero"
-          data-theme="ink"
-          aria-labelledby="res-title"
-          style="display: flex; flex-wrap: wrap; gap: 32px; align-items: center"
-        >
-          <span
-            class="p-sticker"
-            aria-hidden="true"
-            style="
-              top: 22px;
-              right: 30px;
-              width: 64px;
-              height: 64px;
-              border-radius: 50%;
-              background: rgb(244, 176, 79);
-              color: rgb(10, 27, 44);
-              font-weight: 800;
-              font-size: 20px;
-              animation:
-                p-pop 600ms var(--ease-spring) 500ms both,
-                p-float 6s ease-in-out 1.1s infinite;
-            "
-            >+10</span
-          ><span
-            class="p-sticker"
-            aria-hidden="true"
-            style="
-              bottom: 24px;
-              right: 22%;
-              width: 36px;
-              height: 36px;
-              background: var(--cyan);
-              color: rgb(10, 27, 44);
-              animation-delay: -2s;
-            "
-            ><svg
-              class="eit-icon"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              focusable="false"
-              aria-hidden="true"
-            >
-              <path
-                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
-              ></path></svg></span
-          ><span class="p-ring-wrap"
-            ><svg
-              class="p-ring"
-              width="140"
-              height="140"
-              viewBox="0 0 44 44"
-              role="img"
-              aria-label="Score 10 out of 10"
-            >
-              <circle class="p-ring-track" cx="22" cy="22" r="18" style="stroke: rgba(255, 255, 255, 0.12)"></circle>
-              <circle
-                class="p-ring-fill"
-                cx="22"
-                cy="22"
-                r="18"
-                pathLength="100"
-                style="stroke-dashoffset: 0; stroke: rgb(244, 176, 79)"
-              ></circle></svg
-            ><span style="display: flex; flex-direction: column; align-items: center; color: rgb(255, 255, 255)"
-              ><strong style="font-size: 34px; line-height: 1">10/10</strong
-              ><span style="font-size: 12px; color: var(--ink-3); font-weight: 500">Class 12</span></span
-            ></span
-          >
-          <div style="flex: 1 1 360px; display: flex; flex-direction: column; gap: 12px">
-            <span class="eit-badge eit-badge--warning"
-              ><svg
-                class="eit-icon"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                focusable="false"
-                aria-hidden="true"
-              >
-                <path d="M20 6L9 17l-5-5"></path></svg
-              >Full marks · +10 points</span
-            >
-            <h1 id="res-title" class="p-h1" style="font-size: 34px">Full marks, Nusrat! +10 points</h1>
-            <p class="p-body" style="font-size: 16px">
-              Every answer right in 6 min 48 s. You now have 100 points and you are 10 behind #2 on the leaderboard.
-            </p>
-            <div class="p-row" style="flex-wrap: wrap">
-              <a href="course-player.html" class="eit-btn eit-btn--primary eit-btn--md"
-                ><span class="eit-btn__label">Back to the course</span
-                ><svg
-                  class="eit-icon eit-btn__trail"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  focusable="false"
-                  aria-hidden="true"
-                >
-                  <path d="M5 12h14"></path>
-                  <path d="M13 6l6 6-6 6"></path></svg></a
-              ><a class="p-link" href="leaderboard.html" style="color: rgb(255, 255, 255)">See the leaderboard</a>
-            </div>
-          </div>
-        </section>
-        <div
-          class="p-stagger"
-          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 16px"
-        >
-          <div class="p-card p-stat">
-            <div class="p-stat-top">
-              <span class="p-tile" style="background: var(--cyan); color: rgb(10, 27, 44)"
-                ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0 0 12 0V2Z"
-                  ></path></svg></span
-              ><span class="p-delta">+10 today</span>
-            </div>
-            <span class="p-num"
-              ><span class="eit-count"
-                ><span class="eit-sr">100</span><span class="eit-count__ghost" aria-hidden="true">100</span
-                ><span class="eit-count__n" aria-hidden="true">100</span></span
-              ></span
-            ><span class="p-small">Your points · #3 of 20</span>
-          </div>
-          <div class="p-card p-stat">
-            <div class="p-stat-top">
-              <span class="p-tile p-tile--amber"
-                ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <rect x="3" y="11" width="18" height="11" rx="2"></rect>
-                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg
-              ></span>
-            </div>
-            <span class="p-num">4<span style="font-size: 16px; color: var(--ink-3)"> / 6</span></span
-            ><span class="p-small">Module 3 quizzes done · 2 more to unlock Module 4</span>
-          </div>
-          <div class="p-card p-stat">
-            <div class="p-stat-top">
-              <span class="p-tile"
-                ><svg
-                  class="eit-icon"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  focusable="false"
-                  aria-hidden="true"
-                >
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <path d="M12 6v6l4 2"></path></svg
-              ></span>
-            </div>
-            <span class="p-num">6:48</span><span class="p-small">Time taken · limit 10:00</span>
-          </div>
-        </div>
-        <section class="p-card" aria-labelledby="rev-title" style="display: flex; flex-direction: column; gap: 16px">
-          <div class="p-card-head">
-            <h2 id="rev-title" class="p-h3">Check your answers</h2>
-            <div class="p-seg" role="group" aria-label="Show">
-              <button type="button" aria-pressed="false" data-part-of="filtered" data-part="0" data-value="0">
-                All 10</button
-              ><button type="button" aria-pressed="true" data-part-of="filtered" data-part="0" data-value="1">
-                Wrong only · 0
-              </button>
-            </div>
-          </div>
-          <ol class="p-rows" style="margin: 0px -12px -12px">
-            <li>
-              <span class="p-tile p-tile--green"
-                ><svg
-                  class="eit-icon"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  focusable="false"
-                  aria-hidden="true"
-                >
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span
-              ><span class="p-muted">Nothing wrong this time. Every answer was right.</span>
-            </li>
-          </ol>
-        </section>
-      </main></template
-    >
   </body>
 </html>

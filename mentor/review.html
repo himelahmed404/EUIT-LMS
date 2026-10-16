@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../assets/css/panel.css" />
     <link rel="stylesheet" href="../assets/css/app.css" />
     <script src="../assets/js/app.js" defer></script>
+    <script src="../assets/js/pages/review.js" defer></script>
   </head>
   <body>
     <div class="p-shell">
@@ -338,7 +339,17 @@
                       <path d="M8 7h9v9"></path></svg
                   ></a>
                 </div>
-                <div style="border: 1px solid var(--line); border-radius: var(--radius-md); overflow: hidden">
+                <div
+                  id="preview-frame"
+                  style="
+                    border: 1px solid var(--line);
+                    border-radius: var(--radius-md);
+                    overflow: hidden;
+                    margin: 0 auto;
+                    width: 100%;
+                    transition: max-width 320ms var(--ease-out-expo);
+                  "
+                >
                   <div
                     class="p-row"
                     style="gap: 6px; padding: 10px 14px; background: var(--track); border-bottom: 1px solid var(--line)"
@@ -347,11 +358,14 @@
                     ><span style="width: 10px; height: 10px; border-radius: 50%; background: var(--line-strong)"></span
                     ><span style="width: 10px; height: 10px; border-radius: 50%; background: var(--line-strong)"></span>
                   </div>
-                  <div class="p-thumb" style="aspect-ratio: 16 / 9; border-radius: 0px">Live site preview</div>
+                  <div class="p-thumb" style="aspect-ratio: 16 / 9; border-radius: 0px" data-preview-label>
+                    Live site preview · 1440px
+                  </div>
                 </div>
-                <div class="p-row" style="flex-wrap: wrap; gap: 8px">
-                  <span class="p-pill">Desktop 1440</span><span class="p-pill">Tablet 768</span
-                  ><span class="p-pill">Phone 360</span>
+                <div class="p-seg" role="group" aria-label="Preview size" style="align-self: flex-start">
+                  <button type="button" aria-pressed="true" data-preview-size="1440">Desktop 1440</button
+                  ><button type="button" aria-pressed="false" data-preview-size="768">Tablet 768</button
+                  ><button type="button" aria-pressed="false" data-preview-size="360">Phone 360</button>
                 </div>
                 <ul class="p-list">
                   <li>
@@ -404,6 +418,7 @@
                       id="score-layout"
                       class="p-input"
                       type="number"
+                      data-score=""
                       min="0"
                       max="30"
                       value="27"
@@ -428,6 +443,7 @@
                       id="score-code"
                       class="p-input"
                       type="number"
+                      data-score=""
                       min="0"
                       max="25"
                       value="21"
@@ -452,6 +468,7 @@
                       id="score-design"
                       class="p-input"
                       type="number"
+                      data-score=""
                       min="0"
                       max="25"
                       value="22"
@@ -477,6 +494,7 @@
                       id="score-perf"
                       class="p-input"
                       type="number"
+                      data-score=""
                       min="0"
                       max="20"
                       value="16"
@@ -488,7 +506,8 @@
               <div class="p-row" style="justify-content: space-between">
                 <strong style="font-size: 15px">Total</strong
                 ><span class="p-num" style="font-size: 28px"
-                  >86<span style="font-size: 16px; color: var(--ink-3); font-weight: 500"> / 100</span></span
+                  ><span data-score-total aria-live="polite">86</span
+                  ><span style="font-size: 16px; color: var(--ink-3); font-weight: 500"> / 100</span></span
                 >
               </div>
               <div style="display: flex; flex-direction: column; gap: 8px">
