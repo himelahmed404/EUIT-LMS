@@ -808,3 +808,27 @@ body.page-print {
 .cp-save[aria-pressed="false"] .cp-on {
   display: none;
 }
+
+/* ---------- Student dashboard on phones: a shorter hero, so the stats show on the first screen ---------- */
+@media (max-width: 720px) {
+  .p-hero #hello {
+    font-size: 28px !important;
+  }
+  .db-continue {
+    flex-wrap: nowrap !important;
+    gap: 14px !important;
+    padding: 12px !important;
+  }
+  .db-thumb {
+    flex: 0 0 72px !important;
+    min-height: 72px !important;
+  }
+  .db-thumb > span:first-child {
+    display: none;
+  }
+  .db-thumb .p-shine {
+    width: 40px !important;
+    height: 40px !important;
+    box-shadow: none !important;
+  }
+}
