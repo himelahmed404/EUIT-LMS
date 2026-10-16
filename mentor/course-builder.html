@@ -1,301 +1,621 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="is-console">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Course builder · European IT LMS</title>
+    <title>Courses · European IT LMS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap"
     />
     <link rel="stylesheet" href="../assets/css/eit.css" />
     <link rel="stylesheet" href="../assets/css/panel.css" />
     <link rel="stylesheet" href="../assets/css/app.css" />
+    <link rel="stylesheet" href="../assets/css/console.css" />
+    <script src="../assets/js/theme.js"></script>
     <script src="../assets/js/app.js" defer=""></script>
   </head>
   <body>
-    <div class="p-shell">
-      <aside class="p-side">
-        <a class="p-brand" href="dashboard.html"
-          ><span class="p-brand-mark" aria-hidden="true"></span
-          ><span class="p-brand-text"
-            ><span class="p-brand-name">European IT</span><span class="p-brand-sub">INSTITUTE</span></span
-          ></a
-        >
-        <nav class="p-nav" aria-label="Mentor panel">
-          <span class="p-nav-label">Mentor</span
-          ><a href="dashboard.html"
-            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="3" y="3" width="7" height="9" rx="1"></rect>
-              <rect x="14" y="3" width="7" height="5" rx="1"></rect>
-              <rect x="14" y="12" width="7" height="9" rx="1"></rect>
-              <rect x="3" y="16" width="7" height="5" rx="1"></rect></svg
-            ><span class="p-nav-text">Dashboard</span></a
-          ><a href="batch.html"
-            ><svg
-              class="eit-icon"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              focusable="false"
-              aria-hidden="true"
-            >
-              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-              <circle cx="9" cy="7" r="4"></circle>
-              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg
-            ><span class="p-nav-text">My batches</span></a
-          ><a href="review.html"
-            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="8" y="2" width="8" height="4" rx="1"></rect>
-              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
-              <path d="m9 14 2 2 4-4"></path></svg
-            ><span class="p-nav-text">Reviews</span><span class="p-count">5</span></a
-          ><a href="course-builder.html" aria-current="page"
-            ><svg
-              class="eit-icon"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              focusable="false"
-              aria-hidden="true"
-            >
-              <path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path>
-              <path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg
-            ><span class="p-nav-text">Courses</span></a
-          ><a href="questions.html"
-            ><svg
-              class="eit-icon"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              focusable="false"
-              aria-hidden="true"
-            >
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg
-            ><span class="p-nav-text">Student questions</span
-            ><span class="p-nav-short" aria-hidden="true">Questions</span><span class="p-count">3</span></a
-          ><a href="schedule.html"
-            ><svg
-              class="eit-icon"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              focusable="false"
-              aria-hidden="true"
-            >
-              <rect x="3" y="4" width="18" height="18" rx="2"></rect>
-              <path d="M16 2v4M8 2v4M3 10h18"></path></svg
-            ><span class="p-nav-text">Schedule &amp; recordings</span
-            ><span class="p-nav-short" aria-hidden="true">Schedule</span
-            ><span class="p-count" style="background: var(--warning); color: rgb(255, 255, 255)">1</span></a
+    <div class="p-shell p-console">
+      <aside class="c-side" id="c-side">
+        <div class="c-brand">
+          <a class="c-brand-link" href="dashboard.html" aria-label="European IT mentor panel, dashboard"
+            ><span class="c-logo" aria-hidden="true"
+              ><svg
+                width="17"
+                height="17"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M2 9l10-5 10 5-10 5zM6 11v5c3 2.5 9 2.5 12 0v-5M22 9v6"></path></svg></span
+            ><span class="c-brand-text"
+              ><span class="c-brand-name">European IT</span><span class="c-brand-sub">mentor panel</span></span
+            ></a
+          ><button
+            type="button"
+            class="c-iconbtn c-collapse"
+            data-nav-toggle=""
+            aria-label="Collapse menu"
+            title="Collapse menu"
           >
-        </nav>
-        <div class="p-help" style="margin-top: auto">
-          <span class="p-h3" style="font-size: 15px">Mentor handbook</span
-          ><span class="p-muted">Rubrics, attendance rules and how course review works.</span
-          ><a class="p-link" href="#">Open handbook</a>
-        </div>
-      </aside>
-      <div class="p-content">
-        <header class="p-top">
-          <label class="p-search"
-            ><svg
-              class="eit-icon"
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M3 3h18v18H3zM9 3v18M16 9l-3 3 3 3"></path>
+            </svg></button
+          ><button type="button" class="c-iconbtn c-close" data-nav-close="" aria-label="Close menu">
+            <svg
               width="18"
               height="18"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
+              stroke-width="1.9"
               stroke-linecap="round"
               stroke-linejoin="round"
-              focusable="false"
               aria-hidden="true"
+              focusable="false"
             >
-              <circle cx="11" cy="11" r="8"></circle>
-              <path d="M21 21l-4.35-4.35"></path></svg
-            ><span class="eit-sr">Search</span><input type="search" placeholder="Search students, batches, lessons"
-          /></label>
-          <div class="p-top-right">
-            <div class="eit-seg has-thumb" role="group" aria-label="Language">
-              <span class="eit-seg__thumb" aria-hidden="true" style="width: 52px; transform: translateX(4px)"></span
-              ><button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button
-              ><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button>
-            </div>
+              <path d="M18 6 6 18M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <nav class="c-nav" aria-label="Mentor panel">
+          <div class="c-group">
             <button
-              class="p-iconbtn"
-              data-notif-scope="mentor"
               type="button"
-              aria-label="Notifications, 3 unread"
+              class="c-item c-expand"
+              data-nav-toggle=""
+              aria-label="Expand menu"
+              title="Expand menu"
+            >
+              <span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M3 3h18v18H3zM9 3v18M13 9l3 3-3 3"></path></svg
+              ></span></button
+            ><a class="c-item" href="dashboard.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M3 3h7v9H3zM14 3h7v5h-7zM14 12h7v9h-7zM3 16h7v5H3z"></path></svg></span
+              ><span class="c-label">Dashboard</span></a
+            >
+          </div>
+          <div class="c-group" role="group" aria-labelledby="nav-queues">
+            <span class="c-group-label" id="nav-queues">Queues</span
+            ><a class="c-item" href="review.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M9 3h6v3H9zM8 4.5H5V21h14V4.5h-3M9 13l2 2 4-4"></path></svg></span
+              ><span class="c-label">Reviews</span><span class="c-count">5</span></a
+            ><a class="c-item" href="questions.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span
+              ><span class="c-label">Student questions</span><span class="c-count">3</span></a
+            >
+          </div>
+          <div class="c-group" role="group" aria-labelledby="nav-teaching">
+            <span class="c-group-label" id="nav-teaching">Teaching</span
+            ><a class="c-item" href="batch.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21c0-4 3.1-7 7-7s7 3 7 7M16 3.5a4 4 0 0 1 0 7M22 21c0-3-1.7-5.4-4-6.4"
+                  ></path></svg></span
+              ><span class="c-label">My batches</span></a
+            ><a class="c-item" href="schedule.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M3 5h18v16H3zM3 10h18M8 3v4M16 3v4"></path></svg></span
+              ><span class="c-label">Schedule &amp; recordings</span><span class="c-count">1</span></a
+            >
+          </div>
+          <div class="c-group" role="group" aria-labelledby="nav-content">
+            <span class="c-group-label" id="nav-content">Content</span
+            ><a class="c-item" href="course-builder.html" aria-current="page"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5zM4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"
+                  ></path></svg></span
+              ><span class="c-label">Courses</span></a
+            >
+          </div>
+          <div class="c-group" role="group" aria-labelledby="nav-help">
+            <span class="c-group-label" id="nav-help">Help</span
+            ><a class="c-item" href="#"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"
+                  ></path></svg></span
+              ><span class="c-label">Mentor handbook</span></a
+            >
+          </div>
+        </nav>
+      </aside>
+      <div class="p-content">
+        <header class="c-top">
+          <div class="c-top-in">
+            <button
+              type="button"
+              class="c-iconbtn c-menu"
+              data-nav-open=""
+              aria-label="Open menu"
+              aria-controls="c-side"
               aria-expanded="false"
-              aria-controls="notif-menu"
             >
-              <svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
-                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
-              ><span class="p-badge-count" data-unread-count="">3</span></button
-            ><a class="p-me" href="profile.html" style="text-decoration: none; border-radius: 12px"
-              ><span class="p-avatar">KH</span
-              ><span style="display: flex; flex-direction: column"
-                ><span class="p-me-name">Kamrul Hasan</span><span class="p-me-sub">Mentor · Web Development</span></span
-              ></a
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M3 6h18M3 12h18M3 18h18"></path>
+              </svg></button
+            ><span class="c-top-ico" aria-hidden="true"
+              ><svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5zM4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"
+                ></path></svg
+            ></span>
+            <div class="c-top-title">
+              <p class="c-top-h">Courses</p>
+              <p class="c-top-sub">Build your lessons; an admin checks and publishes them</p>
+            </div>
+            <div class="c-grow"></div>
+            <label class="c-search" title="Search"
+              ><svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM21 21l-4.3-4.3"></path></svg
+              ><span class="eit-sr">Search</span><input type="search" placeholder="Search…" /><kbd class="c-kbd"
+                >Ctrl K</kbd
+              ></label
             >
-            <div class="p-dropdown" role="dialog" aria-label="Notifications" id="notif-menu" hidden="" data-popover="">
-              <div class="p-row" style="justify-content: space-between; padding: 16px 18px 10px">
-                <strong style="font-size: 16px">Notifications</strong
-                ><button
-                  type="button"
+            <div class="c-pop-wrap">
+              <button
+                type="button"
+                class="c-iconbtn c-bordered"
+                data-notif-scope="mentor"
+                aria-label="Notifications, 3 unread"
+                aria-expanded="false"
+                aria-controls="notif-menu"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
+                ><span class="c-badge" data-unread-count="">3</span>
+              </button>
+              <div
+                class="p-dropdown"
+                role="dialog"
+                aria-label="Notifications"
+                id="notif-menu"
+                hidden=""
+                data-popover=""
+              >
+                <div class="p-row" style="justify-content: space-between; padding: 16px 18px 10px">
+                  <strong style="font-size: 16px">Notifications</strong
+                  ><button
+                    type="button"
+                    class="p-link"
+                    style="
+                      border: 0px;
+                      background: none;
+                      padding: 0px;
+                      font-style: inherit;
+                      font-variant: inherit;
+                      font-stretch: inherit;
+                      line-height: inherit;
+                      font-family: inherit;
+                      font-optical-sizing: inherit;
+                      font-size-adjust: inherit;
+                      font-kerning: inherit;
+                      font-feature-settings: inherit;
+                      font-variation-settings: inherit;
+                      font-weight: 600;
+                      font-size: 13px;
+                      cursor: pointer;
+                    "
+                    data-mark-read="#notif-menu"
+                  >
+                    Mark all as read
+                  </button>
+                </div>
+                <ul class="p-rows" style="padding: 0px 8px 8px">
+                  <li style="align-items: flex-start">
+                    <span class="p-tile" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                          d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7l-5-5zM14 2v4a2 2 0 0 0 2 2h4"
+                        ></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                      ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                        >Tanvir Hasan sent "Responsive landing page"</span
+                      ><span class="p-small" style="font-size: 12px">WordPress · Batch 14 · 1 h ago</span></span
+                    ><span
+                      aria-label="Unread"
+                      style="
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background: var(--cyan);
+                        margin-top: 6px;
+                        flex: 0 0 auto;
+                      "
+                      data-unread=""
+                    ></span>
+                  </li>
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--muted" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                      ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                        >New question on "Building a custom header"</span
+                      ><span class="p-small" style="font-size: 12px">Nusrat Jahan · 2 h ago</span></span
+                    ><span
+                      aria-label="Unread"
+                      style="
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background: var(--cyan);
+                        margin-top: 6px;
+                        flex: 0 0 auto;
+                      "
+                      data-unread=""
+                    ></span>
+                  </li>
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--amber" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                      ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                        >Class 12 recording is due by 9:00 AM</span
+                      ><span class="p-small" style="font-size: 12px">WordPress · Batch 14 · 3 h ago</span></span
+                    ><span
+                      aria-label="Unread"
+                      style="
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background: var(--cyan);
+                        margin-top: 6px;
+                        flex: 0 0 auto;
+                      "
+                      data-unread=""
+                    ></span>
+                  </li>
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                          d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
+                        ></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                      ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 500"
+                        >Admin started reviewing your course</span
+                      ><span class="p-small" style="font-size: 12px"
+                        >Advanced WordPress Theme Development · yesterday</span
+                      ></span
+                    >
+                  </li>
+                </ul>
+                <a
+                  href="notifications.html"
                   class="p-link"
                   style="
-                    border: 0px;
-                    background: none;
-                    padding: 0px;
-                    font-style: inherit;
-                    font-variant: inherit;
-                    font-stretch: inherit;
-                    line-height: inherit;
-                    font-family: inherit;
-                    font-optical-sizing: inherit;
-                    font-size-adjust: inherit;
-                    font-kerning: inherit;
-                    font-feature-settings: inherit;
-                    font-variation-settings: inherit;
-                    font-weight: 600;
-                    font-size: 13px;
-                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    padding: 12px;
+                    border-top: 1px solid var(--line-soft);
+                    border-radius: 0px;
                   "
-                  data-mark-read="#notif-menu"
+                  >See all notifications</a
                 >
-                  Mark all as read
-                </button>
               </div>
-              <ul class="p-rows" style="padding: 0px 8px 8px">
-                <li style="align-items: flex-start">
-                  <span class="p-tile" style="width: 36px; height: 36px; border-radius: 10px"
-                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7l-5-5zM14 2v4a2 2 0 0 0 2 2h4"
-                      ></path></svg></span
-                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
-                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
-                      >Tanvir Hasan sent "Responsive landing page"</span
-                    ><span class="p-small" style="font-size: 12px">WordPress · Batch 14 · 1 h ago</span></span
-                  ><span
-                    aria-label="Unread"
-                    style="
-                      width: 8px;
-                      height: 8px;
-                      border-radius: 50%;
-                      background: var(--cyan);
-                      margin-top: 6px;
-                      flex: 0 0 auto;
-                    "
-                    data-unread=""
-                  ></span>
-                </li>
-                <li style="align-items: flex-start">
-                  <span class="p-tile p-tile--muted" style="width: 36px; height: 36px; border-radius: 10px"
-                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span
-                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
-                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
-                      >New question on "Building a custom header"</span
-                    ><span class="p-small" style="font-size: 12px">Nusrat Jahan · 2 h ago</span></span
-                  ><span
-                    aria-label="Unread"
-                    style="
-                      width: 8px;
-                      height: 8px;
-                      border-radius: 50%;
-                      background: var(--cyan);
-                      margin-top: 6px;
-                      flex: 0 0 auto;
-                    "
-                    data-unread=""
-                  ></span>
-                </li>
-                <li style="align-items: flex-start">
-                  <span class="p-tile p-tile--amber" style="width: 36px; height: 36px; border-radius: 10px"
-                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg></span
-                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
-                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
-                      >Class 12 recording is due by 9:00 AM</span
-                    ><span class="p-small" style="font-size: 12px">WordPress · Batch 14 · 3 h ago</span></span
-                  ><span
-                    aria-label="Unread"
-                    style="
-                      width: 8px;
-                      height: 8px;
-                      border-radius: 50%;
-                      background: var(--cyan);
-                      margin-top: 6px;
-                      flex: 0 0 auto;
-                    "
-                    data-unread=""
-                  ></span>
-                </li>
-                <li style="align-items: flex-start">
-                  <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
-                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
-                      ></path></svg></span
-                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
-                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 500"
-                      >Admin started reviewing your course</span
-                    ><span class="p-small" style="font-size: 12px"
-                      >Advanced WordPress Theme Development · yesterday</span
-                    ></span
-                  >
-                </li>
-              </ul>
-              <a
-                href="notifications.html"
-                class="p-link"
-                style="
-                  display: flex;
-                  justify-content: center;
-                  padding: 12px;
-                  border-top: 1px solid var(--line-soft);
-                  border-radius: 0px;
-                "
-                >See all notifications</a
+            </div>
+            <button
+              type="button"
+              class="c-iconbtn c-bordered c-theme"
+              data-theme-toggle=""
+              aria-label="Dark mode"
+              aria-pressed="false"
+              title="Switch to dark mode"
+            >
+              <svg
+                class="c-moon"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
               >
+                <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg
+              ><svg
+                class="c-sun"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zM12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"
+                ></path>
+              </svg>
+            </button>
+            <div class="c-pop-wrap">
+              <button
+                type="button"
+                class="c-me"
+                aria-expanded="false"
+                aria-controls="me-menu"
+                aria-label="Your account: Kamrul Hasan"
+              >
+                <span class="c-avatar" aria-hidden="true">KH</span
+                ><span class="c-me-text"
+                  ><span class="c-me-name">Kamrul Hasan</span><span class="c-me-sub">Mentor</span></span
+                >
+              </button>
+              <div class="c-pop" id="me-menu" hidden="" data-popover="" role="group" aria-label="Your account">
+                <div class="c-pop-head">
+                  <strong>Kamrul Hasan</strong><span class="p-small">Mentor · Web Development</span>
+                </div>
+                <a href="profile.html"
+                  ><svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21c0-4 3.6-7 8-7s8 3 8 7"></path></svg
+                  >My profile</a
+                ><a href="notifications.html"
+                  ><svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
+                  >Notifications</a
+                ><a href="profile.html#notifications"
+                  ><svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"></path></svg
+                  >Notification settings</a
+                >
+                <div class="c-pop-row">
+                  <span class="p-row" style="gap: 10px"
+                    ><svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path
+                        d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"
+                      ></path></svg
+                    >Language</span
+                  >
+                  <div class="eit-seg" role="group" aria-label="Language">
+                    <button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button
+                    ><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button>
+                  </div>
+                </div>
+                <hr />
+                <a href="../index.html"
+                  ><svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"></path></svg
+                  >Log out</a
+                >
+              </div>
             </div>
           </div>
         </header>
         <main class="p-main">
-          <nav
-            aria-label="Breadcrumb"
-            class="p-row"
-            style="gap: 8px; font-size: 14px; color: var(--ink-3); flex-wrap: wrap"
-          >
-            <a class="p-link" href="#" style="font-weight: 500">Courses</a><span aria-hidden="true">/</span
-            ><span style="color: var(--ink-2)">WooCommerce Store Building</span>
+          <nav class="c-switch" aria-label="Your courses">
+            <a class="c-switch-item" href="course-builder.html" aria-current="page"
+              ><span class="c-switch-t">WooCommerce Store Building</span
+              ><span class="c-switch-s">Draft · 2 modules · 7 lessons</span></a
+            ><a class="c-switch-item" href="#"
+              ><span class="c-switch-t">Advanced WordPress Theme Development</span
+              ><span class="c-switch-s">In review · 24 lessons · sent 13 Oct</span></a
+            >
           </nav>
           <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
             <div style="display: flex; flex-direction: column; gap: 6px">
@@ -759,7 +1079,13 @@
                 >
                   <div
                     class="p-thumb"
-                    style="width: 128px; height: 72px; flex: 0 0 auto; background: var(--ink); color: var(--on-ink-2)"
+                    style="
+                      width: 128px;
+                      height: 72px;
+                      flex: 0 0 auto;
+                      background: var(--c-video);
+                      color: var(--c-video-ink);
+                    "
                   >
                     <svg
                       class="eit-icon"

@@ -1,5 +1,5 @@
-/* Admin console: the SchoolofGenZ console look, in European IT colours.
-   Loaded only by admin pages (<html class="is-console">), after eit.css, panel.css and app.css.
+/* Console: the SchoolofGenZ console look, in European IT colours, for the admin and mentor panels.
+   Loaded only by admin and mentor pages (<html class="is-console">), after eit.css, panel.css and app.css.
    Frame: a 232px sidebar (sections with mono labels, icon tiles, count pills) beside a 56px top bar that
    holds the page title and its actions. Pages use the full width. Type: Anek Bangla, JetBrains Mono.
    Sidebar: full from 1280px (it can be collapsed to icons), icons only from 768 to 1279px, a drawer below.
@@ -30,6 +30,9 @@ html.is-console {
   --c-viz-mute: #c9d5df;
   --c-danger-line: #f3c7c2;
   --c-unread: #eaf7fd;
+  /* A video's poster frame stays dark in both themes. */
+  --c-video: #0a1b2c;
+  --c-video-ink: #c9dce8;
   --c-lift: 0 1px 2px rgba(10, 27, 44, 0.05), 0 6px 18px rgba(10, 27, 44, 0.06);
   --c-overlay: 0 16px 40px rgba(10, 27, 44, 0.16);
   --c-seg-shadow: 0 1px 2px rgba(10, 27, 44, 0.1), 0 2px 8px rgba(10, 27, 44, 0.06);
@@ -78,6 +81,8 @@ html.is-console[data-theme="dark"] {
   --c-viz-mute: #3a5266;
   --c-danger-line: #5a2a26;
   --c-unread: #0e2639;
+  --c-video: #050c13;
+  --c-video-ink: #b4c3cf;
   --c-lift: none;
   --c-overlay: 0 16px 40px rgba(0, 0, 0, 0.5);
   --c-seg-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
@@ -251,6 +256,10 @@ html.is-console body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+/* A count sits a little closer to its label, so "Schedule & recordings" fits beside one. */
+.c-label + .c-count {
+  margin-left: -6px;
 }
 .c-count {
   flex: none;
@@ -1682,6 +1691,564 @@ div.c-kpi:hover {
   .c-pane,
   .c-pane.is-open {
     transition: none;
+  }
+}
+
+/* ---------- Mentor panel: the review queue, record headers, batch and course switchers, the day plan ----------
+   The review queue is a record list on the left and the open project's review beside it (the review needs the
+   room a pane doesn't have). Below 1100px the queue becomes a strip of cards above the review. */
+.c-queue {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+.c-queue > .c-list {
+  position: sticky;
+  top: 76px;
+}
+.c-qtitle {
+  flex: 1 1 auto;
+  font-size: 13px;
+  font-weight: 600;
+}
+.c-qlist .c-tools {
+  padding: 8px 0;
+}
+.c-qlist .c-pick {
+  max-width: 150px;
+}
+.c-qlist .c-pick select {
+  width: 100%;
+  text-overflow: ellipsis;
+}
+.c-qrow {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.c-qrow .c-who {
+  align-items: flex-start;
+}
+.c-qrow .c-who .p-avatar {
+  margin-top: 1px;
+}
+.c-qmeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+.c-qrow[data-done] .c-cell-t {
+  color: var(--ink-3);
+}
+.c-qwork {
+  min-width: 0;
+  container: c-qwork / inline-size;
+}
+.c-review {
+  gap: 16px;
+}
+.c-review-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+.c-review-grid > .c-panel {
+  grid-column: auto;
+}
+.c-review-main {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.c-panel-head h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.c-block-h {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-3);
+}
+/* Side by side only when the review has the room (a container query, so a collapsed sidebar counts). */
+@container c-qwork (max-width: 819px) {
+  .c-review-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+/* Answering a question in the record pane. */
+.c-answer > [type="submit"] {
+  align-self: flex-start;
+}
+.c-switch-line {
+  gap: 10px;
+}
+.p-thumb.c-preview-shot {
+  max-height: 340px;
+}
+/* Mentor dashboard: today's plan beside the next class, and the to-do list. */
+.c-today {
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 16px;
+  padding: 16px;
+}
+.c-steps-day {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.c-step {
+  position: relative;
+  display: flex;
+  gap: 12px;
+  padding-bottom: 18px;
+}
+.c-step:last-child {
+  padding-bottom: 0;
+}
+/* The line between stops: solid up to now, dashed after. */
+.c-step:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 24px;
+  bottom: 2px;
+  border-left: 2px solid var(--success);
+}
+.c-step[data-step="now"]:not(:last-child)::before {
+  border-left: 2px dashed var(--line-strong);
+}
+.c-step-dot {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--line-strong);
+  background: var(--surface-card);
+}
+.c-step[data-step="done"] .c-step-dot {
+  border-color: var(--success);
+  background: var(--success);
+  color: var(--surface-card);
+}
+.c-step[data-step="now"] .c-step-dot {
+  border-color: var(--cyan);
+  box-shadow: inset 0 0 0 4px var(--surface-card);
+  background: var(--cyan);
+}
+.c-step[data-step="due"] .c-step-dot {
+  border-color: var(--warning);
+  background: var(--warning-soft);
+  color: var(--warning);
+}
+.c-step .c-line-t {
+  font-weight: 600;
+}
+.c-step-link {
+  align-self: flex-start;
+  margin-top: 2px;
+  color: var(--cyan-ink);
+  font-size: 12px;
+  font-weight: 600;
+}
+.c-next {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 16px;
+  border: 1px solid var(--cyan-line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+.c-next-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.c-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--success);
+  font-size: 12px;
+  font-weight: 600;
+}
+.c-next-t {
+  font-size: 15px;
+  font-weight: 600;
+}
+.c-next-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 12px;
+}
+.c-todo-bar {
+  display: block;
+  margin: 12px 16px 4px;
+}
+.c-todo-bar > span {
+  transition: width 320ms var(--ease-out-expo);
+}
+.c-check {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--line-control);
+  border-radius: 7px;
+  background: var(--surface-card);
+  color: transparent;
+  cursor: pointer;
+  transition:
+    background var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard);
+}
+.c-check:hover {
+  border-color: var(--success);
+}
+.c-check[aria-checked="true"] {
+  border-color: var(--success);
+  background: var(--success);
+  color: var(--surface-card);
+}
+.c-todo:has(.c-check[aria-checked="true"]) .c-line-t {
+  color: var(--ink-3);
+  text-decoration: line-through;
+}
+.c-quick > .eit-badge {
+  flex: none;
+}
+@container c-dash (max-width: 699px) {
+  .c-today {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (pointer: coarse), (max-width: 767px) {
+  .c-check {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Switching between the mentor's batches or courses: the open one is marked. */
+.c-switch {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 260px));
+  gap: 10px;
+}
+.c-switch-item {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 14px;
+  box-sizing: border-box;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface-card);
+  color: var(--ink);
+  text-decoration: none;
+  transition:
+    border-color var(--duration-fast) var(--ease-standard),
+    background var(--duration-fast) var(--ease-standard);
+}
+.c-switch-item:hover {
+  border-color: var(--line-strong);
+}
+.c-switch-item[aria-current] {
+  border-color: var(--cyan);
+  background: var(--cyan-soft);
+  box-shadow: inset 0 0 0 1px var(--cyan);
+}
+.c-switch-t {
+  font-size: 13px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.c-switch-s {
+  font-size: 12px;
+  color: var(--ink-3);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.c-switch-item[aria-current] .c-switch-s {
+  color: var(--ink-2);
+}
+.c-switch-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+}
+.c-switch-bar > .p-bar {
+  flex: 1 1 auto;
+}
+.c-switch-item[aria-current] .p-bar {
+  background: var(--surface-card);
+}
+.c-kpi-of {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink-3);
+}
+.c-form-grid--3 {
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+  align-items: start;
+}
+.c-settings {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--line);
+}
+.c-setting {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+.c-setting:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+.c-setting .c-line-t {
+  font-weight: 600;
+}
+.c-step-link {
+  text-decoration: none;
+}
+.c-step-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media (max-width: 767px) {
+  .c-switch {
+    display: flex;
+    overflow-x: auto;
+    margin: 0 -16px;
+    padding: 0 16px 2px;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+  .c-switch-item {
+    flex: 0 0 76%;
+    scroll-snap-align: start;
+  }
+}
+
+/* The open record's header at the top of the page or a review: name, facts, and its own buttons. */
+.c-rec-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 14px;
+}
+.c-rec-avatar {
+  width: 44px;
+  height: 44px;
+  font-size: 14px;
+}
+.c-rec-title {
+  flex: 1 1 280px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.c-rec-title h1,
+.c-rec-title h2 {
+  margin: 0;
+}
+.c-rec-nav,
+.c-rec-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.c-rec-nav .c-btn[disabled] {
+  opacity: 0.45;
+  cursor: default;
+}
+/* The site preview: a browser frame that takes the chosen device width. */
+.c-preview {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  transition: max-width 320ms var(--ease-out-expo);
+}
+.c-preview-bar {
+  display: flex;
+  gap: 6px;
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--line);
+  background: var(--track);
+}
+.c-preview-bar span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--line-strong);
+}
+.p-thumb.c-preview-shot {
+  aspect-ratio: 16 / 9;
+  border-radius: 0;
+}
+/* Rubric: one line per part with its mark, then the total and the decision. */
+.c-scores {
+  display: flex;
+  flex-direction: column;
+}
+.c-score {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+.c-score:first-child {
+  padding-top: 0;
+}
+.c-score label {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.c-score-t {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.c-score-in {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.c-score-in .p-input {
+  width: 64px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.c-score-in .p-small {
+  min-width: 26px;
+}
+.c-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.c-total-l {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 14px;
+}
+.c-verdict {
+  font-size: 12px;
+  color: var(--ink-3);
+}
+.c-verdict[data-pass="true"] {
+  color: var(--success);
+}
+.c-verdict[data-pass="false"] {
+  color: var(--danger);
+}
+.c-total-n {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.c-total-n > span:last-child {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-3);
+}
+.c-decide {
+  flex-wrap: wrap;
+  gap: 8px;
+}
+@media (max-width: 1099px) {
+  .c-queue {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .c-queue > .c-list {
+    position: static;
+  }
+  /* The queue becomes a row of cards that scrolls sideways; the open one is underlined. */
+  .c-qlist .c-rows {
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scrollbar-width: thin;
+  }
+  .c-qlist .c-qrow {
+    flex: 0 0 248px;
+    border-left: 0;
+    border-right: 1px solid var(--line);
+    border-bottom: 0;
+    scroll-snap-align: start;
+  }
+  .c-qlist .c-qrow[aria-selected="true"] {
+    box-shadow: inset 0 -2px 0 var(--cyan);
+  }
+  .c-qlist .c-foot {
+    border-top: 1px solid var(--line);
+  }
+}
+@media (max-width: 767px) {
+  .c-qlist .c-qrow {
+    flex-basis: 232px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px;
+  }
+  .c-qlist .c-qrow > :first-child {
+    grid-column: auto;
+  }
+  .c-qlist .c-pick {
+    max-width: none;
+  }
+  .c-rec-nav {
+    width: 100%;
+  }
+  .c-rec-nav > .p-small {
+    margin-right: auto;
   }
 }
 

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="is-console">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,1129 +8,1263 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap"
     />
     <link rel="stylesheet" href="../assets/css/eit.css" />
     <link rel="stylesheet" href="../assets/css/panel.css" />
     <link rel="stylesheet" href="../assets/css/app.css" />
-    <style>
-      /* Three stops on one line (the third used to wrap under the first); a vertical list on phones. */
-      .m-today {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 12px 0;
-      }
-      @media (max-width: 520px) {
-        .m-today {
-          grid-template-columns: 1fr;
-          gap: 16px;
-        }
-        .m-today li::before {
-          display: none;
-        }
-      }
-      .m-today li {
-        min-width: 0;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        padding-right: 14px;
-        animation: p-rise 520ms var(--ease-out-expo) both;
-      }
-      .m-today li:nth-child(2) {
-        animation-delay: 90ms;
-      }
-      .m-today li:nth-child(3) {
-        animation-delay: 180ms;
-      }
-      .m-today li::before {
-        content: "";
-        position: absolute;
-        top: 12px;
-        left: 30px;
-        right: 6px;
-        height: 2px;
-        border-radius: 2px;
-        background: rgba(255, 255, 255, 0.16);
-      }
-      .m-today li:last-child::before {
-        display: none;
-      }
-      .m-today li.is-done::before {
-        background: #4fd39a;
-      }
-      .m-dot {
-        position: relative;
-        z-index: 1;
-        width: 26px;
-        height: 26px;
-        border-radius: 50%;
-        display: grid;
-        place-items: center;
-        box-sizing: border-box;
-        background: #0b3b57;
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        color: #0a1b2c;
-      }
-      .is-done .m-dot {
-        background: #4fd39a;
-        border-color: #4fd39a;
-      }
-      .is-now .m-dot {
-        background: #00aeee;
-        border-color: #00aeee;
-        animation: p-pulse 2.4s ease-out infinite;
-      }
-      .is-due .m-dot {
-        background: #f4b04f;
-        border-color: #f4b04f;
-      }
-      .m-txt {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-      }
-      .m-txt strong {
-        font-size: 14px;
-        color: #ffffff;
-      }
-      .m-txt span {
-        font-size: 12px;
-        color: #c9dce8;
-      }
-      .m-up {
-        margin-top: 4px;
-        font-size: 13px;
-        font-weight: 700;
-        color: #f4b04f !important;
-        text-decoration: none;
-      }
-      .m-up:hover {
-        text-decoration: underline;
-      }
-    </style>
+    <link rel="stylesheet" href="../assets/css/console.css" />
+    <script src="../assets/js/theme.js"></script>
+
     <script src="../assets/js/app.js" defer=""></script>
   </head>
   <body>
-    <div class="p-shell">
-      <aside class="p-side">
-        <a class="p-brand" href="dashboard.html"
-          ><span class="p-brand-mark" aria-hidden="true"></span
-          ><span class="p-brand-text"
-            ><span class="p-brand-name">European IT</span><span class="p-brand-sub">INSTITUTE</span></span
-          ></a
-        >
-        <nav class="p-nav" aria-label="Mentor panel">
-          <span class="p-nav-label">Mentor</span
-          ><a href="dashboard.html" aria-current="page"
-            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="3" y="3" width="7" height="9" rx="1"></rect>
-              <rect x="14" y="3" width="7" height="5" rx="1"></rect>
-              <rect x="14" y="12" width="7" height="9" rx="1"></rect>
-              <rect x="3" y="16" width="7" height="5" rx="1"></rect></svg
-            ><span class="p-nav-text">Dashboard</span></a
-          ><a href="batch.html"
-            ><svg
-              class="eit-icon"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              focusable="false"
-              aria-hidden="true"
-            >
-              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-              <circle cx="9" cy="7" r="4"></circle>
-              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg
-            ><span class="p-nav-text">My batches</span></a
-          ><a href="review.html"
-            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="8" y="2" width="8" height="4" rx="1"></rect>
-              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
-              <path d="m9 14 2 2 4-4"></path></svg
-            ><span class="p-nav-text">Reviews</span><span class="p-count">5</span></a
-          ><a href="course-builder.html"
-            ><svg
-              class="eit-icon"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              focusable="false"
-              aria-hidden="true"
-            >
-              <path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path>
-              <path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg
-            ><span class="p-nav-text">Courses</span></a
-          ><a href="questions.html"
-            ><svg
-              class="eit-icon"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              focusable="false"
-              aria-hidden="true"
-            >
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg
-            ><span class="p-nav-text">Student questions</span
-            ><span class="p-nav-short" aria-hidden="true">Questions</span><span class="p-count">3</span></a
-          ><a href="schedule.html"
-            ><svg
-              class="eit-icon"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              focusable="false"
-              aria-hidden="true"
-            >
-              <rect x="3" y="4" width="18" height="18" rx="2"></rect>
-              <path d="M16 2v4M8 2v4M3 10h18"></path></svg
-            ><span class="p-nav-text">Schedule &amp; recordings</span
-            ><span class="p-nav-short" aria-hidden="true">Schedule</span
-            ><span class="p-count" style="background: var(--warning); color: rgb(255, 255, 255)">1</span></a
+    <div class="p-shell p-console">
+      <aside class="c-side" id="c-side">
+        <div class="c-brand">
+          <a class="c-brand-link" href="dashboard.html" aria-label="European IT mentor panel, dashboard"
+            ><span class="c-logo" aria-hidden="true"
+              ><svg
+                width="17"
+                height="17"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M2 9l10-5 10 5-10 5zM6 11v5c3 2.5 9 2.5 12 0v-5M22 9v6"></path></svg></span
+            ><span class="c-brand-text"
+              ><span class="c-brand-name">European IT</span><span class="c-brand-sub">mentor panel</span></span
+            ></a
+          ><button
+            type="button"
+            class="c-iconbtn c-collapse"
+            data-nav-toggle=""
+            aria-label="Collapse menu"
+            title="Collapse menu"
           >
-        </nav>
-        <div class="p-help" style="margin-top: auto">
-          <span class="p-h3" style="font-size: 15px">Mentor handbook</span
-          ><span class="p-muted">Rubrics, attendance rules and how course review works.</span
-          ><a class="p-link" href="#">Open handbook</a>
-        </div>
-      </aside>
-      <div class="p-content">
-        <header class="p-top">
-          <label class="p-search"
-            ><svg
-              class="eit-icon"
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M3 3h18v18H3zM9 3v18M16 9l-3 3 3 3"></path>
+            </svg></button
+          ><button type="button" class="c-iconbtn c-close" data-nav-close="" aria-label="Close menu">
+            <svg
               width="18"
               height="18"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
+              stroke-width="1.9"
               stroke-linecap="round"
               stroke-linejoin="round"
-              focusable="false"
               aria-hidden="true"
+              focusable="false"
             >
-              <circle cx="11" cy="11" r="8"></circle>
-              <path d="M21 21l-4.35-4.35"></path></svg
-            ><span class="eit-sr">Search</span><input type="search" placeholder="Search students, batches, lessons"
-          /></label>
-          <div class="p-top-right">
-            <div class="eit-seg has-thumb" role="group" aria-label="Language">
-              <span class="eit-seg__thumb" aria-hidden="true" style="width: 52px; transform: translateX(4px)"></span
-              ><button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button
-              ><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button>
-            </div>
+              <path d="M18 6 6 18M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <nav class="c-nav" aria-label="Mentor panel">
+          <div class="c-group">
             <button
-              class="p-iconbtn"
-              data-notif-scope="mentor"
               type="button"
-              aria-label="Notifications, 3 unread"
+              class="c-item c-expand"
+              data-nav-toggle=""
+              aria-label="Expand menu"
+              title="Expand menu"
+            >
+              <span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M3 3h18v18H3zM9 3v18M13 9l3 3-3 3"></path></svg
+              ></span></button
+            ><a class="c-item" href="dashboard.html" aria-current="page"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M3 3h7v9H3zM14 3h7v5h-7zM14 12h7v9h-7zM3 16h7v5H3z"></path></svg></span
+              ><span class="c-label">Dashboard</span></a
+            >
+          </div>
+          <div class="c-group" role="group" aria-labelledby="nav-queues">
+            <span class="c-group-label" id="nav-queues">Queues</span
+            ><a class="c-item" href="review.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M9 3h6v3H9zM8 4.5H5V21h14V4.5h-3M9 13l2 2 4-4"></path></svg></span
+              ><span class="c-label">Reviews</span><span class="c-count">5</span></a
+            ><a class="c-item" href="questions.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span
+              ><span class="c-label">Student questions</span><span class="c-count">3</span></a
+            >
+          </div>
+          <div class="c-group" role="group" aria-labelledby="nav-teaching">
+            <span class="c-group-label" id="nav-teaching">Teaching</span
+            ><a class="c-item" href="batch.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21c0-4 3.1-7 7-7s7 3 7 7M16 3.5a4 4 0 0 1 0 7M22 21c0-3-1.7-5.4-4-6.4"
+                  ></path></svg></span
+              ><span class="c-label">My batches</span></a
+            ><a class="c-item" href="schedule.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M3 5h18v16H3zM3 10h18M8 3v4M16 3v4"></path></svg></span
+              ><span class="c-label">Schedule &amp; recordings</span><span class="c-count">1</span></a
+            >
+          </div>
+          <div class="c-group" role="group" aria-labelledby="nav-content">
+            <span class="c-group-label" id="nav-content">Content</span
+            ><a class="c-item" href="course-builder.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5zM4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"
+                  ></path></svg></span
+              ><span class="c-label">Courses</span></a
+            >
+          </div>
+          <div class="c-group" role="group" aria-labelledby="nav-help">
+            <span class="c-group-label" id="nav-help">Help</span
+            ><a class="c-item" href="#"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"
+                  ></path></svg></span
+              ><span class="c-label">Mentor handbook</span></a
+            >
+          </div>
+        </nav>
+      </aside>
+      <div class="p-content">
+        <header class="c-top">
+          <div class="c-top-in">
+            <button
+              type="button"
+              class="c-iconbtn c-menu"
+              data-nav-open=""
+              aria-label="Open menu"
+              aria-controls="c-side"
               aria-expanded="false"
-              aria-controls="notif-menu"
             >
-              <svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
-                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
-              ><span class="p-badge-count" data-unread-count="">3</span></button
-            ><a class="p-me" href="profile.html" style="text-decoration: none"
-              ><span class="p-avatar">KH</span
-              ><span style="display: flex; flex-direction: column"
-                ><span class="p-me-name">Kamrul Hasan</span><span class="p-me-sub">Mentor · Web Development</span></span
-              ></a
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M3 6h18M3 12h18M3 18h18"></path>
+              </svg></button
+            ><span class="c-top-ico" aria-hidden="true"
+              ><svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M3 3h7v9H3zM14 3h7v5h-7zM14 12h7v9h-7zM3 16h7v5H3z"></path></svg
+            ></span>
+            <div class="c-top-title">
+              <h1>Dashboard</h1>
+              <p class="c-top-sub">Good evening, Kamrul · Thu 15 Oct</p>
+            </div>
+            <div class="c-grow"></div>
+            <label class="c-search" title="Search"
+              ><svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM21 21l-4.3-4.3"></path></svg
+              ><span class="eit-sr">Search</span><input type="search" placeholder="Search…" /><kbd class="c-kbd"
+                >Ctrl K</kbd
+              ></label
             >
-            <div class="p-dropdown" role="dialog" aria-label="Notifications" id="notif-menu" hidden="" data-popover="">
-              <div class="p-row" style="justify-content: space-between; padding: 16px 18px 10px">
-                <strong style="font-size: 16px">Notifications</strong
-                ><button
-                  type="button"
+            <div class="c-pop-wrap">
+              <button
+                type="button"
+                class="c-iconbtn c-bordered"
+                data-notif-scope="mentor"
+                aria-label="Notifications, 3 unread"
+                aria-expanded="false"
+                aria-controls="notif-menu"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
+                ><span class="c-badge" data-unread-count="">3</span>
+              </button>
+              <div
+                class="p-dropdown"
+                role="dialog"
+                aria-label="Notifications"
+                id="notif-menu"
+                hidden=""
+                data-popover=""
+              >
+                <div class="p-row" style="justify-content: space-between; padding: 16px 18px 10px">
+                  <strong style="font-size: 16px">Notifications</strong
+                  ><button
+                    type="button"
+                    class="p-link"
+                    style="
+                      border: 0px;
+                      background: none;
+                      padding: 0px;
+                      font-style: inherit;
+                      font-variant: inherit;
+                      font-stretch: inherit;
+                      line-height: inherit;
+                      font-family: inherit;
+                      font-optical-sizing: inherit;
+                      font-size-adjust: inherit;
+                      font-kerning: inherit;
+                      font-feature-settings: inherit;
+                      font-variation-settings: inherit;
+                      font-weight: 600;
+                      font-size: 13px;
+                      cursor: pointer;
+                    "
+                    data-mark-read="#notif-menu"
+                  >
+                    Mark all as read
+                  </button>
+                </div>
+                <ul class="p-rows" style="padding: 0px 8px 8px">
+                  <li style="align-items: flex-start">
+                    <span class="p-tile" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                          d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7l-5-5zM14 2v4a2 2 0 0 0 2 2h4"
+                        ></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                      ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                        >Tanvir Hasan sent "Responsive landing page"</span
+                      ><span class="p-small" style="font-size: 12px">WordPress · Batch 14 · 1 h ago</span></span
+                    ><span
+                      aria-label="Unread"
+                      style="
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background: var(--cyan);
+                        margin-top: 6px;
+                        flex: 0 0 auto;
+                      "
+                      data-unread=""
+                    ></span>
+                  </li>
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--muted" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                      ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                        >New question on "Building a custom header"</span
+                      ><span class="p-small" style="font-size: 12px">Nusrat Jahan · 2 h ago</span></span
+                    ><span
+                      aria-label="Unread"
+                      style="
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background: var(--cyan);
+                        margin-top: 6px;
+                        flex: 0 0 auto;
+                      "
+                      data-unread=""
+                    ></span>
+                  </li>
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--amber" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                      ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                        >Class 12 recording is due by 9:00 AM</span
+                      ><span class="p-small" style="font-size: 12px">WordPress · Batch 14 · 3 h ago</span></span
+                    ><span
+                      aria-label="Unread"
+                      style="
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background: var(--cyan);
+                        margin-top: 6px;
+                        flex: 0 0 auto;
+                      "
+                      data-unread=""
+                    ></span>
+                  </li>
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                          d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
+                        ></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                      ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 500"
+                        >Admin started reviewing your course</span
+                      ><span class="p-small" style="font-size: 12px"
+                        >Advanced WordPress Theme Development · yesterday</span
+                      ></span
+                    >
+                  </li>
+                </ul>
+                <a
+                  href="notifications.html"
                   class="p-link"
                   style="
-                    border: 0px;
-                    background: none;
-                    padding: 0px;
-                    font-style: inherit;
-                    font-variant: inherit;
-                    font-stretch: inherit;
-                    line-height: inherit;
-                    font-family: inherit;
-                    font-optical-sizing: inherit;
-                    font-size-adjust: inherit;
-                    font-kerning: inherit;
-                    font-feature-settings: inherit;
-                    font-variation-settings: inherit;
-                    font-weight: 600;
-                    font-size: 13px;
-                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    padding: 12px;
+                    border-top: 1px solid var(--line-soft);
+                    border-radius: 0px;
                   "
-                  data-mark-read="#notif-menu"
+                  >See all notifications</a
                 >
-                  Mark all as read
-                </button>
               </div>
-              <ul class="p-rows" style="padding: 0px 8px 8px">
-                <li style="align-items: flex-start">
-                  <span class="p-tile" style="width: 36px; height: 36px; border-radius: 10px"
-                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7l-5-5zM14 2v4a2 2 0 0 0 2 2h4"
-                      ></path></svg></span
-                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
-                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
-                      >Tanvir Hasan sent "Responsive landing page"</span
-                    ><span class="p-small" style="font-size: 12px">WordPress · Batch 14 · 1 h ago</span></span
-                  ><span
-                    aria-label="Unread"
-                    style="
-                      width: 8px;
-                      height: 8px;
-                      border-radius: 50%;
-                      background: var(--cyan);
-                      margin-top: 6px;
-                      flex: 0 0 auto;
-                    "
-                    data-unread=""
-                  ></span>
-                </li>
-                <li style="align-items: flex-start">
-                  <span class="p-tile p-tile--muted" style="width: 36px; height: 36px; border-radius: 10px"
-                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span
-                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
-                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
-                      >New question on "Building a custom header"</span
-                    ><span class="p-small" style="font-size: 12px">Nusrat Jahan · 2 h ago</span></span
-                  ><span
-                    aria-label="Unread"
-                    style="
-                      width: 8px;
-                      height: 8px;
-                      border-radius: 50%;
-                      background: var(--cyan);
-                      margin-top: 6px;
-                      flex: 0 0 auto;
-                    "
-                    data-unread=""
-                  ></span>
-                </li>
-                <li style="align-items: flex-start">
-                  <span class="p-tile p-tile--amber" style="width: 36px; height: 36px; border-radius: 10px"
-                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg></span
-                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
-                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
-                      >Class 12 recording is due by 9:00 AM</span
-                    ><span class="p-small" style="font-size: 12px">WordPress · Batch 14 · 3 h ago</span></span
-                  ><span
-                    aria-label="Unread"
-                    style="
-                      width: 8px;
-                      height: 8px;
-                      border-radius: 50%;
-                      background: var(--cyan);
-                      margin-top: 6px;
-                      flex: 0 0 auto;
-                    "
-                    data-unread=""
-                  ></span>
-                </li>
-                <li style="align-items: flex-start">
-                  <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
-                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
-                      ></path></svg></span
-                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
-                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 500"
-                      >Admin started reviewing your course</span
-                    ><span class="p-small" style="font-size: 12px"
-                      >Advanced WordPress Theme Development · yesterday</span
-                    ></span
-                  >
-                </li>
-              </ul>
-              <a
-                href="notifications.html"
-                class="p-link"
-                style="
-                  display: flex;
-                  justify-content: center;
-                  padding: 12px;
-                  border-top: 1px solid var(--line-soft);
-                  border-radius: 0px;
-                "
-                >See all notifications</a
+            </div>
+            <button
+              type="button"
+              class="c-iconbtn c-bordered c-theme"
+              data-theme-toggle=""
+              aria-label="Dark mode"
+              aria-pressed="false"
+              title="Switch to dark mode"
+            >
+              <svg
+                class="c-moon"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
               >
+                <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg
+              ><svg
+                class="c-sun"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zM12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"
+                ></path>
+              </svg>
+            </button>
+            <div class="c-pop-wrap">
+              <button
+                type="button"
+                class="c-me"
+                aria-expanded="false"
+                aria-controls="me-menu"
+                aria-label="Your account: Kamrul Hasan"
+              >
+                <span class="c-avatar" aria-hidden="true">KH</span
+                ><span class="c-me-text"
+                  ><span class="c-me-name">Kamrul Hasan</span><span class="c-me-sub">Mentor</span></span
+                >
+              </button>
+              <div class="c-pop" id="me-menu" hidden="" data-popover="" role="group" aria-label="Your account">
+                <div class="c-pop-head">
+                  <strong>Kamrul Hasan</strong><span class="p-small">Mentor · Web Development</span>
+                </div>
+                <a href="profile.html"
+                  ><svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21c0-4 3.6-7 8-7s8 3 8 7"></path></svg
+                  >My profile</a
+                ><a href="notifications.html"
+                  ><svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
+                  >Notifications</a
+                ><a href="profile.html#notifications"
+                  ><svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"></path></svg
+                  >Notification settings</a
+                >
+                <div class="c-pop-row">
+                  <span class="p-row" style="gap: 10px"
+                    ><svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path
+                        d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"
+                      ></path></svg
+                    >Language</span
+                  >
+                  <div class="eit-seg" role="group" aria-label="Language">
+                    <button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button
+                    ><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button>
+                  </div>
+                </div>
+                <hr />
+                <a href="../index.html"
+                  ><svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"></path></svg
+                  >Log out</a
+                >
+              </div>
             </div>
           </div>
         </header>
-        <main class="p-main">
-          <section
-            class="p-hero"
-            data-theme="ink"
-            aria-labelledby="hello"
-            style="display: flex; flex-wrap: wrap; gap: 28px; align-items: center"
-          >
-            <div style="flex: 1 1 360px; display: flex; flex-direction: column; gap: 14px">
-              <span class="p-eyebrow" style="color: var(--cyan)">Thursday, 15 Oct 2026</span>
-              <h1 id="hello" class="p-h1" style="font-size: 36px">Good evening, Kamrul</h1>
-              <div class="p-row" style="flex-wrap: wrap; gap: 8px">
-                <a
-                  href="review.html"
-                  class="p-pill"
-                  style="
-                    background: rgba(255, 255, 255, 0.08);
-                    color: rgb(255, 255, 255);
-                    height: 32px;
-                    text-decoration: none;
-                  "
-                  ><strong>5</strong>&nbsp;projects to review</a
-                ><a
-                  href="schedule.html"
-                  class="p-pill"
-                  style="
-                    background: rgba(244, 176, 79, 0.16);
-                    color: rgb(244, 176, 79);
-                    height: 32px;
-                    text-decoration: none;
-                  "
-                  ><strong>1</strong>&nbsp;recording to upload</a
-                ><a
-                  href="questions.html"
-                  class="p-pill"
-                  style="
-                    background: rgba(255, 255, 255, 0.08);
-                    color: rgb(255, 255, 255);
-                    height: 32px;
-                    text-decoration: none;
-                  "
-                  ><strong>3</strong>&nbsp;student questions</a
+        <main class="p-main c-dash">
+          <div class="c-kpis p-stagger" role="group" aria-label="This week">
+            <a class="c-kpi" href="batch.html"
+              ><span class="c-kpi-top"
+                ><span class="c-kpi-label">Students you teach</span
+                ><span class="c-kpi-ico c-tone-cyan"
+                  ><svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path
+                      d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21c0-4 3.1-7 7-7s7 3 7 7M16 3.5a4 4 0 0 1 0 7M22 21c0-3-1.7-5.4-4-6.4"
+                    ></path></svg></span></span
+              ><span class="c-kpi-mid"
+                ><span class="c-kpi-val"
+                  ><span class="eit-count"
+                    ><span class="eit-sr">70</span><span class="eit-count__ghost" aria-hidden="true">70</span
+                    ><span class="eit-count__n" aria-hidden="true">70</span></span
+                  ></span
+                ></span
+              ><span class="c-kpi-sub">In 3 batches · 2 online, 1 at the campus</span></a
+            ><a class="c-kpi" href="batch.html#mbp-stu"
+              ><span class="c-kpi-top"
+                ><span class="c-kpi-label">Average course progress</span
+                ><span class="c-kpi-ico c-tone-green"
+                  ><svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M3 17l6-6 4 4 8-8M15 7h6v6"></path></svg></span></span
+              ><span class="c-kpi-mid"
+                ><span class="c-kpi-val"
+                  ><span class="eit-count"
+                    ><span class="eit-sr">37%</span><span class="eit-count__ghost" aria-hidden="true">37%</span
+                    ><span class="eit-count__n" aria-hidden="true">37%</span></span
+                  ></span
+                ></span
+              ><span class="c-kpi-sub">Across your 3 batches</span
+              ><span class="c-delta" data-good="true"
+                ><svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
                 >
+                  <path d="M12 19V5M5 12l7-7 7 7"></path></svg
+                >+6 pts this week</span
+              ></a
+            ><a class="c-kpi" href="review.html"
+              ><span class="c-kpi-top"
+                ><span class="c-kpi-label">Projects to review</span
+                ><span class="c-kpi-ico c-tone-amber"
+                  ><svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M9 3h6v3H9zM8 4.5H5V21h14V4.5h-3M9 13l2 2 4-4"></path></svg></span></span
+              ><span class="c-kpi-mid"
+                ><span class="c-kpi-val"
+                  ><span class="eit-count"
+                    ><span class="eit-sr">5</span><span class="eit-count__ghost" aria-hidden="true">5</span
+                    ><span class="eit-count__n" aria-hidden="true">5</span></span
+                  ></span
+                ></span
+              ><span class="c-kpi-sub">The oldest was sent 12 Oct</span
+              ><span class="c-delta" data-good="false"
+                ><svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM12 8v4M12 16h.01"></path></svg
+                >3 days waiting</span
+              ></a
+            ><a class="c-kpi" href="batch.html"
+              ><span class="c-kpi-top"
+                ><span class="c-kpi-label">Class attendance</span
+                ><span class="c-kpi-ico c-tone-muted"
+                  ><svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M20 6 9 17l-5-5"></path></svg></span></span
+              ><span class="c-kpi-mid"
+                ><span class="c-kpi-val"
+                  ><span class="eit-count"
+                    ><span class="eit-sr">91%</span><span class="eit-count__ghost" aria-hidden="true">91%</span
+                    ><span class="eit-count__n" aria-hidden="true">91%</span></span
+                  ></span
+                ></span
+              ><span class="c-kpi-sub">This week · 18 of 20 in Class 12</span></a
+            >
+          </div>
+          <div class="c-grid">
+            <section class="c-panel" data-span="8" aria-labelledby="today-title">
+              <div class="c-panel-head">
+                <div class="c-panel-title">
+                  <h2 id="today-title">Today</h2>
+                  <span class="c-panel-sub">Thu 15 Oct · 2 classes, 1 recording due</span>
+                </div>
               </div>
-              <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 6px">
-                <span class="p-mono" style="color: var(--ink-2)">Today</span>
-                <ol class="m-today" aria-label="Today's plan">
-                  <li class="is-done">
-                    <span class="m-dot"
-                      ><svg
-                        viewBox="0 0 24 24"
-                        width="13"
-                        height="13"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="3"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        aria-hidden="true"
+              <div class="c-panel-body">
+                <div class="c-today">
+                  <ol class="c-steps-day" aria-label="Today’s plan">
+                    <li class="c-step" data-step="done">
+                      <span class="c-step-dot" aria-hidden="true"
+                        ><svg
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.6"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <path d="M20 6 9 17l-5-5"></path></svg></span
+                      ><span class="c-line-text"
+                        ><span class="c-line-t">7:00 PM · done</span
+                        ><span class="c-line-s">WordPress · Batch 14 · Class 12 · Lab 2</span></span
                       >
-                        <path d="M20 6 9 17l-5-5"></path></svg></span
-                    ><span class="m-txt"
-                      ><strong>7:00 PM · done</strong><span>WordPress B14 · Class 12 · Lab 2</span></span
+                    </li>
+                    <li class="c-step" data-step="now">
+                      <span class="c-step-dot" aria-hidden="true"></span
+                      ><span class="c-line-text"
+                        ><span class="c-line-t">9:30 PM · next</span
+                        ><span class="c-line-s">React JS · Batch 6 · Class 18 · Zoom</span></span
+                      >
+                    </li>
+                    <li class="c-step" data-step="due">
+                      <span class="c-step-dot" aria-hidden="true"
+                        ><svg
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <path d="M12 15V3M7 8l5-5 5 5M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path></svg></span
+                      ><span class="c-line-text"
+                        ><span class="c-line-t">By 9:00 AM</span
+                        ><span class="c-line-s">Upload the Class 12 recording</span
+                        ><a class="c-step-link" href="schedule.html">Upload now</a></span
+                      >
+                    </li>
+                  </ol>
+                  <div class="c-next">
+                    <div class="c-next-top">
+                      <span class="c-live"><span class="p-live"></span>Starts in 20 min</span
+                      ><span class="eit-badge eit-badge--neutral">Online</span>
+                    </div>
+                    <strong class="c-next-t">React JS · Batch 6 · Class 18</strong
+                    ><span class="c-line-s">9:30–11:00 PM · Zoom · 24 students · useEffect in practice</span>
+                    <div class="c-next-actions">
+                      <button
+                        type="button"
+                        class="eit-btn eit-btn--primary eit-btn--md"
+                        data-toast="Zoom opens in a new tab"
+                      >
+                        <svg
+                          class="eit-icon eit-btn__lead"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          focusable="false"
+                          aria-hidden="true"
+                        >
+                          <path d="M2 4h20v13H2zM8 21h8M12 17v4"></path></svg
+                        ><span class="eit-btn__label">Start class</span></button
+                      ><a class="c-btn" href="#">Open roster</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="c-panel" data-span="4" aria-labelledby="todo-title" data-checklist="">
+              <div class="c-panel-head">
+                <div class="c-panel-title">
+                  <h2 id="todo-title">Today’s to-do</h2>
+                  <span class="c-panel-sub" data-checklist-count="">1 of 4 done</span>
+                </div>
+              </div>
+              <div class="c-panel-body">
+                <span class="p-bar p-bar--thin c-todo-bar" aria-hidden="true"
+                  ><span data-checklist-bar="" style="width: 25%"></span
+                ></span>
+                <ul class="c-lines">
+                  <li class="c-line c-todo">
+                    <button
+                      type="button"
+                      class="c-check"
+                      role="checkbox"
+                      aria-checked="true"
+                      aria-label="Take attendance · WordPress B14, Class 12"
                     >
-                  </li>
-                  <li class="is-now">
-                    <span class="m-dot"></span
-                    ><span class="m-txt"><strong>9:30 PM · next</strong><span>React B6 · Class 18 · Zoom</span></span>
-                  </li>
-                  <li class="is-due">
-                    <span class="m-dot"
-                      ><svg
-                        viewBox="0 0 24 24"
+                      <svg
                         width="13"
                         height="13"
+                        viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
                         stroke-width="2.6"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                         aria-hidden="true"
-                      >
-                        <path d="M12 15V3M7 8l5-5 5 5M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path></svg></span
-                    ><span class="m-txt"
-                      ><strong>By 9:00 AM</strong><span>Class 12 recording</span
-                      ><a href="schedule.html" class="m-up">Upload now</a></span
-                    >
-                  </li>
-                </ol>
-              </div>
-            </div>
-            <div
-              class="p-lift"
-              style="
-                flex: 1 1 380px;
-                display: flex;
-                flex-direction: column;
-                gap: 14px;
-                padding: 20px;
-                border-radius: 20px;
-                background: var(--surface-card);
-                border: 1px solid var(--line);
-              "
-            >
-              <div class="p-row" style="justify-content: space-between">
-                <span class="p-row" style="gap: 8px; font-size: 13px; font-weight: 700; color: rgb(79, 211, 154)"
-                  ><span class="p-live" style="background: rgb(79, 211, 154)"></span>Starts in 20 min</span
-                ><span class="eit-badge eit-badge--neutral">Online</span>
-              </div>
-              <div style="display: flex; flex-direction: column; gap: 4px">
-                <strong style="font-size: 19px">React JS · Batch 6 · Class 18</strong
-                ><span class="p-small">9:30–11:00 PM · Zoom · 24 students · useEffect in practice</span>
-              </div>
-              <div class="p-row" style="flex-wrap: wrap">
-                <button type="button" class="eit-btn eit-btn--primary eit-btn--md">
-                  <svg
-                    class="eit-icon eit-btn__lead"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    focusable="false"
-                    aria-hidden="true"
-                  >
-                    <rect x="2" y="3" width="20" height="14" rx="2"></rect>
-                    <path d="M8 21h8"></path>
-                    <path d="M12 17v4"></path></svg
-                  ><span class="eit-btn__label">Start class</span></button
-                ><a class="p-link" href="batch.html">Open roster</a>
-              </div>
-            </div>
-          </section>
-          <div
-            class="p-stagger"
-            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 16px"
-          >
-            <div class="p-card p-stat p-lift">
-              <div class="p-stat-top">
-                <span class="p-tile"
-                  ><svg
-                    class="eit-icon"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    focusable="false"
-                    aria-hidden="true"
-                  >
-                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="9" cy="7" r="4"></circle>
-                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span
-                ><span class="p-pill" style="height: 24px; font-size: 12px">3 batches</span>
-              </div>
-              <span class="p-num"
-                ><span class="eit-count"
-                  ><span class="eit-sr">70</span><span class="eit-count__ghost" aria-hidden="true">70</span
-                  ><span class="eit-count__n" aria-hidden="true">70</span></span
-                ></span
-              ><span class="p-small">Students you teach</span>
-            </div>
-            <div class="p-card p-stat p-lift">
-              <div class="p-stat-top">
-                <span class="p-tile p-tile--green"
-                  ><svg
-                    class="eit-icon"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    focusable="false"
-                    aria-hidden="true"
-                  >
-                    <path d="M22 7l-8.5 8.5-5-5L2 17"></path>
-                    <path d="M16 7h6v6"></path></svg></span
-                ><span class="p-delta">+6% this week</span>
-              </div>
-              <span class="p-num"
-                ><span class="eit-count"
-                  ><span class="eit-sr">37%</span><span class="eit-count__ghost" aria-hidden="true">37%</span
-                  ><span class="eit-count__n" aria-hidden="true">37%</span></span
-                ></span
-              ><span class="p-small">Average course progress</span>
-            </div>
-            <div class="p-card p-stat p-lift">
-              <div class="p-stat-top">
-                <span class="p-tile p-tile--amber"
-                  ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <rect x="8" y="2" width="8" height="4" rx="1"></rect>
-                    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
-                    <path d="m9 14 2 2 4-4"></path></svg></span
-                ><span
-                  class="p-pill"
-                  style="height: 24px; font-size: 12px; background: var(--warning-soft); color: var(--warning)"
-                  >Oldest 3 days</span
-                >
-              </div>
-              <span class="p-num"
-                ><span class="eit-count"
-                  ><span class="eit-sr">5</span><span class="eit-count__ghost" aria-hidden="true">5</span
-                  ><span class="eit-count__n" aria-hidden="true">5</span></span
-                ></span
-              ><span class="p-small">Projects waiting for you</span>
-            </div>
-            <div class="p-card p-stat p-lift">
-              <div class="p-stat-top">
-                <span class="p-tile p-tile--ink"
-                  ><svg
-                    class="eit-icon"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    focusable="false"
-                    aria-hidden="true"
-                  >
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <path d="M8 12.5l2.7 2.7L16.5 9.5"></path></svg></span
-                ><span class="p-pill" style="height: 24px; font-size: 12px">This week</span>
-              </div>
-              <span class="p-num"
-                ><span class="eit-count"
-                  ><span class="eit-sr">91%</span><span class="eit-count__ghost" aria-hidden="true">91%</span
-                  ><span class="eit-count__n" aria-hidden="true">91%</span></span
-                ></span
-              ><span class="p-small">Class attendance</span>
-            </div>
-          </div>
-          <div class="p-split">
-            <div style="flex: 1.5 1 540px; min-width: 0px; display: flex; flex-direction: column; gap: 24px">
-              <section
-                class="p-card"
-                aria-labelledby="todo-title"
-                style="display: flex; flex-direction: column; gap: 12px"
-              >
-                <div class="p-card-head">
-                  <h2 id="todo-title" class="p-h3">Today's to-do</h2>
-                  <span class="p-small">1 of 4 done</span>
-                </div>
-                <div class="p-bar p-bar--thin" role="img" aria-label="1 of 4 done">
-                  <span style="width: 25%; transition: width 400ms cubic-bezier(0.16, 1, 0.3, 1)"></span>
-                </div>
-                <ul class="p-rows" style="margin: 0px -12px -12px">
-                  <li>
-                    <button
-                      type="button"
-                      role="checkbox"
-                      aria-checked="true"
-                      aria-label="Take attendance · WordPress B14, Class 12"
-                      style="
-                        width: 26px;
-                        height: 26px;
-                        flex: 0 0 auto;
-                        border-radius: 8px;
-                        display: grid;
-                        place-items: center;
-                        cursor: pointer;
-                        padding: 0px;
-                        transition:
-                          background 200ms,
-                          border-color 200ms;
-                        background: var(--success);
-                        border: 2px solid var(--success);
-                        color: rgb(255, 255, 255);
-                      "
-                      data-on-look="rvlook0"
-                      data-reveal=""
-                    >
-                      <svg
-                        class="eit-icon"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
                         focusable="false"
-                        aria-hidden="true"
                       >
-                        <path d="M20 6L9 17l-5-5"></path>
+                        <path d="M20 6 9 17l-5-5"></path>
                       </svg></button
-                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
-                      ><span
-                        style="font-size: 14px; font-weight: 600; color: var(--ink-3); text-decoration: line-through"
-                        >Take attendance · WordPress B14, Class 12</span
-                      ><span class="p-small" style="font-size: 12px">Done at 7:05 PM</span></span
-                    ><a class="p-link" href="batch.html">Open</a>
+                    ><span class="c-line-text"
+                      ><span class="c-line-t">Take attendance · WordPress B14, Class 12</span
+                      ><span class="c-line-s">Done at 7:05 PM</span></span
+                    ><a class="c-btn c-btn--sm" href="batch.html">Open</a>
                   </li>
-                  <li>
+                  <li class="c-line c-todo">
                     <button
                       type="button"
+                      class="c-check"
                       role="checkbox"
                       aria-checked="false"
                       aria-label="Upload the Class 12 recording"
-                      style="
-                        width: 26px;
-                        height: 26px;
-                        flex: 0 0 auto;
-                        border-radius: 8px;
-                        display: grid;
-                        place-items: center;
-                        cursor: pointer;
-                        padding: 0px;
-                        transition:
-                          background 200ms,
-                          border-color 200ms;
-                        background: var(--surface-card);
-                        border: 2px solid var(--line-control);
-                        color: transparent;
-                      "
-                      data-reveal="rv1"
-                      data-on-look="rvlook2"
                     >
                       <svg
-                        class="eit-icon"
-                        width="14"
-                        height="14"
+                        width="13"
+                        height="13"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
+                        stroke-width="2.6"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        focusable="false"
                         aria-hidden="true"
-                        id="rv1"
+                        focusable="false"
                       >
-                        <path d="M20 6L9 17l-5-5"></path>
+                        <path d="M20 6 9 17l-5-5"></path>
                       </svg></button
-                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
-                      ><span style="font-size: 14px; font-weight: 600; color: var(--ink)"
-                        >Upload the Class 12 recording</span
-                      ><span class="p-small" style="font-size: 12px">Due by 9:00 AM tomorrow</span></span
-                    ><a class="p-link" href="schedule.html">Upload</a>
+                    ><span class="c-line-text"
+                      ><span class="c-line-t">Upload the Class 12 recording</span
+                      ><span class="c-line-s">Due by 9:00 AM tomorrow</span></span
+                    ><a class="c-btn c-btn--sm" href="schedule.html">Upload</a>
                   </li>
-                  <li>
+                  <li class="c-line c-todo">
                     <button
                       type="button"
+                      class="c-check"
                       role="checkbox"
                       aria-checked="false"
                       aria-label="Review 2 landing page projects"
-                      style="
-                        width: 26px;
-                        height: 26px;
-                        flex: 0 0 auto;
-                        border-radius: 8px;
-                        display: grid;
-                        place-items: center;
-                        cursor: pointer;
-                        padding: 0px;
-                        transition:
-                          background 200ms,
-                          border-color 200ms;
-                        background: var(--surface-card);
-                        border: 2px solid var(--line-control);
-                        color: transparent;
-                      "
-                      data-reveal="rv3"
-                      data-on-look="rvlook4"
                     >
                       <svg
-                        class="eit-icon"
-                        width="14"
-                        height="14"
+                        width="13"
+                        height="13"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
+                        stroke-width="2.6"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        focusable="false"
                         aria-hidden="true"
-                        id="rv3"
+                        focusable="false"
                       >
-                        <path d="M20 6L9 17l-5-5"></path>
+                        <path d="M20 6 9 17l-5-5"></path>
                       </svg></button
-                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
-                      ><span style="font-size: 14px; font-weight: 600; color: var(--ink)"
-                        >Review 2 landing page projects</span
-                      ><span class="p-small" style="font-size: 12px">Nusrat and Tanvir</span></span
-                    ><a class="p-link" href="review.html">Review</a>
+                    ><span class="c-line-text"
+                      ><span class="c-line-t">Review 2 landing page projects</span
+                      ><span class="c-line-s">Nusrat and Tanvir</span></span
+                    ><a class="c-btn c-btn--sm" href="review.html">Review</a>
                   </li>
-                  <li>
+                  <li class="c-line c-todo">
                     <button
                       type="button"
+                      class="c-check"
                       role="checkbox"
                       aria-checked="false"
                       aria-label="Answer 3 student questions"
-                      style="
-                        width: 26px;
-                        height: 26px;
-                        flex: 0 0 auto;
-                        border-radius: 8px;
-                        display: grid;
-                        place-items: center;
-                        cursor: pointer;
-                        padding: 0px;
-                        transition:
-                          background 200ms,
-                          border-color 200ms;
-                        background: var(--surface-card);
-                        border: 2px solid var(--line-control);
-                        color: transparent;
-                      "
-                      data-reveal="rv5"
-                      data-on-look="rvlook6"
                     >
                       <svg
-                        class="eit-icon"
-                        width="14"
-                        height="14"
+                        width="13"
+                        height="13"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
+                        stroke-width="2.6"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        focusable="false"
                         aria-hidden="true"
-                        id="rv5"
+                        focusable="false"
                       >
-                        <path d="M20 6L9 17l-5-5"></path>
+                        <path d="M20 6 9 17l-5-5"></path>
                       </svg></button
-                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
-                      ><span style="font-size: 14px; font-weight: 600; color: var(--ink)"
-                        >Answer 3 student questions</span
-                      ><span class="p-small" style="font-size: 12px">Oldest from this morning</span></span
-                    ><a class="p-link" href="questions.html">Answer</a>
+                    ><span class="c-line-text"
+                      ><span class="c-line-t">Answer 3 student questions</span
+                      ><span class="c-line-s">The oldest is from this morning</span></span
+                    ><a class="c-btn c-btn--sm" href="questions.html">Answer</a>
                   </li>
                 </ul>
-              </section>
-              <section
-                class="p-card"
-                aria-labelledby="rev-title"
-                style="display: flex; flex-direction: column; gap: 12px"
-              >
-                <div class="p-card-head">
-                  <h2 id="rev-title" class="p-h3">Waiting for your review</h2>
-                  <a class="p-link" href="review.html"
-                    >Review next<span class="p-arrow" style="display: inline-flex"
+              </div>
+            </section>
+            <section class="c-panel" data-span="8" aria-labelledby="rev-title">
+              <div class="c-panel-head">
+                <div class="c-panel-title">
+                  <h2 id="rev-title">Waiting for your review</h2>
+                  <span class="c-panel-sub">5 projects · newest first</span>
+                </div>
+                <a class="c-link" href="review.html"
+                  >Queue<svg
+                    width="13"
+                    height="13"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M5 12h14M13 6l6 6-6 6"></path></svg
+                ></a>
+              </div>
+              <div class="c-panel-body">
+                <div class="p-scroll">
+                  <table class="p-table c-table c-nowrap">
+                    <thead>
+                      <tr>
+                        <th scope="col">Student</th>
+                        <th scope="col">Project</th>
+                        <th scope="col">Sent</th>
+                        <th scope="col"><span class="eit-sr">Status</span></th>
+                        <th scope="col"><span class="eit-sr">Review</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <span class="c-who"
+                            ><span class="p-avatar p-avatar--sm" aria-hidden="true">NJ</span
+                            ><span class="c-cell"
+                              ><span class="c-cell-t">Nusrat Jahan</span
+                              ><span class="c-cell-s">WordPress · Batch 14</span></span
+                            ></span
+                          >
+                        </td>
+                        <td>Responsive landing page</td>
+                        <td style="white-space: nowrap">14 Oct, 11:20 PM</td>
+                        <td></td>
+                        <td><a class="c-btn c-btn--sm" href="review.html">Review</a></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="c-who"
+                            ><span class="p-avatar p-avatar--sm" aria-hidden="true">TH</span
+                            ><span class="c-cell"
+                              ><span class="c-cell-t">Tanvir Hasan</span
+                              ><span class="c-cell-s">WordPress · Batch 14</span></span
+                            ></span
+                          >
+                        </td>
+                        <td>Responsive landing page</td>
+                        <td style="white-space: nowrap">14 Oct, 9:02 PM</td>
+                        <td></td>
+                        <td><a class="c-btn c-btn--sm" href="review.html">Review</a></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="c-who"
+                            ><span class="p-avatar p-avatar--sm" aria-hidden="true">TI</span
+                            ><span class="c-cell"
+                              ><span class="c-cell-t">Tahmid Islam</span
+                              ><span class="c-cell-s">React JS · Batch 6</span></span
+                            ></span
+                          >
+                        </td>
+                        <td>Todo app with hooks</td>
+                        <td style="white-space: nowrap">14 Oct, 6:40 PM</td>
+                        <td></td>
+                        <td><a class="c-btn c-btn--sm" href="review.html">Review</a></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="c-who"
+                            ><span class="p-avatar p-avatar--sm" aria-hidden="true">SA</span
+                            ><span class="c-cell"
+                              ><span class="c-cell-t">Sadia Afrin</span
+                              ><span class="c-cell-s">React JS · Batch 6</span></span
+                            ></span
+                          >
+                        </td>
+                        <td>Todo app with hooks</td>
+                        <td style="white-space: nowrap">13 Oct, 4:15 PM</td>
+                        <td><span class="eit-badge eit-badge--cyan">Resubmission</span></td>
+                        <td><a class="c-btn c-btn--sm" href="review.html">Review</a></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="c-who"
+                            ><span class="p-avatar p-avatar--sm" aria-hidden="true">MH</span
+                            ><span class="c-cell"
+                              ><span class="c-cell-t">Mehedi Hasan</span
+                              ><span class="c-cell-s">WordPress · Batch 14</span></span
+                            ></span
+                          >
+                        </td>
+                        <td>Responsive landing page</td>
+                        <td style="white-space: nowrap">12 Oct, 10:30 PM</td>
+                        <td><span class="eit-badge eit-badge--warning">3 days waiting</span></td>
+                        <td><a class="c-btn c-btn--sm" href="review.html">Review</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+            <section class="c-panel" data-span="4" aria-labelledby="behind-title">
+              <div class="c-panel-head">
+                <div class="c-panel-title">
+                  <h2 id="behind-title">Falling behind</h2>
+                  <span class="c-panel-sub">2 students · a nudge goes by SMS</span>
+                </div>
+              </div>
+              <div class="c-panel-body">
+                <ul class="c-lines">
+                  <li class="c-line">
+                    <span class="p-avatar p-avatar--sm" aria-hidden="true">RI</span
+                    ><span class="c-line-text"
+                      ><span class="c-line-t">Rafiq Islam</span
+                      ><span class="c-line-s">WordPress · Batch 14 · 14% · missed 2 classes</span></span
+                    ><button type="button" class="c-btn c-btn--sm" data-toast="Nudge sent to Rafiq by SMS">
+                      Nudge
+                    </button>
+                  </li>
+                  <li class="c-line">
+                    <span class="p-avatar p-avatar--sm" aria-hidden="true">FA</span
+                    ><span class="c-line-text"
+                      ><span class="c-line-t">Farzana Akter</span
+                      ><span class="c-line-s">React JS · Batch 6 · stuck on lesson 9 for 8 days</span></span
+                    ><button type="button" class="c-btn c-btn--sm" data-toast="Nudge sent to Farzana by SMS">
+                      Nudge
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </section>
+            <section class="c-panel" data-span="8" aria-labelledby="batches-title">
+              <div class="c-panel-head">
+                <div class="c-panel-title">
+                  <h2 id="batches-title">My batches</h2>
+                  <span class="c-panel-sub">3 running · 70 students</span>
+                </div>
+                <a class="c-link" href="batch.html"
+                  >Batches<svg
+                    width="13"
+                    height="13"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M5 12h14M13 6l6 6-6 6"></path></svg
+                ></a>
+              </div>
+              <div class="c-panel-body">
+                <div class="p-scroll">
+                  <table class="p-table c-table c-nowrap">
+                    <thead>
+                      <tr>
+                        <th scope="col">Batch</th>
+                        <th scope="col">Next class</th>
+                        <th scope="col">Average progress</th>
+                        <th scope="col"><span class="eit-sr">Open</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <span class="c-cell"
+                            ><a class="c-cell-t" href="batch.html">WordPress · Batch 14</a
+                            ><span class="c-cell-s">Offline · Lab 2 · 20 students</span></span
+                          >
+                        </td>
+                        <td style="white-space: nowrap">Mon 19 Oct, 7:00 PM</td>
+                        <td>
+                          <span class="c-seats"
+                            ><span class="p-bar p-bar--thin"><span style="width: 41%"></span></span
+                            ><span>41%</span></span
+                          >
+                        </td>
+                        <td><a class="c-btn c-btn--sm" href="batch.html">Open</a></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="c-cell"
+                            ><a class="c-cell-t" href="#">React JS · Batch 6</a
+                            ><span class="c-cell-s">Online · Zoom · 24 students</span></span
+                          >
+                        </td>
+                        <td style="white-space: nowrap">Tonight, 9:30 PM</td>
+                        <td>
+                          <span class="c-seats"
+                            ><span class="p-bar p-bar--thin"><span style="width: 58%"></span></span
+                            ><span>58%</span></span
+                          >
+                        </td>
+                        <td><a class="c-btn c-btn--sm" href="#">Open</a></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="c-cell"
+                            ><a class="c-cell-t" href="#">WordPress · Batch 15</a
+                            ><span class="c-cell-s">Online · Zoom · 26 students</span></span
+                          >
+                        </td>
+                        <td style="white-space: nowrap">Sat 17 Oct, 8:00 PM</td>
+                        <td>
+                          <span class="c-seats"
+                            ><span class="p-bar p-bar--thin"><span style="width: 12%"></span></span
+                            ><span>12%</span></span
+                          >
+                        </td>
+                        <td><a class="c-btn c-btn--sm" href="#">Open</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+            <section class="c-panel" data-span="4" aria-labelledby="courses-title">
+              <div class="c-panel-head">
+                <div class="c-panel-title">
+                  <h2 id="courses-title">My courses</h2>
+                  <span class="c-panel-sub">An admin checks a course before it’s published</span>
+                </div>
+                <a class="c-link" href="course-builder.html"
+                  >Courses<svg
+                    width="13"
+                    height="13"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M5 12h14M13 6l6 6-6 6"></path></svg
+                ></a>
+              </div>
+              <div class="c-panel-body">
+                <ul class="c-lines c-lines--quick">
+                  <li>
+                    <a class="c-quick" href="#"
+                      ><span class="c-line-text"
+                        ><span class="c-line-t">Advanced WordPress Theme Development</span
+                        ><span class="c-line-s">24 lessons · sent for review 13 Oct</span></span
+                      ><span class="eit-badge eit-badge--cyan">In review</span
                       ><svg
-                        class="eit-icon"
                         width="16"
                         height="16"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
+                        stroke-width="1.9"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        focusable="false"
                         aria-hidden="true"
+                        focusable="false"
                       >
-                        <path d="M5 12h14"></path>
-                        <path d="M13 6l6 6-6 6"></path></svg></span
-                  ></a>
-                </div>
-                <ul class="p-rows" style="margin: 0px -12px -12px">
-                  <li>
-                    <span class="p-avatar p-avatar--sm">NJ</span
-                    ><span class="p-grow" style="display: flex; flex-direction: column"
-                      ><strong style="font-size: 14px">Nusrat Jahan · Responsive landing page</strong
-                      ><span class="p-small">WordPress, Batch 14 · sent 14 Oct, 11:20 PM</span></span
-                    ><a class="p-link" href="review.html">Review</a>
+                        <path d="M9 18l6-6-6-6"></path></svg
+                    ></a>
                   </li>
                   <li>
-                    <span class="p-avatar p-avatar--sm">TH</span
-                    ><span class="p-grow" style="display: flex; flex-direction: column"
-                      ><strong style="font-size: 14px">Tanvir Hasan · Responsive landing page</strong
-                      ><span class="p-small">WordPress, Batch 14 · sent 14 Oct, 9:02 PM</span></span
-                    ><a class="p-link" href="review.html">Review</a>
-                  </li>
-                  <li>
-                    <span class="p-avatar p-avatar--sm">SA</span
-                    ><span class="p-grow" style="display: flex; flex-direction: column"
-                      ><strong style="font-size: 14px">Sadia Afrin · Todo app with hooks</strong
-                      ><span class="p-small">React JS, Batch 6 · sent 13 Oct · resubmission</span></span
-                    ><a class="p-link" href="review.html">Review</a>
-                  </li>
-                  <li>
-                    <span class="p-avatar p-avatar--sm">MH</span
-                    ><span class="p-grow" style="display: flex; flex-direction: column"
-                      ><strong style="font-size: 14px">Mehedi Hasan · Responsive landing page</strong
-                      ><span class="p-small">WordPress, Batch 14 · sent 12 Oct</span></span
-                    ><span class="eit-badge eit-badge--warning">3 days waiting</span>
+                    <a class="c-quick" href="course-builder.html"
+                      ><span class="c-line-text"
+                        ><span class="c-line-t">WooCommerce Store Building</span
+                        ><span class="c-line-s">2 modules · 7 lessons · saved 2 min ago</span></span
+                      ><span class="eit-badge eit-badge--neutral">Draft</span
+                      ><svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.9"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path d="M9 18l6-6-6-6"></path></svg
+                    ></a>
                   </li>
                 </ul>
-              </section>
-            </div>
-            <div style="flex: 1 1 320px; min-width: 0px; display: flex; flex-direction: column; gap: 20px">
-              <section aria-labelledby="batches-title" style="display: flex; flex-direction: column; gap: 12px">
-                <div class="p-card-head">
-                  <h2 id="batches-title" class="p-h3">My batches</h2>
-                  <a class="p-link" href="batch.html">All</a>
-                </div>
-                <div class="p-stagger" style="display: flex; flex-direction: column; gap: 12px">
-                  <a
-                    href="batch.html"
-                    class="p-card p-lift"
-                    style="
-                      padding: 16px;
-                      display: flex;
-                      align-items: center;
-                      gap: 14px;
-                      text-decoration: none;
-                      color: inherit;
-                    "
-                    ><span class="p-ring-wrap"
-                      ><svg class="p-ring" width="52" height="52" viewBox="0 0 44 44" aria-hidden="true">
-                        <circle class="p-ring-track" cx="22" cy="22" r="18"></circle>
-                        <circle
-                          class="p-ring-fill"
-                          cx="22"
-                          cy="22"
-                          r="18"
-                          pathLength="100"
-                          style="stroke-dashoffset: 59"
-                        ></circle></svg
-                      ><span style="font-size: 12px">41%</span></span
-                    ><span class="p-grow" style="display: flex; flex-direction: column"
-                      ><strong style="font-size: 15px">WordPress · Batch 14</strong
-                      ><span class="p-small">Offline · 20 students · Mon 7 PM</span></span
-                    ><svg
-                      class="eit-icon"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <path d="M5 12h14"></path>
-                      <path d="M13 6l6 6-6 6"></path></svg></a
-                  ><a
-                    href="batch.html"
-                    class="p-card p-lift"
-                    style="
-                      padding: 16px;
-                      display: flex;
-                      align-items: center;
-                      gap: 14px;
-                      text-decoration: none;
-                      color: inherit;
-                    "
-                    ><span class="p-ring-wrap"
-                      ><svg class="p-ring" width="52" height="52" viewBox="0 0 44 44" aria-hidden="true">
-                        <circle class="p-ring-track" cx="22" cy="22" r="18"></circle>
-                        <circle
-                          class="p-ring-fill"
-                          cx="22"
-                          cy="22"
-                          r="18"
-                          pathLength="100"
-                          style="stroke-dashoffset: 42"
-                        ></circle></svg
-                      ><span style="font-size: 12px">58%</span></span
-                    ><span class="p-grow" style="display: flex; flex-direction: column"
-                      ><strong style="font-size: 15px">React JS · Batch 6</strong
-                      ><span class="p-small">Online · 24 students · today 9:30 PM</span></span
-                    ><svg
-                      class="eit-icon"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <path d="M5 12h14"></path>
-                      <path d="M13 6l6 6-6 6"></path></svg></a
-                  ><a
-                    href="batch.html"
-                    class="p-card p-lift"
-                    style="
-                      padding: 16px;
-                      display: flex;
-                      align-items: center;
-                      gap: 14px;
-                      text-decoration: none;
-                      color: inherit;
-                    "
-                    ><span class="p-ring-wrap"
-                      ><svg class="p-ring" width="52" height="52" viewBox="0 0 44 44" aria-hidden="true">
-                        <circle class="p-ring-track" cx="22" cy="22" r="18"></circle>
-                        <circle
-                          class="p-ring-fill"
-                          cx="22"
-                          cy="22"
-                          r="18"
-                          pathLength="100"
-                          style="stroke-dashoffset: 88"
-                        ></circle></svg
-                      ><span style="font-size: 12px">12%</span></span
-                    ><span class="p-grow" style="display: flex; flex-direction: column"
-                      ><strong style="font-size: 15px">WordPress · Batch 15</strong
-                      ><span class="p-small">Online · 26 students · Sat 8 PM</span></span
-                    ><svg
-                      class="eit-icon"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <path d="M5 12h14"></path>
-                      <path d="M13 6l6 6-6 6"></path></svg
-                  ></a>
-                </div>
-              </section>
-              <section
-                class="p-card"
-                aria-labelledby="behind-title"
-                style="display: flex; flex-direction: column; gap: 12px"
-              >
-                <div class="p-card-head">
-                  <h2 id="behind-title" class="p-h3">Falling behind</h2>
-                  <span class="eit-badge eit-badge--warning">2 students</span>
-                </div>
-                <ul class="p-rows" style="margin: 0px -12px -12px">
-                  <li>
-                    <span class="p-avatar p-avatar--sm">RI</span
-                    ><span class="p-grow" style="display: flex; flex-direction: column"
-                      ><strong style="font-size: 14px">Rafiq Islam</strong
-                      ><span class="p-small">WordPress B14 · 14% · missed 2 classes</span></span
-                    ><a class="p-link" href="#" data-toast="Nudge sent by SMS">Nudge</a>
-                  </li>
-                  <li>
-                    <span class="p-avatar p-avatar--sm">FA</span
-                    ><span class="p-grow" style="display: flex; flex-direction: column"
-                      ><strong style="font-size: 14px">Farzana Akter</strong
-                      ><span class="p-small">React B6 · stuck on lesson 9 for 8 days</span></span
-                    ><a class="p-link" href="#" data-toast="Nudge sent by SMS">Nudge</a>
-                  </li>
-                </ul>
-              </section>
-              <section
-                class="p-card"
-                aria-labelledby="mycourses-title"
-                style="display: flex; flex-direction: column; gap: 10px"
-              >
-                <div class="p-card-head">
-                  <h2 id="mycourses-title" class="p-h3">My courses</h2>
-                  <a class="p-link" href="course-builder.html">Builder</a>
-                </div>
-                <div class="p-row" style="justify-content: space-between; gap: 10px">
-                  <span style="font-size: 14px; font-weight: 600">Advanced WordPress Theme Dev.</span
-                  ><span class="eit-badge eit-badge--cyan">In review</span>
-                </div>
-                <div class="p-row" style="justify-content: space-between; gap: 10px">
-                  <span style="font-size: 14px; font-weight: 600">WooCommerce Store Building</span
-                  ><span class="eit-badge eit-badge--neutral">Draft</span>
-                </div>
-              </section>
-            </div>
+              </div>
+            </section>
           </div>
         </main>
       </div>
     </div>
-    <template
-      id="rvlook0"
-      data-style="width: 26px; height: 26px; flex: 0 0 auto; border-radius: 8px; display: grid; place-items: center; cursor: pointer; padding: 0px; transition: background 200ms, border-color 200ms; background: var(--surface-card); border: 2px solid var(--line-control); color: transparent;"
-    ></template
-    ><template
-      id="rvlook2"
-      data-style="width: 26px; height: 26px; flex: 0 0 auto; border-radius: 8px; display: grid; place-items: center; cursor: pointer; padding: 0px; transition: background 200ms, border-color 200ms; background: var(--success); border: 2px solid var(--success); color: rgb(255, 255, 255);"
-      ><svg
-        class="eit-icon"
-        width="14"
-        height="14"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        focusable="false"
-        aria-hidden="true"
-      >
-        <path d="M20 6L9 17l-5-5"></path></svg></template
-    ><template
-      id="rvlook4"
-      data-style="width: 26px; height: 26px; flex: 0 0 auto; border-radius: 8px; display: grid; place-items: center; cursor: pointer; padding: 0px; transition: background 200ms, border-color 200ms; background: var(--success); border: 2px solid var(--success); color: rgb(255, 255, 255);"
-      ><svg
-        class="eit-icon"
-        width="14"
-        height="14"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        focusable="false"
-        aria-hidden="true"
-      >
-        <path d="M20 6L9 17l-5-5"></path></svg></template
-    ><template
-      id="rvlook6"
-      data-style="width: 26px; height: 26px; flex: 0 0 auto; border-radius: 8px; display: grid; place-items: center; cursor: pointer; padding: 0px; transition: background 200ms, border-color 200ms; background: var(--success); border: 2px solid var(--success); color: rgb(255, 255, 255);"
-      ><svg
-        class="eit-icon"
-        width="14"
-        height="14"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        focusable="false"
-        aria-hidden="true"
-      >
-        <path d="M20 6L9 17l-5-5"></path></svg
-    ></template>
   </body>
 </html>

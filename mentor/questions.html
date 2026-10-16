@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="is-console">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,713 +8,1373 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap"
     />
     <link rel="stylesheet" href="../assets/css/eit.css" />
     <link rel="stylesheet" href="../assets/css/panel.css" />
     <link rel="stylesheet" href="../assets/css/app.css" />
+    <link rel="stylesheet" href="../assets/css/console.css" />
+    <script src="../assets/js/theme.js"></script>
     <script src="../assets/js/app.js" defer=""></script>
     <script src="../assets/js/pages/questions.js" defer></script>
   </head>
   <body>
-    <div class="p-shell">
-      <aside class="p-side">
-        <a class="p-brand" href="dashboard.html"
-          ><span class="p-brand-mark" aria-hidden="true"></span
-          ><span class="p-brand-text"
-            ><span class="p-brand-name">European IT</span><span class="p-brand-sub">INSTITUTE</span></span
-          ></a
-        >
-        <nav class="p-nav" aria-label="Mentor panel">
-          <span class="p-nav-label">Mentor</span
-          ><a href="dashboard.html"
-            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="3" y="3" width="7" height="9" rx="1"></rect>
-              <rect x="14" y="3" width="7" height="5" rx="1"></rect>
-              <rect x="14" y="12" width="7" height="9" rx="1"></rect>
-              <rect x="3" y="16" width="7" height="5" rx="1"></rect></svg
-            ><span class="p-nav-text">Dashboard</span></a
-          ><a href="batch.html"
-            ><svg
-              class="eit-icon"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              focusable="false"
-              aria-hidden="true"
-            >
-              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-              <circle cx="9" cy="7" r="4"></circle>
-              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg
-            ><span class="p-nav-text">My batches</span></a
-          ><a href="review.html"
-            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="8" y="2" width="8" height="4" rx="1"></rect>
-              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
-              <path d="m9 14 2 2 4-4"></path></svg
-            ><span class="p-nav-text">Reviews</span><span class="p-count">5</span></a
-          ><a href="course-builder.html"
-            ><svg
-              class="eit-icon"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              focusable="false"
-              aria-hidden="true"
-            >
-              <path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path>
-              <path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg
-            ><span class="p-nav-text">Courses</span></a
-          ><a href="questions.html" aria-current="page"
-            ><svg
-              class="eit-icon"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              focusable="false"
-              aria-hidden="true"
-            >
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg
-            ><span class="p-nav-text">Student questions</span
-            ><span class="p-nav-short" aria-hidden="true">Questions</span><span class="p-count">3</span></a
-          ><a href="schedule.html"
-            ><svg
-              class="eit-icon"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              focusable="false"
-              aria-hidden="true"
-            >
-              <rect x="3" y="4" width="18" height="18" rx="2"></rect>
-              <path d="M16 2v4M8 2v4M3 10h18"></path></svg
-            ><span class="p-nav-text">Schedule &amp; recordings</span
-            ><span class="p-nav-short" aria-hidden="true">Schedule</span
-            ><span class="p-count" style="background: var(--warning); color: rgb(255, 255, 255)">1</span></a
+    <div class="p-shell p-console">
+      <aside class="c-side" id="c-side">
+        <div class="c-brand">
+          <a class="c-brand-link" href="dashboard.html" aria-label="European IT mentor panel, dashboard"
+            ><span class="c-logo" aria-hidden="true"
+              ><svg
+                width="17"
+                height="17"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M2 9l10-5 10 5-10 5zM6 11v5c3 2.5 9 2.5 12 0v-5M22 9v6"></path></svg></span
+            ><span class="c-brand-text"
+              ><span class="c-brand-name">European IT</span><span class="c-brand-sub">mentor panel</span></span
+            ></a
+          ><button
+            type="button"
+            class="c-iconbtn c-collapse"
+            data-nav-toggle=""
+            aria-label="Collapse menu"
+            title="Collapse menu"
           >
-        </nav>
-        <div class="p-help" style="margin-top: auto">
-          <span class="p-h3" style="font-size: 15px">Mentor handbook</span
-          ><span class="p-muted">Rubrics, attendance rules and how course review works.</span
-          ><a class="p-link" href="#">Open handbook</a>
-        </div>
-      </aside>
-      <div class="p-content">
-        <header class="p-top">
-          <label class="p-search"
-            ><svg
-              class="eit-icon"
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M3 3h18v18H3zM9 3v18M16 9l-3 3 3 3"></path>
+            </svg></button
+          ><button type="button" class="c-iconbtn c-close" data-nav-close="" aria-label="Close menu">
+            <svg
               width="18"
               height="18"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
+              stroke-width="1.9"
               stroke-linecap="round"
               stroke-linejoin="round"
-              focusable="false"
               aria-hidden="true"
+              focusable="false"
             >
-              <circle cx="11" cy="11" r="8"></circle>
-              <path d="M21 21l-4.35-4.35"></path></svg
-            ><span class="eit-sr">Search</span><input type="search" placeholder="Search students, batches, lessons"
-          /></label>
-          <div class="p-top-right">
-            <div class="eit-seg has-thumb" role="group" aria-label="Language">
-              <span class="eit-seg__thumb" aria-hidden="true" style="width: 52px; transform: translateX(4px)"></span
-              ><button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button
-              ><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button>
-            </div>
+              <path d="M18 6 6 18M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <nav class="c-nav" aria-label="Mentor panel">
+          <div class="c-group">
             <button
-              class="p-iconbtn"
-              data-notif-scope="mentor"
               type="button"
-              aria-label="Notifications, 3 unread"
+              class="c-item c-expand"
+              data-nav-toggle=""
+              aria-label="Expand menu"
+              title="Expand menu"
+            >
+              <span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M3 3h18v18H3zM9 3v18M13 9l3 3-3 3"></path></svg
+              ></span></button
+            ><a class="c-item" href="dashboard.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M3 3h7v9H3zM14 3h7v5h-7zM14 12h7v9h-7zM3 16h7v5H3z"></path></svg></span
+              ><span class="c-label">Dashboard</span></a
+            >
+          </div>
+          <div class="c-group" role="group" aria-labelledby="nav-queues">
+            <span class="c-group-label" id="nav-queues">Queues</span
+            ><a class="c-item" href="review.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M9 3h6v3H9zM8 4.5H5V21h14V4.5h-3M9 13l2 2 4-4"></path></svg></span
+              ><span class="c-label">Reviews</span><span class="c-count">5</span></a
+            ><a class="c-item" href="questions.html" aria-current="page"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span
+              ><span class="c-label">Student questions</span><span class="c-count">3</span></a
+            >
+          </div>
+          <div class="c-group" role="group" aria-labelledby="nav-teaching">
+            <span class="c-group-label" id="nav-teaching">Teaching</span
+            ><a class="c-item" href="batch.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21c0-4 3.1-7 7-7s7 3 7 7M16 3.5a4 4 0 0 1 0 7M22 21c0-3-1.7-5.4-4-6.4"
+                  ></path></svg></span
+              ><span class="c-label">My batches</span></a
+            ><a class="c-item" href="schedule.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M3 5h18v16H3zM3 10h18M8 3v4M16 3v4"></path></svg></span
+              ><span class="c-label">Schedule &amp; recordings</span><span class="c-count">1</span></a
+            >
+          </div>
+          <div class="c-group" role="group" aria-labelledby="nav-content">
+            <span class="c-group-label" id="nav-content">Content</span
+            ><a class="c-item" href="course-builder.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5zM4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"
+                  ></path></svg></span
+              ><span class="c-label">Courses</span></a
+            >
+          </div>
+          <div class="c-group" role="group" aria-labelledby="nav-help">
+            <span class="c-group-label" id="nav-help">Help</span
+            ><a class="c-item" href="#"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"
+                  ></path></svg></span
+              ><span class="c-label">Mentor handbook</span></a
+            >
+          </div>
+        </nav>
+      </aside>
+      <div class="p-content">
+        <header class="c-top">
+          <div class="c-top-in">
+            <button
+              type="button"
+              class="c-iconbtn c-menu"
+              data-nav-open=""
+              aria-label="Open menu"
+              aria-controls="c-side"
               aria-expanded="false"
-              aria-controls="notif-menu"
             >
-              <svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
-                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
-              ><span class="p-badge-count" data-unread-count="">3</span></button
-            ><a class="p-me" href="profile.html" style="text-decoration: none"
-              ><span class="p-avatar">KH</span
-              ><span style="display: flex; flex-direction: column"
-                ><span class="p-me-name">Kamrul Hasan</span><span class="p-me-sub">Mentor · Web Development</span></span
-              ></a
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M3 6h18M3 12h18M3 18h18"></path>
+              </svg></button
+            ><span class="c-top-ico" aria-hidden="true"
+              ><svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg
+            ></span>
+            <div class="c-top-title">
+              <h1>Student questions</h1>
+              <p class="c-top-sub">Answer within a day so students can keep going</p>
+            </div>
+            <div class="c-grow"></div>
+            <label class="c-search" title="Search"
+              ><svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM21 21l-4.3-4.3"></path></svg
+              ><span class="eit-sr">Search</span><input type="search" placeholder="Search…" /><kbd class="c-kbd"
+                >Ctrl K</kbd
+              ></label
             >
-            <div class="p-dropdown" role="dialog" aria-label="Notifications" id="notif-menu" hidden="" data-popover="">
-              <div class="p-row" style="justify-content: space-between; padding: 16px 18px 10px">
-                <strong style="font-size: 16px">Notifications</strong
-                ><button
-                  type="button"
+
+            <div class="c-pop-wrap">
+              <button
+                type="button"
+                class="c-iconbtn c-bordered"
+                data-notif-scope="mentor"
+                aria-label="Notifications, 3 unread"
+                aria-expanded="false"
+                aria-controls="notif-menu"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
+                ><span class="c-badge" data-unread-count="">3</span>
+              </button>
+              <div
+                class="p-dropdown"
+                role="dialog"
+                aria-label="Notifications"
+                id="notif-menu"
+                hidden=""
+                data-popover=""
+              >
+                <div class="p-row" style="justify-content: space-between; padding: 16px 18px 10px">
+                  <strong style="font-size: 16px">Notifications</strong
+                  ><button
+                    type="button"
+                    class="p-link"
+                    style="
+                      border: 0px;
+                      background: none;
+                      padding: 0px;
+                      font-style: inherit;
+                      font-variant: inherit;
+                      font-stretch: inherit;
+                      line-height: inherit;
+                      font-family: inherit;
+                      font-optical-sizing: inherit;
+                      font-size-adjust: inherit;
+                      font-kerning: inherit;
+                      font-feature-settings: inherit;
+                      font-variation-settings: inherit;
+                      font-weight: 600;
+                      font-size: 13px;
+                      cursor: pointer;
+                    "
+                    data-mark-read="#notif-menu"
+                  >
+                    Mark all as read
+                  </button>
+                </div>
+                <ul class="p-rows" style="padding: 0px 8px 8px">
+                  <li style="align-items: flex-start">
+                    <span class="p-tile" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                          d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7l-5-5zM14 2v4a2 2 0 0 0 2 2h4"
+                        ></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                      ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                        >Tanvir Hasan sent "Responsive landing page"</span
+                      ><span class="p-small" style="font-size: 12px">WordPress · Batch 14 · 1 h ago</span></span
+                    ><span
+                      aria-label="Unread"
+                      style="
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background: var(--cyan);
+                        margin-top: 6px;
+                        flex: 0 0 auto;
+                      "
+                      data-unread=""
+                    ></span>
+                  </li>
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--muted" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                      ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                        >New question on "Building a custom header"</span
+                      ><span class="p-small" style="font-size: 12px">Nusrat Jahan · 2 h ago</span></span
+                    ><span
+                      aria-label="Unread"
+                      style="
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background: var(--cyan);
+                        margin-top: 6px;
+                        flex: 0 0 auto;
+                      "
+                      data-unread=""
+                    ></span>
+                  </li>
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--amber" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                      ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                        >Class 12 recording is due by 9:00 AM</span
+                      ><span class="p-small" style="font-size: 12px">WordPress · Batch 14 · 3 h ago</span></span
+                    ><span
+                      aria-label="Unread"
+                      style="
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background: var(--cyan);
+                        margin-top: 6px;
+                        flex: 0 0 auto;
+                      "
+                      data-unread=""
+                    ></span>
+                  </li>
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                          d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
+                        ></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                      ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 500"
+                        >Admin started reviewing your course</span
+                      ><span class="p-small" style="font-size: 12px"
+                        >Advanced WordPress Theme Development · yesterday</span
+                      ></span
+                    >
+                  </li>
+                </ul>
+                <a
+                  href="notifications.html"
                   class="p-link"
                   style="
-                    border: 0px;
-                    background: none;
-                    padding: 0px;
-                    font-style: inherit;
-                    font-variant: inherit;
-                    font-stretch: inherit;
-                    line-height: inherit;
-                    font-family: inherit;
-                    font-optical-sizing: inherit;
-                    font-size-adjust: inherit;
-                    font-kerning: inherit;
-                    font-feature-settings: inherit;
-                    font-variation-settings: inherit;
-                    font-weight: 600;
-                    font-size: 13px;
-                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    padding: 12px;
+                    border-top: 1px solid var(--line-soft);
+                    border-radius: 0px;
                   "
-                  data-mark-read="#notif-menu"
+                  >See all notifications</a
                 >
-                  Mark all as read
-                </button>
               </div>
-              <ul class="p-rows" style="padding: 0px 8px 8px">
-                <li style="align-items: flex-start">
-                  <span class="p-tile" style="width: 36px; height: 36px; border-radius: 10px"
-                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7l-5-5zM14 2v4a2 2 0 0 0 2 2h4"
-                      ></path></svg></span
-                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
-                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
-                      >Tanvir Hasan sent "Responsive landing page"</span
-                    ><span class="p-small" style="font-size: 12px">WordPress · Batch 14 · 1 h ago</span></span
-                  ><span
-                    aria-label="Unread"
-                    style="
-                      width: 8px;
-                      height: 8px;
-                      border-radius: 50%;
-                      background: var(--cyan);
-                      margin-top: 6px;
-                      flex: 0 0 auto;
-                    "
-                    data-unread=""
-                  ></span>
-                </li>
-                <li style="align-items: flex-start">
-                  <span class="p-tile p-tile--muted" style="width: 36px; height: 36px; border-radius: 10px"
-                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span
-                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
-                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
-                      >New question on "Building a custom header"</span
-                    ><span class="p-small" style="font-size: 12px">Nusrat Jahan · 2 h ago</span></span
-                  ><span
-                    aria-label="Unread"
-                    style="
-                      width: 8px;
-                      height: 8px;
-                      border-radius: 50%;
-                      background: var(--cyan);
-                      margin-top: 6px;
-                      flex: 0 0 auto;
-                    "
-                    data-unread=""
-                  ></span>
-                </li>
-                <li style="align-items: flex-start">
-                  <span class="p-tile p-tile--amber" style="width: 36px; height: 36px; border-radius: 10px"
-                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg></span
-                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
-                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
-                      >Class 12 recording is due by 9:00 AM</span
-                    ><span class="p-small" style="font-size: 12px">WordPress · Batch 14 · 3 h ago</span></span
-                  ><span
-                    aria-label="Unread"
-                    style="
-                      width: 8px;
-                      height: 8px;
-                      border-radius: 50%;
-                      background: var(--cyan);
-                      margin-top: 6px;
-                      flex: 0 0 auto;
-                    "
-                    data-unread=""
-                  ></span>
-                </li>
-                <li style="align-items: flex-start">
-                  <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
-                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
-                      ></path></svg></span
-                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
-                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 500"
-                      >Admin started reviewing your course</span
-                    ><span class="p-small" style="font-size: 12px"
-                      >Advanced WordPress Theme Development · yesterday</span
-                    ></span
-                  >
-                </li>
-              </ul>
-              <a
-                href="notifications.html"
-                class="p-link"
-                style="
-                  display: flex;
-                  justify-content: center;
-                  padding: 12px;
-                  border-top: 1px solid var(--line-soft);
-                  border-radius: 0px;
-                "
-                >See all notifications</a
+            </div>
+            <button
+              type="button"
+              class="c-iconbtn c-bordered c-theme"
+              data-theme-toggle=""
+              aria-label="Dark mode"
+              aria-pressed="false"
+              title="Switch to dark mode"
+            >
+              <svg
+                class="c-moon"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
               >
+                <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg
+              ><svg
+                class="c-sun"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zM12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"
+                ></path>
+              </svg>
+            </button>
+            <div class="c-pop-wrap">
+              <button
+                type="button"
+                class="c-me"
+                aria-expanded="false"
+                aria-controls="me-menu"
+                aria-label="Your account: Kamrul Hasan"
+              >
+                <span class="c-avatar" aria-hidden="true">KH</span
+                ><span class="c-me-text"
+                  ><span class="c-me-name">Kamrul Hasan</span><span class="c-me-sub">Mentor</span></span
+                >
+              </button>
+              <div class="c-pop" id="me-menu" hidden="" data-popover="" role="group" aria-label="Your account">
+                <div class="c-pop-head">
+                  <strong>Kamrul Hasan</strong><span class="p-small">Mentor · Web Development</span>
+                </div>
+                <a href="profile.html"
+                  ><svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21c0-4 3.6-7 8-7s8 3 8 7"></path></svg
+                  >My profile</a
+                ><a href="notifications.html"
+                  ><svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
+                  >Notifications</a
+                ><a href="profile.html#notifications"
+                  ><svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"></path></svg
+                  >Notification settings</a
+                >
+                <div class="c-pop-row">
+                  <span class="p-row" style="gap: 10px"
+                    ><svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path
+                        d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"
+                      ></path></svg
+                    >Language</span
+                  >
+                  <div class="eit-seg" role="group" aria-label="Language">
+                    <button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button
+                    ><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button>
+                  </div>
+                </div>
+                <hr />
+                <a href="../index.html"
+                  ><svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"></path></svg
+                  >Log out</a
+                >
+              </div>
             </div>
           </div>
         </header>
         <main class="p-main">
-          <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
-            <div style="display: flex; flex-direction: column; gap: 6px">
-              <h1 class="p-h1">Student questions</h1>
-              <p class="p-body">
-                Questions students asked from a lesson. Answer within a day so they can keep going.
-                <strong>3 waiting</strong>
-              </p>
-            </div>
-            <div class="p-seg" role="group" aria-label="Show">
-              <button type="button" aria-pressed="true" data-qa-show="waiting">Waiting · 3</button
-              ><button type="button" aria-pressed="false" data-qa-show="answered">Answered</button
-              ><button type="button" aria-pressed="false" data-qa-show="all">All</button>
-            </div>
-          </div>
-          <div class="p-split qa-split">
-            <div class="p-card p-card--flush qa-list" role="tablist" aria-orientation="vertical" aria-label="Questions">
-              <button
-                type="button"
-                role="tab"
-                class="qa-item"
-                id="qt-q1"
-                aria-selected="true"
-                aria-controls="qp-q1"
-                data-status="waiting"
-              >
-                <span class="p-avatar p-avatar--sm">NJ</span
-                ><span class="qa-item__text"
-                  ><span class="qa-item__top"><strong>Nusrat Jahan</strong><span class="p-small">2 h ago</span></span
-                  ><span class="qa-item__title">Is the mobile menu timing okay?</span
-                  ><span class="p-small">Class 12 · Building a custom header</span></span
-                ><span class="eit-badge eit-badge--warning">Waiting</span></button
-              ><button
-                type="button"
-                role="tab"
-                class="qa-item"
-                id="qt-q2"
-                aria-selected="false"
-                aria-controls="qp-q2"
-                tabindex="-1"
-                data-status="waiting"
-              >
-                <span class="p-avatar p-avatar--sm">TH</span
-                ><span class="qa-item__text"
-                  ><span class="qa-item__top"><strong>Tanvir Hasan</strong><span class="p-small">5 h ago</span></span
-                  ><span class="qa-item__title">My style.css loads twice</span
-                  ><span class="p-small">Class 11 · Enqueueing styles and scripts</span></span
-                ><span class="eit-badge eit-badge--warning">Waiting</span></button
-              ><button
-                type="button"
-                role="tab"
-                class="qa-item"
-                id="qt-q3"
-                aria-selected="false"
-                aria-controls="qp-q3"
-                tabindex="-1"
-                data-status="waiting"
-              >
-                <span class="p-avatar p-avatar--sm">SA</span
-                ><span class="qa-item__text"
-                  ><span class="qa-item__top"
-                    ><strong>Sadia Afrin</strong><span class="p-small">This morning</span></span
-                  ><span class="qa-item__title">Why does my fetch run twice?</span
-                  ><span class="p-small">Class 17 · useEffect in practice</span></span
-                ><span class="eit-badge eit-badge--warning">Waiting</span></button
-              ><button
-                type="button"
-                role="tab"
-                class="qa-item"
-                id="qt-q4"
-                aria-selected="false"
-                aria-controls="qp-q4"
-                tabindex="-1"
-                data-status="answered"
-              >
-                <span class="p-avatar p-avatar--sm">NJ</span
-                ><span class="qa-item__text"
-                  ><span class="qa-item__top"><strong>Nusrat Jahan</strong><span class="p-small">12 Oct</span></span
-                  ><span class="qa-item__title">Why is my menu not showing?</span
-                  ><span class="p-small">Class 12 · Building a custom header</span></span
-                ><span class="eit-badge eit-badge--success">Answered</span></button
-              ><button
-                type="button"
-                role="tab"
-                class="qa-item"
-                id="qt-q5"
-                aria-selected="false"
-                aria-controls="qp-q5"
-                tabindex="-1"
-                data-status="answered"
-              >
-                <span class="p-avatar p-avatar--sm">AH</span
-                ><span class="qa-item__text"
-                  ><span class="qa-item__top"><strong>Arif Hossain</strong><span class="p-small">10 Oct</span></span
-                  ><span class="qa-item__title">Where does functions.php go?</span
-                  ><span class="p-small">Class 9 · Theme folder structure</span></span
-                ><span class="eit-badge eit-badge--success">Answered</span>
-              </button>
-              <div class="hp-empty" data-qa-empty hidden>
-                <strong style="font-size: 15px">Nothing here</strong
-                ><span class="p-small">No questions match this filter.</span>
-              </div>
-            </div>
-            <div class="qa-details">
-              <section role="tabpanel" id="qp-q1" aria-labelledby="qt-q1" class="p-card qa-detail">
-                <div style="display: flex; flex-direction: column; gap: 6px">
-                  <span class="p-eyebrow">Class 12 · Building a custom header</span>
-                  <h2 class="p-h2" style="font-size: 22px">Is the mobile menu timing okay?</h2>
-                  <div class="p-row" style="gap: 16px; flex-wrap: wrap">
-                    <a class="p-link" href="course-builder.html"
-                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M5 3l14 9-14 9V3z"></path></svg
-                      >Asked at 11:36 in the video</a
-                    ><a class="p-link" href="batch.html"
-                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="9" cy="7" r="4"></circle>
-                        <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg
-                      >WordPress · Batch 14</a
-                    >
-                  </div>
+          <div class="c-work">
+            <section
+              class="c-list"
+              aria-label="Student questions"
+              style="--cols: minmax(0, 1.15fr) minmax(0, 2fr) minmax(0, 0.7fr) minmax(0, 0.7fr)"
+            >
+              <div class="c-toolbar">
+                <div class="c-filters" role="group" aria-label="Show">
+                  <button type="button" class="c-filter" data-filter="waiting" aria-pressed="true">
+                    Waiting<span class="c-n">3</span></button
+                  ><button type="button" class="c-filter" data-filter="answered" aria-pressed="false">
+                    Answered<span class="c-n">2</span></button
+                  ><button type="button" class="c-filter" data-filter="all" aria-pressed="false">
+                    All<span class="c-n">5</span>
+                  </button>
                 </div>
-                <article class="qa-msg">
-                  <span class="p-avatar">NJ</span>
-                  <div class="qa-msg__body">
-                    <div class="qa-msg__head">
-                      <strong>Nusrat Jahan</strong><span class="p-small">WordPress · Batch 14 · 2 h ago</span>
-                    </div>
-                    <p class="p-body" style="margin: 0">
-                      I used 400ms for the mobile menu slide-in. It feels a bit slow on my phone. Is that okay, or
-                      should it be faster?
-                    </p>
+                <div class="c-tools">
+                  <label class="c-pick" for="qa-batch"
+                    ><span class="eit-sr">Batch</span
+                    ><select id="qa-batch" data-filter="">
+                      <option value="">All batches</option>
+                      <option value="b14">WordPress · Batch 14 (4)</option>
+                      <option value="b6">React JS · Batch 6 (1)</option></select
+                    ><svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path d="M6 9l6 6 6-6"></path></svg></label
+                  ><label class="c-find" for="qa-find"
+                    ><svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path d="M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM21 21l-4.3-4.3"></path></svg
+                    ><span class="eit-sr">Search questions</span
+                    ><input id="qa-find" type="search" placeholder="Search questions" autocomplete="off" data-search=""
+                  /></label>
+                </div>
+              </div>
+              <div class="c-thead" aria-hidden="true">
+                <span>Student</span><span>Question</span><span>Asked</span><span>Status</span>
+              </div>
+              <div class="c-rows" role="tablist" aria-orientation="vertical" aria-label="Questions">
+                <button
+                  type="button"
+                  class="c-row"
+                  role="tab"
+                  id="qa-r-q1"
+                  aria-controls="qa-p-q1"
+                  aria-selected="true"
+                  data-tags="waiting b14"
+                >
+                  <span class="c-cell"
+                    ><span class="c-cell-l" aria-hidden="true">Student</span
+                    ><span class="c-who"
+                      ><span class="p-avatar p-avatar--sm" aria-hidden="true">NJ</span
+                      ><span class="c-cell"
+                        ><span class="c-cell-t">Nusrat Jahan</span
+                        ><span class="c-cell-s">WordPress · Batch 14</span></span
+                      ></span
+                    ></span
+                  ><span class="c-cell c-lead"
+                    ><span class="c-cell-l" aria-hidden="true">Question</span
+                    ><span class="c-cell-t is-strong">Is the mobile menu timing okay?</span
+                    ><span class="c-cell-s">Class 12 · Building a custom header</span></span
+                  ><span class="c-cell"
+                    ><span class="c-cell-l" aria-hidden="true">Asked</span><span class="c-cell-t">2 h ago</span></span
+                  ><span class="c-cell"
+                    ><span class="c-cell-l" aria-hidden="true">Status</span
+                    ><span class="eit-badge eit-badge--warning">Waiting</span></span
+                  ></button
+                ><button
+                  type="button"
+                  class="c-row"
+                  role="tab"
+                  id="qa-r-q2"
+                  aria-controls="qa-p-q2"
+                  aria-selected="false"
+                  tabindex="-1"
+                  data-tags="waiting b14"
+                >
+                  <span class="c-cell"
+                    ><span class="c-cell-l" aria-hidden="true">Student</span
+                    ><span class="c-who"
+                      ><span class="p-avatar p-avatar--sm" aria-hidden="true">TH</span
+                      ><span class="c-cell"
+                        ><span class="c-cell-t">Tanvir Hasan</span
+                        ><span class="c-cell-s">WordPress · Batch 14</span></span
+                      ></span
+                    ></span
+                  ><span class="c-cell c-lead"
+                    ><span class="c-cell-l" aria-hidden="true">Question</span
+                    ><span class="c-cell-t is-strong">My style.css loads twice</span
+                    ><span class="c-cell-s">Class 11 · Enqueueing styles and scripts</span></span
+                  ><span class="c-cell"
+                    ><span class="c-cell-l" aria-hidden="true">Asked</span><span class="c-cell-t">5 h ago</span></span
+                  ><span class="c-cell"
+                    ><span class="c-cell-l" aria-hidden="true">Status</span
+                    ><span class="eit-badge eit-badge--warning">Waiting</span></span
+                  ></button
+                ><button
+                  type="button"
+                  class="c-row"
+                  role="tab"
+                  id="qa-r-q3"
+                  aria-controls="qa-p-q3"
+                  aria-selected="false"
+                  tabindex="-1"
+                  data-tags="waiting b6"
+                >
+                  <span class="c-cell"
+                    ><span class="c-cell-l" aria-hidden="true">Student</span
+                    ><span class="c-who"
+                      ><span class="p-avatar p-avatar--sm" aria-hidden="true">SA</span
+                      ><span class="c-cell"
+                        ><span class="c-cell-t">Sadia Afrin</span><span class="c-cell-s">React JS · Batch 6</span></span
+                      ></span
+                    ></span
+                  ><span class="c-cell c-lead"
+                    ><span class="c-cell-l" aria-hidden="true">Question</span
+                    ><span class="c-cell-t is-strong">Why does my fetch run twice?</span
+                    ><span class="c-cell-s">Class 17 · useEffect in practice</span></span
+                  ><span class="c-cell"
+                    ><span class="c-cell-l" aria-hidden="true">Asked</span
+                    ><span class="c-cell-t">This morning</span></span
+                  ><span class="c-cell"
+                    ><span class="c-cell-l" aria-hidden="true">Status</span
+                    ><span class="eit-badge eit-badge--warning">Waiting</span></span
+                  ></button
+                ><button
+                  type="button"
+                  class="c-row"
+                  role="tab"
+                  id="qa-r-q4"
+                  aria-controls="qa-p-q4"
+                  aria-selected="false"
+                  tabindex="-1"
+                  data-tags="answered b14"
+                >
+                  <span class="c-cell"
+                    ><span class="c-cell-l" aria-hidden="true">Student</span
+                    ><span class="c-who"
+                      ><span class="p-avatar p-avatar--sm" aria-hidden="true">NJ</span
+                      ><span class="c-cell"
+                        ><span class="c-cell-t">Nusrat Jahan</span
+                        ><span class="c-cell-s">WordPress · Batch 14</span></span
+                      ></span
+                    ></span
+                  ><span class="c-cell c-lead"
+                    ><span class="c-cell-l" aria-hidden="true">Question</span
+                    ><span class="c-cell-t is-strong">Why is my menu not showing?</span
+                    ><span class="c-cell-s">Class 12 · Building a custom header</span></span
+                  ><span class="c-cell"
+                    ><span class="c-cell-l" aria-hidden="true">Asked</span><span class="c-cell-t">12 Oct</span></span
+                  ><span class="c-cell"
+                    ><span class="c-cell-l" aria-hidden="true">Status</span
+                    ><span class="eit-badge eit-badge--success">Answered</span></span
+                  ></button
+                ><button
+                  type="button"
+                  class="c-row"
+                  role="tab"
+                  id="qa-r-q5"
+                  aria-controls="qa-p-q5"
+                  aria-selected="false"
+                  tabindex="-1"
+                  data-tags="answered b14"
+                >
+                  <span class="c-cell"
+                    ><span class="c-cell-l" aria-hidden="true">Student</span
+                    ><span class="c-who"
+                      ><span class="p-avatar p-avatar--sm" aria-hidden="true">AH</span
+                      ><span class="c-cell"
+                        ><span class="c-cell-t">Arif Hossain</span
+                        ><span class="c-cell-s">WordPress · Batch 14</span></span
+                      ></span
+                    ></span
+                  ><span class="c-cell c-lead"
+                    ><span class="c-cell-l" aria-hidden="true">Question</span
+                    ><span class="c-cell-t is-strong">Where does functions.php go?</span
+                    ><span class="c-cell-s">Class 9 · Theme folder structure</span></span
+                  ><span class="c-cell"
+                    ><span class="c-cell-l" aria-hidden="true">Asked</span><span class="c-cell-t">10 Oct</span></span
+                  ><span class="c-cell"
+                    ><span class="c-cell-l" aria-hidden="true">Status</span
+                    ><span class="eit-badge eit-badge--success">Answered</span></span
+                  >
+                </button>
+              </div>
+              <p class="c-empty" data-list-empty="" hidden="">No questions match.</p>
+              <div class="c-foot">
+                <span>Showing <span data-list-shown="">3</span> of 5 questions</span
+                ><span>Students see your answer under the lesson</span>
+              </div>
+            </section>
+            <aside class="c-pane" aria-label="Question">
+              <section class="c-pane-in" role="tabpanel" id="qa-p-q1" aria-labelledby="qa-r-q1-h">
+                <div class="c-pane-head">
+                  <div class="c-pane-title">
+                    <span class="eit-badge eit-badge--warning">Waiting</span>
+                    <h2 id="qa-r-q1-h">Is the mobile menu timing okay?</h2>
+                    <span class="c-pane-sub">Class 12 · Building a custom header</span>
                   </div>
-                </article>
-                <form class="qa-reply" data-next="">
-                  <label class="p-label" for="ans-q1">Your answer</label
+                  <button type="button" class="c-iconbtn c-pane-x" data-pane-close="" aria-label="Close">
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path d="M18 6 6 18M6 6l12 12"></path>
+                    </svg>
+                  </button>
+                </div>
+                <div class="c-block">
+                  <dl class="c-kv">
+                    <dt>Student</dt>
+                    <dd>Nusrat Jahan</dd>
+                    <dt>Batch</dt>
+                    <dd>WordPress · Batch 14</dd>
+                    <dt>Asked</dt>
+                    <dd>2 h ago</dd>
+                    <dt>In the video</dt>
+                    <dd><a class="p-link" href="course-builder.html">11:36 in Class 12</a></dd>
+                  </dl>
+                </div>
+                <div class="c-block">
+                  <h3>Nusrat asked</h3>
+                  <p class="c-note">
+                    I used 400ms for the mobile menu slide-in. It feels a bit slow on my phone. Is that okay, or should
+                    it be faster?
+                  </p>
+                </div>
+                <form class="c-block c-answer" data-answer="">
+                  <label class="c-block-h" for="ans-q1">Your answer</label
                   ><textarea
                     id="ans-q1"
                     class="p-textarea"
-                    style="min-height: 120px"
+                    rows="5"
                     placeholder="Explain the fix in a few lines. Point to a time in the video if it helps."
-                  ></textarea>
-                  <div class="p-row" style="justify-content: space-between; flex-wrap: wrap; gap: 12px">
-                    <span class="p-row" style="gap: 10px"
-                      ><button
-                        type="button"
-                        class="p-switch"
-                        role="switch"
-                        aria-checked="false"
-                        aria-labelledby="faq-q1"
-                      ></button
-                      ><span id="faq-q1" class="p-small" style="color: var(--ink-2)"
-                        >Also add it to the lesson’s common questions</span
-                      ></span
+                  ></textarea
+                  ><span class="p-row c-switch-line"
                     ><button
-                      type="submit"
-                      class="eit-btn eit-btn--primary eit-btn--md"
-                      data-toast="Answer sent · Nusrat is told by SMS"
+                      type="button"
+                      class="p-switch"
+                      role="switch"
+                      aria-checked="false"
+                      aria-labelledby="faq-q1"
+                    ></button
+                    ><span id="faq-q1" class="p-small">Also add it to the lesson’s common questions</span></span
+                  ><button
+                    type="submit"
+                    class="eit-btn eit-btn--primary eit-btn--md"
+                    disabled=""
+                    data-toast="Answer sent · Nusrat is told by SMS"
+                  >
+                    <svg
+                      class="eit-icon eit-btn__lead"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
                     >
-                      <svg
-                        class="eit-icon eit-btn__lead"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        focusable="false"
-                        aria-hidden="true"
-                      >
-                        <path d="m22 2-7 20-4-9-9-4 20-7z"></path>
-                        <path d="M22 2 11 13"></path></svg
-                      ><span class="eit-btn__label">Send answer</span>
-                    </button>
-                  </div>
+                      <path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"></path></svg
+                    ><span class="eit-btn__label">Send answer</span>
+                  </button>
                 </form>
-              </section>
-              <section role="tabpanel" id="qp-q2" aria-labelledby="qt-q2" class="p-card qa-detail" hidden>
-                <div style="display: flex; flex-direction: column; gap: 6px">
-                  <span class="p-eyebrow">Class 11 · Enqueueing styles and scripts</span>
-                  <h2 class="p-h2" style="font-size: 22px">My style.css loads twice</h2>
-                  <div class="p-row" style="gap: 16px; flex-wrap: wrap">
-                    <a class="p-link" href="course-builder.html"
-                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M5 3l14 9-14 9V3z"></path></svg
-                      >Asked at 24:10 in the video</a
-                    ><a class="p-link" href="batch.html"
-                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="9" cy="7" r="4"></circle>
-                        <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg
-                      >WordPress · Batch 14</a
+                <div class="c-pane-actions">
+                  <a class="c-btn" href="course-builder.html"
+                    ><svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
                     >
-                  </div>
+                      <path d="M7 4l13 8-13 8z"></path></svg
+                    >Open the lesson</a
+                  ><a class="c-btn" href="batch.html"
+                    ><svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path
+                        d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21c0-4 3.1-7 7-7s7 3 7 7M16 3.5a4 4 0 0 1 0 7M22 21c0-3-1.7-5.4-4-6.4"
+                      ></path></svg
+                    >Open the batch</a
+                  >
                 </div>
-                <article class="qa-msg">
-                  <span class="p-avatar">TH</span>
-                  <div class="qa-msg__body">
-                    <div class="qa-msg__head">
-                      <strong>Tanvir Hasan</strong><span class="p-small">WordPress · Batch 14 · 5 h ago</span>
-                    </div>
-                    <p class="p-body" style="margin: 0">
-                      After I added wp_enqueue_style the page has two link tags for style.css. I also still have the
-                      link tag in header.php. Do I remove one?
-                    </p>
+              </section>
+              <section class="c-pane-in" role="tabpanel" id="qa-p-q2" aria-labelledby="qa-r-q2-h" hidden="">
+                <div class="c-pane-head">
+                  <div class="c-pane-title">
+                    <span class="eit-badge eit-badge--warning">Waiting</span>
+                    <h2 id="qa-r-q2-h">My style.css loads twice</h2>
+                    <span class="c-pane-sub">Class 11 · Enqueueing styles and scripts</span>
                   </div>
-                </article>
-                <form class="qa-reply" data-next="">
-                  <label class="p-label" for="ans-q2">Your answer</label
+                  <button type="button" class="c-iconbtn c-pane-x" data-pane-close="" aria-label="Close">
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path d="M18 6 6 18M6 6l12 12"></path>
+                    </svg>
+                  </button>
+                </div>
+                <div class="c-block">
+                  <dl class="c-kv">
+                    <dt>Student</dt>
+                    <dd>Tanvir Hasan</dd>
+                    <dt>Batch</dt>
+                    <dd>WordPress · Batch 14</dd>
+                    <dt>Asked</dt>
+                    <dd>5 h ago</dd>
+                    <dt>In the video</dt>
+                    <dd><a class="p-link" href="course-builder.html">24:10 in Class 11</a></dd>
+                  </dl>
+                </div>
+                <div class="c-block">
+                  <h3>Tanvir asked</h3>
+                  <p class="c-note">
+                    After I added wp_enqueue_style the page has two link tags for style.css. I also still have the link
+                    tag in header.php. Do I remove one?
+                  </p>
+                </div>
+                <form class="c-block c-answer" data-answer="">
+                  <label class="c-block-h" for="ans-q2">Your answer</label
                   ><textarea
                     id="ans-q2"
                     class="p-textarea"
-                    style="min-height: 120px"
+                    rows="5"
                     placeholder="Explain the fix in a few lines. Point to a time in the video if it helps."
-                  ></textarea>
-                  <div class="p-row" style="justify-content: space-between; flex-wrap: wrap; gap: 12px">
-                    <span class="p-row" style="gap: 10px"
-                      ><button
-                        type="button"
-                        class="p-switch"
-                        role="switch"
-                        aria-checked="false"
-                        aria-labelledby="faq-q2"
-                      ></button
-                      ><span id="faq-q2" class="p-small" style="color: var(--ink-2)"
-                        >Also add it to the lesson’s common questions</span
-                      ></span
+                  ></textarea
+                  ><span class="p-row c-switch-line"
                     ><button
-                      type="submit"
-                      class="eit-btn eit-btn--primary eit-btn--md"
-                      data-toast="Answer sent · Tanvir is told by SMS"
+                      type="button"
+                      class="p-switch"
+                      role="switch"
+                      aria-checked="false"
+                      aria-labelledby="faq-q2"
+                    ></button
+                    ><span id="faq-q2" class="p-small">Also add it to the lesson’s common questions</span></span
+                  ><button
+                    type="submit"
+                    class="eit-btn eit-btn--primary eit-btn--md"
+                    disabled=""
+                    data-toast="Answer sent · Tanvir is told by SMS"
+                  >
+                    <svg
+                      class="eit-icon eit-btn__lead"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
                     >
-                      <svg
-                        class="eit-icon eit-btn__lead"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        focusable="false"
-                        aria-hidden="true"
-                      >
-                        <path d="m22 2-7 20-4-9-9-4 20-7z"></path>
-                        <path d="M22 2 11 13"></path></svg
-                      ><span class="eit-btn__label">Send answer</span>
-                    </button>
-                  </div>
+                      <path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"></path></svg
+                    ><span class="eit-btn__label">Send answer</span>
+                  </button>
                 </form>
-              </section>
-              <section role="tabpanel" id="qp-q3" aria-labelledby="qt-q3" class="p-card qa-detail" hidden>
-                <div style="display: flex; flex-direction: column; gap: 6px">
-                  <span class="p-eyebrow">Class 17 · useEffect in practice</span>
-                  <h2 class="p-h2" style="font-size: 22px">Why does my fetch run twice?</h2>
-                  <div class="p-row" style="gap: 16px; flex-wrap: wrap">
-                    <a class="p-link" href="course-builder.html"
-                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M5 3l14 9-14 9V3z"></path></svg
-                      >Asked at 41:02 in the video</a
-                    ><a class="p-link" href="batch.html"
-                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="9" cy="7" r="4"></circle>
-                        <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg
-                      >React JS · Batch 6</a
+                <div class="c-pane-actions">
+                  <a class="c-btn" href="course-builder.html"
+                    ><svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
                     >
-                  </div>
+                      <path d="M7 4l13 8-13 8z"></path></svg
+                    >Open the lesson</a
+                  ><a class="c-btn" href="batch.html"
+                    ><svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path
+                        d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21c0-4 3.1-7 7-7s7 3 7 7M16 3.5a4 4 0 0 1 0 7M22 21c0-3-1.7-5.4-4-6.4"
+                      ></path></svg
+                    >Open the batch</a
+                  >
                 </div>
-                <article class="qa-msg">
-                  <span class="p-avatar">SA</span>
-                  <div class="qa-msg__body">
-                    <div class="qa-msg__head">
-                      <strong>Sadia Afrin</strong><span class="p-small">React JS · Batch 6 · This morning</span>
-                    </div>
-                    <p class="p-body" style="margin: 0">
-                      In development my useEffect fetch runs two times when the page loads. In the build it runs once.
-                      Is something wrong in my code?
-                    </p>
+              </section>
+              <section class="c-pane-in" role="tabpanel" id="qa-p-q3" aria-labelledby="qa-r-q3-h" hidden="">
+                <div class="c-pane-head">
+                  <div class="c-pane-title">
+                    <span class="eit-badge eit-badge--warning">Waiting</span>
+                    <h2 id="qa-r-q3-h">Why does my fetch run twice?</h2>
+                    <span class="c-pane-sub">Class 17 · useEffect in practice</span>
                   </div>
-                </article>
-                <form class="qa-reply" data-next="">
-                  <label class="p-label" for="ans-q3">Your answer</label
+                  <button type="button" class="c-iconbtn c-pane-x" data-pane-close="" aria-label="Close">
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path d="M18 6 6 18M6 6l12 12"></path>
+                    </svg>
+                  </button>
+                </div>
+                <div class="c-block">
+                  <dl class="c-kv">
+                    <dt>Student</dt>
+                    <dd>Sadia Afrin</dd>
+                    <dt>Batch</dt>
+                    <dd>React JS · Batch 6</dd>
+                    <dt>Asked</dt>
+                    <dd>This morning</dd>
+                    <dt>In the video</dt>
+                    <dd><a class="p-link" href="course-builder.html">41:02 in Class 17</a></dd>
+                  </dl>
+                </div>
+                <div class="c-block">
+                  <h3>Sadia asked</h3>
+                  <p class="c-note">
+                    In development my useEffect fetch runs two times when the page loads. In the build it runs once. Is
+                    something wrong in my code?
+                  </p>
+                </div>
+                <form class="c-block c-answer" data-answer="">
+                  <label class="c-block-h" for="ans-q3">Your answer</label
                   ><textarea
                     id="ans-q3"
                     class="p-textarea"
-                    style="min-height: 120px"
+                    rows="5"
                     placeholder="Explain the fix in a few lines. Point to a time in the video if it helps."
-                  ></textarea>
-                  <div class="p-row" style="justify-content: space-between; flex-wrap: wrap; gap: 12px">
-                    <span class="p-row" style="gap: 10px"
-                      ><button
-                        type="button"
-                        class="p-switch"
-                        role="switch"
-                        aria-checked="false"
-                        aria-labelledby="faq-q3"
-                      ></button
-                      ><span id="faq-q3" class="p-small" style="color: var(--ink-2)"
-                        >Also add it to the lesson’s common questions</span
-                      ></span
+                  ></textarea
+                  ><span class="p-row c-switch-line"
                     ><button
-                      type="submit"
-                      class="eit-btn eit-btn--primary eit-btn--md"
-                      data-toast="Answer sent · Sadia is told by SMS"
+                      type="button"
+                      class="p-switch"
+                      role="switch"
+                      aria-checked="false"
+                      aria-labelledby="faq-q3"
+                    ></button
+                    ><span id="faq-q3" class="p-small">Also add it to the lesson’s common questions</span></span
+                  ><button
+                    type="submit"
+                    class="eit-btn eit-btn--primary eit-btn--md"
+                    disabled=""
+                    data-toast="Answer sent · Sadia is told by SMS"
+                  >
+                    <svg
+                      class="eit-icon eit-btn__lead"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      focusable="false"
+                      aria-hidden="true"
                     >
-                      <svg
-                        class="eit-icon eit-btn__lead"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        focusable="false"
-                        aria-hidden="true"
-                      >
-                        <path d="m22 2-7 20-4-9-9-4 20-7z"></path>
-                        <path d="M22 2 11 13"></path></svg
-                      ><span class="eit-btn__label">Send answer</span>
-                    </button>
-                  </div>
+                      <path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"></path></svg
+                    ><span class="eit-btn__label">Send answer</span>
+                  </button>
                 </form>
-              </section>
-              <section role="tabpanel" id="qp-q4" aria-labelledby="qt-q4" class="p-card qa-detail" hidden>
-                <div style="display: flex; flex-direction: column; gap: 6px">
-                  <span class="p-eyebrow">Class 12 · Building a custom header</span>
-                  <h2 class="p-h2" style="font-size: 22px">Why is my menu not showing?</h2>
-                  <div class="p-row" style="gap: 16px; flex-wrap: wrap">
-                    <a class="p-link" href="course-builder.html"
-                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M5 3l14 9-14 9V3z"></path></svg
-                      >Asked at 9:40 in the video</a
-                    ><a class="p-link" href="batch.html"
-                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="9" cy="7" r="4"></circle>
-                        <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg
-                      >WordPress · Batch 14</a
+                <div class="c-pane-actions">
+                  <a class="c-btn" href="course-builder.html"
+                    ><svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
                     >
-                  </div>
+                      <path d="M7 4l13 8-13 8z"></path></svg
+                    >Open the lesson</a
+                  ><a class="c-btn" href="batch.html"
+                    ><svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path
+                        d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21c0-4 3.1-7 7-7s7 3 7 7M16 3.5a4 4 0 0 1 0 7M22 21c0-3-1.7-5.4-4-6.4"
+                      ></path></svg
+                    >Open the batch</a
+                  >
                 </div>
-                <article class="qa-msg">
-                  <span class="p-avatar">NJ</span>
-                  <div class="qa-msg__body">
-                    <div class="qa-msg__head">
-                      <strong>Nusrat Jahan</strong><span class="p-small">WordPress · Batch 14 · 12 Oct</span>
-                    </div>
-                    <p class="p-body" style="margin: 0">I registered the menu but nothing shows in the header.</p>
+              </section>
+              <section class="c-pane-in" role="tabpanel" id="qa-p-q4" aria-labelledby="qa-r-q4-h" hidden="">
+                <div class="c-pane-head">
+                  <div class="c-pane-title">
+                    <span class="eit-badge eit-badge--success">Answered</span>
+                    <h2 id="qa-r-q4-h">Why is my menu not showing?</h2>
+                    <span class="c-pane-sub">Class 12 · Building a custom header</span>
                   </div>
-                </article>
-                <article class="qa-msg qa-msg--mentor">
-                  <span class="p-avatar">KH</span>
-                  <div class="qa-msg__body">
-                    <div class="qa-msg__head">
-                      <strong>You</strong><span class="eit-badge eit-badge--success">Answered</span>
-                    </div>
-                    <p class="p-body" style="margin: 0">
-                      Check that the theme location in wp_nav_menu() matches the one in register_nav_menus(), then
-                      assign a menu to it under Appearance → Menus.
-                    </p>
-                  </div>
-                </article>
-                <div class="p-row" style="justify-content: space-between; flex-wrap: wrap; gap: 12px">
-                  <span class="p-small">Nusrat was told by SMS and in the panel.</span
-                  ><button type="button" class="p-ghostbtn" data-toast="Added to the lesson’s common questions">
-                    <svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M12 5v14M5 12h14"></path></svg
-                    >Add to the lesson FAQ
+                  <button type="button" class="c-iconbtn c-pane-x" data-pane-close="" aria-label="Close">
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path d="M18 6 6 18M6 6l12 12"></path>
+                    </svg>
                   </button>
                 </div>
-              </section>
-              <section role="tabpanel" id="qp-q5" aria-labelledby="qt-q5" class="p-card qa-detail" hidden>
-                <div style="display: flex; flex-direction: column; gap: 6px">
-                  <span class="p-eyebrow">Class 9 · Theme folder structure</span>
-                  <h2 class="p-h2" style="font-size: 22px">Where does functions.php go?</h2>
-                  <div class="p-row" style="gap: 16px; flex-wrap: wrap">
-                    <a class="p-link" href="course-builder.html"
-                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M5 3l14 9-14 9V3z"></path></svg
-                      >Asked at 15:22 in the video</a
-                    ><a class="p-link" href="batch.html"
-                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="9" cy="7" r="4"></circle>
-                        <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg
-                      >WordPress · Batch 14</a
-                    >
-                  </div>
+                <div class="c-block">
+                  <dl class="c-kv">
+                    <dt>Student</dt>
+                    <dd>Nusrat Jahan</dd>
+                    <dt>Batch</dt>
+                    <dd>WordPress · Batch 14</dd>
+                    <dt>Asked</dt>
+                    <dd>12 Oct</dd>
+                    <dt>In the video</dt>
+                    <dd><a class="p-link" href="course-builder.html">9:40 in Class 12</a></dd>
+                  </dl>
                 </div>
-                <article class="qa-msg">
-                  <span class="p-avatar">AH</span>
-                  <div class="qa-msg__body">
-                    <div class="qa-msg__head">
-                      <strong>Arif Hossain</strong><span class="p-small">WordPress · Batch 14 · 10 Oct</span>
-                    </div>
-                    <p class="p-body" style="margin: 0">Does functions.php go in the theme folder or in wp-content?</p>
-                  </div>
-                </article>
-                <article class="qa-msg qa-msg--mentor">
-                  <span class="p-avatar">KH</span>
-                  <div class="qa-msg__body">
-                    <div class="qa-msg__head">
-                      <strong>You</strong><span class="eit-badge eit-badge--success">Answered</span>
-                    </div>
-                    <p class="p-body" style="margin: 0">
-                      In your theme folder, next to style.css and index.php. WordPress loads it for the active theme
-                      only.
-                    </p>
-                  </div>
-                </article>
-                <div class="p-row" style="justify-content: space-between; flex-wrap: wrap; gap: 12px">
-                  <span class="p-small">Arif was told by SMS and in the panel.</span
-                  ><button type="button" class="p-ghostbtn" data-toast="Added to the lesson’s common questions">
-                    <svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                <div class="c-block">
+                  <h3>Nusrat asked</h3>
+                  <p class="c-note">I registered the menu but nothing shows in the header.</p>
+                </div>
+                <div class="c-block">
+                  <h3>Your answer</h3>
+                  <p class="c-note">
+                    Check that the theme location in wp_nav_menu() matches the one in register_nav_menus(), then assign
+                    a menu to it under Appearance → Menus.
+                  </p>
+                  <p class="p-small" style="margin: 0">Nusrat was told by SMS and in the panel.</p>
+                </div>
+                <div class="c-pane-actions">
+                  <button type="button" class="c-btn" data-toast="Added to the lesson’s common questions">
+                    <svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
                       <path d="M12 5v14M5 12h14"></path></svg
-                    >Add to the lesson FAQ
+                    >Add to the lesson FAQ</button
+                  ><a class="c-btn" href="course-builder.html"
+                    ><svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path d="M7 4l13 8-13 8z"></path></svg
+                    >Open the lesson</a
+                  ><a class="c-btn" href="batch.html"
+                    ><svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path
+                        d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21c0-4 3.1-7 7-7s7 3 7 7M16 3.5a4 4 0 0 1 0 7M22 21c0-3-1.7-5.4-4-6.4"
+                      ></path></svg
+                    >Open the batch</a
+                  >
+                </div>
+              </section>
+              <section class="c-pane-in" role="tabpanel" id="qa-p-q5" aria-labelledby="qa-r-q5-h" hidden="">
+                <div class="c-pane-head">
+                  <div class="c-pane-title">
+                    <span class="eit-badge eit-badge--success">Answered</span>
+                    <h2 id="qa-r-q5-h">Where does functions.php go?</h2>
+                    <span class="c-pane-sub">Class 9 · Theme folder structure</span>
+                  </div>
+                  <button type="button" class="c-iconbtn c-pane-x" data-pane-close="" aria-label="Close">
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path d="M18 6 6 18M6 6l12 12"></path>
+                    </svg>
                   </button>
                 </div>
+                <div class="c-block">
+                  <dl class="c-kv">
+                    <dt>Student</dt>
+                    <dd>Arif Hossain</dd>
+                    <dt>Batch</dt>
+                    <dd>WordPress · Batch 14</dd>
+                    <dt>Asked</dt>
+                    <dd>10 Oct</dd>
+                    <dt>In the video</dt>
+                    <dd><a class="p-link" href="course-builder.html">15:22 in Class 9</a></dd>
+                  </dl>
+                </div>
+                <div class="c-block">
+                  <h3>Arif asked</h3>
+                  <p class="c-note">Does functions.php go in the theme folder or in wp-content?</p>
+                </div>
+                <div class="c-block">
+                  <h3>Your answer</h3>
+                  <p class="c-note">
+                    In your theme folder, next to style.css and index.php. WordPress loads it for the active theme only.
+                  </p>
+                  <p class="p-small" style="margin: 0">Arif was told by SMS and in the panel.</p>
+                </div>
+                <div class="c-pane-actions">
+                  <button type="button" class="c-btn" data-toast="Added to the lesson’s common questions">
+                    <svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path d="M12 5v14M5 12h14"></path></svg
+                    >Add to the lesson FAQ</button
+                  ><a class="c-btn" href="course-builder.html"
+                    ><svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path d="M7 4l13 8-13 8z"></path></svg
+                    >Open the lesson</a
+                  ><a class="c-btn" href="batch.html"
+                    ><svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path
+                        d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21c0-4 3.1-7 7-7s7 3 7 7M16 3.5a4 4 0 0 1 0 7M22 21c0-3-1.7-5.4-4-6.4"
+                      ></path></svg
+                    >Open the batch</a
+                  >
+                </div>
               </section>
-            </div>
+            </aside>
           </div>
         </main>
       </div>

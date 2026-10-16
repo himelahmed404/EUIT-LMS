@@ -2,7 +2,8 @@
 
 A review of all 42 screens as built from the design, the fixes made, and what's still open.
 Reviewed on 16 Oct 2026 at 360–1920px. For what's on each page now, see [PAGES.md](PAGES.md).
-The admin panel has since been restyled to the SchoolofGenZ console look and has three new pages: see the next two sections.
+The admin panel has since been restyled to the SchoolofGenZ console look and has three new pages, and the mentor
+panel has followed it: see the next three sections.
 
 ## Admin console restyle (SchoolofGenZ look)
 
@@ -32,7 +33,7 @@ changed in dark mode.
 themes), and the new flows in `npm run check` (dark mode, collapse, drawer, account menu, Ctrl K, the
 Course review link).
 
-**Next:** the student and mentor panels, with the same shell (`console.css` is written so another panel can
+**Next:** the student panel (the mentor panel has followed; see below), with the same shell (`console.css` is written so another panel can
 take it by adding `class="is-console"` and the console sidebar and top bar).
 
 ## New admin pages: Announcements, Activity log, Coupons & referrals
@@ -66,6 +67,45 @@ code that already exists, `#cp-referrals`, the record over the list on phones).
   yet; it needs one, with the price updating and the "one code per enrollment" rule.
 - **Real SMS costs.** The composer counts SMS but shows no price, because the SMS provider is still
   [SMS PROVIDER]. Add the rate once it's chosen.
+
+## Mentor panel: the console look, and the problems it fixed
+
+The 9 mentor pages now use the admin console's shell and components: the 232px sidebar (QUEUES: Reviews,
+Student questions · TEACHING: My batches, Schedule & recordings · CONTENT: Courses · HELP: Mentor
+handbook), page titles and buttons in the top bar, full-width pages, light and dark mode, the collapsible
+sidebar, the tablet rail and the phone drawer. Kamrul's account menu has My profile, Notifications,
+Notification settings, Language and Log out.
+
+**What the critique found, and what changed:**
+
+| Page              | Problem                                                                                                                                                                           | Severity | Now                                                                                                                                                                                        |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Reviews           | Only one project could be reviewed: "Next submission" went nowhere, and the "Reviews" breadcrumb led to the dashboard. The dashboard listed 4 of the 5 waiting.                   | High     | A review queue of all 5 (filter by batch) beside the open review, with Previous / Next and "2 of 5". The dashboard and the queue list the same 5.                                          |
+| Reviews           | Approve could be pressed with marks missing or a failing total; nothing said whether the project passed.                                                                          | High     | The total says "Passes · pass mark 60" or "Below the pass mark"; Approve waits until every part has a mark and the total passes. A decision marks the project in the queue.                |
+| Dashboard         | The to-do boxes only changed the box: the item didn't strike through and "1 of 4 done" never moved.                                                                               | Medium   | A real checklist: ticking strikes the item and moves the count and its bar.                                                                                                                |
+| Dashboard         | A dark hero and big cards, unlike the admin Overview.                                                                                                                             | Medium   | The Overview's layout: 4 stat tiles that open their pages, then Today (timeline and the next class), To-do, Waiting for your review, Falling behind, My batches, My courses.               |
+| My batches        | Only Batch 14 was reachable, and the "My batches" breadcrumb went to the dashboard.                                                                                               | Medium   | A switcher with all 3 batches above the open one, then 4 stat tiles (attendance, progress, projects, recordings) that open their tabs.                                                     |
+| Courses           | The "Courses" breadcrumb was a dead link and the course in review wasn't shown.                                                                                                   | Medium   | A switcher with both courses.                                                                                                                                                              |
+| Student questions | An inbox of its own design, with no search or batch filter; Send answer could be pressed with nothing typed.                                                                      | Medium   | The admin record list: Waiting / Answered / All with counts, a batch picker, a search, the question in the side pane. Send waits for text; sending moves the counts and the sidebar count. |
+| Quiz builder      | The settings didn't line up (one field had a note, so its label sat higher), and the switches were squeezed into the same row with an unclear label ("Show answers after" what?). | Medium   | Quiz settings as a panel: three fields aligned at the top, then Shuffle questions and Show the answers after, each with a line saying what it does.                                        |
+| Schedule          | Its own glowing, lifting upload buttons and a black "Onsite" pill.                                                                                                                | Low      | The console's primary button and a neutral badge.                                                                                                                                          |
+| My profile        | Log out sat in the page header, away from the account.                                                                                                                            | Low      | In the account menu, as in the admin panel. The page is "My profile", like the menu.                                                                                                       |
+| Sidebar           | The Mentor handbook was a promo card; counts were black and amber bubbles.                                                                                                        | Low      | A Help item; yellow count pills, red dots on the tablet rail.                                                                                                                              |
+| Every page        | Fixed colours (white icon tiles, a light video poster in dark mode) and 16px card titles beside 14px ones.                                                                        | Low      | Tokens, so both themes work; one title size.                                                                                                                                               |
+
+**Checked:** the 9 pages at 360–1920px in light and dark (no sideways scroll, text contrast AA in both
+themes), and new flows in `npm run check` (questions open on Waiting, sending an answer, the review queue's
+Next, marks adding up and Approve waiting for them, the batch picker, the to-do count).
+
+**Open suggestions:**
+
+- **Pages for the other batches and the course in review.** React JS Batch 6, WordPress Batch 15 and
+  Advanced WordPress Theme Development are in the switchers but link to `#`.
+- **A mentor handbook page** (rubrics, attendance rules, how course review works): it's in the sidebar.
+- **Approving should leave the queue.** A decision marks the project, but the counts (sidebar, dashboard,
+  notifications) stay at 5 until there's a backend.
+- **The attendance table on phones** scrolls sideways with Present / Late / Absent at the edge; a card per
+  student would be easier to mark on a phone.
 
 ## Overall impression
 

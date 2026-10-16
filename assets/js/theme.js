@@ -1,4 +1,4 @@
-/* Admin console: applies light or dark mode, and a collapsed sidebar, before the page paints,
+/* Console pages (admin and mentor): applies light or dark mode, and a collapsed sidebar, before the page paints,
    so neither flashes. Light is the default; dark is used only after someone picks it with the
    moon/sun button in the top bar (app.js), which saves the choice. Loaded in <head> without defer, on purpose. */
 (function () {

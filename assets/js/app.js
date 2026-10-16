@@ -496,7 +496,7 @@
     }, 2800);
   }
 
-  /* ---------- Admin console: light/dark, collapsible sidebar, phone drawer ---------- */
+  /* ---------- Console (admin and mentor panels): light/dark, collapsible sidebar, phone drawer ---------- */
   var root = document.documentElement;
   function syncThemeButtons() {
     var dark = root.getAttribute("data-theme") === "dark";
@@ -556,6 +556,8 @@
     }
     syncThemeButtons();
     syncNavTitles();
+    // A list can open on a filter other than All (the mentor's questions open on Waiting).
+    $all(".c-list").forEach(filterList);
     var scrim = document.createElement("div");
     scrim.className = "c-scrim";
     scrim.hidden = true;
@@ -578,7 +580,7 @@
     });
   }
 
-  /* ---------- Record lists (admin): filters, search and the open record ----------
+  /* ---------- Record lists (admin and mentor): filters, search and the open record ----------
      A .c-list holds .c-row tabs (a vertical tab list; each row's record is its tab panel in .c-pane).
      Each row names its tags in data-tags. Filter buttons (data-filter="tag", or "all") and selects
      (data-filter, the option's value is a tag, "" for any) narrow the rows; data-search matches their text.
@@ -793,6 +795,20 @@
           el.hidden = !on;
         });
       }
+      // A checklist (the mentor's to-do) keeps its "n of n done" line and its bar in step.
+      var list = sw.closest("[data-checklist]");
+      if (list) {
+        var boxes = $all('[role="checkbox"]', list);
+        var ticked = boxes.filter(function (b) {
+          return b.getAttribute("aria-checked") === "true";
+        }).length;
+        $all("[data-checklist-count]", list).forEach(function (el) {
+          el.textContent = ticked + " of " + boxes.length + " done";
+        });
+        $all("[data-checklist-bar]", list).forEach(function (el) {
+          el.style.width = Math.round((ticked / boxes.length) * 100) + "%";
+        });
+      }
       return;
     }
 
@@ -878,9 +894,12 @@
       filterList(filter.closest(".c-list"));
       return;
     }
+    // A list with its record beside it in a pane (.c-work) slides the pane in on narrow screens; the
+    // mentor's review queue keeps the open review on the page instead.
     var row = t.closest(".c-row[aria-controls]");
-    if (row && narrowPane.matches) {
-      setPane(row.closest(".c-work").querySelector(".c-pane"), true, row);
+    var work = row && row.closest(".c-work");
+    if (work && narrowPane.matches) {
+      setPane(work.querySelector(".c-pane"), true, row);
       return;
     }
     if (t.closest("[data-pane-close]")) {
@@ -940,7 +959,7 @@
   });
 
   document.addEventListener("keydown", function (e) {
-    // Ctrl K / Command K jumps to the search in the admin top bar.
+    // Ctrl K / Command K jumps to the search in the console top bar.
     if ((e.ctrlKey || e.metaKey) && (e.key === "k" || e.key === "K")) {
       var search = document.querySelector(".c-search input");
       if (search) {

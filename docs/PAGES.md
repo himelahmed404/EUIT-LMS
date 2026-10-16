@@ -26,7 +26,7 @@ The screens share one small, made-up cast. Keep new content consistent with it.
 | --------------------------------------- | -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Nusrat Jahan**, student `EIT-24-0148` | Every student page except Paused                   | WordPress Batch 14 (offline, Lab 2, Mirpur-10, Mon and Thu 7–9 PM) and Graphic Design Batch 9 (online). 90 points, #3 of 20. Installment 2 of 3 (৳5,000) due 15 Nov. Class 12 quiz open, Class 13 on Mon 19 Oct. Phone `+880 17XXXXXX48`. |
 | **Mehedi Hasan**, student `EIT-24-0155` | `student/access-paused.html`, admin student record | Access paused 8 Oct: installment 2 was due 1 Oct. 60 points, #9.                                                                                                                                                                          |
-| **Kamrul Hasan**, mentor                | Mentor panel, Nusrat's mentor                      | WordPress B14 and B15, React JS B6. 5 projects to review, 3 student questions, Class 12 recording due 9:00 AM.                                                                                                                            |
+| **Kamrul Hasan**, mentor                | Mentor panel, Nusrat's mentor                      | WordPress B14 and B15, React JS B6. 5 projects to review (Nusrat, Tanvir, Mehedi from B14; Tahmid Islam and Sadia Afrin from B6), 3 student questions, Class 12 recording due 9:00 AM.                                                    |
 | **Sharmin Sultana**, admin (Owner)      | Admin panel                                        | Overview numbers for October 2026: ৳6,85,000 collected, 58 enrollments, 14 overdue.                                                                                                                                                       |
 | Batch 14 roster                         | Mentor batch, admin batch detail                   | Nusrat, Tanvir Hasan, Mehedi Hasan, Rafiq Islam (behind, 67% attendance), Afsana Mim, Arif Hossain, Jannatul Ferdous, Sabbir Ahmed.                                                                                                       |
 
@@ -43,51 +43,55 @@ Each panel page is a self-contained HTML file. The sidebar, top bar and bell men
 every page of that role**: if you change one, change it in all of that role's pages (a find-and-replace
 across `student/*.html`, `mentor/*.html` or `admin/*.html`).
 
-### Student and mentor panels
+### Student panel
 
 | Part                           | Markup                                                                                     | Notes                                                                                                                                                                                                                                                                                                       |
 | ------------------------------ | ------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Sidebar                        | `<aside class="p-side">` → `<nav class="p-nav">`                                           | The current page's link has `aria-current="page"`. Labels are wrapped in `<span class="p-nav-text">`; long ones also have `<span class="p-nav-short" aria-hidden="true">` for the phone tab bar.                                                                                                            |
-| Sidebar card                   | `.p-help` at the bottom of the sidebar                                                     | Student: points (Leaderboard shows "+10 waiting"; Paused shows "60 points"). Mentor: Mentor handbook (no page yet).                                                                                                                                                                                         |
+| Sidebar card                   | `.p-help` at the bottom of the sidebar                                                     | Student: points (Leaderboard shows "+10 waiting"; Paused shows "60 points").                                                                                                                                                                                                                                |
 | Top bar                        | `<header class="p-top">`                                                                   | Search (not wired), language switch, bell, profile chip (`.p-me`, links to the role's profile page).                                                                                                                                                                                                        |
 | Language switch                | `.eit-seg[aria-label="Language"]`                                                          | EN / বাং. The choice is saved in `localStorage` (`eit-lang`) and kept across pages. The copy stays English.                                                                                                                                                                                                 |
 | Bell                           | `button[data-notif-scope]` with `aria-controls="notif-menu"`, and `#notif-menu.p-dropdown` | `data-notif-scope` is `student`, `mentor` or `admin`. Same items and count on every page of a role: student 2 unread, mentor 3, admin 3 (the paused student has their own menu with 1). "Mark all as read" clears the dots and the count and remembers it for that role (`localStorage` `eit-read-<role>`). |
 | Phone layout (720px and below) | Built by `app.js`                                                                          | The top bar becomes one row (logo, search icon, language, bell, avatar). The sidebar becomes a bottom tab bar with the first four links plus **More**, which opens a sheet with everything else.                                                                                                            |
 | Tablet layout (721–1099px)     | CSS only                                                                                   | The sidebar becomes an 84px icon rail; hovering an icon shows its name.                                                                                                                                                                                                                                     |
 
-### Admin console (`admin/*.html`)
+### Console (`admin/*.html` and `mentor/*.html`)
 
-The admin panel follows the SchoolofGenZ admin console, in European IT colours. Its pages have
+The admin and mentor panels follow the SchoolofGenZ admin console, in European IT colours. Their pages have
 `<html class="is-console">`, load `assets/css/console.css` and, in `<head>` without `defer`,
 `assets/js/theme.js` (it sets light or dark and the collapsed sidebar before the page paints).
 Fonts: Anek Bangla for text, JetBrains Mono for section labels, codes and the Ctrl K hint.
 
-| Part                    | Markup                                                                     | Notes                                                                                                                                                                                                                                                                                         |
-| ----------------------- | -------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Shell                   | `<div class="p-shell p-console">` → `aside.c-side` + `.p-content`          | Pages use the full width beside the sidebar (no 1320px column).                                                                                                                                                                                                                               |
-| Sidebar                 | `aside.c-side#c-side` → `.c-brand` + `nav.c-nav` → `.c-group` → `a.c-item` | 232px. "European IT · admin console" with the collapse button. Groups with mono labels (`.c-group-label`). Each item: `.c-ico` (28px tile, 16px icon) + `.c-label` + optional `.c-count` (yellow pill). Current page: `aria-current="page"`; the parent of a sub-page: `aria-current="true"`. |
-| Top bar                 | `header.c-top` → `.c-top-in`                                               | Phone menu button, page icon (`.c-top-ico`), title (`h1`, or `p.c-top-h` on record pages) with a subtitle (`.c-top-sub`) or breadcrumb (`nav.c-crumbs`), the page's own buttons (`.c-actions`), search (`label.c-search`, Ctrl K / ⌘ K), bell, theme button, account.                         |
-| Account menu            | `button.c-me` → `#me-menu.c-pop[data-popover]`                             | My profile, Notifications, Settings, Language (EN / বাং), Log out.                                                                                                                                                                                                                            |
-| Light / dark            | `button[data-theme-toggle]` sets `html[data-theme]`                        | Light by default; the choice is saved in `localStorage` (`eit-theme`). Dark colours are the tokens under `html.is-console[data-theme="dark"]` in `console.css`, so pages must use tokens (`var(--ink)`, `var(--surface-card)`…), never fixed colours.                                         |
-| Collapse                | `button[data-nav-toggle]` (`.c-collapse`, and `.c-expand` when collapsed)  | 1280px and up: the sidebar folds to a 68px icon rail; saved in `localStorage` (`eit-nav`).                                                                                                                                                                                                    |
-| Tablet (768–1279px)     | CSS only                                                                   | Always the 68px icon rail; counts become a red dot on the icon; names show on hover.                                                                                                                                                                                                          |
-| Phone (767px and below) | `button[data-nav-open]` (`.c-menu`)                                        | The sidebar is a drawer over the page (Esc, the backdrop or ✕ closes it). Page buttons move to a second row of the top bar.                                                                                                                                                                   |
-| Record lists            | `.c-work` → `section.c-list` + `aside.c-pane`                              | Announcements, Activity log, Coupons: underline filters with counts (`button[data-filter]`), a search (`data-search`), rows as tabs (`.c-row`, tags in `data-tags`), the open row's record in the pane. Below 1100px the record slides over the page; on phones each row is a card.           |
+| Part                    | Markup                                                                     | Notes                                                                                                                                                                                                                                                                                                                                                     |
+| ----------------------- | -------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Shell                   | `<div class="p-shell p-console">` → `aside.c-side` + `.p-content`          | Pages use the full width beside the sidebar (no 1320px column).                                                                                                                                                                                                                                                                                           |
+| Sidebar                 | `aside.c-side#c-side` → `.c-brand` + `nav.c-nav` → `.c-group` → `a.c-item` | 232px. "European IT · admin console" (or "mentor panel") with the collapse button. Groups with mono labels (`.c-group-label`). Each item: `.c-ico` (28px tile, 16px icon) + `.c-label` + optional `.c-count` (yellow pill). Current page: `aria-current="page"`; the parent of a sub-page: `aria-current="true"`.                                         |
+| Top bar                 | `header.c-top` → `.c-top-in`                                               | Phone menu button, page icon (`.c-top-ico`), title (`h1`, or `p.c-top-h` on record pages) with a subtitle (`.c-top-sub`) or breadcrumb (`nav.c-crumbs`), the page's own buttons (`.c-actions`), search (`label.c-search`, Ctrl K / ⌘ K), bell, theme button, account.                                                                                     |
+| Account menu            | `button.c-me` → `#me-menu.c-pop[data-popover]`                             | Admin: My profile, Notifications, Settings, Language (EN / বাং), Log out. Mentor: My profile, Notifications, Notification settings (`profile.html#notifications`), Language, Log out.                                                                                                                                                                     |
+| Light / dark            | `button[data-theme-toggle]` sets `html[data-theme]`                        | Light by default; the choice is saved in `localStorage` (`eit-theme`). Dark colours are the tokens under `html.is-console[data-theme="dark"]` in `console.css`, so pages must use tokens (`var(--ink)`, `var(--surface-card)`…), never fixed colours.                                                                                                     |
+| Collapse                | `button[data-nav-toggle]` (`.c-collapse`, and `.c-expand` when collapsed)  | 1280px and up: the sidebar folds to a 68px icon rail; saved in `localStorage` (`eit-nav`).                                                                                                                                                                                                                                                                |
+| Tablet (768–1279px)     | CSS only                                                                   | Always the 68px icon rail; counts become a red dot on the icon; names show on hover.                                                                                                                                                                                                                                                                      |
+| Phone (767px and below) | `button[data-nav-open]` (`.c-menu`)                                        | The sidebar is a drawer over the page (Esc, the backdrop or ✕ closes it). Page buttons move to a second row of the top bar.                                                                                                                                                                                                                               |
+| Record lists            | `.c-work` → `section.c-list` + `aside.c-pane`                              | Announcements, Activity log, Coupons, mentor Student questions: underline filters with counts (`button[data-filter]`), a search (`data-search`), rows as tabs (`.c-row`, tags in `data-tags`), the open row's record in the pane. Below 1100px the record slides over the page; on phones each row is a card. A list can open on a filter other than All. |
+| Review queue (mentor)   | `.c-queue` → `section.c-list.c-qlist` + `.c-qwork`                         | The list of waiting projects beside the open project's review (each review is a tab panel). Below 1100px the queue is a row of cards that scrolls sideways, above the review. `assets/js/pages/review.js`.                                                                                                                                                |
+| Switcher (mentor)       | `nav.c-switch` → `a.c-switch-item`                                         | The mentor's batches (My batches) or courses (Courses) above the open one, which has `aria-current="page"`. The others link to `#` until they have pages. On phones it scrolls sideways.                                                                                                                                                                  |
 
 Sidebar links per role:
 
 - **Student:** Dashboard, My courses (`course-player.html`), Quizzes, Projects, Schedule & recordings,
   Leaderboard, Certificates, Payments, Help. Profile is reached from the avatar.
-- **Mentor:** Dashboard, My batches (`batch.html`), Reviews (`review.html`), Courses (`course-builder.html`),
-  Student questions (`questions.html`), Schedule & recordings.
+- **Mentor:** Dashboard · **Queues:** Reviews 5 (`review.html`), Student questions 3 (`questions.html`) ·
+  **Teaching:** My batches (`batch.html`), Schedule & recordings 1 · **Content:** Courses (`course-builder.html`;
+  the Quiz builder highlights it) · **Help:** Mentor handbook (no page yet). Notifications and My profile are in
+  the bell and the account menu.
 - **Admin:** Overview · **Queues:** Course review 3 (`courses.html#cbp-queue`, opens the Review queue tab),
   Seminar leads 6 · **People:** Students & payments, Mentors · **Catalog:** Courses & batches, Coupons &
   referrals · **Communication:** Announcements · **System:** Settings, Roles & access, Activity log. Course review, Batch detail and Create a batch highlight their parent (Course
   review, Courses & batches); Student record highlights Students & payments. Notifications and My profile
   are in the bell and the account menu.
 
-Page widths: student and mentor pages share one column, up to 1320px wide and centred beside the sidebar
-(`--page-max` in `panel.css`). Admin pages use the full width. The enroll pages use a 1200px column; the
+Page widths: student pages share one column, up to 1320px wide and centred beside the sidebar
+(`--page-max` in `panel.css`). Admin and mentor pages use the full width. The enroll pages use a 1200px column; the
 enroll result uses 760px.
 
 ## Public pages
@@ -229,55 +233,72 @@ Filtering is `assets/js/pages/notifications.js`.
 
 ## Mentor panel
 
+All mentor pages use the console shell (see above), with the same light and dark modes as the admin panel.
+
 ### `mentor/dashboard.html` · Dashboard
 
-Hero with today's timeline (7:00 PM done, 9:30 PM next, recording due 9:00 AM) and the next class card;
-4 stats; Today's to-do (checkboxes are reveal triggers that strike items through); Waiting for your
-review; My batches; Falling behind (Nudge shows a toast); My courses.
+The admin Overview's layout. Top bar: "Good evening, Kamrul · Thu 15 Oct". 4 stat tiles (students you
+teach, average progress, projects to review with "3 days waiting", class attendance; each opens its page).
+Panels: **Today** (7:00 PM done, 9:30 PM next, recording due by 9:00 AM, and the next class with Start
+class and Open roster), **Today's to-do** (the boxes tick, strike the item through and move "1 of 4 done"
+and its bar: `data-checklist` in `app.js`), **Waiting for your review** (all 5, newest first), **Falling
+behind** (Nudge shows a toast), **My batches** (next class and average progress), **My courses**.
 
 ### `mentor/batch.html` · My batches (WordPress Batch 14)
 
-Upload reminder banner. **Tabs:** Attendance (Present / Late / Absent per student, **Mark all present**,
-Save attendance), Students (progress, quiz average, points, last active), Projects (Milestone 2 status
-and marks, Review / Nudge), Schedule (coming up and past classes).
+Top bar: My batches. A switcher with the 3 batches (Batch 14 open; React JS B6 and WordPress B15 link to `#`).
+The batch's name, facts and the upload reminder, then 4 stat tiles (attendance, progress, projects to
+review, recordings; each opens its tab or page). **Tabs:** Attendance (Present / Late / Absent per student,
+**Mark all present**, Save attendance), Students (progress, quiz average, points, last active), Projects
+(Milestone 2 status and marks, Review / Nudge), Schedule (coming up and past classes).
 
 ### `mentor/review.html` · Reviews
 
-Submission preview with **Desktop 1440 / Tablet 768 / Phone 360** (resizes the preview frame), files,
-student note; rubric with mark inputs that **add up to the total** (`assets/js/pages/review.js`), feedback,
-Approve / Request changes (toasts). Placeholders: Next submission, the live link, Download.
+The review queue: the 5 waiting projects (newest first, filter by batch) beside the open one's review.
+Each review has the project's facts, Previous / Next ("1 of 5"), the submission with **Desktop 1440 /
+Tablet 768 / Phone 360** (resizes the preview), the student's note (and, for Sadia's resubmission, your
+notes on the first attempt), and a rubric whose marks **add up to the total** and say whether it passes
+(pass mark 60). **Approve** waits until every part has a mark and the total passes; Approve and Request
+changes show a toast and mark the project in the queue. Nusrat's review is already filled in.
+`assets/js/pages/review.js`. Placeholders: the live links and Download files.
 
 ### `mentor/questions.html` · Student questions
 
-Inbox (Waiting · 3 / Answered / All) on the left; the chosen question on the right with the student's
-message and an answer form (Send answer marks it answered and shows a toast), or the earlier answer and
-"Add to the lesson FAQ". The list is a vertical tab list; filtering is `assets/js/pages/questions.js`.
+A record list like the admin's: Waiting 3 / Answered 2 / All 5, a batch picker and a search. It opens on
+Waiting. The open question's record (facts, the student's message, a link to the time in the video) has the
+answer form: **Send answer** waits for some text, then marks it answered in the list, the record, the filter
+counts and the sidebar count, and shows a toast. Answered questions show your answer and "Add to the lesson
+FAQ". `assets/js/pages/questions.js`.
 
 ### `mentor/course-builder.html` · Courses (WooCommerce Store Building)
 
-Curriculum with drag handles, lesson editor (title, video, what students will do, unlock rules, counts as
-finished at), Submit for review (toast). Placeholders: Preview as student, choosing another lesson,
-drag to reorder, Replace video.
+Top bar: Courses. A switcher with the 2 courses (the one in review links to `#`). Curriculum with drag
+handles, lesson editor (title, video, what students will do, unlock rules, counts as finished at), Submit
+for review (toast). Placeholders: Preview as student, choosing another lesson, drag to reorder, Replace video.
 
 ### `mentor/quiz-builder.html` · Quiz builder (Class 3 quiz)
 
-Quiz settings, question list, question editor (one answer / true-false, answers with the right one
-marked, why it's right). Save quiz shows a toast. Not wired: picking another question.
+Top bar: Quiz builder with the breadcrumb (Courses / WooCommerce Store Building). Quiz settings (points,
+time limit, retry after; Shuffle questions and Show the answers after, each explained), question list,
+question editor (one answer / true-false, answers with the right one marked, why it's right). Save quiz
+shows a toast. Not wired: picking another question.
 
 ### `mentor/schedule.html` · Schedule & recordings
 
-Classes waiting for upload, This week, Past recordings. **Upload recording** opens `#upload-dialog`
-(choose file → `upload-file` state; Start upload → `uploading`; publish when done → `queued`).
+Top bar: Upload recording. Classes waiting for upload, This week, Past recordings. **Upload recording**
+opens `#upload-dialog` (choose file → `upload-file` state; Start upload → `uploading`; publish when done →
+`queued`).
 
-### `mentor/profile.html` · Your profile
+### `mentor/profile.html` · My profile
 
 Public profile preview and editor (photo, name, title, experience, bio, skills, show on website),
-Teaching, **Notifications** (`#notifications`), Login and security. Placeholders: Change password,
-Manage devices.
+Teaching, **Notifications** (`#notifications`), Login and security. Log out is in the account menu.
+Placeholders: Change password, Manage devices.
 
 ### `mentor/notifications.html` · Notifications
 
-Same layout as the student version with mentor items (submissions, questions, recordings, course review).
+Same layout as the admin version with mentor items (submissions, questions, recordings, course review).
+Mark all as read is in the top bar.
 
 ## Admin panel
 
@@ -402,12 +423,15 @@ all as read is in the top bar.
 
 ## Links that are still placeholders
 
-About 130 links still point at `#` (an action with no page or backend yet). The biggest groups:
+About 140 links still point at `#` (an action with no page or backend yet). The biggest groups:
 
 - **Downloads and receipts:** lesson resources, project files, payment receipts, Download feedback.
 - **Contact:** Call / WhatsApp on seminar leads and Help, Message Kamrul, ask on WhatsApp.
 - **Lists:** pagination, Show all, Export CSV.
 - **Editors:** choosing another lesson in the course builder or another question in the quiz builder.
+- **Mentor pages not built yet:** React JS Batch 6 and WordPress Batch 15 (the My batches switcher and the
+  dashboard), the course in review (Courses switcher), Mentor handbook (sidebar), Open roster (dashboard),
+  and the submission links and files in the review queue.
 
 `npm run check` reports the current count. Toast-only buttons (Save, Send, Nudge…) are marked with `data-toast`.
 
@@ -420,9 +444,9 @@ npm run format      # Prettier, print width 120
 
 The checks start their own local server; they need Playwright's Chromium. They live in `tools/check/`:
 
-| Script       | What it covers                                                                                                                                                                                                                                                                         |
-| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `links.mjs`  | Every relative link and `#anchor` resolves.                                                                                                                                                                                                                                            |
-| `pages.mjs`  | Every page at 360–1920px: no sideways scroll, sidebar never stacks, no script errors, no duplicate ids, every `aria-*` / `for` reference resolves, every control has a name.                                                                                                           |
-| `states.mjs` | Every captured-state option shows its templates, every tab shows only its panel, every dialog opens and closes with Esc.                                                                                                                                                               |
-| `flows.mjs`  | Log in per role, reset password, quiz, upload a recording, roles, enroll, notifications, questions, dialogs, and the admin console (light by default, dark mode, collapse, drawer, account menu, Ctrl K, Course review link, record lists on Announcements, Activity log and Coupons). |
+| Script       | What it covers                                                                                                                                                                                                                                                                                                                              |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `links.mjs`  | Every relative link and `#anchor` resolves.                                                                                                                                                                                                                                                                                                 |
+| `pages.mjs`  | Every page at 360–1920px: no sideways scroll, sidebar never stacks, no script errors, no duplicate ids, every `aria-*` / `for` reference resolves, every control has a name.                                                                                                                                                                |
+| `states.mjs` | Every captured-state option shows its templates, every tab shows only its panel, every dialog opens and closes with Esc.                                                                                                                                                                                                                    |
+| `flows.mjs`  | Log in per role, reset password, quiz, upload a recording, roles, enroll, notifications, the mentor panel (questions, the review queue, the to-do list), dialogs, and the admin console (light by default, dark mode, collapse, drawer, account menu, Ctrl K, Course review link, record lists on Announcements, Activity log and Coupons). |

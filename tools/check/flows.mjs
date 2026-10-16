@@ -1,5 +1,6 @@
 // Click-throughs of the main journeys: log in as each role, reset a password, take a quiz,
-// upload a recording, edit roles, enroll, notifications, mentor questions, dialogs and the admin console
+// upload a recording, edit roles, enroll, notifications, the mentor panel (questions, the review queue, the to-do
+// list), dialogs and the admin console
 // (light by default, dark remembered, collapsed sidebar, phone drawer, account menu, Ctrl K, links that open a tab)
 // and its record lists (Announcements, Activity log, Coupons & referrals: filters, search, the open record).
 import { chromium } from "playwright";
@@ -135,20 +136,59 @@ const sw = p.locator('[aria-labelledby="pause-label"]');
 await click(sw);
 ok("pause switch hides block", (await sw.getAttribute("aria-checked")) === "false");
 
+// Mentor panel (the console shell, like admin).
 await go("mentor/questions.html");
-ok("questions: waiting filter shows 3", (await p.locator(".qa-item:visible").count()) === 3);
-await click(p.locator('[data-qa-show="answered"]'));
+const shown = () => p.locator(".c-row:visible").count();
+ok("questions: opens on Waiting with 3", (await shown()) === 3);
+await click(p.locator('[data-filter="answered"]'));
 ok(
-  "questions: answered filter opens an answered one",
-  (await p.locator(".qa-item:visible").count()) === 2 &&
-    (await p.locator(".qa-detail:visible .qa-msg--mentor").count()) === 1,
+  "questions: Answered shows 2 and opens one with its answer",
+  (await shown()) === 2 && (await p.locator(".c-pane-in:visible [data-answer]").count()) === 0,
 );
-await click(p.locator('[data-qa-show="waiting"]'));
-await p.locator(".qa-detail:visible textarea").fill("Try 200ms.");
-await click(p.locator('.qa-detail:visible button[type="submit"]'));
+await click(p.locator('[data-filter="waiting"]'));
+const send = p.locator('.c-pane-in:visible [data-answer] button[type="submit"]');
+ok("questions: Send answer waits for some text", await send.isDisabled());
+await p.locator(".c-pane-in:visible [data-answer] textarea").fill("Try 200ms.");
+await click(send);
 ok(
-  "questions: sending marks it answered",
-  (await p.locator('.qa-item[data-status="answered"]').count()) === 3 && (await vis(p.locator(".p-toast.is-on"))),
+  "questions: sending marks it answered and moves the counts",
+  (await p.locator('.c-row[data-tags~="answered"]').count()) === 3 &&
+    (await p.locator('[data-filter="waiting"] .c-n').textContent()) === "2" &&
+    (await vis(p.locator(".p-toast.is-on"))),
+);
+await go("mentor/review.html");
+ok("reviews: 5 waiting, Nusrat's open", (await p.locator(".c-qrow").count()) === 5);
+await click(p.locator('.c-review:visible [data-queue-step="1"]'));
+const openReview = p.locator(".c-review:visible");
+ok(
+  "reviews: Next opens the next project",
+  (await openReview.locator("h2").textContent()).includes("landing page") &&
+    (await openReview.locator("[data-queue-pos]").textContent()) === "2 of 5",
+);
+const approve = openReview.locator('[data-review-decide="approved"]');
+ok("reviews: Approve waits for every mark", await approve.isDisabled());
+const marks = openReview.locator("input[data-score]");
+for (const [i, v] of [27, 20, 21, 15].entries()) await marks.nth(i).fill(String(v));
+ok(
+  "reviews: the total adds up and says it passes",
+  (await openReview.locator("[data-score-total]").textContent()) === "83" &&
+    (await openReview.locator("[data-score-verdict]").getAttribute("data-pass")) === "true" &&
+    !(await approve.isDisabled()),
+);
+await click(approve);
+ok("reviews: an approved project is marked in the queue", await vis(p.locator("#rv-r-th .eit-badge--success")));
+await p.selectOption("#rv-batch", "b6");
+ok("reviews: the batch picker filters the queue", (await p.locator(".c-qrow:visible").count()) === 2);
+await go("mentor/dashboard.html");
+await click(p.locator(".c-todo .c-check").nth(1));
+ok(
+  "mentor dashboard: ticking a to-do moves the count",
+  (await p.locator("[data-checklist-count]").textContent()) === "2 of 4 done",
+);
+ok(
+  "mentor: console sidebar and account menu",
+  (await p.locator('.c-side .c-item[aria-current="page"]').textContent()).includes("Dashboard") &&
+    (await p.locator("#me-menu").count()) === 1,
 );
 await go("student/quiz.html");
 await click(p.locator('a[data-open-dialog="submit-quiz"]'));

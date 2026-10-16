@@ -1,57 +1,64 @@
-/* Mentor questions: filter the inbox by Waiting / Answered / All. Choosing a question opens it
-   (app.js treats the list as tabs); an answered question moves out of Waiting when it's sent. */
+/* Mentor questions: the list opens on Waiting (app.js filters it and opens the rows). Send answer waits for
+   some text; sending marks the question answered in the list, the record and the counts, and shows the answer
+   in place of the form. Nothing is sent anywhere. */
 (function () {
   "use strict";
 
-  var list = document.querySelector(".qa-list");
+  var list = document.querySelector('.c-list[aria-label="Student questions"]');
   if (!list) {
     return;
   }
-  var items = Array.prototype.slice.call(list.querySelectorAll(".qa-item"));
-  var empty = list.querySelector("[data-qa-empty]");
 
-  function apply() {
-    var on = document.querySelector('[data-qa-show][aria-pressed="true"]');
-    var show = on ? on.getAttribute("data-qa-show") : "all";
-    var shown = items.filter(function (it) {
-      var ok = show === "all" || it.getAttribute("data-status") === show;
-      it.hidden = !ok;
-      return ok;
-    });
-    if (empty) {
-      empty.hidden = shown.length !== 0;
-    }
-    // Keep an open question in view: if the selected one is filtered out, open the first shown.
-    var selected = items.filter(function (it) {
-      return it.getAttribute("aria-selected") === "true";
-    })[0];
-    if (shown.length && (!selected || selected.hidden)) {
-      shown[0].click();
+  function bump(el, by) {
+    if (el) {
+      el.textContent = Math.max(0, +el.textContent + by);
     }
   }
+  function esc(t) {
+    var d = document.createElement("div");
+    d.textContent = t;
+    return d.innerHTML;
+  }
 
-  document.addEventListener("click", function (e) {
-    if (e.target.closest("[data-qa-show]")) {
-      apply();
+  document.addEventListener("input", function (e) {
+    var form = e.target.closest("[data-answer]");
+    if (form) {
+      form.querySelector('[type="submit"]').disabled = !form.querySelector("textarea").value.trim();
     }
   });
+
   document.addEventListener("submit", function (e) {
-    var panel = e.target.closest(".qa-detail");
-    if (!panel) {
+    var form = e.target.closest("[data-answer]");
+    if (!form) {
       return;
     }
-    var tab = document.getElementById(panel.getAttribute("aria-labelledby"));
-    if (tab) {
-      tab.setAttribute("data-status", "answered");
-      var badge = tab.querySelector(".eit-badge");
-      if (badge) {
-        badge.className = "eit-badge eit-badge--success";
-        badge.textContent = "Answered";
+    var text = form.querySelector("textarea").value.trim();
+    if (!text) {
+      return;
+    }
+    var panel = form.closest('[role="tabpanel"]');
+    var row = list.querySelector('[aria-controls="' + panel.id + '"]');
+    var first = row.querySelector(".c-who .c-cell-t").textContent.split(" ")[0];
+    row.setAttribute("data-tags", row.getAttribute("data-tags").replace("waiting", "answered"));
+    [row, panel.querySelector(".c-pane-title")].forEach(function (el) {
+      var b = el.querySelector(".eit-badge");
+      b.className = "eit-badge eit-badge--success";
+      b.textContent = "Answered";
+    });
+    bump(list.querySelector('[data-filter="waiting"] .c-n'), -1);
+    bump(list.querySelector('[data-filter="answered"] .c-n'), 1);
+    var pill = document.querySelector('.c-item[href="questions.html"] .c-count');
+    if (pill) {
+      bump(pill, -1);
+      if (pill.textContent === "0") {
+        pill.remove();
       }
     }
-    var box = e.target;
-    box.innerHTML =
-      '<p class="p-notice" style="margin: 0">Answer sent. The student sees it under the lesson and gets an SMS.</p>';
+    form.outerHTML =
+      '<div class="c-block"><h3>Your answer</h3><p class="c-note">' +
+      esc(text) +
+      '</p><p class="p-small" style="margin: 0">' +
+      first +
+      " is told by SMS and sees it under the lesson.</p></div>";
   });
-  apply();
 })();

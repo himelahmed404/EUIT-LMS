@@ -1,563 +1,2045 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="is-console">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Review a project · European IT LMS</title>
+    <title>Reviews · European IT LMS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap"
     />
     <link rel="stylesheet" href="../assets/css/eit.css" />
     <link rel="stylesheet" href="../assets/css/panel.css" />
     <link rel="stylesheet" href="../assets/css/app.css" />
+    <link rel="stylesheet" href="../assets/css/console.css" />
+    <script src="../assets/js/theme.js"></script>
     <script src="../assets/js/app.js" defer=""></script>
     <script src="../assets/js/pages/review.js" defer=""></script>
   </head>
   <body>
-    <div class="p-shell">
-      <aside class="p-side">
-        <a class="p-brand" href="dashboard.html"
-          ><span class="p-brand-mark" aria-hidden="true"></span
-          ><span class="p-brand-text"
-            ><span class="p-brand-name">European IT</span><span class="p-brand-sub">INSTITUTE</span></span
-          ></a
-        >
-        <nav class="p-nav" aria-label="Mentor panel">
-          <span class="p-nav-label">Mentor</span
-          ><a href="dashboard.html"
-            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="3" y="3" width="7" height="9" rx="1"></rect>
-              <rect x="14" y="3" width="7" height="5" rx="1"></rect>
-              <rect x="14" y="12" width="7" height="9" rx="1"></rect>
-              <rect x="3" y="16" width="7" height="5" rx="1"></rect></svg
-            ><span class="p-nav-text">Dashboard</span></a
-          ><a href="batch.html"
-            ><svg
-              class="eit-icon"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              focusable="false"
-              aria-hidden="true"
-            >
-              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-              <circle cx="9" cy="7" r="4"></circle>
-              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg
-            ><span class="p-nav-text">My batches</span></a
-          ><a href="review.html" aria-current="page"
-            ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="8" y="2" width="8" height="4" rx="1"></rect>
-              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
-              <path d="m9 14 2 2 4-4"></path></svg
-            ><span class="p-nav-text">Reviews</span><span class="p-count">5</span></a
-          ><a href="course-builder.html"
-            ><svg
-              class="eit-icon"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              focusable="false"
-              aria-hidden="true"
-            >
-              <path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path>
-              <path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path></svg
-            ><span class="p-nav-text">Courses</span></a
-          ><a href="questions.html"
-            ><svg
-              class="eit-icon"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              focusable="false"
-              aria-hidden="true"
-            >
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg
-            ><span class="p-nav-text">Student questions</span
-            ><span class="p-nav-short" aria-hidden="true">Questions</span><span class="p-count">3</span></a
-          ><a href="schedule.html"
-            ><svg
-              class="eit-icon"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              focusable="false"
-              aria-hidden="true"
-            >
-              <rect x="3" y="4" width="18" height="18" rx="2"></rect>
-              <path d="M16 2v4M8 2v4M3 10h18"></path></svg
-            ><span class="p-nav-text">Schedule &amp; recordings</span
-            ><span class="p-nav-short" aria-hidden="true">Schedule</span
-            ><span class="p-count" style="background: var(--warning); color: rgb(255, 255, 255)">1</span></a
+    <div class="p-shell p-console">
+      <aside class="c-side" id="c-side">
+        <div class="c-brand">
+          <a class="c-brand-link" href="dashboard.html" aria-label="European IT mentor panel, dashboard"
+            ><span class="c-logo" aria-hidden="true"
+              ><svg
+                width="17"
+                height="17"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M2 9l10-5 10 5-10 5zM6 11v5c3 2.5 9 2.5 12 0v-5M22 9v6"></path></svg></span
+            ><span class="c-brand-text"
+              ><span class="c-brand-name">European IT</span><span class="c-brand-sub">mentor panel</span></span
+            ></a
+          ><button
+            type="button"
+            class="c-iconbtn c-collapse"
+            data-nav-toggle=""
+            aria-label="Collapse menu"
+            title="Collapse menu"
           >
-        </nav>
-        <div class="p-help" style="margin-top: auto">
-          <span class="p-h3" style="font-size: 15px">Mentor handbook</span
-          ><span class="p-muted">Rubrics, attendance rules and how course review works.</span
-          ><a class="p-link" href="#">Open handbook</a>
-        </div>
-      </aside>
-      <div class="p-content">
-        <header class="p-top">
-          <label class="p-search"
-            ><svg
-              class="eit-icon"
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M3 3h18v18H3zM9 3v18M16 9l-3 3 3 3"></path>
+            </svg></button
+          ><button type="button" class="c-iconbtn c-close" data-nav-close="" aria-label="Close menu">
+            <svg
               width="18"
               height="18"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
+              stroke-width="1.9"
               stroke-linecap="round"
               stroke-linejoin="round"
-              focusable="false"
               aria-hidden="true"
+              focusable="false"
             >
-              <circle cx="11" cy="11" r="8"></circle>
-              <path d="M21 21l-4.35-4.35"></path></svg
-            ><span class="eit-sr">Search</span><input type="search" placeholder="Search students, batches, lessons"
-          /></label>
-          <div class="p-top-right">
-            <div class="eit-seg has-thumb" role="group" aria-label="Language">
-              <span class="eit-seg__thumb" aria-hidden="true" style="width: 52px; transform: translateX(4px)"></span
-              ><button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button
-              ><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button>
-            </div>
+              <path d="M18 6 6 18M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <nav class="c-nav" aria-label="Mentor panel">
+          <div class="c-group">
             <button
-              class="p-iconbtn"
-              data-notif-scope="mentor"
               type="button"
-              aria-label="Notifications, 3 unread"
+              class="c-item c-expand"
+              data-nav-toggle=""
+              aria-label="Expand menu"
+              title="Expand menu"
+            >
+              <span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M3 3h18v18H3zM9 3v18M13 9l3 3-3 3"></path></svg
+              ></span></button
+            ><a class="c-item" href="dashboard.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M3 3h7v9H3zM14 3h7v5h-7zM14 12h7v9h-7zM3 16h7v5H3z"></path></svg></span
+              ><span class="c-label">Dashboard</span></a
+            >
+          </div>
+          <div class="c-group" role="group" aria-labelledby="nav-queues">
+            <span class="c-group-label" id="nav-queues">Queues</span
+            ><a class="c-item" href="review.html" aria-current="page"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M9 3h6v3H9zM8 4.5H5V21h14V4.5h-3M9 13l2 2 4-4"></path></svg></span
+              ><span class="c-label">Reviews</span><span class="c-count">5</span></a
+            ><a class="c-item" href="questions.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span
+              ><span class="c-label">Student questions</span><span class="c-count">3</span></a
+            >
+          </div>
+          <div class="c-group" role="group" aria-labelledby="nav-teaching">
+            <span class="c-group-label" id="nav-teaching">Teaching</span
+            ><a class="c-item" href="batch.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21c0-4 3.1-7 7-7s7 3 7 7M16 3.5a4 4 0 0 1 0 7M22 21c0-3-1.7-5.4-4-6.4"
+                  ></path></svg></span
+              ><span class="c-label">My batches</span></a
+            ><a class="c-item" href="schedule.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M3 5h18v16H3zM3 10h18M8 3v4M16 3v4"></path></svg></span
+              ><span class="c-label">Schedule &amp; recordings</span><span class="c-count">1</span></a
+            >
+          </div>
+          <div class="c-group" role="group" aria-labelledby="nav-content">
+            <span class="c-group-label" id="nav-content">Content</span
+            ><a class="c-item" href="course-builder.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5zM4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"
+                  ></path></svg></span
+              ><span class="c-label">Courses</span></a
+            >
+          </div>
+          <div class="c-group" role="group" aria-labelledby="nav-help">
+            <span class="c-group-label" id="nav-help">Help</span
+            ><a class="c-item" href="#"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"
+                  ></path></svg></span
+              ><span class="c-label">Mentor handbook</span></a
+            >
+          </div>
+        </nav>
+      </aside>
+      <div class="p-content">
+        <header class="c-top">
+          <div class="c-top-in">
+            <button
+              type="button"
+              class="c-iconbtn c-menu"
+              data-nav-open=""
+              aria-label="Open menu"
+              aria-controls="c-side"
               aria-expanded="false"
-              aria-controls="notif-menu"
             >
-              <svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
-                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
-              ><span class="p-badge-count" data-unread-count="">3</span></button
-            ><a class="p-me" href="profile.html" style="text-decoration: none; border-radius: 12px"
-              ><span class="p-avatar">KH</span
-              ><span style="display: flex; flex-direction: column"
-                ><span class="p-me-name">Kamrul Hasan</span><span class="p-me-sub">Mentor · Web Development</span></span
-              ></a
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M3 6h18M3 12h18M3 18h18"></path>
+              </svg></button
+            ><span class="c-top-ico" aria-hidden="true"
+              ><svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M9 3h6v3H9zM8 4.5H5V21h14V4.5h-3M9 13l2 2 4-4"></path></svg
+            ></span>
+            <div class="c-top-title">
+              <h1>Reviews</h1>
+              <p class="c-top-sub">5 projects waiting · the oldest was sent 12 Oct</p>
+            </div>
+            <div class="c-grow"></div>
+            <label class="c-search" title="Search"
+              ><svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM21 21l-4.3-4.3"></path></svg
+              ><span class="eit-sr">Search</span><input type="search" placeholder="Search…" /><kbd class="c-kbd"
+                >Ctrl K</kbd
+              ></label
             >
-            <div class="p-dropdown" role="dialog" aria-label="Notifications" id="notif-menu" hidden="" data-popover="">
-              <div class="p-row" style="justify-content: space-between; padding: 16px 18px 10px">
-                <strong style="font-size: 16px">Notifications</strong
-                ><button
-                  type="button"
+            <div class="c-pop-wrap">
+              <button
+                type="button"
+                class="c-iconbtn c-bordered"
+                data-notif-scope="mentor"
+                aria-label="Notifications, 3 unread"
+                aria-expanded="false"
+                aria-controls="notif-menu"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
+                ><span class="c-badge" data-unread-count="">3</span>
+              </button>
+              <div
+                class="p-dropdown"
+                role="dialog"
+                aria-label="Notifications"
+                id="notif-menu"
+                hidden=""
+                data-popover=""
+              >
+                <div class="p-row" style="justify-content: space-between; padding: 16px 18px 10px">
+                  <strong style="font-size: 16px">Notifications</strong
+                  ><button
+                    type="button"
+                    class="p-link"
+                    style="
+                      border: 0px;
+                      background: none;
+                      padding: 0px;
+                      font-style: inherit;
+                      font-variant: inherit;
+                      font-stretch: inherit;
+                      line-height: inherit;
+                      font-family: inherit;
+                      font-optical-sizing: inherit;
+                      font-size-adjust: inherit;
+                      font-kerning: inherit;
+                      font-feature-settings: inherit;
+                      font-variation-settings: inherit;
+                      font-weight: 600;
+                      font-size: 13px;
+                      cursor: pointer;
+                    "
+                    data-mark-read="#notif-menu"
+                  >
+                    Mark all as read
+                  </button>
+                </div>
+                <ul class="p-rows" style="padding: 0px 8px 8px">
+                  <li style="align-items: flex-start">
+                    <span class="p-tile" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                          d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7l-5-5zM14 2v4a2 2 0 0 0 2 2h4"
+                        ></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                      ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                        >Tanvir Hasan sent "Responsive landing page"</span
+                      ><span class="p-small" style="font-size: 12px">WordPress · Batch 14 · 1 h ago</span></span
+                    ><span
+                      aria-label="Unread"
+                      style="
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background: var(--cyan);
+                        margin-top: 6px;
+                        flex: 0 0 auto;
+                      "
+                      data-unread=""
+                    ></span>
+                  </li>
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--muted" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                      ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                        >New question on "Building a custom header"</span
+                      ><span class="p-small" style="font-size: 12px">Nusrat Jahan · 2 h ago</span></span
+                    ><span
+                      aria-label="Unread"
+                      style="
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background: var(--cyan);
+                        margin-top: 6px;
+                        flex: 0 0 auto;
+                      "
+                      data-unread=""
+                    ></span>
+                  </li>
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--amber" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                      ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                        >Class 12 recording is due by 9:00 AM</span
+                      ><span class="p-small" style="font-size: 12px">WordPress · Batch 14 · 3 h ago</span></span
+                    ><span
+                      aria-label="Unread"
+                      style="
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background: var(--cyan);
+                        margin-top: 6px;
+                        flex: 0 0 auto;
+                      "
+                      data-unread=""
+                    ></span>
+                  </li>
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                          d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
+                        ></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                      ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 500"
+                        >Admin started reviewing your course</span
+                      ><span class="p-small" style="font-size: 12px"
+                        >Advanced WordPress Theme Development · yesterday</span
+                      ></span
+                    >
+                  </li>
+                </ul>
+                <a
+                  href="notifications.html"
                   class="p-link"
                   style="
-                    border: 0px;
-                    background: none;
-                    padding: 0px;
-                    font-style: inherit;
-                    font-variant: inherit;
-                    font-stretch: inherit;
-                    line-height: inherit;
-                    font-family: inherit;
-                    font-optical-sizing: inherit;
-                    font-size-adjust: inherit;
-                    font-kerning: inherit;
-                    font-feature-settings: inherit;
-                    font-variation-settings: inherit;
-                    font-weight: 600;
-                    font-size: 13px;
-                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    padding: 12px;
+                    border-top: 1px solid var(--line-soft);
+                    border-radius: 0px;
                   "
-                  data-mark-read="#notif-menu"
+                  >See all notifications</a
                 >
-                  Mark all as read
-                </button>
               </div>
-              <ul class="p-rows" style="padding: 0px 8px 8px">
-                <li style="align-items: flex-start">
-                  <span class="p-tile" style="width: 36px; height: 36px; border-radius: 10px"
-                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7l-5-5zM14 2v4a2 2 0 0 0 2 2h4"
-                      ></path></svg></span
-                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
-                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
-                      >Tanvir Hasan sent "Responsive landing page"</span
-                    ><span class="p-small" style="font-size: 12px">WordPress · Batch 14 · 1 h ago</span></span
-                  ><span
-                    aria-label="Unread"
-                    style="
-                      width: 8px;
-                      height: 8px;
-                      border-radius: 50%;
-                      background: var(--cyan);
-                      margin-top: 6px;
-                      flex: 0 0 auto;
-                    "
-                    data-unread=""
-                  ></span>
-                </li>
-                <li style="align-items: flex-start">
-                  <span class="p-tile p-tile--muted" style="width: 36px; height: 36px; border-radius: 10px"
-                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span
-                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
-                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
-                      >New question on "Building a custom header"</span
-                    ><span class="p-small" style="font-size: 12px">Nusrat Jahan · 2 h ago</span></span
-                  ><span
-                    aria-label="Unread"
-                    style="
-                      width: 8px;
-                      height: 8px;
-                      border-radius: 50%;
-                      background: var(--cyan);
-                      margin-top: 6px;
-                      flex: 0 0 auto;
-                    "
-                    data-unread=""
-                  ></span>
-                </li>
-                <li style="align-items: flex-start">
-                  <span class="p-tile p-tile--amber" style="width: 36px; height: 36px; border-radius: 10px"
-                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg></span
-                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
-                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
-                      >Class 12 recording is due by 9:00 AM</span
-                    ><span class="p-small" style="font-size: 12px">WordPress · Batch 14 · 3 h ago</span></span
-                  ><span
-                    aria-label="Unread"
-                    style="
-                      width: 8px;
-                      height: 8px;
-                      border-radius: 50%;
-                      background: var(--cyan);
-                      margin-top: 6px;
-                      flex: 0 0 auto;
-                    "
-                    data-unread=""
-                  ></span>
-                </li>
-                <li style="align-items: flex-start">
-                  <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
-                    ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
-                      ></path></svg></span
-                  ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
-                    ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 500"
-                      >Admin started reviewing your course</span
-                    ><span class="p-small" style="font-size: 12px"
-                      >Advanced WordPress Theme Development · yesterday</span
-                    ></span
-                  >
-                </li>
-              </ul>
-              <a
-                href="notifications.html"
-                class="p-link"
-                style="
-                  display: flex;
-                  justify-content: center;
-                  padding: 12px;
-                  border-top: 1px solid var(--line-soft);
-                  border-radius: 0px;
-                "
-                >See all notifications</a
-              >
             </div>
-          </div>
-        </header>
-        <main class="p-main">
-          <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
-            <nav
-              aria-label="Breadcrumb"
-              class="p-row"
-              style="gap: 8px; font-size: 14px; color: var(--ink-3); flex-wrap: wrap"
+            <button
+              type="button"
+              class="c-iconbtn c-bordered c-theme"
+              data-theme-toggle=""
+              aria-label="Dark mode"
+              aria-pressed="false"
+              title="Switch to dark mode"
             >
-              <a class="p-link" href="dashboard.html" style="font-weight: 500">Reviews</a
-              ><span aria-hidden="true">/</span><span style="color: var(--ink-2)">Nusrat Jahan</span>
-            </nav>
-            <div class="p-row" style="gap: 8px">
-              <span class="p-small">1 of 5 waiting</span
-              ><a class="p-ghostbtn" href="#" style="min-width: 44px; padding: 0px 12px">Next submission</a>
-            </div>
-          </div>
-          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px">
-            <span class="p-avatar" style="width: 52px; height: 52px; font-size: 16px">NJ</span>
-            <div style="display: flex; flex-direction: column; gap: 4px; flex: 1 1 320px">
-              <h1 class="p-h1" style="font-size: 26px">Responsive landing page</h1>
-              <span class="p-muted">Nusrat Jahan · WordPress, Batch 14 · sent 14 Oct, 11:20 PM · first attempt</span>
-            </div>
-            <span class="eit-badge eit-badge--success">On time</span>
-          </div>
-          <div class="p-split">
-            <div style="flex: 1.3 1 560px; min-width: 0px; display: flex; flex-direction: column; gap: 24px">
-              <section
-                class="p-card"
-                aria-labelledby="sub-title"
-                style="display: flex; flex-direction: column; gap: 16px"
+              <svg
+                class="c-moon"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
               >
-                <div class="p-card-head">
-                  <h2 id="sub-title" class="p-h3">Submission</h2>
-                  <a class="p-link" href="#"
-                    >nusrat-landing.netlify.app<svg
-                      class="eit-icon"
+                <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg
+              ><svg
+                class="c-sun"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zM12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"
+                ></path>
+              </svg>
+            </button>
+            <div class="c-pop-wrap">
+              <button
+                type="button"
+                class="c-me"
+                aria-expanded="false"
+                aria-controls="me-menu"
+                aria-label="Your account: Kamrul Hasan"
+              >
+                <span class="c-avatar" aria-hidden="true">KH</span
+                ><span class="c-me-text"
+                  ><span class="c-me-name">Kamrul Hasan</span><span class="c-me-sub">Mentor</span></span
+                >
+              </button>
+              <div class="c-pop" id="me-menu" hidden="" data-popover="" role="group" aria-label="Your account">
+                <div class="c-pop-head">
+                  <strong>Kamrul Hasan</strong><span class="p-small">Mentor · Web Development</span>
+                </div>
+                <a href="profile.html"
+                  ><svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21c0-4 3.6-7 8-7s8 3 8 7"></path></svg
+                  >My profile</a
+                ><a href="notifications.html"
+                  ><svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
+                  >Notifications</a
+                ><a href="profile.html#notifications"
+                  ><svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"></path></svg
+                  >Notification settings</a
+                >
+                <div class="c-pop-row">
+                  <span class="p-row" style="gap: 10px"
+                    ><svg
                       width="16"
                       height="16"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      stroke-width="2"
+                      stroke-width="1.9"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                      focusable="false"
                       aria-hidden="true"
+                      focusable="false"
                     >
-                      <path d="M7 17L17 7"></path>
-                      <path d="M8 7h9v9"></path></svg
-                  ></a>
-                </div>
-                <div
-                  id="preview-frame"
-                  style="
-                    border: 1px solid var(--line);
-                    border-radius: var(--radius-md);
-                    overflow: hidden;
-                    margin: 0 auto;
-                    width: 100%;
-                    transition: max-width 320ms var(--ease-out-expo);
-                  "
-                >
-                  <div
-                    class="p-row"
-                    style="gap: 6px; padding: 10px 14px; background: var(--track); border-bottom: 1px solid var(--line)"
+                      <path
+                        d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"
+                      ></path></svg
+                    >Language</span
                   >
-                    <span style="width: 10px; height: 10px; border-radius: 50%; background: var(--line-strong)"></span
-                    ><span style="width: 10px; height: 10px; border-radius: 50%; background: var(--line-strong)"></span
-                    ><span style="width: 10px; height: 10px; border-radius: 50%; background: var(--line-strong)"></span>
-                  </div>
-                  <div class="p-thumb" style="aspect-ratio: 16 / 9; border-radius: 0px" data-preview-label="">
-                    Live site preview · 1440px
+                  <div class="eit-seg" role="group" aria-label="Language">
+                    <button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button
+                    ><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button>
                   </div>
                 </div>
-                <div class="p-seg" role="group" aria-label="Preview size" style="align-self: flex-start">
-                  <button type="button" aria-pressed="true" data-preview-size="1440">Desktop 1440</button
-                  ><button type="button" aria-pressed="false" data-preview-size="768">Tablet 768</button
-                  ><button type="button" aria-pressed="false" data-preview-size="360">Phone 360</button>
-                </div>
-                <ul class="p-list">
-                  <li>
-                    <span class="p-tile"
-                      ><svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
-                        <path d="M14 2v4a2 2 0 0 0 2 2h4"></path></svg></span
-                    ><span class="p-grow" style="display: flex; flex-direction: column"
-                      ><strong style="font-size: 14px">landing-page.zip</strong
-                      ><span class="p-small">2.4 MB · 18 files</span></span
-                    ><a class="p-link" href="#">Download</a>
-                  </li>
-                </ul>
-              </section>
-              <section
-                class="p-card"
-                aria-labelledby="note-title"
-                style="display: flex; flex-direction: column; gap: 10px"
-              >
-                <h2 id="note-title" class="p-h3">Note from Nusrat</h2>
-                <p class="p-body">
-                  I wasn't sure about the mobile menu animation. Is the timing okay, or should it be faster?
-                </p>
-              </section>
+                <hr />
+                <a href="../index.html"
+                  ><svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"></path></svg
+                  >Log out</a
+                >
+              </div>
             </div>
-            <section
-              class="p-card"
-              aria-labelledby="rubric-title"
-              style="flex: 1 1 400px; display: flex; flex-direction: column; gap: 18px"
-            >
-              <div class="p-card-head">
-                <h2 id="rubric-title" class="p-h3">Rubric</h2>
-                <span class="p-small">Pass mark 60</span>
-              </div>
-              <div style="display: flex; flex-direction: column">
-                <div
-                  class="p-row"
-                  style="
-                    justify-content: space-between;
-                    gap: 16px;
-                    padding: 12px 0px;
-                    border-bottom: 1px solid var(--line-soft);
-                  "
-                >
-                  <label for="score-layout" style="display: flex; flex-direction: column; gap: 2px"
-                    ><span style="font-size: 14px; font-weight: 600; color: var(--ink)">Layout and responsiveness</span
-                    ><span class="p-small">Works from 360px to 1440px</span></label
-                  ><span class="p-row" style="gap: 6px; flex: 0 0 auto"
-                    ><input
-                      id="score-layout"
-                      class="p-input"
-                      type="number"
-                      data-score=""
-                      min="0"
-                      max="30"
-                      value="27"
-                      style="width: 72px; text-align: right; font-variant-numeric: tabular-nums"
-                    /><span class="p-small" style="min-width: 28px">/ 30</span></span
-                  >
-                </div>
-                <div
-                  class="p-row"
-                  style="
-                    justify-content: space-between;
-                    gap: 16px;
-                    padding: 12px 0px;
-                    border-bottom: 1px solid var(--line-soft);
-                  "
-                >
-                  <label for="score-code" style="display: flex; flex-direction: column; gap: 2px"
-                    ><span style="font-size: 14px; font-weight: 600; color: var(--ink)">Code quality</span
-                    ><span class="p-small">Semantic HTML, tidy CSS</span></label
-                  ><span class="p-row" style="gap: 6px; flex: 0 0 auto"
-                    ><input
-                      id="score-code"
-                      class="p-input"
-                      type="number"
-                      data-score=""
-                      min="0"
-                      max="25"
-                      value="21"
-                      style="width: 72px; text-align: right; font-variant-numeric: tabular-nums"
-                    /><span class="p-small" style="min-width: 28px">/ 25</span></span
-                  >
-                </div>
-                <div
-                  class="p-row"
-                  style="
-                    justify-content: space-between;
-                    gap: 16px;
-                    padding: 12px 0px;
-                    border-bottom: 1px solid var(--line-soft);
-                  "
-                >
-                  <label for="score-design" style="display: flex; flex-direction: column; gap: 2px"
-                    ><span style="font-size: 14px; font-weight: 600; color: var(--ink)">Visual design</span
-                    ><span class="p-small">Spacing, type, colour</span></label
-                  ><span class="p-row" style="gap: 6px; flex: 0 0 auto"
-                    ><input
-                      id="score-design"
-                      class="p-input"
-                      type="number"
-                      data-score=""
-                      min="0"
-                      max="25"
-                      value="22"
-                      style="width: 72px; text-align: right; font-variant-numeric: tabular-nums"
-                    /><span class="p-small" style="min-width: 28px">/ 25</span></span
-                  >
-                </div>
-                <div
-                  class="p-row"
-                  style="
-                    justify-content: space-between;
-                    gap: 16px;
-                    padding: 12px 0px;
-                    border-bottom: 1px solid var(--line-soft);
-                  "
-                >
-                  <label for="score-perf" style="display: flex; flex-direction: column; gap: 2px"
-                    ><span style="font-size: 14px; font-weight: 600; color: var(--ink)"
-                      >Performance and accessibility</span
-                    ><span class="p-small">Image sizes, alt text, contrast</span></label
-                  ><span class="p-row" style="gap: 6px; flex: 0 0 auto"
-                    ><input
-                      id="score-perf"
-                      class="p-input"
-                      type="number"
-                      data-score=""
-                      min="0"
-                      max="20"
-                      value="16"
-                      style="width: 72px; text-align: right; font-variant-numeric: tabular-nums"
-                    /><span class="p-small" style="min-width: 28px">/ 20</span></span
-                  >
+          </div>
+        </header>
+        <main class="p-main">
+          <div class="c-queue" data-queue="">
+            <section class="c-list c-qlist" aria-label="Waiting for your review">
+              <div class="c-toolbar">
+                <span class="c-qtitle">Waiting<span class="c-n">5</span></span>
+                <div class="c-tools">
+                  <label class="c-pick" for="rv-batch"
+                    ><span class="eit-sr">Batch</span
+                    ><select id="rv-batch" data-filter="">
+                      <option value="">All batches</option>
+                      <option value="b14">WordPress · Batch 14 (3)</option>
+                      <option value="b6">React JS · Batch 6 (2)</option></select
+                    ><svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path d="M6 9l6 6 6-6"></path></svg
+                  ></label>
                 </div>
               </div>
-              <div class="p-row" style="justify-content: space-between">
-                <strong style="font-size: 15px">Total</strong
-                ><span class="p-num" style="font-size: 28px"
-                  ><span data-score-total="" aria-live="polite">86</span
-                  ><span style="font-size: 16px; color: var(--ink-3); font-weight: 500"> / 100</span></span
-                >
-              </div>
-              <div style="display: flex; flex-direction: column; gap: 8px">
-                <label class="p-label" for="feedback">Feedback for Nusrat</label
-                ><textarea id="feedback" class="p-textarea" style="min-height: 132px">
-Clean, well-structured page and it holds up at every width. The mobile menu timing is fine; try 200ms instead of 400ms so it feels snappier. Compress the hero image (it's 1.8 MB) and add alt text to the testimonial photos.</textarea
-                >
-              </div>
-              <div class="p-row" style="flex-wrap: wrap">
+              <div class="c-rows" role="tablist" aria-orientation="vertical" aria-label="Projects waiting">
                 <button
                   type="button"
-                  class="eit-btn eit-btn--primary eit-btn--md"
-                  data-toast="Project approved · Nusrat sees your feedback now"
+                  class="c-row c-qrow"
+                  role="tab"
+                  id="rv-r-nj"
+                  aria-controls="rv-p-nj"
+                  aria-selected="true"
+                  data-tags="b14"
                 >
-                  <svg
-                    class="eit-icon eit-btn__lead"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    focusable="false"
-                    aria-hidden="true"
+                  <span class="c-who"
+                    ><span class="p-avatar p-avatar--sm" aria-hidden="true">NJ</span
+                    ><span class="c-cell"
+                      ><span class="c-cell-t is-strong">Nusrat Jahan</span
+                      ><span class="c-cell-s">Responsive landing page</span
+                      ><span class="c-cell-s">WordPress, Batch 14</span></span
+                    ></span
+                  ><span class="c-qmeta"><span class="c-cell-s">14 Oct</span></span></button
+                ><button
+                  type="button"
+                  class="c-row c-qrow"
+                  role="tab"
+                  id="rv-r-th"
+                  aria-controls="rv-p-th"
+                  aria-selected="false"
+                  tabindex="-1"
+                  data-tags="b14"
+                >
+                  <span class="c-who"
+                    ><span class="p-avatar p-avatar--sm" aria-hidden="true">TH</span
+                    ><span class="c-cell"
+                      ><span class="c-cell-t is-strong">Tanvir Hasan</span
+                      ><span class="c-cell-s">Responsive landing page</span
+                      ><span class="c-cell-s">WordPress, Batch 14</span></span
+                    ></span
+                  ><span class="c-qmeta"><span class="c-cell-s">14 Oct</span></span></button
+                ><button
+                  type="button"
+                  class="c-row c-qrow"
+                  role="tab"
+                  id="rv-r-ti"
+                  aria-controls="rv-p-ti"
+                  aria-selected="false"
+                  tabindex="-1"
+                  data-tags="b6"
+                >
+                  <span class="c-who"
+                    ><span class="p-avatar p-avatar--sm" aria-hidden="true">TI</span
+                    ><span class="c-cell"
+                      ><span class="c-cell-t is-strong">Tahmid Islam</span
+                      ><span class="c-cell-s">Todo app with hooks</span
+                      ><span class="c-cell-s">React JS, Batch 6</span></span
+                    ></span
+                  ><span class="c-qmeta"><span class="c-cell-s">14 Oct</span></span></button
+                ><button
+                  type="button"
+                  class="c-row c-qrow"
+                  role="tab"
+                  id="rv-r-sa"
+                  aria-controls="rv-p-sa"
+                  aria-selected="false"
+                  tabindex="-1"
+                  data-tags="b6"
+                >
+                  <span class="c-who"
+                    ><span class="p-avatar p-avatar--sm" aria-hidden="true">SA</span
+                    ><span class="c-cell"
+                      ><span class="c-cell-t is-strong">Sadia Afrin</span
+                      ><span class="c-cell-s">Todo app with hooks</span
+                      ><span class="c-cell-s">React JS, Batch 6</span></span
+                    ></span
+                  ><span class="c-qmeta"
+                    ><span class="c-cell-s">13 Oct</span
+                    ><span class="eit-badge eit-badge--cyan">Resubmission</span></span
+                  ></button
+                ><button
+                  type="button"
+                  class="c-row c-qrow"
+                  role="tab"
+                  id="rv-r-mh"
+                  aria-controls="rv-p-mh"
+                  aria-selected="false"
+                  tabindex="-1"
+                  data-tags="b14"
+                >
+                  <span class="c-who"
+                    ><span class="p-avatar p-avatar--sm" aria-hidden="true">MH</span
+                    ><span class="c-cell"
+                      ><span class="c-cell-t is-strong">Mehedi Hasan</span
+                      ><span class="c-cell-s">Responsive landing page</span
+                      ><span class="c-cell-s">WordPress, Batch 14</span></span
+                    ></span
+                  ><span class="c-qmeta"
+                    ><span class="c-cell-s">12 Oct</span
+                    ><span class="eit-badge eit-badge--warning">3 days waiting</span></span
                   >
-                    <path d="M20 6L9 17l-5-5"></path></svg
-                  ><span class="eit-btn__label">Approve project</span></button
-                ><button class="p-ghostbtn" type="button" data-toast="Sent back to Nusrat with your notes">
-                  <svg
-                    class="eit-icon"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    focusable="false"
-                    aria-hidden="true"
-                  >
-                    <path d="M21 12a9 9 0 1 1-3-6.7L21 8"></path>
-                    <path d="M21 3v5h-5"></path></svg
-                  >Request changes
                 </button>
               </div>
-              <span class="p-small">Nusrat is told straight away and sees your feedback under Projects.</span>
+              <p class="c-empty" data-list-empty="" hidden="">Nothing waiting from this batch.</p>
+              <div class="c-foot">
+                <span>Showing <span data-list-shown="">5</span> of 5 · newest first</span>
+              </div>
             </section>
+            <div class="c-qwork">
+              <section class="c-tabpanel c-review" role="tabpanel" id="rv-p-nj" aria-labelledby="rv-r-nj-h">
+                <div class="c-rec-head">
+                  <span class="p-avatar c-rec-avatar" aria-hidden="true">NJ</span>
+                  <div class="c-rec-title">
+                    <div class="p-row" style="flex-wrap: wrap; gap: 8px">
+                      <h2 class="p-h1" id="rv-r-nj-h">Responsive landing page</h2>
+                      <span class="eit-badge eit-badge--success">On time</span>
+                    </div>
+                    <span class="p-muted"
+                      >Nusrat Jahan · WordPress, Batch 14 · sent 14 Oct, 11:20 PM · first attempt</span
+                    >
+                  </div>
+                  <div class="c-rec-nav">
+                    <span class="p-small" data-queue-pos="">1 of 5</span
+                    ><button type="button" class="c-btn" data-queue-step="-1" aria-label="Previous project">
+                      <svg
+                        width="15"
+                        height="15"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.9"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path d="M15 18l-6-6 6-6"></path>
+                      </svg></button
+                    ><button type="button" class="c-btn" data-queue-step="1">
+                      Next<svg
+                        width="15"
+                        height="15"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.9"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path d="M9 18l6-6-6-6"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="c-review-grid">
+                  <div class="c-review-main">
+                    <section class="c-panel" aria-labelledby="sb-nj">
+                      <div class="c-panel-head">
+                        <div class="c-panel-title">
+                          <h3 id="sb-nj">Submission</h3>
+                          <span class="c-panel-sub">landing-page.zip · 2.4 MB · 18 files</span>
+                        </div>
+                        <a class="c-link" href="#"
+                          >nusrat-landing.netlify.app<svg
+                            width="13"
+                            height="13"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.9"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                            focusable="false"
+                          >
+                            <path d="M5 12h14M13 6l6 6-6 6"></path></svg
+                        ></a>
+                      </div>
+                      <div class="c-panel-body c-form-body">
+                        <div class="c-preview" data-preview-frame="">
+                          <div class="c-preview-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+                          <div class="p-thumb c-preview-shot" data-preview-label="">Live site preview · 1440px</div>
+                        </div>
+                        <div class="p-row" style="flex-wrap: wrap; justify-content: space-between; gap: 10px">
+                          <div class="p-seg" role="group" aria-label="Preview size">
+                            <button type="button" aria-pressed="true" data-preview-size="1440">Desktop 1440</button
+                            ><button type="button" aria-pressed="false" data-preview-size="768">Tablet 768</button
+                            ><button type="button" aria-pressed="false" data-preview-size="360">Phone 360</button>
+                          </div>
+                          <a class="c-btn" href="#"
+                            ><svg
+                              width="15"
+                              height="15"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="1.9"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              aria-hidden="true"
+                              focusable="false"
+                            >
+                              <path d="M12 3v12M7 10l5 5 5-5M5 21h14"></path></svg
+                            >Download files</a
+                          >
+                        </div>
+                      </div>
+                    </section>
+                    <section class="c-panel" aria-labelledby="nt-nj">
+                      <div class="c-panel-head">
+                        <div class="c-panel-title">
+                          <h3 id="nt-nj">Note from Nusrat</h3>
+                          <span class="c-panel-sub">Sent with the project</span>
+                        </div>
+                      </div>
+                      <div class="c-panel-body c-form-body">
+                        <p class="c-note">
+                          I wasn't sure about the mobile menu animation. Is the timing okay, or should it be faster?
+                        </p>
+                      </div>
+                    </section>
+                  </div>
+                  <section class="c-panel c-rubric" aria-labelledby="rb-nj" data-rubric="">
+                    <div class="c-panel-head">
+                      <div class="c-panel-title">
+                        <h3 id="rb-nj">Rubric</h3>
+                        <span class="c-panel-sub">Pass mark 60 out of 100</span>
+                      </div>
+                    </div>
+                    <div class="c-panel-body c-form-body">
+                      <div class="c-scores">
+                        <div class="c-score">
+                          <label for="score-nj-layout"
+                            ><span class="c-score-t">Layout and responsiveness</span
+                            ><span class="p-small">Works from 360px to 1440px</span></label
+                          ><span class="c-score-in"
+                            ><input
+                              id="score-nj-layout"
+                              class="p-input"
+                              type="number"
+                              inputmode="numeric"
+                              data-score=""
+                              min="0"
+                              max="30"
+                              value="27"
+                            /><span class="p-small">/ 30</span></span
+                          >
+                        </div>
+                        <div class="c-score">
+                          <label for="score-nj-code"
+                            ><span class="c-score-t">Code quality</span
+                            ><span class="p-small">Semantic HTML, tidy CSS</span></label
+                          ><span class="c-score-in"
+                            ><input
+                              id="score-nj-code"
+                              class="p-input"
+                              type="number"
+                              inputmode="numeric"
+                              data-score=""
+                              min="0"
+                              max="25"
+                              value="21"
+                            /><span class="p-small">/ 25</span></span
+                          >
+                        </div>
+                        <div class="c-score">
+                          <label for="score-nj-design"
+                            ><span class="c-score-t">Visual design</span
+                            ><span class="p-small">Spacing, type, colour</span></label
+                          ><span class="c-score-in"
+                            ><input
+                              id="score-nj-design"
+                              class="p-input"
+                              type="number"
+                              inputmode="numeric"
+                              data-score=""
+                              min="0"
+                              max="25"
+                              value="22"
+                            /><span class="p-small">/ 25</span></span
+                          >
+                        </div>
+                        <div class="c-score">
+                          <label for="score-nj-perf"
+                            ><span class="c-score-t">Performance and accessibility</span
+                            ><span class="p-small">Image sizes, alt text, contrast</span></label
+                          ><span class="c-score-in"
+                            ><input
+                              id="score-nj-perf"
+                              class="p-input"
+                              type="number"
+                              inputmode="numeric"
+                              data-score=""
+                              min="0"
+                              max="20"
+                              value="16"
+                            /><span class="p-small">/ 20</span></span
+                          >
+                        </div>
+                      </div>
+                      <div class="c-total">
+                        <span class="c-total-l"
+                          ><strong>Total</strong
+                          ><span class="c-verdict" data-score-verdict="" data-pass="true"
+                            >Passes · pass mark 60</span
+                          ></span
+                        ><span class="c-total-n"
+                          ><span data-score-total="" aria-live="polite">86</span><span> / 100</span></span
+                        >
+                      </div>
+                      <div class="eit-field">
+                        <label class="eit-field__label" for="fb-nj">Feedback for Nusrat</label
+                        ><textarea
+                          id="fb-nj"
+                          class="p-textarea"
+                          rows="5"
+                          placeholder="What works, and the one or two things to fix first."
+                        >
+Clean, well-structured page and it holds up at every width. The mobile menu timing is fine; try 200ms instead of 400ms so it feels snappier. Compress the hero image (it's 1.8 MB) and add alt text to the testimonial photos.</textarea
+                        >
+                      </div>
+                      <div class="p-row c-decide">
+                        <button
+                          type="button"
+                          class="eit-btn eit-btn--primary eit-btn--md"
+                          data-review-decide="approved"
+                          data-toast="Project approved · Nusrat sees your feedback now"
+                        >
+                          <svg
+                            class="eit-icon eit-btn__lead"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            focusable="false"
+                            aria-hidden="true"
+                          >
+                            <path d="M20 6 9 17l-5-5"></path></svg
+                          ><span class="eit-btn__label">Approve project</span></button
+                        ><button
+                          type="button"
+                          class="p-ghostbtn"
+                          data-review-decide="sent back"
+                          data-toast="Sent back to Nusrat with your notes"
+                        >
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.9"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                            focusable="false"
+                          >
+                            <path d="M21 12a9 9 0 1 1-3-6.7L21 8M21 3v5h-5"></path></svg
+                          >Request changes
+                        </button>
+                      </div>
+                      <p class="p-small" style="margin: 0">
+                        Nusrat is told straight away and sees your feedback under Projects.
+                      </p>
+                    </div>
+                  </section>
+                </div>
+              </section>
+              <section class="c-tabpanel c-review" role="tabpanel" id="rv-p-th" aria-labelledby="rv-r-th-h" hidden="">
+                <div class="c-rec-head">
+                  <span class="p-avatar c-rec-avatar" aria-hidden="true">TH</span>
+                  <div class="c-rec-title">
+                    <div class="p-row" style="flex-wrap: wrap; gap: 8px">
+                      <h2 class="p-h1" id="rv-r-th-h">Responsive landing page</h2>
+                      <span class="eit-badge eit-badge--success">On time</span>
+                    </div>
+                    <span class="p-muted"
+                      >Tanvir Hasan · WordPress, Batch 14 · sent 14 Oct, 9:02 PM · first attempt</span
+                    >
+                  </div>
+                  <div class="c-rec-nav">
+                    <span class="p-small" data-queue-pos="">2 of 5</span
+                    ><button type="button" class="c-btn" data-queue-step="-1" aria-label="Previous project">
+                      <svg
+                        width="15"
+                        height="15"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.9"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path d="M15 18l-6-6 6-6"></path>
+                      </svg></button
+                    ><button type="button" class="c-btn" data-queue-step="1">
+                      Next<svg
+                        width="15"
+                        height="15"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.9"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path d="M9 18l6-6-6-6"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="c-review-grid">
+                  <div class="c-review-main">
+                    <section class="c-panel" aria-labelledby="sb-th">
+                      <div class="c-panel-head">
+                        <div class="c-panel-title">
+                          <h3 id="sb-th">Submission</h3>
+                          <span class="c-panel-sub">landing-page.zip · 3.1 MB · 22 files</span>
+                        </div>
+                        <a class="c-link" href="#"
+                          >tanvir-landing.netlify.app<svg
+                            width="13"
+                            height="13"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.9"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                            focusable="false"
+                          >
+                            <path d="M5 12h14M13 6l6 6-6 6"></path></svg
+                        ></a>
+                      </div>
+                      <div class="c-panel-body c-form-body">
+                        <div class="c-preview" data-preview-frame="">
+                          <div class="c-preview-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+                          <div class="p-thumb c-preview-shot" data-preview-label="">Live site preview · 1440px</div>
+                        </div>
+                        <div class="p-row" style="flex-wrap: wrap; justify-content: space-between; gap: 10px">
+                          <div class="p-seg" role="group" aria-label="Preview size">
+                            <button type="button" aria-pressed="true" data-preview-size="1440">Desktop 1440</button
+                            ><button type="button" aria-pressed="false" data-preview-size="768">Tablet 768</button
+                            ><button type="button" aria-pressed="false" data-preview-size="360">Phone 360</button>
+                          </div>
+                          <a class="c-btn" href="#"
+                            ><svg
+                              width="15"
+                              height="15"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="1.9"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              aria-hidden="true"
+                              focusable="false"
+                            >
+                              <path d="M12 3v12M7 10l5 5 5-5M5 21h14"></path></svg
+                            >Download files</a
+                          >
+                        </div>
+                      </div>
+                    </section>
+                    <section class="c-panel" aria-labelledby="nt-th">
+                      <div class="c-panel-head">
+                        <div class="c-panel-title">
+                          <h3 id="nt-th">Note from Tanvir</h3>
+                          <span class="c-panel-sub">Sent with the project</span>
+                        </div>
+                      </div>
+                      <div class="c-panel-body c-form-body">
+                        <p class="c-note">
+                          The sticky header works on desktop, but on my iPhone it jumps when I scroll. I couldn’t work
+                          out why.
+                        </p>
+                      </div>
+                    </section>
+                  </div>
+                  <section class="c-panel c-rubric" aria-labelledby="rb-th" data-rubric="">
+                    <div class="c-panel-head">
+                      <div class="c-panel-title">
+                        <h3 id="rb-th">Rubric</h3>
+                        <span class="c-panel-sub">Pass mark 60 out of 100</span>
+                      </div>
+                    </div>
+                    <div class="c-panel-body c-form-body">
+                      <div class="c-scores">
+                        <div class="c-score">
+                          <label for="score-th-layout"
+                            ><span class="c-score-t">Layout and responsiveness</span
+                            ><span class="p-small">Works from 360px to 1440px</span></label
+                          ><span class="c-score-in"
+                            ><input
+                              id="score-th-layout"
+                              class="p-input"
+                              type="number"
+                              inputmode="numeric"
+                              data-score=""
+                              min="0"
+                              max="30"
+                            /><span class="p-small">/ 30</span></span
+                          >
+                        </div>
+                        <div class="c-score">
+                          <label for="score-th-code"
+                            ><span class="c-score-t">Code quality</span
+                            ><span class="p-small">Semantic HTML, tidy CSS</span></label
+                          ><span class="c-score-in"
+                            ><input
+                              id="score-th-code"
+                              class="p-input"
+                              type="number"
+                              inputmode="numeric"
+                              data-score=""
+                              min="0"
+                              max="25"
+                            /><span class="p-small">/ 25</span></span
+                          >
+                        </div>
+                        <div class="c-score">
+                          <label for="score-th-design"
+                            ><span class="c-score-t">Visual design</span
+                            ><span class="p-small">Spacing, type, colour</span></label
+                          ><span class="c-score-in"
+                            ><input
+                              id="score-th-design"
+                              class="p-input"
+                              type="number"
+                              inputmode="numeric"
+                              data-score=""
+                              min="0"
+                              max="25"
+                            /><span class="p-small">/ 25</span></span
+                          >
+                        </div>
+                        <div class="c-score">
+                          <label for="score-th-perf"
+                            ><span class="c-score-t">Performance and accessibility</span
+                            ><span class="p-small">Image sizes, alt text, contrast</span></label
+                          ><span class="c-score-in"
+                            ><input
+                              id="score-th-perf"
+                              class="p-input"
+                              type="number"
+                              inputmode="numeric"
+                              data-score=""
+                              min="0"
+                              max="20"
+                            /><span class="p-small">/ 20</span></span
+                          >
+                        </div>
+                      </div>
+                      <div class="c-total">
+                        <span class="c-total-l"
+                          ><strong>Total</strong
+                          ><span class="c-verdict" data-score-verdict="">Give a mark for each part</span></span
+                        ><span class="c-total-n"
+                          ><span data-score-total="" aria-live="polite">—</span><span> / 100</span></span
+                        >
+                      </div>
+                      <div class="eit-field">
+                        <label class="eit-field__label" for="fb-th">Feedback for Tanvir</label
+                        ><textarea
+                          id="fb-th"
+                          class="p-textarea"
+                          rows="5"
+                          placeholder="What works, and the one or two things to fix first."
+                        ></textarea>
+                      </div>
+                      <div class="p-row c-decide">
+                        <button
+                          type="button"
+                          class="eit-btn eit-btn--primary eit-btn--md"
+                          data-review-decide="approved"
+                          data-toast="Project approved · Tanvir sees your feedback now"
+                          disabled
+                        >
+                          <svg
+                            class="eit-icon eit-btn__lead"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            focusable="false"
+                            aria-hidden="true"
+                          >
+                            <path d="M20 6 9 17l-5-5"></path></svg
+                          ><span class="eit-btn__label">Approve project</span></button
+                        ><button
+                          type="button"
+                          class="p-ghostbtn"
+                          data-review-decide="sent back"
+                          data-toast="Sent back to Tanvir with your notes"
+                        >
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.9"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                            focusable="false"
+                          >
+                            <path d="M21 12a9 9 0 1 1-3-6.7L21 8M21 3v5h-5"></path></svg
+                          >Request changes
+                        </button>
+                      </div>
+                      <p class="p-small" style="margin: 0">
+                        Tanvir is told straight away and sees your feedback under Projects.
+                      </p>
+                    </div>
+                  </section>
+                </div>
+              </section>
+              <section class="c-tabpanel c-review" role="tabpanel" id="rv-p-ti" aria-labelledby="rv-r-ti-h" hidden="">
+                <div class="c-rec-head">
+                  <span class="p-avatar c-rec-avatar" aria-hidden="true">TI</span>
+                  <div class="c-rec-title">
+                    <div class="p-row" style="flex-wrap: wrap; gap: 8px">
+                      <h2 class="p-h1" id="rv-r-ti-h">Todo app with hooks</h2>
+                      <span class="eit-badge eit-badge--success">On time</span>
+                    </div>
+                    <span class="p-muted">Tahmid Islam · React JS, Batch 6 · sent 14 Oct, 6:40 PM · first attempt</span>
+                  </div>
+                  <div class="c-rec-nav">
+                    <span class="p-small" data-queue-pos="">3 of 5</span
+                    ><button type="button" class="c-btn" data-queue-step="-1" aria-label="Previous project">
+                      <svg
+                        width="15"
+                        height="15"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.9"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path d="M15 18l-6-6 6-6"></path>
+                      </svg></button
+                    ><button type="button" class="c-btn" data-queue-step="1">
+                      Next<svg
+                        width="15"
+                        height="15"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.9"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path d="M9 18l6-6-6-6"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="c-review-grid">
+                  <div class="c-review-main">
+                    <section class="c-panel" aria-labelledby="sb-ti">
+                      <div class="c-panel-head">
+                        <div class="c-panel-title">
+                          <h3 id="sb-ti">Submission</h3>
+                          <span class="c-panel-sub">todo-app.zip · 0.9 MB · 16 files</span>
+                        </div>
+                        <a class="c-link" href="#"
+                          >tahmid-todo.netlify.app<svg
+                            width="13"
+                            height="13"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.9"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                            focusable="false"
+                          >
+                            <path d="M5 12h14M13 6l6 6-6 6"></path></svg
+                        ></a>
+                      </div>
+                      <div class="c-panel-body c-form-body">
+                        <div class="c-preview" data-preview-frame="">
+                          <div class="c-preview-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+                          <div class="p-thumb c-preview-shot" data-preview-label="">Live site preview · 1440px</div>
+                        </div>
+                        <div class="p-row" style="flex-wrap: wrap; justify-content: space-between; gap: 10px">
+                          <div class="p-seg" role="group" aria-label="Preview size">
+                            <button type="button" aria-pressed="true" data-preview-size="1440">Desktop 1440</button
+                            ><button type="button" aria-pressed="false" data-preview-size="768">Tablet 768</button
+                            ><button type="button" aria-pressed="false" data-preview-size="360">Phone 360</button>
+                          </div>
+                          <a class="c-btn" href="#"
+                            ><svg
+                              width="15"
+                              height="15"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="1.9"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              aria-hidden="true"
+                              focusable="false"
+                            >
+                              <path d="M12 3v12M7 10l5 5 5-5M5 21h14"></path></svg
+                            >Download files</a
+                          >
+                        </div>
+                      </div>
+                    </section>
+                    <section class="c-panel" aria-labelledby="nt-ti">
+                      <div class="c-panel-head">
+                        <div class="c-panel-title">
+                          <h3 id="nt-ti">Note from Tahmid</h3>
+                          <span class="c-panel-sub">Sent with the project</span>
+                        </div>
+                      </div>
+                      <div class="c-panel-body c-form-body">
+                        <p class="c-note">
+                          I saved the todos in localStorage so they stay after a refresh. Is that okay for this project?
+                        </p>
+                      </div>
+                    </section>
+                  </div>
+                  <section class="c-panel c-rubric" aria-labelledby="rb-ti" data-rubric="">
+                    <div class="c-panel-head">
+                      <div class="c-panel-title">
+                        <h3 id="rb-ti">Rubric</h3>
+                        <span class="c-panel-sub">Pass mark 60 out of 100</span>
+                      </div>
+                    </div>
+                    <div class="c-panel-body c-form-body">
+                      <div class="c-scores">
+                        <div class="c-score">
+                          <label for="score-ti-state"
+                            ><span class="c-score-t">Components and state</span
+                            ><span class="p-small">Small components, one source of truth</span></label
+                          ><span class="c-score-in"
+                            ><input
+                              id="score-ti-state"
+                              class="p-input"
+                              type="number"
+                              inputmode="numeric"
+                              data-score=""
+                              min="0"
+                              max="30"
+                            /><span class="p-small">/ 30</span></span
+                          >
+                        </div>
+                        <div class="c-score">
+                          <label for="score-ti-hooks"
+                            ><span class="c-score-t">Hooks used correctly</span
+                            ><span class="p-small">useEffect dependencies, no extra fetches</span></label
+                          ><span class="c-score-in"
+                            ><input
+                              id="score-ti-hooks"
+                              class="p-input"
+                              type="number"
+                              inputmode="numeric"
+                              data-score=""
+                              min="0"
+                              max="30"
+                            /><span class="p-small">/ 30</span></span
+                          >
+                        </div>
+                        <div class="c-score">
+                          <label for="score-ti-ui"
+                            ><span class="c-score-t">Interface and phones</span
+                            ><span class="p-small">Works at 360px, a clear empty state</span></label
+                          ><span class="c-score-in"
+                            ><input
+                              id="score-ti-ui"
+                              class="p-input"
+                              type="number"
+                              inputmode="numeric"
+                              data-score=""
+                              min="0"
+                              max="20"
+                            /><span class="p-small">/ 20</span></span
+                          >
+                        </div>
+                        <div class="c-score">
+                          <label for="score-ti-code"
+                            ><span class="c-score-t">Code quality</span
+                            ><span class="p-small">Names, folders, no console errors</span></label
+                          ><span class="c-score-in"
+                            ><input
+                              id="score-ti-code"
+                              class="p-input"
+                              type="number"
+                              inputmode="numeric"
+                              data-score=""
+                              min="0"
+                              max="20"
+                            /><span class="p-small">/ 20</span></span
+                          >
+                        </div>
+                      </div>
+                      <div class="c-total">
+                        <span class="c-total-l"
+                          ><strong>Total</strong
+                          ><span class="c-verdict" data-score-verdict="">Give a mark for each part</span></span
+                        ><span class="c-total-n"
+                          ><span data-score-total="" aria-live="polite">—</span><span> / 100</span></span
+                        >
+                      </div>
+                      <div class="eit-field">
+                        <label class="eit-field__label" for="fb-ti">Feedback for Tahmid</label
+                        ><textarea
+                          id="fb-ti"
+                          class="p-textarea"
+                          rows="5"
+                          placeholder="What works, and the one or two things to fix first."
+                        ></textarea>
+                      </div>
+                      <div class="p-row c-decide">
+                        <button
+                          type="button"
+                          class="eit-btn eit-btn--primary eit-btn--md"
+                          data-review-decide="approved"
+                          data-toast="Project approved · Tahmid sees your feedback now"
+                          disabled
+                        >
+                          <svg
+                            class="eit-icon eit-btn__lead"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            focusable="false"
+                            aria-hidden="true"
+                          >
+                            <path d="M20 6 9 17l-5-5"></path></svg
+                          ><span class="eit-btn__label">Approve project</span></button
+                        ><button
+                          type="button"
+                          class="p-ghostbtn"
+                          data-review-decide="sent back"
+                          data-toast="Sent back to Tahmid with your notes"
+                        >
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.9"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                            focusable="false"
+                          >
+                            <path d="M21 12a9 9 0 1 1-3-6.7L21 8M21 3v5h-5"></path></svg
+                          >Request changes
+                        </button>
+                      </div>
+                      <p class="p-small" style="margin: 0">
+                        Tahmid is told straight away and sees your feedback under Projects.
+                      </p>
+                    </div>
+                  </section>
+                </div>
+              </section>
+              <section class="c-tabpanel c-review" role="tabpanel" id="rv-p-sa" aria-labelledby="rv-r-sa-h" hidden="">
+                <div class="c-rec-head">
+                  <span class="p-avatar c-rec-avatar" aria-hidden="true">SA</span>
+                  <div class="c-rec-title">
+                    <div class="p-row" style="flex-wrap: wrap; gap: 8px">
+                      <h2 class="p-h1" id="rv-r-sa-h">Todo app with hooks</h2>
+                      <span class="eit-badge eit-badge--cyan">Resubmission</span>
+                    </div>
+                    <span class="p-muted">Sadia Afrin · React JS, Batch 6 · sent 13 Oct, 4:15 PM · second attempt</span>
+                  </div>
+                  <div class="c-rec-nav">
+                    <span class="p-small" data-queue-pos="">4 of 5</span
+                    ><button type="button" class="c-btn" data-queue-step="-1" aria-label="Previous project">
+                      <svg
+                        width="15"
+                        height="15"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.9"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path d="M15 18l-6-6 6-6"></path>
+                      </svg></button
+                    ><button type="button" class="c-btn" data-queue-step="1">
+                      Next<svg
+                        width="15"
+                        height="15"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.9"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path d="M9 18l6-6-6-6"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="c-review-grid">
+                  <div class="c-review-main">
+                    <section class="c-panel" aria-labelledby="sb-sa">
+                      <div class="c-panel-head">
+                        <div class="c-panel-title">
+                          <h3 id="sb-sa">Submission</h3>
+                          <span class="c-panel-sub">todo-app.zip · 0.8 MB · 14 files</span>
+                        </div>
+                        <a class="c-link" href="#"
+                          >sadia-todo.netlify.app<svg
+                            width="13"
+                            height="13"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.9"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                            focusable="false"
+                          >
+                            <path d="M5 12h14M13 6l6 6-6 6"></path></svg
+                        ></a>
+                      </div>
+                      <div class="c-panel-body c-form-body">
+                        <div class="c-preview" data-preview-frame="">
+                          <div class="c-preview-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+                          <div class="p-thumb c-preview-shot" data-preview-label="">Live site preview · 1440px</div>
+                        </div>
+                        <div class="p-row" style="flex-wrap: wrap; justify-content: space-between; gap: 10px">
+                          <div class="p-seg" role="group" aria-label="Preview size">
+                            <button type="button" aria-pressed="true" data-preview-size="1440">Desktop 1440</button
+                            ><button type="button" aria-pressed="false" data-preview-size="768">Tablet 768</button
+                            ><button type="button" aria-pressed="false" data-preview-size="360">Phone 360</button>
+                          </div>
+                          <a class="c-btn" href="#"
+                            ><svg
+                              width="15"
+                              height="15"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="1.9"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              aria-hidden="true"
+                              focusable="false"
+                            >
+                              <path d="M12 3v12M7 10l5 5 5-5M5 21h14"></path></svg
+                            >Download files</a
+                          >
+                        </div>
+                      </div>
+                    </section>
+                    <section class="c-panel" aria-labelledby="nt-sa">
+                      <div class="c-panel-head">
+                        <div class="c-panel-title">
+                          <h3 id="nt-sa">Note from Sadia</h3>
+                          <span class="c-panel-sub">Sent with the project</span>
+                        </div>
+                      </div>
+                      <div class="c-panel-body c-form-body">
+                        <p class="c-note">
+                          I added the dependency array and moved the todos into one state. The fetch runs once now.
+                        </p>
+                        <div class="c-block">
+                          <h4 class="c-block-h">Your notes on the first attempt · 54 / 100 · sent back 9 Oct</h4>
+                          <p class="c-note">
+                            The fetch runs on every render: give useEffect a dependency array. Keep the todos in one
+                            state array instead of three.
+                          </p>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                  <section class="c-panel c-rubric" aria-labelledby="rb-sa" data-rubric="">
+                    <div class="c-panel-head">
+                      <div class="c-panel-title">
+                        <h3 id="rb-sa">Rubric</h3>
+                        <span class="c-panel-sub">Pass mark 60 out of 100</span>
+                      </div>
+                    </div>
+                    <div class="c-panel-body c-form-body">
+                      <div class="c-scores">
+                        <div class="c-score">
+                          <label for="score-sa-state"
+                            ><span class="c-score-t">Components and state</span
+                            ><span class="p-small">Small components, one source of truth</span></label
+                          ><span class="c-score-in"
+                            ><input
+                              id="score-sa-state"
+                              class="p-input"
+                              type="number"
+                              inputmode="numeric"
+                              data-score=""
+                              min="0"
+                              max="30"
+                            /><span class="p-small">/ 30</span></span
+                          >
+                        </div>
+                        <div class="c-score">
+                          <label for="score-sa-hooks"
+                            ><span class="c-score-t">Hooks used correctly</span
+                            ><span class="p-small">useEffect dependencies, no extra fetches</span></label
+                          ><span class="c-score-in"
+                            ><input
+                              id="score-sa-hooks"
+                              class="p-input"
+                              type="number"
+                              inputmode="numeric"
+                              data-score=""
+                              min="0"
+                              max="30"
+                            /><span class="p-small">/ 30</span></span
+                          >
+                        </div>
+                        <div class="c-score">
+                          <label for="score-sa-ui"
+                            ><span class="c-score-t">Interface and phones</span
+                            ><span class="p-small">Works at 360px, a clear empty state</span></label
+                          ><span class="c-score-in"
+                            ><input
+                              id="score-sa-ui"
+                              class="p-input"
+                              type="number"
+                              inputmode="numeric"
+                              data-score=""
+                              min="0"
+                              max="20"
+                            /><span class="p-small">/ 20</span></span
+                          >
+                        </div>
+                        <div class="c-score">
+                          <label for="score-sa-code"
+                            ><span class="c-score-t">Code quality</span
+                            ><span class="p-small">Names, folders, no console errors</span></label
+                          ><span class="c-score-in"
+                            ><input
+                              id="score-sa-code"
+                              class="p-input"
+                              type="number"
+                              inputmode="numeric"
+                              data-score=""
+                              min="0"
+                              max="20"
+                            /><span class="p-small">/ 20</span></span
+                          >
+                        </div>
+                      </div>
+                      <div class="c-total">
+                        <span class="c-total-l"
+                          ><strong>Total</strong
+                          ><span class="c-verdict" data-score-verdict="">Give a mark for each part</span></span
+                        ><span class="c-total-n"
+                          ><span data-score-total="" aria-live="polite">—</span><span> / 100</span></span
+                        >
+                      </div>
+                      <div class="eit-field">
+                        <label class="eit-field__label" for="fb-sa">Feedback for Sadia</label
+                        ><textarea
+                          id="fb-sa"
+                          class="p-textarea"
+                          rows="5"
+                          placeholder="What works, and the one or two things to fix first."
+                        ></textarea>
+                      </div>
+                      <div class="p-row c-decide">
+                        <button
+                          type="button"
+                          class="eit-btn eit-btn--primary eit-btn--md"
+                          data-review-decide="approved"
+                          data-toast="Project approved · Sadia sees your feedback now"
+                          disabled
+                        >
+                          <svg
+                            class="eit-icon eit-btn__lead"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            focusable="false"
+                            aria-hidden="true"
+                          >
+                            <path d="M20 6 9 17l-5-5"></path></svg
+                          ><span class="eit-btn__label">Approve project</span></button
+                        ><button
+                          type="button"
+                          class="p-ghostbtn"
+                          data-review-decide="sent back"
+                          data-toast="Sent back to Sadia with your notes"
+                        >
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.9"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                            focusable="false"
+                          >
+                            <path d="M21 12a9 9 0 1 1-3-6.7L21 8M21 3v5h-5"></path></svg
+                          >Request changes
+                        </button>
+                      </div>
+                      <p class="p-small" style="margin: 0">
+                        Sadia is told straight away and sees your feedback under Projects.
+                      </p>
+                    </div>
+                  </section>
+                </div>
+              </section>
+              <section class="c-tabpanel c-review" role="tabpanel" id="rv-p-mh" aria-labelledby="rv-r-mh-h" hidden="">
+                <div class="c-rec-head">
+                  <span class="p-avatar c-rec-avatar" aria-hidden="true">MH</span>
+                  <div class="c-rec-title">
+                    <div class="p-row" style="flex-wrap: wrap; gap: 8px">
+                      <h2 class="p-h1" id="rv-r-mh-h">Responsive landing page</h2>
+                      <span class="eit-badge eit-badge--warning">3 days waiting</span>
+                    </div>
+                    <span class="p-muted"
+                      >Mehedi Hasan · WordPress, Batch 14 · sent 12 Oct, 10:30 PM · first attempt</span
+                    >
+                  </div>
+                  <div class="c-rec-nav">
+                    <span class="p-small" data-queue-pos="">5 of 5</span
+                    ><button type="button" class="c-btn" data-queue-step="-1" aria-label="Previous project">
+                      <svg
+                        width="15"
+                        height="15"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.9"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path d="M15 18l-6-6 6-6"></path>
+                      </svg></button
+                    ><button type="button" class="c-btn" data-queue-step="1">
+                      Next<svg
+                        width="15"
+                        height="15"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.9"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path d="M9 18l6-6-6-6"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="c-review-grid">
+                  <div class="c-review-main">
+                    <section class="c-panel" aria-labelledby="sb-mh">
+                      <div class="c-panel-head">
+                        <div class="c-panel-title">
+                          <h3 id="sb-mh">Submission</h3>
+                          <span class="c-panel-sub">landing-page.zip · 1.9 MB · 15 files</span>
+                        </div>
+                        <a class="c-link" href="#"
+                          >mehedi-landing.netlify.app<svg
+                            width="13"
+                            height="13"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.9"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                            focusable="false"
+                          >
+                            <path d="M5 12h14M13 6l6 6-6 6"></path></svg
+                        ></a>
+                      </div>
+                      <div class="c-panel-body c-form-body">
+                        <div class="c-preview" data-preview-frame="">
+                          <div class="c-preview-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+                          <div class="p-thumb c-preview-shot" data-preview-label="">Live site preview · 1440px</div>
+                        </div>
+                        <div class="p-row" style="flex-wrap: wrap; justify-content: space-between; gap: 10px">
+                          <div class="p-seg" role="group" aria-label="Preview size">
+                            <button type="button" aria-pressed="true" data-preview-size="1440">Desktop 1440</button
+                            ><button type="button" aria-pressed="false" data-preview-size="768">Tablet 768</button
+                            ><button type="button" aria-pressed="false" data-preview-size="360">Phone 360</button>
+                          </div>
+                          <a class="c-btn" href="#"
+                            ><svg
+                              width="15"
+                              height="15"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="1.9"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              aria-hidden="true"
+                              focusable="false"
+                            >
+                              <path d="M12 3v12M7 10l5 5 5-5M5 21h14"></path></svg
+                            >Download files</a
+                          >
+                        </div>
+                      </div>
+                    </section>
+                    <section class="c-panel" aria-labelledby="nt-mh">
+                      <div class="c-panel-head">
+                        <div class="c-panel-title">
+                          <h3 id="nt-mh">Note from Mehedi</h3>
+                          <span class="c-panel-sub">Sent with the project</span>
+                        </div>
+                      </div>
+                      <div class="c-panel-body c-form-body">
+                        <p class="c-note">
+                          I wasn’t sure how to make the pricing table work on phones, so I stacked the columns.
+                        </p>
+                      </div>
+                    </section>
+                  </div>
+                  <section class="c-panel c-rubric" aria-labelledby="rb-mh" data-rubric="">
+                    <div class="c-panel-head">
+                      <div class="c-panel-title">
+                        <h3 id="rb-mh">Rubric</h3>
+                        <span class="c-panel-sub">Pass mark 60 out of 100</span>
+                      </div>
+                    </div>
+                    <div class="c-panel-body c-form-body">
+                      <div class="c-scores">
+                        <div class="c-score">
+                          <label for="score-mh-layout"
+                            ><span class="c-score-t">Layout and responsiveness</span
+                            ><span class="p-small">Works from 360px to 1440px</span></label
+                          ><span class="c-score-in"
+                            ><input
+                              id="score-mh-layout"
+                              class="p-input"
+                              type="number"
+                              inputmode="numeric"
+                              data-score=""
+                              min="0"
+                              max="30"
+                            /><span class="p-small">/ 30</span></span
+                          >
+                        </div>
+                        <div class="c-score">
+                          <label for="score-mh-code"
+                            ><span class="c-score-t">Code quality</span
+                            ><span class="p-small">Semantic HTML, tidy CSS</span></label
+                          ><span class="c-score-in"
+                            ><input
+                              id="score-mh-code"
+                              class="p-input"
+                              type="number"
+                              inputmode="numeric"
+                              data-score=""
+                              min="0"
+                              max="25"
+                            /><span class="p-small">/ 25</span></span
+                          >
+                        </div>
+                        <div class="c-score">
+                          <label for="score-mh-design"
+                            ><span class="c-score-t">Visual design</span
+                            ><span class="p-small">Spacing, type, colour</span></label
+                          ><span class="c-score-in"
+                            ><input
+                              id="score-mh-design"
+                              class="p-input"
+                              type="number"
+                              inputmode="numeric"
+                              data-score=""
+                              min="0"
+                              max="25"
+                            /><span class="p-small">/ 25</span></span
+                          >
+                        </div>
+                        <div class="c-score">
+                          <label for="score-mh-perf"
+                            ><span class="c-score-t">Performance and accessibility</span
+                            ><span class="p-small">Image sizes, alt text, contrast</span></label
+                          ><span class="c-score-in"
+                            ><input
+                              id="score-mh-perf"
+                              class="p-input"
+                              type="number"
+                              inputmode="numeric"
+                              data-score=""
+                              min="0"
+                              max="20"
+                            /><span class="p-small">/ 20</span></span
+                          >
+                        </div>
+                      </div>
+                      <div class="c-total">
+                        <span class="c-total-l"
+                          ><strong>Total</strong
+                          ><span class="c-verdict" data-score-verdict="">Give a mark for each part</span></span
+                        ><span class="c-total-n"
+                          ><span data-score-total="" aria-live="polite">—</span><span> / 100</span></span
+                        >
+                      </div>
+                      <div class="eit-field">
+                        <label class="eit-field__label" for="fb-mh">Feedback for Mehedi</label
+                        ><textarea
+                          id="fb-mh"
+                          class="p-textarea"
+                          rows="5"
+                          placeholder="What works, and the one or two things to fix first."
+                        ></textarea>
+                      </div>
+                      <div class="p-row c-decide">
+                        <button
+                          type="button"
+                          class="eit-btn eit-btn--primary eit-btn--md"
+                          data-review-decide="approved"
+                          data-toast="Project approved · Mehedi sees your feedback now"
+                          disabled
+                        >
+                          <svg
+                            class="eit-icon eit-btn__lead"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            focusable="false"
+                            aria-hidden="true"
+                          >
+                            <path d="M20 6 9 17l-5-5"></path></svg
+                          ><span class="eit-btn__label">Approve project</span></button
+                        ><button
+                          type="button"
+                          class="p-ghostbtn"
+                          data-review-decide="sent back"
+                          data-toast="Sent back to Mehedi with your notes"
+                        >
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.9"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                            focusable="false"
+                          >
+                            <path d="M21 12a9 9 0 1 1-3-6.7L21 8M21 3v5h-5"></path></svg
+                          >Request changes
+                        </button>
+                      </div>
+                      <p class="p-small" style="margin: 0">
+                        Mehedi is told straight away and sees your feedback under Projects.
+                      </p>
+                    </div>
+                  </section>
+                </div>
+              </section>
+            </div>
           </div>
         </main>
       </div>

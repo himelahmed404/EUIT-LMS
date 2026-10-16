@@ -37,10 +37,11 @@ On the log-in page, the **Demo: log in as** switch picks which panel **Log in** 
 ```
 assets/css/eit.css        European IT design-system components (buttons, fields, badges, motion)
 assets/css/panel.css      Tokens, the panel shell (sidebar, top bar, tablet rail, phone tab bar), components
-assets/css/app.css        Additions for this site: balanced grids, notifications, questions, certificate print, toast
-assets/css/console.css    Admin console: SchoolofGenZ-style sidebar, top bar, dashboard and record lists, light and dark tokens
+assets/css/app.css        Additions for this site: balanced grids, notifications, certificate print, toast
+assets/css/console.css    Console (admin and mentor): SchoolofGenZ-style sidebar, top bar, dashboard, record lists,
+                          the review queue, light and dark tokens
 assets/js/app.js          Shared behaviour for every page
-assets/js/theme.js        Admin pages: light/dark and collapsed sidebar, applied before the page paints
+assets/js/theme.js        Admin and mentor pages: light/dark and collapsed sidebar, applied before the page paints
 assets/js/pages/*.js      Page scripts: help, notifications, questions (mentor), review (mentor), announcements and
                           coupons (admin)
 docs/PAGES.md             Page-by-page map
@@ -51,11 +52,11 @@ tools/design-export/      The script that first generated the pages from the des
 
 ## Layout
 
-The **admin panel** uses the SchoolofGenZ console look in European IT colours (Anek Bangla and JetBrains
-Mono, grouped sidebar with icon tiles and count pills, page titles and buttons in the top bar, full-width
-pages, light mode by default with a dark mode). From 1280px the sidebar can be collapsed to icons; from 768 to 1279px it is
-an icon rail; below that it opens as a drawer from the top bar. The student and mentor panels use the
-layout below for now:
+The **admin and mentor panels** use the SchoolofGenZ console look in European IT colours (Anek Bangla and
+JetBrains Mono, grouped sidebar with icon tiles and count pills, page titles and buttons in the top bar,
+full-width pages, light mode by default with a dark mode). From 1280px the sidebar can be collapsed to icons;
+from 768 to 1279px it is an icon rail; below that it opens as a drawer from the top bar. The student panel
+uses the layout below for now:
 
 - **Desktop (1100px and up):** a 280px sidebar that stays in view, and a page column up to 1320px wide,
   centred beside it. The top bar lines up with the column.
@@ -87,16 +88,19 @@ layout below for now:
   `region:v0|v1|v2` templates are shown.
 - **Reveal and conceal.** Accordions and "show more" buttons list the elements they show
   (`data-reveal`) or hide (`data-conceal`). `data-on-look` holds the trigger's own "open" look.
-- Admin console: `data-theme-toggle` switches light and dark (light by default; the choice is saved),
+- Console (admin and mentor): `data-theme-toggle` switches light and dark (light by default; the choice is saved),
   `data-nav-toggle` collapses the sidebar (saved), `data-nav-open` opens the phone drawer, Ctrl K / ⌘ K
   goes to the search. A link to `page.html#panel-id` opens that tab; tab lists with `data-linkable` keep
   the address in step.
-- **Record lists** (admin Announcements, Activity log, Coupons): `.c-list` rows are `role="tab"` buttons
+- **Record lists** (admin Announcements, Activity log, Coupons; mentor Student questions): `.c-list` rows are `role="tab"` buttons
   (`.c-row`) whose records are tab panels in the `.c-pane` beside the list. Each row lists its tags in
   `data-tags`; filter buttons (`data-filter="tag"`, `"all"`), selects (`select[data-filter]`) and a search
   box (`data-search`) narrow the rows, and `data-list-shown` / `data-list-empty` follow along. Below
   1100px the pane slides over the page when a row is opened (`data-pane-close`, Esc or the backdrop
-  closes it).
+  closes it). The mentor's review queue (`.c-queue`) is the same list with the open review beside it
+  instead of in a pane; below 1100px the queue becomes a row of cards above the review.
+- `[data-checklist]` keeps an "n of n done" line (`data-checklist-count`) and a bar (`data-checklist-bar`)
+  in step with the `role="checkbox"` buttons inside it (the mentor's to-do).
 - `data-toast="Changes saved"` shows a short confirmation; `data-copy="text"` copies to the clipboard;
   `data-print` opens the print dialog; `data-press-all="selector"` presses every matching option
   (Mark all present); `data-fit` scales a fixed-size sheet down to fit (the certificate);
@@ -122,7 +126,7 @@ The checks start their own local server and use Playwright's Chromium (`npm inst
 ## Not built yet (on purpose)
 
 - Business logic: payments, unlocking lessons, marking, points and attendance totals stay as drawn and
-  don't recalculate when you click (the mentor rubric total is the one exception).
+  don't recalculate when you click (the mentor's rubric totals and question counts are the exceptions).
 - Links marked `href="#"` are actions with no page yet (downloads, receipts, call and WhatsApp links,
   pagination). The list is in [docs/PAGES.md](docs/PAGES.md#links-that-are-still-placeholders).
 - Bangla translations.
