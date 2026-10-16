@@ -1,7 +1,7 @@
 # Page map
 
 Every page in the site: what it's for, what's on it, what you can click, and what isn't built yet.
-Read this before you change a page, so you don't have to open all 46 to find your way.
+Read this before you change a page, so you don't have to open all 49 to find your way.
 
 - How the shared behaviour works (states, tabs, dialogs, toasts): [README](../README.md#how-the-interactivity-works).
 - What was changed after the design review, and why: [DESIGN-REVIEW.md](DESIGN-REVIEW.md).
@@ -14,7 +14,7 @@ Read this before you change a page, so you don't have to open all 46 to find you
 - [Public pages](#public-pages): log in, reset password, enroll, UI guide
 - [Student panel](#student-panel) (17 pages)
 - [Mentor panel](#mentor-panel) (9 pages)
-- [Admin panel](#admin-panel) (13 pages, console look)
+- [Admin panel](#admin-panel) (16 pages, console look)
 - [Links that are still placeholders](#links-that-are-still-placeholders)
 - [Checking your changes](#checking-your-changes)
 
@@ -68,10 +68,11 @@ Fonts: Anek Bangla for text, JetBrains Mono for section labels, codes and the Ct
 | Sidebar                 | `aside.c-side#c-side` → `.c-brand` + `nav.c-nav` → `.c-group` → `a.c-item` | 232px. "European IT · admin console" with the collapse button. Groups with mono labels (`.c-group-label`). Each item: `.c-ico` (28px tile, 16px icon) + `.c-label` + optional `.c-count` (yellow pill). Current page: `aria-current="page"`; the parent of a sub-page: `aria-current="true"`. |
 | Top bar                 | `header.c-top` → `.c-top-in`                                               | Phone menu button, page icon (`.c-top-ico`), title (`h1`, or `p.c-top-h` on record pages) with a subtitle (`.c-top-sub`) or breadcrumb (`nav.c-crumbs`), the page's own buttons (`.c-actions`), search (`label.c-search`, Ctrl K / ⌘ K), bell, theme button, account.                         |
 | Account menu            | `button.c-me` → `#me-menu.c-pop[data-popover]`                             | My profile, Notifications, Settings, Language (EN / বাং), Log out.                                                                                                                                                                                                                            |
-| Light / dark            | `button[data-theme-toggle]` sets `html[data-theme]`                        | Saved in `localStorage` (`eit-theme`); the first visit follows the device. Dark colours are the tokens under `html.is-console[data-theme="dark"]` in `console.css`, so pages must use tokens (`var(--ink)`, `var(--surface-card)`…), never fixed colours.                                     |
+| Light / dark            | `button[data-theme-toggle]` sets `html[data-theme]`                        | Light by default; the choice is saved in `localStorage` (`eit-theme`). Dark colours are the tokens under `html.is-console[data-theme="dark"]` in `console.css`, so pages must use tokens (`var(--ink)`, `var(--surface-card)`…), never fixed colours.                                         |
 | Collapse                | `button[data-nav-toggle]` (`.c-collapse`, and `.c-expand` when collapsed)  | 1280px and up: the sidebar folds to a 68px icon rail; saved in `localStorage` (`eit-nav`).                                                                                                                                                                                                    |
 | Tablet (768–1279px)     | CSS only                                                                   | Always the 68px icon rail; counts become a red dot on the icon; names show on hover.                                                                                                                                                                                                          |
 | Phone (767px and below) | `button[data-nav-open]` (`.c-menu`)                                        | The sidebar is a drawer over the page (Esc, the backdrop or ✕ closes it). Page buttons move to a second row of the top bar.                                                                                                                                                                   |
+| Record lists            | `.c-work` → `section.c-list` + `aside.c-pane`                              | Announcements, Activity log, Coupons: underline filters with counts (`button[data-filter]`), a search (`data-search`), rows as tabs (`.c-row`, tags in `data-tags`), the open row's record in the pane. Below 1100px the record slides over the page; on phones each row is a card.           |
 
 Sidebar links per role:
 
@@ -80,8 +81,8 @@ Sidebar links per role:
 - **Mentor:** Dashboard, My batches (`batch.html`), Reviews (`review.html`), Courses (`course-builder.html`),
   Student questions (`questions.html`), Schedule & recordings.
 - **Admin:** Overview · **Queues:** Course review 3 (`courses.html#cbp-queue`, opens the Review queue tab),
-  Seminar leads 6 · **People:** Students & payments, Mentors · **Catalog:** Courses & batches · **System:**
-  Settings, Roles & access. Course review, Batch detail and Create a batch highlight their parent (Course
+  Seminar leads 6 · **People:** Students & payments, Mentors · **Catalog:** Courses & batches, Coupons &
+  referrals · **Communication:** Announcements · **System:** Settings, Roles & access, Activity log. Course review, Batch detail and Create a batch highlight their parent (Course
   review, Courses & batches); Student record highlights Students & payments. Notifications and My profile
   are in the bell and the account menu.
 
@@ -285,7 +286,8 @@ Same layout as the student version with mentor items (submissions, questions, re
 A SchoolofGenZ-style dashboard. Top bar: the period switch (This month / Last 90 days, button state only).
 4 stat tiles (label, icon, value that counts up, grey sparkline with a dot for the latest week, change
 against September); a 12-column grid of panels with header strips: Enrollments per week (bar chart with a
-scale), Needs your attention (5 rows with small buttons), Upcoming batches (seats and status), Quick actions.
+scale), Needs your attention (5 rows with small buttons), Upcoming batches (seats and status), Quick actions
+(Create a batch, Record cash payment, Invite a mentor, Schedule a seminar, Send an announcement).
 
 ### `admin/courses.html` · Courses & batches
 
@@ -331,10 +333,49 @@ whole page, because the banner is added or removed).
 Top bar: Add a mentor. Full-width mentors table (Assign batch stays visible when the table scrolls). **Add a mentor** opens the
 `#add-mentor` dialog; Send login invite shows a toast.
 
+### `admin/coupons.html` · Coupons & referrals
+
+Top bar: New coupon. **Tabs** (linkable: `coupons.html#cp-coupons`, `#cp-referrals`):
+
+- **Coupons:** 4 stat tiles (active codes, used in October, discount given, ending soon), then a record
+  list of 6 codes (All / Active / Expired / Used up / Disabled, search). The open coupon shows use, expiry,
+  discount given, who created it and recent uses; Copy code, **Disable** (`#disable-coupon`, with a
+  reason), Add 30 more uses (used up), Run it again (expired: opens New coupon filled in), Turn back on.
+  **New coupon** (`#new-coupon`, `assets/js/pages/coupons.js`): the code is kept to capitals and digits,
+  a code that already exists is caught, and a preview shows what a student pays.
+- **Referrals:** 4 stat tiles (friends enrolled in October, credit added, credit waiting, discount given),
+  How it works, Programme settings (on/off, the friend's discount, the referrer's credit, when credit is
+  added, what it pays for, expiry; Save changes), Recent referrals (9, with status), Top referrers.
+
+The rules shown: every student has a code (first name + last 3 digits of the student ID, e.g. NUSRAT148);
+a friend who enrolls with it gets ৳1,000 off their first course; 7 days after the friend's first payment
+the student gets ৳1,000 credit for an installment or a new course; one code per enrollment (a coupon or a
+referral code); a friend refunded within the 7 days earns no credit. Programme since 1 Sep 2026 (credit
+raised from ৳500 to ৳1,000 on 1 Oct). In October: 25 coupon uses and 7 referred friends out of 58 enrollments.
+
+### `admin/announcements.html` · Announcements
+
+Top bar: New announcement. A record list of 7 (All / Sent / Scheduled / Drafts, search): title and author,
+audience and reach, channel (In-app, SMS), when, status. The open one shows the message, reach, schedule,
+author, SMS count, and for sent ones how many opened it. Edit (scheduled, draft), Duplicate (sent), Cancel
+schedule, Delete draft. **New announcement** (`#compose`, `assets/js/pages/announcements.js`): title,
+message with a character and SMS count (160 per SMS, 70 when the text has ৳ or Bangla), audience (all 286
+students, a course, a batch, or the 7 mentors, with the head count of each), In-app and SMS, send now or
+schedule; Review and send shows a last check before Send now. Reach per course and batch follows Courses &
+batches.
+
+### `admin/activity.html` · Activity log
+
+Top bar: Export CSV (toast only). A record list of 22 entries since 1 Oct by the team (Area filters, a
+Who select, search over name, action and reason): when, who and role, area, action and target, and the
+reason when the list is wide. The open entry shows the time, person, role and device, the change (before →
+after), any note or reason, and a link to where it happened. Entries match the recent activity on My
+profile and Recent changes on Roles & access. Entries can't be edited or deleted.
+
 ### `admin/roles.html` · Roles & access
 
 Top bar: New role, Invite team member. 6 role cards (3 × 2) that switch the permissions editor (`role-editor` states), None / View / Edit per
-area, people with the role, recent changes, team members with All / Staff / Mentors (`team` states) and
+area, people with the role, recent changes (with a link to the Activity log), team members with All / Staff / Mentors (`team` states) and
 Edit dialogs (`#edit-<tab>-<row>`), **Invite team member** (`#invite-dialog`), **New role** (`#role-dialog`).
 Dialog field ids are prefixed with the dialog id so labels stay unique.
 
@@ -352,7 +393,7 @@ page and highlights where you are. Placeholder: **[SMS PROVIDER]**.
 ### `admin/profile.html` · My profile
 
 Account details, security (SMS code on a new device, password, devices), recent activity.
-Placeholders: Change photo, Full activity log.
+Full activity log opens `activity.html`. Placeholder: Change photo.
 
 ### `admin/notifications.html` · Notifications
 
@@ -379,9 +420,9 @@ npm run format      # Prettier, print width 120
 
 The checks start their own local server; they need Playwright's Chromium. They live in `tools/check/`:
 
-| Script       | What it covers                                                                                                                                                                                              |
-| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `links.mjs`  | Every relative link and `#anchor` resolves.                                                                                                                                                                 |
-| `pages.mjs`  | Every page at 360–1920px: no sideways scroll, sidebar never stacks, no script errors, no duplicate ids, every `aria-*` / `for` reference resolves, every control has a name.                                |
-| `states.mjs` | Every captured-state option shows its templates, every tab shows only its panel, every dialog opens and closes with Esc.                                                                                    |
-| `flows.mjs`  | Log in per role, reset password, quiz, upload a recording, roles, enroll, notifications, questions, dialogs, and the admin console (dark mode, collapse, drawer, account menu, Ctrl K, Course review link). |
+| Script       | What it covers                                                                                                                                                                                                                                                                         |
+| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `links.mjs`  | Every relative link and `#anchor` resolves.                                                                                                                                                                                                                                            |
+| `pages.mjs`  | Every page at 360–1920px: no sideways scroll, sidebar never stacks, no script errors, no duplicate ids, every `aria-*` / `for` reference resolves, every control has a name.                                                                                                           |
+| `states.mjs` | Every captured-state option shows its templates, every tab shows only its panel, every dialog opens and closes with Esc.                                                                                                                                                               |
+| `flows.mjs`  | Log in per role, reset password, quiz, upload a recording, roles, enroll, notifications, questions, dialogs, and the admin console (light by default, dark mode, collapse, drawer, account menu, Ctrl K, Course review link, record lists on Announcements, Activity log and Coupons). |

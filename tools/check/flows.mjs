@@ -1,6 +1,7 @@
 // Click-throughs of the main journeys: log in as each role, reset a password, take a quiz,
 // upload a recording, edit roles, enroll, notifications, mentor questions, dialogs and the admin console
-// (light/dark, collapsed sidebar, phone drawer, account menu, Ctrl K, links that open a tab).
+// (light by default, dark remembered, collapsed sidebar, phone drawer, account menu, Ctrl K, links that open a tab)
+// and its record lists (Announcements, Activity log, Coupons & referrals: filters, search, the open record).
 import { chromium } from "playwright";
 import { startServer, report, done } from "./lib.mjs";
 
@@ -167,6 +168,13 @@ ok(
   themeBefore !== themeAfter && (await attr("data-theme")) === themeAfter,
 );
 await click(p.locator("[data-theme-toggle]"));
+const darkDevice = await b.newPage({ colorScheme: "dark" });
+await darkDevice.goto(B + "admin/overview.html", { waitUntil: "networkidle" });
+ok(
+  "console: light by default, even on a device set to dark",
+  (await darkDevice.evaluate(() => document.documentElement.getAttribute("data-theme"))) === "light",
+);
+await darkDevice.close();
 await click(p.locator(".c-collapse"));
 const sideW = () => p.evaluate(() => document.querySelector(".c-side").getBoundingClientRect().width);
 await go("admin/mentors.html");
@@ -188,7 +196,51 @@ ok(
 );
 await click(p.locator("#cbt-courses"));
 ok("console: Courses tab moves the sidebar highlight back", (await current()).startsWith("Courses"));
+// Record lists.
+const rows = () => p.locator(".c-row:visible").count();
+await go("admin/announcements.html");
+await click(p.locator('[data-filter="sent"]'));
+ok(
+  "announcements: Sent shows the 4 sent ones and opens the first",
+  (await rows()) === 4 && (await p.locator('.c-row[aria-selected="true"]').getAttribute("data-tags")) === "sent",
+);
+await click(p.locator('.c-actions [data-open-dialog="compose"]'));
+await p.fill("#cmp-title", "Class 13 moves to 8 PM");
+await p.fill("#cmp-msg", "Class 13 on Monday 19 Oct starts at 8 PM.");
+await click(p.locator('#compose [data-aud="batch"]'));
+await click(p.locator("[data-ann-next]"));
+ok(
+  "announcements: the composer works out who it goes to and asks before sending",
+  (await p.locator("[data-ann-confirm]").textContent()).includes("to 20 students"),
+);
+await p.keyboard.press("Escape");
+await go("admin/activity.html");
+await p.selectOption("#log-who", "rk");
+ok("activity log: filter by person", (await rows()) === 3);
+await click(p.locator('[data-filter="coupons"]'));
+ok("activity log: person and area together", (await rows()) === 2);
+await p.fill("#log-find", "facebook");
+ok("activity log: search reads the reason too", (await rows()) === 1);
+await go("admin/coupons.html");
+await click(p.locator('.c-actions [data-open-dialog="new-coupon"]'));
+await p.fill("#nc-code", "puja15");
+ok(
+  "coupons: a code that already exists can't be created",
+  (await p.inputValue("#nc-code")) === "PUJA15" && (await p.locator("[data-coupon-create]").isDisabled()),
+);
+await p.keyboard.press("Escape");
+await go("admin/coupons.html#cp-referrals");
+ok(
+  "coupons: #cp-referrals opens Referrals",
+  (await p.locator("#cpt-referrals").getAttribute("aria-selected")) === "true",
+);
 await p.setViewportSize({ width: 390, height: 844 });
+await go("admin/announcements.html");
+await click(p.locator("#ann-r-a4"));
+ok("record lists: on phones the record opens over the list", await vis(p.locator(".c-pane.is-open #ann-p-a4")));
+await p.keyboard.press("Escape");
+await p.waitForTimeout(300);
+ok("record lists: Esc closes it", !(await p.locator(".c-pane.is-open").count()));
 await go("admin/students.html");
 await click(p.locator("[data-nav-open]"));
 ok("console: phone menu opens as a drawer", await vis(p.locator(".c-side.is-open")));

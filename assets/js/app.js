@@ -531,7 +531,7 @@
     }
     side.classList.toggle("is-open", open);
     if (scrim) {
-      scrim.hidden = !open;
+      scrim.hidden = !open && !document.querySelector(".c-pane.is-open");
     }
     // While the drawer is open, the page behind it can't be reached with Tab.
     var content = document.querySelector(".p-console > .p-content");
@@ -572,6 +572,82 @@
       if (window.innerWidth > 767) {
         setDrawer(false);
       }
+      if (!narrowPane.matches) {
+        closePanes();
+      }
+    });
+  }
+
+  /* ---------- Record lists (admin): filters, search and the open record ----------
+     A .c-list holds .c-row tabs (a vertical tab list; each row's record is its tab panel in .c-pane).
+     Each row names its tags in data-tags. Filter buttons (data-filter="tag", or "all") and selects
+     (data-filter, the option's value is a tag, "" for any) narrow the rows; data-search matches their text.
+     Below 1100px the pane is closed, and opening a row slides its record over the page. */
+  var narrowPane = window.matchMedia ? window.matchMedia("(max-width: 1099px)") : { matches: false };
+  var paneOpener = null;
+  function filterList(list) {
+    if (!list) {
+      return;
+    }
+    var need = $all('[data-filter][aria-pressed="true"]', list)
+      .concat($all("select[data-filter]", list))
+      .map(function (c) {
+        return c.tagName === "SELECT" ? c.value : c.getAttribute("data-filter");
+      })
+      .filter(function (v) {
+        return v && v !== "all";
+      });
+    var box = list.querySelector("[data-search]");
+    var q = box ? box.value.trim().toLowerCase() : "";
+    var rows = $all(".c-row", list);
+    var shown = rows.filter(function (r) {
+      var tags = (r.getAttribute("data-tags") || "").split(" ");
+      var ok =
+        need.every(function (v) {
+          return tags.indexOf(v) !== -1;
+        }) &&
+        (!q || r.textContent.toLowerCase().indexOf(q) !== -1);
+      r.hidden = !ok;
+      return ok;
+    });
+    $all("[data-list-empty]", list).forEach(function (el) {
+      el.hidden = shown.length > 0;
+    });
+    $all("[data-list-shown]", list).forEach(function (el) {
+      el.textContent = shown.length;
+    });
+    // Keep a record open: if the open row was filtered out, open the first row still shown.
+    var open = rows.filter(function (r) {
+      return r.getAttribute("aria-selected") === "true";
+    })[0];
+    if (shown.length && (!open || open.hidden)) {
+      selectTab(shown[0]);
+    }
+  }
+  function setPane(pane, open, from) {
+    if (!pane || pane.classList.contains("is-open") === open) {
+      return;
+    }
+    pane.classList.toggle("is-open", open);
+    var scrim = document.querySelector(".c-scrim");
+    if (scrim) {
+      scrim.hidden = !open;
+    }
+    if (open) {
+      pane.closest(".c-work").setAttribute("data-opened", "");
+      paneOpener = from || null;
+      var close = pane.querySelector('[role="tabpanel"]:not([hidden]) [data-pane-close]');
+      if (close) {
+        close.focus();
+      }
+    } else if (paneOpener && document.contains(paneOpener)) {
+      paneOpener.focus();
+      paneOpener = null;
+    }
+  }
+  function closePanes() {
+    $all(".c-pane.is-open").forEach(function (p) {
+      setPane(p, false);
     });
   }
 
@@ -603,6 +679,7 @@
     }
     if (t.closest("[data-nav-close]")) {
       setDrawer(false);
+      closePanes();
       return;
     }
 
@@ -793,6 +870,34 @@
     }
   });
 
+  // Record lists: runs after the generic handler has pressed the filter or opened the row's tab.
+  document.addEventListener("click", function (e) {
+    var t = e.target;
+    var filter = t.closest("button[data-filter]");
+    if (filter) {
+      filterList(filter.closest(".c-list"));
+      return;
+    }
+    var row = t.closest(".c-row[aria-controls]");
+    if (row && narrowPane.matches) {
+      setPane(row.closest(".c-work").querySelector(".c-pane"), true, row);
+      return;
+    }
+    if (t.closest("[data-pane-close]")) {
+      setPane(t.closest(".c-pane"), false);
+    }
+  });
+  document.addEventListener("input", function (e) {
+    if (e.target.matches && e.target.matches("[data-search]")) {
+      filterList(e.target.closest(".c-list"));
+    }
+  });
+  document.addEventListener("change", function (e) {
+    if (e.target.matches && e.target.matches("select[data-filter]")) {
+      filterList(e.target.closest(".c-list"));
+    }
+  });
+
   // Reveal / conceal: a trigger lists elements it shows (data-reveal) and hides (data-conceal).
   // Clicking flips it; clicking again undoes it. Runs after the generic handler above.
   document.addEventListener("click", function (e) {
@@ -869,6 +974,7 @@
     if (drawer) {
       setDrawer(false);
     }
+    closePanes();
     if (document.activeElement && document.activeElement.closest(".c-search")) {
       document.activeElement.blur();
     }

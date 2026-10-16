@@ -28,13 +28,13 @@ Run `npm run check` after any change; it must end with "Everything passed".
 - `assets/css/app.css`: additions for this site (balanced grids, notifications, questions, certificate
   print, toast) and fixes that override the design's inline styles.
 - `assets/css/console.css`: the **admin console** (SchoolofGenZ look in European IT colours): console
-  sidebar `.c-side`, top bar `.c-top`, the Overview dashboard (`.c-kpi`, `.c-panel`), compact versions of
-  the shared components, and the light and dark tokens. Only admin pages load it (`<html class="is-console">`).
-- `assets/js/theme.js`: admin pages only, in `<head>` without `defer`: sets light/dark and the collapsed
-  sidebar before the page paints.
+  sidebar `.c-side`, top bar `.c-top`, the Overview dashboard (`.c-kpi`, `.c-panel`), record lists
+  (`.c-list` + `.c-pane`), compact versions of the shared components, and the light and dark tokens. Only admin pages load it (`<html class="is-console">`).
+- `assets/js/theme.js`: admin pages only, in `<head>` without `defer`: sets light/dark (light unless the
+  moon button picked dark) and the collapsed sidebar before the page paints.
 - `assets/js/app.js`: shared behaviour driven by ARIA attributes and `data-*` hooks. **No page-specific
   code here**; a page that needs its own logic gets `assets/js/pages/<page>.js` (help, notifications,
-  questions, review).
+  questions, review, announcements, coupons).
 
 ## Rules when editing
 
@@ -43,8 +43,11 @@ Run `npm run check` after any change; it must end with "Everything passed".
 - **Admin pages use the console shell** (`aside.c-side`, `header.c-top`), not `p-side` / `p-top`. A page's
   title, subtitle and buttons live in the top bar; record pages (batch, course review, student) put the
   breadcrumb there and keep the record's name and actions at the top of `<main>`.
+- **Record lists (admin Announcements, Activity log, Coupons):** a row is a `.c-row` tab with its tags in
+  `data-tags`; its record is the tab panel in `.c-pane`. Add a row and its panel together, and keep the
+  filter counts (`.c-n`) and the "Showing n of n" footer right.
 - **Dark mode (admin):** colours must come from tokens (`var(--ink)`, `var(--surface-card)`, `var(--line)`…).
-  A fixed colour in markup won't change with the theme. Check both themes (the moon button, or the device setting).
+  A fixed colour in markup won't change with the theme. Check both themes (light is the default; the moon button switches to dark).
 - **Captured states:** a `<template data-state="name" data-region="[data-region='x']">` holds only the
   element that changes. Edit the live element and every template for it together.
 - State lives in ARIA (`aria-pressed`, `aria-checked`, `aria-selected`, `aria-expanded`, `aria-current`).

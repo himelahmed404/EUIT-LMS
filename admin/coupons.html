@@ -1,0 +1,2442 @@
+<!doctype html>
+<html lang="en" class="is-console">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Coupons &amp; referrals · European IT LMS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap"
+    />
+    <link rel="stylesheet" href="../assets/css/eit.css" />
+    <link rel="stylesheet" href="../assets/css/panel.css" />
+    <link rel="stylesheet" href="../assets/css/app.css" />
+    <link rel="stylesheet" href="../assets/css/console.css" />
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/app.js" defer=""></script>
+    <script src="../assets/js/pages/coupons.js" defer=""></script>
+  </head>
+  <body>
+    <div class="p-shell p-console">
+      <aside class="c-side" id="c-side">
+        <div class="c-brand">
+          <a class="c-brand-link" href="overview.html" aria-label="European IT admin console, overview"
+            ><span class="c-logo" aria-hidden="true"
+              ><svg
+                width="17"
+                height="17"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M2 9l10-5 10 5-10 5zM6 11v5c3 2.5 9 2.5 12 0v-5M22 9v6"></path></svg></span
+            ><span class="c-brand-text"
+              ><span class="c-brand-name">European IT</span><span class="c-brand-sub">admin console</span></span
+            ></a
+          ><button
+            type="button"
+            class="c-iconbtn c-collapse"
+            data-nav-toggle=""
+            aria-label="Collapse menu"
+            title="Collapse menu"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M3 3h18v18H3zM9 3v18M16 9l-3 3 3 3"></path>
+            </svg></button
+          ><button type="button" class="c-iconbtn c-close" data-nav-close="" aria-label="Close menu">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.9"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M18 6 6 18M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <nav class="c-nav" aria-label="Admin panel">
+          <div class="c-group">
+            <button
+              type="button"
+              class="c-item c-expand"
+              data-nav-toggle=""
+              aria-label="Expand menu"
+              title="Expand menu"
+            >
+              <span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M3 3h18v18H3zM9 3v18M13 9l3 3-3 3"></path></svg
+              ></span></button
+            ><a class="c-item" href="overview.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M3 3h7v9H3zM14 3h7v5h-7zM14 12h7v9h-7zM3 16h7v5H3z"></path></svg></span
+              ><span class="c-label">Overview</span></a
+            >
+          </div>
+          <div class="c-group" role="group" aria-labelledby="nav-queues">
+            <span class="c-group-label" id="nav-queues">Queues</span
+            ><a class="c-item" href="courses.html#cbp-queue"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M9 3h6v3H9zM8 4.5H5V21h14V4.5h-3M9 13l2 2 4-4"></path></svg></span
+              ><span class="c-label">Course review</span><span class="c-count">3</span></a
+            ><a class="c-item" href="leads.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21c0-4 3.1-7 7-7s7 3 7 7M16 3.5a4 4 0 0 1 0 7M22 21c0-3-1.7-5.4-4-6.4"
+                  ></path></svg></span
+              ><span class="c-label">Seminar leads</span><span class="c-count">6</span></a
+            >
+          </div>
+          <div class="c-group" role="group" aria-labelledby="nav-people">
+            <span class="c-group-label" id="nav-people">People</span
+            ><a class="c-item" href="students.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M2 9l10-5 10 5-10 5zM6 11v5c3 2.5 9 2.5 12 0v-5M22 9v6"></path></svg></span
+              ><span class="c-label">Students &amp; payments</span></a
+            ><a class="c-item" href="mentors.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21c0-4 3.6-7 8-7s8 3 8 7"></path></svg></span
+              ><span class="c-label">Mentors</span></a
+            >
+          </div>
+          <div class="c-group" role="group" aria-labelledby="nav-catalog">
+            <span class="c-group-label" id="nav-catalog">Catalog</span
+            ><a class="c-item" href="courses.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5zM4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"
+                  ></path></svg></span
+              ><span class="c-label">Courses &amp; batches</span></a
+            >
+            <a class="c-item" href="coupons.html" aria-current="page"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L2 12V2h10l8.6 8.6a2 2 0 0 1 0 2.8zM7 7h.01"
+                  ></path></svg></span
+              ><span class="c-label">Coupons &amp; referrals</span></a
+            >
+          </div>
+          <div class="c-group" role="group" aria-labelledby="nav-comms">
+            <span class="c-group-label" id="nav-comms">Communication</span
+            ><a class="c-item" href="announcements.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M3 11v3l13 5V6zM16 9a3 3 0 0 1 0 6M7 15.5V20h3v-3"></path></svg></span
+              ><span class="c-label">Announcements</span></a
+            >
+          </div>
+          <div class="c-group" role="group" aria-labelledby="nav-system">
+            <span class="c-group-label" id="nav-system">System</span
+            ><a class="c-item" href="settings.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"></path></svg></span
+              ><span class="c-label">Settings</span></a
+            ><a class="c-item" href="roles.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4"></path></svg></span
+              ><span class="c-label">Roles &amp; access</span></a
+            >
+            <a class="c-item" href="activity.html"
+              ><span class="c-ico"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></span
+              ><span class="c-label">Activity log</span></a
+            >
+          </div>
+        </nav>
+      </aside>
+      <div class="p-content">
+        <header class="c-top">
+          <div class="c-top-in">
+            <button
+              type="button"
+              class="c-iconbtn c-menu"
+              data-nav-open=""
+              aria-label="Open menu"
+              aria-controls="c-side"
+              aria-expanded="false"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M3 6h18M3 12h18M3 18h18"></path>
+              </svg></button
+            ><span class="c-top-ico" aria-hidden="true"
+              ><svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L2 12V2h10l8.6 8.6a2 2 0 0 1 0 2.8zM7 7h.01"></path></svg
+            ></span>
+            <div class="c-top-title">
+              <h1>Coupons &amp; referrals</h1>
+              <p class="c-top-sub">Discount codes, and credit for students who bring a friend</p>
+            </div>
+            <div class="c-grow"></div>
+
+            <label class="c-search" title="Search"
+              ><svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM21 21l-4.3-4.3"></path></svg
+              ><span class="eit-sr">Search</span><input type="search" placeholder="Search…" /><kbd
+                class="c-kbd"
+                aria-hidden="true"
+                >Ctrl K</kbd
+              ></label
+            >
+            <div class="c-actions">
+              <button
+                type="button"
+                class="eit-btn eit-btn--primary eit-btn--md"
+                data-open-dialog="new-coupon"
+                aria-haspopup="dialog"
+              >
+                <svg
+                  class="eit-icon eit-btn__lead"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  focusable="false"
+                  aria-hidden="true"
+                >
+                  <path d="M12 5v14M5 12h14"></path></svg
+                ><span class="eit-btn__label">New coupon</span>
+              </button>
+            </div>
+            <div class="c-pop-wrap">
+              <button
+                type="button"
+                class="c-iconbtn c-bordered"
+                data-notif-scope="admin"
+                aria-label="Notifications, 3 unread"
+                aria-expanded="false"
+                aria-controls="notif-menu"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
+                ><span class="c-badge" data-unread-count="">3</span>
+              </button>
+              <div
+                class="p-dropdown"
+                role="dialog"
+                aria-label="Notifications"
+                id="notif-menu"
+                hidden=""
+                data-popover=""
+              >
+                <div class="p-row" style="justify-content: space-between; padding: 16px 18px 10px">
+                  <strong style="font-size: 16px">Notifications</strong
+                  ><button
+                    type="button"
+                    class="p-link"
+                    style="
+                      border: 0px;
+                      background: none;
+                      padding: 0px;
+                      font-style: inherit;
+                      font-variant: inherit;
+                      font-stretch: inherit;
+                      line-height: inherit;
+                      font-family: inherit;
+                      font-optical-sizing: inherit;
+                      font-size-adjust: inherit;
+                      font-kerning: inherit;
+                      font-feature-settings: inherit;
+                      font-variation-settings: inherit;
+                      font-weight: 600;
+                      font-size: 13px;
+                      cursor: pointer;
+                    "
+                    data-mark-read="#notif-menu"
+                  >
+                    Mark all as read
+                  </button>
+                </div>
+                <ul class="p-rows" style="padding: 0px 8px 8px">
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--green" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                          d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"
+                        ></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                      ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                        >৳5,000 received from Tanvir Hasan</span
+                      ><span class="p-small" style="font-size: 12px"
+                        >bKash · installment 2 of 3 · 12 min ago</span
+                      ></span
+                    ><span
+                      aria-label="Unread"
+                      style="
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background: var(--cyan);
+                        margin-top: 6px;
+                        flex: 0 0 auto;
+                      "
+                      data-unread=""
+                    ></span>
+                  </li>
+                  <li style="align-items: flex-start">
+                    <span class="p-tile" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                          d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
+                        ></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                      ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                        >New course sent for review</span
+                      ><span class="p-small" style="font-size: 12px"
+                        >Facebook Ads in Practice · Imran Kabir · 1 h ago</span
+                      ></span
+                    ><span
+                      aria-label="Unread"
+                      style="
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background: var(--cyan);
+                        margin-top: 6px;
+                        flex: 0 0 auto;
+                      "
+                      data-unread=""
+                    ></span>
+                  </li>
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--muted" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m3 11 18-5v12L3 14v-3zM11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                      ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 600"
+                        >6 new bookings for Saturday’s seminar</span
+                      ><span class="p-small" style="font-size: 12px">Web Development · 3 h ago</span></span
+                    ><span
+                      aria-label="Unread"
+                      style="
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background: var(--cyan);
+                        margin-top: 6px;
+                        flex: 0 0 auto;
+                      "
+                      data-unread=""
+                    ></span>
+                  </li>
+                  <li style="align-items: flex-start">
+                    <span class="p-tile p-tile--amber" style="width: 36px; height: 36px; border-radius: 10px"
+                      ><svg class="p-icon p-icon--sm" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M5 11h14v11H5zM7 11V7a5 5 0 0 1 10 0v4"></path></svg></span
+                    ><span class="p-grow" style="display: flex; flex-direction: column; gap: 2px"
+                      ><span style="font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 500"
+                        >Access paused for Mehedi Hasan</span
+                      ><span class="p-small" style="font-size: 12px">Installment 2 overdue 7 days · 8 Oct</span></span
+                    >
+                  </li>
+                </ul>
+                <a
+                  href="notifications.html"
+                  class="p-link"
+                  style="
+                    display: flex;
+                    justify-content: center;
+                    padding: 12px;
+                    border-top: 1px solid var(--line-soft);
+                    border-radius: 0px;
+                  "
+                  >See all notifications</a
+                >
+              </div>
+            </div>
+            <button
+              type="button"
+              class="c-iconbtn c-bordered c-theme"
+              data-theme-toggle=""
+              aria-label="Dark mode"
+              aria-pressed="false"
+              title="Switch to dark mode"
+            >
+              <svg
+                class="c-moon"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg
+              ><svg
+                class="c-sun"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zM12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"
+                ></path>
+              </svg>
+            </button>
+            <div class="c-pop-wrap">
+              <button
+                type="button"
+                class="c-me"
+                aria-expanded="false"
+                aria-controls="me-menu"
+                aria-label="Your account: Sharmin Sultana"
+              >
+                <span class="c-avatar" aria-hidden="true">SS</span
+                ><span class="c-me-text"
+                  ><span class="c-me-name">Sharmin Sultana</span><span class="c-me-sub">Owner</span></span
+                >
+              </button>
+              <div class="c-pop" id="me-menu" hidden="" data-popover="" role="group" aria-label="Your account">
+                <div class="c-pop-head">
+                  <strong>Sharmin Sultana</strong><span class="p-small">Owner · admin@europeanit-inst.com</span>
+                </div>
+                <a href="profile.html"
+                  ><svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21c0-4 3.6-7 8-7s8 3 8 7"></path></svg
+                  >My profile</a
+                ><a href="notifications.html"
+                  ><svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg
+                  >Notifications</a
+                ><a href="settings.html"
+                  ><svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"></path></svg
+                  >Settings</a
+                >
+                <div class="c-pop-row">
+                  <span class="p-row" style="gap: 10px"
+                    ><svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path
+                        d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"
+                      ></path></svg
+                    >Language</span
+                  >
+                  <div class="eit-seg" role="group" aria-label="Language">
+                    <button type="button" class="eit-seg__btn is-on" aria-pressed="true">EN</button
+                    ><button type="button" lang="bn" class="eit-seg__btn" aria-pressed="false">বাং</button>
+                  </div>
+                </div>
+                <hr />
+                <a href="../index.html"
+                  ><svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"></path></svg
+                  >Log out</a
+                >
+              </div>
+            </div>
+          </div>
+        </header>
+        <main class="p-main c-dash">
+          <div class="p-tabs" role="tablist" aria-label="Coupons and referrals" data-linkable="">
+            <button type="button" role="tab" id="cpt-coupons" aria-selected="true" aria-controls="cp-coupons">
+              Coupons</button
+            ><button
+              type="button"
+              role="tab"
+              id="cpt-referrals"
+              aria-selected="false"
+              aria-controls="cp-referrals"
+              tabindex="-1"
+            >
+              Referrals
+            </button>
+          </div>
+          <div role="tabpanel" id="cp-coupons" aria-labelledby="cpt-coupons" class="c-tabpanel">
+            <div class="c-kpis">
+              <div class="c-kpi">
+                <span class="c-kpi-top"
+                  ><span class="c-kpi-label">Active codes</span
+                  ><span class="c-kpi-ico c-tone-cyan"
+                    ><svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path
+                        d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L2 12V2h10l8.6 8.6a2 2 0 0 1 0 2.8zM7 7h.01"
+                      ></path></svg></span></span
+                ><span class="c-kpi-mid"><span class="c-kpi-val">3</span></span
+                ><span class="c-kpi-sub">of 6 coupons</span>
+              </div>
+              <div class="c-kpi">
+                <span class="c-kpi-top"
+                  ><span class="c-kpi-label">Used in October</span
+                  ><span class="c-kpi-ico c-tone-green"
+                    ><svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path d="M3 7h18v3a2 2 0 0 0 0 4v3H3v-3a2 2 0 0 0 0-4zM9 7v10"></path></svg></span></span
+                ><span class="c-kpi-mid"><span class="c-kpi-val">25</span></span
+                ><span class="c-kpi-sub">of 58 enrollments this month</span>
+              </div>
+              <div class="c-kpi">
+                <span class="c-kpi-top"
+                  ><span class="c-kpi-label">Discount given in October</span
+                  ><span class="c-kpi-ico c-tone-amber"
+                    ><svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path
+                        d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"
+                      ></path></svg></span></span
+                ><span class="c-kpi-mid"><span class="c-kpi-val">≈ ৳37,400</span></span
+                ><span class="c-kpi-sub">about 5% of the ৳6,85,000 collected</span>
+              </div>
+              <div class="c-kpi">
+                <span class="c-kpi-top"
+                  ><span class="c-kpi-label">Ending soon</span
+                  ><span class="c-kpi-ico c-tone-red"
+                    ><svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM12 6v6l4 2"></path></svg></span></span
+                ><span class="c-kpi-mid"><span class="c-kpi-val">10 days</span></span
+                ><span class="c-kpi-sub">REACT7EARLY · 10 uses left</span>
+              </div>
+            </div>
+            <div class="c-work">
+              <section
+                class="c-list"
+                aria-label="Coupons"
+                style="--cols: minmax(0, 1.3fr) minmax(0, 0.8fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 0.9fr) 84px"
+              >
+                <div class="c-toolbar">
+                  <div class="c-filters" role="group" aria-label="Show">
+                    <button type="button" class="c-filter" data-filter="all" aria-pressed="true">
+                      All<span class="c-n">6</span></button
+                    ><button type="button" class="c-filter" data-filter="active" aria-pressed="false">
+                      Active<span class="c-n">3</span></button
+                    ><button type="button" class="c-filter" data-filter="expired" aria-pressed="false">
+                      Expired<span class="c-n">1</span></button
+                    ><button type="button" class="c-filter" data-filter="usedup" aria-pressed="false">
+                      Used up<span class="c-n">1</span></button
+                    ><button type="button" class="c-filter" data-filter="disabled" aria-pressed="false">
+                      Disabled<span class="c-n">1</span>
+                    </button>
+                  </div>
+                  <div class="c-tools">
+                    <label class="c-find" for="cp-find"
+                      ><svg
+                        width="15"
+                        height="15"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.9"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path d="M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM21 21l-4.3-4.3"></path></svg
+                      ><span class="eit-sr">Search coupons</span
+                      ><input id="cp-find" type="search" placeholder="Search codes" autocomplete="off" data-search=""
+                    /></label>
+                  </div>
+                </div>
+                <div class="c-thead" aria-hidden="true">
+                  <span>Code</span><span>Discount</span><span>Applies to</span><span>Used</span><span>Expires</span
+                  ><span>Status</span>
+                </div>
+                <div class="c-rows" role="tablist" aria-orientation="vertical" aria-label="Coupons">
+                  <button
+                    type="button"
+                    class="c-row"
+                    role="tab"
+                    id="cp-r-puja15"
+                    aria-controls="cp-p-puja15"
+                    aria-selected="true"
+                    data-tags="active"
+                  >
+                    <span class="c-cell"
+                      ><span class="c-cell-t c-code">PUJA15</span><span class="c-cell-s">Rakibul Karim</span></span
+                    ><span class="c-cell"
+                      ><span class="c-cell-l" aria-hidden="true">Discount</span
+                      ><span class="c-cell-t">15% off</span></span
+                    ><span class="c-cell"
+                      ><span class="c-cell-l" aria-hidden="true">Applies to</span
+                      ><span class="c-cell-t">All courses</span></span
+                    ><span class="c-cell"
+                      ><span class="c-cell-l" aria-hidden="true">Used</span
+                      ><span class="c-used"
+                        ><span class="c-cell-t">14 / 100</span
+                        ><span class="p-bar p-bar--thin" aria-hidden="true"
+                          ><span style="width: 14%"></span></span></span></span
+                    ><span class="c-cell"
+                      ><span class="c-cell-l" aria-hidden="true">Expires</span><span class="c-cell-t">Sat 31 Oct</span
+                      ><span class="c-cell-s">2026</span></span
+                    ><span class="c-cell"
+                      ><span class="c-cell-l" aria-hidden="true">Status</span
+                      ><span class="eit-badge eit-badge--success">Active</span></span
+                    ></button
+                  ><button
+                    type="button"
+                    class="c-row"
+                    role="tab"
+                    id="cp-r-seminar1000"
+                    aria-controls="cp-p-seminar1000"
+                    aria-selected="false"
+                    tabindex="-1"
+                    data-tags="active"
+                  >
+                    <span class="c-cell"
+                      ><span class="c-cell-t c-code">SEMINAR1000</span><span class="c-cell-s">Tania Akter</span></span
+                    ><span class="c-cell"
+                      ><span class="c-cell-l" aria-hidden="true">Discount</span
+                      ><span class="c-cell-t">৳1,000 off</span></span
+                    ><span class="c-cell"
+                      ><span class="c-cell-l" aria-hidden="true">Applies to</span
+                      ><span class="c-cell-t">All courses</span></span
+                    ><span class="c-cell"
+                      ><span class="c-cell-l" aria-hidden="true">Used</span
+                      ><span class="c-used"><span class="c-cell-t">21 · no limit</span></span></span
+                    ><span class="c-cell"
+                      ><span class="c-cell-l" aria-hidden="true">Expires</span><span class="c-cell-t">Thu 31 Dec</span
+                      ><span class="c-cell-s">2026</span></span
+                    ><span class="c-cell"
+                      ><span class="c-cell-l" aria-hidden="true">Status</span
+                      ><span class="eit-badge eit-badge--success">Active</span></span
+                    ></button
+                  ><button
+                    type="button"
+                    class="c-row"
+                    role="tab"
+                    id="cp-r-react7early"
+                    aria-controls="cp-p-react7early"
+                    aria-selected="false"
+                    tabindex="-1"
+                    data-tags="active"
+                  >
+                    <span class="c-cell"
+                      ><span class="c-cell-t c-code">REACT7EARLY</span><span class="c-cell-s">Farzana Haque</span></span
+                    ><span class="c-cell"
+                      ><span class="c-cell-l" aria-hidden="true">Discount</span
+                      ><span class="c-cell-t">৳2,000 off</span></span
+                    ><span class="c-cell"
+                      ><span class="c-cell-l" aria-hidden="true">Applies to</span
+                      ><span class="c-cell-t">React JS</span></span
+                    ><span class="c-cell"
+                      ><span class="c-cell-l" aria-hidden="true">Used</span
+                      ><span class="c-used"
+                        ><span class="c-cell-t">5 / 15</span
+                        ><span class="p-bar p-bar--thin" aria-hidden="true"
+                          ><span style="width: 33%"></span></span></span></span
+                    ><span class="c-cell"
+                      ><span class="c-cell-l" aria-hidden="true">Expires</span><span class="c-cell-t">Sun 25 Oct</span
+                      ><span class="c-cell-s">2026</span></span
+                    ><span class="c-cell"
+                      ><span class="c-cell-l" aria-hidden="true">Status</span
+                      ><span class="eit-badge eit-badge--success">Active</span></span
+                    ></button
+                  ><button
+                    type="button"
+                    class="c-row"
+                    role="tab"
+                    id="cp-r-wplaunch"
+                    aria-controls="cp-p-wplaunch"
+                    aria-selected="false"
+                    tabindex="-1"
+                    data-tags="usedup"
+                  >
+                    <span class="c-cell"
+                      ><span class="c-cell-t c-code">WPLAUNCH</span><span class="c-cell-s">Sharmin Sultana</span></span
+                    ><span class="c-cell"
+                      ><span class="c-cell-l" aria-hidden="true">Discount</span
+                      ><span class="c-cell-t">৳1,500 off</span></span
+                    ><span class="c-cell"
+                      ><span class="c-cell-l" aria-hidden="true">Applies to</span
+                      ><span class="c-cell-t">WordPress</span></span
+                    ><span class="c-cell"
+                      ><span class="c-cell-l" aria-hidden="true">Used</span
+                      ><span class="c-used"
+                        ><span class="c-cell-t">30 / 30</span
+                        ><span class="p-bar p-bar--thin p-bar--warn" aria-hidden="true"
+                          ><span style="width: 100%"></span></span></span></span
+                    ><span class="c-cell"
+                      ><span class="c-cell-l" aria-hidden="true">Expires</span><span class="c-cell-t">Mon 30 Nov</span
+                      ><span class="c-cell-s">2026</span></span
+                    ><span class="c-cell"
+                      ><span class="c-cell-l" aria-hidden="true">Status</span
+                      ><span class="eit-badge eit-badge--warning">Used up</span></span
+                    ></button
+                  ><button
+                    type="button"
+                    class="c-row"
+                    role="tab"
+                    id="cp-r-eid25"
+                    aria-controls="cp-p-eid25"
+                    aria-selected="false"
+                    tabindex="-1"
+                    data-tags="expired"
+                  >
+                    <span class="c-cell"
+                      ><span class="c-cell-t c-code">EID25</span><span class="c-cell-s">Sharmin Sultana</span></span
+                    ><span class="c-cell"
+                      ><span class="c-cell-l" aria-hidden="true">Discount</span
+                      ><span class="c-cell-t">25% off</span></span
+                    ><span class="c-cell"
+                      ><span class="c-cell-l" aria-hidden="true">Applies to</span
+                      ><span class="c-cell-t">All courses</span></span
+                    ><span class="c-cell"
+                      ><span class="c-cell-l" aria-hidden="true">Used</span
+                      ><span class="c-used"
+                        ><span class="c-cell-t">112 / 150</span
+                        ><span class="p-bar p-bar--thin" aria-hidden="true"
+                          ><span style="width: 75%"></span></span></span></span
+                    ><span class="c-cell"
+                      ><span class="c-cell-l" aria-hidden="true">Expires</span><span class="c-cell-t">Sat 20 Jun</span
+                      ><span class="c-cell-s">2026</span></span
+                    ><span class="c-cell"
+                      ><span class="c-cell-l" aria-hidden="true">Status</span
+                      ><span class="eit-badge eit-badge--neutral">Expired</span></span
+                    ></button
+                  ><button
+                    type="button"
+                    class="c-row"
+                    role="tab"
+                    id="cp-r-student10"
+                    aria-controls="cp-p-student10"
+                    aria-selected="false"
+                    tabindex="-1"
+                    data-tags="disabled"
+                  >
+                    <span class="c-cell"
+                      ><span class="c-cell-t c-code">STUDENT10</span><span class="c-cell-s">Rakibul Karim</span></span
+                    ><span class="c-cell"
+                      ><span class="c-cell-l" aria-hidden="true">Discount</span
+                      ><span class="c-cell-t">10% off</span></span
+                    ><span class="c-cell"
+                      ><span class="c-cell-l" aria-hidden="true">Applies to</span
+                      ><span class="c-cell-t">Graphic Design</span></span
+                    ><span class="c-cell"
+                      ><span class="c-cell-l" aria-hidden="true">Used</span
+                      ><span class="c-used"
+                        ><span class="c-cell-t">17 / 200</span
+                        ><span class="p-bar p-bar--thin" aria-hidden="true"
+                          ><span style="width: 8%"></span></span></span></span
+                    ><span class="c-cell"
+                      ><span class="c-cell-l" aria-hidden="true">Expires</span><span class="c-cell-t">Thu 31 Dec</span
+                      ><span class="c-cell-s">2026</span></span
+                    ><span class="c-cell"
+                      ><span class="c-cell-l" aria-hidden="true">Status</span
+                      ><span class="eit-badge eit-badge--danger">Disabled</span></span
+                    >
+                  </button>
+                </div>
+                <p class="c-empty" data-list-empty="" hidden="">No coupons match.</p>
+                <div class="c-foot">
+                  <span>Showing <span data-list-shown="">6</span> of 6 coupons</span
+                  ><span>One code per enrollment: a coupon or a referral code</span>
+                </div>
+              </section>
+              <aside class="c-pane" aria-label="Coupon">
+                <section class="c-pane-in" role="tabpanel" id="cp-p-puja15" aria-labelledby="cp-r-puja15-h">
+                  <div class="c-pane-head">
+                    <div class="c-pane-title">
+                      <span class="eit-badge eit-badge--success">Active</span>
+                      <h2 id="cp-r-puja15-h" class="is-mono">PUJA15</h2>
+                      <span class="c-pane-sub">15% off · All courses</span>
+                    </div>
+                    <button type="button" class="c-iconbtn c-pane-x" data-pane-close="" aria-label="Close">
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.9"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path d="M18 6 6 18M6 6l12 12"></path>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="c-block">
+                    <dl class="c-kv">
+                      <dt>Used</dt>
+                      <dd>14 of 100</dd>
+                      <dt>Expires</dt>
+                      <dd>Sat 31 Oct 2026 · 16 days left</dd>
+                      <dt>Discount given</dt>
+                      <dd>≈ ৳21,000</dd>
+                      <dt>Created</dt>
+                      <dd>Mon 5 Oct by Rakibul Karim</dd>
+                    </dl>
+                  </div>
+                  <div class="c-block">
+                    <h3>Recent uses</h3>
+                    <ul class="c-lines c-uses">
+                      <li class="c-line c-use">
+                        <span class="c-line-text"
+                          ><span class="c-line-t">Rafsan Haque</span
+                          ><span class="c-line-s">Digital Marketing · Batch 12</span></span
+                        ><span class="c-line-s">Today</span>
+                      </li>
+                      <li class="c-line c-use">
+                        <span class="c-line-text"
+                          ><span class="c-line-t">Sumaiya Islam</span
+                          ><span class="c-line-s">React JS · Batch 7</span></span
+                        ><span class="c-line-s">Yesterday</span>
+                      </li>
+                      <li class="c-line c-use">
+                        <span class="c-line-text"
+                          ><span class="c-line-t">Tamim Hossain</span
+                          ><span class="c-line-s">Cyber Security · Batch 4</span></span
+                        ><span class="c-line-s">Tue 13 Oct</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="c-pane-actions">
+                    <button type="button" class="c-btn" data-copy="PUJA15">
+                      <svg
+                        width="15"
+                        height="15"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.9"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path d="M9 9h11v11H9zM5 15H4V4h11v1"></path></svg
+                      ><span>Copy code</span></button
+                    ><button
+                      type="button"
+                      class="c-btn c-btn--danger"
+                      data-open-dialog="disable-coupon"
+                      aria-haspopup="dialog"
+                      data-code="PUJA15"
+                    >
+                      Disable
+                    </button>
+                  </div>
+                </section>
+                <section
+                  class="c-pane-in"
+                  role="tabpanel"
+                  id="cp-p-seminar1000"
+                  aria-labelledby="cp-r-seminar1000-h"
+                  hidden=""
+                >
+                  <div class="c-pane-head">
+                    <div class="c-pane-title">
+                      <span class="eit-badge eit-badge--success">Active</span>
+                      <h2 id="cp-r-seminar1000-h" class="is-mono">SEMINAR1000</h2>
+                      <span class="c-pane-sub">৳1,000 off · All courses</span>
+                    </div>
+                    <button type="button" class="c-iconbtn c-pane-x" data-pane-close="" aria-label="Close">
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.9"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path d="M18 6 6 18M6 6l12 12"></path>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="c-block">
+                    <dl class="c-kv">
+                      <dt>Used</dt>
+                      <dd>21 · no limit</dd>
+                      <dt>Expires</dt>
+                      <dd>Thu 31 Dec 2026 · 77 days left</dd>
+                      <dt>Discount given</dt>
+                      <dd>৳21,000</dd>
+                      <dt>Created</dt>
+                      <dd>Tue 1 Sep by Tania Akter</dd>
+                    </dl>
+                    <p class="p-small" style="margin: 0">Given out at the free seminars.</p>
+                  </div>
+                  <div class="c-block">
+                    <h3>Recent uses</h3>
+                    <ul class="c-lines c-uses">
+                      <li class="c-line c-use">
+                        <span class="c-line-text"
+                          ><span class="c-line-t">Nabil Ahmed</span
+                          ><span class="c-line-s">Graphic Design · Batch 10</span></span
+                        ><span class="c-line-s">Mon 12 Oct</span>
+                      </li>
+                      <li class="c-line c-use">
+                        <span class="c-line-text"
+                          ><span class="c-line-t">Priya Saha</span
+                          ><span class="c-line-s">Digital Marketing · Batch 12</span></span
+                        ><span class="c-line-s">Sun 11 Oct</span>
+                      </li>
+                      <li class="c-line c-use">
+                        <span class="c-line-text"
+                          ><span class="c-line-t">Ratul Hasan</span
+                          ><span class="c-line-s">React JS · Batch 7</span></span
+                        ><span class="c-line-s">Sat 10 Oct</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="c-pane-actions">
+                    <button type="button" class="c-btn" data-copy="SEMINAR1000">
+                      <svg
+                        width="15"
+                        height="15"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.9"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path d="M9 9h11v11H9zM5 15H4V4h11v1"></path></svg
+                      ><span>Copy code</span></button
+                    ><button
+                      type="button"
+                      class="c-btn c-btn--danger"
+                      data-open-dialog="disable-coupon"
+                      aria-haspopup="dialog"
+                      data-code="SEMINAR1000"
+                    >
+                      Disable
+                    </button>
+                  </div>
+                </section>
+                <section
+                  class="c-pane-in"
+                  role="tabpanel"
+                  id="cp-p-react7early"
+                  aria-labelledby="cp-r-react7early-h"
+                  hidden=""
+                >
+                  <div class="c-pane-head">
+                    <div class="c-pane-title">
+                      <span class="eit-badge eit-badge--success">Active</span>
+                      <h2 id="cp-r-react7early-h" class="is-mono">REACT7EARLY</h2>
+                      <span class="c-pane-sub">৳2,000 off · React JS</span>
+                    </div>
+                    <button type="button" class="c-iconbtn c-pane-x" data-pane-close="" aria-label="Close">
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.9"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path d="M18 6 6 18M6 6l12 12"></path>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="c-block">
+                    <dl class="c-kv">
+                      <dt>Used</dt>
+                      <dd>5 of 15</dd>
+                      <dt>Expires</dt>
+                      <dd>Sun 25 Oct 2026 · 10 days left</dd>
+                      <dt>Discount given</dt>
+                      <dd>৳10,000</dd>
+                      <dt>Created</dt>
+                      <dd>Mon 28 Sep by Farzana Haque</dd>
+                    </dl>
+                    <p class="p-small" style="margin: 0">Early seats for React JS Batch 7 (starts Sat 31 Oct).</p>
+                  </div>
+                  <div class="c-block">
+                    <h3>Recent uses</h3>
+                    <ul class="c-lines c-uses">
+                      <li class="c-line c-use">
+                        <span class="c-line-text"
+                          ><span class="c-line-t">Sumaiya Islam</span
+                          ><span class="c-line-s">React JS · Batch 7</span></span
+                        ><span class="c-line-s">Yesterday</span>
+                      </li>
+                      <li class="c-line c-use">
+                        <span class="c-line-text"
+                          ><span class="c-line-t">Ratul Hasan</span
+                          ><span class="c-line-s">React JS · Batch 7</span></span
+                        ><span class="c-line-s">Sat 10 Oct</span>
+                      </li>
+                      <li class="c-line c-use">
+                        <span class="c-line-text"
+                          ><span class="c-line-t">Anika Rahman</span
+                          ><span class="c-line-s">React JS · Batch 7</span></span
+                        ><span class="c-line-s">Thu 8 Oct</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="c-pane-actions">
+                    <button type="button" class="c-btn" data-copy="REACT7EARLY">
+                      <svg
+                        width="15"
+                        height="15"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.9"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path d="M9 9h11v11H9zM5 15H4V4h11v1"></path></svg
+                      ><span>Copy code</span></button
+                    ><button
+                      type="button"
+                      class="c-btn c-btn--danger"
+                      data-open-dialog="disable-coupon"
+                      aria-haspopup="dialog"
+                      data-code="REACT7EARLY"
+                    >
+                      Disable
+                    </button>
+                  </div>
+                </section>
+                <section
+                  class="c-pane-in"
+                  role="tabpanel"
+                  id="cp-p-wplaunch"
+                  aria-labelledby="cp-r-wplaunch-h"
+                  hidden=""
+                >
+                  <div class="c-pane-head">
+                    <div class="c-pane-title">
+                      <span class="eit-badge eit-badge--warning">Used up</span>
+                      <h2 id="cp-r-wplaunch-h" class="is-mono">WPLAUNCH</h2>
+                      <span class="c-pane-sub">৳1,500 off · WordPress</span>
+                    </div>
+                    <button type="button" class="c-iconbtn c-pane-x" data-pane-close="" aria-label="Close">
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.9"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path d="M18 6 6 18M6 6l12 12"></path>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="c-block">
+                    <dl class="c-kv">
+                      <dt>Used</dt>
+                      <dd>30 of 30</dd>
+                      <dt>Expires</dt>
+                      <dd>Mon 30 Nov 2026</dd>
+                      <dt>Discount given</dt>
+                      <dd>৳45,000</dd>
+                      <dt>Created</dt>
+                      <dd>Thu 20 Aug by Sharmin Sultana</dd>
+                    </dl>
+                  </div>
+                  <div class="c-block">
+                    <h3>Recent uses</h3>
+                    <ul class="c-lines c-uses">
+                      <li class="c-line c-use">
+                        <span class="c-line-text"
+                          ><span class="c-line-t">Sajid Hasan</span
+                          ><span class="c-line-s">WordPress · Batch 15</span></span
+                        ><span class="c-line-s">Fri 2 Oct</span>
+                      </li>
+                      <li class="c-line c-use">
+                        <span class="c-line-text"
+                          ><span class="c-line-t">Rubina Akter</span
+                          ><span class="c-line-s">WordPress · Batch 15</span></span
+                        ><span class="c-line-s">Wed 30 Sep</span>
+                      </li>
+                      <li class="c-line c-use">
+                        <span class="c-line-text"
+                          ><span class="c-line-t">Hasib Rahman</span
+                          ><span class="c-line-s">WordPress · Batch 15</span></span
+                        ><span class="c-line-s">Tue 29 Sep</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="c-pane-actions">
+                    <button
+                      type="button"
+                      class="eit-btn eit-btn--primary eit-btn--md"
+                      data-toast="WPLAUNCH can be used 30 more times"
+                    >
+                      <svg
+                        class="eit-icon eit-btn__lead"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        focusable="false"
+                        aria-hidden="true"
+                      >
+                        <path d="M12 5v14M5 12h14"></path></svg
+                      ><span class="eit-btn__label">Add 30 more uses</span></button
+                    ><button type="button" class="c-btn" data-copy="WPLAUNCH">
+                      <svg
+                        width="15"
+                        height="15"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.9"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path d="M9 9h11v11H9zM5 15H4V4h11v1"></path></svg
+                      ><span>Copy code</span>
+                    </button>
+                  </div>
+                </section>
+                <section class="c-pane-in" role="tabpanel" id="cp-p-eid25" aria-labelledby="cp-r-eid25-h" hidden="">
+                  <div class="c-pane-head">
+                    <div class="c-pane-title">
+                      <span class="eit-badge eit-badge--neutral">Expired</span>
+                      <h2 id="cp-r-eid25-h" class="is-mono">EID25</h2>
+                      <span class="c-pane-sub">25% off · All courses</span>
+                    </div>
+                    <button type="button" class="c-iconbtn c-pane-x" data-pane-close="" aria-label="Close">
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.9"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path d="M18 6 6 18M6 6l12 12"></path>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="c-block">
+                    <dl class="c-kv">
+                      <dt>Used</dt>
+                      <dd>112 of 150</dd>
+                      <dt>Expires</dt>
+                      <dd>Sat 20 Jun 2026</dd>
+                      <dt>Discount given</dt>
+                      <dd>≈ ৳2,80,000</dd>
+                      <dt>Created</dt>
+                      <dd>Mon 1 Jun by Sharmin Sultana</dd>
+                    </dl>
+                  </div>
+                  <div class="c-pane-actions">
+                    <button
+                      type="button"
+                      class="eit-btn eit-btn--primary eit-btn--md"
+                      data-open-dialog="new-coupon"
+                      aria-haspopup="dialog"
+                      data-from-code="EID25"
+                      data-from-kind="pct"
+                      data-from-value="25"
+                      data-from-scope="all"
+                    >
+                      <svg
+                        class="eit-icon eit-btn__lead"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        focusable="false"
+                        aria-hidden="true"
+                      >
+                        <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM12 6v6l4 2"></path></svg
+                      ><span class="eit-btn__label">Run it again</span>
+                    </button>
+                  </div>
+                </section>
+                <section
+                  class="c-pane-in"
+                  role="tabpanel"
+                  id="cp-p-student10"
+                  aria-labelledby="cp-r-student10-h"
+                  hidden=""
+                >
+                  <div class="c-pane-head">
+                    <div class="c-pane-title">
+                      <span class="eit-badge eit-badge--danger">Disabled</span>
+                      <h2 id="cp-r-student10-h" class="is-mono">STUDENT10</h2>
+                      <span class="c-pane-sub">10% off · Graphic Design</span>
+                    </div>
+                    <button type="button" class="c-iconbtn c-pane-x" data-pane-close="" aria-label="Close">
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.9"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path d="M18 6 6 18M6 6l12 12"></path>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="c-block">
+                    <dl class="c-kv">
+                      <dt>Used</dt>
+                      <dd>17 of 200</dd>
+                      <dt>Expires</dt>
+                      <dd>Thu 31 Dec 2026</dd>
+                      <dt>Discount given</dt>
+                      <dd>≈ ৳17,000</dd>
+                      <dt>Created</dt>
+                      <dd>Tue 15 Sep by Rakibul Karim</dd>
+                      <dt>Disabled</dt>
+                      <dd>Sat 10 Oct by Rakibul Karim</dd>
+                    </dl>
+                  </div>
+                  <div class="c-block">
+                    <h3>Why it was disabled</h3>
+                    <p class="c-note">The code was shared in public Facebook groups.</p>
+                  </div>
+                  <div class="c-pane-actions">
+                    <button
+                      type="button"
+                      class="eit-btn eit-btn--primary eit-btn--md"
+                      data-toast="STUDENT10 works at checkout again"
+                    >
+                      <span class="eit-btn__label">Turn back on</span>
+                    </button>
+                  </div>
+                </section>
+              </aside>
+            </div>
+          </div>
+          <div role="tabpanel" id="cp-referrals" aria-labelledby="cpt-referrals" class="c-tabpanel" hidden="">
+            <div class="c-kpis">
+              <div class="c-kpi">
+                <span class="c-kpi-top"
+                  ><span class="c-kpi-label">Friends enrolled in October</span
+                  ><span class="c-kpi-ico c-tone-cyan"
+                    ><svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path
+                        d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM19 8v6M22 11h-6"
+                      ></path></svg></span></span
+                ><span class="c-kpi-mid"><span class="c-kpi-val">7</span></span
+                ><span class="c-kpi-sub">of 58 enrollments this month</span
+                ><span class="c-delta" data-good="true"
+                  ><svg
+                    width="13"
+                    height="13"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M12 19V5M5 12l7-7 7 7"></path></svg
+                  >+2 vs September</span
+                >
+              </div>
+              <div class="c-kpi">
+                <span class="c-kpi-top"
+                  ><span class="c-kpi-label">Credit added in October</span
+                  ><span class="c-kpi-ico c-tone-green"
+                    ><svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path
+                        d="M3 8h18v4H3zM5 12v9h14v-9M12 8v13M12 8S10.5 3 8 3a2.5 2.5 0 0 0 0 5M12 8s1.5-5 4-5a2.5 2.5 0 0 1 0 5"
+                      ></path></svg></span></span
+                ><span class="c-kpi-mid"><span class="c-kpi-val">৳4,000</span></span
+                ><span class="c-kpi-sub">to 4 students</span>
+              </div>
+              <div class="c-kpi">
+                <span class="c-kpi-top"
+                  ><span class="c-kpi-label">Waiting to be added</span
+                  ><span class="c-kpi-ico c-tone-amber"
+                    ><svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path d="M6 2h12M6 22h12M7 2v4l5 6-5 6v4M17 2v4l-5 6 5 6v4"></path></svg></span></span
+                ><span class="c-kpi-mid"><span class="c-kpi-val">৳3,000</span></span
+                ><span class="c-kpi-sub">3 friends paid in the last 7 days</span>
+              </div>
+              <div class="c-kpi">
+                <span class="c-kpi-top"
+                  ><span class="c-kpi-label">Discount given to friends</span
+                  ><span class="c-kpi-ico c-tone-muted"
+                    ><svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.9"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path d="M3 7h18v3a2 2 0 0 0 0 4v3H3v-3a2 2 0 0 0 0-4zM9 7v10"></path></svg></span></span
+                ><span class="c-kpi-mid"><span class="c-kpi-val">৳7,000</span></span
+                ><span class="c-kpi-sub">৳1,000 each, in October</span>
+              </div>
+            </div>
+            <div class="c-grid">
+              <section class="c-panel" aria-labelledby="ref-how">
+                <div class="c-panel-head">
+                  <div class="c-panel-title">
+                    <h2 id="ref-how">How it works</h2>
+                    <span class="c-panel-sub">The refer-a-friend programme, from the student’s side</span>
+                  </div>
+                </div>
+                <div class="c-panel-body">
+                  <ol class="c-lines c-steps">
+                    <li class="c-line">
+                      <span class="c-kpi-ico c-tone-cyan"
+                        ><svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.9"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <path
+                            d="M18 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM18 22a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM8.6 13.5l6.8 4M15.4 6.5l-6.8 4"
+                          ></path></svg></span
+                      ><span class="c-line-text"
+                        ><span class="c-line-t">Nusrat shares her code <span class="c-code">NUSRAT148</span></span
+                        ><span class="c-line-s"
+                          >Every student has one: their first name and the last 3 digits of their student ID</span
+                        ></span
+                      >
+                    </li>
+                    <li class="c-line">
+                      <span class="c-kpi-ico c-tone-green"
+                        ><svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.9"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <path d="M3 7h18v3a2 2 0 0 0 0 4v3H3v-3a2 2 0 0 0 0-4zM9 7v10"></path></svg></span
+                      ><span class="c-line-text"
+                        ><span class="c-line-t">Her friend enters it at checkout</span
+                        ><span class="c-line-s">The friend pays ৳1,000 less for their first course</span></span
+                      >
+                    </li>
+                    <li class="c-line">
+                      <span class="c-kpi-ico c-tone-amber"
+                        ><svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.9"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <path
+                            d="M3 8h18v4H3zM5 12v9h14v-9M12 8v13M12 8S10.5 3 8 3a2.5 2.5 0 0 0 0 5M12 8s1.5-5 4-5a2.5 2.5 0 0 1 0 5"
+                          ></path></svg></span
+                      ><span class="c-line-text"
+                        ><span class="c-line-t">Nusrat gets ৳1,000 credit</span
+                        ><span class="c-line-s"
+                          >7 days after the friend’s first payment. It pays for her next installment or a new
+                          course</span
+                        ></span
+                      >
+                    </li>
+                  </ol>
+                  <p class="c-panel-note">
+                    A friend can use one code: a coupon or a referral code, not both. If the friend is refunded within
+                    the 7 days, no credit is added.
+                  </p>
+                </div>
+              </section>
+              <section class="c-panel" data-span="8" aria-labelledby="ref-set">
+                <div class="c-panel-head">
+                  <div class="c-panel-title">
+                    <h2 id="ref-set">Programme settings</h2>
+                    <span class="c-panel-sub">Changes apply to referrals from now on</span>
+                  </div>
+                  <button
+                    type="button"
+                    class="eit-btn eit-btn--primary eit-btn--md"
+                    data-toast="Referral settings saved"
+                  >
+                    <span class="eit-btn__label">Save changes</span>
+                  </button>
+                </div>
+                <div class="c-panel-body c-form-body">
+                  <div class="p-row c-switch-row">
+                    <span style="display: flex; flex-direction: column"
+                      ><span id="ref-on-l" style="font-size: 14px; font-weight: 600">Referrals are on</span
+                      ><span class="p-small"
+                        >Turn off to stop referral codes working at checkout. Credit already added stays.</span
+                      ></span
+                    ><button
+                      type="button"
+                      class="p-switch"
+                      role="switch"
+                      aria-checked="true"
+                      aria-labelledby="ref-on-l"
+                    ></button>
+                  </div>
+                  <div class="c-form-grid">
+                    <div class="eit-field">
+                      <label class="eit-field__label" for="ref-friend">Friend’s discount</label>
+                      <div class="eit-field__wrap">
+                        <span class="eit-field__prefix" aria-hidden="true">৳</span
+                        ><input
+                          id="ref-friend"
+                          name="ref-friend"
+                          type="text"
+                          inputmode="numeric"
+                          class="eit-field__control"
+                          value="1,000"
+                          aria-describedby="ref-friend-note"
+                        />
+                      </div>
+                      <p id="ref-friend-note" class="eit-field__note">Off their first course, online or offline</p>
+                    </div>
+                    <div class="eit-field">
+                      <label class="eit-field__label" for="ref-credit">Credit for the student who referred</label>
+                      <div class="eit-field__wrap">
+                        <span class="eit-field__prefix" aria-hidden="true">৳</span
+                        ><input
+                          id="ref-credit"
+                          name="ref-credit"
+                          type="text"
+                          inputmode="numeric"
+                          class="eit-field__control"
+                          value="1,000"
+                          aria-describedby="ref-credit-note"
+                        />
+                      </div>
+                      <p id="ref-credit-note" class="eit-field__note">For each friend who enrolls</p>
+                    </div>
+                    <div class="eit-field">
+                      <span class="eit-field__label" id="ref-when-l">Credit is added</span>
+                      <div class="p-seg" role="group" aria-labelledby="ref-when-l">
+                        <button type="button" aria-pressed="true" data-credit-when="7d">After 7 days</button
+                        ><button type="button" aria-pressed="false" data-credit-when="full">When paid in full</button>
+                      </div>
+                      <p class="eit-field__note">
+                        7 days after the friend’s first payment, or once they have paid the whole fee
+                      </p>
+                    </div>
+                    <div class="eit-field">
+                      <span class="eit-field__label" id="ref-use-l">Credit can pay for</span>
+                      <div class="eit-chips" role="group" data-multi="" aria-labelledby="ref-use-l">
+                        <button type="button" class="eit-chip is-on" aria-pressed="true" data-credit-use="inst">
+                          <span class="eit-chip__check" aria-hidden="true"
+                            ><svg
+                              class="eit-icon"
+                              width="16"
+                              height="16"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              focusable="false"
+                              aria-hidden="true"
+                            >
+                              <path d="M20 6L9 17l-5-5"></path></svg></span
+                          ><span class="eit-chip__label">Installments</span></button
+                        ><button type="button" class="eit-chip is-on" aria-pressed="true" data-credit-use="new">
+                          <span class="eit-chip__check" aria-hidden="true"
+                            ><svg
+                              class="eit-icon"
+                              width="16"
+                              height="16"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              focusable="false"
+                              aria-hidden="true"
+                            >
+                              <path d="M20 6L9 17l-5-5"></path></svg></span
+                          ><span class="eit-chip__label">New courses</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="eit-field">
+                      <label class="eit-field__label" for="ref-expiry">Unused credit expires</label>
+                      <div class="eit-field__wrap">
+                        <select id="ref-expiry" name="expiry" class="eit-field__control eit-field__select">
+                          <option value="6">After 6 months</option>
+                          <option value="12" selected>After 12 months</option>
+                          <option value="0">Never</option></select
+                        ><svg
+                          class="eit-icon eit-field__chev"
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          focusable="false"
+                          aria-hidden="true"
+                        >
+                          <path d="M6 9l6 6 6-6"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="p-small" style="margin: 0">
+                    Last changed Thu 1 Oct by Sharmin Sultana: credit per friend ৳500 → ৳1,000.
+                    <a class="p-link" href="activity.html">See the activity log</a>
+                  </p>
+                </div>
+              </section>
+              <section class="c-panel" data-span="8" aria-labelledby="ref-recent">
+                <div class="c-panel-head">
+                  <div class="c-panel-title">
+                    <h2 id="ref-recent">Recent referrals</h2>
+                    <span class="c-panel-sub">Friends who used a code in October</span>
+                  </div>
+                </div>
+                <div class="c-panel-body">
+                  <div class="p-scroll">
+                    <table class="p-table c-table c-nowrap">
+                      <thead>
+                        <tr>
+                          <th scope="col">Referred by</th>
+                          <th scope="col">Friend</th>
+                          <th scope="col">Friend paid</th>
+                          <th scope="col">Credit</th>
+                          <th scope="col">Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">Nusrat Jahan</span
+                              ><span class="c-cell-s c-code">NUSRAT148</span></span
+                            >
+                          </td>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">Sadia Islam</span
+                              ><span class="c-cell-s">Graphic Design · Batch 10</span></span
+                            >
+                          </td>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">৳5,500</span
+                              ><span class="c-cell-s">1st of 2 · Wed 14 Oct</span></span
+                            >
+                          </td>
+                          <td>৳1,000</td>
+                          <td><span class="eit-badge eit-badge--warning">Adds Wed 21 Oct</span></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">Tanvir Hasan</span
+                              ><span class="c-cell-s c-code">TANVIR152</span></span
+                            >
+                          </td>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">Rubel Mia</span
+                              ><span class="c-cell-s">WordPress · Batch 15</span></span
+                            >
+                          </td>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">৳3,000</span
+                              ><span class="c-cell-s">1st of 3 · Tue 13 Oct</span></span
+                            >
+                          </td>
+                          <td>৳1,000</td>
+                          <td><span class="eit-badge eit-badge--warning">Adds Tue 20 Oct</span></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">Afsana Mim</span
+                              ><span class="c-cell-s c-code">AFSANA163</span></span
+                            >
+                          </td>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">Rumana Akter</span
+                              ><span class="c-cell-s">Digital Marketing · Batch 12</span></span
+                            >
+                          </td>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">৳6,000</span
+                              ><span class="c-cell-s">in full · Mon 12 Oct</span></span
+                            >
+                          </td>
+                          <td>৳1,000</td>
+                          <td><span class="eit-badge eit-badge--warning">Adds Mon 19 Oct</span></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">Sabbir Ahmed</span
+                              ><span class="c-cell-s c-code">SABBIR177</span></span
+                            >
+                          </td>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">Nayeem Islam</span
+                              ><span class="c-cell-s">React JS · Batch 7</span></span
+                            >
+                          </td>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">—</span><span class="c-cell-s">signed up Sun 11 Oct</span></span
+                            >
+                          </td>
+                          <td>—</td>
+                          <td><span class="eit-badge eit-badge--neutral">Not paid yet</span></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">Nusrat Jahan</span
+                              ><span class="c-cell-s c-code">NUSRAT148</span></span
+                            >
+                          </td>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">Fahim Shahriar</span
+                              ><span class="c-cell-s">React JS · Batch 7</span></span
+                            >
+                          </td>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">৳11,000</span
+                              ><span class="c-cell-s">in full · Wed 7 Oct</span></span
+                            >
+                          </td>
+                          <td>৳1,000</td>
+                          <td><span class="eit-badge eit-badge--success">Credit added</span></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">Rafiq Islam</span
+                              ><span class="c-cell-s c-code">RAFIQ161</span></span
+                            >
+                          </td>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">Tushar Ahmed</span
+                              ><span class="c-cell-s">Digital Marketing · Batch 12</span></span
+                            >
+                          </td>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">৳6,000</span
+                              ><span class="c-cell-s">refunded Thu 8 Oct</span></span
+                            >
+                          </td>
+                          <td>—</td>
+                          <td><span class="eit-badge eit-badge--danger">Refunded · no credit</span></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">Arif Hossain</span
+                              ><span class="c-cell-s c-code">ARIF170</span></span
+                            >
+                          </td>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">Shuvo Das</span
+                              ><span class="c-cell-s">Cyber Security · Batch 4</span></span
+                            >
+                          </td>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">৳4,750</span
+                              ><span class="c-cell-s">1st of 4 · Mon 5 Oct</span></span
+                            >
+                          </td>
+                          <td>৳1,000</td>
+                          <td><span class="eit-badge eit-badge--success">Credit added</span></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">Jannatul Ferdous</span
+                              ><span class="c-cell-s c-code">JANNATUL174</span></span
+                            >
+                          </td>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">Mitu Akter</span
+                              ><span class="c-cell-s">Graphic Design · Batch 10</span></span
+                            >
+                          </td>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">৳5,500</span
+                              ><span class="c-cell-s">1st of 2 · Sat 3 Oct</span></span
+                            >
+                          </td>
+                          <td>৳1,000</td>
+                          <td><span class="eit-badge eit-badge--success">Credit added</span></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">Tanvir Hasan</span
+                              ><span class="c-cell-s c-code">TANVIR152</span></span
+                            >
+                          </td>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">Sajid Hasan</span
+                              ><span class="c-cell-s">WordPress · Batch 15</span></span
+                            >
+                          </td>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">৳3,000</span
+                              ><span class="c-cell-s">1st of 3 · Fri 2 Oct</span></span
+                            >
+                          </td>
+                          <td>৳1,000</td>
+                          <td><span class="eit-badge eit-badge--success">Credit added</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </section>
+              <section class="c-panel" aria-labelledby="ref-top">
+                <div class="c-panel-head">
+                  <div class="c-panel-title">
+                    <h2 id="ref-top">Top referrers</h2>
+                    <span class="c-panel-sub">12 friends enrolled since the programme began on 1 Sep</span>
+                  </div>
+                </div>
+                <div class="c-panel-body">
+                  <div class="p-scroll">
+                    <table class="p-table c-table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Student</th>
+                          <th scope="col">Friends</th>
+                          <th scope="col">Credit balance</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">Nusrat Jahan</span
+                              ><span class="c-cell-s c-code">NUSRAT148</span></span
+                            >
+                          </td>
+                          <td>3</td>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">৳1,500</span><span class="c-cell-s">+ ৳1,000 waiting</span></span
+                            >
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">Tanvir Hasan</span
+                              ><span class="c-cell-s c-code">TANVIR152</span></span
+                            >
+                          </td>
+                          <td>2</td>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">৳1,000</span><span class="c-cell-s">+ ৳1,000 waiting</span></span
+                            >
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">Afsana Mim</span
+                              ><span class="c-cell-s c-code">AFSANA163</span></span
+                            >
+                          </td>
+                          <td>2</td>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">৳0</span
+                              ><span class="c-cell-s">৳500 used · + ৳1,000 waiting</span></span
+                            >
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">Arif Hossain</span
+                              ><span class="c-cell-s c-code">ARIF170</span></span
+                            >
+                          </td>
+                          <td>1</td>
+                          <td>
+                            <span class="c-cell"><span class="c-cell-t">৳1,000</span></span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <span class="c-cell"
+                              ><span class="c-cell-t">Jannatul Ferdous</span
+                              ><span class="c-cell-s c-code">JANNATUL174</span></span
+                            >
+                          </td>
+                          <td>1</td>
+                          <td>
+                            <span class="c-cell"><span class="c-cell-t">৳1,000</span></span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <div class="p-modal-wrap" id="new-coupon" hidden="" data-dialog="">
+      <div
+        class="p-modal"
+        style="width: min(640px, 100%)"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="new-coupon-title"
+      >
+        <div class="p-modal-head">
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <span class="p-eyebrow">Coupons</span>
+            <h2 id="new-coupon-title" class="p-h2">New coupon</h2>
+            <span class="p-small">A student types the code at checkout to pay less.</span>
+          </div>
+          <button type="button" class="p-iconbtn" aria-label="Close" data-close-dialog="">
+            <svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+          </button>
+        </div>
+        <div
+          style="display: flex; flex-direction: column; gap: 16px"
+          data-codes="PUJA15 SEMINAR1000 REACT7EARLY WPLAUNCH EID25 STUDENT10"
+        >
+          <div class="eit-field">
+            <label class="eit-field__label" for="nc-code">Code</label>
+            <div class="eit-field__wrap">
+              <input
+                id="nc-code"
+                name="code"
+                type="text"
+                class="eit-field__control"
+                placeholder="PUJA15"
+                value=""
+                autocomplete="off"
+                maxlength="12"
+                aria-describedby="nc-code-note"
+                style="font-family: var(--font-mono); text-transform: uppercase"
+              />
+            </div>
+            <p id="nc-code-note" class="eit-field__note">4–12 letters and digits. Students type it at checkout.</p>
+          </div>
+          <div class="c-form-grid">
+            <div class="eit-field">
+              <span class="eit-field__label" id="nc-kind-l">Discount</span>
+              <div class="p-seg" role="group" aria-labelledby="nc-kind-l">
+                <button type="button" aria-pressed="true" data-kind="pct">% off</button
+                ><button type="button" aria-pressed="false" data-kind="amt">৳ off</button>
+              </div>
+            </div>
+            <div class="eit-field">
+              <label class="eit-field__label" for="nc-value">Value</label>
+              <div class="eit-field__wrap">
+                <input
+                  id="nc-value"
+                  name="value"
+                  type="number"
+                  min="1"
+                  inputmode="numeric"
+                  class="eit-field__control"
+                  value=""
+                  placeholder="15"
+                  aria-describedby="nc-value-note"
+                />
+              </div>
+              <p id="nc-value-note" class="eit-field__note">Up to 50% off</p>
+            </div>
+            <div class="eit-field">
+              <label class="eit-field__label" for="nc-scope">Applies to</label>
+              <div class="eit-field__wrap">
+                <select id="nc-scope" name="scope" class="eit-field__control eit-field__select">
+                  <option value="all" selected data-fee="10000">All courses</option>
+                  <option value="wp" data-fee="10000">Web Design & Development with WordPress</option>
+                  <option value="react" data-fee="12000">React JS</option>
+                  <option value="gd" data-fee="8000">Graphic Design</option>
+                  <option value="uiux" data-fee="10000">UI/UX Design</option>
+                  <option value="dm" data-fee="7000">Digital Marketing</option>
+                  <option value="ccna" data-fee="16000">CCNA</option>
+                  <option value="cyber" data-fee="14000">Cyber Security</option></select
+                ><svg
+                  class="eit-icon eit-field__chev"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  focusable="false"
+                  aria-hidden="true"
+                >
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="eit-field">
+              <label class="eit-field__label" for="nc-limit">Usage limit</label>
+              <div class="eit-field__wrap">
+                <input
+                  id="nc-limit"
+                  name="limit"
+                  type="number"
+                  min="0"
+                  inputmode="numeric"
+                  class="eit-field__control"
+                  value="100"
+                  aria-describedby="nc-limit-note"
+                />
+              </div>
+              <p id="nc-limit-note" class="eit-field__note">0 means no limit</p>
+            </div>
+            <div class="eit-field">
+              <label class="eit-field__label" for="nc-exp">Expires</label>
+              <div class="eit-field__wrap">
+                <input
+                  id="nc-exp"
+                  name="exp"
+                  type="date"
+                  class="eit-field__control"
+                  value="2026-11-15"
+                  min="2026-10-15"
+                />
+              </div>
+            </div>
+          </div>
+          <p class="c-note" data-coupon-preview="">Pick a discount to see what a student pays.</p>
+        </div>
+        <div class="p-modal-foot">
+          <button type="button" class="p-ghostbtn" data-close-dialog="">Cancel</button
+          ><button
+            type="button"
+            class="eit-btn eit-btn--primary eit-btn--md"
+            data-close-dialog=""
+            data-toast="Coupon created"
+            data-coupon-create=""
+            disabled=""
+          >
+            <svg
+              class="eit-icon eit-btn__lead"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <path d="M12 5v14M5 12h14"></path></svg
+            ><span class="eit-btn__label">Create coupon</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="p-modal-wrap" id="disable-coupon" hidden="" data-dialog="">
+      <div class="p-modal" role="dialog" aria-modal="true" aria-labelledby="disable-coupon-title">
+        <div class="p-modal-head">
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <span class="p-eyebrow">Coupons</span>
+            <h2 id="disable-coupon-title" class="p-h2">Disable this coupon?</h2>
+            <span class="p-small">You can turn it back on later.</span>
+          </div>
+          <button type="button" class="p-iconbtn" aria-label="Close" data-close-dialog="">
+            <svg class="p-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+          </button>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px">
+          <p class="c-note" style="margin: 0">
+            It stops working at checkout straight away. Students who already used it keep their discount.
+          </p>
+          <div class="eit-field">
+            <span class="eit-field__label" id="dc-reason-l">Reason</span>
+            <div class="eit-chips" role="group" aria-labelledby="dc-reason-l">
+              <button type="button" class="eit-chip is-on" aria-pressed="true" data-reason="abuse">
+                <span class="eit-chip__check" aria-hidden="true"
+                  ><svg
+                    class="eit-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    focusable="false"
+                    aria-hidden="true"
+                  >
+                    <path d="M20 6L9 17l-5-5"></path></svg></span
+                ><span class="eit-chip__label">Shared in public</span></button
+              ><button type="button" class="eit-chip" aria-pressed="false" data-reason="ended">
+                <span class="eit-chip__check" aria-hidden="true"
+                  ><svg
+                    class="eit-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    focusable="false"
+                    aria-hidden="true"
+                  >
+                    <path d="M20 6L9 17l-5-5"></path></svg></span
+                ><span class="eit-chip__label">Promotion ended</span></button
+              ><button type="button" class="eit-chip" aria-pressed="false" data-reason="mistake">
+                <span class="eit-chip__check" aria-hidden="true"
+                  ><svg
+                    class="eit-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    focusable="false"
+                    aria-hidden="true"
+                  >
+                    <path d="M20 6L9 17l-5-5"></path></svg></span
+                ><span class="eit-chip__label">Made by mistake</span>
+              </button>
+            </div>
+          </div>
+          <p class="p-small" style="margin: 0">The reason goes into the activity log.</p>
+        </div>
+        <div class="p-modal-foot">
+          <button type="button" class="p-ghostbtn" data-close-dialog="">Cancel</button
+          ><button
+            type="button"
+            class="c-btn c-btn--solid-danger"
+            data-close-dialog=""
+            data-toast="Coupon disabled"
+            data-coupon-disable=""
+          >
+            Disable coupon
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

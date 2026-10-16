@@ -28,7 +28,7 @@ On the log-in page, the **Demo: log in as** switch picks which panel **Log in** 
 | Enroll   | `enroll/course.html` → `enroll/checkout.html` → `enroll/result.html`                                                                                                                                                                                                |
 | Student  | `student/dashboard.html`, `course-player`, `quizzes`, `quiz`, `quiz-result`, `projects`, `project-detail`, `project-feedback`, `schedule`, `leaderboard`, `certificates`, `certificate` (A4 print), `payments`, `access-paused`, `profile`, `help`, `notifications` |
 | Mentor   | `mentor/dashboard.html`, `batch`, `course-builder`, `review`, `questions`, `schedule`, `profile`, `quiz-builder`, `notifications`                                                                                                                                   |
-| Admin    | `admin/overview.html`, `courses`, `course-review`, `batch-detail`, `batch-edit`, `students`, `student-record`, `mentors`, `roles`, `leads`, `settings`, `profile`, `notifications`                                                                                  |
+| Admin    | `admin/overview.html`, `courses`, `course-review`, `batch-detail`, `batch-edit`, `students`, `student-record`, `mentors`, `coupons`, `announcements`, `roles`, `activity`, `leads`, `settings`, `profile`, `notifications`                                          |
 
 **[docs/PAGES.md](docs/PAGES.md)** describes every page: what's on it, what you can click, and what's not built yet.
 
@@ -38,10 +38,11 @@ On the log-in page, the **Demo: log in as** switch picks which panel **Log in** 
 assets/css/eit.css        European IT design-system components (buttons, fields, badges, motion)
 assets/css/panel.css      Tokens, the panel shell (sidebar, top bar, tablet rail, phone tab bar), components
 assets/css/app.css        Additions for this site: balanced grids, notifications, questions, certificate print, toast
-assets/css/console.css    Admin console: SchoolofGenZ-style sidebar, top bar and dashboard, light and dark tokens
+assets/css/console.css    Admin console: SchoolofGenZ-style sidebar, top bar, dashboard and record lists, light and dark tokens
 assets/js/app.js          Shared behaviour for every page
 assets/js/theme.js        Admin pages: light/dark and collapsed sidebar, applied before the page paints
-assets/js/pages/*.js      Page scripts: help, notifications, questions (mentor), review (mentor)
+assets/js/pages/*.js      Page scripts: help, notifications, questions (mentor), review (mentor), announcements and
+                          coupons (admin)
 docs/PAGES.md             Page-by-page map
 docs/DESIGN-REVIEW.md     Design review, changes made, open suggestions
 tools/check/              Checks for every page (npm run check)
@@ -52,7 +53,7 @@ tools/design-export/      The script that first generated the pages from the des
 
 The **admin panel** uses the SchoolofGenZ console look in European IT colours (Anek Bangla and JetBrains
 Mono, grouped sidebar with icon tiles and count pills, page titles and buttons in the top bar, full-width
-pages, light and dark mode). From 1280px the sidebar can be collapsed to icons; from 768 to 1279px it is
+pages, light mode by default with a dark mode). From 1280px the sidebar can be collapsed to icons; from 768 to 1279px it is
 an icon rail; below that it opens as a drawer from the top bar. The student and mentor panels use the
 layout below for now:
 
@@ -86,9 +87,16 @@ layout below for now:
   `region:v0|v1|v2` templates are shown.
 - **Reveal and conceal.** Accordions and "show more" buttons list the elements they show
   (`data-reveal`) or hide (`data-conceal`). `data-on-look` holds the trigger's own "open" look.
-- Admin console: `data-theme-toggle` switches light and dark (saved), `data-nav-toggle` collapses the
-  sidebar (saved), `data-nav-open` opens the phone drawer, Ctrl K / ⌘ K goes to the search. A link to
-  `page.html#panel-id` opens that tab; tab lists with `data-linkable` keep the address in step.
+- Admin console: `data-theme-toggle` switches light and dark (light by default; the choice is saved),
+  `data-nav-toggle` collapses the sidebar (saved), `data-nav-open` opens the phone drawer, Ctrl K / ⌘ K
+  goes to the search. A link to `page.html#panel-id` opens that tab; tab lists with `data-linkable` keep
+  the address in step.
+- **Record lists** (admin Announcements, Activity log, Coupons): `.c-list` rows are `role="tab"` buttons
+  (`.c-row`) whose records are tab panels in the `.c-pane` beside the list. Each row lists its tags in
+  `data-tags`; filter buttons (`data-filter="tag"`, `"all"`), selects (`select[data-filter]`) and a search
+  box (`data-search`) narrow the rows, and `data-list-shown` / `data-list-empty` follow along. Below
+  1100px the pane slides over the page when a row is opened (`data-pane-close`, Esc or the backdrop
+  closes it).
 - `data-toast="Changes saved"` shows a short confirmation; `data-copy="text"` copies to the clipboard;
   `data-print` opens the print dialog; `data-press-all="selector"` presses every matching option
   (Mark all present); `data-fit` scales a fixed-size sheet down to fit (the certificate);

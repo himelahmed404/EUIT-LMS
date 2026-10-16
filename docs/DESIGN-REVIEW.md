@@ -2,7 +2,7 @@
 
 A review of all 42 screens as built from the design, the fixes made, and what's still open.
 Reviewed on 16 Oct 2026 at 360–1920px. For what's on each page now, see [PAGES.md](PAGES.md).
-The admin panel has since been restyled to the SchoolofGenZ console look: see the next section.
+The admin panel has since been restyled to the SchoolofGenZ console look and has three new pages: see the next two sections.
 
 ## Admin console restyle (SchoolofGenZ look)
 
@@ -12,16 +12,16 @@ in European IT colours. The student and mentor panels are unchanged for now and 
 **Decisions (from the owner):** keep European IT blue rather than SchoolofGenZ green; regroup the existing
 admin pages into SchoolofGenZ-style sections instead of adding new pages; add a working dark mode.
 
-| Area       | Before                                                                                       | Now                                                                                                                                                                                                  |
-| ---------- | -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Type       | Geist and Geist Mono.                                                                        | Anek Bangla for text (it also covers Bangla), JetBrains Mono for section labels, codes and the Ctrl K hint. 14px base, 13px tables, 12px secondary text.                                             |
-| Sidebar    | 280px, 48px items, sub-links, black count bubbles, Notifications and My profile in the list. | 232px, "European IT · admin console", sections QUEUES / PEOPLE / CATALOG / SYSTEM in mono, 38px items with 28px icon tiles, yellow count pills, a collapse button. Sub-pages highlight their parent. |
-| Icons      | Mixed Lucide sets at 20px, 2px stroke.                                                       | SchoolofGenZ's admin icon paths at 16px, 1.9px stroke, in tiles.                                                                                                                                     |
-| Top bar    | Search, language, bell and avatar; page titles and buttons in the page.                      | Page icon, title and subtitle (or breadcrumb), the page's buttons, search with Ctrl K, bell, dark mode, account menu (profile, settings, language, log out).                                         |
-| Width      | A centred 1320px column.                                                                     | The full width beside the sidebar, as in SchoolofGenZ.                                                                                                                                               |
-| Overview   | Greeting, big stat cards, bar chart, attention list, quick-action tiles, a wide table.       | Stat tiles with a grey trend line and a dot for the latest week, panels with header strips on a 12-column grid, small buttons in the attention list, a compact batches table, quick actions as rows. |
-| Components | 20px radius cards, pill tabs, 44–48px controls, mono uppercase table headers.                | 12px radius panels without shadows, underline tabs, 34–38px controls, sentence-case table headers, calmer hover (no tilting icons).                                                                  |
-| Smaller    | —                                                                                            | Dark mode (follows the device on the first visit); a 68px icon rail on tablets; a drawer on phones; the action column of a wide table gets an edge only while there is more under it.                |
+| Area       | Before                                                                                       | Now                                                                                                                                                                                                      |
+| ---------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Type       | Geist and Geist Mono.                                                                        | Anek Bangla for text (it also covers Bangla), JetBrains Mono for section labels, codes and the Ctrl K hint. 14px base, 13px tables, 12px secondary text.                                                 |
+| Sidebar    | 280px, 48px items, sub-links, black count bubbles, Notifications and My profile in the list. | 232px, "European IT · admin console", sections QUEUES / PEOPLE / CATALOG / SYSTEM in mono, 38px items with 28px icon tiles, yellow count pills, a collapse button. Sub-pages highlight their parent.     |
+| Icons      | Mixed Lucide sets at 20px, 2px stroke.                                                       | SchoolofGenZ's admin icon paths at 16px, 1.9px stroke, in tiles.                                                                                                                                         |
+| Top bar    | Search, language, bell and avatar; page titles and buttons in the page.                      | Page icon, title and subtitle (or breadcrumb), the page's buttons, search with Ctrl K, bell, dark mode, account menu (profile, settings, language, log out).                                             |
+| Width      | A centred 1320px column.                                                                     | The full width beside the sidebar, as in SchoolofGenZ.                                                                                                                                                   |
+| Overview   | Greeting, big stat cards, bar chart, attention list, quick-action tiles, a wide table.       | Stat tiles with a grey trend line and a dot for the latest week, panels with header strips on a 12-column grid, small buttons in the attention list, a compact batches table, quick actions as rows.     |
+| Components | 20px radius cards, pill tabs, 44–48px controls, mono uppercase table headers.                | 12px radius panels without shadows, underline tabs, 34–38px controls, sentence-case table headers, calmer hover (no tilting icons).                                                                      |
+| Smaller    | —                                                                                            | Dark mode (light by default; the moon button switches and remembers); a 68px icon rail on tablets; a drawer on phones; the action column of a wide table gets an edge only while there is more under it. |
 
 **What it fixed on the way:** the profile said Sharmin is the Owner while the top bar said Admin (now Owner
 everywhere); "Review & publish 1" disagreed with "3 courses waiting" (the queue item now says 3 and opens
@@ -34,6 +34,38 @@ Course review link).
 
 **Next:** the student and mentor panels, with the same shell (`console.css` is written so another panel can
 take it by adding `class="is-console"` and the console sidebar and top bar).
+
+## New admin pages: Announcements, Activity log, Coupons & referrals
+
+Three pages added to the admin console, following the matching SchoolofGenZ sections, plus one change
+asked for by the owner: **light is the default theme** (dark only after someone presses the moon button;
+it no longer follows the device).
+
+| Page                | What it's for                                                                                                                                                                                                                          |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Announcements       | Send a notice to all students, one course, one batch or the mentors, in the panel and by SMS. The composer shows the head count and the SMS count (160 characters per SMS, 70 with ৳ or Bangla) and asks once more before sending.     |
+| Activity log        | Who changed what, when and why, for the whole team: filter by area and person, search, and each entry's device, before → after and reason. It can't be edited. Its entries agree with My profile and Roles & access.                   |
+| Coupons & referrals | Discount codes (limits, expiry, disable with a reason, run an expired one again) and the refer-a-friend programme: a friend gets ৳1,000 off, the student who referred them gets ৳1,000 credit 7 days after the friend's first payment. |
+
+All three use one new pattern, the **record list** (SchoolofGenZ's list + detail): filters with counts and
+a search over the rows, the open row's record beside the list. Below 1100px the record slides over the
+page; on phones each row becomes a card. Sidebar: Coupons & referrals under Catalog, a Communication
+section for Announcements, Activity log under System. Seminar leads now has its own icon, so the megaphone
+means Announcements.
+
+**Checked:** the three pages at 360–1920px in light and dark (text contrast AA), and new flows in
+`npm run check` (light by default on a dark device, filters and search, the composer's head count, a coupon
+code that already exists, `#cp-referrals`, the record over the list on phones).
+
+**Open suggestions:**
+
+- **Show the referral code to students.** The programme is set up on the admin side only. The student
+  Payments page should show the student's code, a Share button, their credit balance and how it comes off
+  the next installment (Nusrat's ৳1,500 against installment 2). This belongs with the student panel move.
+- **A code field at checkout.** `enroll/checkout.html` has no place to type a coupon or a referral code
+  yet; it needs one, with the price updating and the "one code per enrollment" rule.
+- **Real SMS costs.** The composer counts SMS but shows no price, because the SMS provider is still
+  [SMS PROVIDER]. Add the rate once it's chosen.
 
 ## Overall impression
 

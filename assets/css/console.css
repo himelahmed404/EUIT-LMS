@@ -1120,6 +1120,571 @@ a.c-cell-t:hover {
   }
 }
 
+/* ---------- Record lists (Announcements, Coupons, Activity log): filters, rows, and the open record ----------
+   SchoolofGenZ's list + detail: underline filters with counts and a search over a grid of rows; the open
+   row's record sits in a pane beside the list. Rows are tabs of a vertical tab list, their records are tab
+   panels (app.js). Below 1100px the pane slides over the page when a row is opened; on phones each row is
+   a small card. Columns: --cols on .c-thead and .c-row, set per list. */
+.c-work {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  gap: 16px;
+  align-items: start;
+}
+.c-list {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface-card);
+  overflow: hidden;
+  container: c-list / inline-size;
+}
+.c-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 16px;
+  min-height: 48px;
+  padding: 0 12px 0 16px;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--line);
+}
+.c-filters {
+  flex: 1 1 auto;
+  min-width: 0;
+  align-self: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 18px;
+}
+.c-filter {
+  height: 48px;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: none;
+  color: var(--ink-3);
+  font: inherit;
+  font-size: 13px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.c-filter:hover {
+  color: var(--ink);
+}
+.c-filter[aria-pressed="true"] {
+  border-bottom-color: var(--cyan);
+  color: var(--ink);
+  font-weight: 600;
+}
+.c-n {
+  margin-left: 4px;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-3);
+}
+.c-tools {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+}
+.c-find,
+.c-pick {
+  position: relative;
+  height: 32px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: var(--surface-card);
+  color: var(--ink-3);
+}
+.c-find {
+  width: 220px;
+  gap: 8px;
+  padding: 0 10px;
+}
+.c-find svg,
+.c-pick svg {
+  flex: none;
+}
+.c-find input,
+.c-pick select {
+  min-width: 0;
+  height: 100%;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  font-size: 13px;
+  outline: none;
+}
+.c-find input {
+  flex: 1 1 auto;
+  padding: 0;
+}
+.c-find input::placeholder {
+  color: var(--ink-3);
+}
+.c-pick select {
+  padding: 0 30px 0 10px;
+  appearance: none;
+  cursor: pointer;
+}
+.c-pick svg {
+  position: absolute;
+  right: 9px;
+  pointer-events: none;
+}
+.c-find:focus-within,
+.c-pick:focus-within {
+  border-color: var(--cyan-ink);
+  box-shadow: 0 0 0 3px var(--spot);
+}
+.c-thead,
+.c-row {
+  display: grid;
+  grid-template-columns: var(--cols);
+  gap: 12px;
+  align-items: center;
+}
+.c-thead {
+  min-height: 34px;
+  padding: 0 16px;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+  font-size: 12px;
+  color: var(--ink-3);
+}
+.c-rows {
+  display: flex;
+  flex-direction: column;
+}
+.c-row {
+  width: 100%;
+  min-height: 52px;
+  padding: 8px 16px 8px 14px;
+  box-sizing: border-box;
+  border: 0;
+  border-left: 2px solid transparent;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-card);
+  color: var(--ink);
+  font: inherit;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  text-align: left;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-standard);
+}
+.c-row:hover {
+  background: var(--surface);
+}
+.c-row[aria-selected="true"] {
+  border-left-color: var(--cyan);
+  background: var(--cyan-soft);
+}
+/* A badge keeps its fill on the open row (below 1100px a row only looks open once a record was opened). */
+@media (min-width: 1100px) {
+  .c-row[aria-selected="true"] .eit-badge--cyan,
+  .c-row[aria-selected="true"] .eit-badge--neutral {
+    background: var(--surface-card);
+  }
+}
+.c-work[data-opened] .c-row[aria-selected="true"] .eit-badge--cyan,
+.c-work[data-opened] .c-row[aria-selected="true"] .eit-badge--neutral {
+  background: var(--surface-card);
+}
+/* The faintest text is too light on the open row's fill. */
+.c-row[aria-selected="true"] .c-cell-s,
+.c-row[aria-selected="true"] .c-cell-l {
+  color: var(--ink-2);
+}
+.c-row .c-cell {
+  min-width: 0;
+  align-items: flex-start;
+}
+.c-row .c-cell-t,
+.c-row .c-cell-s {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.c-row .c-cell-t.is-strong {
+  font-weight: 600;
+}
+.c-cell-row {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+.c-code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+/* Columns that only show when the list itself is wide (--cols-wide adds them). */
+.c-thead .c-x,
+.c-row .c-x {
+  display: none;
+}
+@container c-list (min-width: 900px) {
+  .c-thead,
+  .c-row {
+    grid-template-columns: var(--cols-wide, var(--cols));
+  }
+  .c-thead .c-x {
+    display: block;
+  }
+  .c-row .c-x {
+    display: flex;
+  }
+}
+/* The column name inside a cell: only on phones, where rows are cards without a header. */
+.c-cell-l {
+  display: none;
+  font-size: 11px;
+  line-height: 1.3;
+  color: var(--ink-3);
+}
+.c-used {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.c-used .p-bar {
+  width: 100%;
+  max-width: 120px;
+}
+.c-empty {
+  margin: 0;
+  padding: 48px 16px;
+  border-bottom: 1px solid var(--line);
+  text-align: center;
+  font-size: 14px;
+  color: var(--ink-3);
+}
+.c-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 44px;
+  margin-top: -1px;
+  padding: 0 16px;
+  box-sizing: border-box;
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+  font-size: 12px;
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+}
+.c-pane {
+  position: sticky;
+  top: 76px;
+  max-height: calc(100vh - 92px);
+  max-height: calc(100dvh - 92px);
+  overflow: auto;
+  box-sizing: border-box;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface-card);
+}
+.c-pane-in {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 18px 20px 20px;
+}
+.c-pane-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.c-pane-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+.c-pane-title h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+.c-pane-sub {
+  font-size: 13px;
+  color: var(--ink-3);
+}
+.c-pane-x {
+  display: none;
+  margin: -4px -8px 0 0;
+}
+.c-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.c-block > h3 {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-3);
+}
+.c-note {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.6;
+}
+.c-kv {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 6px 16px;
+  margin: 0;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+.c-kv dt {
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+.c-kv dd {
+  margin: 0;
+  text-align: right;
+  overflow-wrap: anywhere;
+  color: var(--ink);
+}
+.c-change {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+.c-change del {
+  color: var(--ink-3);
+}
+.c-change ins {
+  text-decoration: none;
+  font-weight: 600;
+}
+.c-pane-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.c-btn.c-btn--danger {
+  border-color: var(--c-danger-line);
+  color: var(--danger);
+}
+.c-btn.c-btn--danger:hover {
+  border-color: var(--danger);
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+.c-who {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.c-who .p-avatar {
+  flex: none;
+  width: 26px;
+  height: 26px;
+  font-size: 10px;
+}
+/* The page's entrance animation must not leave a transform on the list's wrapper: that would make the
+   wrapper, not the window, the frame the sliding record pane is placed in. */
+.p-main > :has(.c-pane) {
+  animation-fill-mode: backwards;
+}
+.c-tabpanel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.c-pane-title h2.is-mono {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  letter-spacing: 0.02em;
+}
+.c-uses .c-line {
+  min-height: 0;
+  padding: 8px 0;
+}
+.c-panel-note {
+  margin: 0;
+  padding: 12px 16px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ink-3);
+}
+.c-panel-body > .c-panel-note:last-child {
+  margin-top: auto;
+}
+/* A table that keeps one line per cell and scrolls sideways when the panel is narrow. */
+.c-nowrap th,
+.c-nowrap td {
+  white-space: nowrap;
+}
+.c-steps .c-line {
+  align-items: flex-start;
+  min-height: 64px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.c-form-body {
+  gap: 16px;
+  padding: 16px;
+}
+.c-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  gap: 16px;
+}
+.c-switch-row {
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+.c-btn.c-btn--solid-danger,
+.c-btn.c-btn--solid-danger:hover {
+  border-color: var(--danger);
+  background: var(--danger);
+  color: var(--surface-card);
+  font-weight: 600;
+}
+.c-btn.c-btn--solid-danger:hover {
+  filter: brightness(0.95);
+}
+.is-console .eit-field > .p-seg {
+  align-self: flex-start;
+  max-width: 100%;
+}
+/* A stat tile that isn't a link doesn't lift on hover. */
+div.c-kpi:hover {
+  border-color: var(--line);
+  box-shadow: none;
+}
+@media (max-width: 1099px) {
+  .c-work {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  /* The open record slides over the page from the right. */
+  .c-pane {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 70;
+    width: min(440px, 100vw);
+    max-height: none;
+    border-width: 0 0 0 1px;
+    border-radius: 0;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition:
+      transform 220ms var(--ease-out-expo),
+      visibility 0s linear 220ms;
+  }
+  .c-pane.is-open {
+    visibility: visible;
+    transform: none;
+    box-shadow: var(--c-overlay);
+    transition: transform 220ms var(--ease-out-expo);
+  }
+  .c-pane-x {
+    display: inline-grid;
+  }
+  /* Until a record is opened, no row looks open. */
+  .c-work:not([data-opened]) .c-row[aria-selected="true"] {
+    border-left-color: transparent;
+    background: var(--surface-card);
+  }
+}
+@media (max-width: 767px) {
+  .c-toolbar {
+    padding: 0 12px;
+  }
+  .c-tools {
+    flex: 1 1 100%;
+    padding-top: 0;
+  }
+  .c-find {
+    flex: 1 1 auto;
+    width: auto;
+  }
+  .c-find,
+  .c-pick {
+    height: 40px;
+  }
+  .c-pick {
+    flex: 0 1 auto;
+    max-width: 50%;
+  }
+  .c-pick select {
+    width: 100%;
+  }
+  /* Each row becomes a card: the first cell leads, the rest follow in two columns with their names. */
+  .c-thead {
+    display: none;
+  }
+  .c-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 6px 12px;
+    padding: 12px 12px 12px 10px;
+  }
+  .c-row > :first-child {
+    grid-column: 1 / -1;
+  }
+  /* A list can name the cell that should lead the card instead (the Activity log leads with the action). */
+  .c-row:has(> .c-lead) > :first-child {
+    grid-column: auto;
+  }
+  .c-row > .c-lead {
+    order: -1;
+    grid-column: 1 / -1;
+  }
+  .c-cell-l {
+    display: block;
+  }
+  .c-foot {
+    padding: 0 12px;
+  }
+  .c-pane-in {
+    padding: 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .c-pane,
+  .c-pane.is-open {
+    transition: none;
+  }
+}
+
 /* ---------- Type ---------- */
 .is-console .p-h1 {
   font-size: 22px;
